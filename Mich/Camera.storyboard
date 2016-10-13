@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="OjZ-LT-VIV">
+            <objects>
+                <viewController storyboardIdentifier="Camera.start" id="03m-PD-xgq" customClass="StartViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sl6-HK-pWN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pgf-Kf-LOy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="O35-JJ-ogh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ww4-gr-CfS">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="cEW-PA-hjv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt8-AG-jvn">
+                                <frame key="frameInset" minX="74" minY="481" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="click:" destination="03m-PD-xgq" eventType="touchUpInside" id="iI2-Yp-KA8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPh-Az-Fem">
+                                <frame key="frameInset" minX="184" minY="481" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="libr:" destination="03m-PD-xgq" eventType="touchUpInside" id="JQr-TL-R76"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ww4-gr-CfS" secondAttribute="trailing" id="9CW-nS-kIl"/>
+                            <constraint firstItem="Ww4-gr-CfS" firstAttribute="top" secondItem="sl6-HK-pWN" secondAttribute="bottom" id="TvX-wp-EOf"/>
+                            <constraint firstItem="Ww4-gr-CfS" firstAttribute="leading" secondItem="O35-JJ-ogh" secondAttribute="leadingMargin" id="mTA-Yr-mmS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="camera_icon" selectedImage="active_camera_icon" id="riH-dq-aP3">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="Ww4-gr-CfS" id="ayX-2B-jlN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xjh-Z3-B7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-253" y="-78"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="active_camera_icon" width="28" height="23"/>
+        <image name="camera_icon" width="28" height="23"/>
+    </resources>
+</document>

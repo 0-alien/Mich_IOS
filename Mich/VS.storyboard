@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Eq-Ic-lyg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--VS-->
+        <scene sceneID="nEd-Rt-5Q3">
+            <objects>
+                <tableViewController id="Bgw-Eb-yyH" customClass="VSTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="zAp-d5-EgT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VSTableViewCell" rowHeight="125" id="4Bx-8e-NYG" customClass="VSTableViewCell" customModule="Mich" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="320" height="125"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Bx-8e-NYG" id="dHN-CD-evy">
+                                    <frame key="frameInset" width="320" height="124"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-Oz-ogm">
+                                            <frame key="frameInset" minX="242" minY="27" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="thP-WT-lJB">
+                                            <frame key="frameInset" minX="8" minY="27" width="70" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="vsFirst" destination="thP-WT-lJB" id="25c-xJ-Ymj"/>
+                                    <outlet property="vsSecond" destination="Gdy-Oz-ogm" id="GV5-io-UFc"/>
+                                    <segue destination="z9R-0k-FXL" kind="show" id="na8-p8-2Nr"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Bgw-Eb-yyH" id="Hrk-1K-qWi"/>
+                            <outlet property="delegate" destination="Bgw-Eb-yyH" id="ACu-e2-DJN"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="WIq-fe-sFE">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="VS" id="0mJ-WF-B2h">
+                        <barButtonItem key="backBarButtonItem" title=" " id="fsk-eT-mBc"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GY8-J3-RmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526.875" y="-12.67605633802817"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Yi-MC-JSO">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="z9R-0k-FXL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="czK-YX-XUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="04u-mg-nTr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IZZ-Nv-woQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZ5-H1-HPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="-13"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Umf-rf-Dl2">
+            <objects>
+                <navigationController storyboardIdentifier="VS" automaticallyAdjustsScrollViewInsets="NO" id="4Eq-Ic-lyg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="QhF-Wp-VZa">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUQ-Wa-7gq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.1134123322147651" blue="0.17647058823529368" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.1134123322147651" blue="0.17647058823529357" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bgw-Eb-yyH" kind="relationship" relationship="rootViewController" id="lIJ-Rw-c8V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ws8-ci-gKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1524.375" y="-12.67605633802817"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Image-1" width="202" height="42"/>
+        <image name="Image-2" width="202" height="42"/>
+        <image name="active_vs_icon" width="30" height="22"/>
+        <image name="vs_icon" width="26" height="19"/>
+    </resources>
+</document>
