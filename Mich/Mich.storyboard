@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Mich Search View Controller-->
         <scene sceneID="kq7-ca-lZi">
             <objects>
-                <viewController storyboardIdentifier="Mich" id="YJX-6a-Cms" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Mich" id="YJX-6a-Cms" customClass="MichSearchViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aMh-4h-DpM"/>
                         <viewControllerLayoutGuide type="bottom" id="cvt-F5-TbB"/>
@@ -18,28 +19,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3b-hn-YIp">
-                                <frame key="frameInset" minX="46" minY="193" width="296" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <searchBar contentMode="redraw" text="Serach Mich" translatesAutoresizingMaskIntoConstraints="NO" id="igU-Rj-Fwe">
+                                <color key="barTintColor" red="1" green="0.19607843137254902" blue="0.11146375868055555" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YJX-6a-Cms" id="rJU-41-5R2"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-ns-jmb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="YWe-lo-XNF">
+                                    <size key="itemSize" width="117" height="117"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UserPicturesCollectionViewCell" id="OPt-da-Mva" customClass="UserPicturesCollectionViewCell" customModule="Mich" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80h-GJ-azY"/>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="80h-GJ-azY" firstAttribute="top" secondItem="OPt-da-Mva" secondAttribute="top" id="388-7I-UeJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="80h-GJ-azY" secondAttribute="bottom" id="bLU-lf-XNi"/>
+                                            <constraint firstAttribute="bottom" secondItem="80h-GJ-azY" secondAttribute="bottom" id="dNt-ob-w6o"/>
+                                            <constraint firstItem="80h-GJ-azY" firstAttribute="leading" secondItem="OPt-da-Mva" secondAttribute="leading" id="gVO-F4-6yh"/>
+                                            <constraint firstAttribute="trailing" secondItem="80h-GJ-azY" secondAttribute="trailing" id="iba-GO-2E3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photo" destination="80h-GJ-azY" id="Xo2-t0-hRN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YJX-6a-Cms" id="S7B-i5-ZGY"/>
+                                    <outlet property="delegate" destination="YJX-6a-Cms" id="pFl-m6-Z3M"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9zx-ns-jmb" firstAttribute="leading" secondItem="1Pj-hO-WzQ" secondAttribute="leading" id="W4o-dR-KlP"/>
+                            <constraint firstItem="cvt-F5-TbB" firstAttribute="top" secondItem="9zx-ns-jmb" secondAttribute="bottom" id="Yan-sX-bGS"/>
+                            <constraint firstItem="igU-Rj-Fwe" firstAttribute="top" secondItem="aMh-4h-DpM" secondAttribute="bottom" id="hoS-yk-QNf"/>
+                            <constraint firstAttribute="trailing" secondItem="9zx-ns-jmb" secondAttribute="trailing" id="kLc-LA-O3B"/>
+                            <constraint firstItem="igU-Rj-Fwe" firstAttribute="leading" secondItem="1Pj-hO-WzQ" secondAttribute="leadingMargin" constant="-16" id="kSL-nH-5qe"/>
+                            <constraint firstItem="9zx-ns-jmb" firstAttribute="top" secondItem="igU-Rj-Fwe" secondAttribute="bottom" id="nwd-WD-po7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="igU-Rj-Fwe" secondAttribute="trailing" constant="-16" id="qFf-gl-745"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="mich_icon" selectedImage="active_mich_icon" id="TmR-qP-woc">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageCollection" destination="9zx-ns-jmb" id="WFV-gz-CJh"/>
+                        <outlet property="searchDisplayController" destination="bKf-9q-a5T" id="mPc-J6-NBH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="bKf-9q-a5T">
+                    <connections>
+                        <outlet property="delegate" destination="YJX-6a-Cms" id="dsQ-q3-ibY"/>
+                        <outlet property="searchBar" destination="igU-Rj-Fwe" id="AaS-ot-E5q"/>
+                        <outlet property="searchContentsController" destination="YJX-6a-Cms" id="AFv-SP-Wc2"/>
+                        <outlet property="searchResultsDataSource" destination="YJX-6a-Cms" id="vV9-Oy-6E1"/>
+                        <outlet property="searchResultsDelegate" destination="YJX-6a-Cms" id="E3A-0h-4jR"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-375" y="102.46478873239437"/>
+            <point key="canvasLocation" x="-386.25" y="36.971830985915496"/>
         </scene>
     </scenes>
     <resources>
-        <image name="active_mich_icon" width="24" height="28"/>
-        <image name="mich_icon" width="25" height="29"/>
+        <image name="active_mich_icon" width="23" height="28"/>
+        <image name="mich_icon" width="24" height="28"/>
     </resources>
 </document>
