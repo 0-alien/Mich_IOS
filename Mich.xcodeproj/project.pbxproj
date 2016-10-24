@@ -38,7 +38,7 @@
 		1EF192C61D8AE58900676CE2 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
-		870B0FE58F7E7BA322E097AD /* libPods-Mich.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2BE9C9DAF1270C58F5706C /* libPods-Mich.a */; };
+		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +76,7 @@
 		1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		2C2BE9C9DAF1270C58F5706C /* libPods-Mich.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mich.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				870B0FE58F7E7BA322E097AD /* libPods-Mich.a in Frameworks */,
+				9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 		0ED76E5060881AC4F9F6CDDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C2BE9C9DAF1270C58F5706C /* libPods-Mich.a */,
+				74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -433,6 +433,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -483,6 +484,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
