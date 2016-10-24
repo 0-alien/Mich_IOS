@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKShareKit
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
     @IBOutlet weak var loginTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var smallSignUpView: UIView!
@@ -16,9 +19,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var FullView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var loginFacebookBTN: FBSDKLoginButton!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+/*
         loginTF.delegate = self
         passwordTF.delegate = self
         loginTF.backgroundColor = UIColor (red:236 / 255.0, green:68 / 255.0, blue:45 / 255.0, alpha:0.5)
@@ -35,7 +41,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }else{
             print("another device")
         }
+*/
+        self.loginFacebookBTN.delegate = self
+        loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
+        let toekn = FBSDKAccessToken.current()
+        if(FBSDKAccessToken.current() == nil){
+            print("logaedout")
+            print(toekn)
+            
+        }else{
+            print(toekn)
+            print("loggedIn")
+            
+            
+        }
+ 
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,12 +64,54 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func loginButton(_ loginButton: FBSDKLoginButton, didCompleteWith result: FBSDKLoginManagerLoginResult, error: Error?) {
+        
+        if(error != nil){
+            print(error?.localizedDescription)
+            return
+        }
+        if let userToken = result.token {
+            let token:FBSDKAccessToken = result.token
+            print(userToken)
+            print(token)
+            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            self.present(vc, animated: false, completion: nil)
+
+        }
+
+        if (FBSDKAccessToken.current() != nil) {
+            // User is logged in, do work such as go to next view controller.
+            print("aaaaaaaaaajajajajajajjajajajajajajajajaja")
+        }
+    }
+    
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton) {
+    }
+    
+    
+    
     func setToolbarHidden(_ hidden: Bool,
                           animated: Bool){
         
     }
+    @IBAction func login(_ sender: AnyObject) {
+        
+        if (loginTF.text == "gigi" || passwordTF.text == "12345" || true) {
+            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            self.present(vc, animated: false, completion: nil)
+        }
+    }
+
+
+
+    
     
 
+/*
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
        
         scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
@@ -61,35 +124,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
     }
 
-
+     
+     func dismissKeyboard() {
+     //Causes the view (or one of its embedded text fields) to resign the first responder status.
+     view.endEditing(true)
+     }
+     
+     
+     
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+     textField.resignFirstResponder()
+     return true
+     }
+     
+     
+*/
     
-    
-
-
-    
-    
-    
-    @IBAction func login(_ sender: AnyObject) {
-        
-        if (loginTF.text == "gigi" || passwordTF.text == "12345" || true) {
-            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-            self.present(vc, animated: false, completion: nil)
-        }
-    }
-    
-    
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        view.endEditing(true)
-    }
-    
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
     /*
     // MARK: - Navigation
 
