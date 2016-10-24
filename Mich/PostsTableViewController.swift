@@ -65,7 +65,7 @@ class PostsTableViewController: UITableViewController {
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         
-        cell.userName.text = people[indexPath.row]
+        //cell.userName.text = people[indexPath.row]
         
         return cell
     }
@@ -112,10 +112,8 @@ class PostsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         }
         */
-    
-    
-    func imageTapped()
-    {
-        self.tableView.setContentOffset(CGPoint.zero, animated: true)
+    @IBAction func postLiked(_ sender: AnyObject) {
+        print("likebi")
     }
+    
 }
