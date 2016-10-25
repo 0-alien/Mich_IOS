@@ -11,23 +11,23 @@
             <objects>
                 <tableViewController id="Bgw-Eb-yyH" customClass="VSTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="28" sectionFooterHeight="28" id="zAp-d5-EgT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="VSTableViewCell" rowHeight="125" id="4Bx-8e-NYG" customClass="VSTableViewCell" customModule="Mich" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="125"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="125"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Bx-8e-NYG" id="dHN-CD-evy">
-                                    <frame key="frameInset" width="375" height="124"/>
+                                    <frame key="frameInset" width="320" height="124"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="thP-WT-lJB">
-                                            <frame key="frameInset" minX="8" minY="27" width="70" height="70"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-Oz-ogm">
+                                            <frame key="frameInset" minX="242" minY="27" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-Oz-ogm">
-                                            <frame key="frameInset" minX="297" minY="27" width="70" height="70"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="thP-WT-lJB">
+                                            <frame key="frameInset" minX="8" minY="27" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -48,7 +48,7 @@
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="VS" id="0mJ-WF-B2h">
-                        <barButtonItem key="backBarButtonItem" title=" " id="wNd-PS-3Jy"/>
+                        <barButtonItem key="backBarButtonItem" title="Battles" id="wNd-PS-3Jy"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -65,39 +65,63 @@
                         <viewControllerLayoutGuide type="bottom" id="04u-mg-nTr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IZZ-Nv-woQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-6o-Oem">
-                                <frame key="frameInset" minX="137" minY="269" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="clicked:" destination="z9R-0k-FXL" eventType="touchUpInside" id="nH6-kY-D7D"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R0i-W6-nST" userLabel="navbar extention">
+                                <color key="backgroundColor" red="0.99999994039535522" green="0.22029310464859009" blue="0.22771546244621277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="rBT-EO-DaP"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O3i-3q-6Lo">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2sV-4C-fpo">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2sV-4C-fpo" id="oGj-tN-24i">
+                                            <frame key="frameInset" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="R0i-W6-nST" firstAttribute="leading" secondItem="IZZ-Nv-woQ" secondAttribute="leading" id="0Le-5D-sHA"/>
+                            <constraint firstItem="O3i-3q-6Lo" firstAttribute="top" secondItem="R0i-W6-nST" secondAttribute="bottom" id="6XG-tn-l8M"/>
+                            <constraint firstItem="O3i-3q-6Lo" firstAttribute="leading" secondItem="IZZ-Nv-woQ" secondAttribute="leading" id="SGI-B1-C0I"/>
+                            <constraint firstItem="R0i-W6-nST" firstAttribute="top" secondItem="czK-YX-XUO" secondAttribute="bottom" id="UsH-oo-bDV"/>
+                            <constraint firstAttribute="trailing" secondItem="R0i-W6-nST" secondAttribute="trailing" id="aDh-EX-f6J"/>
+                            <constraint firstItem="04u-mg-nTr" firstAttribute="top" secondItem="O3i-3q-6Lo" secondAttribute="bottom" id="dAV-Vh-84e"/>
+                            <constraint firstAttribute="trailing" secondItem="O3i-3q-6Lo" secondAttribute="trailing" id="inL-n1-COQ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Fd3-SU-ziu"/>
+                    <connections>
+                        <outlet property="navBarExtension" destination="R0i-W6-nST" id="pCv-gP-rmF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZ5-H1-HPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-416"/>
+            <point key="canvasLocation" x="346.875" y="-416.19718309859155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Umf-rf-Dl2">
             <objects>
-                <navigationController storyboardIdentifier="VS" automaticallyAdjustsScrollViewInsets="NO" id="4Eq-Ic-lyg" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="VS" id="4Eq-Ic-lyg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="QhF-Wp-VZa">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUQ-Wa-7gq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="TransparentPixel" id="BUQ-Wa-7gq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.1134123322147651" blue="0.17647058823529368" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="0.1134123322147651" blue="0.17647058823529357" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.11372549019607843" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -112,6 +136,7 @@
     <resources>
         <image name="Image-1" width="202" height="42"/>
         <image name="Image-2" width="202" height="42"/>
+        <image name="TransparentPixel" width="1" height="1"/>
         <image name="active_vs_icon" width="30" height="22"/>
         <image name="vs_icon" width="26" height="19"/>
     </resources>

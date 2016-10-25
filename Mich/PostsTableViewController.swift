@@ -28,10 +28,6 @@ class PostsTableViewController: UITableViewController {
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector({"imageTapped"}()))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
         self.navigationItem.titleView = imageView
         
         for i in 1 ..< 100 {

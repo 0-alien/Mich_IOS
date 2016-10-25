@@ -10,14 +10,10 @@ import UIKit
 
 class VSBattleViewController: UIViewController {
 
+    @IBOutlet weak var navBarExtension: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = VSBattleNavBarView(frame: CGRect(x: 0, y: 0,
-                width: self.navigationController!.navigationBar.frame.size.width,
-                height: self.navigationController!.navigationBar.frame.size.height),
-                                                           firstImage: (UIImage(named: "register_background")?.circle)!, firstScore: 10,
-                                                           secondImage: (UIImage(named: "login_background")?.circle)!, secondScore: 15)
-        
+        navBarExtension.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
         // Do any additional setup after loading the view.
     }
 
