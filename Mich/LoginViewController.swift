@@ -10,10 +10,11 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
+import TwitterKit
+
+
 
 class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
-    @IBOutlet weak var loginTF: UITextField!
-    @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var smallSignUpView: UIView!
     
     @IBOutlet var FullView: UIView!
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print("another device")
         }
 */
+//////// facebook login
         self.loginFacebookBTN.delegate = self
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
@@ -54,8 +56,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(toekn)
             print("loggedIn")
             
-            
         }
+////////////////////////
+//////// twitter
+        let logInButton = TWTRLogInButton(logInCompletion: { session, error in
+            if (session != nil) {
+                let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+                self.present(vc, animated: false, completion: nil)
+
+            } else {
+                let alertController = UIAlertController(title: "Twitter log in", message:
+                    "username or passwor is incorrect", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        })
+        logInButton.center = self.view.center
+        self.view.addSubview(logInButton)
  
     }
 
@@ -96,13 +115,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                           animated: Bool){
         
     }
+    
+    
+    
     @IBAction func login(_ sender: AnyObject) {
         
-        if (loginTF.text == "gigi" || passwordTF.text == "12345" || true) {
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
             self.present(vc, animated: false, completion: nil)
-        }
+
     }
 
 

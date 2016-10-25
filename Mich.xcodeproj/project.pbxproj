@@ -39,6 +39,10 @@
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
+		CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B61DBE2ACB0088109A /* Fabric.framework */; };
+		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
+		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
+		CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
+		CFA7E8B61DBE2ACB0088109A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */,
+				CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */,
+				CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */,
+				CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +122,10 @@
 		1E1E50631D8AB3D0002D1C24 = {
 			isa = PBXGroup;
 			children = (
+				CFA7E8B61DBE2ACB0088109A /* Fabric.framework */,
+				CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */,
+				CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */,
+				CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */,
 				1E1E506E1D8AB3D0002D1C24 /* Mich */,
 				1E1E506D1D8AB3D0002D1C24 /* Products */,
 				93D2CA48CA6F10188320A26F /* Pods */,
@@ -251,6 +266,7 @@
 				1E1E506A1D8AB3D0002D1C24 /* Resources */,
 				C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */,
 				3FCA2E52BC6DFABEAB5DEBAE /* [CP] Copy Pods Resources */,
+				CFA7E8B51DBE2A480088109A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -305,6 +321,7 @@
 				1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */,
 				1E1E507A1D8AB3D0002D1C24 /* LaunchScreen.storyboard in Resources */,
 				1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */,
+				CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */,
 				1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */,
 				1E1E50771D8AB3D0002D1C24 /* Assets.xcassets in Resources */,
 				1E1E50751D8AB3D0002D1C24 /* Main.storyboard in Resources */,
@@ -362,6 +379,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mich/Pods-Mich-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CFA7E8B51DBE2A480088109A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run f0826156153d68d4641a53f35a9a7f230536ef51 28f468f3cfa7d0e9bc83f085d9b1ec9c1a7e057a8df660ec486ad1dd28b6a194";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -516,6 +546,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +565,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
