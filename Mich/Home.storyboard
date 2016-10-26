@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ip0-oT-hBP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ip0-oT-hBP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -12,28 +12,29 @@
         <scene sceneID="gFj-1a-F0v">
             <objects>
                 <tableViewController id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="372" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="372" id="739-LF-Yyr" customClass="PostTableViewCell" customModule="Mich" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="372"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="446" id="739-LF-Yyr" customClass="PostTableViewCell" customModule="Mich" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="446"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="739-LF-Yyr" id="Tkg-Kc-yak">
-                                    <frame key="frameInset" width="375" height="371"/>
+                                    <frame key="frameInset" width="375" height="445"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Kb-SUj"/>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mich_logo" translatesAutoresizingMaskIntoConstraints="NO" id="aJf-MT-v6m">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_image" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Kb-SUj"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="aJf-MT-v6m">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="n3d-BT-r4M"/>
+                                                <constraint firstAttribute="height" constant="70" id="yck-6t-m4m"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-9P-rRT" userLabel="likes">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="Civ-S6-sYM"/>
-                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="25" id="fiY-zt-3IM"/>
+                                                <constraint firstAttribute="height" constant="26" id="Civ-S6-sYM"/>
+                                                <constraint firstAttribute="width" constant="26" id="fiY-zt-3IM"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="like_icon"/>
                                             <connections>
@@ -79,20 +80,20 @@
                                         <constraint firstItem="OZf-ms-SJb" firstAttribute="leading" secondItem="WhC-9P-rRT" secondAttribute="trailing" id="G22-Uu-j57"/>
                                         <constraint firstItem="E4D-2a-745" firstAttribute="leading" secondItem="aJf-MT-v6m" secondAttribute="trailing" constant="8" id="L5d-9M-Wfw"/>
                                         <constraint firstAttribute="topMargin" secondItem="E4D-2a-745" secondAttribute="top" id="MS3-Gh-Ckc"/>
-                                        <constraint firstItem="4ue-Kb-SUj" firstAttribute="top" secondItem="aJf-MT-v6m" secondAttribute="bottom" constant="4" id="Mr5-iN-EBc"/>
                                         <constraint firstItem="g5a-55-RsR" firstAttribute="bottom" secondItem="OZf-ms-SJb" secondAttribute="bottom" id="Mv1-hh-Q4n"/>
                                         <constraint firstAttribute="topMargin" secondItem="aJf-MT-v6m" secondAttribute="top" id="Qlf-Fa-I3F"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="5Ir-qd-pab" secondAttribute="leading" multiplier="5:1" id="V6Z-O1-rhP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5Ir-qd-pab" secondAttribute="leading" multiplier="6:1" id="V6Z-O1-rhP"/>
                                         <constraint firstItem="WhC-9P-rRT" firstAttribute="leading" secondItem="aJf-MT-v6m" secondAttribute="leading" id="bFq-Nd-Jcq"/>
                                         <constraint firstItem="5Ir-qd-pab" firstAttribute="height" secondItem="WhC-9P-rRT" secondAttribute="height" id="brp-wG-Y57"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="E4D-2a-745" secondAttribute="trailing" id="dch-c1-8Ck"/>
                                         <constraint firstItem="5Ir-qd-pab" firstAttribute="width" secondItem="WhC-9P-rRT" secondAttribute="width" id="fyE-q1-Ylv"/>
                                         <constraint firstItem="OZf-ms-SJb" firstAttribute="bottom" secondItem="WhC-9P-rRT" secondAttribute="bottom" id="iyG-27-NPX"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="WhC-9P-rRT" secondAttribute="bottom" id="jSa-Am-nGD"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WhC-9P-rRT" secondAttribute="bottom" constant="15" id="jSa-Am-nGD"/>
                                         <constraint firstAttribute="trailing" secondItem="4ue-Kb-SUj" secondAttribute="trailing" id="mme-yv-qL8"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="userImage" destination="aJf-MT-v6m" id="VUS-EK-8X9"/>
                                     <outlet property="userName" destination="E4D-2a-745" id="lGJ-da-4SK"/>
                                 </connections>
                             </tableViewCell>
@@ -178,9 +179,9 @@
     <resources>
         <image name="active_home_icon" width="26" height="25"/>
         <image name="comments_icon" width="32" height="32"/>
+        <image name="first_user" width="94" height="53"/>
         <image name="home_icon" width="26" height="24"/>
         <image name="like_icon" width="30" height="36"/>
-        <image name="login_background" width="350" height="562"/>
-        <image name="mich_logo" width="200" height="75"/>
+        <image name="post_image" width="368" height="368"/>
     </resources>
 </document>

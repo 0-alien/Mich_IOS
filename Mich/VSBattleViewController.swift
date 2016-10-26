@@ -10,9 +10,17 @@ import UIKit
 
 class VSBattleViewController: UIViewController {
 
+    
     @IBOutlet weak var navBarExtension: UIView!
+    @IBOutlet weak var first: UIImageView!
+    @IBOutlet weak var second: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        first.image = first.image?.circle
+        second.image = second.image?.circle
+        first.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
+        second.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
         navBarExtension.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
         // Do any additional setup after loading the view.
     }

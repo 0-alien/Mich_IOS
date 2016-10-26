@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FBSDKLoginButton.classForCoder()
+        let _ = FBSDKLoginButton.classForCoder()
         
         Fabric.with([Twitter.self])
 

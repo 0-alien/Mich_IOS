@@ -60,9 +60,9 @@ class PostsTableViewController: UITableViewController {
         
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
-        
+    
         //cell.userName.text = people[indexPath.row]
-        
+        cell.userImage.image = cell.userImage.image!.circle
         return cell
     }
     
