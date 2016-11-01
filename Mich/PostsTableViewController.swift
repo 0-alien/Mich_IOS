@@ -28,10 +28,6 @@ class PostsTableViewController: UITableViewController {
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector({"imageTapped"}()))
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tapGestureRecognizer)
         self.navigationItem.titleView = imageView
         
         for i in 1 ..< 100 {
@@ -64,9 +60,9 @@ class PostsTableViewController: UITableViewController {
         
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
-        
+    
         //cell.userName.text = people[indexPath.row]
-        
+        cell.userImage.image = cell.userImage.image!.circle
         return cell
     }
     

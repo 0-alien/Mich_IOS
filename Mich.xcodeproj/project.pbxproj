@@ -18,7 +18,6 @@
 		1E1E50771D8AB3D0002D1C24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1E50761D8AB3D0002D1C24 /* Assets.xcassets */; };
 		1E1E507A1D8AB3D0002D1C24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1E50781D8AB3D0002D1C24 /* LaunchScreen.storyboard */; };
 		1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */; };
-		1E2734C51DAFB5EE006C76BD /* VSBattleNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C41DAFB5EE006C76BD /* VSBattleNavBarView.swift */; };
 		1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */; };
 		1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */; };
 		1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */; };
@@ -61,7 +60,6 @@
 		1E1E50791D8AB3D0002D1C24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E1E507B1D8AB3D0002D1C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleViewController.swift; sourceTree = "<group>"; };
-		1E2734C41DAFB5EE006C76BD /* VSBattleNavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleNavBarView.swift; sourceTree = "<group>"; };
 		1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RoundShape.swift"; sourceTree = "<group>"; };
 		1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSearchViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */,
 				1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */,
 				1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */,
-				1E2734C41DAFB5EE006C76BD /* VSBattleNavBarView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -405,7 +402,6 @@
 			files = (
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
-				1E2734C51DAFB5EE006C76BD /* VSBattleNavBarView.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
 				CF8D5A0B1DC77F7C00C87456 /* SignInWithEmailOrUsernameViewController.swift in Sources */,
 				1EC523391DAB98DE0083CFC3 /* VSTableViewController.swift in Sources */,
@@ -549,7 +545,7 @@
 			baseConfigurationReference = 7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -568,7 +564,7 @@
 			baseConfigurationReference = 0D7DFE3BEED8746E76ADAF45 /* Pods-Mich.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
