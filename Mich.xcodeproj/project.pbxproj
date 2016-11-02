@@ -43,6 +43,8 @@
 		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
 		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
 		CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */; };
+		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
+		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
+		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,8 @@
 				1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */,
 				1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */,
 				CF8D5A0A1DC77F7C00C87456 /* SignInWithEmailOrUsernameViewController.swift */,
+				CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */,
+				CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -289,7 +295,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VQGJTU9RXG;
+						DevelopmentTeam = 57R943V29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -416,9 +422,11 @@
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
+				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
 				1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */,
 				1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */,
+				CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */,
 				1EDC86DF1D9BFD65003106E8 /* CommentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
 //////// facebook login
         self.loginFacebookBTN.delegate = self
+        self.navigationController?.isNavigationBarHidden = true
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
         let toekn = FBSDKAccessToken.current()
