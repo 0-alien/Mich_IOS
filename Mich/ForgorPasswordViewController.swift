@@ -10,8 +10,38 @@ import UIKit
 
 class ForgorPasswordViewController: UIViewController {
 
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view4: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view2.layer.shadowOpacity = 0.3;
+        view2.layer.shadowRadius = 1.0;
+        view2.layer.shadowColor = UIColor.black.cgColor;
+        view2.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view2.layer.masksToBounds = false
+        
+        view2.backgroundColor = UIColor (red:193 / 255.0, green:54 / 255.0, blue:24 / 255.0, alpha:1)
+ 
+        view3.layer.shadowOpacity = 0.3;
+        view3.layer.shadowRadius = 1.0;
+        view3.layer.shadowColor = UIColor.black.cgColor;
+        view3.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view3.layer.masksToBounds = false
+        
+        view3.backgroundColor = UIColor (red:193 / 255.0, green:54 / 255.0, blue:24 / 255.0, alpha:1)
+
+        
+        view4.layer.shadowOpacity = 0.3;
+        view4.layer.shadowRadius = 1.0;
+        view4.layer.shadowColor = UIColor.black.cgColor;
+        view4.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view4.layer.masksToBounds = false
+        
+        view4.backgroundColor = UIColor (red:193 / 255.0, green:54 / 255.0, blue:24 / 255.0, alpha:1)
+        
+        
 
         // Do any additional setup after loading the view.
     }
