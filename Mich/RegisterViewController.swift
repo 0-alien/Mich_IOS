@@ -119,7 +119,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if(textField == signUpConfirmPassword || textField == signUpPassword){
-            scrollView.setContentOffset(CGPoint(x:0, y:250), animated: true)
+            scrollView.setContentOffset(CGPoint(x:0, y:200), animated: true)
         }
     }
     
