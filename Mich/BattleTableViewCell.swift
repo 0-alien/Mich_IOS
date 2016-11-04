@@ -1,21 +1,16 @@
 //
-//  PostTableViewCell.swift
+//  BattleTableViewCell.swift
 //  Mich
 //
-//  Created by Gigi Pataraia on 9/26/16.
+//  Created by Gigi Pataraia on 11/3/16.
 //  Copyright © 2016 Gigi. All rights reserved.
 //
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
-   
-    
-    @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var likeCount: UILabel!
-    @IBOutlet weak var commentCount: UILabel!
+class BattleTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

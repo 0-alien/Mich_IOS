@@ -6,12 +6,14 @@
 //  Copyright © 2016 Gigi. All rights reserved.
 //
 
+import AMScrollingNavbar
 import UIKit
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -20,7 +22,12 @@ class MainTabBarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if (viewController is ScrollingNavigationController) {
+            (viewController as! ScrollingNavigationController).showNavbar(animated: false)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

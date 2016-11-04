@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ip0-oT-hBP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ip0-oT-hBP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +15,7 @@
         <scene sceneID="gFj-1a-F0v">
             <objects>
                 <tableViewController id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -21,50 +24,58 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="446"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="739-LF-Yyr" id="Tkg-Kc-yak">
-                                    <frame key="frameInset" width="375" height="445"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_image" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Kb-SUj"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="post_image" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Kb-SUj">
+                                            <rect key="frame" x="0.0" y="87.5" width="375" height="287.5"/>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="aJf-MT-v6m">
+                                            <rect key="frame" x="8" y="8" width="70" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="n3d-BT-r4M"/>
                                                 <constraint firstAttribute="height" constant="70" id="yck-6t-m4m"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-9P-rRT" userLabel="likes">
+                                            <rect key="frame" x="8" y="396.5" width="26" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="Civ-S6-sYM"/>
                                                 <constraint firstAttribute="width" constant="26" id="fiY-zt-3IM"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="like_icon"/>
                                             <connections>
-                                                <action selector="postLiked:" destination="Swl-8U-AoY" eventType="touchUpInside" id="OCe-1Z-Qj9"/>
+                                                <action selector="postLiked:" destination="Swl-8U-AoY" eventType="touchUpInside" id="Oes-tZ-As6"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZf-ms-SJb" userLabel="likeCnt">
+                                            <rect key="frame" x="34" y="405.5" width="15" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ir-qd-pab" userLabel="comments">
+                                            <rect key="frame" x="61" y="396.5" width="26" height="26"/>
                                             <state key="normal" title="Button" image="comments_icon"/>
                                             <connections>
-                                                <segue destination="RKv-My-5O0" kind="show" id="0v3-MP-GHk"/>
+                                                <segue destination="RKv-My-5O0" kind="show" id="xIM-3B-WIT"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5a-55-RsR" userLabel="commetnsCnt">
+                                            <rect key="frame" x="87" y="405.5" width="15.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20m ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1S-og-hAa">
-                                            <frame key="frameInset" minX="86" minY="34" width="281" height="21"/>
+                                            <rect key="frame" x="86" y="34" width="281" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4D-2a-745">
+                                            <rect key="frame" x="86" y="8" width="281" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -93,6 +104,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="commentCount" destination="g5a-55-RsR" id="JZg-eK-zgb"/>
+                                    <outlet property="likeButton" destination="WhC-9P-rRT" id="1rS-qt-0wg"/>
+                                    <outlet property="likeCount" destination="OZf-ms-SJb" id="Q6S-6v-CJe"/>
                                     <outlet property="userImage" destination="aJf-MT-v6m" id="VUS-EK-8X9"/>
                                     <outlet property="userName" destination="E4D-2a-745" id="lGJ-da-4SK"/>
                                 </connections>
@@ -108,9 +122,6 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="XPE-Qd-MwN"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="navBar" destination="OcI-BQ-NtQ" id="h8X-rx-rpF"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIm-7x-tcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,15 +132,15 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="RKv-My-5O0" customClass="CommentsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="eaD-0l-4GF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reuse" rowHeight="74" id="RXD-27-nRH">
-                                <rect key="frame" x="0.0" y="92" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RXD-27-nRH" id="one-Jb-J8a">
-                                    <frame key="frameInset" width="375" height="73"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -148,16 +159,15 @@
             </objects>
             <point key="canvasLocation" x="1109.5999999999999" y="91.304347826086968"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Scrolling Navigation Controller-->
         <scene sceneID="CNo-vh-otJ">
             <objects>
-                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="ip0-oT-hBP" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="ip0-oT-hBP" customClass="ScrollingNavigationController" customModule="AMScrollingNavbar" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="home_icon" selectedImage="active_home_icon" id="O0d-An-d9c">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jzw-k1-yGp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Jzw-k1-yGp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.1134123322147651" blue="0.17647058823529377" alpha="1" colorSpace="calibratedRGB"/>

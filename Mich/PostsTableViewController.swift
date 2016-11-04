@@ -7,46 +7,41 @@
 //
 
 import UIKit
+import AMScrollingNavbar
 
 class PostsTableViewController: UITableViewController {
 
-    //
-    //  MessageTableViewController.swift
-    //  Mich
-    //
-    //  Created by Gigi Pataraia on 9/20/16.
-    //  Copyright © 2016 Gigi. All rights reserved.
-    //
-    
-    @IBOutlet weak var navBar: UINavigationItem!
     var people = [String]()
+    var likeCnts = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         //navigation bars shuashi michis logo
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
         
-        for i in 1 ..< 100 {
+        for i in 1 ..< 20 {
             people.append(String(i))
+            likeCnts.append(0)
         }
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.followScrollView(tableView, delay: 50.0)
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -60,9 +55,10 @@ class PostsTableViewController: UITableViewController {
         
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
-    
-        //cell.userName.text = people[indexPath.row]
         cell.userImage.image = cell.userImage.image!.circle
+        cell.commentCount.text = "0"
+        cell.likeCount.text = String(likeCnts[indexPath.row])
+        cell.likeButton.tag = indexPath.row
         return cell
     }
     
@@ -72,18 +68,6 @@ class PostsTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
-    // Override to support editing the table view.
-    /*override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            people.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }*/
-    
     /*
         // Override to support rearranging the table view.
         override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -107,9 +91,19 @@ class PostsTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         }
-        */
-    @IBAction func postLiked(_ sender: AnyObject) {
-        print("likebi")
+    */
+
+    //Mark: - AMScrolling navigation bar
+    override func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        if let navigationController = navigationController as? ScrollingNavigationController {
+            navigationController.showNavbar(animated: true)
+        }
+        return true
     }
     
+    @IBAction func postLiked(_ sender: Any) {
+        let index = (sender as! UIButton).tag
+        likeCnts[index] = likeCnts[index] + 1
+        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+    }
 }

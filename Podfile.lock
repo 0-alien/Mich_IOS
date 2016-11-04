@@ -1,4 +1,5 @@
 PODS:
+  - AMScrollingNavbar (2.1.2)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -13,16 +14,18 @@ PODS:
     - FBSDKCoreKit
 
 DEPENDENCIES:
+  - AMScrollingNavbar
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
 
 SPEC CHECKSUMS:
+  AMScrollingNavbar: 403b8651052459b433941bd4bc4215a64b992e52
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
   FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
   FBSDKShareKit: 11cbb5a4d7b5fda8143cc95b76188147e6725736
 
-PODFILE CHECKSUM: a31deaaf34a2613177e9fb1cd5d67d1c668939ab
+PODFILE CHECKSUM: 00e4c519457aaaf71307db24c70e8e89e3eecef5
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.1.0.rc.2

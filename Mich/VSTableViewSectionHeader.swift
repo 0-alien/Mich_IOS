@@ -31,8 +31,8 @@ class VSTableViewSectionHeader: UIView {
         seeMoreButton.addTarget(listener, action: selector, for: .touchDown)
         seeMoreButton.setTitle("See More(" + String(seeMoreCount) + ") ", for: .normal)
         seeMoreButton.titleLabel?.font = UIFont(name: "Helvetica", size: 12)
-        seeMoreButton.contentHorizontalAlignment = .right
         
+        seeMoreButton.contentHorizontalAlignment = .right
         self.backgroundColor = UIColor.gray
     }
     

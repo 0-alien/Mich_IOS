@@ -33,6 +33,7 @@
 		1EDDC2571D940877004D1DD5 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2561D940877004D1DD5 /* Camera.storyboard */; };
 		1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2581D9408EB004D1DD5 /* Home.storyboard */; };
 		1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */; };
+		1EE9C9A91DCB4667004393A5 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9C9A81DCB4667004393A5 /* BattleTableViewCell.swift */; };
 		1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C31D8AE53000676CE2 /* images.xcassets */; };
 		1EF192C61D8AE58900676CE2 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
@@ -74,6 +75,7 @@
 		1EDDC2561D940877004D1DD5 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1EDDC2581D9408EB004D1DD5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VS.storyboard; sourceTree = "<group>"; };
+		1EE9C9A81DCB4667004393A5 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		1EF192C31D8AE53000676CE2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				1EC523381DAB98DE0083CFC3 /* VSTableViewController.swift */,
 				1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */,
+				1EE9C9A81DCB4667004393A5 /* BattleTableViewCell.swift */,
 			);
 			name = VS;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
+				1EE9C9A91DCB4667004393A5 /* BattleTableViewCell.swift in Sources */,
 				1EC523391DAB98DE0083CFC3 /* VSTableViewController.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
