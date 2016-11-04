@@ -28,6 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
 //////// facebook login
         self.loginFacebookBTN.delegate = self
+        self.navigationController?.isNavigationBarHidden = true
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
         let toekn = FBSDKAccessToken.current()
@@ -57,6 +58,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             }
         })
         logInButton.center = self.view.center
+
+/*
+        let cons1 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        let cons2 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        let cons3 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.bottom, multiplier: 3.2, constant: 0)
+        logInButton.translatesAutoresizingMaskIntoConstraints = false;
+
+        self.view.addConstraints([cons1, cons2, cons3]);
+*/
         self.view.addSubview(logInButton)
  
     }
