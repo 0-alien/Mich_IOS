@@ -26,6 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
 //////// facebook login
         self.loginFacebookBTN.delegate = self
         self.navigationController?.isNavigationBarHidden = true
