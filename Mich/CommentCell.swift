@@ -9,7 +9,9 @@
 import UIKit
 
 class CommentCell: UITableViewCell {
-    
+
+
+    @IBOutlet weak var ratingImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPicture: UIImageView!
     @IBOutlet weak var answersButton: UIButton!
@@ -25,5 +27,9 @@ class CommentCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setRating(_ rating: Int) {
+        assert(rating >= 1 && rating < 6);
+        self.ratingImage.image = UIImage(named: "rating-" + String(rating))
+    }
 }

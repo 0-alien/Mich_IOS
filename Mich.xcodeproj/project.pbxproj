@@ -36,6 +36,8 @@
 		1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2581D9408EB004D1DD5 /* Home.storyboard */; };
 		1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */; };
 		1EE9C9A91DCB4667004393A5 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9C9A81DCB4667004393A5 /* BattleTableViewCell.swift */; };
+		1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */; };
+		1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */; };
 		1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C31D8AE53000676CE2 /* images.xcassets */; };
 		1EF192C61D8AE58900676CE2 /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
@@ -82,6 +84,8 @@
 		1EDDC2581D9408EB004D1DD5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VS.storyboard; sourceTree = "<group>"; };
 		1EE9C9A81DCB4667004393A5 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
+		1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuViewController.swift; sourceTree = "<group>"; };
+		1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
 		1EF192C31D8AE53000676CE2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1EF192C51D8AE58900676CE2 /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 		1EF192C11D8AE4FF00676CE2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1EF251EA1DF6D693008E15F6 /* Sliding Menu */,
 				1E1035CA1D9E6E0000E890EF /* Profile */,
 				1EC8BFF01D953C2900297A96 /* Home */,
 				1EC8BFEF1D953C2400297A96 /* VS */,
@@ -240,6 +245,7 @@
 				CF8D5A0A1DC77F7C00C87456 /* SignInWithEmailOrUsernameViewController.swift */,
 				CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */,
 				CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */,
+				1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -256,6 +262,14 @@
 				1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */,
 			);
 			name = Cabinet;
+			sourceTree = "<group>";
+		};
+		1EF251EA1DF6D693008E15F6 /* Sliding Menu */ = {
+			isa = PBXGroup;
+			children = (
+				1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */,
+			);
+			name = "Sliding Menu";
 			sourceTree = "<group>";
 		};
 		93D2CA48CA6F10188320A26F /* Pods */ = {
@@ -426,8 +440,10 @@
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
+				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
+				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,

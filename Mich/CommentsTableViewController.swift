@@ -39,6 +39,7 @@ class CommentsTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
             cell.userName.text = String(indexPath.row)
             cell.answersButton.tag = indexPath.row
+            cell.setRating(indexPath.row % 5 + 1)
             return cell
         }
         else {
