@@ -10,18 +10,12 @@ import UIKit
 
 class CommentsTableViewController: UITableViewController {
     
+    var types = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.navigationItem.title = "Comments"
-        
-        //* This cannot be called before viewDidLayoutSubviews(), because the frame is not set before this time
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        for _ in 1 ..< 20 {
+            types.append(0)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,24 +26,30 @@ class CommentsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return types.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if (types[indexPath.row] == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+            cell.userName.text = String(indexPath.row)
+            cell.answersButton.tag = indexPath.row
+            cell.setRating(indexPath.row % 5 + 1)
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as! ReplyCell
+            cell.userName.text = String(indexPath.row)
+            cell.userName.textColor = UIColor.blue
+            return cell
+        }
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -95,5 +95,20 @@ class CommentsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: - Actions
+    
+    @IBAction func showAnswers(_ sender: Any) {
+        let tag = (sender as! UIButton).tag
+        if (tag < types.count - 1 && types[tag + 1] == 1) {
+            return;
+        }
+        for i in 1 ..< 3 {
+            types.insert(1, at: i + tag)
+        }
+        self.tableView.reloadData()
+        let indexPath = IndexPath(row: tag + 2, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .none, animated: true)
+    }
 
 }

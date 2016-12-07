@@ -40,7 +40,7 @@ class PostsTableViewController: UITableViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
-            navigationController.showNavbar(animated: true)
+            navigationController.showNavbar(animated: false)
         }
     }
     

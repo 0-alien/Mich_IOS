@@ -47,7 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+                let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
                 self.present(vc, animated: false, completion: nil)
 
             } else {
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(userToken)
             print(token)
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
             self.present(vc, animated: false, completion: nil)
 
         }
@@ -115,7 +115,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBAction func login(_ sender: AnyObject) {
         
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
             self.present(vc, animated: false, completion: nil)
 
     }
