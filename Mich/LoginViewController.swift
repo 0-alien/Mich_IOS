@@ -26,8 +26,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
-//////// facebook login
+
+        //////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
+
+        
+        
+        //////// facebook login
         self.loginFacebookBTN.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
@@ -42,8 +46,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print("loggedIn")
             
         }
-////////////////////////
-//////// twitter
+
+        ////////////////////////
+
+        //////// twitter
+
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
@@ -58,17 +65,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
                 self.present(alertController, animated: true, completion: nil)
             }
         })
-        logInButton.center = self.view.center
 
-/*
+        
+        self.view.addSubview(logInButton)
         let cons1 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         let cons2 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        let cons3 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.bottom, multiplier: 3.2, constant: 0)
+        let cons3 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN , attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 60)
+        
+       logInButton.addConstraint(NSLayoutConstraint(item: logInButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
+
+        
+
         logInButton.translatesAutoresizingMaskIntoConstraints = false;
 
         self.view.addConstraints([cons1, cons2, cons3]);
-*/
-        self.view.addSubview(logInButton)
+
+        
  
     }
 
@@ -95,12 +107,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         if (FBSDKAccessToken.current() != nil) {
             // User is logged in, do work such as go to next view controller.
-            print("aaaaaaaaaajajajajajajjajajajajajajajajaja")
         }
     }
     
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton) {
+   
     }
     
     

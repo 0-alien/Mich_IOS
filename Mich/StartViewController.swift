@@ -14,7 +14,12 @@ class StartViewController: UIViewController, UINavigationControllerDelegate, UII
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
         
+        let storyboard = UIStoryboard(name: "Camera", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CameraView")
+        self.present(vc, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
