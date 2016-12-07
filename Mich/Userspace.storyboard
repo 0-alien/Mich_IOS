@@ -77,6 +77,9 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="667"/>
+                    <connections>
+                        <outlet property="scrollView" destination="V5o-0L-OrZ" id="z0L-th-ZLS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOT-Fi-O9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
