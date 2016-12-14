@@ -34,6 +34,8 @@ class SlidingMenuViewController: UIViewController {
     */
 
     @IBAction func logOut(_ sender: Any) {
-        print("Let my people go")
+        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(vc, animated: false, completion: nil)
     }
 }
