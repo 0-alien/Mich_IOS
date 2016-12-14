@@ -12,7 +12,8 @@ import FBSDKLoginKit
 import FBSDKShareKit
 import Fabric
 import TwitterKit
-
+import GoogleSignIn
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = FBSDKLoginButton.classForCoder()
         
         Fabric.with([Twitter.self])
+        
+//        FIRApp.configure()
+        
+
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

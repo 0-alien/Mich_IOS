@@ -4,4 +4,6 @@ target 'Mich' do
 	pod 'FBSDKShareKit'
 	pod 'FBSDKLoginKit'
 	pod 'AMScrollingNavbar'
+    pod 'Google/SignIn'
+    pod 'Firebase/Auth'
 end

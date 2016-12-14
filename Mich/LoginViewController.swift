@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 import TwitterKit
-
+import GoogleSignIn
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
@@ -29,6 +29,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         //////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
 
+        
+        // google login
+        
+        
+//        let googleSignButton  = GIDSignInButton();
+//        googleSignButton.frame = CGRect(x: 20, y: 20, width: 20, height: 20);
+//        view.addSubview(googleSignButton);
+        
+        
+        
         
         
         //////// facebook login
