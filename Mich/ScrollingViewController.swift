@@ -16,28 +16,12 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         scrollView.delegate = self
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if (!decelerate) {
-            if (scrollView.contentOffset.x >= 120) {
-                scrollView.setContentOffset(CGPoint(x: 240, y: 0), animated: true)
-            }
-            else {
-                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            }
-        }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = true
     }
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        //print(velocity.x)
-        if (velocity.x > 0) {
-            scrollView.setContentOffset(CGPoint(x: 240, y: 0), animated: true)
-            //print(scrollView.contentOffset.x)
-        }
-        else if (velocity.x < 0){
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            //print(scrollView.contentOffset.x)
-        }
-        
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

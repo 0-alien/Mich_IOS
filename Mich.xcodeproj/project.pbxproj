@@ -320,7 +320,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VQGJTU9RXG;
+						DevelopmentTeam = 57R943V29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -584,7 +584,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -592,7 +592,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -604,7 +604,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -612,7 +612,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
