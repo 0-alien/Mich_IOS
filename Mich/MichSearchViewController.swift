@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MichSearchViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -20,12 +20,9 @@ class MichSearchViewController: UIViewController, UICollectionViewDataSource, UI
     var data = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        currentIndex = 3
         
-        // Register cell classes
-        // self.collectionView!.register(UserPicturesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         
         for _ in 0 ..< 3 {
             for _ in 0 ..< 30 {

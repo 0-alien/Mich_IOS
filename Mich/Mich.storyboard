@@ -1,32 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Notifications-->
+        <scene sceneID="hgB-Wz-eIJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Notifications" id="qT7-2I-EqN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e39-gh-1ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1735" y="613"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="p9q-qd-JLm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Help" id="cMl-yc-xOq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RoH-tB-WCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-710" y="613"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ugf-24-3b5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Settings" id="ZM7-Je-omX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6x-T0-gMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055" y="613"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="UnE-Od-yi0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Messages" id="vFX-A9-z92" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qAf-o8-13f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1367" y="613"/>
+        </scene>
         <!--Mich Search View Controller-->
         <scene sceneID="kq7-ca-lZi">
             <objects>
-                <viewController storyboardIdentifier="Mich" id="YJX-6a-Cms" customClass="MichSearchViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YJX-6a-Cms" customClass="MichSearchViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aMh-4h-DpM"/>
                         <viewControllerLayoutGuide type="bottom" id="cvt-F5-TbB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Pj-hO-WzQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" text="Search Mich" translatesAutoresizingMaskIntoConstraints="NO" id="igU-Rj-Fwe">
-                                <color key="barTintColor" red="1" green="0.19607843137254902" blue="0.11146375868055555" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                <connections>
-                                    <outlet property="delegate" destination="YJX-6a-Cms" id="rJU-41-5R2"/>
-                                </connections>
-                            </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9zx-ns-jmb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="YWe-lo-XNF">
                                     <size key="itemSize" width="117" height="117"/>
@@ -42,7 +70,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80h-GJ-azY"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="80h-GJ-azY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -67,34 +97,55 @@
                         <constraints>
                             <constraint firstItem="9zx-ns-jmb" firstAttribute="leading" secondItem="1Pj-hO-WzQ" secondAttribute="leading" id="W4o-dR-KlP"/>
                             <constraint firstItem="cvt-F5-TbB" firstAttribute="top" secondItem="9zx-ns-jmb" secondAttribute="bottom" id="Yan-sX-bGS"/>
-                            <constraint firstItem="igU-Rj-Fwe" firstAttribute="top" secondItem="aMh-4h-DpM" secondAttribute="bottom" id="hoS-yk-QNf"/>
                             <constraint firstAttribute="trailing" secondItem="9zx-ns-jmb" secondAttribute="trailing" id="kLc-LA-O3B"/>
-                            <constraint firstItem="igU-Rj-Fwe" firstAttribute="leading" secondItem="1Pj-hO-WzQ" secondAttribute="leadingMargin" constant="-16" id="kSL-nH-5qe"/>
-                            <constraint firstItem="9zx-ns-jmb" firstAttribute="top" secondItem="igU-Rj-Fwe" secondAttribute="bottom" id="nwd-WD-po7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="igU-Rj-Fwe" secondAttribute="trailing" constant="-16" id="qFf-gl-745"/>
+                            <constraint firstItem="9zx-ns-jmb" firstAttribute="top" secondItem="aMh-4h-DpM" secondAttribute="bottom" id="u5h-8G-bmb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="mich_icon" selectedImage="active_mich_icon" id="TmR-qP-woc">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="bzj-kr-aEc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageCollection" destination="9zx-ns-jmb" id="WFV-gz-CJh"/>
                         <outlet property="searchDisplayController" destination="bKf-9q-a5T" id="mPc-J6-NBH"/>
+                        <segue destination="qT7-2I-EqN" kind="show" identifier="notifications" id="TG8-91-GOx"/>
+                        <segue destination="vFX-A9-z92" kind="show" identifier="messages" id="nZb-cm-hH4"/>
+                        <segue destination="ZM7-Je-omX" kind="show" identifier="settings" id="dd6-si-jfc"/>
+                        <segue destination="cMl-yc-xOq" kind="show" identifier="help" id="K21-nQ-YCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="bKf-9q-a5T">
                     <connections>
                         <outlet property="delegate" destination="YJX-6a-Cms" id="dsQ-q3-ibY"/>
-                        <outlet property="searchBar" destination="igU-Rj-Fwe" id="AaS-ot-E5q"/>
                         <outlet property="searchContentsController" destination="YJX-6a-Cms" id="AFv-SP-Wc2"/>
                         <outlet property="searchResultsDataSource" destination="YJX-6a-Cms" id="vV9-Oy-6E1"/>
                         <outlet property="searchResultsDelegate" destination="YJX-6a-Cms" id="E3A-0h-4jR"/>
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-386.25" y="36.971830985915496"/>
+            <point key="canvasLocation" x="-1017" y="73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ukc-c7-beN">
+            <objects>
+                <navigationController storyboardIdentifier="Mich" automaticallyAdjustsScrollViewInsets="NO" id="61l-KO-zHa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="mich_icon" selectedImage="active_mich_icon" id="kto-lG-AZN">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pj3-IJ-Jqb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.11372549019607843" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YJX-6a-Cms" kind="relationship" relationship="rootViewController" id="Pdb-mH-fJR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VHt-8A-adZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2044" y="73"/>
         </scene>
     </scenes>
     <resources>

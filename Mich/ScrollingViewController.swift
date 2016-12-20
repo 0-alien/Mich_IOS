@@ -15,7 +15,19 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func hideScrollingMenu() {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    }
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         scrollView.isPagingEnabled = true
     }

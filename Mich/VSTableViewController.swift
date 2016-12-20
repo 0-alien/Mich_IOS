@@ -13,12 +13,17 @@ class VSTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pixel"), for: .default)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showHelp), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,4 +115,26 @@ class VSTableViewController: UITableViewController {
         print("more")
     }
 
+}
+extension VSTableViewController {
+    func showNotifications() {
+        if (tabBarController?.selectedIndex == 1) {
+            performSegue(withIdentifier: "notifications", sender: nil)
+        }
+    }
+    func showMessages() {
+        if (tabBarController?.selectedIndex == 1) {
+            performSegue(withIdentifier: "messages", sender: nil)
+        }
+    }
+    func showSettings() {
+        if (tabBarController?.selectedIndex == 1) {
+            performSegue(withIdentifier: "settings", sender: nil)
+        }
+    }
+    func showHelp() {
+        if (tabBarController?.selectedIndex == 1) {
+            performSegue(withIdentifier: "help", sender: nil)
+        }
+    }
 }
