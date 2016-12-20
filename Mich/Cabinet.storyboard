@@ -34,11 +34,11 @@
                                         <rect key="frame" x="0.0" y="-20" width="383" height="667"/>
                                     </imageView>
                                     <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mich_logo" translatesAutoresizingMaskIntoConstraints="NO" id="iI6-1g-oWP">
-                                        <rect key="frame" x="69" y="29" width="244" height="75"/>
+                                        <rect key="frame" x="69" y="21.5" width="244" height="75"/>
                                         <gestureRecognizers/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfV-cf-m1y">
-                                        <rect key="frame" x="20" y="461" width="292" height="29"/>
+                                        <rect key="frame" x="20" y="283.5" width="292" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="racxa gilaki">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="71" y="125" width="242" height="42"/>
+                                        <rect key="frame" x="71" y="128" width="242" height="42"/>
                                         <state key="normal" image="Image-2"/>
                                         <connections>
                                             <outlet property="delegate" destination="ToO-MH-BtM" id="ROb-I3-Jdm"/>
@@ -143,8 +143,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KtN-QN-U5B" firstAttribute="top" secondItem="eoh-XR-jqw" secondAttribute="bottom" multiplier="32:5" id="0j3-R3-HEG"/>
+                            <constraint firstItem="iI6-1g-oWP" firstAttribute="top" secondItem="eoh-XR-jqw" secondAttribute="bottom" multiplier="32:30" id="2NO-nF-lhS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RfV-cf-m1y" secondAttribute="trailing" constant="51" id="38q-54-CGk"/>
-                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="iI6-1g-oWP" secondAttribute="bottom" multiplier="32:5" id="3N9-8E-Fsy"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="XHl-kV-hYd" secondAttribute="bottom" id="3gP-bg-dye"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="top" secondItem="eoh-XR-jqw" secondAttribute="bottom" constant="-20" id="8ux-91-eTm"/>
                             <constraint firstItem="5j2-B0-Ai0" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="51" id="HP1-4I-391"/>
@@ -155,7 +156,6 @@
                             <constraint firstItem="XHl-kV-hYd" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="-20" id="SWJ-Y9-ift"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="-20" id="UHD-pq-cgo"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="ULf-f4-q1a" secondAttribute="bottom" id="V9r-zu-c75"/>
-                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="KtN-QN-U5B" secondAttribute="bottom" multiplier="32:8" id="XOE-BM-fHy"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="Om0-3g-ms5" secondAttribute="bottom" id="Z8H-Fg-OMy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KtN-QN-U5B" secondAttribute="trailing" constant="50" id="a3Y-yq-kiV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XHl-kV-hYd" secondAttribute="trailing" constant="-20" id="fNp-An-BGU"/>
@@ -165,7 +165,7 @@
                             <constraint firstItem="iI6-1g-oWP" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="49" id="pOL-wd-CJj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5j2-B0-Ai0" secondAttribute="trailing" constant="51" id="w58-Ww-RV7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ULf-f4-q1a" secondAttribute="trailing" constant="-20" id="ztn-K5-7bS"/>
-                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="RfV-cf-m1y" secondAttribute="bottom" multiplier="32:23.5" id="zx6-e8-RY7"/>
+                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="RfV-cf-m1y" secondAttribute="bottom" multiplier="32:15" id="zx6-e8-RY7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sign In" id="fTN-eR-rZG"/>
