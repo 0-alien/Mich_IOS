@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserPicturesCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -22,12 +22,9 @@ class UserPicturesCollectionViewController: UIViewController, UICollectionViewDa
     var data = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentIndex = 4
+        
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        // self.collectionView!.register(UserPicturesCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         for _ in 0 ..< 3 {
             for _ in 0 ..< 30 {
@@ -35,8 +32,6 @@ class UserPicturesCollectionViewController: UIViewController, UICollectionViewDa
             }
         }
         profilePicture.image = profilePicture.image?.circle
-        // Do any additional setup after loading the view.
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,5 +104,4 @@ class UserPicturesCollectionViewController: UIViewController, UICollectionViewDa
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: imageSideLength, height: imageSideLength)
     }
-    
 }

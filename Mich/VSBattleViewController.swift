@@ -27,8 +27,9 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         second.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
         navBarExtension.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
         // Do any additional setup after loading the view.
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,5 +60,5 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.label.text = String(indexPath.row)
         return cell
     }
-
 }
+

@@ -25,6 +25,8 @@
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
 		1E614ABB1DDC6A21006578B2 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */; };
+		1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8015C21E07F951001166E1 /* Menu.storyboard */; };
+		1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */; };
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EC523391DAB98DE0083CFC3 /* VSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC523381DAB98DE0083CFC3 /* VSTableViewController.swift */; };
@@ -75,6 +77,8 @@
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
 		1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		1E8015C21E07F951001166E1 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuPresentingViewController.swift; sourceTree = "<group>"; };
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC523381DAB98DE0083CFC3 /* VSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 				1EDDC2561D940877004D1DD5 /* Camera.storyboard */,
 				1EDDC2581D9408EB004D1DD5 /* Home.storyboard */,
 				1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */,
+				1E8015C21E07F951001166E1 /* Menu.storyboard */,
 			);
 			name = Cabinet;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */,
+				1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */,
 			);
 			name = "Sliding Menu";
 			sourceTree = "<group>";
@@ -323,7 +329,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VQGJTU9RXG;
+						DevelopmentTeam = 57R943V29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -358,6 +364,7 @@
 				1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */,
 				CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */,
 				1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */,
+				1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */,
 				1E1E50771D8AB3D0002D1C24 /* Assets.xcassets in Resources */,
 				1E1E50751D8AB3D0002D1C24 /* Main.storyboard in Resources */,
 				1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */,
@@ -444,6 +451,7 @@
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
+				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
@@ -588,7 +596,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -596,7 +604,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -608,7 +616,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -616,7 +624,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

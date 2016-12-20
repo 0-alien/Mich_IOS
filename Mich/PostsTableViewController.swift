@@ -27,6 +27,14 @@ class PostsTableViewController: UITableViewController {
             people.append(String(i))
             likeCnts.append(0)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showHelp), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,5 +122,28 @@ class PostsTableViewController: UITableViewController {
         let index = (sender as! UIButton).tag
         likeCnts[index] = likeCnts[index] + 1
         self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+    }
+}
+
+extension PostsTableViewController {
+    func showNotifications() {
+        if (tabBarController?.selectedIndex == 0) {
+            performSegue(withIdentifier: "notifications", sender: nil)
+        }
+    }
+    func showMessages() {
+        if (tabBarController?.selectedIndex == 0) {
+            performSegue(withIdentifier: "messages", sender: nil)
+        }
+    }
+    func showSettings() {
+        if (tabBarController?.selectedIndex == 0) {
+            performSegue(withIdentifier: "settings", sender: nil)
+        }
+    }
+    func showHelp() {
+        if (tabBarController?.selectedIndex == 0) {
+            performSegue(withIdentifier: "help", sender: nil)
+        }
     }
 }

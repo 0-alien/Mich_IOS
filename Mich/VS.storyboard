@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Eq-Ic-lyg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Eq-Ic-lyg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,17 +60,20 @@
                             <outlet property="delegate" destination="Bgw-Eb-yyH" id="ACu-e2-DJN"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="WIq-fe-sFE">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
                     <navigationItem key="navigationItem" title="VS" id="0mJ-WF-B2h">
                         <barButtonItem key="backBarButtonItem" title="Battles" id="wNd-PS-3Jy"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="mv4-sU-kf7" kind="show" identifier="notifications" id="OgP-N4-YUU"/>
+                        <segue destination="UyC-aL-DOv" kind="show" identifier="messages" id="NZF-7g-psl"/>
+                        <segue destination="DxO-Ve-HPN" kind="show" identifier="settings" id="Oag-3A-KNh"/>
+                        <segue destination="PjF-Tp-WHu" kind="show" identifier="help" id="rAG-Jx-y1B"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GY8-J3-RmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-570" y="-416"/>
+            <point key="canvasLocation" x="-570.39999999999998" y="-416.0419790104948"/>
         </scene>
         <!--First VS Second-->
         <scene sceneID="5Yi-MC-JSO">
@@ -227,10 +230,11 @@
             <objects>
                 <navigationController storyboardIdentifier="VS" id="4Eq-Ic-lyg" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="QhF-Wp-VZa">
+                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="PQh-Vl-akM">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" shadowImage="TransparentPixel" id="BUQ-Wa-7gq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -251,6 +255,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ws8-ci-gKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1482" y="-416"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="wZg-Ab-ha2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Notifications" id="mv4-sU-kf7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wab-Ja-o7V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1078" y="10"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="kSl-fK-v8f">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Help" id="PjF-Tp-WHu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lxd-Ey-Prv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="10"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="CuK-gd-ySh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Settings" id="DxO-Ve-HPN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmO-fQ-FYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433" y="10"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="P62-E9-riO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Messages" id="UyC-aL-DOv" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqH-rp-HS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-772" y="10"/>
         </scene>
     </scenes>
     <resources>

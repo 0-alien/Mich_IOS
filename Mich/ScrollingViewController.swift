@@ -15,29 +15,25 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if (!decelerate) {
-            if (scrollView.contentOffset.x >= 120) {
-                scrollView.setContentOffset(CGPoint(x: 240, y: 0), animated: true)
-            }
-            else {
-                scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            }
-        }
+    func hideScrollingMenu() {
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        //print(velocity.x)
-        if (velocity.x > 0) {
-            scrollView.setContentOffset(CGPoint(x: 240, y: 0), animated: true)
-            //print(scrollView.contentOffset.x)
-        }
-        else if (velocity.x < 0){
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            //print(scrollView.contentOffset.x)
-        }
-        
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = true
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
