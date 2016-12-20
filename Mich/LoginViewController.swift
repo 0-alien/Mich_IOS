@@ -19,23 +19,58 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     @IBOutlet var FullView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var usernameTXT: UITextField!
+    @IBOutlet weak var passwordTXT: UITextField!
 
     @IBOutlet weak var loginFacebookBTN: FBSDKLoginButton!
     
-
+//////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        usernameTXT.layer.shadowOpacity = 0.3;
+        usernameTXT.layer.shadowRadius = 1.0;
+        usernameTXT.layer.shadowColor = UIColor.black.cgColor;
+        usernameTXT.layer.shadowOffset = CGSize(width: -4, height: 4)
+        usernameTXT.layer.masksToBounds = false
+        
+        
+        passwordTXT.layer.shadowOpacity = 0.3;
+        passwordTXT.layer.shadowRadius = 1.0;
+        passwordTXT.layer.shadowColor = UIColor.black.cgColor;
+        passwordTXT.layer.shadowOffset = CGSize(width: -4, height: 4)
+        passwordTXT.layer.masksToBounds = false
 
-        //////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
+        
+        
+        usernameTXT.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:0.9)
+        usernameTXT.attributedPlaceholder = NSAttributedString(string:"Username", attributes:[NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 1)])
+        
+        passwordTXT.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:0.9)
+        passwordTXT.attributedPlaceholder = NSAttributedString(string:"Password", attributes:[NSForegroundColorAttributeName: UIColor(red: 1, green: 1, blue: 1, alpha: 1)])
+        
+        
 
         
         // google login
         
         
-//        let googleSignButton  = GIDSignInButton();
-//        googleSignButton.frame = CGRect(x: 20, y: 20, width: 20, height: 20);
-//        view.addSubview(googleSignButton);
+        let googleSignButton  = GIDSignInButton();
+        view.addSubview(googleSignButton);
+        
+        self.view.addSubview(googleSignButton)
+        let consG1 = NSLayoutConstraint(item: googleSignButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
+        let consG2 = NSLayoutConstraint(item: googleSignButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
+        let consG3 = NSLayoutConstraint(item: googleSignButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN , attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 95)
+        
+        googleSignButton.addConstraint(NSLayoutConstraint(item: googleSignButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
+        
+        
+        
+        googleSignButton.translatesAutoresizingMaskIntoConstraints = false;
+        
+        self.view.addConstraints([consG1, consG2, consG3]);
         
         
         
@@ -80,7 +115,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         self.view.addSubview(logInButton)
         let cons1 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         let cons2 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        let cons3 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN , attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 60)
+        let cons3 = NSLayoutConstraint(item: logInButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: loginFacebookBTN , attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 40)
         
        logInButton.addConstraint(NSLayoutConstraint(item: logInButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 30))
 
@@ -89,6 +124,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         logInButton.translatesAutoresizingMaskIntoConstraints = false;
 
         self.view.addConstraints([cons1, cons2, cons3]);
+
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
 
         
  
@@ -143,5 +183,38 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
 
 
+    ///////////////////// keyboard code
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if(textField == usernameTXT || textField == passwordTXT){
+            scrollView.setContentOffset(CGPoint(x:0, y:100), animated: true)
+        }
+        if(textField == passwordTXT){
+            scrollView.setContentOffset(CGPoint(x:0, y:500), animated: true)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if(textField == usernameTXT || textField == passwordTXT){
+            scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
+            
+        }
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
+    /////////////////////
+    
 
 }

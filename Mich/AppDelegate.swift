@@ -25,10 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = FBSDKLoginButton.classForCoder()
         
         Fabric.with([Twitter.self])
+/*
         
-//        FIRApp.configure()
+        FIRApp.configure()
         
-
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+*/
 
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }

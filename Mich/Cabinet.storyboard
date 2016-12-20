@@ -56,7 +56,7 @@
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
+                                                <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -64,18 +64,48 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="71" y="208" width="242" height="42"/>
+                                        <rect key="frame" x="71" y="125" width="242" height="42"/>
                                         <state key="normal" image="Image-2"/>
                                         <connections>
                                             <outlet property="delegate" destination="ToO-MH-BtM" id="ROb-I3-Jdm"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-B0-00R">
+                                        <rect key="frame" x="71" y="474" width="241" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="yNq-XX-O37"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ToO-MH-BtM" id="fA3-HM-tVi"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-WP-ILZ">
+                                        <rect key="frame" x="71" y="413" width="241" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="sTg-4x-3Sf"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ToO-MH-BtM" id="e2Y-3j-xaI"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="LYl-Et-IsO" firstAttribute="leading" secondItem="XHl-kV-hYd" secondAttribute="leading" id="61G-aH-6uE"/>
                                     <constraint firstAttribute="bottom" secondItem="LYl-Et-IsO" secondAttribute="bottom" id="FlA-n7-Czi"/>
+                                    <constraint firstItem="5j2-B0-Ai0" firstAttribute="top" secondItem="j2d-B0-00R" secondAttribute="bottom" constant="22" id="GYp-gm-coc"/>
+                                    <constraint firstItem="4Pl-WP-ILZ" firstAttribute="leading" secondItem="5j2-B0-Ai0" secondAttribute="leading" id="LRE-0G-rTC"/>
+                                    <constraint firstItem="j2d-B0-00R" firstAttribute="top" secondItem="4Pl-WP-ILZ" secondAttribute="bottom" constant="26" id="Q3p-6Y-oB2"/>
+                                    <constraint firstItem="j2d-B0-00R" firstAttribute="trailing" secondItem="5j2-B0-Ai0" secondAttribute="trailing" id="UyO-OR-Yr9"/>
                                     <constraint firstItem="LYl-Et-IsO" firstAttribute="height" secondItem="XHl-kV-hYd" secondAttribute="height" id="dCn-vC-Dzh"/>
+                                    <constraint firstItem="j2d-B0-00R" firstAttribute="leading" secondItem="5j2-B0-Ai0" secondAttribute="leading" id="gRW-nA-mIK"/>
                                     <constraint firstItem="LYl-Et-IsO" firstAttribute="width" secondItem="XHl-kV-hYd" secondAttribute="width" id="ifE-5w-oEx"/>
+                                    <constraint firstItem="4Pl-WP-ILZ" firstAttribute="trailing" secondItem="5j2-B0-Ai0" secondAttribute="trailing" id="oHX-kv-fHF"/>
                                     <constraint firstAttribute="trailing" secondItem="LYl-Et-IsO" secondAttribute="trailing" id="v89-yZ-pXb"/>
                                     <constraint firstItem="LYl-Et-IsO" firstAttribute="top" secondItem="XHl-kV-hYd" secondAttribute="top" constant="-20" id="xLP-jc-Vag"/>
                                 </constraints>
@@ -125,7 +155,7 @@
                             <constraint firstItem="XHl-kV-hYd" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="-20" id="SWJ-Y9-ift"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="leading" secondItem="Yq0-sV-R7C" secondAttribute="leadingMargin" constant="-20" id="UHD-pq-cgo"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="ULf-f4-q1a" secondAttribute="bottom" id="V9r-zu-c75"/>
-                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="KtN-QN-U5B" secondAttribute="bottom" multiplier="32:12" id="XOE-BM-fHy"/>
+                            <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="KtN-QN-U5B" secondAttribute="bottom" multiplier="32:8" id="XOE-BM-fHy"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="Om0-3g-ms5" secondAttribute="bottom" id="Z8H-Fg-OMy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KtN-QN-U5B" secondAttribute="trailing" constant="50" id="a3Y-yq-kiV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XHl-kV-hYd" secondAttribute="trailing" constant="-20" id="fNp-An-BGU"/>
@@ -142,8 +172,11 @@
                     <connections>
                         <outlet property="FullView" destination="Yq0-sV-R7C" id="QiQ-Vc-WnX"/>
                         <outlet property="loginFacebookBTN" destination="KtN-QN-U5B" id="THd-Qg-e4s"/>
+                        <outlet property="passwordTXT" destination="j2d-B0-00R" id="KUg-BO-Twu"/>
                         <outlet property="scrollView" destination="XHl-kV-hYd" id="03d-Ib-Dj3"/>
+                        <outlet property="signInButton" destination="5j2-B0-Ai0" id="rRy-Tl-BVz"/>
                         <outlet property="smallSignUpView" destination="Om0-3g-ms5" id="tXU-Vj-Wml"/>
+                        <outlet property="usernameTXT" destination="4Pl-WP-ILZ" id="8cr-xy-7rA"/>
                         <outlet property="view" destination="Yq0-sV-R7C" id="kH5-eL-CXy"/>
                     </connections>
                 </viewController>
