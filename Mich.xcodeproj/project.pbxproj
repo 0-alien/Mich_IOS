@@ -19,6 +19,7 @@
 		1E1E50771D8AB3D0002D1C24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1E50761D8AB3D0002D1C24 /* Assets.xcassets */; };
 		1E1E507A1D8AB3D0002D1C24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1E50781D8AB3D0002D1C24 /* LaunchScreen.storyboard */; };
 		1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */; };
+		1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */; };
 		1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */; };
 		1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */; };
 		1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */; };
@@ -28,6 +29,7 @@
 		1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8015C21E07F951001166E1 /* Menu.storyboard */; };
 		1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */; };
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
+		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EC523391DAB98DE0083CFC3 /* VSTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC523381DAB98DE0083CFC3 /* VSTableViewController.swift */; };
 		1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8BFF11D953C7500297A96 /* StartViewController.swift */; };
@@ -71,6 +73,7 @@
 		1E1E50791D8AB3D0002D1C24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E1E507B1D8AB3D0002D1C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleViewController.swift; sourceTree = "<group>"; };
+		1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RoundShape.swift"; sourceTree = "<group>"; };
 		1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSearchViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		1E8015C21E07F951001166E1 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuPresentingViewController.swift; sourceTree = "<group>"; };
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
+		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC523381DAB98DE0083CFC3 /* VSTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewController.swift; sourceTree = "<group>"; };
 		1EC8BFF11D953C7500297A96 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */,
+				1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */,
+				1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -322,7 +328,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Gigi;
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
@@ -454,9 +460,11 @@
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
+				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
+				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
