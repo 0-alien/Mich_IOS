@@ -14,14 +14,17 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     let spaceing : CGFloat = 1.0
     let itemsPerRow : CGFloat = 3.0
     var imageSideLength : CGFloat = 0.0
+    var searchController: UISearchController!
+    var resultsShower: SearchResultsTableViewController!
     
     @IBOutlet weak var imageCollection: UICollectionView!
-    
     var data = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 3
-        
+        //configureSearchController()
+        definesPresentationContext = true
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         
         for _ in 0 ..< 3 {
@@ -29,35 +32,42 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
                 data.append("login_background")
             }
         }
+        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: SearchResultsTableViewController.storyboardID) as! SearchResultsTableViewController
+        searchController = UISearchController(searchResultsController: resultsShower)
+        searchController.searchResultsUpdater = resultsShower
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Search Mich"
+        //searchController.delegate = self
+        searchController.searchBar.sizeToFit()
+        //definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.navigationItem.titleView = searchController.searchBar
         // Do any additional setup after loading the view.
         
     }
     
+    /*private func configureSearchController() {
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search Mich"
+        self.searchController.delegate = self
+        self.searchController.searchBar.sizeToFit()
+        self.navigationItem.titleView = searchController.searchBar
+        self.definesPresentationContext = true
+        self.searchController.hidesNavigationBarDuringPresentation = true
+    }*/
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using [segue destinationViewController].
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     // MARK: UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return data.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,36 +78,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         return cell
     }
     
-    // MARK: UICollectionViewDelegate
-    
-    /*
-     // Uncomment this method to specify if the specified item should be highlighted during tracking
-     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment this method to specify if the specified item should be selected
-     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-     return true
-     }
-     */
-    
-    /*
-     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-     return false
-     }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
-     */
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {

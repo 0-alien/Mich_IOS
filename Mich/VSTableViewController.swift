@@ -15,7 +15,7 @@ class VSTableViewController: UITableViewController {
         self.tableView.sectionHeaderHeight = 30
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pixel"), for: .default)
-        
+        self.navigationController?.navigationBar.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)

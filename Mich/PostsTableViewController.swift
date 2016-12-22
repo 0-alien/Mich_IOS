@@ -39,17 +39,16 @@ class PostsTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.showNavbar(animated: false)
         }
+        super.viewWillDisappear(animated)
     }
     
     
