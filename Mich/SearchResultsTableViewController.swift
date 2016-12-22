@@ -41,7 +41,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         filtered.removeAll()
         if let num = Int(pat!) {
             for i in data {
-                if (i > 0 && i % num == 0) {
+                if (num > 0 && i % num == 0) {
                     filtered.append(i)
                 }
             }
