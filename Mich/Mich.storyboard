@@ -41,6 +41,14 @@
             </objects>
             <point key="canvasLocation" x="-1334" y="613"/>
         </scene>
+        <!--Photo-->
+        <scene sceneID="may-nM-mXZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="Photo" id="yos-CW-6Kk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilH-7B-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="-339"/>
+        </scene>
         <!--Mich Search View Controller-->
         <scene sceneID="kq7-ca-lZi">
             <objects>
@@ -84,6 +92,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="photo" destination="80h-GJ-azY" id="Xo2-t0-hRN"/>
+                                            <segue destination="yos-CW-6Kk" kind="show" id="q7e-gt-x65"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -154,7 +163,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cT7-m5-utB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-134" y="72"/>
+            <point key="canvasLocation" x="18" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ukc-c7-beN">

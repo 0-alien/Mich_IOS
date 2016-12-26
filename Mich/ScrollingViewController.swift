@@ -19,9 +19,18 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.enableScrolling), name: NSNotification.Name(rawValue: "enableScrolling"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.disableScrolling), name: NSNotification.Name(rawValue: "disableScrolling"), object: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func disableScrolling() {
+        scrollView.isScrollEnabled = false
+    }
+    func enableScrolling() {
+        scrollView.isScrollEnabled = true
     }
     
     func hideScrollingMenu() {

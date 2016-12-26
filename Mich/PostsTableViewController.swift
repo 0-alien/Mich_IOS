@@ -49,6 +49,7 @@ class PostsTableViewController: UITableViewController {
             navigationController.showNavbar(animated: false)
         }
         super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
     }
     
     
@@ -84,31 +85,7 @@ class PostsTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    /*
-        // Override to support rearranging the table view.
-        override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-        }
-        */
     
-    /*
-        // Override to support conditional rearranging of the table view.
-        override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-        }
-        */
-    
-    /*
-        // MARK: - Navigation
-     
-        // In a storyboard-based application, you will often want to do a little preparation before navigation
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        }
-    */
-
     //Mark: - AMScrolling navigation bar
     override func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         if let navigationController = navigationController as? ScrollingNavigationController {
@@ -144,5 +121,9 @@ extension PostsTableViewController {
         if (tabBarController?.selectedIndex == 0) {
             performSegue(withIdentifier: "help", sender: nil)
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
     }
 }
