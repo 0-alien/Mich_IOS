@@ -127,7 +127,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
         
@@ -186,11 +186,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     ///////////////////// keyboard code
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if(textField == usernameTXT || textField == passwordTXT){
+        if(textField == usernameTXT){
             scrollView.setContentOffset(CGPoint(x:0, y:100), animated: true)
         }
         if(textField == passwordTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:500), animated: true)
+            scrollView.setContentOffset(CGPoint(x:0, y:110), animated: true)
         }
     }
     
