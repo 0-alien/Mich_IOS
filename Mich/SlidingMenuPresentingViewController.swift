@@ -13,7 +13,6 @@ class SlidingMenuPresentingViewController: UIViewController {
     var currentIndex = 0
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
@@ -48,5 +47,15 @@ class SlidingMenuPresentingViewController: UIViewController {
         if (tabBarController?.selectedIndex == currentIndex) {
             performSegue(withIdentifier: "help", sender: nil)
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
     }
 }

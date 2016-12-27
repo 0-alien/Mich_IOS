@@ -42,21 +42,8 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         //definesPresentationContext = true
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar
-        // Do any additional setup after loading the view.
-        
     }
     
-    /*private func configureSearchController() {
-        self.searchController = UISearchController(searchResultsController: nil)
-        self.searchController.searchResultsUpdater = self
-        self.searchController.dimsBackgroundDuringPresentation = false
-        self.searchController.searchBar.placeholder = "Search Mich"
-        self.searchController.delegate = self
-        self.searchController.searchBar.sizeToFit()
-        self.navigationItem.titleView = searchController.searchBar
-        self.definesPresentationContext = true
-        self.searchController.hidesNavigationBarDuringPresentation = true
-    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

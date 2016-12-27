@@ -10,10 +10,23 @@ import AMScrollingNavbar
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-
+    var savedIndex: Int = 0
+    var activeImages = [UIImage]()
+    var inactiveImages = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        activeImages.append(UIImage(named: "active_home_icon")!)
+        activeImages.append(UIImage(named: "active_vs_icon")!)
+        activeImages.append(UIImage(named: "active_camera_icon")!)
+        activeImages.append(UIImage(named: "active_mich_icon")!)
+        activeImages.append(UIImage(named: "active_user_icon")!)
+        inactiveImages.append(UIImage(named: "home_icon")!)
+        inactiveImages.append(UIImage(named: "vs_icon")!)
+        inactiveImages.append(UIImage(named: "camera_icon")!)
+        inactiveImages.append(UIImage(named: "mich_icon")!)
+        inactiveImages.append(UIImage(named: "user_icon")!)
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +39,14 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         if (viewController is ScrollingNavigationController) {
             (viewController as! ScrollingNavigationController).showNavbar(animated: false)
         }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if (viewController is StartViewController) {
+            
+            return false
+        }
+        return true;
     }
     
     /*
