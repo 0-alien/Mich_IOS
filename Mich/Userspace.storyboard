@@ -77,12 +77,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="667"/>
                     <connections>
+                        <outlet property="leftView" destination="DvK-oR-2lj" id="PGC-3u-he4"/>
+                        <outlet property="rightView" destination="lvm-8Z-5ib" id="Qbo-Z0-uoc"/>
                         <outlet property="scrollView" destination="V5o-0L-OrZ" id="z0L-th-ZLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOT-Fi-O9U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2827" y="-2160"/>
+            <point key="canvasLocation" x="-2827.1999999999998" y="-2160.2698650674665"/>
         </scene>
         <!--Home-->
         <scene sceneID="pc5-R2-8v7">
@@ -179,7 +181,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89X-vo-FlF">
-                                        <rect key="frame" x="163" y="122" width="74" height="26.5"/>
+                                        <rect key="frame" x="163" y="122" width="74" height="27"/>
                                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -196,16 +198,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-yF-2K9">
-                                        <rect key="frame" x="0.0" y="198.5" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="199" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_notif" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-zq-0kb">
-                                                <rect key="frame" x="5" y="12.5" width="20" height="15"/>
+                                                <rect key="frame" x="5" y="13" width="20" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="6ws-x0-2o9"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-Xu-A5F">
-                                                <rect key="frame" x="30" y="11.5" width="89" height="17.5"/>
+                                                <rect key="frame" x="30" y="11" width="89" height="18"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -231,7 +233,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-LC-ciK" userLabel="Messenger">
-                                        <rect key="frame" x="0.0" y="241.5" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="242" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_message" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-KO-pwS">
                                                 <rect key="frame" x="5" y="14" width="20" height="12"/>
@@ -240,7 +242,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQT-6X-8q1">
-                                                <rect key="frame" x="30" y="11" width="63.5" height="17.5"/>
+                                                <rect key="frame" x="30" y="11" width="64" height="18"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -266,7 +268,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-mK-6yx" userLabel="Settings">
-                                        <rect key="frame" x="0.0" y="284.5" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="285" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_settings" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-DJ-FOF">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -275,7 +277,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHB-yc-DPA">
-                                                <rect key="frame" x="30" y="11.5" width="56" height="17.5"/>
+                                                <rect key="frame" x="30" y="11" width="56" height="18"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -301,7 +303,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-T2-iJC" userLabel="Help">
-                                        <rect key="frame" x="0.0" y="327.5" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="328" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_help" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-Iw-wlo">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -310,7 +312,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYE-4V-NI7">
-                                                <rect key="frame" x="30" y="11" width="32.5" height="17.5"/>
+                                                <rect key="frame" x="30" y="11" width="33" height="18"/>
                                                 <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

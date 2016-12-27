@@ -12,6 +12,9 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var leftView: UIView!
+    @IBOutlet weak var rightView: UIView!
+    var tap: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
@@ -21,6 +24,8 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.enableScrolling), name: NSNotification.Name(rawValue: "enableScrolling"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.disableScrolling), name: NSNotification.Name(rawValue: "disableScrolling"), object: nil)
+        tap = UITapGestureRecognizer(target: self, action: #selector(ScrollingViewController.hideScrollingMenu))
+        leftView.addGestureRecognizer(tap)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -35,6 +40,7 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     
     func hideScrollingMenu() {
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        tap.isEnabled = false
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -43,6 +49,12 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollView.isPagingEnabled = false
+        if (scrollView.contentOffset.x == rightView.frame.width) {
+            tap.isEnabled = true
+        }
+        else if (scrollView.contentOffset.x == 0) {
+            tap.isEnabled = false
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

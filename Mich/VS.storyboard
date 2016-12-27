@@ -27,14 +27,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="thP-WT-lJB">
-                                            <rect key="frame" x="8" y="22.5" width="80" height="80"/>
+                                            <rect key="frame" x="8" y="23" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="DIv-RZ-LMK"/>
                                                 <constraint firstAttribute="height" constant="80" id="uBI-PP-4m0"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second_user" translatesAutoresizingMaskIntoConstraints="NO" id="Gdy-Oz-ogm">
-                                            <rect key="frame" x="287" y="22.5" width="80" height="80"/>
+                                            <rect key="frame" x="287" y="23" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="KW2-uF-miE"/>
                                                 <constraint firstAttribute="height" constant="80" id="nd6-X2-fRe"/>
