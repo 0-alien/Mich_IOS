@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_background" translatesAutoresizingMaskIntoConstraints="NO" id="dnl-F7-ra0">
-                                <rect key="frame" x="-11" y="0.0" width="390" height="667"/>
+                                <rect key="frame" x="-11" y="-44" width="390" height="711"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlU-r3-dgf">
                                 <rect key="frame" x="48" y="98" width="164" height="27"/>
@@ -579,7 +579,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="cAV-0H-7Sd" secondAttribute="trailing" constant="-20" id="dJC-Or-k6N"/>
                             <constraint firstItem="IjE-vZ-Y6K" firstAttribute="leading" secondItem="2Rw-ah-Gzi" secondAttribute="leadingMargin" constant="-20" id="ddJ-Bt-UeW"/>
                             <constraint firstItem="zAx-2Q-HRM" firstAttribute="top" secondItem="6MH-ed-kLa" secondAttribute="bottom" multiplier="32:14.5" id="fmN-QJ-b1a"/>
-                            <constraint firstItem="dnl-F7-ra0" firstAttribute="top" secondItem="yuu-n9-KzY" secondAttribute="bottom" constant="-20" id="g9c-VV-ezh"/>
+                            <constraint firstItem="dnl-F7-ra0" firstAttribute="top" secondItem="yuu-n9-KzY" secondAttribute="bottom" constant="-64" id="g9c-VV-ezh"/>
                             <constraint firstItem="e2v-0E-j0y" firstAttribute="leading" secondItem="2Rw-ah-Gzi" secondAttribute="leadingMargin" constant="32" id="gIx-pr-RGP"/>
                             <constraint firstItem="zAx-2Q-HRM" firstAttribute="top" secondItem="myb-bg-sYc" secondAttribute="bottom" id="hQp-u3-G66"/>
                             <constraint firstItem="HRy-un-3mb" firstAttribute="leading" secondItem="mlU-r3-dgf" secondAttribute="leading" id="hua-bo-Ge7"/>
@@ -678,15 +678,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register_background" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-3U-ija">
                                 <rect key="frame" x="-4" y="-44" width="383" height="711"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fing Your Acount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-NG-J1u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Acount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u93-NG-J1u">
                                 <rect key="frame" x="49" y="98" width="225" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter you email or username adress associated with your acount" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYJ-qQ-UVt">
-                                <rect key="frame" x="49" y="209" width="310" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter you email or username adress associated with your acount" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYJ-qQ-UVt">
+                                <rect key="frame" x="49" y="218.5" width="310" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
