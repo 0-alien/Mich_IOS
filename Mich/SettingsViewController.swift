@@ -90,24 +90,41 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func passwordBTN(_ sender: Any) {
-    
+        self.view.layoutIfNeeded()
+        
         if(heightCons.constant == 0){
-            heightCons.constant = 200;
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.heightCons.constant = 200;
+                self.view.layoutIfNeeded()
+            })
             ressetPassworBTN.isHidden = false;
+
         }else{
-            heightCons.constant = 0;
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.heightCons.constant = 0;
+                self.view.layoutIfNeeded()
+            })
             ressetPassworBTN.isHidden = true;
         }
     }
 
     @IBAction func changeEmailBTN(_ sender: Any) {
   
+        self.view.layoutIfNeeded() // force any pending operations to finish
+        
+        
         
         if(emailHeightCons.constant == 0){
-            emailHeightCons.constant = 130;
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.emailHeightCons.constant = 130;
+                self.view.layoutIfNeeded()
+            })
             saveBTN.isHidden = false;
         }else{
-            emailHeightCons.constant = 0;
+            UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                self.emailHeightCons.constant = 0;
+                self.view.layoutIfNeeded()
+            })
             saveBTN.isHidden = true;
         }
     }
