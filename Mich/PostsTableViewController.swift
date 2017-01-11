@@ -9,7 +9,7 @@
 import UIKit
 import AMScrollingNavbar
 
-class PostsTableViewController: UITableViewController {
+class PostsTableViewController: UITableViewController, LikesListener {
 
     var people = [String]()
     var likeCnts = [Int]()
@@ -69,13 +69,17 @@ class PostsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         cell.userImage.image = cell.userImage.image!.circle
         cell.commentCount.text = "0"
         cell.likeCount.text = String(likeCnts[indexPath.row])
         cell.likeButton.tag = indexPath.row
+        cell.index = indexPath.row
+        let tap = UITapGestureRecognizer(target: cell, action: #selector(PostTableViewCell.postDoubleTapped))
+        tap.numberOfTapsRequired = 2
+        cell.postImage.addGestureRecognizer(tap)
+        cell.likeDelegate = self
         return cell
     }
     
@@ -94,10 +98,19 @@ class PostsTableViewController: UITableViewController {
         return true
     }
     
-    @IBAction func postLiked(_ sender: Any) {
-        let index = (sender as! UIButton).tag
-        likeCnts[index] = likeCnts[index] + 1
-        self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .none)
+    func postLiked(postIndex: Int, showAnimation: Bool) {
+        likeCnts[postIndex] = likeCnts[postIndex] + 1
+        self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
+        if (showAnimation) {
+            let cell = self.tableView.cellForRow(at: IndexPath(row: postIndex, section: 0)) as! PostTableViewCell
+            let img = UIImageView(image: UIImage(named: "mich_logo_centered"))
+            img.frame = cell.frame.insetBy(dx: cell.frame.size.width / 4, dy: cell.frame.size.height / 4)
+            img.contentMode = UIViewContentMode.center
+            self.view.addSubview(img)
+            UIView.animate(withDuration: 1, animations: {
+                img.alpha = 0
+            })
+        }
     }
 }
 
