@@ -26,6 +26,7 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.disableScrolling), name: NSNotification.Name(rawValue: "disableScrolling"), object: nil)
         tap = UITapGestureRecognizer(target: self, action: #selector(ScrollingViewController.hideScrollingMenu))
         leftView.addGestureRecognizer(tap)
+        tap.isEnabled = false
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -40,7 +41,6 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     
     func hideScrollingMenu() {
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-        tap.isEnabled = false
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -50,9 +50,23 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollView.isPagingEnabled = false
         if (scrollView.contentOffset.x == rightView.frame.width) {
+            for i in 0 ..< leftView.subviews.count {
+                leftView.subviews[i].isUserInteractionEnabled = false
+            }
             tap.isEnabled = true
         }
         else if (scrollView.contentOffset.x == 0) {
+            for i in 0 ..< leftView.subviews.count {
+                leftView.subviews[i].isUserInteractionEnabled = true
+            }
+            tap.isEnabled = false
+        }
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.x == 0) {
+            for i in 0 ..< leftView.subviews.count {
+                leftView.subviews[i].isUserInteractionEnabled = true
+            }
             tap.isEnabled = false
         }
     }
