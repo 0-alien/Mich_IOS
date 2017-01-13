@@ -16,6 +16,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var postImage: UIImageView!
+    var likeDelegate: LikesListener? = nil
+    var index: Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,8 +26,17 @@ class PostTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
+    
+    func postDoubleTapped() {
+        self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
+    }
+    @IBAction func postLiked(_ sender: Any) {
+        self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+    }
+}
 
+protocol LikesListener {
+    func postLiked(postIndex: Int, showAnimation: Bool)
 }
