@@ -825,7 +825,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cF7-YR-2gs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVg-UX-Tf4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rVg-UX-Tf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -848,6 +848,6 @@
         <image name="register_background" width="320" height="564"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="as6-S9-M0B"/>
+        <segue reference="gFh-W7-LGm"/>
     </inferredMetricsTieBreakers>
 </document>

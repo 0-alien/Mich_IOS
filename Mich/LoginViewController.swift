@@ -22,7 +22,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var usernameTXT: UITextField!
     @IBOutlet weak var passwordTXT: UITextField!
-
+    
+    let myUrl = URL(string: "http://138.68.73.21/public/index.php/api/auth/login");
+    
     @IBOutlet weak var loginFacebookBTN: FBSDKLoginButton!
     
 //////// pod instalacia: rvm use system, sudo gem install cocoapods, pod install
@@ -142,7 +144,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func loginButton(_ loginButton: FBSDKLoginButton, didCompleteWith result: FBSDKLoginManagerLoginResult, error: Error?) {
         
         if(error != nil){
-            print(error?.localizedDescription)
+            print(error?.localizedDescription as Any)
             return
         }
         if let userToken = result.token {
@@ -150,7 +152,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(userToken)
             print(token)
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") 
             self.present(vc, animated: false, completion: nil)
 
         }
@@ -176,9 +178,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     @IBAction func login(_ sender: AnyObject) {
         
-            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
-            self.present(vc, animated: false, completion: nil)
+        
+//        let myUrl = URL(string: "http://138.68.73.21/public/index.php/api/auth/login");
+        
+        
+//        let postString = "payload={\"email\":\"znatr10@freeuni.edu.ge\",\"password\":\"zuriko\",\"type\":0}";
+        
+
+        
+           let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+           let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
+           self.present(vc, animated: false, completion: nil)
 
     }
 
