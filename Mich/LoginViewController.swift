@@ -184,12 +184,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
 //        let postString = "payload={\"email\":\"znatr10@freeuni.edu.ge\",\"password\":\"zuriko\",\"type\":0}";
         
-
         
-           let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-           let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
-           self.present(vc, animated: false, completion: nil)
+        let user = usernameTXT.text!
+        let pass = passwordTXT.text!
+        
+        MichTransport.defaultLogin(email: user, password: pass, successCallback: onLogin, errorCallback: onError)
 
+    }
+    
+    
+    func onLogin(loginResponse: LoginResponse){
+        
+        print(loginResponse)
+        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        self.present(vc, animated: false, completion: nil)
+        
+    }
+    
+    func onError(error: DefaultError){
+        
     }
 
 

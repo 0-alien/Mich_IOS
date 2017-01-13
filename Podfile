@@ -6,4 +6,6 @@ target 'Mich' do
 	pod 'AMScrollingNavbar'
     pod 'Google/SignIn'
     pod 'Firebase/Auth'
+    pod 'Alamofire'
+    pod 'ObjectMapper'
 end
