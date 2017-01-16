@@ -177,7 +177,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBAction func login(_ sender: AnyObject) {
         
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
             self.present(vc, animated: false, completion: nil)
 
     }
