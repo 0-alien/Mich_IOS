@@ -9,10 +9,11 @@
 import Foundation
 import ObjectMapper
 
-class BaseResponse: Mappable {
+class BaseResponse<T: Mappable> : Mappable {
     var code: Int?
     var message: String?
-    var data: String?
+    var data: T?
+    
     
     required init?(map: Map) {
         
@@ -21,6 +22,7 @@ class BaseResponse: Mappable {
     func mapping(map: Map) {
         code    <- map["code"]
         message <- map["message"]
+        data    <- map["data"]
     }
     
 }

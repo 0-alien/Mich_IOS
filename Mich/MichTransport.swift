@@ -30,21 +30,21 @@ class MichTransport {
             
             
 //            print(response.request)  // original URL request
-//            print(response.response) // HTTP URL response
-//            print(response.data)     // server data
-            print(response.result)   // result of response serialization
+//           print(response.response) // HTTP URL response
+         //   print(response.data)     // server data
+            //print(response.result)   // result of response serialization
             
             
             if( response.result.isSuccess ){
                 
                 let JString = "\(response.result.value!)"
-                
-                let baseResponse = BaseResponse(JSONString: JString)
-                
+                print(JString)
+                let baseResponse = BaseResponse<LoginResponse>(JSONString: JString)
+        
                 if baseResponse!.code! == SUCCESS_CODE {
                     
-                    let res = LoginResponse(JSONString: baseResponse!.data!)
-                    successCallback(res!)
+                    let res = baseResponse!.data!
+                    successCallback(res)
                     
                 }else{
                     
