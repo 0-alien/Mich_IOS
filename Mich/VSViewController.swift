@@ -8,9 +8,10 @@
 
 import UIKit
 
-class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
+class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    var searchController: UISearchController!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
@@ -18,9 +19,22 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         self.tableView.rowHeight = 80
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pixel"), for: .default)
         self.navigationController?.navigationBar.isHidden = true
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Search Battles"
+        //searchController.delegate = self
+        searchController.searchBar.sizeToFit()
+        //definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.tableView.tableHeaderView = searchController.searchBar
         // Do any additional setup after loading the view.
     }
-
+    public func updateSearchResults(for searchController: UISearchController) {
+        let pat: String? = searchController.searchBar.text
+        print(pat!)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,7 +55,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 7
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +64,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     }
 
     func activeSeeMore(_ button: UIButton) {
-        print("active")
+        performSegue(withIdentifier: "vsseague", sender: self)
     }
     
     func moreSeeMore(_ button: UIButton) {
