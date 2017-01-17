@@ -33,7 +33,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHl-kV-hYd">
                                 <rect key="frame" x="66" y="220" width="243" height="318"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-B0-00R">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-B0-00R">
                                         <rect key="frame" x="0.0" y="234" width="243" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="gim-sg-Z65"/>
@@ -45,7 +45,7 @@
                                             <outlet property="delegate" destination="ToO-MH-BtM" id="fA3-HM-tVi"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-WP-ILZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456@freeuni.edu.ge" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-WP-ILZ">
                                         <rect key="frame" x="0.0" y="191" width="243" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="309-B1-5dC"/>
@@ -404,7 +404,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose how you'd like to reset your password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRy-un-3mb">
-                                <rect key="frame" x="48" y="156" width="283" height="31.5"/>
+                                <rect key="frame" x="48" y="156" width="283" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -438,16 +438,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MH-ed-kLa">
-                                <rect key="frame" x="-4" y="271.5" width="383" height="30.5"/>
+                                <rect key="frame" x="-4" y="272" width="383" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset using facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tb-bS-nop">
-                                        <rect key="frame" x="49" y="6" width="148" height="17.5"/>
+                                        <rect key="frame" x="49" y="6" width="148" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Gj-wa-2aQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="32.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                                         <connections>
                                             <segue destination="OEt-Yi-uSz" kind="show" id="JGK-EF-OgH"/>
                                         </connections>
@@ -471,16 +471,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IjE-vZ-Y6K">
-                                <rect key="frame" x="-4" y="447.5" width="383" height="32.5"/>
+                                <rect key="frame" x="-4" y="448" width="383" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mich Help Center ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqg-4H-2MO">
-                                        <rect key="frame" x="49" y="6" width="139" height="18.5"/>
+                                        <rect key="frame" x="49" y="6" width="139" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yih-Hy-TQm" userLabel="helpBTN">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="27"/>
                                         <connections>
                                             <segue destination="S27-uC-joM" kind="show" id="bWl-eD-uta"/>
                                         </connections>
@@ -519,14 +519,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwu-IH-IxN" userLabel="View5">
-                                <rect key="frame" x="0.0" y="440.5" width="375" height="3"/>
+                                <rect key="frame" x="0.0" y="441" width="375" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="Uiq-vv-gqq"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thr-Ei-qFc" userLabel="View6">
-                                <rect key="frame" x="-4" y="484.5" width="380" height="3"/>
+                                <rect key="frame" x="-4" y="485" width="380" height="3"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="2xv-eA-Gwh"/>
@@ -762,7 +762,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-bO-wyJ">
-                                        <rect key="frame" x="61" y="210.5" width="228" height="30"/>
+                                        <rect key="frame" x="61" y="211" width="228" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -848,6 +848,6 @@
         <image name="register_background" width="320" height="564"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gFh-W7-LGm"/>
+        <segue reference="as6-S9-M0B"/>
     </inferredMetricsTieBreakers>
 </document>

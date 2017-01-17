@@ -15,6 +15,8 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var first: UIImageView!
     @IBOutlet weak var second: UIImageView!
     @IBOutlet weak var battleTableView: UITableView!
+    @IBOutlet weak var firstPointCnt: UILabel!
+    @IBOutlet weak var secondPointCnt: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,24 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     
+    @IBAction func firstLiked(_ sender: Any) {
+        firstPointCnt.text = String(Int(firstPointCnt.text!)! + 1)
+        showAnimation()
+    }
+    @IBAction func secondLiked(_ sender: Any) {
+        secondPointCnt.text = String(Int(secondPointCnt.text!)! + 1)
+        showAnimation()
+    }
+    
+    private func showAnimation() {
+        let img = UIImageView(image: UIImage(named: "fire_icon"))
+        let coef = self.view.frame.size.width / 2.0 / img.frame.size.width
+        img.frame = self.view.frame.insetBy(dx: self.view.frame.size.width / 4, dy: self.view.frame.size.height / 2 - img.frame.size.height * coef / 2)
+        self.view.addSubview(img)
+        UIView.animate(withDuration: 1, animations: {
+            img.alpha = 0
+        })
+    }
     
     //Mark: Battle Table View delegate + data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

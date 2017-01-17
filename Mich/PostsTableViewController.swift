@@ -103,9 +103,9 @@ class PostsTableViewController: UITableViewController, LikesListener {
         self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
         if (showAnimation) {
             let cell = self.tableView.cellForRow(at: IndexPath(row: postIndex, section: 0)) as! PostTableViewCell
-            let img = UIImageView(image: UIImage(named: "mich_logo_centered"))
-            img.frame = cell.frame.insetBy(dx: cell.frame.size.width / 4, dy: cell.frame.size.height / 4)
-            img.contentMode = UIViewContentMode.center
+            let img = UIImageView(image: UIImage(named: "fire_icon"))
+            let coef = cell.frame.size.width / 2.0 / img.frame.size.width
+            img.frame = cell.frame.insetBy(dx: cell.frame.size.width / 4, dy: cell.frame.size.height / 2 - img.frame.size.height * coef / 2)
             self.view.addSubview(img)
             UIView.animate(withDuration: 1, animations: {
                 img.alpha = 0
