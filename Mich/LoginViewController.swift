@@ -23,7 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var usernameTXT: UITextField!
     @IBOutlet weak var passwordTXT: UITextField!
     
-    let myUrl = URL(string: "http://138.68.73.21/public/index.php/api/auth/login");
     
     @IBOutlet weak var loginFacebookBTN: FBSDKLoginButton!
     
@@ -174,16 +173,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
     }
     
-    
+    //////////////////////////////////////////////////////// requestis gagzavna ///////////////////////////////////////////
     
     @IBAction func login(_ sender: AnyObject) {
-        
-        
-//        let myUrl = URL(string: "http://138.68.73.21/public/index.php/api/auth/login");
-        
-        
-//        let postString = "payload={\"email\":\"znatr10@freeuni.edu.ge\",\"password\":\"zuriko\",\"type\":0}";
-        
         
         let user = usernameTXT.text!
         let pass = passwordTXT.text!
@@ -204,8 +196,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     func onError(error: DefaultError){
         
+         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+         self.present(alert, animated: true, completion: nil)
+        
     }
-
+    ////////////////////////////////////////////////////////                      ///////////////////////////////////////////
 
     ///////////////////// keyboard code
     

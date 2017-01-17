@@ -19,8 +19,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpEmail: UITextField!
     @IBOutlet weak var signUpPassword: UITextField!
     @IBOutlet weak var signUpConfirmPassword: UITextField!
-    
     @IBOutlet weak var signUpButton: UIButton!
+    
     
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -109,13 +109,46 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func signUpButton(_ sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-        self.present(vc, animated: false, completion: nil)
 
-    
+    @IBAction func signUpButton(_ sender: Any) {
+        
+
+        
+//        let name = signUpNameTF.text!
+        
+        
+        let email = signUpEmail.text!
+        let firstname =  signUpUsername.text!
+        let lastname = signUpLastname.text!
+        let password = signUpPassword.text!
+//        let confirmPassword = signUpConfirmPassword.text!
+
+        
+        MichTransport.register(email: email, password: password, firstname:firstname, lastname:lastname, successCallbackForRegister: onRegister, errorCallbackForRegister: onErrorRegister)
+
+        
     }
+    
+    
+    func onRegister(){
+        
+        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        self.present(vc, animated: false, completion: nil)
+        
+    }
+    
+    func onErrorRegister(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
+    
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if(textField == signUpConfirmPassword || textField == signUpPassword){
