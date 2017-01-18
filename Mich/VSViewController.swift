@@ -8,32 +8,16 @@
 
 import UIKit
 
-class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
+class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var searchController: UISearchController!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         currentIndex = 1
         self.tableView.rowHeight = 80
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pixel"), for: .default)
-        self.navigationController?.navigationBar.isHidden = true
-        
-        searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = true
-        searchController.searchBar.placeholder = "Search Battles"
-        //searchController.delegate = self
-        searchController.searchBar.sizeToFit()
-        //definesPresentationContext = true
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.tableView.tableHeaderView = searchController.searchBar
-        // Do any additional setup after loading the view.
-    }
-    public func updateSearchResults(for searchController: UISearchController) {
-        let pat: String? = searchController.searchBar.text
-        print(pat!)
+        self.navigationController?.navigationBar.isHidden = false
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

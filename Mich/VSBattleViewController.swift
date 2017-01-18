@@ -22,17 +22,22 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         battleTableView.dataSource = self
         battleTableView.delegate = self
-        
+        print(first.frame.size)
+        var min = Swift.min(first.frame.size.width, first.frame.size.height)
+        first.frame.size = CGSize(width: min, height: min)
+        min = Swift.min(second.frame.size.width, second.frame.size.height)
+        second.frame.size = CGSize(width: min, height: min)
+        print(first.frame.size)
         first.image = first.image?.circle
         second.image = second.image?.circle
-        first.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
-        second.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
-        navBarExtension.backgroundColor = UIColor(red: 255.0 / 255, green: 29.0 / 255 , blue: 45.0 / 255, alpha: 1)
+        first.backgroundColor = UIColor.white.withAlphaComponent(0)
+        second.backgroundColor = UIColor.white.withAlphaComponent(0)
+        navBarExtension.backgroundColor = UIColor.red.withAlphaComponent(0)
         
+        //self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -53,11 +58,12 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     */
     
-    @IBAction func firstLiked(_ sender: Any) {
+    @IBAction func firstTapped(_ sender: Any) {
         firstPointCnt.text = String(Int(firstPointCnt.text!)! + 1)
         showAnimation()
     }
-    @IBAction func secondLiked(_ sender: Any) {
+    
+    @IBAction func secondTapped(_ sender: Any) {
         secondPointCnt.text = String(Int(secondPointCnt.text!)! + 1)
         showAnimation()
     }

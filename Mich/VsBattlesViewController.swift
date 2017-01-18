@@ -8,16 +8,32 @@
 
 import UIKit
 
-class VsBattlesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class VsBattlesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
 
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    var searchController: UISearchController!
+    @IBOutlet weak var navBarReplacement: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 80
-        // Do any additional setup after loading the view.
+    
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "Search Battles"
+        //searchController.delegate = self
+        searchController.searchBar.sizeToFit()
+        //definesPresentationContext = true
+        self.navigationItem.titleView = searchController.searchBar
+        searchController.hidesNavigationBarDuringPresentation = false
     }
-
+    public func updateSearchResults(for searchController: UISearchController) {
+        let pat: String? = searchController.searchBar.text
+        print(pat!)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
