@@ -62,11 +62,12 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="KQO-lT-8MV" secondAttribute="bottom" constant="8" id="8CM-rH-7IS"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="KQO-lT-8MV" secondAttribute="leading" id="Nd8-OW-OU3"/>
                                                 <constraint firstItem="5hY-z7-pPe" firstAttribute="top" secondItem="KQO-lT-8MV" secondAttribute="top" id="R1f-r6-ZBV"/>
                                                 <constraint firstAttribute="topMargin" secondItem="KQO-lT-8MV" secondAttribute="top" id="RIK-Fd-7G9"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="5hY-z7-pPe" secondAttribute="trailing" id="ap4-Or-avN"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="5hY-z7-pPe" secondAttribute="bottom" id="crN-tA-rhd"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="5hY-z7-pPe" secondAttribute="bottom" id="crN-tA-rhd"/>
                                                 <constraint firstItem="5hY-z7-pPe" firstAttribute="leading" secondItem="KQO-lT-8MV" secondAttribute="trailing" constant="8" id="v4j-ZP-1qf"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -90,10 +91,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-Dg-3wS">
-                                                    <rect key="frame" x="8" y="8" width="291" height="77"/>
+                                                    <rect key="frame" x="8" y="8" width="291" height="20.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy1-CD-hr1">
-                                                            <rect key="frame" x="8" y="0.0" width="275" height="77"/>
+                                                            <rect key="frame" x="8" y="0.0" width="275" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -109,7 +110,8 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="X2F-Dg-3wS" secondAttribute="bottom" id="9iV-ln-b8R"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="X2F-Dg-3wS" secondAttribute="bottom" id="9iV-ln-b8R"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="8QW-a8-pVS" secondAttribute="bottom" constant="8" id="Ey2-Ym-RU4"/>
                                                 <constraint firstItem="X2F-Dg-3wS" firstAttribute="leading" secondItem="UwT-Q9-J9p" secondAttribute="leadingMargin" id="GEX-LF-VYj"/>
                                                 <constraint firstItem="X2F-Dg-3wS" firstAttribute="top" secondItem="UwT-Q9-J9p" secondAttribute="topMargin" id="SZr-Yg-15E"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8QW-a8-pVS" secondAttribute="trailing" id="VeA-Rv-i4f"/>

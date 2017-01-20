@@ -84,7 +84,7 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if (indexPath.row % 2 == 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
-            cell.label.text = "dawdwadawdawdawdn nfn ainfinwaienfiewnaifnew kjgdfn"
+            cell.label.text = "dawdn"
             return cell
         }
         else {
