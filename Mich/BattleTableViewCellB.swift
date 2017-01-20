@@ -1,14 +1,14 @@
 //
-//  BattleTableViewCell.swift
+//  BattleTableViewCellB.swift
 //  Mich
 //
-//  Created by Gigi Pataraia on 11/3/16.
-//  Copyright © 2016 Gigi. All rights reserved.
+//  Created by Gigi Pataraia on 1/20/17.
+//  Copyright © 2017 Gigi. All rights reserved.
 //
 
 import UIKit
 
-class BattleTableViewCell: UITableViewCell {
+class BattleTableViewCellB: UITableViewCell {
 
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var label: UILabel!

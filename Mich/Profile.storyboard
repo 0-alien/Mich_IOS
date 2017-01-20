@@ -124,7 +124,7 @@
                         <viewControllerLayoutGuide type="top" id="Big-5a-NJL"/>
                         <viewControllerLayoutGuide type="bottom" id="Rv2-tt-1RG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="k5v-Wc-cYK">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="k5v-Wc-cYK">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

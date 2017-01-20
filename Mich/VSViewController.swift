@@ -16,8 +16,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         self.tableView.sectionHeaderHeight = 30
         currentIndex = 1
         self.tableView.rowHeight = 80
-        //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pixel"), for: .default)
-        self.navigationController?.navigationBar.isHidden = false
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

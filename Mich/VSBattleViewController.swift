@@ -22,20 +22,18 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         battleTableView.dataSource = self
         battleTableView.delegate = self
-        print(first.frame.size)
         var min = Swift.min(first.frame.size.width, first.frame.size.height)
         first.frame.size = CGSize(width: min, height: min)
         min = Swift.min(second.frame.size.width, second.frame.size.height)
         second.frame.size = CGSize(width: min, height: min)
-        print(first.frame.size)
         first.image = first.image?.circle
         second.image = second.image?.circle
         first.backgroundColor = UIColor.white.withAlphaComponent(0)
         second.backgroundColor = UIColor.white.withAlphaComponent(0)
         navBarExtension.backgroundColor = UIColor.red.withAlphaComponent(0)
         
-        //self.navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
+        battleTableView.rowHeight = UITableViewAutomaticDimension
+        battleTableView.estimatedRowHeight = 44.0
         
     }
     
@@ -84,9 +82,16 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
-        cell.label.text = String(indexPath.row)
-        return cell
+        if (indexPath.row % 2 == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BattleTableViewCell") as! BattleTableViewCell
+            cell.label.text = "dawdwadawdawdawdn nfn ainfinwaienfiewnaifnew kjgdfn"
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "BattleTableViewCellB") as! BattleTableViewCellB
+            cell.label.text = "dawdwadawdawdawdn nfn ainfinwaienfiewnaifnew kjgdfn fsad jsadfjksadfklsdajfjidsahf idsjfoj nsfdijhf uiahsduifhoisdnf ojasdfoh sdiaugf u8dshofi jsdaojhfi o"
+            return cell
+        }
     }
 }
 
