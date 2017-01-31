@@ -197,6 +197,15 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         }
     }
     
+    @IBAction func openCamera(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
     func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
         let cell: BattleTableViewCell = BattleTableViewCell()
         cell.isFirst = true

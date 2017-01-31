@@ -14,7 +14,7 @@
         <!--Battle View Controller-->
         <scene sceneID="5Yi-MC-JSO">
             <objects>
-                <viewController storyboardIdentifier="VSBattleViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="z9R-0k-FXL" customClass="VSBattleViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSBattleViewController" hidesBottomBarWhenPushed="YES" id="z9R-0k-FXL" customClass="VSBattleViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="czK-YX-XUO"/>
                         <viewControllerLayoutGuide type="bottom" id="04u-mg-nTr"/>
@@ -50,12 +50,27 @@
                                             <outletCollection property="gestureRecognizers" destination="sb5-DV-yQL" appends="YES" id="Uvw-mJ-gqO"/>
                                         </connections>
                                     </imageView>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_icon" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-UO-hmp">
+                                        <rect key="frame" x="37" y="0.0" width="18" height="18"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50607638889999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.50607638889999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18" id="CC6-i7-wPg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="pm6-Dx-3u9" appends="YES" id="rag-mQ-rfD"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="vdP-UO-hmp" firstAttribute="top" secondItem="JZh-n8-0t7" secondAttribute="top" id="Lf8-5x-W1c"/>
+                                    <constraint firstAttribute="bottom" secondItem="vdP-UO-hmp" secondAttribute="bottom" constant="2" id="Tgh-He-aiN"/>
                                     <constraint firstItem="dDJ-46-6Te" firstAttribute="top" secondItem="JZh-n8-0t7" secondAttribute="top" id="b7b-Ov-WZc"/>
                                     <constraint firstItem="dDJ-46-6Te" firstAttribute="leading" secondItem="JZh-n8-0t7" secondAttribute="leading" constant="8" id="bXy-Ai-DTC"/>
                                     <constraint firstAttribute="height" constant="20" id="udq-TX-AGW"/>
                                     <constraint firstAttribute="bottom" secondItem="dDJ-46-6Te" secondAttribute="bottom" constant="2" id="uqI-1C-bI2"/>
+                                    <constraint firstItem="vdP-UO-hmp" firstAttribute="leading" secondItem="dDJ-46-6Te" secondAttribute="trailing" constant="11" id="yXv-Ou-5YN"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Q4-fY-VGU">
@@ -315,19 +330,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZ5-H1-HPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="ZHE-QI-ucZ">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="ZHE-QI-ucZ" userLabel="first user point">
                     <connections>
                         <action selector="firstTapped:" destination="z9R-0k-FXL" id="00g-cu-2PN"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="pTv-S8-TbX">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="pTv-S8-TbX" userLabel="second user point">
                     <connections>
                         <action selector="secondTapped:" destination="z9R-0k-FXL" id="0oy-MD-bUC"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="sb5-DV-yQL" userLabel="camera">
+                <tapGestureRecognizer id="sb5-DV-yQL" userLabel="camera local">
                     <connections>
                         <action selector="showLocalLibrary:" destination="z9R-0k-FXL" id="Tfn-Ns-Ick"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pm6-Dx-3u9" userLabel="camera camera">
+                    <connections>
+                        <action selector="openCamera:" destination="z9R-0k-FXL" id="jj9-GS-CdC"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
