@@ -1,18 +1,18 @@
 //
-//  BattleTableViewCellB.swift
+//  BattleTableViewCellBWithPicture.swift
 //  Mich
 //
-//  Created by Gigi Pataraia on 1/20/17.
+//  Created by Gigi Pataraia on 1/31/17.
 //  Copyright © 2017 Gigi. All rights reserved.
 //
 
 import UIKit
 
-class BattleTableViewCellB: UITableViewCell {
+class BattleTableViewCellBWithPicture: UITableViewCell {
 
+    @IBOutlet weak var sentImageHeight: NSLayoutConstraint!
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var label: UILabel!
-    
+    @IBOutlet weak var sentImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

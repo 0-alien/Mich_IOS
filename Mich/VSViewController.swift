@@ -25,16 +25,20 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let frame = CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: 15);
-        if (section == 0) {
+        if (section == 1) {
             return VSTableViewSectionHeader(frame: frame, labelName: " Active Now", seeMoreCount: 11, listener: self, selector: #selector(VSViewController.activeSeeMore(_:)))
+        }
+        else if (section == 0) {
+            return VSTableViewSectionHeader(frame: frame, labelName: " My Battles", seeMoreCount: 11, listener: self, selector: #selector(VSViewController.myBattles(_:)))
         }
         else {
             return VSTableViewSectionHeader(frame: frame, labelName: " More Conversations", seeMoreCount: 3, listener: self, selector: #selector(VSViewController.moreSeeMore(_:)))
         }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,7 +55,11 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     }
     
     func moreSeeMore(_ button: UIButton) {
-        print("more")
+        performSegue(withIdentifier: "vsseague", sender: self)
+    }
+    
+    func myBattles(_ button: UIButton) {
+        performSegue(withIdentifier: "vsseague", sender: self)
     }
     
 }

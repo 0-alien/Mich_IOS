@@ -39,7 +39,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         searchController.searchBar.placeholder = "Search Mich"
         //searchController.delegate = self
         searchController.searchBar.sizeToFit()
-        //definesPresentationContext = true
+        searchController.definesPresentationContext = true
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar
     }
