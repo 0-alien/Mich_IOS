@@ -11,8 +11,7 @@ import FBSDKLoginKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var signUpNameTF: UITextField!
-    @IBOutlet weak var signUpLastname: UITextField!
+    @IBOutlet weak var signUpName: UITextField!
 
     @IBOutlet weak var signUpUsername: UITextField!
     
@@ -26,18 +25,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpNameTF.layer.shadowOpacity = 0.3;
-        signUpNameTF.layer.shadowRadius = 1.0;
-        signUpNameTF.layer.shadowColor = UIColor.black.cgColor;
-        signUpNameTF.layer.shadowOffset = CGSize(width: -4, height: 4)
-        signUpNameTF.layer.masksToBounds = false
+
         
 
-        signUpLastname.layer.shadowOpacity = 0.3;
-        signUpLastname.layer.shadowRadius = 1.0;
-        signUpLastname.layer.shadowColor = UIColor.black.cgColor;
-        signUpLastname.layer.shadowOffset = CGSize(width: -4, height: 4)
-        signUpLastname.layer.masksToBounds = false
+        signUpName.layer.shadowOpacity = 0.3;
+        signUpName.layer.shadowRadius = 1.0;
+        signUpName.layer.shadowColor = UIColor.black.cgColor;
+        signUpName.layer.shadowOffset = CGSize(width: -4, height: 4)
+        signUpName.layer.masksToBounds = false
 
 
         signUpUsername.layer.shadowOpacity = 0.3;
@@ -74,11 +69,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         signUpButton.layer.masksToBounds = false
       
         
-        signUpNameTF.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1.0)
-        signUpNameTF.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
-        
-        signUpLastname.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
-        signUpLastname.attributedPlaceholder = NSAttributedString(string:"Lastname", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
+        signUpName.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
+        signUpName.attributedPlaceholder = NSAttributedString(string:"Name", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
         
         signUpUsername.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
         signUpUsername.attributedPlaceholder = NSAttributedString(string:"Username", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
@@ -112,19 +104,29 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func signUpButton(_ sender: Any) {
         
-
-        
-//        let name = signUpNameTF.text!
+        let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
         
         
+        let name = signUpName.text!
+        
+        let username =  signUpUsername.text!
         let email = signUpEmail.text!
-        let firstname =  signUpUsername.text!
-        let lastname = signUpLastname.text!
         let password = signUpPassword.text!
-//        let confirmPassword = signUpConfirmPassword.text!
-
+        let confirmPassword = signUpConfirmPassword.text!
         
-        MichTransport.register(email: email, password: password, firstname:firstname, lastname:lastname, successCallbackForRegister: onRegister, errorCallbackForRegister: onErrorRegister)
+
+        if(password != confirmPassword){
+            signUpConfirmPassword.text = "";
+            signUpPassword.text = "";
+            signUpPassword.layer.borderColor = redColor.cgColor;
+            signUpPassword.layer.borderWidth = 2.0;
+            signUpConfirmPassword.layer.borderColor = redColor.cgColor;
+            signUpConfirmPassword.layer.borderWidth = 2.0;
+            return;
+        }
+        
+        
+        MichTransport.register(username:username, email: email, password: password, name:name, successCallbackForRegister: onRegister, errorCallbackForRegister: onErrorRegister)
 
         
     }

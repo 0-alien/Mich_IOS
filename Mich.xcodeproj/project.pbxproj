@@ -48,6 +48,7 @@
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
+		CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */; };
 		CF26B3021DFACFF30033C6F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */; };
 		CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927941E2910C700F0C924 /* MichTransport.swift */; };
 		CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927971E29133D00F0C924 /* LoginResponse.swift */; };
@@ -59,6 +60,8 @@
 		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
 		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
 		CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */; };
+		CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */; };
+		CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */; };
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
@@ -111,6 +114,7 @@
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
 		CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF3927941E2910C700F0C924 /* MichTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichTransport.swift; sourceTree = "<group>"; };
 		CF3927971E29133D00F0C924 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryResponse.swift; sourceTree = "<group>"; };
+		CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryRequest.swift; sourceTree = "<group>"; };
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */,
 				CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */,
 				1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */,
+				CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -330,6 +337,7 @@
 			children = (
 				CF3927971E29133D00F0C924 /* LoginResponse.swift */,
 				CFFD54F81E2D083A0006830E /* RegisterResponse.swift */,
+				CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */,
 				CF39279C1E2925D900F0C924 /* BaseResponse.swift */,
 				CF39279E1E29278C00F0C924 /* DefaultError.swift */,
 			);
@@ -341,6 +349,7 @@
 			children = (
 				CF39279A1E291BC300F0C924 /* LoginRequest.swift */,
 				CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */,
+				CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -501,17 +510,20 @@
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
+				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCell.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
+				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
+				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
 				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,

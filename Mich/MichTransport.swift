@@ -10,10 +10,18 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-
+extension String: ParameterEncoding {
+    
+    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try urlRequest.asURLRequest()
+        request.httpBody = data(using: .utf8, allowLossyConversion: false)
+        return request
+    }
+    
+}
 class MichTransport {
     
-    static let BASE_URL = "http://138.68.73.21/public/index.php/api/"
+    static let BASE_URL = "http://46.101.196.48/public/index.php/api/"
     static let SUCCESS_CODE = 10
     static let INVALID_PAYLOAD_CODE = 20
     static let BAD_REQUEST_CODE = 21
@@ -24,17 +32,19 @@ class MichTransport {
     static let INVALID_PARAMETER_CODE = 31
     static let NO_PERMISSION_CODE = 32
     
-    static func defaultLogin(email: String, password: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
+    
+    
+    
+    static func defaultLogin(username: String, password: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
     
         let reqString = BASE_URL + "auth/login"
         
-        let loginRequest = LoginRequest(email: email,password:password,type: 0)
+        let loginRequest = LoginRequest(username: username,password:password,type: 0)
         let payloadJson = loginRequest.toJSONString()
-        let parameters: Parameters = ["payload": payloadJson!]
         
         
         
-        Alamofire.request(reqString, method: .post, parameters: parameters).responseString { response in
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             
             
 //           print(response.request)  // original URL request
@@ -83,15 +93,15 @@ class MichTransport {
         
     }
     
-    static func register(email: String, password: String, firstname: String, lastname: String, successCallbackForRegister: @escaping () -> Void, errorCallbackForRegister: @escaping (DefaultError) -> Void ){
+    static func register(username:String, email: String, password: String, name: String, successCallbackForRegister: @escaping () -> Void, errorCallbackForRegister: @escaping (DefaultError) -> Void ){
         let reqString = BASE_URL + "auth/register"
         
-        let registerRequest = RegisterRequest(email: email,password:password,firstname:firstname,lastname:lastname, type: 0)
+        let registerRequest = RegisterRequest(username:username, email: email,password:password,name:name)
         let payloadJson = registerRequest.toJSONString()
-        let parameters: Parameters = ["payload": payloadJson!]
         
         
-        Alamofire.request(reqString, method: .post, parameters: parameters).responseString { response in
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             
             if( response.result.isSuccess ){
                 
@@ -130,5 +140,60 @@ class MichTransport {
 
         
     }
+    
+    
+    static func sendrecovery(username: String, successCallbackForRecovery: @escaping () -> Void, errorCallbackForRecovery: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "auth/sendRecovery"
+        
+        let sendRecoveryResquest = SendRecoveryRequest(username: username)
+        let payloadJson = sendRecoveryResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<SendRecoveryRequest>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                   successCallbackForRecovery()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForRecovery(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForRecovery(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+
+    
     
 }

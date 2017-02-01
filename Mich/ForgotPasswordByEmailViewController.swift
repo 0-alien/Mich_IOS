@@ -34,8 +34,6 @@ class ForgotPasswordByEmailViewController: UIViewController {
         forgotPasswordNextButton.layer.masksToBounds = false
 
 
-        forgotPasswordNextButton.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
-
         // Do any additional setup after loading the view.
     }
 
@@ -46,6 +44,28 @@ class ForgotPasswordByEmailViewController: UIViewController {
     
 
     @IBAction func forgotPasswordNextButton(_ sender: AnyObject) {
+        let email = forgotPasswordEmailTF.text!;
+        MichTransport.sendrecovery(username: email, successCallbackForRecovery: onSendRecovery, errorCallbackForRecovery: onError)
+    }
+    
+    func onSendRecovery(){
+        let alert = UIAlertController(title: "Alert", message: "lalalalalalalalalal", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+     /*
+        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        self.present(vc, animated: false, completion: nil)
+       */
+    }
+    
+    
+    func onError(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 
 }
