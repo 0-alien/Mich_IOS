@@ -70,9 +70,25 @@ class changePasswordViewController: UIViewController {
     
 
     @IBAction func resetButton(_ sender: Any) {
-
+        
+        let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
 
         let code = codeTF.text!;
+        
+        let password = newPasswordTF.text!
+        let confirmPassword = confirmPasswordTF.text!
+        
+        if(password != confirmPassword){
+            confirmPasswordTF.text = "";
+            newPasswordTF.text = "";
+            newPasswordTF.layer.borderColor = redColor.cgColor;
+            newPasswordTF.layer.borderWidth = 2.0;
+            confirmPasswordTF.layer.borderColor = redColor.cgColor;
+            confirmPasswordTF.layer.borderWidth = 2.0;
+            return;
+        }
+        
+        
         
         ////// tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
