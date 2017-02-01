@@ -10,19 +10,18 @@ import Foundation
 import ObjectMapper
 
 class RegisterRequest: Mappable {
+    var username :String?
     var email: String?
     var password: String?
-    var firstname: String?
-    var lastname: String?
-    var type: Int?
+    var name: String?
     
     
-    init(email: String, password: String, firstname: String, lastname: String, type: Int){
+    init(username:String, email: String, password: String, name: String){
+        self.username = username
         self.email = email
         self.password = password
-        self.firstname = firstname
-        self.lastname = lastname
-        self.type = type
+        self.name = name
+
     
     }
     
@@ -31,11 +30,10 @@ class RegisterRequest: Mappable {
     }
     
     func mapping(map: Map) {
+        username    <- map["username"]
         email       <- map["email"]
         password    <- map["password"]
-        firstname   <- map["firstname"]
-        lastname    <- map["lastname"]
+        name        <- map["name"]
         
-        type        <- map["type"]
     }
 }

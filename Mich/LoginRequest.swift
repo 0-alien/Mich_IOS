@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 
 class LoginRequest: Mappable {
-    var email: String?
+    var username: String?
     var password: String?
     var type: Int?
     
     
-    init(email: String, password: String, type: Int){
-        self.email = email
+    init(username: String, password: String, type: Int){
+        self.username = username
         self.password = password
         self.type = type
         
@@ -27,7 +27,7 @@ class LoginRequest: Mappable {
     }
     
     func mapping(map: Map) {
-        email       <- map["email"]
+        username    <- map["username"]
         password    <- map["password"]
         type        <- map["type"]
     }

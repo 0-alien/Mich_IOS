@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         
         // google login
-        
+/*
         
         let googleSignButton  = GIDSignInButton();
         view.addSubview(googleSignButton);
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         self.view.addConstraints([consG1, consG2, consG3]);
         
-        
+*/        
         
         
         
@@ -180,7 +180,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let user = usernameTXT.text!
         let pass = passwordTXT.text!
         
-        MichTransport.defaultLogin(email: user, password: pass, successCallback: onLogin, errorCallback: onError)
+        MichTransport.defaultLogin(username: user, password: pass, successCallback: onLogin, errorCallback: onError)
         
     }
     
@@ -188,11 +188,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func onLogin(loginResponse: LoginResponse){
         
         print(loginResponse)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        print(appDelegate.token)
+        
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         self.present(vc, animated: false, completion: nil)
         
     }
+    
     
     func onError(error: DefaultError){
         
@@ -207,10 +212,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if(textField == usernameTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:100), animated: true)
+            scrollView.setContentOffset(CGPoint(x:0, y:90), animated: true)
         }
         if(textField == passwordTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:110), animated: true)
+            scrollView.setContentOffset(CGPoint(x:0, y:90), animated: true)
         }
     }
     
