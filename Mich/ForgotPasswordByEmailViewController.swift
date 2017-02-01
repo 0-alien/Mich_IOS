@@ -49,14 +49,14 @@ class ForgotPasswordByEmailViewController: UIViewController {
     }
     
     func onSendRecovery(){
-        let alert = UIAlertController(title: "Alert", message: "lalalalalalalalalal", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        
+
+
+        performSegue(withIdentifier: "onsuccess", sender: self)
+        
+        let alert = UIAlertController(title: "Alert", message: "Please check your email!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-     /*
-        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-        self.present(vc, animated: false, completion: nil)
-       */
     }
     
     

@@ -60,9 +60,15 @@ class MichTransport {
                 let baseResponse = BaseResponse<LoginResponse>(JSONString: JString)
         
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
                     let res = baseResponse!.data!
+                    
+                    
+                    ////// tokenis ageba
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.token = baseResponse?.data?.token
+                   
                     successCallback(res)
+                    
                     
                 }else{
 
@@ -110,7 +116,8 @@ class MichTransport {
                 let baseResponse = BaseResponse<RegisterResponse>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
-                        
+                    
+                    
                     successCallbackForRegister()
                     
                 }else{
@@ -158,11 +165,15 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<SendRecoveryRequest>(JSONString: JString)
+                let baseResponse = BaseResponse<SendRecoveryResponse>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
-                   successCallbackForRecovery()
+                    
+                    ////// tokenis ageba
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.token = baseResponse?.data?.token
+                    successCallbackForRecovery()
                     
                 }else{
                     
@@ -194,6 +205,167 @@ class MichTransport {
     }
     
 
+  
+    static func checkcode(token: String, code: String, successCallbackForCheckCode: @escaping () -> Void, errorCallbackForCheckCode: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "auth/checkCode"
+        
+        let checkCodeRequest = CheckCodeRequest(token: token, code: code)
+        let payloadJson = checkCodeRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<CheckCodeResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                   
+                    successCallbackForCheckCode()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForCheckCode(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForCheckCode(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+
+    
+    static func recover(token: String, password: String, successCallbackForRecover: @escaping () -> Void, errorCallbackForRecover: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "auth/recover"
+        
+        let recoverRequest = RecoverRequest(token: token, password: password)
+        let payloadJson = recoverRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<RecoveryResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForRecover()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForRecover(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForRecover(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+
+    
+    
+    
+    static func logout(token: String, successCallbackForLogout: @escaping () -> Void, errorCallbackForLogout: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "auth/logout"
+        
+        let logoutResquest = LogoutRequest(token: token)
+        let payloadJson = logoutResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<LogoutResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    successCallbackForLogout()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForLogout(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForLogout(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
     
     
 }

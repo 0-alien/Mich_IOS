@@ -58,6 +58,8 @@ class changePasswordViewController: UIViewController {
 
         
 
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -67,6 +69,53 @@ class changePasswordViewController: UIViewController {
     }
     
 
+    @IBAction func resetButton(_ sender: Any) {
+
+
+        let code = codeTF.text!;
+        
+        ////// tokenis ageba
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        
+        MichTransport.checkcode(token: appDelegate.token!, code: code, successCallbackForCheckCode: onCheckCode, errorCallbackForCheckCode: onError)
+        
+        
+        
+    }
+    
+    func onCheckCode(){
+        
+        
+        
+//        performSegue(withIdentifier: "onsuccess", sender: self)
+
+        let password = newPasswordTF.text!;
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        
+        MichTransport.recover(token: appDelegate.token!, password: password, successCallbackForRecover: onRecover, errorCallbackForRecover: onError)
+    }
+    
+    
+    func onRecover(){
+        
+        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(vc, animated: false, completion: nil)
+        
+    }
+    
+    
+    func onError(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

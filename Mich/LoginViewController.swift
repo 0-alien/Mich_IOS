@@ -188,6 +188,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func onLogin(loginResponse: LoginResponse){
         
         print(loginResponse)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        print(appDelegate.token)
+        
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         self.present(vc, animated: false, completion: nil)
