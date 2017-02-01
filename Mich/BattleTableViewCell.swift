@@ -2,24 +2,29 @@
 //  BattleTableViewCell.swift
 //  Mich
 //
-//  Created by Gigi Pataraia on 11/3/16.
-//  Copyright © 2016 Gigi. All rights reserved.
+//  Created by Gigi Pataraia on 1/30/17.
+//  Copyright © 2017 Gigi. All rights reserved.
 //
 
 import UIKit
 
-class BattleTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var label: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class BattleTableViewCell {
+    var isFirst: Bool!
+    var hasImage: Bool!
+    var label: String!
+    var image: UIImage?
+    
+    init() {
+        isFirst = true
+        hasImage = false
+        label = ""
+        image = nil
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    init(withData isFirst: Bool, hasImage: Bool, label: String, image: UIImage?) {
+        self.isFirst = isFirst
+        self.hasImage = hasImage
+        self.label = label
+        self.image = image
     }
-
 }
