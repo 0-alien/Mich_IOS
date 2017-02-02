@@ -368,4 +368,114 @@ class MichTransport {
     
     
     
+    static func getcurrentuser(token: String, successCallbackForgetcurrentuser: @escaping (GetCurrentUserResponse) -> Void, errorCallbackForgetcurrentuser: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/get"
+        
+        let getcurrentuserResquest = GetCurrentUserRequest(token: token)
+        let payloadJson = getcurrentuserResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<GetCurrentUserResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForgetcurrentuser(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForgetcurrentuser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForgetcurrentuser(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    static func getfeed(token: String, successCallbackForgetfeed: @escaping (GetCurrentUserResponse) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/feed"
+        
+        let getfeedResquest = GetFeedRequest(token: token)
+        let payloadJson = getfeedResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<GetFeedResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForgetfeed(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForgetfeed(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForgetfeed(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+        
+    
 }

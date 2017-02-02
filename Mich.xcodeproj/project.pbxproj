@@ -53,6 +53,11 @@
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
+		CF186A881E43593F00218920 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A871E43593F00218920 /* User.swift */; };
+		CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */; };
+		CF186A8C1E435C3900218920 /* GetCurrentUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8B1E435C3900218920 /* GetCurrentUserResponse.swift */; };
+		CF186A8E1E4378AD00218920 /* GetFeedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */; };
+		CF186A901E4378F700218920 /* GetFeedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8F1E4378F700218920 /* GetFeedResponse.swift */; };
 		CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */; };
 		CF209DE91E41E62900B1A59E /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF209DE81E41E62900B1A59E /* Cabinet.storyboard */; };
 		CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */; };
@@ -131,6 +136,11 @@
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		CF186A871E43593F00218920 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserRequest.swift; sourceTree = "<group>"; };
+		CF186A8B1E435C3900218920 /* GetCurrentUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserResponse.swift; sourceTree = "<group>"; };
+		CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFeedRequest.swift; sourceTree = "<group>"; };
+		CF186A8F1E4378F700218920 /* GetFeedResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFeedResponse.swift; sourceTree = "<group>"; };
 		CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
 		CF209DE81E41E62900B1A59E /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCodeRequest.swift; sourceTree = "<group>"; };
@@ -216,6 +226,7 @@
 		1E1E506E1D8AB3D0002D1C24 /* Mich */ = {
 			isa = PBXGroup;
 			children = (
+				CF186A861E43591200218920 /* User */,
 				CF3927961E29130A00F0C924 /* Bean */,
 				CF3927931E2910A600F0C924 /* Transport */,
 				1E45CF961DAD0450006967CD /* Extentions */,
@@ -361,6 +372,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CF186A861E43591200218920 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CF186A871E43593F00218920 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
 		CF3927931E2910A600F0C924 /* Transport */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,6 +400,8 @@
 				CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */,
 				CF209DF01E420CF700B1A59E /* RecoveryResponse.swift */,
 				CF209DF61E4215D900B1A59E /* LogoutResponse.swift */,
+				CF186A8B1E435C3900218920 /* GetCurrentUserResponse.swift */,
+				CF186A8F1E4378F700218920 /* GetFeedResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -394,6 +415,8 @@
 				CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */,
 				CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */,
 				CF209DF41E4215C500B1A59E /* LogoutRequest.swift */,
+				CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */,
+				CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -561,6 +584,7 @@
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
+				CF186A8C1E435C3900218920 /* GetCurrentUserResponse.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
@@ -577,6 +601,7 @@
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
+				CF186A881E43593F00218920 /* User.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
@@ -584,14 +609,17 @@
 				CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
+				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
 				1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */,
 				CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */,
+				CF186A8E1E4378AD00218920 /* GetFeedRequest.swift in Sources */,
 				1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */,
 				1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
+				CF186A901E4378F700218920 /* GetFeedResponse.swift in Sources */,
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
