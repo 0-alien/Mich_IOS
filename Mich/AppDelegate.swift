@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     var token:String?
+    
+    var user:GetCurrentUserResponse?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let _ = FBSDKLoginButton.classForCoder()
