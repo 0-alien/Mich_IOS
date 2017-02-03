@@ -8,25 +8,23 @@
 
 import UIKit
 import AMScrollingNavbar
+import Nuke
 
 class PostsTableViewController: UITableViewController, LikesListener {
 
-    var people = [String]()
+    var posts = [PostClass]()
     var likeCnts = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //navigation bars shuashi michis logo
+
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
+       // self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        for i in 1 ..< 20 {
-            people.append(String(i))
-            likeCnts.append(0)
-        }
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
@@ -42,7 +40,7 @@ class PostsTableViewController: UITableViewController, LikesListener {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
-        //MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError);
+        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError);
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,14 +63,14 @@ class PostsTableViewController: UITableViewController, LikesListener {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return people.count
+        return posts.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
-        cell.userImage.image = cell.userImage.image!.circle
+        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
         cell.commentCount.text = "0"
         cell.likeCount.text = String(likeCnts[indexPath.row])
         cell.likeButton.tag = indexPath.row
@@ -81,6 +79,7 @@ class PostsTableViewController: UITableViewController, LikesListener {
         tap.numberOfTapsRequired = 2
         cell.postImage.addGestureRecognizer(tap)
         cell.likeDelegate = self
+        cell.title.text = posts[indexPath.row].title
         return cell
     }
     
@@ -114,9 +113,12 @@ class PostsTableViewController: UITableViewController, LikesListener {
         }
     }
     
-    func onGetFeed(resp: GetFeedResponse){
-        
-        
+    func onGetFeed(resp: [PostClass]){
+        posts.append(contentsOf: resp)
+        for _ in 0 ..< resp.count {
+            likeCnts.append(0)
+        }
+        self.tableView.reloadData()
     }
     
     

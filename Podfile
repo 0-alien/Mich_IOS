@@ -8,4 +8,5 @@ target 'Mich' do
     pod 'Firebase/Auth'
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'Nuke'
 end

@@ -422,9 +422,9 @@ class MichTransport {
     }
     
     
+
     
-    
-    static func getfeed(token: String, successCallbackForgetfeed: @escaping (GetFeedResponse) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
+    static func getfeed(token: String, successCallbackForgetfeed: @escaping ([PostClass]) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "post/feed"
         
@@ -440,7 +440,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<GetFeedResponse>(JSONString: JString)
+                let baseResponse = BaseResponseArray<PostClass>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -476,6 +476,6 @@ class MichTransport {
         
         
     }
-        
+      
     
 }

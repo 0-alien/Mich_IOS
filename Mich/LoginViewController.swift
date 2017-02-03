@@ -199,15 +199,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     
+    
     func ongetcurrentuser(getcurrentuserResponse: GetCurrentUserResponse){
         
-        
-
-         
          let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
          let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
          self.present(vc, animated: false, completion: nil)
-        
+
         
     }
     

@@ -1,15 +1,15 @@
 //
-//  GetFeedResponse.swift
+//  PostClass.swift
 //  Mich
 //
-//  Created by zuraba on 2/2/17.
+//  Created by zuraba on 2/3/17.
 //  Copyright © 2017 Gigi. All rights reserved.
 //
 
 import Foundation
 import ObjectMapper
 
-class GetFeedResponse: Mappable {
+class PostClass: Mappable {
     var id: String?
     var userId: String?
     var title: String?
@@ -20,6 +20,15 @@ class GetFeedResponse: Mappable {
     
     required init?(map: Map) {
         
+    }
+    
+    init(_ id: String?, userId: String?, title: String?, image: String, created_at: String?, updated_at: String?) {
+        self.id = id
+        self.userId = userId
+        self.title = title
+        self.image = image
+        self.created_at = created_at
+        self.updated_at = updated_at
     }
     
     func mapping(map: Map) {
