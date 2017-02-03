@@ -72,6 +72,8 @@
 		CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279C1E2925D900F0C924 /* BaseResponse.swift */; };
 		CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279E1E29278C00F0C924 /* DefaultError.swift */; };
 		CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */; };
+		CF3C2CF81E448302004512CA /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF71E448302004512CA /* PostClass.swift */; };
+		CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */; };
 		CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B61DBE2ACB0088109A /* Fabric.framework */; };
 		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
 		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
@@ -154,6 +156,8 @@
 		CF39279C1E2925D900F0C924 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		CF39279E1E29278C00F0C924 /* DefaultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultError.swift; sourceTree = "<group>"; };
 		CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CF3C2CF71E448302004512CA /* PostClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
+		CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseArray.swift; sourceTree = "<group>"; };
 		CFA7E8B61DBE2ACB0088109A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				CF209DF61E4215D900B1A59E /* LogoutResponse.swift */,
 				CF186A8B1E435C3900218920 /* GetCurrentUserResponse.swift */,
 				CF186A8F1E4378F700218920 /* GetFeedResponse.swift */,
+				CF3C2CF71E448302004512CA /* PostClass.swift */,
+				CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -454,7 +460,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 57R943V29M;
+						DevelopmentTeam = VQGJTU9RXG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -585,6 +591,7 @@
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
+				CF3C2CF81E448302004512CA /* PostClass.swift in Sources */,
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
@@ -595,6 +602,7 @@
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
 				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
+				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
@@ -750,7 +758,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -770,7 +778,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
