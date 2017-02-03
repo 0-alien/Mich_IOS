@@ -446,9 +446,6 @@ class MichTransport {
                     
                     
                     let res = baseResponse!.data!
-                    for i in 0 ..< res.count {
-//                        print(res[i].title)
-                    }
                     successCallbackForgetfeed(res)
                     
                 }else{

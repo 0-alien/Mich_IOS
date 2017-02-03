@@ -64,4 +64,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: imageSideLength, height: imageSideLength)
     }
+    
+    @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
+        
+    }
 }

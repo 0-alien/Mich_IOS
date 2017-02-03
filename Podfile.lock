@@ -65,6 +65,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - Nuke (4.1.2)
   - ObjectMapper (2.2.1)
 
 DEPENDENCIES:
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Firebase/Auth
   - Google/SignIn
+  - Nuke
   - ObjectMapper
 
 SPEC CHECKSUMS:
@@ -97,8 +99,9 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
 
-PODFILE CHECKSUM: 235d06ac82bf2d6072c2b434deb178f4e4265de9
+PODFILE CHECKSUM: 0a6536d9a6c5d9a4118f8d9ad3e5b3f97fe1a17d
 
 COCOAPODS: 1.1.1

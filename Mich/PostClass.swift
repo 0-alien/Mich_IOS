@@ -22,6 +22,15 @@ class PostClass: Mappable {
         
     }
     
+    init(_ id: String?, userId: String?, title: String?, image: String, created_at: String?, updated_at: String?) {
+        self.id = id
+        self.userId = userId
+        self.title = title
+        self.image = image
+        self.created_at = created_at
+        self.updated_at = updated_at
+    }
+    
     func mapping(map: Map) {
         id              <- map["id"]
         userId          <- map["userId"]
