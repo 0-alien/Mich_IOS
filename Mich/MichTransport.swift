@@ -424,7 +424,7 @@ class MichTransport {
     
     
     
-    static func getfeed(token: String, successCallbackForgetfeed: @escaping (GetCurrentUserResponse) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
+    static func getfeed(token: String, successCallbackForgetfeed: @escaping (GetFeedResponse) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "post/feed"
         

@@ -42,6 +42,7 @@ class PostsTableViewController: UITableViewController, LikesListener {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
+        //MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError);
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,6 +112,21 @@ class PostsTableViewController: UITableViewController, LikesListener {
                 img.alpha = 0
             })
         }
+    }
+    
+    func onGetFeed(resp: GetFeedResponse){
+        
+        
+    }
+    
+    
+    
+    func onError(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 

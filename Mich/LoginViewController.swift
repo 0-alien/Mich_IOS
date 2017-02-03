@@ -201,9 +201,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     func ongetcurrentuser(getcurrentuserResponse: GetCurrentUserResponse){
         
-        print("=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=")
-        print(getcurrentuserResponse.username)
-        
         
 
          

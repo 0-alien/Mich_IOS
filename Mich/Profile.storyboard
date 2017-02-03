@@ -255,7 +255,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -360,23 +360,55 @@
                                                     <outlet property="delegate" destination="Ddq-Mk-hQI" id="lyD-I4-ARw"/>
                                                 </connections>
                                             </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28Z-sf-xGC" userLabel="grayline">
+                                                <rect key="frame" x="16" y="243" width="359" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="yJ1-N1-gkG"/>
+                                                </constraints>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bio" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eOS-KI-ZUd" userLabel="bio">
+                                                <rect key="frame" x="16" y="244" width="359" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="Qca-xe-QuW"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWz-eC-Dmb" userLabel="grayline">
+                                                <rect key="frame" x="0.0" y="279" width="375" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="9tR-29-DNP"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="NkX-EB-Xwh" firstAttribute="leading" secondItem="S5L-pX-gEE" secondAttribute="leading" id="0jh-y2-K9e"/>
                                             <constraint firstItem="LOT-lz-6Pv" firstAttribute="centerX" secondItem="S5L-pX-gEE" secondAttribute="centerX" id="2L4-Ck-7ln"/>
                                             <constraint firstAttribute="trailing" secondItem="Sd4-Vn-aIN" secondAttribute="trailing" id="40b-6b-0Fr"/>
+                                            <constraint firstItem="eOS-KI-ZUd" firstAttribute="trailing" secondItem="28Z-sf-xGC" secondAttribute="trailing" id="8dm-Z4-kbq"/>
                                             <constraint firstItem="J4b-Yw-aUO" firstAttribute="leading" secondItem="Sd4-Vn-aIN" secondAttribute="leading" id="Dkt-zz-gH4"/>
+                                            <constraint firstItem="eOS-KI-ZUd" firstAttribute="leading" secondItem="28Z-sf-xGC" secondAttribute="leading" id="Hlm-i2-Qnh"/>
                                             <constraint firstItem="lc0-A0-wbI" firstAttribute="leading" secondItem="S5L-pX-gEE" secondAttribute="leading" constant="16" id="IG7-Pg-WFe"/>
                                             <constraint firstItem="Sd4-Vn-aIN" firstAttribute="top" secondItem="LOT-lz-6Pv" secondAttribute="bottom" constant="26" id="IRX-nq-EMp"/>
                                             <constraint firstItem="9WD-dM-KUN" firstAttribute="centerX" secondItem="S5L-pX-gEE" secondAttribute="centerX" id="IpS-6s-I2k"/>
+                                            <constraint firstItem="28Z-sf-xGC" firstAttribute="leading" secondItem="lc0-A0-wbI" secondAttribute="leading" id="KiN-Gk-RyH"/>
                                             <constraint firstItem="J4b-Yw-aUO" firstAttribute="bottom" secondItem="lc0-A0-wbI" secondAttribute="top" id="SkS-VN-Wll"/>
                                             <constraint firstAttribute="trailing" secondItem="J4b-Yw-aUO" secondAttribute="trailing" id="UoJ-4a-a3l"/>
                                             <constraint firstAttribute="trailing" secondItem="lc0-A0-wbI" secondAttribute="trailing" id="YLk-iF-1Yz"/>
+                                            <constraint firstItem="YWz-eC-Dmb" firstAttribute="leading" secondItem="NkX-EB-Xwh" secondAttribute="leading" id="YQI-0D-Fxj"/>
+                                            <constraint firstItem="28Z-sf-xGC" firstAttribute="top" secondItem="lc0-A0-wbI" secondAttribute="bottom" id="bWZ-fs-QFc"/>
+                                            <constraint firstItem="YWz-eC-Dmb" firstAttribute="trailing" secondItem="eOS-KI-ZUd" secondAttribute="trailing" id="eTC-Wb-0JK"/>
                                             <constraint firstAttribute="trailing" secondItem="NkX-EB-Xwh" secondAttribute="trailing" id="es5-TL-msA"/>
+                                            <constraint firstItem="YWz-eC-Dmb" firstAttribute="top" secondItem="eOS-KI-ZUd" secondAttribute="bottom" id="gYh-gy-Tv5"/>
                                             <constraint firstItem="Sd4-Vn-aIN" firstAttribute="leading" secondItem="S5L-pX-gEE" secondAttribute="leading" constant="16" id="iJa-Rr-LtE"/>
                                             <constraint firstItem="J4b-Yw-aUO" firstAttribute="top" secondItem="Sd4-Vn-aIN" secondAttribute="bottom" id="l1R-gv-LCp"/>
                                             <constraint firstItem="LOT-lz-6Pv" firstAttribute="top" secondItem="9WD-dM-KUN" secondAttribute="bottom" constant="8" id="mcx-o4-9YC"/>
+                                            <constraint firstItem="eOS-KI-ZUd" firstAttribute="top" secondItem="28Z-sf-xGC" secondAttribute="bottom" id="tTo-qf-998"/>
+                                            <constraint firstItem="28Z-sf-xGC" firstAttribute="trailing" secondItem="lc0-A0-wbI" secondAttribute="trailing" id="ulV-Aq-Qhk"/>
                                             <constraint firstItem="9WD-dM-KUN" firstAttribute="top" secondItem="S5L-pX-gEE" secondAttribute="top" constant="8" id="yYb-OT-T7d"/>
                                             <constraint firstItem="Sd4-Vn-aIN" firstAttribute="top" secondItem="NkX-EB-Xwh" secondAttribute="bottom" id="yfP-WJ-33B"/>
                                         </constraints>
@@ -434,7 +466,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1QM-Lx-YtL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WPr-Hf-bpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WPr-Hf-bpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
