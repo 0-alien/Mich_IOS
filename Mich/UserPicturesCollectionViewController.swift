@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -18,14 +19,18 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileDetailsView: UIView!
     @IBOutlet weak var imageCollection: UICollectionView!
+    var user: User?
     
     var data = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 4
         
-        imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
+        user = (UIApplication.shared.delegate as! AppDelegate).user
+        Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
         
+        
+        imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         for _ in 0 ..< 3 {
             for _ in 0 ..< 30 {
                 data.append("login_background")

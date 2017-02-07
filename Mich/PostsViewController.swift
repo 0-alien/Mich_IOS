@@ -1,29 +1,30 @@
 //
-//  PostsTableViewController.swift
+//  PostsViewController.swift
 //  Mich
 //
-//  Created by Gigi Pataraia on 9/26/16.
-//  Copyright © 2016 Gigi. All rights reserved.
+//  Created by Gigi Pataraia on 2/6/17.
+//  Copyright © 2017 Gigi. All rights reserved.
 //
 
 import UIKit
 import AMScrollingNavbar
 import Nuke
 
-class PostsTableViewController: UITableViewController, LikesListener {
-
+class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, LikesListener {
     var posts = [PostClass]()
+    var likeCnts = [Int]()
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
-       // self.tableView.rowHeight = UITableViewAutomaticDimension
+        //self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
@@ -33,13 +34,13 @@ class PostsTableViewController: UITableViewController, LikesListener {
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
+        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError);
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,79 +58,43 @@ class PostsTableViewController: UITableViewController, LikesListener {
     }
     
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
         cell.commentCount.text = "0"
-        cell.likeCount.text = String(posts[indexPath.row].likeCnt!)
+        cell.likeCount.text = String(likeCnts[indexPath.row])
         cell.likeButton.tag = indexPath.row
         cell.index = indexPath.row
-        
         let tap = UITapGestureRecognizer(target: cell, action: #selector(PostTableViewCell.postDoubleTapped))
         tap.numberOfTapsRequired = 2
         cell.postImage.addGestureRecognizer(tap)
         cell.likeDelegate = self
         cell.title.text = posts[indexPath.row].title
-        
-        let pictureTap = UITapGestureRecognizer(target: self, action: #selector(PostsTableViewController.userPictureTapped(_:)))
-        pictureTap.numberOfTapsRequired = 1
-        cell.userImage.addGestureRecognizer(pictureTap)
-        
         return cell
     }
     
     
-    
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        if (segue.identifier == "gotoselfuserpage") {
-            guard let vc = segue.destination as? UserPicturesCollectionViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            vc.user = (UIApplication.shared.delegate as! AppDelegate).user
-        }
-    }
-    
     //Mark: - AMScrolling navigation bar
-    override func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.showNavbar(animated: true)
         }
         return true
     }
     
-    //Mark: actions
-    func userPictureTapped(_ sender: UITapGestureRecognizer) {
-        if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
-            let userId: Int = posts[indexPath.row].userId!
-            if userId == (UIApplication.shared.delegate as! AppDelegate).user?.id {
-                performSegue(withIdentifier: "gotoselfuserpage", sender: self)
-            }
-            else {
-                //performSegue(withIdentifier: "gotootheruserpage", sender: self)
-            }
-        }
-    }
-    
-    
+    //Mark: LikeListener
     func postLiked(postIndex: Int, showAnimation: Bool) {
-        posts[postIndex].likeCnt = posts[postIndex].likeCnt! + 1
+        likeCnts[postIndex] = likeCnts[postIndex] + 1
         self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
         if (showAnimation) {
             let cell = self.tableView.cellForRow(at: IndexPath(row: postIndex, section: 0)) as! PostTableViewCell
@@ -143,14 +108,13 @@ class PostsTableViewController: UITableViewController, LikesListener {
         }
     }
     
-    
-    //Mark: server request callbacks
     func onGetFeed(resp: [PostClass]){
-        posts.removeAll()
         posts.append(contentsOf: resp)
+        for _ in 0 ..< resp.count {
+            likeCnts.append(0)
+        }
         self.tableView.reloadData()
     }
-    
     
     
     
@@ -160,32 +124,5 @@ class PostsTableViewController: UITableViewController, LikesListener {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
-    }
-}
-
-extension PostsTableViewController {
-    func showNotifications() {
-        if (tabBarController?.selectedIndex == 0) {
-            performSegue(withIdentifier: "notifications", sender: nil)
-        }
-    }
-    func showMessages() {
-        if (tabBarController?.selectedIndex == 0) {
-            performSegue(withIdentifier: "messages", sender: nil)
-        }
-    }
-    func showSettings() {
-        if (tabBarController?.selectedIndex == 0) {
-            performSegue(withIdentifier: "settings", sender: nil)
-        }
-    }
-    func showHelp() {
-        if (tabBarController?.selectedIndex == 0) {
-            performSegue(withIdentifier: "help", sender: nil)
-        }
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
     }
 }

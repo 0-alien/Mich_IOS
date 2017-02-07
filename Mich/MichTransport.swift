@@ -368,7 +368,7 @@ class MichTransport {
     
     
     
-    static func getcurrentuser(token: String, successCallbackForgetcurrentuser: @escaping (GetCurrentUserResponse) -> Void, errorCallbackForgetcurrentuser: @escaping (DefaultError) -> Void ){
+    static func getcurrentuser(token: String, successCallbackForgetcurrentuser: @escaping (User) -> Void, errorCallbackForgetcurrentuser: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "user/get"
         
@@ -384,7 +384,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<GetCurrentUserResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
