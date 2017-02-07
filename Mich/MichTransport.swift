@@ -476,6 +476,65 @@ class MichTransport {
         
         
     }
+    
+    
+    
+    static func changepassword(token: String, password: String, successCallbackForChangePassword: @escaping () -> Void, errorCallbackForChnagePassword: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/changePassword"
+        
+        let changePasswordRequest = ChangePasswordRequset(token: token, password: password)
+        let payloadJson = changePasswordRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<ChangePasswordResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForChangePassword()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForChnagePassword(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForChnagePassword(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
       
     
 }

@@ -12,7 +12,14 @@ class SettingsViewController: UIViewController {
 
 //    @IBOutlet weak var passwordView: UIView!
 //    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+
     @IBOutlet weak var heightCons: NSLayoutConstraint!
+
+    @IBOutlet weak var oldPasswordTF: UITextField!
+    @IBOutlet weak var newPassworTF: UITextField!
+    @IBOutlet weak var confirmPassworTF: UITextField!
+    
+    
     @IBOutlet weak var ressetPassworBTN: UIButton!
     @IBOutlet weak var changePassBTN: UIButton!
     @IBOutlet weak var view1: UIView!
@@ -106,7 +113,58 @@ class SettingsViewController: UIViewController {
             })
             ressetPassworBTN.isHidden = true;
         }
+        
+        
+        
+        
     }
+    
+    @IBAction func resetPasswordBTN(_ sender: Any) {
+        let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
+        
+        
+        let password = newPassworTF.text!
+        let confirmPassword = confirmPassworTF.text!
+        
+        if(password != confirmPassword){
+            confirmPassworTF.text = "";
+            newPassworTF.text = "";
+            newPassworTF.layer.borderColor = redColor.cgColor;
+            newPassworTF.layer.borderWidth = 2.0;
+            confirmPassworTF.layer.borderColor = redColor.cgColor;
+            confirmPassworTF.layer.borderWidth = 2.0;
+            return;
+        }
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        MichTransport.changepassword(token: appDelegate.token!, password: password, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
+
+    
+    }
+
+    
+    func onChnagePassword(){
+        
+    
+        
+        let alert = UIAlertController(title: "Alert", message: "Password Changed!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func onError(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
 
     @IBAction func changeEmailBTN(_ sender: Any) {
   
