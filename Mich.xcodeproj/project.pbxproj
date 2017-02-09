@@ -70,6 +70,9 @@
 		CF26B3021DFACFF30033C6F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */; };
 		CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */; };
 		CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */; };
+		CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */; };
+		CF2DE2B51E4C806B00BD1980 /* IsFollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */; };
+		CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */; };
 		CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927941E2910C700F0C924 /* MichTransport.swift */; };
 		CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927971E29133D00F0C924 /* LoginResponse.swift */; };
 		CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279A1E291BC300F0C924 /* LoginRequest.swift */; };
@@ -160,6 +163,9 @@
 		CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
+		CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowingRequest.swift; sourceTree = "<group>"; };
+		CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowingResponse.swift; sourceTree = "<group>"; };
+		CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowingRequest.swift; sourceTree = "<group>"; };
 		CF3927941E2910C700F0C924 /* MichTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichTransport.swift; sourceTree = "<group>"; };
 		CF3927971E29133D00F0C924 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CF39279A1E291BC300F0C924 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -399,19 +405,20 @@
 		CF3927961E29130A00F0C924 /* Bean */ = {
 			isa = PBXGroup;
 			children = (
-				CF3927971E29133D00F0C924 /* LoginResponse.swift */,
-				CFFD54F81E2D083A0006830E /* RegisterResponse.swift */,
-				CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */,
 				CF39279C1E2925D900F0C924 /* BaseResponse.swift */,
+				CF3927971E29133D00F0C924 /* LoginResponse.swift */,
+				CF209DF61E4215D900B1A59E /* LogoutResponse.swift */,
+				CFFD54F81E2D083A0006830E /* RegisterResponse.swift */,
+				CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */,
+				CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */,
+				CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */,
 				CF39279E1E29278C00F0C924 /* DefaultError.swift */,
 				CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */,
 				CF209DF01E420CF700B1A59E /* RecoveryResponse.swift */,
-				CF209DF61E4215D900B1A59E /* LogoutResponse.swift */,
 				CF186A8B1E435C3900218920 /* User.swift */,
 				CF3C2CF71E448302004512CA /* PostClass.swift */,
-				CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */,
-				CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */,
 				CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */,
+				CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -430,6 +437,8 @@
 				CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */,
 				1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */,
 				CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */,
+				CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */,
+				CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -616,7 +625,9 @@
 				1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
+				CF2DE2B51E4C806B00BD1980 /* IsFollowingResponse.swift in Sources */,
 				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
+				CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
@@ -644,6 +655,7 @@
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
 				1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */,
+				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,
 				1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */,
 				CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */,
