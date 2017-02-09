@@ -745,7 +745,7 @@ class MichTransport {
     
     
     
-    static func unfollow(token: String, id: Int, successCallbackForUnfollow: @escaping (UnfollowResponse) -> Void, errorCallbackForUnfollow: @escaping (DefaultError) -> Void) {
+    static func unfollow(token: String, id: Int, successCallbackForUnfollow: @escaping () -> Void, errorCallbackForUnfollow: @escaping (DefaultError) -> Void) {
         
         let reqString = BASE_URL + "user/relation/unfollow"
         
@@ -766,8 +766,8 @@ class MichTransport {
                 if baseResponse!.code! == SUCCESS_CODE {
                     
                     
-                    let res = baseResponse!.data!
-                    successCallbackForUnfollow(res)
+                   
+                    successCallbackForUnfollow()
                     
                 }else{
                     
