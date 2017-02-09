@@ -19,7 +19,7 @@
                         <viewControllerLayoutGuide type="top" id="rGm-Tx-hMf"/>
                         <viewControllerLayoutGuide type="bottom" id="Cwe-bD-IWS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="mk7-c3-4KY">
+                    <view key="view" contentMode="scaleToFill" id="mk7-c3-4KY">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -98,7 +98,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UTg-1n-REE">
-                                <rect key="frame" x="0.0" y="128" width="375" height="475"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="426"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="oKp-xJ-gUJ">

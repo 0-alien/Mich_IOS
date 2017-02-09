@@ -22,7 +22,19 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var imageCollection: UICollectionView!
     var user: User? = nil
     var isOwner: Bool = false
-    
+    var isFollowing: Bool = false {
+        didSet {
+            if isFollowing {
+                editOrFollow.setTitle("UNFOLLOW", for: .normal)
+                editOrFollow.backgroundColor = UIColor.white
+                editOrFollow.setTitleColor(UIColor.black, for: .normal)
+            } else {
+                editOrFollow.setTitle("FOLLOW", for: .normal)
+                editOrFollow.setTitleColor(UIColor.white, for: .normal)
+                editOrFollow.backgroundColor = UIColor(red: 255 / 255.0, green: 29.0 / 255, blue: 45.0 / 255, alpha: 1)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 4
@@ -39,8 +51,10 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         else {
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
+            MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id!)!,
+                                      successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
+
         }
-        
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         profilePicture.image = profilePicture.image?.circle
     }
@@ -84,6 +98,18 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
+        
+    }
+    
+    func onsuccess(resp: IsFollowingResponse) {
+        isFollowing = resp.result!
+    }
+    
+    func onerror(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
     }
 }
