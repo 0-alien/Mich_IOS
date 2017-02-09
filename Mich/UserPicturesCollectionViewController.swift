@@ -16,10 +16,12 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     let itemsPerRow : CGFloat = 3.0
     var imageSideLength : CGFloat = 0.0
     
+    @IBOutlet weak var editOrFollow: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileDetailsView: UIView!
     @IBOutlet weak var imageCollection: UICollectionView!
     var user: User?
+    var isOwner: Bool = false
     
     var data = [String]()
     override func viewDidLoad() {
@@ -28,7 +30,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         
         user = (UIApplication.shared.delegate as! AppDelegate).user
         Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
-        
+        self.navigationItem.title = user?.username
+        if (user?.id == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
+            editOrFollow.setTitle("EDIT PROFILE", for: .normal)
+            isOwner = true
+        }
+        else {
+            editOrFollow.setTitle("FOLLOW", for: .normal)
+            isOwner = false
+        }
         
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         for _ in 0 ..< 3 {
@@ -52,12 +62,20 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         return 1
     }
 
+    @IBAction func editOrFollow(_ sender: Any) {
+        if (isOwner) {
+            performSegue(withIdentifier: "edit", sender: self)
+        }
+        else {
+            print("follow time")
+        }
+    }
 
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return data.count
     }
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
         let imageName = data[indexPath.item]

@@ -15,7 +15,7 @@
         <!--Posts Table View Controller-->
         <scene sceneID="gFj-1a-F0v">
             <objects>
-                <tableViewController id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,6 +133,7 @@
                             <outlet property="delegate" destination="Swl-8U-AoY" id="vUg-zC-KQC"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="OcI-BQ-NtQ" userLabel="Mich">
                         <barButtonItem key="backBarButtonItem" title=" " id="XPE-Qd-MwN"/>
                     </navigationItem>
@@ -142,8 +143,7 @@
                         <segue destination="YeK-84-WCx" kind="show" identifier="messages" id="Bdf-Vo-6Kk"/>
                         <segue destination="PWT-d0-Rbd" kind="show" identifier="notifications" id="Kfm-rt-bIW"/>
                         <segue destination="BfJ-HE-mA2" kind="show" identifier="help" id="DcU-G2-PRR"/>
-                        <segue destination="rlJ-fs-3hg" kind="show" identifier="gotoselfuserpage" id="dKq-tb-CdD"/>
-                        <segue destination="AOB-f1-xNw" kind="show" identifier="gotootheruserpage" id="lYo-CX-Xoa"/>
+                        <segue destination="rlJ-fs-3hg" kind="show" identifier="gotoprofilepage" id="dKq-tb-CdD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIm-7x-tcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,21 +158,13 @@
             </objects>
             <point key="canvasLocation" x="-452" y="358"/>
         </scene>
-        <!--selfuserpage-->
+        <!--userpage-->
         <scene sceneID="SZb-oP-WA7">
             <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="rlJ-fs-3hg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2A-mq-qMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="selfuserpage" id="rlJ-fs-3hg" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="73" y="357"/>
-        </scene>
-        <!--otheruserpage-->
-        <scene sceneID="hdO-Kl-rJa">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="otheruserpage" id="AOB-f1-xNw" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zfC-ZM-G3E" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="345" y="355"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="byH-yG-dEZ">
@@ -471,7 +463,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Jzw-k1-yGp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="Jzw-k1-yGp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.1134123322147651" blue="0.17647058823529377" alpha="1" colorSpace="calibratedRGB"/>
@@ -498,7 +490,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QNb-4P-LFc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="QNb-4P-LFc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

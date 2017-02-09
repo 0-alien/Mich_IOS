@@ -13,6 +13,7 @@ import Nuke
 class PostsTableViewController: UITableViewController, LikesListener {
 
     var posts = [PostClass]()
+    var destinationUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,11 +99,11 @@ class PostsTableViewController: UITableViewController, LikesListener {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if (segue.identifier == "gotoselfuserpage") {
+        if (segue.identifier == "gotoprofilepage") {
             guard let vc = segue.destination as? UserPicturesCollectionViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            vc.user = (UIApplication.shared.delegate as! AppDelegate).user
+            vc.user = self.destinationUser
         }
     }
     
@@ -118,12 +119,8 @@ class PostsTableViewController: UITableViewController, LikesListener {
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
             let userId: Int = posts[indexPath.row].userId!
-            if userId == (UIApplication.shared.delegate as! AppDelegate).user?.id {
-                performSegue(withIdentifier: "gotoselfuserpage", sender: self)
-            }
-            else {
-                //performSegue(withIdentifier: "gotootheruserpage", sender: self)
-            }
+            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: onGetUser,
+                    errorCallbackForgetuser: onError)
         }
     }
     
@@ -151,7 +148,10 @@ class PostsTableViewController: UITableViewController, LikesListener {
         self.tableView.reloadData()
     }
     
-    
+    func onGetUser(resp: User) {
+        self.destinationUser = resp
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
     
     
     func onError(error: DefaultError){

@@ -422,7 +422,57 @@ class MichTransport {
     }
     
     
+    static func getuser(token: String, id: Int, successCallbackForgetuser: @escaping (User) -> Void, errorCallbackForgetuser: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/get"
+        
+        let getuserrequest = GetUserRequest(token: token, id: id)
+        let payloadJson = getuserrequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<User>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForgetuser(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForgetuser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForgetuser(error)
+                
+            }
+            
+            
+        }
 
+    }
     
     static func getfeed(token: String, successCallbackForgetfeed: @escaping ([PostClass]) -> Void, errorCallbackForgetfeed: @escaping (DefaultError) -> Void ){
         
