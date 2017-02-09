@@ -1,5 +1,5 @@
 //
-//  IsFollowingRequest.swift
+//  UnfollowRequest.swift
 //  Mich
 //
 //  Created by zuraba on 2/9/17.
@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class IsFollowingRequest: Mappable {
+class UnfollowRequest: Mappable {
     var token: String?
     var id: Int?
     

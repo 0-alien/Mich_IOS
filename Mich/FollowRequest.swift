@@ -24,6 +24,6 @@ class FollowRequest: Mappable {
     
     func mapping(map: Map) {
         token    <- map["token"]
-        id       <- map["userid"]
+        id       <- map["userID"]
     }
 }
