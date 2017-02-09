@@ -15,6 +15,7 @@ class User: Mappable {
     var username: String?
     var email: String?
     var avatar: String?
+    var posts: [PostClass]?
     
     required init?(map: Map) {
         
@@ -26,5 +27,6 @@ class User: Mappable {
         username    <- map["username"]
         email       <- map["email"]
         avatar      <- map["avatar"]
+        posts       <- map["posts"]
     }
 }

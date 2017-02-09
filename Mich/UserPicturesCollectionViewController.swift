@@ -20,15 +20,16 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileDetailsView: UIView!
     @IBOutlet weak var imageCollection: UICollectionView!
-    var user: User?
+    var user: User? = nil
     var isOwner: Bool = false
     
-    var data = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 4
         
-        user = (UIApplication.shared.delegate as! AppDelegate).user
+        if (user == nil) {
+            user = (UIApplication.shared.delegate as! AppDelegate).user
+        }
         Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
         self.navigationItem.title = user?.username
         if (user?.id == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
@@ -41,11 +42,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        for _ in 0 ..< 3 {
-            for _ in 0 ..< 30 {
-                data.append("login_background")
-            }
-        }
         profilePicture.image = profilePicture.image?.circle
     }
 
@@ -73,13 +69,12 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return data.count
+        return (user?.posts?.count)!
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        let imageName = data[indexPath.item]
-        cell.photo.image = UIImage(named: imageName)
+        Nuke.loadImage(with: Foundation.URL(string: (user?.posts?[indexPath.item].image!)!)!, into: cell.photo)
         return cell
     }
 

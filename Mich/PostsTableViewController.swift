@@ -119,8 +119,8 @@ class PostsTableViewController: UITableViewController, LikesListener {
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
             let userId: Int = posts[indexPath.row].userId!
-            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: onGetUser,
-                    errorCallbackForgetuser: onError)
+            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: self.onGetUser,
+                    errorCallbackForgetuser: self.onError)
         }
     }
     

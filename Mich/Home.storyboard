@@ -15,7 +15,7 @@
         <!--Posts Table View Controller-->
         <scene sceneID="gFj-1a-F0v">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Swl-8U-AoY" customClass="PostsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="446" sectionHeaderHeight="28" sectionFooterHeight="28" id="YVp-61-qUs">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
