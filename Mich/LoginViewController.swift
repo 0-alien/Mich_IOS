@@ -200,7 +200,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     
-    
     func ongetcurrentuser(getcurrentuserResponse: User){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.user = getcurrentuserResponse

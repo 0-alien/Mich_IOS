@@ -636,4 +636,114 @@ class MichTransport {
     }
       
     
+    
+    
+    static func getCurrentUserFollowing(token: String, successCallbackForGetCurrentFolloing: @escaping ([Int]) -> Void, errorCallbackForGetCurrentFolloing: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/relation/getFollowing"
+        
+        let getCurrentUserFollowingResquest = GetCurrentUserFollowingRequest(token: token)
+        let payloadJson = getCurrentUserFollowingResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArrayX<Int>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForGetCurrentFolloing(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForGetCurrentFolloing(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForGetCurrentFolloing(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    static func isFollowing(token: String, id: Int, successCallbackForIsFollowing: @escaping (IsFollowingResponse) -> Void, errorCallbackForIsFollowing: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/relation/isFollowing"
+        
+        let isfollowingrequest = IsFollowingRequest(token: token, id: id)
+        let payloadJson = isfollowingrequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<IsFollowingResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForIsFollowing(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForIsFollowing(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForIsFollowing(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
 }
