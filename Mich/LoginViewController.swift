@@ -180,6 +180,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let user = usernameTXT.text!
         let pass = passwordTXT.text!
         
+        
         MichTransport.defaultLogin(username: user, password: pass, successCallback: onLogin, errorCallback: onError)
         
     }

@@ -68,6 +68,8 @@
 		CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF41E4215C500B1A59E /* LogoutRequest.swift */; };
 		CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF61E4215D900B1A59E /* LogoutResponse.swift */; };
 		CF26B3021DFACFF30033C6F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */; };
+		CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */; };
+		CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */; };
 		CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927941E2910C700F0C924 /* MichTransport.swift */; };
 		CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927971E29133D00F0C924 /* LoginResponse.swift */; };
 		CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279A1E291BC300F0C924 /* LoginRequest.swift */; };
@@ -156,6 +158,8 @@
 		CF209DF41E4215C500B1A59E /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		CF209DF61E4215D900B1A59E /* LogoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowResponse.swift; sourceTree = "<group>"; };
+		CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
 		CF3927941E2910C700F0C924 /* MichTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichTransport.swift; sourceTree = "<group>"; };
 		CF3927971E29133D00F0C924 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CF39279A1E291BC300F0C924 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -407,6 +411,7 @@
 				CF3C2CF71E448302004512CA /* PostClass.swift */,
 				CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */,
 				CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */,
+				CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -424,6 +429,7 @@
 				CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */,
 				CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */,
 				1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */,
+				CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -588,6 +594,7 @@
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
+				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
 				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
@@ -614,6 +621,7 @@
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
+				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,

@@ -581,10 +581,59 @@ class MichTransport {
         
     }
     
+////////// relations
     
     
-    
-    
+    static func follow(token: String, id: Int, successCallbackForFollow: @escaping (FollowResponse) -> Void, errorCallbackForFollow: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/relation/follow"
+        
+        let followrequest = FollowRequest(token: token, id: id)
+        let payloadJson = followrequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<FollowResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForFollow(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForFollow(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForFollow(error)
+                
+            }        
+            
+        }
+        
+    }
       
     
 }
