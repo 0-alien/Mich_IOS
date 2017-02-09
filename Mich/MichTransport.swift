@@ -745,5 +745,59 @@ class MichTransport {
     
     
     
+    static func unfollow(token: String, id: Int, successCallbackForUnfollow: @escaping (UnfollowResponse) -> Void, errorCallbackForUnfollow: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/relation/unfollow"
+        
+        let unfollowrequest = UnfollowRequest(token: token, id: id)
+        let payloadJson = unfollowrequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<UnfollowResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForUnfollow(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForUnfollow(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForUnfollow(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
     
 }
