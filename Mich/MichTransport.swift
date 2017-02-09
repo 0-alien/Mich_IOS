@@ -584,7 +584,7 @@ class MichTransport {
 ////////// relations
     
     
-    static func follow(token: String, id: Int, successCallbackForFollow: @escaping (FollowResponse) -> Void, errorCallbackForFollow: @escaping (DefaultError) -> Void) {
+    static func follow(token: String, id: Int, successCallbackForFollow: @escaping () -> Void, errorCallbackForFollow: @escaping (DefaultError) -> Void) {
         
         let reqString = BASE_URL + "user/relation/follow"
         
@@ -604,9 +604,7 @@ class MichTransport {
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
-                    
-                    let res = baseResponse!.data!
-                    successCallbackForFollow(res)
+                    successCallbackForFollow()
                     
                 }else{
                     

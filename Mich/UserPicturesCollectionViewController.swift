@@ -110,11 +110,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     //Mark: callbacks
-    func onunfollowsuccess (resp: UnfollowResponse) {
+    func onunfollowsuccess () {
         self.isFollowing = false
     }
     
-    func onfollowsuccess (resp: FollowResponse) {
+    func onfollowsuccess () {
         self.isFollowing = true
     }
     
