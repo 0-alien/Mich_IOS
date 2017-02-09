@@ -77,7 +77,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             performSegue(withIdentifier: "edit", sender: self)
         }
         else {
-            print("follow time")
+            if (isFollowing) {
+                MichTransport.unfollow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
+                                       successCallbackForUnfollow: self.onunfollowsuccess, errorCallbackForUnfollow: self.onerror)
+                print("unfollow")
+            }
+            else {
+                MichTransport.follow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
+                                     successCallbackForFollow: self.onfollowsuccess, errorCallbackForFollow: self.onerror)
+            }
         }
     }
 
@@ -99,6 +107,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
         
+    }
+    
+    //Mark: callbacks
+    func onunfollowsuccess (resp: UnfollowResponse) {
+        self.isFollowing = false
+    }
+    
+    func onfollowsuccess (resp: FollowResponse) {
+        self.isFollowing = true
     }
     
     func onsuccess(resp: IsFollowingResponse) {
