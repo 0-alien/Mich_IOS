@@ -581,7 +581,7 @@ class MichTransport {
         
     }
     
-    
+    ////// done
     
     static func like(token: String, postID: Int, successCallbackForLike: @escaping () -> Void, errorCallbackForLike: @escaping (DefaultError) -> Void ){
         
@@ -634,7 +634,7 @@ class MichTransport {
     }
     
     
-    
+    ////// done
     
     static func unlike(token: String, postID: Int, successCallbackForUnlike: @escaping () -> Void, errorCallbackForUnlike: @escaping (DefaultError) -> Void ){
         
@@ -697,6 +697,8 @@ class MichTransport {
     
 ////////// relations
     
+    //////////// done
+    
     
     static func follow(token: String, id: Int, successCallbackForFollow: @escaping () -> Void, errorCallbackForFollow: @escaping (DefaultError) -> Void) {
         
@@ -748,9 +750,9 @@ class MichTransport {
     }
       
     
+    ///////////// ????????????
     
-    
-    static func getCurrentUserFollowing(token: String, successCallbackForGetCurrentFolloing: @escaping ([Int]) -> Void, errorCallbackForGetCurrentFolloing: @escaping (DefaultError) -> Void ){
+    static func getCurrentUserFollowing(token: String, successCallbackForGetCurrentFolloing: @escaping ([User]) -> Void, errorCallbackForGetCurrentFolloing: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "user/relation/getFollowing"
         
@@ -766,7 +768,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<Int>(JSONString: JString)
+                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -801,9 +803,9 @@ class MichTransport {
         
     }
     
- 
+    ////////// ???????????????
     
-    static func getCurrentUserFollowers(token: String, successCallbackForGetCurrentFollowers: @escaping ([Int]) -> Void, errorCallbackForGetCurrentFollowers: @escaping (DefaultError) -> Void ){
+    static func getCurrentUserFollowers(token: String, successCallbackForGetCurrentFollowers: @escaping ([User]) -> Void, errorCallbackForGetCurrentFollowers: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "user/relation/getFollowers"
         
@@ -819,7 +821,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<Int>(JSONString: JString)
+                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -855,7 +857,7 @@ class MichTransport {
     }
     
     
-    
+    ///////// done
     
     static func isFollower(token: String, id: Int, successCallbackForIsFollower: @escaping (IsFollowerResponse) -> Void, errorCallbackForIsFollower: @escaping (DefaultError) -> Void) {
         
@@ -911,7 +913,7 @@ class MichTransport {
     
     
     
-    
+    ////////// done
     
     static func isFollowing(token: String, id: Int, successCallbackForIsFollowing: @escaping (IsFollowingResponse) -> Void, errorCallbackForIsFollowing: @escaping (DefaultError) -> Void) {
         
@@ -966,6 +968,7 @@ class MichTransport {
     
     
     
+    ////////// done
     
     static func unfollow(token: String, id: Int, successCallbackForUnfollow: @escaping () -> Void, errorCallbackForUnfollow: @escaping (DefaultError) -> Void) {
         
