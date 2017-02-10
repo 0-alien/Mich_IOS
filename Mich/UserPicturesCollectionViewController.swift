@@ -20,15 +20,28 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileDetailsView: UIView!
     @IBOutlet weak var imageCollection: UICollectionView!
-    var user: User?
+    var user: User? = nil
     var isOwner: Bool = false
-    
-    var data = [String]()
+    var isFollowing: Bool = false {
+        didSet {
+            if isFollowing {
+                editOrFollow.setTitle("UNFOLLOW", for: .normal)
+                editOrFollow.backgroundColor = UIColor.white
+                editOrFollow.setTitleColor(UIColor.black, for: .normal)
+            } else {
+                editOrFollow.setTitle("FOLLOW", for: .normal)
+                editOrFollow.setTitleColor(UIColor.white, for: .normal)
+                editOrFollow.backgroundColor = UIColor(red: 255 / 255.0, green: 29.0 / 255, blue: 45.0 / 255, alpha: 1)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 4
         
-        user = (UIApplication.shared.delegate as! AppDelegate).user
+        if (user == nil) {
+            user = (UIApplication.shared.delegate as! AppDelegate).user
+        }
         Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
         self.navigationItem.title = user?.username
         if (user?.id == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
@@ -38,14 +51,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         else {
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
+            MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id!)!,
+                                      successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
+
         }
-        
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        for _ in 0 ..< 3 {
-            for _ in 0 ..< 30 {
-                data.append("login_background")
-            }
-        }
         profilePicture.image = profilePicture.image?.circle
     }
 
@@ -67,19 +77,26 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             performSegue(withIdentifier: "edit", sender: self)
         }
         else {
-            print("follow time")
+            if (isFollowing) {
+                MichTransport.unfollow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
+                                       successCallbackForUnfollow: self.onunfollowsuccess, errorCallbackForUnfollow: self.onerror)
+                print("unfollow")
+            }
+            else {
+                MichTransport.follow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
+                                     successCallbackForFollow: self.onfollowsuccess, errorCallbackForFollow: self.onerror)
+            }
         }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return data.count
+        return (user?.posts?.count)!
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        let imageName = data[indexPath.item]
-        cell.photo.image = UIImage(named: imageName)
+        Nuke.loadImage(with: Foundation.URL(string: (user?.posts?[indexPath.item].image!)!)!, into: cell.photo)
         return cell
     }
 
@@ -89,6 +106,27 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
+        
+    }
+    
+    //Mark: callbacks
+    func onunfollowsuccess () {
+        self.isFollowing = false
+    }
+    
+    func onfollowsuccess () {
+        self.isFollowing = true
+    }
+    
+    func onsuccess(resp: IsFollowingResponse) {
+        isFollowing = resp.result!
+    }
+    
+    func onerror(error: DefaultError){
+        
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         
     }
 }

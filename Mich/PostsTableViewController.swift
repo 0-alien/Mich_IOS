@@ -24,7 +24,6 @@ class PostsTableViewController: UITableViewController, LikesListener {
         self.navigationItem.titleView = imageView
        // self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
@@ -41,6 +40,7 @@ class PostsTableViewController: UITableViewController, LikesListener {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
+        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,8 +119,8 @@ class PostsTableViewController: UITableViewController, LikesListener {
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
             let userId: Int = posts[indexPath.row].userId!
-            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: onGetUser,
-                    errorCallbackForgetuser: onError)
+            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: self.onGetUser,
+                    errorCallbackForgetuser: self.onError)
         }
     }
     

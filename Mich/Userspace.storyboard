@@ -102,7 +102,6 @@
         <scene sceneID="Iud-OV-Vf9">
             <objects>
                 <tabBarController id="YFN-JR-BMZ" customClass="MainTabBarController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" selectionIndicatorImage="active_line" itemPositioning="fill" id="7ge-Nk-gMf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
