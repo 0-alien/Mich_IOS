@@ -44,10 +44,11 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if (viewController is StartViewController) {
-            
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "showChoose"), object: nil)
             return false
         }
-        return true;
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "hideChoose"), object: nil)
+        return true
     }
     
     /*

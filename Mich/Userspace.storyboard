@@ -86,6 +86,31 @@
             </objects>
             <point key="canvasLocation" x="-2827.1999999999998" y="-2160.2698650674665"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zCf-tt-CZD">
+            <objects>
+                <viewController id="fIH-Iz-bu3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ACt-Rf-s8s"/>
+                        <viewControllerLayoutGuide type="bottom" id="ErY-i9-8sT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ube-4L-b1Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-yA-0x6" customClass="Camera" customModule="Mich" customModuleProvider="target">
+                                <rect key="frame" x="36" y="86" width="307" height="540"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ime-OX-5a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1466.4000000000001" y="-1444.2278860569716"/>
+        </scene>
         <!--Home-->
         <scene sceneID="pc5-R2-8v7">
             <objects>

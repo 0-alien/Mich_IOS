@@ -40,6 +40,7 @@
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
+		1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC367C41E4DB4DE00DB6C77 /* Camera.swift */; };
 		1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */; };
 		1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8BFF11D953C7500297A96 /* StartViewController.swift */; };
 		1EDC86DF1D9BFD65003106E8 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDC86DE1D9BFD65003106E8 /* CommentsTableViewController.swift */; };
@@ -134,6 +135,7 @@
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
+		1EC367C41E4DB4DE00DB6C77 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSViewController.swift; sourceTree = "<group>"; };
 		1EC8BFF11D953C7500297A96 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1EDC86DE1D9BFD65003106E8 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 			children = (
 				1E56BC561D8C16C00012E695 /* Footer.swift */,
 				1E60A1E41E4C5BFA001B9EFF /* Camera.xib */,
+				1EC367C41E4DB4DE00DB6C77 /* Camera.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -625,6 +628,7 @@
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
+				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
