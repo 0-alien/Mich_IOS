@@ -581,6 +581,120 @@ class MichTransport {
         
     }
     
+    
+    
+    static func like(token: String, postID: Int, successCallbackForLike: @escaping () -> Void, errorCallbackForLike: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/unlike"
+        
+        let likeRequest = LikeRequest(token: token, postID: postID)
+        let payloadJson = likeRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<LikeResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForLike()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForLike(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForLike(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    static func unlike(token: String, postID: Int, successCallbackForUnlike: @escaping () -> Void, errorCallbackForUnlike: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/like"
+        
+        let unlikeRequest = UnlikeRequest(token: token, postID: postID)
+        let payloadJson = unlikeRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<UnlikeResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForUnlike()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForUnlike(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForUnlike(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 ////////// relations
     
     
@@ -686,6 +800,116 @@ class MichTransport {
         }
         
     }
+    
+ 
+    
+    static func getCurrentUserFollowers(token: String, successCallbackForGetCurrentFollowers: @escaping ([Int]) -> Void, errorCallbackForGetCurrentFollowers: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/relation/getFollowers"
+        
+        let getCurrentUserFollowersResquest = GetCurrentUserFollowersRequest(token: token)
+        let payloadJson = getCurrentUserFollowersResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArrayX<Int>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForGetCurrentFollowers(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForGetCurrentFollowers(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForGetCurrentFollowers(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    static func isFollower(token: String, id: Int, successCallbackForIsFollower: @escaping (IsFollowerResponse) -> Void, errorCallbackForIsFollower: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/relation/isFollower"
+        
+        let isfollowerrequest = IsFollowerRequest(token: token, id: id)
+        let payloadJson = isfollowerrequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<IsFollowerResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForIsFollower(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForIsFollower(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForIsFollower(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
     
     
     
@@ -793,7 +1017,6 @@ class MichTransport {
         }
         
     }
-    
     
     
     

@@ -86,6 +86,15 @@
 		CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */; };
 		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
 		CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */; };
+		CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */; };
+		CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */; };
+		CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */; };
+		CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */; };
+		CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */; };
+		CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */; };
+		CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */; };
+		CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */; };
+		CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */; };
 		CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B61DBE2ACB0088109A /* Fabric.framework */; };
 		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
 		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
@@ -182,6 +191,15 @@
 		CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseArray.swift; sourceTree = "<group>"; };
 		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequset.swift; sourceTree = "<group>"; };
+		CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerResponse.swift; sourceTree = "<group>"; };
+		CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerRequest.swift; sourceTree = "<group>"; };
+		CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowersRequest.swift; sourceTree = "<group>"; };
+		CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFollowersResponse.swift; sourceTree = "<group>"; };
+		CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowersRequest.swift; sourceTree = "<group>"; };
+		CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRequest.swift; sourceTree = "<group>"; };
+		CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeRequest.swift; sourceTree = "<group>"; };
+		CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeResponse.swift; sourceTree = "<group>"; };
+		CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeResponse.swift; sourceTree = "<group>"; };
 		CFA7E8B61DBE2ACB0088109A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -425,8 +443,12 @@
 				CF186A8B1E435C3900218920 /* User.swift */,
 				CF3C2CF71E448302004512CA /* PostClass.swift */,
 				CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */,
+				CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */,
 				CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */,
 				CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */,
+				CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */,
+				CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */,
+				CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -446,8 +468,13 @@
 				1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */,
 				CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */,
 				CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */,
+				CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */,
+				CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */,
 				CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */,
 				CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */,
+				CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */,
+				CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */,
+				CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -604,6 +631,7 @@
 			files = (
 				1E614ABB1DDC6A21006578B2 /* ReplyCell.swift in Sources */,
 				CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */,
+				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
@@ -611,6 +639,7 @@
 				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
+				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
@@ -630,6 +659,7 @@
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
+				CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
@@ -641,6 +671,7 @@
 				CF2DE2BB1E4CAF7D00BD1980 /* UnfollowResponse.swift in Sources */,
 				CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
+				CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */,
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
@@ -648,11 +679,15 @@
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
+				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,
+				CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */,
 				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
 				1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */,
+				CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */,
 				CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
+				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
@@ -667,6 +702,7 @@
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
 				1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */,
+				CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,
 				1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */,
