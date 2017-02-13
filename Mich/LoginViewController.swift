@@ -30,6 +30,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.usernameTXT.delegate = self
+        self.passwordTXT.delegate = self
+        
         usernameTXT.layer.shadowOpacity = 0.3;
         usernameTXT.layer.shadowRadius = 1.0;
         usernameTXT.layer.shadowColor = UIColor.black.cgColor;
@@ -249,6 +252,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        textField.resignFirstResponder()
+        login(self)
+        
         return true
     }
     

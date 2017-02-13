@@ -174,6 +174,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        textField.resignFirstResponder()
+        signUpButton(self)
         return true
     }
 
