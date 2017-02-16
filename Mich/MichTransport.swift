@@ -1026,9 +1026,14 @@ class MichTransport {
     static func createpost(token: String, title: String, image: UIImage, successCallbackForCreatePost: @escaping () -> Void, errorCallbackForCreatePost: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "post/create"
+ 
+        let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
+        let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
+
         
-        let createpostRequest = CreatePostRequest(token: token, title: title, image: image)
+        let createpostRequest = CreatePostRequest(token: token, title: title, image: strBase64)
         let payloadJson = createpostRequest.toJSONString()
+        
         
         
         

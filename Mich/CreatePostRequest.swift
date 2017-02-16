@@ -12,9 +12,9 @@ import ObjectMapper
 class CreatePostRequest: Mappable {
     var token: String?
     var title: String?
-    var image: UIImage?
+    var image: String?
     
-    init(token: String, title: String, image: UIImage){
+    init(token: String, title: String, image: String){
         self.token = token
         self.title = title
         self.image = image
