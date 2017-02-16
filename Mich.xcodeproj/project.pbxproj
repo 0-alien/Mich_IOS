@@ -56,6 +56,8 @@
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
+		CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */; };
+		CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
 		CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */; };
 		CF186A8C1E435C3900218920 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8B1E435C3900218920 /* User.swift */; };
@@ -161,6 +163,8 @@
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostRequest.swift; sourceTree = "<group>"; };
+		CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostResponse.swift; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserRequest.swift; sourceTree = "<group>"; };
 		CF186A8B1E435C3900218920 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -449,6 +453,7 @@
 				CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */,
 				CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */,
 				CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */,
+				CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */,
 				CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */,
 				CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */,
+				CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -515,7 +521,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 57R943V29M;
+						DevelopmentTeam = VQGJTU9RXG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -634,6 +640,7 @@
 				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
+				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
 				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
@@ -702,6 +709,7 @@
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
 				1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */,
+				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
 				CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,
@@ -834,7 +842,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -854,7 +862,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

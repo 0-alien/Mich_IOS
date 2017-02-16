@@ -30,6 +30,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.usernameTXT.delegate = self
+        self.passwordTXT.delegate = self
+        
         usernameTXT.layer.shadowOpacity = 0.3;
         usernameTXT.layer.shadowRadius = 1.0;
         usernameTXT.layer.shadowColor = UIColor.black.cgColor;
@@ -97,6 +100,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         //////// twitter
 
+        
+/*
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
@@ -125,7 +130,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         logInButton.translatesAutoresizingMaskIntoConstraints = false;
 
         self.view.addConstraints([cons1, cons2, cons3]);
-
+*/
         
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))
@@ -249,6 +254,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        textField.resignFirstResponder()
+        login(self)
+        
         return true
     }
     

@@ -40,7 +40,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="ToO-MH-BtM" id="fA3-HM-tVi"/>
                                         </connections>
@@ -52,7 +52,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
                                         <connections>
                                             <outlet property="delegate" destination="ToO-MH-BtM" id="e2Y-3j-xaI"/>
                                         </connections>
@@ -85,8 +85,8 @@
                                 <rect key="frame" x="65" y="30" width="244" height="75"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="65" y="115" width="244" height="42"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="65" y="135" width="244" height="42"/>
                                 <state key="normal" image="Image-2"/>
                                 <connections>
                                     <outlet property="delegate" destination="ToO-MH-BtM" id="ROb-I3-Jdm"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="LYl-Et-IsO" firstAttribute="width" secondItem="ULf-f4-q1a" secondAttribute="width" id="HVX-zw-xcZ"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="XHl-kV-hYd" secondAttribute="bottom" multiplier="32:24" id="JjR-FE-b0N"/>
                             <constraint firstAttribute="trailing" secondItem="ULf-f4-q1a" secondAttribute="trailing" id="Jpq-lN-JEa"/>
-                            <constraint firstItem="KtN-QN-U5B" firstAttribute="top" secondItem="iI6-1g-oWP" secondAttribute="bottom" constant="10" id="O6b-LE-RXQ"/>
+                            <constraint firstItem="KtN-QN-U5B" firstAttribute="top" secondItem="iI6-1g-oWP" secondAttribute="bottom" constant="30" id="O6b-LE-RXQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iI6-1g-oWP" secondAttribute="trailing" constant="50" id="YfO-wg-VFi"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="top" secondItem="eoh-XR-jqw" secondAttribute="bottom" constant="-20" id="ZKC-ii-7is"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XHl-kV-hYd" secondAttribute="trailing" constant="50" id="ZSq-6f-Vb9"/>
@@ -211,7 +211,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dw6-c3-z0Y" id="iGV-hW-eVP"/>
                                         </connections>
@@ -223,7 +223,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dw6-c3-z0Y" id="jed-YR-xgX"/>
                                         </connections>
@@ -235,7 +235,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="go"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dw6-c3-z0Y" id="w9H-Tf-WiJ"/>
                                         </connections>
@@ -247,7 +247,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dw6-c3-z0Y" id="Xdx-67-OiE"/>
                                         </connections>
@@ -259,7 +259,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="Dw6-c3-z0Y" id="soV-7J-TYN"/>
                                         </connections>
@@ -597,7 +597,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="go"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcr-YQ-YJU">
                                 <rect key="frame" x="49" y="387" width="276" height="30"/>
@@ -757,7 +757,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cF7-YR-2gs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rVg-UX-Tf4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVg-UX-Tf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -780,6 +780,6 @@
         <image name="register_background" width="320" height="564"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="as6-S9-M0B"/>
+        <segue reference="gFh-W7-LGm"/>
     </inferredMetricsTieBreakers>
 </document>

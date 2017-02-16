@@ -482,7 +482,6 @@ class MichTransport {
         let payloadJson = getfeedResquest.toJSONString()
         
         
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             
             
@@ -1020,6 +1019,61 @@ class MichTransport {
         }
         
     }
+    
+    //////////// posts
+    
+    
+    static func createpost(token: String, title: String, image: UIImage, successCallbackForCreatePost: @escaping () -> Void, errorCallbackForCreatePost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/create"
+        
+        let createpostRequest = CreatePostRequest(token: token, title: title, image: image)
+        let payloadJson = createpostRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<CreatePostResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForCreatePost()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForCreatePost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForCreatePost(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
     
     
     
