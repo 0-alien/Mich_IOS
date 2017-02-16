@@ -24,7 +24,6 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
         currentIndex = 0
-        self.navigationController?.hidesBarsOnSwipe = true
         // self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     

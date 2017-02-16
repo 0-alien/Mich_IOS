@@ -76,20 +76,20 @@
                                 <action selector="cancel:" destination="4O9-bL-jmS" id="GVU-7r-9ZV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rfL-qB-eSI">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="done" id="rfL-qB-eSI">
                             <connections>
-                                <segue destination="Pyj-EE-jq2" kind="unwind" unwindAction="unwindFromCameraWithSender:" id="AhD-G6-iXt"/>
+                                <action selector="done:" destination="4O9-bL-jmS" id="ndg-tz-kbl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="doneButtone" destination="rfL-qB-eSI" id="7OA-ox-e0K"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="titleTF" destination="LQ4-ol-dYc" id="B1v-Ob-SQY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Pyj-EE-jq2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-580" y="-89.505247376311857"/>
         </scene>

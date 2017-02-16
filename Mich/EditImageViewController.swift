@@ -13,11 +13,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var photo: UIImageView!
     var img: UIImage!
     @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var doneButtone: UIBarButtonItem!
     var postTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         photo.image = img
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,11 +28,42 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func done(_ sender: Any) {
+        doneButtone.isEnabled = false
+        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: img!,
+                                 successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func checkValidTitle() {
+        let text = titleTF.text ?? ""
+        doneButtone.isEnabled = !text.isEmpty
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        checkValidTitle()
+        postTitle = titleTF.text
+    }
+    
+    //Mark: oncreate callbacks
+    
+    func oncreatesuccess() {
+        self.tabBarController?.selectedIndex = 0
+        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.setContentOffset(CGPoint.zero, animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
+    }
+    
+    func oncreateerror(error: DefaultError) {
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.postTitle = textField.text
-        textField.resignFirstResponder()
-    }
 }
