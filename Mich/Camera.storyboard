@@ -50,9 +50,8 @@
                                     <constraint firstAttribute="height" constant="300" id="Owf-sK-Zvh"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
                                 <rect key="frame" x="16" y="390" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -66,6 +65,9 @@
                             <constraint firstItem="LOP-KF-9Gw" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="5xT-wq-FTH"/>
                             <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="7WZ-AL-p7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="7sx-OJ-XBz"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="top" secondItem="LOP-KF-9Gw" secondAttribute="bottom" constant="26" id="mH7-FZ-aXJ"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="qAs-rn-Hpe"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="LOP-KF-9Gw" secondAttribute="leading" id="rnm-5z-aO4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Photo" id="vcd-8C-nFt">

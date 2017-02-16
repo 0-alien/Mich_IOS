@@ -105,11 +105,26 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     @IBAction func unwindFromCamera(sender: UIStoryboardSegue) {
-        var img = (sender.source as! EditImageViewController).img
+        let img = (sender.source as! EditImageViewController).img
         var title = (sender.source as! EditImageViewController).postTitle
+        if (title == nil) {
+            title = ""
+        }
+        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: title!, image: img!,
+                                 successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
         
     }
     
+    //Mark: oncreate callbacks
+    
+    func oncreatesuccess() {
+        self.tabBarController?.selectedIndex = 0
+        print("daido")
+    }
+    
+    func oncreateerror(error: DefaultError) {
+        print("ver daido")
+    }
     //------------------
     
     func showNotifications() {
