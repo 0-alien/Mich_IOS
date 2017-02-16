@@ -134,8 +134,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     func onRegister(){
         
-        let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        
+        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(vc, animated: false, completion: nil)
         
     }

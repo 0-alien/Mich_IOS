@@ -100,6 +100,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
 
         //////// twitter
 
+        
+/*
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
@@ -128,7 +130,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         logInButton.translatesAutoresizingMaskIntoConstraints = false;
 
         self.view.addConstraints([cons1, cons2, cons3]);
-
+*/
         
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.dismissKeyboard))

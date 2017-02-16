@@ -85,8 +85,8 @@
                                 <rect key="frame" x="65" y="30" width="244" height="75"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="65" y="115" width="244" height="42"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="65" y="135" width="244" height="42"/>
                                 <state key="normal" image="Image-2"/>
                                 <connections>
                                     <outlet property="delegate" destination="ToO-MH-BtM" id="ROb-I3-Jdm"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="LYl-Et-IsO" firstAttribute="width" secondItem="ULf-f4-q1a" secondAttribute="width" id="HVX-zw-xcZ"/>
                             <constraint firstItem="Qjk-J1-qys" firstAttribute="top" secondItem="XHl-kV-hYd" secondAttribute="bottom" multiplier="32:24" id="JjR-FE-b0N"/>
                             <constraint firstAttribute="trailing" secondItem="ULf-f4-q1a" secondAttribute="trailing" id="Jpq-lN-JEa"/>
-                            <constraint firstItem="KtN-QN-U5B" firstAttribute="top" secondItem="iI6-1g-oWP" secondAttribute="bottom" constant="10" id="O6b-LE-RXQ"/>
+                            <constraint firstItem="KtN-QN-U5B" firstAttribute="top" secondItem="iI6-1g-oWP" secondAttribute="bottom" constant="30" id="O6b-LE-RXQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iI6-1g-oWP" secondAttribute="trailing" constant="50" id="YfO-wg-VFi"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="top" secondItem="eoh-XR-jqw" secondAttribute="bottom" constant="-20" id="ZKC-ii-7is"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XHl-kV-hYd" secondAttribute="trailing" constant="50" id="ZSq-6f-Vb9"/>
@@ -757,7 +757,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cF7-YR-2gs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rVg-UX-Tf4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVg-UX-Tf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
