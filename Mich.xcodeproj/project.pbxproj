@@ -27,6 +27,7 @@
 		1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */; };
 		1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A60361E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift */; };
 		1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A603A1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift */; };
+		1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */; };
 		1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */; };
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
@@ -42,7 +43,6 @@
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC367C41E4DB4DE00DB6C77 /* Camera.swift */; };
 		1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */; };
-		1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8BFF11D953C7500297A96 /* StartViewController.swift */; };
 		1EDC86DF1D9BFD65003106E8 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDC86DE1D9BFD65003106E8 /* CommentsTableViewController.swift */; };
 		1EDDC2531D94017A004D1DD5 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2521D94017A004D1DD5 /* Profile.storyboard */; };
 		1EDDC2551D9407DA004D1DD5 /* Mich.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */; };
@@ -131,6 +131,7 @@
 		1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1E4A60361E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellAWithPicture.swift; sourceTree = "<group>"; };
 		1E4A603A1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellBWithPicture.swift; sourceTree = "<group>"; };
+		1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditImageViewController.swift; sourceTree = "<group>"; };
 		1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSearchViewController.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC367C41E4DB4DE00DB6C77 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSViewController.swift; sourceTree = "<group>"; };
-		1EC8BFF11D953C7500297A96 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		1EDC86DE1D9BFD65003106E8 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		1EDDC2521D94017A004D1DD5 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mich.storyboard; sourceTree = "<group>"; };
@@ -322,8 +322,8 @@
 		1EC8BFED1D953C1600297A96 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				1EC8BFF11D953C7500297A96 /* StartViewController.swift */,
 				CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */,
+				1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -667,7 +667,6 @@
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
 				CF2DE2B51E4C806B00BD1980 /* IsFollowingResponse.swift in Sources */,
-				1EC8BFF21D953C7500297A96 /* StartViewController.swift in Sources */,
 				CF2DE2BB1E4CAF7D00BD1980 /* UnfollowResponse.swift in Sources */,
 				CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
@@ -677,6 +676,7 @@
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
+				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,

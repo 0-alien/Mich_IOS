@@ -167,6 +167,7 @@
                         <segue destination="ZL0-XC-FsX" kind="show" identifier="settings" id="r0P-ns-TOi"/>
                         <segue destination="Jwh-xH-h9g" kind="show" identifier="help" id="xXA-k5-8lu"/>
                         <segue destination="1QM-Lx-YtL" kind="presentation" identifier="edit" id="Jee-nz-asK"/>
+                        <segue destination="uLz-1v-lJD" kind="show" identifier="gotoeditimage" id="N1X-9z-ahB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tm-Ph-qAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,7 +257,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -293,6 +294,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaA-tE-lqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="-335"/>
+        </scene>
+        <!--EditImage-->
+        <scene sceneID="SaU-7f-zdx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="uLz-1v-lJD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xju-9V-Ajs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87" y="-336"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="Qkv-4K-plR">
@@ -467,7 +476,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1QM-Lx-YtL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WPr-Hf-bpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WPr-Hf-bpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

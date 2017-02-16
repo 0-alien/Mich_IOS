@@ -19,12 +19,12 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         activeImages.append(UIImage(named: "active_home_icon")!)
         activeImages.append(UIImage(named: "active_vs_icon")!)
-        activeImages.append(UIImage(named: "active_camera_icon")!)
+        activeImages.append(UIImage(named: "active_plus_icon")!)
         activeImages.append(UIImage(named: "active_mich_icon")!)
         activeImages.append(UIImage(named: "active_user_icon")!)
         inactiveImages.append(UIImage(named: "home_icon")!)
         inactiveImages.append(UIImage(named: "vs_icon")!)
-        inactiveImages.append(UIImage(named: "camera_icon")!)
+        inactiveImages.append(UIImage(named: "plus_icon")!)
         inactiveImages.append(UIImage(named: "mich_icon")!)
         inactiveImages.append(UIImage(named: "user_icon")!)
         // Do any additional setup after loading the view.
@@ -43,7 +43,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if (viewController is StartViewController) {
+        if (viewController is CameraLoadViewController) {
             NotificationCenter.default.post(name: Notification.Name(rawValue: "showChoose"), object: nil)
             return false
         }

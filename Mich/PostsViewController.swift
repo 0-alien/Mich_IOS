@@ -11,43 +11,41 @@ import AMScrollingNavbar
 import Nuke
 
 class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, LikesListener {
-    var posts = [PostClass]()
-    var likeCnts = [Int]()
+    
     @IBOutlet weak var tableView: UITableView!
+    var posts = [PostClass]()
+    var destinationUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
-        //self.tableView.rowHeight = UITableViewAutomaticDimension
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(PostsTableViewController.showHelp), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+        currentIndex = 0
+        self.navigationController?.hidesBarsOnSwipe = true
+        // self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.followScrollView(tableView, delay: 50.0)
         }
-        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError);
+        MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.showNavbar(animated: false)
         }
-        super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
     }
     
@@ -71,30 +69,56 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
-        cell.commentCount.text = "0"
-        cell.likeCount.text = String(likeCnts[indexPath.row])
+        //cell.commentCount.text = "0"
+        //cell.likeCount.text = String(posts[indexPath.row].likeCnt!)
         cell.likeButton.tag = indexPath.row
         cell.index = indexPath.row
+        
         let tap = UITapGestureRecognizer(target: cell, action: #selector(PostTableViewCell.postDoubleTapped))
         tap.numberOfTapsRequired = 2
         cell.postImage.addGestureRecognizer(tap)
         cell.likeDelegate = self
         cell.title.text = posts[indexPath.row].title
+        
+        let pictureTap = UITapGestureRecognizer(target: self, action: #selector(PostsTableViewController.userPictureTapped(_:)))
+        pictureTap.numberOfTapsRequired = 1
+        cell.userImage.addGestureRecognizer(pictureTap)
+        
         return cell
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if (segue.identifier == "gotoprofilepage") {
+            guard let vc = segue.destination as? UserPicturesCollectionViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.user = self.destinationUser
+        }
+    }
     
     //Mark: - AMScrolling navigation bar
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         if let navigationController = navigationController as? ScrollingNavigationController {
             navigationController.showNavbar(animated: true)
         }
+        navigationController?.setNavigationBarHidden(false, animated: true)
         return true
     }
     
-    //Mark: LikeListener
+    //Mark: actions
+    func userPictureTapped(_ sender: UITapGestureRecognizer) {
+        if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
+            let userId: Int = posts[indexPath.row].userId!
+            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: self.onGetUser,
+                                  errorCallbackForgetuser: self.onError)
+        }
+    }
+    
+    
     func postLiked(postIndex: Int, showAnimation: Bool) {
-        likeCnts[postIndex] = likeCnts[postIndex] + 1
+        posts[postIndex].likeCnt = posts[postIndex].likeCnt! + 1
         self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
         if (showAnimation) {
             let cell = self.tableView.cellForRow(at: IndexPath(row: postIndex, section: 0)) as! PostTableViewCell
@@ -108,14 +132,18 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         }
     }
     
+    
+    //Mark: server request callbacks
     func onGetFeed(resp: [PostClass]){
+        posts.removeAll()
         posts.append(contentsOf: resp)
-        for _ in 0 ..< resp.count {
-            likeCnts.append(0)
-        }
         self.tableView.reloadData()
     }
     
+    func onGetUser(resp: User) {
+        self.destinationUser = resp
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
     
     
     func onError(error: DefaultError){

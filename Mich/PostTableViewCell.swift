@@ -36,6 +36,12 @@ class PostTableViewCell: UITableViewCell {
     @IBAction func postLiked(_ sender: Any) {
         self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
     }
+    
+    //refactor
+    @IBAction func like(_ sender: Any) {
+         self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+    }
+    
 }
 
 protocol LikesListener {

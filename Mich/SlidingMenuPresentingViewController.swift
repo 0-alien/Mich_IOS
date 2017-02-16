@@ -13,6 +13,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     var currentIndex = 0
     var vv: Camera!
     var isCameraShown: Bool = false
+    var cameraPhoto: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isCameraShown = false
@@ -88,6 +89,25 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
+        self.cameraPhoto = image
+        self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "gotoeditimage", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if (segue.identifier == "gotoeditimage") {
+            (segue.destination as! EditImageViewController).img = self.cameraPhoto
+        }
+    }
+    
+    @IBAction func unwindFromCamera(sender: UIStoryboardSegue) {
+        var img = (sender.source as! EditImageViewController).img
+        var title = (sender.source as! EditImageViewController).postTitle
+        
     }
     
     //------------------

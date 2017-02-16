@@ -353,6 +353,14 @@
             </objects>
             <point key="canvasLocation" x="1045.5999999999999" y="-1061.0194902548726"/>
         </scene>
+        <!--EditImage-->
+        <scene sceneID="ngr-1g-RLt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="eIA-3t-lXw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="323-FF-kqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1329" y="-256"/>
+        </scene>
         <!--Notifications-->
         <scene sceneID="wZg-Ab-ha2">
             <objects>
@@ -369,7 +377,7 @@
                         <viewControllerLayoutGuide type="top" id="lXV-Sd-lNj"/>
                         <viewControllerLayoutGuide type="bottom" id="bZO-FB-aXh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="gfC-5R-ka1">
+                    <view key="view" contentMode="scaleToFill" id="gfC-5R-ka1">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -598,6 +606,7 @@
                         <segue destination="DxO-Ve-HPN" kind="show" identifier="settings" id="MyC-vt-Xcn"/>
                         <segue destination="PjF-Tp-WHu" kind="show" identifier="help" id="XLR-5K-fpZ"/>
                         <segue destination="O6O-84-xhd" kind="show" identifier="vsseague" id="cvo-aj-79y"/>
+                        <segue destination="eIA-3t-lXw" kind="show" identifier="gotoeditimage" id="lP7-9N-7og"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rO-IL-dKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -629,7 +638,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="abJ-ox-iSb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="abJ-ox-iSb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.11372549019607843" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
@@ -646,7 +655,7 @@
     </scenes>
     <resources>
         <image name="active_vs_icon" width="30" height="22"/>
-        <image name="camera_icon" width="28" height="23"/>
+        <image name="camera_icon" width="24" height="20"/>
         <image name="first_user" width="94" height="53"/>
         <image name="second_user" width="52" height="79"/>
         <image name="vs_icon" width="26" height="19"/>

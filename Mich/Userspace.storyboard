@@ -86,31 +86,6 @@
             </objects>
             <point key="canvasLocation" x="-2827.1999999999998" y="-2160.2698650674665"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="zCf-tt-CZD">
-            <objects>
-                <viewController id="fIH-Iz-bu3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ACt-Rf-s8s"/>
-                        <viewControllerLayoutGuide type="bottom" id="ErY-i9-8sT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ube-4L-b1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kcU-yA-0x6" customClass="Camera" customModule="Mich" customModuleProvider="target">
-                                <rect key="frame" x="36" y="86" width="307" height="540"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ime-OX-5a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1466.4000000000001" y="-1444.2278860569716"/>
-        </scene>
         <!--Home-->
         <scene sceneID="pc5-R2-8v7">
             <objects>
@@ -127,7 +102,7 @@
         <scene sceneID="Iud-OV-Vf9">
             <objects>
                 <tabBarController id="YFN-JR-BMZ" customClass="MainTabBarController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" selectionIndicatorImage="active_line" itemPositioning="fill" id="7ge-Nk-gMf">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="fill" id="7ge-Nk-gMf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.17254901959999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,11 +122,11 @@
             </objects>
             <point key="canvasLocation" x="-2826" y="-1344"/>
         </scene>
-        <!--Camera.start-->
+        <!--Camera-->
         <scene sceneID="WUn-43-hhm">
             <objects>
-                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="Camera.start" id="Xv4-z7-EW1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="camera_icon" selectedImage="active_camera_icon" id="PXb-sc-qjf">
+                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="Camera" id="Xv4-z7-EW1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="plus_icon" selectedImage="active_plus_icon" id="PXb-sc-qjf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
@@ -411,16 +386,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active_camera_icon" width="28" height="23"/>
         <image name="active_home_icon" width="26" height="25"/>
-        <image name="active_line" width="64" height="1"/>
         <image name="active_mich_icon" width="23" height="28"/>
+        <image name="active_plus_icon" width="25" height="26"/>
         <image name="active_user_icon" width="26" height="26"/>
         <image name="active_vs_icon" width="30" height="22"/>
-        <image name="camera_icon" width="28" height="23"/>
         <image name="first_user" width="94" height="53"/>
         <image name="home_icon" width="26" height="24"/>
         <image name="mich_icon" width="24" height="28"/>
+        <image name="plus_icon" width="25" height="26"/>
         <image name="power" width="12" height="14"/>
         <image name="slider_menu_help" width="16" height="16"/>
         <image name="slider_menu_message" width="17" height="12"/>

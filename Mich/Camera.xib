@@ -25,18 +25,18 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="choose" translatesAutoresizingMaskIntoConstraints="NO" id="V7x-rB-Lab">
                     <rect key="frame" x="103" y="461" width="94" height="53"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-E4-3HE" userLabel="galery">
-                    <rect key="frame" x="103" y="461" width="47" height="30"/>
-                    <state key="normal" title="G"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-E4-3HE" userLabel="galery">
+                    <rect key="frame" x="103" y="469" width="47" height="22"/>
+                    <state key="normal" image="gallery_icon"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a8-au-ZOR" userLabel="camera">
-                    <rect key="frame" x="150" y="461" width="47" height="30"/>
-                    <state key="normal" title="C"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8a8-au-ZOR" userLabel="camera">
+                    <rect key="frame" x="150" y="468.5" width="47" height="22"/>
+                    <state key="normal" image="camera_icon"/>
                 </button>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="V7x-rB-Lab" secondAttribute="bottom" id="6g2-1B-Aeb"/>
-                <constraint firstItem="Sfg-E4-3HE" firstAttribute="top" secondItem="V7x-rB-Lab" secondAttribute="top" id="6hW-aD-71j"/>
+                <constraint firstItem="Sfg-E4-3HE" firstAttribute="top" secondItem="V7x-rB-Lab" secondAttribute="top" constant="8" id="6hW-aD-71j"/>
                 <constraint firstItem="Sfg-E4-3HE" firstAttribute="width" secondItem="V7x-rB-Lab" secondAttribute="width" multiplier="1:2" id="87S-X8-spo"/>
                 <constraint firstItem="V7x-rB-Lab" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CNK-SY-d7j"/>
                 <constraint firstItem="8a8-au-ZOR" firstAttribute="baseline" secondItem="Sfg-E4-3HE" secondAttribute="baseline" id="Ea5-Qs-zxR"/>
@@ -50,6 +50,8 @@
         </view>
     </objects>
     <resources>
+        <image name="camera_icon" width="24" height="20"/>
         <image name="choose" width="94" height="53"/>
+        <image name="gallery_icon" width="25" height="19"/>
     </resources>
 </document>
