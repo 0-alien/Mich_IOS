@@ -1035,8 +1035,6 @@ class MichTransport {
         let payloadJson = createpostRequest.toJSONString()
         
         
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             
             
@@ -1077,7 +1075,64 @@ class MichTransport {
         }
         
     }
+
     
+    
+    
+    /////////////// search users
+    
+    
+    static func searchusers(token: String, term: String, successCallbackForsearchusers: @escaping ([User]) -> Void, errorCallbackForsearchusers: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "search/users/"
+        
+        let searchusersResquest = SearchUsersRequest(token: token, term: term)
+        let payloadJson = searchusersResquest.toJSONString()
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForsearchusers(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForsearchusers(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForsearchusers(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
     
     
     
