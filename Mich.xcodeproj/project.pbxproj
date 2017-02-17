@@ -22,7 +22,6 @@
 		1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */; };
 		1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */; };
 		1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */; };
-		1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */; };
 		1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */; };
 		1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */; };
 		1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A60361E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift */; };
@@ -52,6 +51,7 @@
 		1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */; };
 		1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */; };
 		1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */; };
+		1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE29551E572EEB00302BC2 /* SearchResultsViewController.swift */; };
 		1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C31D8AE53000676CE2 /* images.xcassets */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
@@ -128,7 +128,6 @@
 		1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleViewController.swift; sourceTree = "<group>"; };
 		1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VsBattlesViewController.swift; sourceTree = "<group>"; };
 		1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellB.swift; sourceTree = "<group>"; };
-		1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RoundShape.swift"; sourceTree = "<group>"; };
 		1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		1E4A60361E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellAWithPicture.swift; sourceTree = "<group>"; };
@@ -158,6 +157,7 @@
 		1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellA.swift; sourceTree = "<group>"; };
 		1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuViewController.swift; sourceTree = "<group>"; };
 		1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
+		1EEE29551E572EEB00302BC2 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		1EF192C31D8AE53000676CE2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -336,8 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */,
-				1E45AD0F1E0AACAF009CCDB4 /* SearchResultsTableViewController.swift */,
 				1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */,
+				1EEE29551E572EEB00302BC2 /* SearchResultsViewController.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -642,6 +642,7 @@
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
+				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
 				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
@@ -679,7 +680,6 @@
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
 				CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */,
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
-				1E45AD101E0AACAF009CCDB4 /* SearchResultsTableViewController.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,

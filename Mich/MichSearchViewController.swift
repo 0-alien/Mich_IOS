@@ -15,7 +15,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     let itemsPerRow : CGFloat = 3.0
     var imageSideLength : CGFloat = 0.0
     var searchController: UISearchController!
-    var resultsShower: SearchResultsTableViewController!
+    var resultsShower: SearchResultsViewController!
     
     @IBOutlet weak var imageCollection: UICollectionView!
     var data = [String]()
@@ -32,7 +32,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
                 data.append("login_background")
             }
         }
-        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: SearchResultsTableViewController.storyboardID) as! SearchResultsTableViewController
+        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: SearchResultsViewController.storyboardID) as! SearchResultsViewController
         searchController = UISearchController(searchResultsController: resultsShower)
         searchController.searchResultsUpdater = resultsShower
         searchController.dimsBackgroundDuringPresentation = true
