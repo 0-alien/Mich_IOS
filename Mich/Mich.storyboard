@@ -71,26 +71,26 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Qp-kv-NNh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Qp-kv-NNh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultsTableViewCell" rowHeight="80" id="gg3-gn-6gN" customClass="SearchResultsTableViewCell" customModule="Mich" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchResultsTableViewCell" rowHeight="70" id="gg3-gn-6gN" customClass="SearchResultsTableViewCell" customModule="Mich" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gg3-gn-6gN" id="vOq-My-5Hd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="Lpt-p9-mDy">
-                                                    <rect key="frame" x="8" y="8" width="63.5" height="63.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lpt-p9-mDy">
+                                                    <rect key="frame" x="8" y="8" width="54" height="54"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Lpt-p9-mDy" secondAttribute="height" multiplier="1:1" id="PcK-2B-KY4"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEO-LF-UeB">
-                                                    <rect key="frame" x="79.5" y="23" width="287.5" height="33.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <rect key="frame" x="70" y="21" width="297" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -126,10 +126,21 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="6Qp-kv-NNh" id="QaZ-3a-lMo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-0S-cD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="197.59999999999999" y="68.815592203898049"/>
+        </scene>
+        <!--userpage-->
+        <scene sceneID="mof-1y-Iab">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="zDt-J0-cxz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-369" y="93"/>
         </scene>
         <!--Mich Search View Controller-->
         <scene sceneID="kq7-ca-lZi">
@@ -202,6 +213,7 @@
                         <segue destination="ZM7-Je-omX" kind="show" identifier="settings" id="dd6-si-jfc"/>
                         <segue destination="cMl-yc-xOq" kind="show" identifier="help" id="K21-nQ-YCO"/>
                         <segue destination="xOp-Aa-aNr" kind="show" identifier="gotoeditimage" id="fy8-0K-poi"/>
+                        <segue destination="zDt-J0-cxz" kind="show" identifier="gotoprofilepage" id="0pO-8Y-nXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,7 +229,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="pj3-IJ-Jqb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="pj3-IJ-Jqb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.11372549019607843" blue="0.1764705882352941" alpha="1" colorSpace="calibratedRGB"/>
@@ -234,7 +246,6 @@
     </scenes>
     <resources>
         <image name="active_mich_icon" width="23" height="28"/>
-        <image name="first_user" width="94" height="53"/>
         <image name="mich_icon" width="24" height="28"/>
     </resources>
 </document>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UserListener {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -16,6 +16,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     var imageSideLength : CGFloat = 0.0
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
+    var destinationUser: User?
     
     @IBOutlet weak var imageCollection: UICollectionView!
     var data = [String]()
@@ -32,7 +33,8 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
                 data.append("login_background")
             }
         }
-        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: SearchResultsViewController.storyboardID) as! SearchResultsViewController
+        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
+        resultsShower.userChoosenDelegate = self
         searchController = UISearchController(searchResultsController: resultsShower)
         searchController.searchResultsUpdater = resultsShower
         searchController.dimsBackgroundDuringPresentation = true
@@ -65,10 +67,31 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: imageSideLength, height: imageSideLength)
     }
     
+    func gotoUserPage(id: Int) {
+        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: id, successCallbackForgetuser: self.onsuccess,
+                errorCallbackForgetuser: self.onerror)
+    }
+    //Mark: callbacks
+    func onsuccess(resp: User) {
+        self.destinationUser = resp
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
+    
+    func onerror(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    //prepare
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if (segue.identifier == "gotoprofilepage") {
+            (segue.destination as! UserPicturesCollectionViewController).user = self.destinationUser
+        }
+    }
 }
