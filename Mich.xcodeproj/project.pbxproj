@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */; };
 		1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */; };
-		1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D81731D9949690079F301 /* PostsTableViewController.swift */; };
 		1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */; };
 		1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */; };
 		1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */; };
@@ -115,7 +114,6 @@
 		0D7DFE3BEED8746E76ADAF45 /* Pods-Mich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.release.xcconfig"; sourceTree = "<group>"; };
 		1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewCell.swift; sourceTree = "<group>"; };
 		1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewSectionHeader.swift; sourceTree = "<group>"; };
-		1E0D81731D9949690079F301 /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewController.swift; sourceTree = "<group>"; };
 		1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
@@ -361,7 +359,6 @@
 		1EC8BFF01D953C2900297A96 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1E0D81731D9949690079F301 /* PostsTableViewController.swift */,
 				1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */,
 				1EDC86DE1D9BFD65003106E8 /* CommentsTableViewController.swift */,
 				1E17158B1DDB286C002598B6 /* CommentCell.swift */,
@@ -527,7 +524,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VQGJTU9RXG;
+						DevelopmentTeam = 57R943V29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -714,7 +711,6 @@
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
-				1E0D81741D9949690079F301 /* PostsTableViewController.swift in Sources */,
 				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
 				CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */,
 				CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */,
@@ -850,7 +846,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -870,7 +866,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

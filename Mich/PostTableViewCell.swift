@@ -18,8 +18,19 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
+    var liked: Bool! {
+        didSet {
+            if liked! {
+                self.likeButton.backgroundColor = UIColor.red
+            }
+            else {
+                self.likeButton.backgroundColor = self.backgroundColor
+            }
+        }
+    }
     var likeDelegate: LikesListener? = nil
     var index: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,19 +42,37 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func postDoubleTapped() {
-        self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
+        self.liked = !self.liked!
+        if liked! {
+            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
+            self.updateLikeCount(by: 1)
+        }
+        else {
+            self.likeDelegate?.postUnliked(postIndex: self.index)
+            self.updateLikeCount(by: -1)
+        }
     }
-    @IBAction func postLiked(_ sender: Any) {
-        self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+    
+    func updateLikeCount(by: Int) {
+        likeCount.text = String(Int(likeCount.text!)! + by)
     }
     
     //refactor
     @IBAction func like(_ sender: Any) {
-         self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+        self.liked = !self.liked!
+        if liked! {
+            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+            self.updateLikeCount(by: 1)
+        }
+        else {
+            self.likeDelegate?.postUnliked(postIndex: self.index)
+            self.updateLikeCount(by: -1)
+        }
     }
     
 }
 
 protocol LikesListener {
     func postLiked(postIndex: Int, showAnimation: Bool)
+    func postUnliked(postIndex: Int)
 }

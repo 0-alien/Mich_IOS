@@ -35,10 +35,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
         }
     }
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 4
-        
         if (user == nil) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
         }
@@ -57,6 +62,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         profilePicture.image = profilePicture.image?.circle
+        self.imageCollection.refreshControl = refreshControl
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +99,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         // #warning Incomplete implementation, return the number of items
         return (user?.posts?.count)!
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
@@ -123,10 +130,21 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     func onerror(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
+    }
+    
+    func onGetUserSuccess(user: User) {
+        self.navigationItem.title = user.username
+        Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
+        self.user = user
+        self.imageCollection.reloadData()
+        self.imageCollection.refreshControl?.endRefreshing()
+    }
+    
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.user?.id)!,
+                              successCallbackForgetuser: onGetUserSuccess, errorCallbackForgetuser: onerror)
     }
 }

@@ -57,6 +57,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     func oncreatesuccess() {
         self.tabBarController?.selectedIndex = 0
         ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.setContentOffset(CGPoint.zero, animated: true)
+        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).handleRefresh(((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.refreshControl!)
         _ = self.navigationController?.popViewController(animated: true)
     }
     

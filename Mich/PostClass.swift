@@ -17,13 +17,14 @@ class PostClass: Mappable {
     var created_at: String?
     var updated_at: String?
     var likeCnt: Int?
+    var myLike: Int?
     
     
     required init?(map: Map) {
         
     }
     
-    init(_ id: Int?, userId: Int?, title: String?, image: String, created_at: String?, updated_at: String?, likeCnt: Int?) {
+    init(_ id: Int?, userId: Int?, title: String?, image: String, created_at: String?, updated_at: String?, likeCnt: Int?, myLike: Int?) {
         self.id = id
         self.userId = userId
         self.title = title
@@ -31,6 +32,7 @@ class PostClass: Mappable {
         self.created_at = created_at
         self.updated_at = updated_at
         self.likeCnt = likeCnt
+        self.myLike = myLike
     }
     
     func mapping(map: Map) {
@@ -41,5 +43,6 @@ class PostClass: Mappable {
         created_at      <- map["created_at"]
         updated_at      <- map["updated_at"]
         likeCnt         <- map["likes"]
+        myLike          <- map["mylike"]
     }
 }
