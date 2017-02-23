@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     @IBOutlet weak var smallSignUpView: UIView!
     
     @IBOutlet var FullView: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var usernameTXT: UITextField!
     @IBOutlet weak var passwordTXT: UITextField!
@@ -230,19 +229,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     ///////////////////// keyboard code
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if(textField == usernameTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:90), animated: true)
-        }
-        if(textField == passwordTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:90), animated: true)
-        }
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if(textField == usernameTXT || textField == passwordTXT){
-            scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
-            
-        }
+
     }
     
     func dismissKeyboard() {
