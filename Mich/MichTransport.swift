@@ -856,6 +856,120 @@ class MichTransport {
     }
     
     
+    
+    ////// getusersfolloers ??????????????????
+   
+    static func getUserFollowers(token: String, id: Int, successCallbackForGetFollowers: @escaping ([User]) -> Void, errorCallbackForGetFollowers: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/relation/getFollowers"
+        
+        let getUserFollowersResquest = GetUsersFollowersRequest(token: token, id: id)
+        let payloadJson = getUserFollowersResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForGetFollowers(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForGetFollowers(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForGetFollowers(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    //////// get users folloing ????????????????
+    
+    static func getUserFollowing(token: String, id: Int, successCallbackForGetFollowing: @escaping ([User]) -> Void, errorCallbackForGetFollowing: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/relation/getFollowing"
+        
+        let getUserFollowingResquest = GetUsersFollowingRequest(token: token, id: id)
+        let payloadJson = getUserFollowingResquest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForGetFollowing(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForGetFollowing(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForGetFollowing(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
     ///////// done
     
     static func isFollower(token: String, id: Int, successCallbackForIsFollower: @escaping (IsFollowerResponse) -> Void, errorCallbackForIsFollower: @escaping (DefaultError) -> Void) {
@@ -1027,7 +1141,10 @@ class MichTransport {
         
         let reqString = BASE_URL + "post/create"
  
-        let imageData:NSData = UIImagePNGRepresentation(image)! as NSData
+        
+        
+        let imageData:NSData = UIImageJPEGRepresentation(image, 0.6)! as NSData
+
         let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
 
         

@@ -55,6 +55,7 @@
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
+		CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */; };
 		CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */; };
 		CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
@@ -92,7 +93,6 @@
 		CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */; };
 		CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */; };
 		CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */; };
-		CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */; };
 		CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */; };
 		CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */; };
 		CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */; };
@@ -163,6 +163,7 @@
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
+		CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowingRequest.swift; sourceTree = "<group>"; };
 		CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostRequest.swift; sourceTree = "<group>"; };
 		CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostResponse.swift; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
@@ -200,7 +201,6 @@
 		CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerResponse.swift; sourceTree = "<group>"; };
 		CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerRequest.swift; sourceTree = "<group>"; };
 		CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowersRequest.swift; sourceTree = "<group>"; };
-		CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFollowersResponse.swift; sourceTree = "<group>"; };
 		CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowersRequest.swift; sourceTree = "<group>"; };
 		CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRequest.swift; sourceTree = "<group>"; };
 		CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeRequest.swift; sourceTree = "<group>"; };
@@ -453,7 +453,6 @@
 				CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */,
 				CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */,
 				CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */,
-				CF92DF161E4DA62700AC71D7 /* GetUserFollowersResponse.swift */,
 				CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */,
 				CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */,
 			);
@@ -480,6 +479,7 @@
 				CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */,
 				CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */,
 				CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */,
+				CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */,
 				CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */,
 				CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */,
 				CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */,
@@ -524,7 +524,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 57R943V29M;
+						DevelopmentTeam = VQGJTU9RXG;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -685,6 +685,7 @@
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
+				CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
@@ -712,7 +713,6 @@
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
 				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
-				CF92DF171E4DA62700AC71D7 /* GetUserFollowersResponse.swift in Sources */,
 				CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
 				CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */,
@@ -846,7 +846,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -866,7 +866,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 57R943V29M;
+				DEVELOPMENT_TEAM = VQGJTU9RXG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
