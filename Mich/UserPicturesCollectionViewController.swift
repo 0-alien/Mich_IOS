@@ -159,4 +159,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.user?.id)!,
                               successCallbackForgetuser: onGetUserSuccess, errorCallbackForgetuser: onerror)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "followers" || segue.identifier == "following") {
+            (segue.destination as! FollowViewController).user = self.user
+            (segue.destination as! FollowViewController).ering = (segue.identifier == "followers")
+        }
+    }
 }

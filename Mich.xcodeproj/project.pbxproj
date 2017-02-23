@@ -29,6 +29,8 @@
 		1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */; };
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
+		1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */; };
+		1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */; };
 		1E60A1E51E4C5BFA001B9EFF /* Camera.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E60A1E41E4C5BFA001B9EFF /* Camera.xib */; };
 		1E614ABB1DDC6A21006578B2 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */; };
 		1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */; };
@@ -136,6 +138,8 @@
 		1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSearchViewController.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
+		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		1E60A1E41E4C5BFA001B9EFF /* Camera.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Camera.xib; sourceTree = "<group>"; };
 		1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
 		1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 				1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */,
 				1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */,
 				1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */,
+				1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */,
+				1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
 				CF3C2CF81E448302004512CA /* PostClass.swift in Sources */,
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
+				1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
@@ -695,6 +702,7 @@
 				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
 				1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */,
 				CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */,
+				1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */,
 				CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
