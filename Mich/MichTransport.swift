@@ -584,7 +584,7 @@ class MichTransport {
     
     static func like(token: String, postID: Int, successCallbackForLike: @escaping () -> Void, errorCallbackForLike: @escaping (DefaultError) -> Void ){
         
-        let reqString = BASE_URL + "post/unlike"
+        let reqString = BASE_URL + "post/like"
         
         let likeRequest = LikeRequest(token: token, postID: postID)
         let payloadJson = likeRequest.toJSONString()
@@ -637,7 +637,7 @@ class MichTransport {
     
     static func unlike(token: String, postID: Int, successCallbackForUnlike: @escaping () -> Void, errorCallbackForUnlike: @escaping (DefaultError) -> Void ){
         
-        let reqString = BASE_URL + "post/like"
+        let reqString = BASE_URL + "post/unlike"
         
         let unlikeRequest = UnlikeRequest(token: token, postID: postID)
         let payloadJson = unlikeRequest.toJSONString()

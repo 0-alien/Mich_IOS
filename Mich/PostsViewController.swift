@@ -69,7 +69,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.likeCount.text = String(posts[indexPath.row].likeCnt!)
         cell.liked = (posts[indexPath.row].myLike == 1)
         
-        let tap = UITapGestureRecognizer(target: cell, action: #selector(cell.postDoubleTapped))
+        let tap = UITapGestureRecognizer(target: cell, action: #selector(cell.postLiked))
         tap.numberOfTapsRequired = 2
         cell.postImage.addGestureRecognizer(tap)
         cell.likeDelegate = self
@@ -93,6 +93,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     }
     
     //Mark: actions
+    //user picture tapped -> goto profile page of that user
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
             let userId: Int = posts[indexPath.row].userId!
@@ -101,7 +102,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         }
     }
     
-    
+    //likedelegate methods
     func postLiked(postIndex: Int, showAnimation: Bool) {
         posts[postIndex].likeCnt = posts[postIndex].likeCnt! + 1
         posts[postIndex].myLike = 1
@@ -116,14 +117,15 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
                 img.alpha = 0
             })
         }
+        MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[postIndex].id!, successCallbackForLike: onLikeUnlikeSuccess, errorCallbackForLike: onError)
     }
     
     func postUnliked(postIndex: Int) {
         posts[postIndex].likeCnt = posts[postIndex].likeCnt! - 1
         posts[postIndex].myLike = 0
         self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
+        MichTransport.unlike(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[postIndex].id!, successCallbackForUnlike: onLikeUnlikeSuccess, errorCallbackForUnlike: onError)
     }
-    
     
     //Mark: server request callbacks
     func onGetFeed(resp: [PostClass]){
@@ -137,13 +139,17 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         self.destinationUser = resp
         performSegue(withIdentifier: "gotoprofilepage", sender: self)
     }
-    
+
+    func onLikeUnlikeSuccess() {
+        //Nothing
+    }
     
     func onError(error: DefaultError){
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     
     //Mark: refresh
     func handleRefresh(_ refreshControl: UIRefreshControl) {

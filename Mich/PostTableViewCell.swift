@@ -41,35 +41,34 @@ class PostTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func postDoubleTapped() {
-        self.liked = !self.liked!
-        if liked! {
-            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
-            self.updateLikeCount(by: 1)
-        }
-        else {
-            self.likeDelegate?.postUnliked(postIndex: self.index)
-            self.updateLikeCount(by: -1)
-        }
-    }
     
     func updateLikeCount(by: Int) {
         likeCount.text = String(Int(likeCount.text!)! + by)
     }
     
-    //refactor
+    //like from double tap
+    func postLiked() {
+        if (!self.liked) {
+            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
+            self.liked = true
+            self.updateLikeCount(by: 1)
+        }
+        //unlike ar unda qnas double tapze
+    }
+    
+    //like from button
     @IBAction func like(_ sender: Any) {
-        self.liked = !self.liked!
-        if liked! {
+        if (!self.liked) {
             self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+            self.liked = true
             self.updateLikeCount(by: 1)
         }
         else {
             self.likeDelegate?.postUnliked(postIndex: self.index)
+            self.liked = false
             self.updateLikeCount(by: -1)
         }
     }
-    
 }
 
 protocol LikesListener {

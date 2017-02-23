@@ -20,6 +20,10 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileDetailsView: UIView!
     @IBOutlet weak var imageCollection: UICollectionView!
+    
+    @IBOutlet weak var followingButton: UIButton!
+    @IBOutlet weak var followersButton: UIButton!
+    
     var user: User? = nil
     var isOwner: Bool = false
     var isFollowing: Bool = false {
@@ -43,6 +47,14 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        followersButton.titleLabel?.lineBreakMode = .byWordWrapping
+        followersButton.titleLabel?.textAlignment = .center
+        followersButton.setTitle("200\nFollowers", for: .normal)
+        
+        followingButton.titleLabel?.lineBreakMode = .byWordWrapping
+        followingButton.titleLabel?.textAlignment = .center
+        followingButton.setTitle("200\nFollowing", for: .normal)
+        
         currentIndex = 4
         if (user == nil) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
