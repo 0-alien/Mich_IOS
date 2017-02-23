@@ -767,7 +767,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -820,7 +820,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -875,7 +875,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -929,7 +929,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponseArrayX<User>(JSONString: JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
