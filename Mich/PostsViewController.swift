@@ -14,7 +14,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     @IBOutlet weak var tableView: UITableView!
     var posts = [PostClass]()
-    var destinationUser: User?
+    var destinationUserId: Int?
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PostsViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
@@ -88,7 +88,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             guard let vc = segue.destination as? UserPicturesCollectionViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            vc.user = self.destinationUser
+            vc.userId = self.destinationUserId
         }
     }
     
@@ -96,9 +96,8 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     //user picture tapped -> goto profile page of that user
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
-            let userId: Int = posts[indexPath.row].userId!
-            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: userId, successCallbackForgetuser: self.onGetUser,
-                                  errorCallbackForgetuser: self.onError)
+            self.destinationUserId = posts[indexPath.row].userId!
+            performSegue(withIdentifier: "gotoprofilepage", sender: self)
         }
     }
     
@@ -133,11 +132,6 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         posts.append(contentsOf: resp)
         self.tableView.reloadData()
         self.tableView.refreshControl?.endRefreshing()
-    }
-    
-    func onGetUser(resp: User) {
-        self.destinationUser = resp
-        performSegue(withIdentifier: "gotoprofilepage", sender: self)
     }
 
     func onLikeUnlikeSuccess() {

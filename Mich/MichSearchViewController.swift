@@ -16,7 +16,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     var imageSideLength : CGFloat = 0.0
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
-    var destinationUser: User?
+    var destinationUserId: Int?
     
     @IBOutlet weak var imageCollection: UICollectionView!
     var data = [String]()
@@ -52,7 +52,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     }
     
     // MARK: UICollectionViewDataSource
-    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -73,25 +72,14 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     }
     
     func gotoUserPage(id: Int) {
-        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: id, successCallbackForgetuser: self.onsuccess,
-                errorCallbackForgetuser: self.onerror)
-    }
-    //Mark: callbacks
-    func onsuccess(resp: User) {
-        self.destinationUser = resp
+        self.destinationUserId = id
         performSegue(withIdentifier: "gotoprofilepage", sender: self)
-    }
-    
-    func onerror(error: DefaultError){
-        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
     //prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "gotoprofilepage") {
-            (segue.destination as! UserPicturesCollectionViewController).user = self.destinationUser
+            (segue.destination as! UserPicturesCollectionViewController).userId = self.destinationUserId
         }
     }
 }

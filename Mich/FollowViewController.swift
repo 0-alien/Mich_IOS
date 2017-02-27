@@ -42,6 +42,7 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FollowTableViewCell
         cell.userName.text = users[indexPath.row].username
         Nuke.loadImage(with: Foundation.URL(string: users[indexPath.row].avatar!)!, into: cell.userPicture)
+        cell.userPicture.image = cell.userPicture.image?.circle
         return cell
     }
     
@@ -57,4 +58,17 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        print("DAWDWADWADADWAWD")
+        if segue.identifier == "gotoprofilepage" {
+            print("DAWDAW")
+            if let selectedCell = sender as? FollowTableViewCell {
+                let indexPath = tableView.indexPath(for: selectedCell)
+                (segue.destination as! UserPicturesCollectionViewController).userId = users[(indexPath?.row)!].id
+            }
+        }
+    }
+    
 }

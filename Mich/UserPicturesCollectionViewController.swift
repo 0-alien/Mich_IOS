@@ -25,7 +25,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var followersButton: UIButton!
     
     var user: User? = nil
+    var userId: Int! = -1
     var isOwner: Bool = false
+    var posts: [PostClass] = []
     var isFollowing: Bool = false {
         didSet {
             if isFollowing {
@@ -56,19 +58,22 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         followingButton.setTitle("200\nFollowing", for: .normal)
         
         currentIndex = 4
-        if (user == nil) {
+        if (self.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id || self.userId == -1) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
-        }
-        Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
-        self.navigationItem.title = user?.username
-        if (user?.id == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
+            self.navigationItem.title = user?.username
+            posts = (user?.posts)!
+            self.imageCollection.reloadData()
+            self.userId = user?.id
+            Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
             editOrFollow.setTitle("EDIT PROFILE", for: .normal)
             isOwner = true
         }
         else {
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
-            MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id!)!,
+            MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
+                                  successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
+            MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.userId)!,
                                       successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
 
         }
@@ -82,14 +87,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         // Dispose of any resources that can be recreated.
     }
 
-    
-    // MARK: UICollectionViewDataSource
-
-     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
     @IBAction func editOrFollow(_ sender: Any) {
         if (isOwner) {
             performSegue(withIdentifier: "edit", sender: self)
@@ -98,7 +95,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             if (isFollowing) {
                 MichTransport.unfollow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
                                        successCallbackForUnfollow: self.onunfollowsuccess, errorCallbackForUnfollow: self.onerror)
-                print("unfollow")
             }
             else {
                 MichTransport.follow(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (user?.id)!,
@@ -106,16 +102,18 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
         }
     }
-
+    //Mark: collectionview data source
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return (user?.posts?.count)!
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        Nuke.loadImage(with: Foundation.URL(string: (user?.posts?[indexPath.item].image!)!)!, into: cell.photo)
+        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.item].image!)!, into: cell.photo)
         return cell
     }
 
@@ -124,9 +122,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         return CGSize(width: imageSideLength, height: imageSideLength)
     }
     
-    @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
-        
-    }
     
     //Mark: callbacks
     func onunfollowsuccess () {
@@ -147,23 +142,29 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         self.present(alert, animated: true, completion: nil)
     }
     
-    func onGetUserSuccess(user: User) {
-        self.navigationItem.title = user.username
-        Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
+    func ongetusersuccess(user: User) {
         self.user = user
+        self.navigationItem.title = user.username
+        self.posts = user.posts!
+        Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
         self.imageCollection.reloadData()
         self.imageCollection.refreshControl?.endRefreshing()
     }
     
+    //Mark: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.user?.id)!,
-                              successCallbackForgetuser: onGetUserSuccess, errorCallbackForgetuser: onerror)
+                              successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
-    
+    //Mark: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if (segue.identifier == "followers" || segue.identifier == "following") {
             (segue.destination as! FollowViewController).user = self.user
             (segue.destination as! FollowViewController).ering = (segue.identifier == "followers")
         }
+    }
+    @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
+        
     }
 }
