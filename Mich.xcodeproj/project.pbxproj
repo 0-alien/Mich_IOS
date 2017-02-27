@@ -88,6 +88,8 @@
 		CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */; };
 		CF3C2CF81E448302004512CA /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF71E448302004512CA /* PostClass.swift */; };
 		CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */; };
+		CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5431E641CC700A3575A /* AddCommentRequest.swift */; };
+		CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */; };
 		CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */; };
 		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
 		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
@@ -198,6 +200,8 @@
 		CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF3C2CF71E448302004512CA /* PostClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
 		CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseArray.swift; sourceTree = "<group>"; };
+		CF57E5431E641CC700A3575A /* AddCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentRequest.swift; sourceTree = "<group>"; };
+		CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentResponse.swift; sourceTree = "<group>"; };
 		CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersRequest.swift; sourceTree = "<group>"; };
 		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
 		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
@@ -461,6 +465,7 @@
 				CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */,
 				CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */,
 				CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */,
+				CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */,
 				CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */,
 				CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */,
+				CF57E5431E641CC700A3575A /* AddCommentRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -665,6 +671,7 @@
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
+				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
@@ -681,6 +688,7 @@
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
+				CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */,
 				1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,

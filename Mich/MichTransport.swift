@@ -1196,6 +1196,60 @@ class MichTransport {
     
     
     
+    static func addcomment(token: String, postID: Int, comment: String, successCallbackForAddComment: @escaping () -> Void, errorCallbackForAddComment: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/comment"
+        
+        let addcommentRequest = AddCommentRequest(token: token, postID: postID, comment: comment)
+        let payloadJson = addcommentRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<AddCommentResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForAddComment()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForAddComment(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForAddComment(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
     /////////////// search users
     
     
