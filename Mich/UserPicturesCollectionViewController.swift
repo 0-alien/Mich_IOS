@@ -61,8 +61,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         if (self.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id || self.userId == -1) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
             self.navigationItem.title = user?.username
-            posts = (user?.posts)!
-            self.imageCollection.reloadData()
             self.userId = user?.id
             Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
             editOrFollow.setTitle("EDIT PROFILE", for: .normal)
@@ -72,14 +70,20 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
             MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
-                                  successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
+                                successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
             MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.userId)!,
-                                      successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
+                                successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
 
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         profilePicture.image = profilePicture.image?.circle
-        self.imageCollection.refreshControl = refreshControl
+        if #available(iOS 10.0, *) {
+            self.imageCollection.refreshControl = refreshControl
+        } else {
+            self.imageCollection.addSubview(refreshControl)
+        }
+        MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
+                        successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,6 +140,13 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         isFollowing = resp.result!
     }
     
+    func ongetpostssuccess(resp: [PostClass]) {
+        self.posts.removeAll()
+        self.posts.append(contentsOf: resp)
+        self.imageCollection.reloadData()
+        self.imageCollection.refreshControl?.endRefreshing()
+    }
+    
     func onerror(error: DefaultError){
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
@@ -145,17 +156,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func ongetusersuccess(user: User) {
         self.user = user
         self.navigationItem.title = user.username
-        self.posts = user.posts!
         Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
-        self.imageCollection.reloadData()
-        self.imageCollection.refreshControl?.endRefreshing()
     }
     
     //Mark: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
-        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.user?.id)!,
-                              successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
+        MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
+                        successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
+    
     //Mark: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

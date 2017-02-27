@@ -62,7 +62,7 @@
         <!--Search Results View Controller-->
         <scene sceneID="qIY-Ia-MPi">
             <objects>
-                <viewController storyboardIdentifier="SearchResultsViewController" id="Qt4-mp-vjA" customClass="SearchResultsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchResultsViewController" automaticallyAdjustsScrollViewInsets="NO" id="Qt4-mp-vjA" customClass="SearchResultsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QpF-hp-L7r"/>
                         <viewControllerLayoutGuide type="bottom" id="YWw-Mi-Yo7"/>

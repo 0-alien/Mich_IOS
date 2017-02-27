@@ -15,18 +15,21 @@ class User: Mappable {
     var username: String?
     var email: String?
     var avatar: String?
-    var posts: [PostClass]?
+    var nfollowers: Int?
+    var nfollowing: Int?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        id          <- map["id"]
-        name        <- map["name"]
-        username    <- map["username"]
-        email       <- map["email"]
-        avatar      <- map["avatar"]
-        posts       <- map["posts"]
+        id              <- map["id"]
+        name            <- map["name"]
+        username        <- map["username"]
+        email           <- map["email"]
+        avatar          <- map["avatar"]
+        nfollowers      <- map["nfollowers"]
+        nfollowing      <- map["nfollowing"]
+        
     }
 }
