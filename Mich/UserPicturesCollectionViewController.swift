@@ -51,11 +51,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         super.viewDidLoad()
         followersButton.titleLabel?.lineBreakMode = .byWordWrapping
         followersButton.titleLabel?.textAlignment = .center
-        followersButton.setTitle("200\nFollowers", for: .normal)
+        followersButton.setTitle("Followers", for: .normal)
         
         followingButton.titleLabel?.lineBreakMode = .byWordWrapping
         followingButton.titleLabel?.textAlignment = .center
-        followingButton.setTitle("200\nFollowing", for: .normal)
+        followingButton.setTitle("Following", for: .normal)
         
         currentIndex = 4
         if (self.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id || self.userId == -1) {
@@ -65,6 +65,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             Nuke.loadImage(with: Foundation.URL(string: (user?.avatar)!)!, into: profilePicture)
             editOrFollow.setTitle("EDIT PROFILE", for: .normal)
             isOwner = true
+            followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
+            followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
         }
         else {
             editOrFollow.setTitle("FOLLOW", for: .normal)
@@ -106,7 +108,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
         }
     }
-    //Mark: collectionview data source
+    // MARK: collectionview data source
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -127,13 +129,17 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     
-    //Mark: callbacks
+    // MARK: callbacks
     func onunfollowsuccess () {
         self.isFollowing = false
+        followersButton.setTitle(String((user?.nfollowers)! - 1) + "\nFollowers", for: .normal)
+        user?.nfollowers = (user?.nfollowers)! - 1
     }
     
     func onfollowsuccess () {
         self.isFollowing = true
+        followersButton.setTitle(String((user?.nfollowers)! + 1) + "\nFollowers", for: .normal)
+        user?.nfollowers = (user?.nfollowers)! + 1
     }
     
     func onsuccess(resp: IsFollowingResponse) {
@@ -157,15 +163,17 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         self.user = user
         self.navigationItem.title = user.username
         Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
+        followersButton.setTitle(String((user.nfollowers)! + 0) + "\nFollowers", for: .normal)
+        followingButton.setTitle(String((user.nfollowing)! + 0) + "\nFollowing", for: .normal)
     }
     
-    //Mark: refreshcontrol
+    // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
     
-    //Mark: navigation
+    // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "followers" || segue.identifier == "following") {

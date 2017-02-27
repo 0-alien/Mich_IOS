@@ -32,7 +32,7 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Dispose of any resources that can be recreated.
     }
     
-    //Mark: tableview datasource
+    // MARK: tableview datasource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }

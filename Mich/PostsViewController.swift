@@ -92,7 +92,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         }
     }
     
-    //Mark: actions
+    // MARK: actions
     //user picture tapped -> goto profile page of that user
     func userPictureTapped(_ sender: UITapGestureRecognizer) {
         if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
@@ -126,7 +126,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         MichTransport.unlike(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[postIndex].id!, successCallbackForUnlike: onLikeUnlikeSuccess, errorCallbackForUnlike: onError)
     }
     
-    //Mark: server request callbacks
+    // MARK: server request callbacks
     func onGetFeed(resp: [PostClass]){
         posts.removeAll()
         posts.append(contentsOf: resp)
@@ -145,7 +145,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     }
     
     
-    //Mark: refresh
+    // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }

@@ -287,7 +287,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -328,7 +328,7 @@
         <!--Title-->
         <scene sceneID="hxu-dm-T69">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="Eno-ir-pYK" customClass="FollowViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eno-ir-pYK" customClass="FollowViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c9n-Xb-VuC"/>
                         <viewControllerLayoutGuide type="bottom" id="XP0-R0-sBC"/>
@@ -373,6 +373,7 @@
                                         <connections>
                                             <outlet property="userName" destination="tit-0j-4MN" id="AUE-9M-pVX"/>
                                             <outlet property="userPicture" destination="ZoM-aQ-dq3" id="nOR-8v-eV8"/>
+                                            <segue destination="BJT-Sn-q0x" kind="show" identifier="gotoprofilepage" id="tvz-Ie-NnN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -580,7 +581,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1QM-Lx-YtL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WPr-Hf-bpx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="WPr-Hf-bpx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -601,6 +602,7 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="tvz-Ie-NnN"/>
         <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>
