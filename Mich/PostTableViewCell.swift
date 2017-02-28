@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
+    
     var liked: Bool! {
         didSet {
             if liked! {
@@ -28,7 +29,7 @@ class PostTableViewCell: UITableViewCell {
             }
         }
     }
-    var likeDelegate: LikesListener? = nil
+    var cellDelegate: PostTableViewCellDelegate? = nil
     var index: Int = 0
     
     override func awakeFromNib() {
@@ -49,29 +50,41 @@ class PostTableViewCell: UITableViewCell {
     //like from double tap
     func postLiked() {
         if (!self.liked) {
-            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: true)
+            self.cellDelegate?.postLiked(cellIndex: self.index, showAnimation: true)
             self.liked = true
             self.updateLikeCount(by: 1)
         }
         //unlike ar unda qnas double tapze
     }
     
+    func showProfile() {
+        self.cellDelegate?.showProfile(cellIndex: self.index)
+    }
+    
     //like from button
     @IBAction func like(_ sender: Any) {
         if (!self.liked) {
-            self.likeDelegate?.postLiked(postIndex: self.index, showAnimation: false)
+            self.cellDelegate?.postLiked(cellIndex: self.index, showAnimation: false)
             self.liked = true
             self.updateLikeCount(by: 1)
         }
         else {
-            self.likeDelegate?.postUnliked(postIndex: self.index)
+            self.cellDelegate?.postUnliked(cellIndex: self.index)
             self.liked = false
             self.updateLikeCount(by: -1)
         }
     }
+    
+    @IBAction func showComments(_ sender: Any) {
+        self.cellDelegate?.showComments(cellIndex: self.index)
+    }
+    
+    
 }
 
-protocol LikesListener {
-    func postLiked(postIndex: Int, showAnimation: Bool)
-    func postUnliked(postIndex: Int)
+protocol PostTableViewCellDelegate {
+    func postLiked(cellIndex: Int, showAnimation: Bool)
+    func postUnliked(cellIndex: Int)
+    func showComments(cellIndex: Int)
+    func showProfile(cellIndex: Int)
 }

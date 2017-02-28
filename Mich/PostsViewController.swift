@@ -10,16 +10,20 @@ import UIKit
 import AMScrollingNavbar
 import Nuke
 
-class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, LikesListener {
+class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate {
+
     
     @IBOutlet weak var tableView: UITableView!
     var posts = [PostClass]()
     var destinationUserId: Int?
+    var destinationPostId: Int?
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PostsViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         return refreshControl
     }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let imageName = "mich_navbar_logo"
@@ -64,24 +68,26 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
-        cell.likeButton.tag = indexPath.row
-        cell.index = indexPath.row
         cell.likeCount.text = String(posts[indexPath.row].likeCnt!)
         cell.liked = (posts[indexPath.row].myLike == 1)
+        cell.index = indexPath.row
+        
         
         let tap = UITapGestureRecognizer(target: cell, action: #selector(cell.postLiked))
         tap.numberOfTapsRequired = 2
         cell.postImage.addGestureRecognizer(tap)
-        cell.likeDelegate = self
+        
+        let profilePictureTap = UITapGestureRecognizer(target: cell, action: #selector(cell.showProfile))
+        profilePictureTap.numberOfTapsRequired = 1
+        cell.userImage.addGestureRecognizer(profilePictureTap)
+        
+        cell.cellDelegate = self
         cell.title.text = posts[indexPath.row].title
-        
-        let pictureTap = UITapGestureRecognizer(target: self, action: #selector(PostsViewController.userPictureTapped(_:)))
-        pictureTap.numberOfTapsRequired = 1
-        cell.userImage.addGestureRecognizer(pictureTap)
-        
+
         return cell
     }
     
+    // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "gotoprofilepage") {
@@ -90,24 +96,21 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             }
             vc.userId = self.destinationUserId
         }
-    }
-    
-    // MARK: actions
-    //user picture tapped -> goto profile page of that user
-    func userPictureTapped(_ sender: UITapGestureRecognizer) {
-        if let indexPath = self.tableView.indexPathForRow(at: sender.location(in: tableView)) {
-            self.destinationUserId = posts[indexPath.row].userId!
-            performSegue(withIdentifier: "gotoprofilepage", sender: self)
+        else if segue.identifier == "showcomments" {
+            guard let vc = segue.destination as? CommentsTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.postId = self.destinationPostId
         }
     }
     
-    //likedelegate methods
-    func postLiked(postIndex: Int, showAnimation: Bool) {
-        posts[postIndex].likeCnt = posts[postIndex].likeCnt! + 1
-        posts[postIndex].myLike = 1
-        self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
+    // MARK:  celldelegate methods
+    func postLiked(cellIndex: Int, showAnimation: Bool) {
+        posts[cellIndex].likeCnt = posts[cellIndex].likeCnt! + 1
+        posts[cellIndex].myLike = 1
+        self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
         if (showAnimation) {
-            let cell = self.tableView.cellForRow(at: IndexPath(row: postIndex, section: 0)) as! PostTableViewCell
+            let cell = self.tableView.cellForRow(at: IndexPath(row: cellIndex, section: 0)) as! PostTableViewCell
             let img = UIImageView(image: UIImage(named: "fire_icon"))
             let coef = cell.postImage.frame.size.width / 2.0 / img.frame.size.width
             img.frame = cell.postImage.frame.insetBy(dx: cell.postImage.frame.size.width / 4, dy: cell.postImage.frame.size.height / 2 - img.frame.size.height * coef / 2)
@@ -116,14 +119,23 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
                 img.alpha = 0
             })
         }
-        MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[postIndex].id!, successCallbackForLike: onLikeUnlikeSuccess, errorCallbackForLike: onError)
+        MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[cellIndex].id!, successCallbackForLike: onLikeUnlikeSuccess, errorCallbackForLike: onError)
     }
     
-    func postUnliked(postIndex: Int) {
-        posts[postIndex].likeCnt = posts[postIndex].likeCnt! - 1
-        posts[postIndex].myLike = 0
-        self.tableView.reloadRows(at: [IndexPath(row: postIndex, section: 0)], with: .none)
-        MichTransport.unlike(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[postIndex].id!, successCallbackForUnlike: onLikeUnlikeSuccess, errorCallbackForUnlike: onError)
+    func postUnliked(cellIndex: Int) {
+        posts[cellIndex].likeCnt = posts[cellIndex].likeCnt! - 1
+        posts[cellIndex].myLike = 0
+        self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
+        MichTransport.unlike(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[cellIndex].id!, successCallbackForUnlike: onLikeUnlikeSuccess, errorCallbackForUnlike: onError)
+    }
+    func showProfile(cellIndex: Int) {
+        self.destinationUserId = self.posts[cellIndex].userId
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
+    
+    func showComments(cellIndex: Int) {
+        self.destinationPostId = self.posts[cellIndex].id
+        performSegue(withIdentifier: "showcomments", sender: self)
     }
     
     // MARK: server request callbacks

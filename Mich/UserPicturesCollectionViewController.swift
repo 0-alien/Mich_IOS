@@ -120,6 +120,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
         Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.item].image!)!, into: cell.photo)
+        cell.post = posts[indexPath.item]
         return cell
     }
 
@@ -127,7 +128,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: imageSideLength, height: imageSideLength)
     }
-    
     
     // MARK: callbacks
     func onunfollowsuccess () {
@@ -179,6 +179,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         if (segue.identifier == "followers" || segue.identifier == "following") {
             (segue.destination as! FollowViewController).user = self.user
             (segue.destination as! FollowViewController).ering = (segue.identifier == "followers")
+        }
+        else if segue.identifier == "showpost" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? UserPicturesCollectionViewCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            vc.post = cell.post
         }
     }
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {

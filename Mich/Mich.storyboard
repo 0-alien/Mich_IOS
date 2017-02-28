@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="-1334" y="613"/>
         </scene>
-        <!--Photo-->
+        <!--PostViewController-->
         <scene sceneID="may-nM-mXZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="Photo" id="yos-CW-6Kk" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="PostViewController" id="yos-CW-6Kk" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilH-7B-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-351" y="-339"/>

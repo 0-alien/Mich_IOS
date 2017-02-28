@@ -11,6 +11,6 @@ import UIKit
 class UserPicturesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photo: UIImageView!
-    
+    var post: PostClass?
    
 }

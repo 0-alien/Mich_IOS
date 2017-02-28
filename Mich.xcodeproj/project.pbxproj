@@ -34,6 +34,9 @@
 		1E5E1A1E1E5F1C2E00F803A6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */; };
 		1E60A1E51E4C5BFA001B9EFF /* Camera.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E60A1E41E4C5BFA001B9EFF /* Camera.xib */; };
 		1E614ABB1DDC6A21006578B2 /* ReplyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */; };
+		1E6309781E657D880080054B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6309771E657D880080054B /* PostViewController.swift */; };
+		1E63097A1E65A86D0080054B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6309791E65A86D0080054B /* Comment.swift */; };
+		1E63097C1E65A9FA0080054B /* GetPostCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */; };
 		1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */; };
 		1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */; };
 		1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8015C21E07F951001166E1 /* Menu.storyboard */; };
@@ -146,6 +149,9 @@
 		1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1E60A1E41E4C5BFA001B9EFF /* Camera.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Camera.xib; sourceTree = "<group>"; };
 		1E614ABA1DDC6A21006578B2 /* ReplyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyCell.swift; sourceTree = "<group>"; };
+		1E6309771E657D880080054B /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		1E6309791E65A86D0080054B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostCommentsRequest.swift; sourceTree = "<group>"; };
 		1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
 		1E8015C21E07F951001166E1 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -259,6 +265,7 @@
 				1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */,
 				1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */,
 				1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */,
+				1E6309771E657D880080054B /* PostViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -468,6 +475,7 @@
 				CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */,
 				CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */,
 				CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */,
+				1E6309791E65A86D0080054B /* Comment.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -499,6 +507,7 @@
 				CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */,
 				CF57E5431E641CC700A3575A /* AddCommentRequest.swift */,
 				CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */,
+				1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -655,6 +664,7 @@
 			files = (
 				1E614ABB1DDC6A21006578B2 /* ReplyCell.swift in Sources */,
 				CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */,
+				1E63097C1E65A9FA0080054B /* GetPostCommentsRequest.swift in Sources */,
 				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
@@ -685,6 +695,7 @@
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
 				1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
+				1E6309781E657D880080054B /* PostViewController.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
@@ -717,6 +728,7 @@
 				1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */,
 				CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
+				1E63097A1E65A86D0080054B /* Comment.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,

@@ -61,6 +61,7 @@
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-WW-CVX">
                                                     <rect key="frame" x="16" y="8" width="60" height="60"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="PxZ-Ct-gzi"/>
                                                         <constraint firstAttribute="width" constant="60" id="evM-ES-kto"/>
@@ -111,7 +112,7 @@
                                                     <rect key="frame" x="52" y="340" width="20" height="20"/>
                                                     <state key="normal" image="comments_icon"/>
                                                     <connections>
-                                                        <segue destination="RKv-My-5O0" kind="show" id="0ux-L8-KV0"/>
+                                                        <action selector="showComments:" destination="WxU-rc-UkR" eventType="touchUpInside" id="jr8-pO-QM0"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1J-Ld-2IU">
@@ -184,6 +185,7 @@
                         <segue destination="BfJ-HE-mA2" kind="show" identifier="help" id="Q0p-Cf-ANo"/>
                         <segue destination="rlJ-fs-3hg" kind="show" identifier="gotoprofilepage" id="KnO-P3-LWm"/>
                         <segue destination="GYj-w3-22d" kind="show" identifier="gotoeditimage" id="0LP-U6-kS1"/>
+                        <segue destination="RKv-My-5O0" kind="show" identifier="showcomments" id="O0Q-jE-lIu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GEq-dG-2Wg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -217,8 +219,8 @@
         <!--Comments-->
         <scene sceneID="GBO-14-Ohs">
             <objects>
-                <tableViewController hidesBottomBarWhenPushed="YES" id="RKv-My-5O0" customClass="CommentsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="eaD-0l-4GF">
+                <tableViewController storyboardIdentifier="CommentsTableViewController" hidesBottomBarWhenPushed="YES" id="RKv-My-5O0" customClass="CommentsTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="eaD-0l-4GF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -240,13 +242,13 @@
                                                         <constraint firstAttribute="width" secondItem="04Z-9f-aHh" secondAttribute="height" multiplier="1:1" id="yVC-hm-4bo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yei-nM-9HL">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yei-nM-9HL">
                                                     <rect key="frame" x="74" y="3" width="291" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-fF-LL2">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-fF-LL2">
                                                     <rect key="frame" x="74" y="42" width="57" height="30"/>
                                                     <state key="normal" title="answers">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -299,6 +301,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="answersButton" destination="Kbd-fF-LL2" id="xiv-XT-BgQ"/>
+                                    <outlet property="data" destination="yei-nM-9HL" id="1PL-0f-jyg"/>
                                     <outlet property="ratingImage" destination="PR0-Vu-8H1" id="BPs-sZ-QLt"/>
                                     <outlet property="userName" destination="yei-nM-9HL" id="W1P-GB-Pt5"/>
                                     <outlet property="userPicture" destination="04Z-9f-aHh" id="NSb-iS-GQc"/>

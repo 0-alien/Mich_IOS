@@ -1361,6 +1361,56 @@ class MichTransport {
         
     }
     
-    
-    
+    static func getpostcomments(token: String, id: Int, successCallbackForgetuserposts: @escaping ([Comment]) -> Void, errorCallbackForgetuserposts: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/comments"
+        
+        let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
+        let payloadJson = getPostCommentsRequest.toJSONString()
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<Comment>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForgetuserposts(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForgetuserposts(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForgetuserposts(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+
 }
