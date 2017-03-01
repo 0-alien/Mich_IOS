@@ -17,18 +17,14 @@ class PostViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
     var post: PostClass!
+    var postId: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userImage.image = userImage.image?.circle
-        postTitle.text = post.title
-        postDate.text = post.created_at
-        
-        Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: postImage)
-        
+        MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
+                            successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,6 +35,27 @@ class PostViewController: UIViewController {
         if segue.identifier == "showcomments" {
             (segue.destination as! CommentsTableViewController).postId = post.id
         }
+    }
+    
+    func loadPost() {
+        self.postTitle.text = self.post.title
+        self.postDate.text = self.post.created_at
+        self.userName.text = self.post.userName
+        Nuke.loadImage(with: Foundation.URL(string: self.post.image!)!, into: self.postImage)
+        Nuke.loadImage(with: Foundation.URL(string: self.post.avatar!)!, into: self.userImage)
+        
+    }
+    
+    // MARK: callbacks
+    func onGetPostSuccess(resp: PostClass) {
+        self.post = resp
+        self.loadPost()
+    }
+    
+    func onGetPostError(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

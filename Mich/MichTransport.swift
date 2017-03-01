@@ -1413,4 +1413,107 @@ class MichTransport {
         
     }
 
+    static func getpost(token: String, id: Int, successCallbackForgetpost: @escaping (PostClass) -> Void, errorCallbackForgetpost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/get"
+        
+        let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
+        let payloadJson = getPostCommentsRequest.toJSONString()
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<PostClass>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForgetpost(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForgetpost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForgetpost(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    static func explore(token: String, successCallbackForexplore: @escaping ([PostClass]) -> Void, errorCallbackForexplore: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/explore"
+        
+        let exploreRequest = GetCurrentUserRequest(token: token)
+        let payloadJson = exploreRequest.toJSONString()
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<PostClass>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForexplore(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForexplore(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForexplore(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+
 }

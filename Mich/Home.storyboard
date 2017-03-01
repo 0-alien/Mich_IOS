@@ -152,6 +152,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="commentCount" destination="H1J-Ld-2IU" id="QTe-kP-SNl"/>
+                                            <outlet property="createdAt" destination="zcN-V4-DOa" id="gPD-vc-aiK"/>
                                             <outlet property="likeButton" destination="Jgi-eC-N1R" id="MUN-U2-E9e"/>
                                             <outlet property="likeCount" destination="NfM-Vc-eYn" id="Ht9-Jv-dCt"/>
                                             <outlet property="postImage" destination="2rg-tl-uAC" id="Z37-AM-eKu"/>
@@ -242,8 +243,8 @@
                                                         <constraint firstAttribute="width" secondItem="04Z-9f-aHh" secondAttribute="height" multiplier="1:1" id="yVC-hm-4bo"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yei-nM-9HL">
-                                                    <rect key="frame" x="74" y="3" width="291" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yei-nM-9HL">
+                                                    <rect key="frame" x="74" y="3" width="291" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -264,6 +265,7 @@
                                                 <constraint firstItem="04Z-9f-aHh" firstAttribute="top" secondItem="eJa-U2-eYL" secondAttribute="top" constant="3" id="PnT-sF-UeU"/>
                                                 <constraint firstItem="yei-nM-9HL" firstAttribute="leading" secondItem="04Z-9f-aHh" secondAttribute="trailing" constant="5" id="R5C-Ms-SX5"/>
                                                 <constraint firstAttribute="bottom" secondItem="Kbd-fF-LL2" secondAttribute="bottom" id="Sak-dJ-saF"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yei-nM-9HL" secondAttribute="bottom" constant="30" id="ZKj-C2-LnO"/>
                                                 <constraint firstAttribute="trailing" secondItem="yei-nM-9HL" secondAttribute="trailing" constant="10" id="h1k-zW-8dh"/>
                                                 <constraint firstItem="yei-nM-9HL" firstAttribute="top" secondItem="eJa-U2-eYL" secondAttribute="top" constant="3" id="iaq-04-kwX"/>
                                                 <constraint firstItem="04Z-9f-aHh" firstAttribute="leading" secondItem="eJa-U2-eYL" secondAttribute="leading" constant="3" id="wCF-5Z-63i"/>

@@ -61,9 +61,7 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        print("DAWDWADWADADWAWD")
         if segue.identifier == "gotoprofilepage" {
-            print("DAWDAW")
             if let selectedCell = sender as? FollowTableViewCell {
                 let indexPath = tableView.indexPath(for: selectedCell)
                 (segue.destination as! UserPicturesCollectionViewController).userId = users[(indexPath?.row)!].id

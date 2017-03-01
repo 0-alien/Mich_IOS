@@ -16,8 +16,11 @@ class PostClass: Mappable {
     var image: String?
     var created_at: String?
     var updated_at: String?
-    var likeCnt: Int?
+    var nLikes: Int?
+    var nComments: Int?
     var myLike: Int?
+    var userName: String?
+    var avatar: String?
     
     
     required init?(map: Map) {
@@ -31,7 +34,7 @@ class PostClass: Mappable {
         self.image = image
         self.created_at = created_at
         self.updated_at = updated_at
-        self.likeCnt = likeCnt
+        self.nLikes = likeCnt
         self.myLike = myLike
     }
     
@@ -42,7 +45,10 @@ class PostClass: Mappable {
         image           <- map["image"]
         created_at      <- map["created_at"]
         updated_at      <- map["updated_at"]
-        likeCnt         <- map["likes"]
+        nLikes          <- map["likes"]
         myLike          <- map["mylike"]
+        avatar          <- map["avatar"]
+        userName        <- map["username"]
+        nComments       <- map["ncomments"]
     }
 }

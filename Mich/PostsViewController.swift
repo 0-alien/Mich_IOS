@@ -68,9 +68,14 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
-        cell.likeCount.text = String(posts[indexPath.row].likeCnt!)
+        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].avatar!)!, into: cell.userImage)
+        cell.likeCount.text = String(posts[indexPath.row].nLikes!)
+        cell.commentCount.text = String(posts[indexPath.row].nComments!)
         cell.liked = (posts[indexPath.row].myLike == 1)
         cell.index = indexPath.row
+        cell.createdAt.text = posts[indexPath.row].created_at
+        cell.userName.text = posts[indexPath.row].userName
+        
         
         
         let tap = UITapGestureRecognizer(target: cell, action: #selector(cell.postLiked))
@@ -106,7 +111,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     // MARK:  celldelegate methods
     func postLiked(cellIndex: Int, showAnimation: Bool) {
-        posts[cellIndex].likeCnt = posts[cellIndex].likeCnt! + 1
+        posts[cellIndex].nLikes = posts[cellIndex].nLikes! + 1
         posts[cellIndex].myLike = 1
         self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
         if (showAnimation) {
@@ -123,7 +128,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     }
     
     func postUnliked(cellIndex: Int) {
-        posts[cellIndex].likeCnt = posts[cellIndex].likeCnt! - 1
+        posts[cellIndex].nLikes = posts[cellIndex].nLikes! - 1
         posts[cellIndex].myLike = 0
         self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
         MichTransport.unlike(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[cellIndex].id!, successCallbackForUnlike: onLikeUnlikeSuccess, errorCallbackForUnlike: onError)

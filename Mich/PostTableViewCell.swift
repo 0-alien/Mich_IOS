@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var createdAt: UILabel!
     
     var liked: Bool! {
         didSet {

@@ -187,7 +187,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             guard let cell = sender as? UserPicturesCollectionViewCell else {
                 fatalError("Unexpected sender: \(sender)")
             }
-            vc.post = cell.post
+            let indexPath = imageCollection.indexPath(for: cell)
+            vc.postId = posts[(indexPath?.item)!].id
         }
     }
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {

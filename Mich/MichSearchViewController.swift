@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Nuke
 
-class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UserListener {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UserListener {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -17,9 +18,17 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
     var destinationUserId: Int?
+    var destinationPostId: Int?
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(MichSearchViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        return refreshControl
+    }()
+    
     
     @IBOutlet weak var imageCollection: UICollectionView!
-    var data = [String]()
+    var data: [PostClass] = [PostClass]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,23 +36,24 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         //configureSearchController()
         definesPresentationContext = true
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        
-        for _ in 0 ..< 3 {
-            for _ in 0 ..< 30 {
-                data.append("login_background")
-            }
+        if #available(iOS 10.0, *) {
+            self.imageCollection.refreshControl = refreshControl
+        } else {
+            self.imageCollection.addSubview(refreshControl)
         }
+        (imageCollection.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: imageSideLength, height: imageSideLength)
+        
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
         searchController = UISearchController(searchResultsController: resultsShower)
         searchController.searchResultsUpdater = resultsShower
         searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Search Mich"
-        //searchController.delegate = self
         searchController.searchBar.sizeToFit()
         searchController.definesPresentationContext = true
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar
+        MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
     }
     
     
@@ -61,25 +71,45 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        let imageName = data[indexPath.item]
-        cell.photo.image = UIImage(named: imageName)
+        Nuke.loadImage(with: Foundation.URL(string: data[indexPath.item].image!)!, into: cell.photo)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: imageSideLength, height: imageSideLength)
-    }
-    
+    // MARK: navigation
     func gotoUserPage(id: Int) {
         self.destinationUserId = id
         performSegue(withIdentifier: "gotoprofilepage", sender: self)
     }
-    //prepare
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "gotoprofilepage") {
             (segue.destination as! UserPicturesCollectionViewController).userId = self.destinationUserId
         }
+        else if segue.identifier == "showpost" {
+            if let selectedCell = sender as? UserPicturesCollectionViewCell {
+                let indexPath = imageCollection.indexPath(for: selectedCell)
+                (segue.destination as! PostViewController).postId = data[(indexPath?.item)!].id
+            }
+        }
+    }
+    
+    // MARK: refreshcontrol
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
+    }
+    
+    // MARK: callbakcs
+    func onExploreSuccess(resp: [PostClass]) {
+        self.data.removeAll()
+        self.data.append(contentsOf: resp)
+        self.imageCollection.reloadData()
+        self.refreshControl.endRefreshing()
+    }
+    
+    func onError(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
