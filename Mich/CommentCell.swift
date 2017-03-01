@@ -11,6 +11,7 @@ import UIKit
 class CommentCell: UITableViewCell {
 
 
+    @IBOutlet weak var data: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPicture: UIImageView!

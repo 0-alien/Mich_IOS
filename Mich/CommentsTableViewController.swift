@@ -9,13 +9,15 @@
 import UIKit
 
 class CommentsTableViewController: UITableViewController {
-    
+    var postId: Int!
     var types = [Int]()
+    var comments: [Comment] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        for _ in 1 ..< 20 {
-            types.append(0)
-        }
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        MichTransport.getpostcomments(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId, successCallbackForgetuserposts: onGetCommentsSuccess, errorCallbackForgetuserposts: onError)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,35 +26,24 @@ class CommentsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return types.count
+        return  self.comments.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (types[indexPath.row] == 0) {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-            cell.userName.text = String(indexPath.row)
-            cell.answersButton.tag = indexPath.row
-            cell.setRating(indexPath.row % 5 + 1)
-            return cell
-        }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReplyCell", for: indexPath) as! ReplyCell
-            cell.userName.text = String(indexPath.row)
-            cell.userName.textColor = UIColor.blue
-            return cell
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+        cell.userPicture.image = cell.userPicture.image?.circle
+        cell.userName.text = comments[indexPath.row].userName
+        cell.data.text = self.comments[indexPath.row].data
+        cell.answersButton.tag = indexPath.row
+        cell.setRating(indexPath.row % 5 + 1)
+        return cell
+        
     }
     
 
-       //MARK: - Actions
-    
+    //MARK: - Actions
     @IBAction func showAnswers(_ sender: Any) {
         let tag = (sender as! UIButton).tag
         if (tag < types.count - 1 && types[tag + 1] == 1) {
@@ -65,5 +56,16 @@ class CommentsTableViewController: UITableViewController {
         let indexPath = IndexPath(row: tag + 2, section: 0)
         tableView.scrollToRow(at: indexPath, at: .none, animated: true)
     }
-
+    
+    // MARK: callbacks
+    func onGetCommentsSuccess(resp: [Comment]) {
+        self.comments.removeAll()
+        self.comments.append(contentsOf: resp)
+        self.tableView.reloadData()
+    }
+    func onError(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
