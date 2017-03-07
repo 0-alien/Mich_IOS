@@ -84,13 +84,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         self.navigationController?.isNavigationBarHidden = true
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
-        let toekn = FBSDKAccessToken.current()
+        
+        
+        
+        print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_")
+        let token = FBSDKAccessToken.current()
         if(FBSDKAccessToken.current() == nil){
+            print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_1")
             print("logaedout")
-            print(toekn)
+            print(token)
             
         }else{
-            print(toekn)
+            print(token)
+            print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_2")
             print("loggedIn")
             
         }
