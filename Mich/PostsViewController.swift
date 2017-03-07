@@ -102,7 +102,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             vc.userId = self.destinationUserId
         }
         else if segue.identifier == "showcomments" {
-            guard let vc = segue.destination as? CommentsTableViewController else {
+            guard let vc = segue.destination as? CommentsViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             vc.postId = self.destinationPostId

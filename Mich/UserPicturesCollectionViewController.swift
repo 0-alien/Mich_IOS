@@ -67,6 +67,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             isOwner = true
             followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
             followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
+            self.navigationItem.rightBarButtonItem = nil
+            
         }
         else {
             editOrFollow.setTitle("FOLLOW", for: .normal)
@@ -191,7 +193,12 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             vc.postId = posts[(indexPath?.item)!].id
         }
     }
+    
+    // MARK: actions
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
         
+    }
+    @IBAction func vs(_ sender: Any) {
+        print("come at me bro")
     }
 }

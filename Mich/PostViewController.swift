@@ -33,7 +33,7 @@ class PostViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "showcomments" {
-            (segue.destination as! CommentsTableViewController).postId = post.id
+            (segue.destination as! CommentsViewController).postId = post.id
         }
     }
     

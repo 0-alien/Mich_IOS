@@ -56,6 +56,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
                                   successCallbackForsearchusers: onsuccess, errorCallbackForsearchusers: onerror)
     }
     
+    // MARK: callbacks
     func onsuccess(users: [User]) {
         data = users
         tableView.reloadData()

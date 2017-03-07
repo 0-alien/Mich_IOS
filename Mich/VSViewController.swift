@@ -17,6 +17,8 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         currentIndex = 1
         self.tableView.rowHeight = 80
         
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

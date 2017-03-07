@@ -33,8 +33,9 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         currentIndex = 3
-        //configureSearchController()
-        definesPresentationContext = true
+        
+        self.definesPresentationContext = true
+        self.automaticallyAdjustsScrollViewInsets = false
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl
@@ -50,12 +51,11 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Search Mich"
         searchController.searchBar.sizeToFit()
-        searchController.definesPresentationContext = true
+        searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
         self.navigationItem.titleView = searchController.searchBar
         MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,19 +68,26 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
         Nuke.loadImage(with: Foundation.URL(string: data[indexPath.item].image!)!, into: cell.photo)
         return cell
     }
-    
-    // MARK: navigation
+    // MARK: user listener
     func gotoUserPage(id: Int) {
         self.destinationUserId = id
         performSegue(withIdentifier: "gotoprofilepage", sender: self)
+        //searchController.dismiss(animated: false, completion: helper)
     }
     
+    func helper() {
+        searchController.isActive = false
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
+    
+    // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "gotoprofilepage") {

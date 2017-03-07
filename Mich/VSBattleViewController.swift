@@ -61,6 +61,8 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewWillDisappear(animated)
         self.view.endEditing(true)
     }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }

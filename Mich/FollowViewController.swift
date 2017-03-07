@@ -18,10 +18,12 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         if ering! {
+            self.navigationItem.title = "Followers"
             MichTransport.getUserFollowers(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: user.id!,
                                            successCallbackForGetFollowers: onSuccess, errorCallbackForGetFollowers: onError);
         }
         else {
+            self.navigationItem.title = "Following"
             MichTransport.getUserFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: user.id!,
                                            successCallbackForGetFollowing: onSuccess, errorCallbackForGetFollowing: onError)
         }
