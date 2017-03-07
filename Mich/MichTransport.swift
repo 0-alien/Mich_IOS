@@ -1510,9 +1510,7 @@ class MichTransport {
                 
             }
             
-            
         }
-        
         
     }
 

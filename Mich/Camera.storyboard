@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -44,30 +44,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
-                                <rect key="frame" x="16" y="64" width="343" height="300"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write a caption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
+                                <rect key="frame" x="6" y="64" width="369" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Owf-sK-Zvh"/>
+                                    <constraint firstAttribute="height" constant="40" id="i4j-LP-XKx"/>
                                 </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
-                                <rect key="frame" x="16" y="390" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="4O9-bL-jmS" id="U8s-90-jYR"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
+                                <rect key="frame" x="0.0" y="104" width="375" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="BT8-nh-5JN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="5xT-wq-FTH"/>
-                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="7WZ-AL-p7f"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="7sx-OJ-XBz"/>
-                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="top" secondItem="LOP-KF-9Gw" secondAttribute="bottom" constant="26" id="mH7-FZ-aXJ"/>
-                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="qAs-rn-Hpe"/>
-                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="LOP-KF-9Gw" secondAttribute="leading" id="rnm-5z-aO4"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="0CQ-zQ-tRZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LQ4-ol-dYc" secondAttribute="trailing" constant="-16" id="5NL-LI-nex"/>
+                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="trailing" secondItem="LQ4-ol-dYc" secondAttribute="trailing" id="8s1-15-ubt"/>
+                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="leading" secondItem="LQ4-ol-dYc" secondAttribute="leading" constant="-6" id="CPt-vV-Gka"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-10" id="Ceq-J0-ZOV"/>
+                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="LQ4-ol-dYc" secondAttribute="top" constant="40" id="dBI-bN-ybE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Photo" id="vcd-8C-nFt">
