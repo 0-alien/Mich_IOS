@@ -11,13 +11,12 @@ import UIKit
 class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         currentIndex = 1
         self.tableView.rowHeight = 80
-        
-        
         
     }
     override func didReceiveMemoryWarning() {

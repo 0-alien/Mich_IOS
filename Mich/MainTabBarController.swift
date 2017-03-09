@@ -8,12 +8,13 @@
 
 import AMScrollingNavbar
 import UIKit
+import PusherSwift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     var savedIndex: Int = 0
     var activeImages = [UIImage]()
     var inactiveImages = [UIImage]()
-    
+    var pusher: Pusher! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -28,6 +29,19 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         inactiveImages.append(UIImage(named: "mich_icon")!)
         inactiveImages.append(UIImage(named: "user_icon")!)
         // Do any additional setup after loading the view.
+        
+        let options = PusherClientOptions(host: .cluster("eu"))
+        self.pusher = Pusher(key: "631cad75e06b7aa8904a", options: options)
+        pusher.connect()
+        
+        let channel = pusher.subscribe(String(((UIApplication.shared.delegate as! AppDelegate).user?.id)! + 0))
+        let _ = channel.bind(eventName: "invitation", callback: { (data: Any?) -> Void in
+            if let data = data as? [String : AnyObject] {
+                if let message = data["message"] as? String {
+                    print(message)
+                }
+            }
+        })
     }
     
    
