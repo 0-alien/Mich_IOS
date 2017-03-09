@@ -28,6 +28,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     var userId: Int! = -1
     var isOwner: Bool = false
     var posts: [PostClass] = []
+    var canVs: Bool = true {
+        didSet {
+            navigationItem.rightBarButtonItem?.isEnabled = canVs
+        }
+    }
     var isFollowing: Bool = false {
         didSet {
             if isFollowing {
@@ -71,6 +76,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             
         }
         else {
+            self.canVs = true
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
             MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
@@ -169,6 +175,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         followingButton.setTitle(String((user.nfollowing)! + 0) + "\nFollowing", for: .normal)
     }
     
+    func onInviteSuccess() {
+        print("success invite")
+        self.canVs = false
+    }
+    
     // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
@@ -199,6 +210,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         
     }
     @IBAction func vs(_ sender: Any) {
-        print("come at me bro")
+        MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
     }
+    
 }

@@ -9,4 +9,5 @@ target 'Mich' do
     pod 'Alamofire'
     pod 'ObjectMapper'
     pod 'Nuke'
+    pod 'PusherSwift', '~> 4.0'
 end
