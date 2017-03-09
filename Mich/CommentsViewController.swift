@@ -9,6 +9,8 @@
 import UIKit
 
 class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
 
     @IBOutlet weak var tableView: UITableView!
     var postId: Int!
@@ -41,6 +43,11 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
 
+///////////////// scrolling
+    
+    
+    
+    
 
     // MARK: callbacks
     func onGetCommentsSuccess(resp: [Comment]) {
