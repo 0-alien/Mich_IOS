@@ -70,7 +70,7 @@
                             <constraint firstItem="LOP-KF-9Gw" firstAttribute="trailing" secondItem="LQ4-ol-dYc" secondAttribute="trailing" id="8s1-15-ubt"/>
                             <constraint firstItem="LOP-KF-9Gw" firstAttribute="leading" secondItem="LQ4-ol-dYc" secondAttribute="leading" constant="-6" id="CPt-vV-Gka"/>
                             <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-10" id="Ceq-J0-ZOV"/>
-                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="LQ4-ol-dYc" secondAttribute="top" constant="40" id="dBI-bN-ybE"/>
+                            <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="LQ4-ol-dYc" secondAttribute="bottom" id="dBI-bN-ybE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Photo" id="vcd-8C-nFt">
