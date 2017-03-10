@@ -14,9 +14,14 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
+    
+    var myTabBar: UITabBarController?
+    var myMenu: UIViewController?
+    
     var tap: UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         scrollView.delegate = self
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ScrollingViewController.hideScrollingMenu), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
@@ -74,14 +79,17 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "EmbedTabBar" {
+            self.myTabBar = (segue.destination as! MainTabBarController)
+        }
+        else if segue.identifier == "EmbedMenu" {
+            self.myMenu = (segue.destination as! SlidingMenuViewController)
+        }
     }
-    */
 
 }
