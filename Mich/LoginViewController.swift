@@ -155,8 +155,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(userToken)
             print(token)
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") 
-            self.present(vc, animated: false, completion: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+            (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+            self.dismiss(animated: true, completion: nil)
+            //self.present(vc, animated: false, completion: nil)
 
         }
 
@@ -210,7 +212,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-        self.present(vc, animated: false, completion: nil)
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        self.dismiss(animated: false, completion: nil)
+        //self.present(vc, animated: false, completion: nil)
         
         
     }

@@ -20,13 +20,17 @@ import PusherSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
     var token:String?
-    
     var user: User?
-
+    var pusher: Pusher! = nil
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let _ = FBSDKLoginButton.classForCoder()
+        
+        self.pusher = Pusher(key: "631cad75e06b7aa8904a", options: PusherClientOptions(host: .cluster("eu")))
+        let channel = pusher.subscribe("59")
+        let _ = channel.bind(eventName: "invitation", callback: inviteRecieved)
+        pusher.connect()
         
         Fabric.with([Twitter.self])
 /*
@@ -37,6 +41,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 */
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func inviteRecieved(data: Any?) -> Void {
+        print("aqqqq")
+        if let vc = (self.window?.rootViewController as? ScrollingViewController) {
+            if (vc.myTabBar?.tabBar.items?[4].badgeValue == nil) {
+                vc.myTabBar?.tabBar.items?[4].badgeValue = "1"
+            }
+            else {
+                vc.myTabBar?.tabBar.items?[4].badgeValue = String(Int((vc.myTabBar?.tabBar.items?[4].badgeValue)!)! + 1)
+            }
+        }
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
