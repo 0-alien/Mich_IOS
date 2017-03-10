@@ -51,7 +51,7 @@ class VSBattleViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.hasImage = false
             data.append(cell)
         }
-        battleTableView.scrollToRow(at: IndexPath(row: data.count - 1, section: 0), at: .bottom, animated: false)
+        //battleTableView.scrollToRow(at: IndexPath(row: data.count - 1, section: 0), at: .bottom, animated: false)
         let tap = UITapGestureRecognizer(target: self, action: #selector(VSBattleViewController.hideKeyboard))
         tap.numberOfTapsRequired = 1
         battleTableView.addGestureRecognizer(tap)

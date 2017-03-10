@@ -26,6 +26,10 @@ class Comment: Mappable {
         
     }
     
+    required init?() {
+        
+    }
+    
     func mapping(map: Map) {
         id              <- map["id"]
         userName        <- map["username"]

@@ -224,12 +224,12 @@
                         <viewControllerLayoutGuide type="top" id="P9k-HA-TnX"/>
                         <viewControllerLayoutGuide type="bottom" id="Vdh-n9-TrU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="X4f-OT-VkO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <view key="view" contentMode="scaleToFill" id="X4f-OT-VkO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Oob-ze-UYt">
-                                <rect key="frame" x="0.0" y="64" width="375" height="514"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="80" id="SKD-Se-Xux" customClass="CommentCell" customModule="Mich" customModuleProvider="target">
@@ -318,47 +318,56 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lj-QY-JeR">
-                                <rect key="frame" x="0.0" y="576" width="375" height="42"/>
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-F2-WJA">
-                                        <rect key="frame" x="0.0" y="0.0" width="315" height="42"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Add comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-F2-WJA">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="5w9-5B-bkj"/>
+                                            <constraint firstAttribute="height" constant="40" id="5w9-5B-bkj"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="VjI-Sc-P2S" id="HTW-iv-sMB"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUU-Vr-NdO">
-                                        <rect key="frame" x="323" y="6" width="31" height="30"/>
+                                        <rect key="frame" x="323" y="5" width="31" height="30"/>
                                         <state key="normal" title="Post"/>
+                                        <connections>
+                                            <action selector="postButton:" destination="VjI-Sc-P2S" eventType="touchUpInside" id="v2Z-8o-LVK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="WMj-F2-WJA" secondAttribute="bottom" id="GBm-hp-aPe"/>
-                                    <constraint firstItem="cUU-Vr-NdO" firstAttribute="leading" secondItem="8Lj-QY-JeR" secondAttribute="leading" constant="323" id="NL7-dh-tZ4"/>
-                                    <constraint firstAttribute="height" constant="42" id="RTk-pI-v0l"/>
+                                    <constraint firstAttribute="height" constant="40" id="RTk-pI-v0l"/>
                                     <constraint firstItem="cUU-Vr-NdO" firstAttribute="centerY" secondItem="8Lj-QY-JeR" secondAttribute="centerY" id="aav-m3-oZp"/>
                                     <constraint firstAttribute="trailing" secondItem="WMj-F2-WJA" secondAttribute="trailing" constant="60" id="m9I-ZN-mCp"/>
+                                    <constraint firstAttribute="trailing" secondItem="cUU-Vr-NdO" secondAttribute="trailing" constant="21" id="oVA-j7-bI0"/>
                                     <constraint firstItem="WMj-F2-WJA" firstAttribute="leading" secondItem="8Lj-QY-JeR" secondAttribute="leading" id="so7-oI-eRd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Lj-QY-JeR" firstAttribute="bottom" secondItem="Oob-ze-UYt" secondAttribute="bottom" constant="40" id="1dd-ua-ejd"/>
                             <constraint firstItem="Oob-ze-UYt" firstAttribute="top" secondItem="P9k-HA-TnX" secondAttribute="bottom" id="6qJ-FA-It4"/>
                             <constraint firstItem="8Lj-QY-JeR" firstAttribute="trailing" secondItem="Oob-ze-UYt" secondAttribute="trailing" id="Nth-av-v4g"/>
                             <constraint firstItem="Oob-ze-UYt" firstAttribute="leading" secondItem="X4f-OT-VkO" secondAttribute="leading" id="Tqh-Ld-YRo"/>
-                            <constraint firstItem="Vdh-n9-TrU" firstAttribute="top" secondItem="Oob-ze-UYt" secondAttribute="bottom" constant="40" id="gDX-im-cbB"/>
+                            <constraint firstItem="Vdh-n9-TrU" firstAttribute="top" secondItem="8Lj-QY-JeR" secondAttribute="bottom" id="VKc-45-Vc5"/>
                             <constraint firstAttribute="trailing" secondItem="Oob-ze-UYt" secondAttribute="trailing" id="iky-w4-OBW"/>
                             <constraint firstItem="8Lj-QY-JeR" firstAttribute="leading" secondItem="Oob-ze-UYt" secondAttribute="leading" id="kUH-rP-omL"/>
+                            <constraint firstItem="8Lj-QY-JeR" firstAttribute="top" secondItem="Oob-ze-UYt" secondAttribute="bottom" id="qkr-he-z0D"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Comments" id="br8-Hg-s99"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addComments" destination="WMj-F2-WJA" id="FHw-ya-Ndl"/>
+                        <outlet property="bottomConstraint" destination="VKc-45-Vc5" id="fty-zS-BfN"/>
+                        <outlet property="postButton" destination="cUU-Vr-NdO" id="A16-Sd-5bt"/>
                         <outlet property="tableView" destination="Oob-ze-UYt" id="TQw-CX-gfZ"/>
                     </connections>
                 </viewController>
