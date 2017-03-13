@@ -15,6 +15,8 @@ class SlidingMenuViewController: UIViewController {
     @IBOutlet weak var messenger: UIView!
     @IBOutlet weak var settings: UIView!
     @IBOutlet weak var help: UIView!
+    @IBOutlet weak var notificationCountView: UIView!
+    @IBOutlet weak var notificationCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,8 @@ class SlidingMenuViewController: UIViewController {
         settings.layer.shadowColor = UIColor.black.cgColor;
         settings.layer.shadowOffset = CGSize(width: 0, height: 3)
         settings.layer.masksToBounds = false
+        
+        notificationCountView.layer.cornerRadius = notificationCountView.frame.size.height / 2.0
         
     }
 
