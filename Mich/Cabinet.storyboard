@@ -198,7 +198,7 @@
                                         <rect key="frame" x="66" y="23" width="243" height="75"/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fDv-41-xvh" userLabel="Name">
-                                        <rect key="frame" x="55" y="142" width="270" height="35"/>
+                                        <rect key="frame" x="46" y="142" width="283" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="UNl-rk-7Vg"/>
                                         </constraints>
@@ -210,7 +210,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-Fi-Xte">
-                                        <rect key="frame" x="55" y="194.5" width="270" height="35"/>
+                                        <rect key="frame" x="46" y="194.5" width="283" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="LJA-9n-Z6I"/>
                                         </constraints>
@@ -222,7 +222,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLc-6J-dTe">
-                                        <rect key="frame" x="55" y="246.5" width="270" height="35"/>
+                                        <rect key="frame" x="46" y="246.5" width="283" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="FG3-97-aAT"/>
                                         </constraints>
@@ -234,7 +234,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUA-3d-OPH">
-                                        <rect key="frame" x="55" y="351" width="270" height="35"/>
+                                        <rect key="frame" x="46" y="351" width="283" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="EU9-tq-lDs"/>
                                         </constraints>
@@ -246,7 +246,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wwS-2B-Dxz">
-                                        <rect key="frame" x="55" y="298.5" width="270" height="35"/>
+                                        <rect key="frame" x="46" y="298.5" width="283" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="VZg-7s-Lca"/>
                                         </constraints>
@@ -258,13 +258,13 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password must be at least 6 character, contain one alpha character and one numeric character" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-Qx-stG">
-                                        <rect key="frame" x="55" y="430" width="270" height="29"/>
+                                        <rect key="frame" x="46" y="430" width="283" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx3-Nf-OmQ">
-                                        <rect key="frame" x="55" y="481" width="270" height="30"/>
+                                        <rect key="frame" x="46" y="481" width="283" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.2054360694" blue="0.1076341817" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -330,9 +330,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mO3-J2-MXC" secondAttribute="trailing" constant="-20" id="0F4-rJ-rI6"/>
                             <constraint firstItem="TmT-8l-oOV" firstAttribute="top" secondItem="Mih-xV-i87" secondAttribute="bottom" id="0Sm-tc-JcR"/>
                             <constraint firstItem="TmT-8l-oOV" firstAttribute="top" secondItem="2uC-Xj-Zev" secondAttribute="bottom" multiplier="32:4.7" id="0kd-ou-2ua"/>
-                            <constraint firstItem="fDv-41-xvh" firstAttribute="leading" secondItem="V14-la-XVL" secondAttribute="leadingMargin" constant="39" id="232-FF-pKb"/>
+                            <constraint firstItem="fDv-41-xvh" firstAttribute="leading" secondItem="V14-la-XVL" secondAttribute="leadingMargin" constant="30" id="232-FF-pKb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2uC-Xj-Zev" secondAttribute="trailing" constant="50" id="7ZJ-HW-pMI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fDv-41-xvh" secondAttribute="trailing" constant="34" id="8pm-bS-5R8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fDv-41-xvh" secondAttribute="trailing" constant="30" id="8pm-bS-5R8"/>
                             <constraint firstItem="TmT-8l-oOV" firstAttribute="top" secondItem="jUA-3d-OPH" secondAttribute="bottom" multiplier="32:18.5" id="A6S-1c-8lE"/>
                             <constraint firstItem="Mih-xV-i87" firstAttribute="top" secondItem="V14-la-XVL" secondAttribute="top" id="DK3-c2-k85"/>
                             <constraint firstItem="Mih-xV-i87" firstAttribute="leading" secondItem="V14-la-XVL" secondAttribute="leading" id="Dcq-fZ-aUJ"/>
@@ -750,7 +750,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cF7-YR-2gs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="rVg-UX-Tf4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rVg-UX-Tf4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
