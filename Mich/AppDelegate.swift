@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let channel = pusher.subscribe(String((self.user?.id)! + 0))
         let _ = channel.bind(eventName: "invitation", callback: inviteRecieved)
         pusher.connect()
+        
     }
     
     func inviteRecieved(data: Any?) -> Void {
