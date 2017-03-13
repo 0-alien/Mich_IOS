@@ -215,6 +215,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func ongetcurrentuser(getcurrentuserResponse: User){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.user = getcurrentuserResponse
+        appDelegate.setUpNotifications()
         
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
