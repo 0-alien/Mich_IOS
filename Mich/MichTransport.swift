@@ -1562,5 +1562,66 @@ class MichTransport {
         
     }
     
+    
+    
+    
+    static func updateUser(token: String?, name: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "user/update"
+        var strBase64:String = ""
+        
+        
+        if(avatar != nil){
+            let imageData:NSData = UIImageJPEGRepresentation(avatar!, 0.6)! as NSData
+            strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+        }
+        
+        let updateuserRequest = UpdateUserRequest(token: token!, name: name!, email: email!, avatar: strBase64)
+        let payloadJson = updateuserRequest.toJSONString()
+        
+
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<User>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackForUpdateUser(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForUpdateUser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForUpdateUser(error)
+                
+            }
+            
+            
+        }
+        
+    }
+    
 
 }

@@ -85,18 +85,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         loginFacebookBTN.readPermissions = ["public_profile", "email", "user_friends"]
         
         
-        
-        
-        print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_")
         let token = FBSDKAccessToken.current()
         if(FBSDKAccessToken.current() == nil){
-            print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_1")
             print("logaedout")
             print(token)
-            
         }else{
             print(token)
-            print("+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+__+_+_2")
             print("loggedIn")
             
         }
@@ -255,7 +249,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
         
         textField.resignFirstResponder()
         login(self)

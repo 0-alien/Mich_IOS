@@ -109,8 +109,15 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        addComments.resignFirstResponder()
+        postButton(self)
+
+        
         return true
     }
+    
+    
     func hideKeyboard() {
         addComments.resignFirstResponder()
     }

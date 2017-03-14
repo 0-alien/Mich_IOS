@@ -17,6 +17,9 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     var postTitle: String?
     
     override func viewDidLoad() {
+        
+        titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
         super.viewDidLoad()
         photo.image = img
         
@@ -39,6 +42,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        done(self)
         return true
     }
     
@@ -48,9 +52,26 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        checkValidTitle()
-        postTitle = titleTF.text
+//        checkValidTitle()
+//        postTitle = titleTF.text
+        
+        
+        
     }
+    
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if(titleTF.text!  == ""){
+            
+            doneButtone.isEnabled = false;
+        }else{
+            
+            doneButtone.isEnabled = true;
+            postTitle = titleTF.text
+        }
+    }
+    
+    
     
     //Mark: oncreate callbacks
     
