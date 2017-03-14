@@ -11,10 +11,13 @@ import UIKit
 class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePicture: UIImageView!
+    var userId: Int!
+    var user: User!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         profilePicture.image = profilePicture.image?.circle
-        // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +29,6 @@ class EditProfileViewController: UIViewController {
         print("prep")
     }
     @IBAction func cancel(_ sender: Any) {
-        print("DAWDAW")
         self.dismiss(animated: true, completion: nil)
     }
 }

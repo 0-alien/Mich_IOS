@@ -207,7 +207,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     
     // MARK: actions
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
-        
+        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
+                        successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
     @IBAction func vs(_ sender: Any) {
         MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
