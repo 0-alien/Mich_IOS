@@ -15,6 +15,8 @@ class SlidingMenuViewController: UIViewController {
     @IBOutlet weak var messenger: UIView!
     @IBOutlet weak var settings: UIView!
     @IBOutlet weak var help: UIView!
+    @IBOutlet weak var notificationCountView: UIView!
+    @IBOutlet weak var notificationCountLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,9 @@ class SlidingMenuViewController: UIViewController {
         settings.layer.shadowColor = UIColor.black.cgColor;
         settings.layer.shadowOffset = CGSize(width: 0, height: 3)
         settings.layer.masksToBounds = false
+        
+        notificationCountView.layer.cornerRadius = notificationCountView.frame.size.height / 2.0
+        self.setNotificationCount(count: 0) //get notification count from server
         
     }
 
@@ -82,6 +87,38 @@ class SlidingMenuViewController: UIViewController {
         
     }
     
+
+    
+    
+    // MARK: - manage notification count
+    
+    func setNotificationCount(count: Int) {
+        if count == 0 {
+            self.notificationCountView.isHidden = true
+            self.notificationCountLabel.text = "0"
+        }
+        else if count < 0 {
+            return
+        }
+        else {
+            self.notificationCountLabel.text = String(count)
+        }
+    }
+    
+    func incrementNotificationCount(by: Int) {
+        var curCount = Int(self.notificationCountLabel.text!)
+        curCount = curCount! + by
+        if curCount! < 0 {
+            return
+        }
+        else if curCount == 0 {
+            self.notificationCountView.isHidden = true
+        }
+        else if curCount! == by {
+            self.notificationCountView.isHidden = false
+        }
+        self.notificationCountLabel.text = String(curCount!)
+    }
     
     // MARK: - Actions
     

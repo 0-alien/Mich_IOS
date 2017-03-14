@@ -15,8 +15,8 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var leftView: UIView!
     @IBOutlet weak var rightView: UIView!
     
-    var myTabBar: UITabBarController?
-    var myMenu: UIViewController?
+    var myTabBar: MainTabBarController?
+    var myMenu: SlidingMenuViewController?
     
     var tap: UITapGestureRecognizer!
     override func viewDidLoad() {

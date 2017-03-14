@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else {
                 vc.myTabBar?.tabBar.items?[4].badgeValue = String(Int((vc.myTabBar?.tabBar.items?[4].badgeValue)!)! + 1)
             }
+            vc.myMenu?.incrementNotificationCount(by: 1)
         }
     }
     

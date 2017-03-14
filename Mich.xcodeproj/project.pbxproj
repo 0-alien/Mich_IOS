@@ -28,6 +28,8 @@
 		1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A603A1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift */; };
 		1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */; };
 		1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */; };
+		1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54821E1E76BF80008D98C1 /* NotificationsViewController.swift */; };
+		1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */; };
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
 		1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */; };
@@ -144,6 +146,8 @@
 		1E4A603A1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellBWithPicture.swift; sourceTree = "<group>"; };
 		1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditImageViewController.swift; sourceTree = "<group>"; };
 		1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSearchViewController.swift; sourceTree = "<group>"; };
+		1E54821E1E76BF80008D98C1 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSInviteCell.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
 		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +340,15 @@
 			name = "Table View Cells";
 			sourceTree = "<group>";
 		};
+		1E5482201E76C0D2008D98C1 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				1E54821E1E76BF80008D98C1 /* NotificationsViewController.swift */,
+				1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		1E56BC551D8C16AB0012E695 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +441,7 @@
 		1EF251EA1DF6D693008E15F6 /* Sliding Menu */ = {
 			isa = PBXGroup;
 			children = (
+				1E5482201E76C0D2008D98C1 /* Notifications */,
 				CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */,
 				1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */,
 				1E8015C61E080DDD001166E1 /* SlidingMenuPresentingViewController.swift */,
@@ -678,6 +692,7 @@
 				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
+				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
@@ -734,6 +749,7 @@
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
 				1E63097A1E65A86D0080054B /* Comment.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
+				1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */,
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,

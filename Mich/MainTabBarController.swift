@@ -42,6 +42,9 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         if (viewController is ScrollingNavigationController) {
             (viewController as! ScrollingNavigationController).showNavbar(animated: false)
         }
+        else if tabBarController.selectedIndex == 4 {
+            tabBarController.tabBar.items?[4].badgeValue = nil
+        }
     }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
