@@ -528,10 +528,10 @@
             </objects>
             <point key="canvasLocation" x="6036" y="-12.143928035982009"/>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="MeY-aT-1h6">
             <objects>
-                <viewController id="OEt-Yi-uSz" sceneMemberID="viewController">
+                <viewController id="OEt-Yi-uSz" customClass="HelpViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ze-Ll-QoQ"/>
                         <viewControllerLayoutGuide type="bottom" id="edi-ra-w6Z"/>
@@ -541,7 +541,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knR-Do-364">
-                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                                <rect key="frame" x="-4" y="-40" width="383" height="707"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mich_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NV7-O3-h96">
                                         <rect key="frame" x="94" y="27" width="195" height="75"/>
@@ -562,6 +562,22 @@
                                         </constraints>
                                         <state key="normal" title="Send"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eky-gj-F66">
+                                        <rect key="frame" x="31" y="202" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib3-uE-fcV">
+                                        <rect key="frame" x="31" y="231" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tjc-lw-yLJ">
+                                        <rect key="frame" x="31" y="260" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -570,7 +586,13 @@
                                     <constraint firstItem="NV7-O3-h96" firstAttribute="top" secondItem="knR-Do-364" secondAttribute="top" constant="27" id="As8-Lg-m3A"/>
                                     <constraint firstItem="8yT-9G-clT" firstAttribute="centerY" secondItem="Sqp-R2-B5l" secondAttribute="centerY" id="H9V-23-LaD"/>
                                     <constraint firstItem="Sqp-R2-B5l" firstAttribute="top" secondItem="knR-Do-364" secondAttribute="top" constant="140" id="MBB-aC-E7j"/>
+                                    <constraint firstItem="Tjc-lw-yLJ" firstAttribute="leading" secondItem="Ib3-uE-fcV" secondAttribute="leading" id="O6c-Om-UAd"/>
+                                    <constraint firstItem="eky-gj-F66" firstAttribute="top" secondItem="Sqp-R2-B5l" secondAttribute="bottom" constant="22" id="bEF-bQ-eVZ"/>
                                     <constraint firstItem="8yT-9G-clT" firstAttribute="leading" secondItem="Sqp-R2-B5l" secondAttribute="trailing" constant="8" id="de1-Q5-c9V"/>
+                                    <constraint firstItem="Ib3-uE-fcV" firstAttribute="top" secondItem="eky-gj-F66" secondAttribute="bottom" constant="8" id="g5C-xo-xfe"/>
+                                    <constraint firstItem="eky-gj-F66" firstAttribute="leading" secondItem="Sqp-R2-B5l" secondAttribute="leading" id="gzd-0w-TjE"/>
+                                    <constraint firstItem="Tjc-lw-yLJ" firstAttribute="top" secondItem="Ib3-uE-fcV" secondAttribute="bottom" constant="8" id="tPq-m2-U61"/>
+                                    <constraint firstItem="Ib3-uE-fcV" firstAttribute="leading" secondItem="eky-gj-F66" secondAttribute="leading" id="u4i-K8-Svw"/>
                                     <constraint firstAttribute="trailing" secondItem="NV7-O3-h96" secondAttribute="trailing" constant="94" id="vtc-tp-d3c"/>
                                     <constraint firstItem="NV7-O3-h96" firstAttribute="leading" secondItem="knR-Do-364" secondAttribute="leading" constant="94" id="xzl-qw-DCp"/>
                                 </constraints>
@@ -579,11 +601,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="edi-ra-w6Z" firstAttribute="top" secondItem="knR-Do-364" secondAttribute="bottom" id="27w-yK-gRk"/>
-                            <constraint firstItem="knR-Do-364" firstAttribute="top" secondItem="4ze-Ll-QoQ" secondAttribute="bottom" constant="-20" id="BeQ-ty-iX8"/>
+                            <constraint firstItem="knR-Do-364" firstAttribute="top" secondItem="4ze-Ll-QoQ" secondAttribute="bottom" constant="-60" id="BeQ-ty-iX8"/>
                             <constraint firstItem="knR-Do-364" firstAttribute="leading" secondItem="Omw-6j-MM1" secondAttribute="leadingMargin" constant="-20" id="NSH-21-h2N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="knR-Do-364" secondAttribute="trailing" constant="-20" id="ftF-mv-aeh"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ManagingYourAccount" destination="Ib3-uE-fcV" id="Tib-wP-Gtb"/>
+                        <outlet property="PrivacySafety" destination="Tjc-lw-yLJ" id="s3J-xF-hyl"/>
+                        <outlet property="UsingMich" destination="eky-gj-F66" id="l2i-Yu-Aqu"/>
+                        <outlet property="questionTF" destination="Sqp-R2-B5l" id="seh-Kb-Pdd"/>
+                        <outlet property="sendQuestionBTN" destination="8yT-9G-clT" id="9Qe-Ow-uiA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGI-e7-D9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
