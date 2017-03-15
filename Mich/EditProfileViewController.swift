@@ -15,6 +15,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var profilePicture: UIImageView!
     var user: User!
+    var image2 : UIImage!
 
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -46,7 +47,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         // tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: profilePicture.image!, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
+        MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
         
     }
     
@@ -91,6 +92,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
+        image2 = image
         self.profilePicture.image = image.circle
         self.dismiss(animated: true, completion: nil)
     }
