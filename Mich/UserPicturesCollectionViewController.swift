@@ -63,6 +63,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         followingButton.setTitle("Following", for: .normal)
         
         currentIndex = 4
+        
+        self.profilePicture = self.profilePicture.borderedCircle
+        
         if (self.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id || self.userId == -1) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
             self.navigationItem.title = user?.username
@@ -86,7 +89,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
 
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        profilePicture.image = profilePicture.image?.circle
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl
         } else {
@@ -215,6 +217,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
         MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
+        print("DAWDAWD")
     }
     @IBAction func vs(_ sender: Any) {
         MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)

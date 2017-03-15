@@ -47,6 +47,7 @@
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
 		1E9309C61E6DA37B00227924 /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9309C51E6DA37B00227924 /* MyViewController.swift */; };
+		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC367C41E4DB4DE00DB6C77 /* Camera.swift */; };
 		1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */; };
@@ -165,6 +166,7 @@
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		1E9309C51E6DA37B00227924 /* MyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC367C41E4DB4DE00DB6C77 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSViewController.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */,
+				1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,
 				CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */,
+				1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */,
 				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
 				1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */,
 				CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */,
