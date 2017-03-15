@@ -20,7 +20,7 @@ class SlidingMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profilePicture.image = profilePicture.image?.circle
+        profilePicture = profilePicture.borderedCircle
         
         notifications.layer.shadowOpacity = 0.3;
         notifications.layer.shadowRadius = 1.0;

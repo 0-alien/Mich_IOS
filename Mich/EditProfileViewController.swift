@@ -24,8 +24,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.profilePicture = self.profilePicture.borderedCircle
         Nuke.loadImage(with: Foundation.URL(string: self.user.avatar!)!, into: self.profilePicture)
-        profilePicture.image = profilePicture.image?.circle
         self.userNameTF.text = self.user.name
         self.emailTF.text = self.user.email
         
@@ -38,9 +38,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+    @IBAction func save(_ sender: Any) {
         let userName = userNameTF.text!;
         let email = emailTF.text!;
         
@@ -48,16 +48,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
-        
     }
-    
     func onupdateuser(resp: User) {
-        print("+_+_+_+_+_++_+_+_+_+_+_+_+_+_+_+_ success")
+        (UIApplication.shared.delegate as! AppDelegate).user = resp
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
     }
     
     func onUpdateUsererror(error: DefaultError) {
-        print("+_+_+_+_+_++_+_+_+_+_+_+_+_+_+_+_ error")
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -93,7 +90,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
         image2 = image
-        self.profilePicture.image = image.circle
+        self.profilePicture.image = image
         self.dismiss(animated: true, completion: nil)
     }
     

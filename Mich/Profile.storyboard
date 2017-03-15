@@ -27,7 +27,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zl-AL-49v">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-wr-Puc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-wr-Puc">
                                         <rect key="frame" x="0.0" y="8" width="112" height="112"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="wYe-wr-Puc" secondAttribute="height" multiplier="1:1" id="AKG-HX-tJe"/>
@@ -634,7 +634,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="JY9-Vw-t1D">
                             <connections>
-                                <segue destination="y6L-WS-Lhg" kind="unwind" unwindAction="unwindToProfilePageWithSender:" id="kA8-6C-NvD"/>
+                                <action selector="save:" destination="Ddq-Mk-hQI" id="yEt-gD-OAk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -642,6 +642,7 @@
                         <outlet property="emailTF" destination="lc0-A0-wbI" id="MNH-WB-wBK"/>
                         <outlet property="profilePicture" destination="9WD-dM-KUN" id="hyZ-BQ-iZn"/>
                         <outlet property="userNameTF" destination="Sd4-Vn-aIN" id="qeX-oZ-mDO"/>
+                        <segue destination="y6L-WS-Lhg" kind="unwind" identifier="gotoprofilepage" unwindAction="unwindToProfilePageWithSender:" id="scq-zL-9lQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJc-qf-Bs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -662,7 +663,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
