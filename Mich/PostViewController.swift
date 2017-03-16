@@ -58,7 +58,7 @@ class PostViewController: UIViewController {
         if self.post.nComments == 0 {
             self.viewCommentsButton.isHidden = true
         }
-        self.viewCommentsButton.titleLabel?.text = "View all " + String(self.post.nComments!) + " Comments"
+        self.viewCommentsButton.setTitle("View all " + String(self.post.nComments!) + " Comments", for: .normal)
     }
     
     // MARK: callbacks
