@@ -116,6 +116,7 @@
 		CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */; };
 		CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */; };
 		CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */; };
+		CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE38FF61E7952A10037CB5B /* HelpViewController.swift */; };
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
@@ -236,6 +237,7 @@
 		CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryResponse.swift; sourceTree = "<group>"; };
 		CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryRequest.swift; sourceTree = "<group>"; };
+		CFE38FF61E7952A10037CB5B /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */,
 				CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */,
 				1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */,
+				CFE38FF61E7952A10037CB5B /* HelpViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */,
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
+				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
