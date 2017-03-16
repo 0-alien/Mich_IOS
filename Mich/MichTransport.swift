@@ -1623,5 +1623,57 @@ class MichTransport {
         
     }
     
+    
+    static func deletepost(token: String, postID: Int,  successCallbackForDeletePost: @escaping (Int) -> Void, errorCallbackForDeletePost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/delete"
+        
+        let deltepostRequest = DeletePostRequest(token: token, postID: postID)
+        let payloadJson = deltepostRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DeletePostResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForDeletePost(postID)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForDeletePost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForDeletePost(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
 
 }

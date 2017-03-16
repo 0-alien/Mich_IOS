@@ -121,6 +121,8 @@
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
 		CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCC0201E7A9692007A6AB5 /* Social.framework */; };
+		CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */; };
+		CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */; };
 		CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD54F81E2D083A0006830E /* RegisterResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +245,8 @@
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
 		CFFCC0201E7A9692007A6AB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostRequest.swift; sourceTree = "<group>"; };
+		CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostResponse.swift; sourceTree = "<group>"; };
 		CFFD54F81E2D083A0006830E /* RegisterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -502,6 +506,7 @@
 				CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */,
 				CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */,
 				1E6309791E65A86D0080054B /* Comment.swift */,
+				CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -535,6 +540,7 @@
 				CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */,
 				1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */,
 				CF149D261E77EB81005911FB /* UpdateUserRequest.swift */,
+				CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
 				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
+				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
@@ -727,6 +734,7 @@
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
+				CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */,
 				CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
