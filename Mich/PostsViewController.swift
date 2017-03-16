@@ -145,7 +145,70 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     func share(cellIndex: Int) {
         print(cellIndex)
+        
+       
+        let alert = UIAlertController()
+        
+        let sharePhoto = UIAlertAction(title: "Share photo with facebook", style: .default, handler: { ACTION in
+            
+        })
+        
+        let shareContent = UIAlertAction(title: "Share content with facebook", style: .default, handler: { ACTION in
+            
+            
+        })
+        
+        
+        if(posts[cellIndex].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
+        
+            let deletePost = UIAlertAction(title: "Delete post", style: .default, handler: { ACTION in
+                MichTransport.deletepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.posts[cellIndex].id!, successCallbackForDeletePost: self.onsuccessDelete, errorCallbackForDeletePost: self.onErrorDelete)
+            
+            })
+            alert.addAction(deletePost)
+       
+        }else{
+        
+            let hidePost = UIAlertAction(title: "Hide post", style: .default, handler: { ACTION in
+            
+            
+            })
+            alert.addAction(hidePost)
+        }
+        
+        
+        
+        alert.addAction(sharePhoto)
+        alert.addAction(shareContent)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+
+        
+        
+        
+        
     }
+    
+    
+    func onsuccessDelete(postId: Int){
+        for i in 0 ..< posts.count {
+            if posts[i].id == postId {
+                posts.remove(at: i)
+                break
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
+
+    func onErrorDelete(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     // MARK: server request callbacks
     func onGetFeed(resp: [PostClass]){
