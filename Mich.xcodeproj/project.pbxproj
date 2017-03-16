@@ -120,6 +120,7 @@
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
+		CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCC0201E7A9692007A6AB5 /* Social.framework */; };
 		CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD54F81E2D083A0006830E /* RegisterResponse.swift */; };
 /* End PBXBuildFile section */
 
@@ -241,6 +242,7 @@
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
+		CFFCC0201E7A9692007A6AB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CFFD54F81E2D083A0006830E /* RegisterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */,
 				9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */,
 				CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */,
 				CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */,
@@ -262,6 +265,7 @@
 		0ED76E5060881AC4F9F6CDDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFFCC0201E7A9692007A6AB5 /* Social.framework */,
 				74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */,
 			);
 			name = Frameworks;
