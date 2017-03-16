@@ -80,6 +80,9 @@ class PostTableViewCell: UITableViewCell {
         self.cellDelegate?.showComments(cellIndex: self.index)
     }
     
+    @IBAction func share(_ sender: Any) {
+        cellDelegate?.share(cellIndex: self.index)
+    }
     
 }
 
@@ -88,4 +91,5 @@ protocol PostTableViewCellDelegate {
     func postUnliked(cellIndex: Int)
     func showComments(cellIndex: Int)
     func showProfile(cellIndex: Int)
+    func share(cellIndex: Int)
 }

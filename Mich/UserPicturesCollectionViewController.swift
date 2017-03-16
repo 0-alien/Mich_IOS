@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -23,6 +23,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
+    
+    var refreshControl: UIRefreshControl!
     
     var user: User? = nil
     var userId: Int! = -1
@@ -46,11 +48,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
         }
     }
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        return refreshControl
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,11 +86,10 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
 
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        if #available(iOS 10.0, *) {
-            self.imageCollection.refreshControl = refreshControl
-        } else {
-            self.imageCollection.addSubview(refreshControl)
-        }
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        self.imageCollection.refreshControl = refreshControl
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
@@ -160,7 +156,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         self.posts.removeAll()
         self.posts.append(contentsOf: resp)
         self.imageCollection.reloadData()
-        self.imageCollection.refreshControl?.endRefreshing()
+        refreshControl.endRefreshing()
     }
     
     func onerror(error: DefaultError){
@@ -217,7 +213,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBAction func unwindToProfilePage(sender: UIStoryboardSegue) {
         MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
-        print("DAWDAWD")
     }
     @IBAction func vs(_ sender: Any) {
         MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
