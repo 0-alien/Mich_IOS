@@ -1143,7 +1143,7 @@ class MichTransport {
  
         
         
-        let imageData:NSData = UIImageJPEGRepresentation(image, 0.6)! as NSData
+        let imageData:NSData = UIImageJPEGRepresentation(image, 0.1)! as NSData
 
         let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
 
@@ -1572,7 +1572,7 @@ class MichTransport {
         
         
         if(avatar != nil){
-            let imageData:NSData = UIImageJPEGRepresentation(avatar!, 0.6)! as NSData
+            let imageData:NSData = UIImageJPEGRepresentation(avatar!, 0.1)! as NSData
             strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
         }
         

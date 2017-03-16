@@ -143,6 +143,10 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         performSegue(withIdentifier: "showcomments", sender: self)
     }
     
+    func share(cellIndex: Int) {
+        print(cellIndex)
+    }
+    
     // MARK: server request callbacks
     func onGetFeed(resp: [PostClass]){
         posts.removeAll()
