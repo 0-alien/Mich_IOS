@@ -15,7 +15,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
-    var commentId: Int!
+    var commentIndex: Int!
     var delegate: CommentDelegate!
     
     var liked: Bool! {
@@ -48,21 +48,19 @@ class CommentCell: UITableViewCell {
     @IBAction func like(_ sender: Any) {
         if self.liked! {
             //unlike
-            self.liked = false
-            self.delegate.onCommentUnlike(commentId: self.commentId)
+            self.delegate.onCommentUnlike(commentIndex: self.commentIndex)
         }
         else {
             //like
-            self.liked = true
-            self.delegate.onCommentLike(commentId: self.commentId)
+            self.delegate.onCommentLike(commentIndex: self.commentIndex)
         }
     }
   
 }
 
 protocol CommentDelegate {
-    func onCommentLike(commentId: Int)
-    func onCommentUnlike(commentId: Int)
+    func onCommentLike(commentIndex: Int)
+    func onCommentUnlike(commentIndex: Int)
 }
 
 

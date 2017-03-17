@@ -20,6 +20,7 @@ class Comment: Mappable {
     var updatedAt: String?
     var createdAt: String?
     var data: String?
+    var myLike: Int?
     
     
     required init?(map: Map) {
@@ -41,5 +42,6 @@ class Comment: Mappable {
         postId          <- map["postId"]
         reply           <- map["reply"]
         data            <- map["data"]
+        myLike          <- map["mylike"]
     }
 }
