@@ -89,7 +89,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        self.imageCollection.refreshControl = refreshControl
+        if #available(iOS 10.0, *) {
+            self.imageCollection.refreshControl = refreshControl
+        } else {
+            self.imageCollection.addSubview(refreshControl)
+        }
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
@@ -163,6 +167,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        self.refreshControl.endRefreshing()
     }
     
     func ongetusersuccess(user: User) {

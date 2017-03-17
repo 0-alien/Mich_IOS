@@ -20,6 +20,8 @@ class PostViewController: UIViewController {
     @IBOutlet weak var postImage: UIImageView!
     var post: PostClass!
     var postId: Int!
+    var refreshControl: UIRefreshControl!
+    
     
     @IBOutlet weak var viewCommentsButton: UIButton!
     
@@ -28,6 +30,13 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(PostViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        if #available(iOS 10.0, *) {
+            self.scrollView.refreshControl = refreshControl
+        } else {
+            self.scrollView.addSubview(refreshControl)
+        }
         MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
     }
@@ -63,6 +72,7 @@ class PostViewController: UIViewController {
     
     // MARK: callbacks
     func onGetPostSuccess(resp: PostClass) {
+        refreshControl.endRefreshing()
         self.post = resp
         self.loadPost()
     }
@@ -93,6 +103,7 @@ class PostViewController: UIViewController {
     }
     
     func onGetPostError(error: DefaultError){
+        refreshControl.endRefreshing()
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -112,6 +123,12 @@ class PostViewController: UIViewController {
             return
         }
         MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postId, successCallbackForLike: onDoubleTapLikeSuccess, errorCallbackForLike: onGetPostError)
+    }
+    
+    // MARK: refreshcontrol
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
+                successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
     }
     
 }
