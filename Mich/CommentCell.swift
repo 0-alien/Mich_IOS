@@ -11,12 +11,23 @@ import UIKit
 class CommentCell: UITableViewCell {
 
 
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var data: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userPicture: UIImageView!
-    @IBOutlet weak var answersButton: UIButton!
+    var commentId: Int!
+    var delegate: CommentDelegate!
     
+    var liked: Bool! {
+        didSet {
+            if liked! {
+                likeButton.setTitle("Unlike", for: .normal)
+            }
+            else {
+                likeButton.setTitle("Like", for: .normal)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,4 +44,25 @@ class CommentCell: UITableViewCell {
         assert(rating >= 1 && rating < 6);
         self.ratingImage.image = UIImage(named: "rating-" + String(rating))
     }
+    
+    @IBAction func like(_ sender: Any) {
+        if self.liked! {
+            //unlike
+            self.liked = false
+            self.delegate.onCommentUnlike(commentId: self.commentId)
+        }
+        else {
+            //like
+            self.liked = true
+            self.delegate.onCommentLike(commentId: self.commentId)
+        }
+    }
+  
 }
+
+protocol CommentDelegate {
+    func onCommentLike(commentId: Int)
+    func onCommentUnlike(commentId: Int)
+}
+
+

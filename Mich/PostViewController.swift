@@ -124,6 +124,10 @@ class PostViewController: UIViewController {
         }
         MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postId, successCallbackForLike: onDoubleTapLikeSuccess, errorCallbackForLike: onGetPostError)
     }
+    @IBAction func edit(_ sender: Any) {
+        
+    }
+
     
     // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {

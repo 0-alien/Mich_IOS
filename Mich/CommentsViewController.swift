@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import Nuke
 
-class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CommentDelegate {
     
     
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var addComments: UITextField!
-
     @IBOutlet weak var tableView: UITableView!
     var postId: Int!
     var comments: [Comment] = []
@@ -27,6 +27,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
         addComments.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
+        self.tableView.estimatedRowHeight = 40
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     deinit {
@@ -45,11 +47,14 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-        cell.userPicture.image = cell.userPicture.image?.circle
-        cell.userName.text = comments[indexPath.row].userName
+        //Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
+        cell.userImage.image = cell.userImage.image?.circle
         cell.data.text = self.comments[indexPath.row].data
-        cell.answersButton.tag = indexPath.row
         cell.setRating(indexPath.row % 5 + 1)
+        cell.commentId = comments[indexPath.row].id
+        cell.delegate = self
+        cell.liked = false
+        
         return cell
         
     }
@@ -141,7 +146,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.comments.removeAll()
         self.comments.append(contentsOf: resp)
         self.tableView.reloadData()
-        print(self.comments.count)
+
     }
     
     
@@ -150,5 +155,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    // MARK: commentDelegate
+    func onCommentLike(commentId: Int) {
+        
+    }
+    func onCommentUnlike(commentId: Int) {
+        
+    }
 }

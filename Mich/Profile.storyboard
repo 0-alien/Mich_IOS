@@ -287,7 +287,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-dd-bnh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-dd-bnh" userLabel="comments Button">
                                         <rect key="frame" x="53" y="455" width="25" height="25"/>
                                         <state key="normal" image="comments_icon"/>
                                         <connections>
@@ -300,11 +300,30 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QLl-x2-lbb">
+                                        <rect key="frame" x="337" y="-3.5" width="30" height="32.5"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="...">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="edit:" destination="dLl-p9-nQN" eventType="touchUpInside" id="7Bw-mh-VwC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2pa-dd-bnh" firstAttribute="width" secondItem="PbG-YA-ysQ" secondAttribute="width" id="0ZL-mg-axl"/>
                                     <constraint firstItem="Vd7-qV-lFn" firstAttribute="bottom" secondItem="PbG-YA-ysQ" secondAttribute="bottom" id="0a9-rz-ktZ"/>
                                     <constraint firstAttribute="trailing" secondItem="3in-ZM-YIG" secondAttribute="trailing" id="3gO-0q-fEd"/>
+                                    <constraint firstItem="QLl-x2-lbb" firstAttribute="bottom" secondItem="7nJ-0W-vK7" secondAttribute="bottom" id="8ZV-Mf-UVv"/>
                                     <constraint firstItem="3zS-sC-0I8" firstAttribute="leading" secondItem="c0n-gM-eBM" secondAttribute="leading" constant="8" id="AhJ-yp-U6T"/>
                                     <constraint firstItem="3in-ZM-YIG" firstAttribute="leading" secondItem="3zS-sC-0I8" secondAttribute="trailing" constant="8" id="EKD-sH-yo8"/>
                                     <constraint firstAttribute="trailing" secondItem="7nJ-0W-vK7" secondAttribute="trailing" id="Elt-lg-OkM"/>
@@ -322,6 +341,7 @@
                                     <constraint firstItem="2pa-dd-bnh" firstAttribute="leading" secondItem="PbG-YA-ysQ" secondAttribute="trailing" constant="20" id="cVF-nL-rcC"/>
                                     <constraint firstItem="3zS-sC-0I8" firstAttribute="top" secondItem="c0n-gM-eBM" secondAttribute="top" constant="8" id="cYg-TB-NXM"/>
                                     <constraint firstItem="7nJ-0W-vK7" firstAttribute="leading" secondItem="3zS-sC-0I8" secondAttribute="trailing" constant="8" id="etj-wy-UWo"/>
+                                    <constraint firstItem="QLl-x2-lbb" firstAttribute="trailing" secondItem="WBQ-Du-Wmj" secondAttribute="trailing" id="f8F-kE-KGO"/>
                                     <constraint firstItem="wsu-zS-INR" firstAttribute="trailing" secondItem="U7V-FJ-bHn" secondAttribute="trailing" id="fsc-j7-QsR"/>
                                     <constraint firstItem="7nJ-0W-vK7" firstAttribute="top" secondItem="3zS-sC-0I8" secondAttribute="top" id="hT0-sp-kgu"/>
                                     <constraint firstItem="3in-ZM-YIG" firstAttribute="bottom" secondItem="3zS-sC-0I8" secondAttribute="bottom" id="kal-Kf-RWg"/>
