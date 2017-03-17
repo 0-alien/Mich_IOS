@@ -9,6 +9,7 @@
 import UIKit
 import AMScrollingNavbar
 import Nuke
+import Social
 
 class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate {
 
@@ -144,13 +145,17 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     }
     
     func share(cellIndex: Int) {
-        print(cellIndex)
         
        
         let alert = UIAlertController()
         
         let sharePhoto = UIAlertAction(title: "Share photo with facebook", style: .default, handler: { ACTION in
+            var shareToFacebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             
+            
+            shareToFacebook.add(Foundation.URL(string:self.posts[cellIndex].image!))
+            
+             self.present(shareToFacebook, animated: true, completion: nil)
         })
         
         let shareContent = UIAlertAction(title: "Share content with facebook", style: .default, handler: { ACTION in
