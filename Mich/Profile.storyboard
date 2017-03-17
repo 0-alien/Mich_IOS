@@ -238,11 +238,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Du-Wmj">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Du-Wmj">
                                         <rect key="frame" x="8" y="84" width="359" height="359"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WBQ-Du-Wmj" secondAttribute="height" multiplier="1:1" id="UF3-zc-1ed"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="559-bM-rad" appends="YES" id="ghq-n9-NMc"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-ZM-YIG">
                                         <rect key="frame" x="76" y="52" width="94" height="16"/>
@@ -257,7 +261,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsu-zS-INR">
-                                        <rect key="frame" x="8" y="518" width="112" height="30"/>
+                                        <rect key="frame" x="8" y="518" width="359" height="30"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="View Comments">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,6 +277,9 @@
                                             <constraint firstAttribute="width" constant="25" id="YqV-Jb-QFe"/>
                                         </constraints>
                                         <state key="normal" image="like_icon"/>
+                                        <connections>
+                                            <action selector="like:" destination="dLl-p9-nQN" eventType="touchUpInside" id="ObE-j7-ANV"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vd7-qV-lFn">
                                         <rect key="frame" x="34" y="465" width="8" height="15"/>
@@ -283,6 +290,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pa-dd-bnh">
                                         <rect key="frame" x="53" y="455" width="25" height="25"/>
                                         <state key="normal" image="comments_icon"/>
+                                        <connections>
+                                            <segue destination="yfP-oD-b7M" kind="show" identifier="showcomments" id="peP-t3-A3i"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGQ-6l-f2c">
                                         <rect key="frame" x="79" y="465" width="8" height="15"/>
@@ -312,6 +322,7 @@
                                     <constraint firstItem="2pa-dd-bnh" firstAttribute="leading" secondItem="PbG-YA-ysQ" secondAttribute="trailing" constant="20" id="cVF-nL-rcC"/>
                                     <constraint firstItem="3zS-sC-0I8" firstAttribute="top" secondItem="c0n-gM-eBM" secondAttribute="top" constant="8" id="cYg-TB-NXM"/>
                                     <constraint firstItem="7nJ-0W-vK7" firstAttribute="leading" secondItem="3zS-sC-0I8" secondAttribute="trailing" constant="8" id="etj-wy-UWo"/>
+                                    <constraint firstItem="wsu-zS-INR" firstAttribute="trailing" secondItem="U7V-FJ-bHn" secondAttribute="trailing" id="fsc-j7-QsR"/>
                                     <constraint firstItem="7nJ-0W-vK7" firstAttribute="top" secondItem="3zS-sC-0I8" secondAttribute="top" id="hT0-sp-kgu"/>
                                     <constraint firstItem="3in-ZM-YIG" firstAttribute="bottom" secondItem="3zS-sC-0I8" secondAttribute="bottom" id="kal-Kf-RWg"/>
                                     <constraint firstItem="WBQ-Du-Wmj" firstAttribute="top" secondItem="3zS-sC-0I8" secondAttribute="bottom" constant="16" id="mUv-3X-z75"/>
@@ -335,16 +346,34 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="commentCountLabel" destination="gGQ-6l-f2c" id="TVs-Ka-Bpp"/>
+                        <outlet property="likeButton" destination="PbG-YA-ysQ" id="3gR-WJ-rc7"/>
+                        <outlet property="likeCountLabel" destination="Vd7-qV-lFn" id="r5i-eZ-RIY"/>
                         <outlet property="postDate" destination="3in-ZM-YIG" id="ZRR-g9-JZh"/>
                         <outlet property="postImage" destination="WBQ-Du-Wmj" id="RKO-wq-Deh"/>
                         <outlet property="postTitle" destination="U7V-FJ-bHn" id="mqV-Ue-mQF"/>
+                        <outlet property="scrollView" destination="c0n-gM-eBM" id="zK8-h0-gSL"/>
                         <outlet property="userImage" destination="3zS-sC-0I8" id="Wpl-bu-l9u"/>
                         <outlet property="userName" destination="7nJ-0W-vK7" id="GPO-cg-exx"/>
+                        <outlet property="viewCommentsButton" destination="wsu-zS-INR" id="J3O-G2-b5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAr-Rt-auD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="559-bM-rad">
+                    <connections>
+                        <action selector="doubleTapLike:" destination="dLl-p9-nQN" id="nzz-b2-9M4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="896.79999999999995" y="-525.78710644677665"/>
+        </scene>
+        <!--CommentsViewController-->
+        <scene sceneID="bgX-ab-jEU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="yfP-oD-b7M" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AbV-17-mHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="-526"/>
         </scene>
         <!--CommentsViewController-->
         <scene sceneID="kZy-7q-iA4">
@@ -363,7 +392,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -663,7 +692,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
