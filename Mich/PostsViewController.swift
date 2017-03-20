@@ -175,7 +175,8 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         
             let hidePost = UIAlertAction(title: "Hide post", style: .default, handler: { ACTION in
             
-            
+                MichTransport.hidepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.posts[cellIndex].id!, successCallbackForHidePost: self.onsuccessHide, errorCallbackForHidePost: self.onErrorDelete)
+                
             })
             alert.addAction(hidePost)
         }
@@ -192,6 +193,17 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         
         
         
+    }
+    
+    
+    func onsuccessHide(postId: Int){
+        for i in 0 ..< posts.count {
+            if posts[i].id == postId {
+                posts.remove(at: i)
+                break
+            }
+        }
+        self.tableView.reloadData()
     }
     
     

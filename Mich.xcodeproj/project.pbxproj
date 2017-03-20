@@ -87,6 +87,8 @@
 		CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */; };
 		CF2DE2BB1E4CAF7D00BD1980 /* UnfollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */; };
 		CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */; };
+		CF33648F1E7FE9FB00A42763 /* HidePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */; };
+		CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3364901E7FEA1100A42763 /* HidePostResponse.swift */; };
 		CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927941E2910C700F0C924 /* MichTransport.swift */; };
 		CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927971E29133D00F0C924 /* LoginResponse.swift */; };
 		CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279A1E291BC300F0C924 /* LoginRequest.swift */; };
@@ -120,6 +122,10 @@
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
+		CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */; };
+		CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */; };
+		CFF3AB251E7C1D8A00A27F91 /* LikeCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */; };
+		CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */; };
 		CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCC0201E7A9692007A6AB5 /* Social.framework */; };
 		CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */; };
 		CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */; };
@@ -211,6 +217,8 @@
 		CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowingRequest.swift; sourceTree = "<group>"; };
 		CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowRequest.swift; sourceTree = "<group>"; };
+		CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidePostRequest.swift; sourceTree = "<group>"; };
+		CF3364901E7FEA1100A42763 /* HidePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidePostResponse.swift; sourceTree = "<group>"; };
 		CF3927941E2910C700F0C924 /* MichTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichTransport.swift; sourceTree = "<group>"; };
 		CF3927971E29133D00F0C924 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CF39279A1E291BC300F0C924 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -244,6 +252,10 @@
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
+		CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentRequest.swift; sourceTree = "<group>"; };
+		CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeCommentRequest.swift; sourceTree = "<group>"; };
+		CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentResponse.swift; sourceTree = "<group>"; };
+		CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeCommentResponse.swift; sourceTree = "<group>"; };
 		CFFCC0201E7A9692007A6AB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostRequest.swift; sourceTree = "<group>"; };
 		CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostResponse.swift; sourceTree = "<group>"; };
@@ -507,6 +519,9 @@
 				CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */,
 				1E6309791E65A86D0080054B /* Comment.swift */,
 				CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */,
+				CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */,
+				CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */,
+				CF3364901E7FEA1100A42763 /* HidePostResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -541,6 +556,9 @@
 				1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */,
 				CF149D261E77EB81005911FB /* UpdateUserRequest.swift */,
 				CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */,
+				CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */,
+				CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */,
+				CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -700,6 +718,7 @@
 				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
+				CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
@@ -718,9 +737,12 @@
 				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
+				CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
+				CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */,
 				CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
+				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
@@ -785,6 +807,7 @@
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
+				CF33648F1E7FE9FB00A42763 /* HidePostRequest.swift in Sources */,
 				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
 				CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
@@ -792,6 +815,7 @@
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,
 				1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */,
 				CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */,
+				CFF3AB251E7C1D8A00A27F91 /* LikeCommentResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
