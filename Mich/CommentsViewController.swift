@@ -51,10 +51,10 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.userImage.image = cell.userImage.image?.circle
         cell.data.text = self.comments[indexPath.row].data
         cell.setRating(indexPath.row % 5 + 1)
-        cell.commentId = comments[indexPath.row].id
+        cell.commentIndex = indexPath.row
         cell.delegate = self
-        cell.liked = false
-        
+        cell.liked = (comments[indexPath.row].myLike == 1)
+        print(indexPath.row)
         return cell
         
     }
@@ -157,10 +157,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     // MARK: commentDelegate
-    func onCommentLike(commentId: Int) {
+    func onCommentLike(commentIndex: Int) {
+        let com = comments[commentIndex]
         
     }
-    func onCommentUnlike(commentId: Int) {
+    func onCommentUnlike(commentIndex: Int) {
+        let com = comments[commentIndex]
         
     }
 }
