@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Swift
 
 class CommentCell: UITableViewCell {
 
@@ -41,9 +42,16 @@ class CommentCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setRating(_ rating: Int) {
-        assert(rating >= 1 && rating < 6);
-        self.ratingImage.image = UIImage(named: "rating-" + String(rating))
+    func setLikeCount(count: Int) {
+        assert(count >= 0);
+        self.likeCountLabel.text = String(count)
+        if count == 0 {
+            self.ratingImage.image = nil
+            self.ratingImage.backgroundColor = UIColor.cyan
+        }
+        else {
+            self.ratingImage.image = UIImage(named: "rating-" + String(Swift.min(5, count)))
+        }
     }
     
     @IBAction func like(_ sender: Any) {

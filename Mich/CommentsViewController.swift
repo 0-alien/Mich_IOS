@@ -50,11 +50,10 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         //Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
         cell.userImage.image = cell.userImage.image?.circle
         cell.data.text = self.comments[indexPath.row].data
-        cell.setRating(indexPath.row % 5 + 1)
         cell.commentIndex = indexPath.row
         cell.delegate = self
         cell.liked = (comments[indexPath.row].myLike == 1)
-        cell.likeCountLabel.text = String(comments[indexPath.row].nLikes!)
+        cell.setLikeCount(count: comments[indexPath.row].nLikes!)
         return cell
         
     }
