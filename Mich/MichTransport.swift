@@ -1675,5 +1675,166 @@ class MichTransport {
     }
     
     
+    
+    static func likecomment(token: String, commentID: Int,  successCallbackForLikeComment: @escaping () -> Void, errorCallbackForLikeComment: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "comment/like"
+        
+        let likecomment = LikeCommentRequest(token: token, commentID: commentID)
+        let payloadJson = likecomment.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<LikeCommentResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForLikeComment()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForLikeComment(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForLikeComment(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+ 
+    
+    
+    static func unlikecomment(token: String, commentID: Int,  successCallbackForUnLikeComment: @escaping () -> Void, errorCallbackForUnLikeComment: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "comment/unlike"
+        
+        let unlikecomment = UnlikeCommentRequest(token: token, commentID: commentID)
+        let payloadJson = unlikecomment.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<UnlikeCommentResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForUnLikeComment()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForUnLikeComment(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForUnLikeComment(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    static func hidepost(token: String, postID: Int,  successCallbackForHidePost: @escaping (Int) -> Void, errorCallbackForHidePost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/hide"
+        
+        let hidepostRequest = HidePostRequest(token: token, postID: postID)
+        let payloadJson = hidepostRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<HidePostResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForHidePost(postID)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForHidePost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForHidePost(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
 
 }
