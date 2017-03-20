@@ -54,7 +54,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.commentIndex = indexPath.row
         cell.delegate = self
         cell.liked = (comments[indexPath.row].myLike == 1)
-        print(indexPath.row)
         return cell
         
     }
@@ -79,12 +78,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    func onAddCommentSuccess() {
-        let com: Comment = Comment()!
-        com.data = addComments.text!;
-        com.userName = (UIApplication.shared.delegate as! AppDelegate).user?.username
-        com.avatar = (UIApplication.shared.delegate as! AppDelegate).user?.avatar
-        comments.append(com)
+    func onAddCommentSuccess(comment: Comment) {
+        comments.append(comment)
         tableView.reloadData()
         tableViewScrollToBottom(animated: true)
         

@@ -1196,7 +1196,7 @@ class MichTransport {
     
     
     
-    static func addcomment(token: String, postID: Int, comment: String, successCallbackForAddComment: @escaping () -> Void, errorCallbackForAddComment: @escaping (DefaultError) -> Void ){
+    static func addcomment(token: String, postID: Int, comment: String, successCallbackForAddComment: @escaping (Comment) -> Void, errorCallbackForAddComment: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "post/comment"
         
@@ -1212,12 +1212,12 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<AddCommentResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<Comment>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
                     
-                    successCallbackForAddComment()
+                    successCallbackForAddComment((baseResponse?.data)!)
                     
                 }else{
                     
@@ -1673,7 +1673,5 @@ class MichTransport {
         }
         
     }
-    
-    
 
 }
