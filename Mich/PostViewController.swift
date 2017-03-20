@@ -8,6 +8,8 @@
 
 import UIKit
 import Nuke
+import Social
+
 
 class PostViewController: UIViewController {
 
@@ -124,7 +126,40 @@ class PostViewController: UIViewController {
         }
         MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postId, successCallbackForLike: onDoubleTapLikeSuccess, errorCallbackForLike: onGetPostError)
     }
+    
+    
     @IBAction func edit(_ sender: Any) {
+        
+        
+        
+        let alert = UIAlertController()
+        
+        let sharePhoto = UIAlertAction(title: "Share photo with facebook", style: .default, handler: { ACTION in
+            let shareToFacebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            
+            
+            shareToFacebook.add(Foundation.URL(string:self.post.image!))
+            
+            self.present(shareToFacebook, animated: true, completion: nil)
+        })
+        
+        let shareContent = UIAlertAction(title: "Share content with facebook", style: .default, handler: { ACTION in
+            
+            
+        })
+        
+   
+        alert.addAction(sharePhoto)
+        alert.addAction(shareContent)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+        
         
     }
 
