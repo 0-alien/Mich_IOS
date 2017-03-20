@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -278,9 +278,9 @@
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-jD-lPf">
-                                                    <rect key="frame" x="56" y="79.5" width="40" height="10"/>
+                                                    <rect key="frame" x="56" y="77.5" width="40" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="LsO-IQ-Jvl"/>
+                                                        <constraint firstAttribute="height" constant="12" id="LsO-IQ-Jvl"/>
                                                         <constraint firstAttribute="width" constant="40" id="Tkf-eF-Wnn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -312,17 +312,26 @@
                                                         <constraint firstAttribute="bottom" secondItem="4vz-At-qti" secondAttribute="bottom" id="skN-kU-bAX"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-m1-TpP">
+                                                    <rect key="frame" x="98" y="77" width="6" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="w5w-L0-vD2" secondAttribute="bottom" constant="16" id="3mE-5E-3IC"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1f0-jD-lPf" secondAttribute="bottom" constant="4" id="5zE-Q7-Oxq"/>
+                                                <constraint firstItem="x2P-m1-TpP" firstAttribute="leading" secondItem="1f0-jD-lPf" secondAttribute="trailing" constant="2" id="Diy-qz-K01"/>
                                                 <constraint firstItem="XKI-K6-Feh" firstAttribute="leading" secondItem="hi9-KB-Fvp" secondAttribute="leadingMargin" id="EHc-z5-VD0"/>
                                                 <constraint firstItem="1f0-jD-lPf" firstAttribute="leading" secondItem="w5w-L0-vD2" secondAttribute="leading" id="Ioj-Jr-cdz"/>
                                                 <constraint firstItem="XKI-K6-Feh" firstAttribute="top" secondItem="hi9-KB-Fvp" secondAttribute="topMargin" id="l9v-EL-zPe"/>
+                                                <constraint firstItem="x2P-m1-TpP" firstAttribute="height" secondItem="1f0-jD-lPf" secondAttribute="height" id="pWZ-X6-wRo"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="w5w-L0-vD2" secondAttribute="trailing" id="rXU-F8-2Jz"/>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="XKI-K6-Feh" secondAttribute="bottom" constant="8" id="rdh-DC-ibX"/>
                                                 <constraint firstItem="w5w-L0-vD2" firstAttribute="top" secondItem="hi9-KB-Fvp" secondAttribute="topMargin" id="s8Z-pP-dHG"/>
+                                                <constraint firstItem="x2P-m1-TpP" firstAttribute="bottom" secondItem="1f0-jD-lPf" secondAttribute="bottom" id="sEU-G9-LiR"/>
                                                 <constraint firstItem="w5w-L0-vD2" firstAttribute="leading" secondItem="XKI-K6-Feh" secondAttribute="trailing" constant="8" id="yAb-nd-aRn"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -334,6 +343,7 @@
                                         <connections>
                                             <outlet property="data" destination="tg0-e3-A2H" id="gGa-fm-inj"/>
                                             <outlet property="likeButton" destination="1f0-jD-lPf" id="Dv7-NR-LtR"/>
+                                            <outlet property="likeCountLabel" destination="x2P-m1-TpP" id="Jlv-la-IaD"/>
                                             <outlet property="ratingImage" destination="4vz-At-qti" id="hfm-Ie-0Zi"/>
                                             <outlet property="userImage" destination="XKI-K6-Feh" id="QG1-il-6ub"/>
                                         </connections>

@@ -54,6 +54,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.commentIndex = indexPath.row
         cell.delegate = self
         cell.liked = (comments[indexPath.row].myLike == 1)
+        cell.likeCountLabel.text = String(comments[indexPath.row].nLikes!)
         return cell
         
     }
@@ -151,13 +152,35 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.present(alert, animated: true, completion: nil)
     }
     
+    func onLikeCommentSuccess(commentId: Int) {
+        for com in self.comments {
+            if com.id == commentId {
+                com.nLikes = com.nLikes! + 1
+                com.myLike = 1
+                break
+            }
+        }
+        self.tableView.reloadData()
+    }
+    func onUnlikeCommentSuccess(commentId: Int) {
+        for com in self.comments {
+            if com.id == commentId {
+                com.nLikes = com.nLikes! - 1
+                com.myLike = 0
+                break
+            }
+        }
+        self.tableView.reloadData()
+    }
+    
     // MARK: commentDelegate
     func onCommentLike(commentIndex: Int) {
         let com = comments[commentIndex]
+        MichTransport.likecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForLikeComment: onLikeCommentSuccess, errorCallbackForLikeComment: onError)
         
     }
     func onCommentUnlike(commentIndex: Int) {
         let com = comments[commentIndex]
-        
+        MichTransport.unlikecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForUnLikeComment: onUnlikeCommentSuccess, errorCallbackForUnLikeComment: onError)
     }
 }

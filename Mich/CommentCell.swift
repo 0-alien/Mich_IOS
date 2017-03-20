@@ -17,6 +17,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var ratingImage: UIImageView!
     var commentIndex: Int!
     var delegate: CommentDelegate!
+    @IBOutlet weak var likeCountLabel: UILabel!
     
     var liked: Bool! {
         didSet {

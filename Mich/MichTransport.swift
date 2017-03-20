@@ -1674,7 +1674,7 @@ class MichTransport {
         
     }
     
-    static func likecomment(token: String, commentID: Int,  successCallbackForLikeComment: @escaping () -> Void, errorCallbackForLikeComment: @escaping (DefaultError) -> Void ){
+    static func likecomment(token: String, commentID: Int,  successCallbackForLikeComment: @escaping (Int) -> Void, errorCallbackForLikeComment: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "comment/like"
         
@@ -1695,7 +1695,7 @@ class MichTransport {
                 if baseResponse!.code! == SUCCESS_CODE {
                     
                     
-                    successCallbackForLikeComment()
+                    successCallbackForLikeComment(commentID)
                     
                 }else{
                     
@@ -1728,7 +1728,7 @@ class MichTransport {
  
     
     
-    static func unlikecomment(token: String, commentID: Int,  successCallbackForUnLikeComment: @escaping () -> Void, errorCallbackForUnLikeComment: @escaping (DefaultError) -> Void ){
+    static func unlikecomment(token: String, commentID: Int,  successCallbackForUnLikeComment: @escaping (Int) -> Void, errorCallbackForUnLikeComment: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "comment/unlike"
         
@@ -1749,7 +1749,7 @@ class MichTransport {
                 if baseResponse!.code! == SUCCESS_CODE {
                     
                     
-                    successCallbackForUnLikeComment()
+                    successCallbackForUnLikeComment(commentID)
                     
                 }else{
                     
