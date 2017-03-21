@@ -1830,5 +1830,55 @@ class MichTransport {
         }
         
     }
+    
+    static func getAllNotifications(token: String, successCallbackForHidePost: @escaping ([MichNotification]) -> Void, errorCallbackForHidePost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "notification/getAll"
+        
+        let getNotificationsRequest = LogoutRequest(token: token)
+        let payloadJson = getNotificationsRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<MichNotification>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForHidePost((baseResponse?.data)!)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForHidePost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForHidePost(error)
+                
+            }
+            
+        }
+        
+    }
 
 }

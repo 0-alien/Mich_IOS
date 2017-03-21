@@ -21,7 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var token:String?
-    var user: User?
+    var user: User? {
+        didSet {
+            if user != nil {
+                
+            }
+        }
+    }
     var pusher: Pusher! = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

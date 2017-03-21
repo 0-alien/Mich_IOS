@@ -19,6 +19,7 @@ class CommentCell: UITableViewCell {
     var commentIndex: Int!
     var delegate: CommentDelegate!
     @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var editCommentButton: UIButton!
     
     var liked: Bool! {
         didSet {
@@ -64,12 +65,16 @@ class CommentCell: UITableViewCell {
             self.delegate.onCommentLike(commentIndex: self.commentIndex)
         }
     }
+    @IBAction func editComment(_ sender: Any) {
+        delegate.onEditComment(commentIndex: self.commentIndex)
+    }
   
 }
 
 protocol CommentDelegate {
     func onCommentLike(commentIndex: Int)
     func onCommentUnlike(commentIndex: Int)
+    func onEditComment(commentIndex: Int)
 }
 
 

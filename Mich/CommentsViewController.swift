@@ -47,13 +47,20 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-        //Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
-        cell.userImage.image = cell.userImage.image?.circle
+        Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
+        cell.userImage = cell.userImage.circle
         cell.data.text = self.comments[indexPath.row].data
         cell.commentIndex = indexPath.row
         cell.delegate = self
         cell.liked = (comments[indexPath.row].myLike == 1)
         cell.setLikeCount(count: comments[indexPath.row].nLikes!)
+        if (comments[indexPath.row].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
+            cell.editCommentButton.isHidden = false
+
+        }
+        else {
+            cell.editCommentButton.isHidden = true
+        }
         return cell
         
     }
@@ -181,5 +188,10 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     func onCommentUnlike(commentIndex: Int) {
         let com = comments[commentIndex]
         MichTransport.unlikecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForUnLikeComment: onUnlikeCommentSuccess, errorCallbackForUnLikeComment: onError)
+    }
+    
+    func onEditComment(commentIndex: Int) {
+        let com = comments[commentIndex]
+        print(com.data)
     }
 }

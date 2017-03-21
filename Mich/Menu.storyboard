@@ -32,20 +32,37 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-op-5d0">
-                                                    <rect key="frame" x="8" y="11" width="359" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWK-eL-3XN">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-op-5d0">
+                                                            <rect key="frame" x="16" y="8" width="343" height="27.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="zg8-op-5d0" secondAttribute="bottom" constant="8" id="K8O-jt-ycm"/>
+                                                        <constraint firstItem="zg8-op-5d0" firstAttribute="top" secondItem="wWK-eL-3XN" secondAttribute="top" constant="8" id="e8x-nr-sbd"/>
+                                                        <constraint firstItem="zg8-op-5d0" firstAttribute="leading" secondItem="wWK-eL-3XN" secondAttribute="leading" constant="16" id="q5W-mx-z1o"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zg8-op-5d0" secondAttribute="trailing" constant="16" id="uoP-HD-zLe"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="wWK-eL-3XN" secondAttribute="trailing" id="GfD-TA-Gd1"/>
+                                                <constraint firstItem="wWK-eL-3XN" firstAttribute="top" secondItem="302-H8-Dpo" secondAttribute="top" id="ZaI-QB-qm4"/>
+                                                <constraint firstItem="wWK-eL-3XN" firstAttribute="leading" secondItem="302-H8-Dpo" secondAttribute="leading" id="nVG-8Y-WcY"/>
+                                                <constraint firstAttribute="bottom" secondItem="wWK-eL-3XN" secondAttribute="bottom" id="yJa-0U-97Z"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="data" destination="zg8-op-5d0" id="3ov-Zw-xg7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hJI-G1-bi9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostLikedCell" id="hJI-G1-bi9" customClass="PostLikedCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJI-G1-bi9" id="q4d-O5-c8O">
@@ -78,6 +95,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Notifications" id="4cU-ba-nF2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="hyb-Lu-Amh" id="IS3-2l-rbv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dv-nl-Txf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

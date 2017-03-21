@@ -74,7 +74,9 @@ class SlidingMenuViewController: UIViewController {
         
         let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: false, completion: nil)
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        (UIApplication.shared.delegate as! AppDelegate).user = nil
+        self.dismiss(animated: false, completion: nil)
    
     }
     

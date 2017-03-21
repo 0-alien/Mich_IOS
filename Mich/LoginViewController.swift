@@ -216,8 +216,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         self.dismiss(animated: false, completion: nil)
         //self.present(vc, animated: false, completion: nil)
-        
-        
     }
     
     
