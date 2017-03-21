@@ -37,7 +37,8 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // MARK: tableview delegate
+
     // MARK: tableview data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count
@@ -78,7 +79,44 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             break
         default: break
         }
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    // MARK: navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postliked" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? PostLikedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        else if segue.identifier == "commentadded" {
+            guard let vc = segue.destination as? CommentsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? CommentAddedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        else if segue.identifier == "commentliked" {
+            guard let vc = segue.destination as? CommentsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? CommentLikedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        
     }
     
     // MARK: callbacks
