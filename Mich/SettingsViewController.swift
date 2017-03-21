@@ -122,6 +122,7 @@ class SettingsViewController: UIViewController {
     @IBAction func resetPasswordBTN(_ sender: Any) {
         let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
         
+        let oldPassword = oldPasswordTF.text!
         
         let password = newPassworTF.text!
         let confirmPassword = confirmPassworTF.text!
@@ -139,7 +140,7 @@ class SettingsViewController: UIViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        MichTransport.changepassword(token: appDelegate.token!, password: password, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
+        MichTransport.changepassword(token: appDelegate.token!, password: password, oldPassword:oldPassword, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
 
     
     }
