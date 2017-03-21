@@ -41,7 +41,6 @@ class SlidingMenuViewController: UIViewController {
         settings.layer.masksToBounds = false
         
         notificationCountView.layer.cornerRadius = notificationCountView.frame.size.height / 2.0
-        self.setNotificationCount(count: 0) //get notification count from server
         
     }
 

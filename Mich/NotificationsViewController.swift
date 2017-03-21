@@ -29,7 +29,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             self.tableView.addSubview(refreshControl)
         }
-        MichTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForHidePost: onGetAllNotificationsSuccess, errorCallbackForHidePost: onError)
+        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
         // Do any additional setup after loading the view.
     }
 
@@ -125,7 +125,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     func onGetAllNotificationsSuccess(resp: [MichNotification]) {
         self.notifications.removeAll()
         self.notifications.append(contentsOf: resp)
@@ -133,10 +132,15 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         if self.refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
+        MichNotificationsTransport.markNotificationsSeen(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForMarkNotifications: onSeenAllNotificationsSuccess, errorCallbackForMarkNotifications: onError)
+    }
+    
+    func onSeenAllNotificationsSuccess() {
+        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).myMenu?.setNotificationCount(count: 0)
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
-        MichTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForHidePost: onGetAllNotificationsSuccess, errorCallbackForHidePost: onError)
+        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
     }
 
 }
