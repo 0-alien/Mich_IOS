@@ -12,11 +12,13 @@ import ObjectMapper
 class ChangePasswordRequset: Mappable {
     var token: String?
     var password:String?
+    var oldPassword:String?
     
     
-    init(token: String, password: String){
+    init(token: String, password: String, oldPassword: String){
         self.token = token
         self.password = password
+        self.oldPassword = oldPassword
     }
     
     required init?(map: Map) {
@@ -26,5 +28,6 @@ class ChangePasswordRequset: Mappable {
     func mapping(map: Map) {
         token              <- map["token"]
         password           <- map["password"]
+        oldPassword        <- map["oldPassword"]
     }
 }

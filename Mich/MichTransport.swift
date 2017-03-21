@@ -528,11 +528,11 @@ class MichTransport {
     
     
     
-    static func changepassword(token: String, password: String, successCallbackForChangePassword: @escaping () -> Void, errorCallbackForChnagePassword: @escaping (DefaultError) -> Void ){
+    static func changepassword(token: String, password: String, oldPassword:String, successCallbackForChangePassword: @escaping () -> Void, errorCallbackForChnagePassword: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "user/changePassword"
         
-        let changePasswordRequest = ChangePasswordRequset(token: token, password: password)
+        let changePasswordRequest = ChangePasswordRequset(token: token, password: password, oldPassword:oldPassword)
         let payloadJson = changePasswordRequest.toJSONString()
         
         

@@ -11,12 +11,14 @@ import UIKit
 class HelpViewController: UIViewController {
     @IBOutlet weak var questionTF: UITextField!
     @IBOutlet weak var sendQuestionBTN: UIButton!
-    @IBOutlet weak var ManagingYourAccount: UILabel!
+
+
+//    @IBOutlet weak var ManagingYourAccount: UILabel!
+//    @IBOutlet weak var UsingMich: UILabel!
+    @IBOutlet weak var ManagingYourAccount: UIButton!
+    @IBOutlet weak var UsingMich: UIButton!
 
     @IBOutlet weak var PrivacySafety: UIButton!
-    
-    @IBOutlet weak var UsingMich: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,12 @@ class HelpViewController: UIViewController {
         let usingMich: String = "Using Mich"
         let bulletPoint: String = "\u{2022}"
         let formattedString: String = "\(bulletPoint) \(usingMich)\n"
-        UsingMich.text = formattedString
+        UsingMich.setTitle(formattedString,for: .normal)
 
         let usingMich1: String = "Managing you account"
         let bulletPoint1: String = "\u{2022}"
         let formattedString1: String = "\(bulletPoint1) \(usingMich1)\n"
-        ManagingYourAccount.text = formattedString1
+        ManagingYourAccount.setTitle(formattedString1,for: .normal)
 
         let usingMich2: String = "Privacy & Safety"
         let bulletPoint2: String = "\u{2022}"
