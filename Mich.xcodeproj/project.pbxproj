@@ -10,6 +10,10 @@
 		1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */; };
 		1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */; };
 		1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */; };
+		1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */; };
+		1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83771E81505E00F004CA /* CommentLikedCell.swift */; };
+		1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83791E8150DF00F004CA /* FollowCell.swift */; };
+		1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */; };
 		1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */; };
 		1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */; };
 		1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17158B1DDB286C002598B6 /* CommentCell.swift */; };
@@ -139,6 +143,10 @@
 		1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewCell.swift; sourceTree = "<group>"; };
 		1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAddedCell.swift; sourceTree = "<group>"; };
+		1E0F83771E81505E00F004CA /* CommentLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLikedCell.swift; sourceTree = "<group>"; };
+		1E0F83791E8150DF00F004CA /* FollowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
+		1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSAcceptCell.swift; sourceTree = "<group>"; };
 		1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewController.swift; sourceTree = "<group>"; };
 		1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		1E17158B1DDB286C002598B6 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -375,6 +383,10 @@
 				1E54821E1E76BF80008D98C1 /* NotificationsViewController.swift */,
 				1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */,
 				1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */,
+				1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */,
+				1E0F83771E81505E00F004CA /* CommentLikedCell.swift */,
+				1E0F83791E8150DF00F004CA /* FollowCell.swift */,
+				1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -742,9 +754,11 @@
 				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
 				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
+				1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
 				CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */,
+				1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
 				CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */,
 				CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */,
@@ -752,6 +766,7 @@
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
+				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
@@ -803,6 +818,7 @@
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
 				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
+				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
 				1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */,

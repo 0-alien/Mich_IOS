@@ -1,5 +1,5 @@
 //
-//  PostLikedCell.swift
+//  VSAcceptCell.swift
 //  Mich
 //
 //  Created by Gigi Pataraia on 3/21/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostLikedCell: UITableViewCell {
+class VSAcceptCell: UITableViewCell {
 
     @IBOutlet weak var data: UILabel!
     override func awakeFromNib() {

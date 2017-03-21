@@ -44,8 +44,40 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VSInviteCell", for: indexPath) as! VSInviteCell
-        cell.data.text = notifications[indexPath.row].message
+        var cell: UITableViewCell! = nil
+        switch notifications[indexPath.row].type! {
+        case 1:
+            let c = tableView.dequeueReusableCell(withIdentifier: "PostLikedCell", for: indexPath) as! PostLikedCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        case 2:
+            let c = tableView.dequeueReusableCell(withIdentifier: "CommentAddedCell", for: indexPath) as! CommentAddedCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        case 3:
+            let c = tableView.dequeueReusableCell(withIdentifier: "CommentLikedCell", for: indexPath) as! CommentLikedCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        case 4:
+            let c = tableView.dequeueReusableCell(withIdentifier: "FollowCell", for: indexPath) as! FollowCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        case 5:
+            let c = tableView.dequeueReusableCell(withIdentifier: "VSInviteCell", for: indexPath) as! VSInviteCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        case 6:
+            let c = tableView.dequeueReusableCell(withIdentifier: "VSAcceptCell", for: indexPath) as! VSAcceptCell
+            c.data.text = notifications[indexPath.row].message
+            cell = c
+            break
+        default: break
+        }
         return cell
     }
     
