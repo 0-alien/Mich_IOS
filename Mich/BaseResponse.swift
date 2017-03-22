@@ -24,5 +24,22 @@ class BaseResponse<T: Mappable> : Mappable {
         message <- map["message"]
         data    <- map["data"]
     }
-    
 }
+
+class BaseResponseX<T> : Mappable {
+    var code: Int?
+    var message: String?
+    var data: T?
+    
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        code    <- map["code"]
+        message <- map["message"]
+        data    <- map["data"]
+    }
+}
+

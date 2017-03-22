@@ -6,6 +6,7 @@
 //  Copyright © 2016 Gigi. All rights reserved.
 //
 
+import Nuke
 import UIKit
 
 class SlidingMenuViewController: UIViewController {
@@ -17,19 +18,22 @@ class SlidingMenuViewController: UIViewController {
     @IBOutlet weak var help: UIView!
     @IBOutlet weak var notificationCountView: UIView!
     @IBOutlet weak var notificationCountLabel: UILabel!
+    @IBOutlet weak var userName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         profilePicture = profilePicture.borderedCircle
-        
-        notifications.layer.shadowOpacity = 0.3;
-        notifications.layer.shadowRadius = 1.0;
+        Nuke.loadImage(with: Foundation.URL(string: ((UIApplication.shared.delegate as! AppDelegate).user?.avatar)!)!, into: profilePicture)
+        userName.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
+            
+        notifications.layer.shadowOpacity = 0.3
+        notifications.layer.shadowRadius = 1.0
         notifications.layer.shadowColor = UIColor.black.cgColor;
         notifications.layer.shadowOffset = CGSize(width: 0, height: 3)
         notifications.layer.masksToBounds = false
         
-        messenger.layer.shadowOpacity = 0.3;
-        messenger.layer.shadowRadius = 1.0;
+        messenger.layer.shadowOpacity = 0.3
+        messenger.layer.shadowRadius = 1.0
         messenger.layer.shadowColor = UIColor.black.cgColor;
         messenger.layer.shadowOffset = CGSize(width: 0, height: 3)
         messenger.layer.masksToBounds = false
@@ -41,7 +45,6 @@ class SlidingMenuViewController: UIViewController {
         settings.layer.masksToBounds = false
         
         notificationCountView.layer.cornerRadius = notificationCountView.frame.size.height / 2.0
-        self.setNotificationCount(count: 0) //get notification count from server
         
     }
 

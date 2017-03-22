@@ -1831,6 +1831,7 @@ class MichTransport {
         
     }
     
+
     static func getAllNotifications(token: String, successCallbackForHidePost: @escaping ([MichNotification]) -> Void, errorCallbackForHidePost: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "notification/getAll"
@@ -1931,7 +1932,6 @@ class MichTransport {
         }
         
     }
-    
     
     
 

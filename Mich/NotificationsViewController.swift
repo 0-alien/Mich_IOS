@@ -29,7 +29,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             self.tableView.addSubview(refreshControl)
         }
-        MichTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForHidePost: onGetAllNotificationsSuccess, errorCallbackForHidePost: onError)
+        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
         // Do any additional setup after loading the view.
     }
 
@@ -37,7 +37,8 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // MARK: tableview delegate
+
     // MARK: tableview data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notifications.count
@@ -78,7 +79,44 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             break
         default: break
         }
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    // MARK: navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "postliked" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? PostLikedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        else if segue.identifier == "commentadded" {
+            guard let vc = segue.destination as? CommentsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? CommentAddedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        else if segue.identifier == "commentliked" {
+            guard let vc = segue.destination as? CommentsViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? CommentLikedCell else {
+                fatalError("Unexpected sender: \(sender)")
+            }
+            let indexPath = self.tableView.indexPath(for: cell)
+            vc.postId = notifications[(indexPath?.row)!].itemId
+        }
+        
     }
     
     // MARK: callbacks
@@ -87,7 +125,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     func onGetAllNotificationsSuccess(resp: [MichNotification]) {
         self.notifications.removeAll()
         self.notifications.append(contentsOf: resp)
@@ -95,10 +132,15 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         if self.refreshControl.isRefreshing {
             self.refreshControl.endRefreshing()
         }
+        MichNotificationsTransport.markNotificationsSeen(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForMarkNotifications: onSeenAllNotificationsSuccess, errorCallbackForMarkNotifications: onError)
+    }
+    
+    func onSeenAllNotificationsSuccess() {
+        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).myMenu?.setNotificationCount(count: 0)
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
-        MichTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForHidePost: onGetAllNotificationsSuccess, errorCallbackForHidePost: onError)
+        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
     }
 
 }

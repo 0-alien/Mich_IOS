@@ -33,10 +33,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-cr-1Y5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIg-Lx-JET">
-                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="data" destination="tIg-Lx-JET" id="GEh-75-ZH2"/>
-                                            <segue destination="sAX-ER-HZP" kind="show" identifier="showpost" id="j0X-ma-VnJ"/>
+                                            <segue destination="sAX-ER-HZP" kind="show" identifier="postliked" id="j0X-ma-VnJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentAddedCell" id="1fg-mL-J1M" customClass="CommentAddedCell" customModule="Mich" customModuleProvider="target">
@@ -71,10 +71,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mX1-CG-Vyt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYd-PJ-96a">
-                                                            <rect key="frame" x="16" y="8" width="343" height="27.5"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -98,6 +98,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="data" destination="WYd-PJ-96a" id="T29-lg-X6O"/>
+                                            <segue destination="RNI-jn-nne" kind="show" identifier="commentadded" id="oKg-Fz-gCc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentLikedCell" id="YOV-a0-lcS" customClass="CommentLikedCell" customModule="Mich" customModuleProvider="target">
@@ -108,10 +109,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoO-7z-ELu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icq-CO-3sb">
-                                                            <rect key="frame" x="16" y="8" width="343" height="27.5"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -135,6 +136,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="data" destination="Icq-CO-3sb" id="Yuw-67-9N4"/>
+                                            <segue destination="RNI-jn-nne" kind="show" identifier="commentliked" id="kEN-Jb-tfg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowCell" id="kU4-uK-kcD" customClass="FollowCell" customModule="Mich" customModuleProvider="target">
@@ -145,10 +147,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POU-d4-6y7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubb-0u-MD2">
-                                                            <rect key="frame" x="16" y="8" width="343" height="27.5"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -182,10 +184,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWK-eL-3XN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zg8-op-5d0">
-                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -219,10 +221,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbe-Db-51O">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-mY-Ayu">
-                                                            <rect key="frame" x="16" y="8" width="343" height="28"/>
+                                                            <rect key="frame" x="16" y="8" width="343" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -273,13 +275,21 @@
             </objects>
             <point key="canvasLocation" x="-1468" y="160.56971514242881"/>
         </scene>
+        <!--CommentsViewController-->
+        <scene sceneID="7a5-Rc-ptR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="RNI-jn-nne" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cLD-qT-JyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562" y="137"/>
+        </scene>
         <!--PostViewController-->
         <scene sceneID="Q1R-d1-RNk">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="PostViewController" id="sAX-ER-HZP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC7-1c-Bzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-602" y="161"/>
+            <point key="canvasLocation" x="-562" y="216"/>
         </scene>
         <!--Settings-->
         <scene sceneID="UVp-KM-N0f">
@@ -638,4 +648,7 @@
             <point key="canvasLocation" x="1134" y="161"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oKg-Fz-gCc"/>
+    </inferredMetricsTieBreakers>
 </document>

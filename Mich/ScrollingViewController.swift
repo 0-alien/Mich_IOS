@@ -79,6 +79,13 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // MARK: Notifications
+    
+    func setNotificationCount(count: Int) {
+        myTabBar?.setNotificationCount(count: count)
+        myMenu?.setNotificationCount(count: count)
+    }
+    
     
     // MARK: - Navigation
 

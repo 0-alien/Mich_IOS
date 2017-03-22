@@ -64,7 +64,7 @@ class PostViewController: UIViewController {
         self.likeCountLabel.text = String(self.post.nLikes!)
         self.commentCountLabel.text = String(self.post.nComments!)
         if self.post.myLike == 1 {
-            self.likeButton.backgroundColor = UIColor.red
+            self.likeButton.setImage(UIImage(named: "liked_icon"), for: .normal)
         }
         if self.post.nComments == 0 {
             self.viewCommentsButton.isHidden = true
@@ -83,14 +83,14 @@ class PostViewController: UIViewController {
         self.post.myLike = 1
         self.post.nLikes = self.post.nLikes! + 1
         self.likeCountLabel.text = String(self.post.nLikes!)
-        self.likeButton.backgroundColor = UIColor.red
+        self.likeButton.setImage(UIImage(named: "liked_icon"), for: .normal)
     }
     
     func onUnlikeSuccess() {
         self.post.myLike = 0
         self.post.nLikes = self.post.nLikes! - 1
         self.likeCountLabel.text = String(self.post.nLikes!)
-        self.likeButton.backgroundColor = UIColor.white
+        self.likeButton.setImage(UIImage(named: "like_icon"), for: .normal)
     }
     
     func onDoubleTapLikeSuccess() {

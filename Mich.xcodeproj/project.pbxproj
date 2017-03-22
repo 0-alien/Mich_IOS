@@ -14,6 +14,7 @@
 		1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83771E81505E00F004CA /* CommentLikedCell.swift */; };
 		1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83791E8150DF00F004CA /* FollowCell.swift */; };
 		1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */; };
+		1E0F83801E81613300F004CA /* MichNotificationsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F837F1E81613300F004CA /* MichNotificationsTransport.swift */; };
 		1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */; };
 		1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */; };
 		1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E17158B1DDB286C002598B6 /* CommentCell.swift */; };
@@ -149,6 +150,7 @@
 		1E0F83771E81505E00F004CA /* CommentLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLikedCell.swift; sourceTree = "<group>"; };
 		1E0F83791E8150DF00F004CA /* FollowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSAcceptCell.swift; sourceTree = "<group>"; };
+		1E0F837F1E81613300F004CA /* MichNotificationsTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichNotificationsTransport.swift; sourceTree = "<group>"; };
 		1E1035CB1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewController.swift; sourceTree = "<group>"; };
 		1E1466071E3F7C4D00111F00 /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		1E17158B1DDB286C002598B6 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			children = (
 				CF3927991E291BB000F0C924 /* Requests */,
 				CF3927941E2910C700F0C924 /* MichTransport.swift */,
+				1E0F837F1E81613300F004CA /* MichNotificationsTransport.swift */,
 			);
 			name = Transport;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				CF149D271E77EB81005911FB /* UpdateUserRequest.swift in Sources */,
 				CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */,
 				1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */,
+				1E0F83801E81613300F004CA /* MichNotificationsTransport.swift in Sources */,
 				1E63097A1E65A86D0080054B /* Comment.swift in Sources */,
 				1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */,
 				1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */,
