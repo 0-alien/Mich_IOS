@@ -192,6 +192,51 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func onEditComment(commentIndex: Int) {
         let com = comments[commentIndex]
-        print(com.data)
+//        print(com.data)
+        
+        let alert = UIAlertController()
+        
+        let deleteComment = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
+            MichTransport.deletecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForDeleteComment: self.onDeleteComment, errorCallbackForDeleteComment: self.onError)
+        })
+        
+
+        
+        let copyComment = UIAlertAction(title: "Copy", style: .default, handler: { ACTION in
+            
+            UIPasteboard.general.string = com.data
+        })
+        
+        
+        
+        
+        
+        
+        alert.addAction(deleteComment)
+        alert.addAction(copyComment)
+        
+        
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
+    
+   
+    func onDeleteComment(commentId: Int) {
+        var index = 0
+        
+        for com in self.comments {
+            if com.id == commentId {
+                comments.remove(at: index)
+                break
+            }
+            index = index+1
+        }
+        self.tableView.reloadData()
+    
+    }
+    
+    
 }

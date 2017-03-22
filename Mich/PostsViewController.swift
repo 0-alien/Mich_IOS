@@ -165,7 +165,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         
         if(posts[cellIndex].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
         
-            let deletePost = UIAlertAction(title: "Delete post", style: .default, handler: { ACTION in
+            let deletePost = UIAlertAction(title: "Delete post", style: .destructive, handler: { ACTION in
                 MichTransport.deletepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.posts[cellIndex].id!, successCallbackForDeletePost: self.onsuccessDelete, errorCallbackForDeletePost: self.onErrorDelete)
             
             })

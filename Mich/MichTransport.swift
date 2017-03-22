@@ -1880,5 +1880,59 @@ class MichTransport {
         }
         
     }
+    
+    
+    static func deletecomment(token: String, commentID: Int,  successCallbackForDeleteComment: @escaping (Int) -> Void, errorCallbackForDeleteComment: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/deleteComment"
+        
+        let deletecomment = DeleteCommentRequest(token: token, commentID: commentID)
+        let payloadJson = deletecomment.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DeleteCommentResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForDeleteComment(commentID)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForDeleteComment(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForDeleteComment(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
 
 }

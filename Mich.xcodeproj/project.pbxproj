@@ -110,6 +110,8 @@
 		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
 		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
 		CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */; };
+		CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */; };
+		CF8DAD461E8159D30021B905 /* DeleteCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */; };
 		CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */; };
 		CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */; };
 		CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */; };
@@ -246,6 +248,8 @@
 		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
 		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequset.swift; sourceTree = "<group>"; };
+		CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentResponse.swift; sourceTree = "<group>"; };
+		CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentRequest.swift; sourceTree = "<group>"; };
 		CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerResponse.swift; sourceTree = "<group>"; };
 		CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerRequest.swift; sourceTree = "<group>"; };
 		CF92DF141E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowersRequest.swift; sourceTree = "<group>"; };
@@ -540,6 +544,7 @@
 				CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */,
 				CF3364901E7FEA1100A42763 /* HidePostResponse.swift */,
 				1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */,
+				CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */,
 				CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */,
 				CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */,
+				CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -819,6 +825,7 @@
 				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
+				CF8DAD461E8159D30021B905 /* DeleteCommentRequest.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
 				1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */,
@@ -828,6 +835,7 @@
 				1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
 				1E25E1F71E6EED1C00576D47 /* CommentsViewController.swift in Sources */,
+				CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */,
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
