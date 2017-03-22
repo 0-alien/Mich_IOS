@@ -166,7 +166,7 @@ class PostViewController: UIViewController {
     }
 
     func onsuccessDelete(postId: Int){
-        print("deleted_+__+_+_+_++_+_+_+_++_+_+_+_+_+_+_+_")
+        performSegue(withIdentifier: "unwindfrompostpage", sender: self)
     }
     
     

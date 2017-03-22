@@ -223,4 +223,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
     }
     
+    @IBAction func unwindFromPostPage(sender: UIStoryboardSegue) {
+        let postId = (sender.source as! PostViewController).postId
+        for i in 0 ..< self.posts.count {
+            if self.posts[i].id == postId {
+                self.posts.remove(at: i)
+                break
+            }
+        }
+        self.imageCollection.reloadData()
+    }
+    
 }
