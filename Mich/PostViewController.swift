@@ -148,23 +148,34 @@ class PostViewController: UIViewController {
             
         })
         
-   
+        if(post.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
+            let delete = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
+           
+                MichTransport.deletepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.post.id!, successCallbackForDeletePost: self.onsuccessDelete, errorCallbackForDeletePost: self.onErrorDelete)
+            
+            })
+            alert.addAction(delete)
+        
+        }
         alert.addAction(sharePhoto)
         alert.addAction(shareContent)
-        
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
-        
-        
-        
-        
     }
 
+    func onsuccessDelete(postId: Int){
+        print("deleted_+__+_+_+_++_+_+_+_++_+_+_+_+_+_+_+_")
+    }
+    
+    
+    func onErrorDelete(error: DefaultError){
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
