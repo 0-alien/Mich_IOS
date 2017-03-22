@@ -23,10 +23,10 @@ class PostTableViewCell: UITableViewCell {
     var liked: Bool! {
         didSet {
             if liked! {
-                self.likeButton.backgroundColor = UIColor.red
+                self.likeButton.setImage(UIImage(named: "liked_icon"), for: .normal)
             }
             else {
-                self.likeButton.backgroundColor = self.backgroundColor
+                self.likeButton.setImage(UIImage(named: "like_icon"), for: .normal)
             }
         }
     }
