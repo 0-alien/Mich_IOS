@@ -8,6 +8,7 @@
 
 import UIKit
 import Nuke
+import AlamofireImage
 
 class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
@@ -129,7 +130,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.item].image!)!, into: cell.photo)
+        cell.photo.af_setImage(withURL: Foundation.URL(string: posts[indexPath.item].image!)!)
+        //Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.item].image!)!, into: cell.photo)
         cell.post = posts[indexPath.item]
         return cell
     }
@@ -160,7 +162,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         self.posts.removeAll()
         self.posts.append(contentsOf: resp)
         self.imageCollection.reloadData()
-        refreshControl.endRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.refreshControl.endRefreshing()
+        })
     }
     
     func onerror(error: DefaultError){

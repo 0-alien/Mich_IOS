@@ -10,4 +10,5 @@ target 'Mich' do
     pod 'ObjectMapper'
     pod 'Nuke'
     pod 'PusherSwift', '~> 4.0'
+    pod 'AlamofireImage', '~> 3.1'
 end
