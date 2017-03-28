@@ -11,6 +11,7 @@ import UIKit
 class VSInviteCell: UITableViewCell {
 
     
+    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var data: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -387,11 +387,11 @@
 			isa = PBXGroup;
 			children = (
 				1E54821E1E76BF80008D98C1 /* NotificationsViewController.swift */,
-				1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */,
 				1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */,
 				1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */,
 				1E0F83771E81505E00F004CA /* CommentLikedCell.swift */,
 				1E0F83791E8150DF00F004CA /* FollowCell.swift */,
+				1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */,
 				1E0F837B1E81511F00F004CA /* VSAcceptCell.swift */,
 			);
 			name = Notifications;
@@ -626,7 +626,7 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VQGJTU9RXG;
+						DevelopmentTeam = 57R943V29M;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -978,7 +978,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -986,7 +986,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -998,7 +998,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VQGJTU9RXG;
+				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1006,7 +1006,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = zuraba;
+				PRODUCT_BUNDLE_IDENTIFIER = Gigi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
