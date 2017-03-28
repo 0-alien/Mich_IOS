@@ -111,7 +111,9 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         self.data.removeAll()
         self.data.append(contentsOf: resp)
         self.imageCollection.reloadData()
-        self.refreshControl.endRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            self.refreshControl.endRefreshing()
+        })
     }
     
     func onError(error: DefaultError){
