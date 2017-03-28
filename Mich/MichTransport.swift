@@ -1934,5 +1934,59 @@ class MichTransport {
     }
     
     
+    static func socialShare(token: String, postID: Int,  successCallbackForSocialShare: @escaping (SocialResponse) -> Void, errorCallbackForSocialShare: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "social/share"
+        
+        let socialShareRequest = SocialRequest(token: token, postID: postID)
+        let payloadJson = socialShareRequest.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<SocialResponse>(JSONString: JString)
+                
+                
+                let res = baseResponse!.data!
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForSocialShare(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForSocialShare(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForSocialShare(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
 
 }

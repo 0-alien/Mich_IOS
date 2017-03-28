@@ -151,14 +151,13 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let sharePhoto = UIAlertAction(title: "Share photo with facebook", style: .default, handler: { ACTION in
             let shareToFacebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
             
-            
             shareToFacebook.add(Foundation.URL(string:self.posts[cellIndex].image!))
             
-             self.present(shareToFacebook, animated: true, completion: nil)
+            self.present(shareToFacebook, animated: true, completion: nil)
         })
         
         let shareContent = UIAlertAction(title: "Share content with facebook", style: .default, handler: { ACTION in
-            
+            MichTransport.socialShare(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.posts[cellIndex].id!, successCallbackForSocialShare: self.onsuccessSocialShare, errorCallbackForSocialShare: self.onError)
             
         })
         
@@ -192,6 +191,18 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         
         
         
+        
+    }
+    
+    
+    func onsuccessSocialShare(socialShareResponse: SocialResponse){
+        let shareToFacebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        shareToFacebook.add(Foundation.URL(string:socialShareResponse.url!))
+        
+        self.present(shareToFacebook, animated: true, completion: nil)
+
+
+        print(socialShareResponse.url ?? "")
         
     }
     
