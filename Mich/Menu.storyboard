@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -372,7 +372,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmS-7b-JoT">
-                                                <rect key="frame" x="0.0" y="8" width="375" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34v-ql-akH">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -394,7 +394,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEd-kT-AEb" userLabel="View2">
-                                                <rect key="frame" x="0.0" y="57" width="375" height="200"/>
+                                                <rect key="frame" x="0.0" y="49" width="375" height="200"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mhx-nu-Op3">
                                                         <rect key="frame" x="30" y="8" width="245" height="30"/>
@@ -457,7 +457,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA5-iX-QMj" userLabel="View3">
-                                                <rect key="frame" x="0.0" y="261" width="375" height="45"/>
+                                                <rect key="frame" x="0.0" y="253" width="375" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfS-1r-wCC">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
@@ -480,7 +480,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBr-gF-5JR" userLabel="View4">
-                                                <rect key="frame" x="0.0" y="310" width="375" height="130"/>
+                                                <rect key="frame" x="0.0" y="302" width="375" height="130"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vY-Jn-ZIM">
                                                         <rect key="frame" x="30" y="8" width="170" height="30"/>
@@ -527,7 +527,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Ca-cnX" userLabel="View5">
-                                                <rect key="frame" x="0.0" y="444" width="375" height="45"/>
+                                                <rect key="frame" x="0.0" y="436" width="375" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vD-T2-ZU0">
                                                         <rect key="frame" x="30" y="14" width="102" height="17"/>
@@ -549,7 +549,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="057-QA-X3X" userLabel="View6">
-                                                <rect key="frame" x="0.0" y="493" width="375" height="65"/>
+                                                <rect key="frame" x="0.0" y="485" width="375" height="65"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When your account is private, only people you aprove can see your photos on Mich. Your existing followers won't effect" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xe1-5d-7Fz">
                                                         <rect key="frame" x="30" y="0.0" width="325" height="74"/>
@@ -570,7 +570,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yro-RQ-M6j" userLabel="View7">
-                                                <rect key="frame" x="0.0" y="562" width="375" height="46"/>
+                                                <rect key="frame" x="0.0" y="554" width="375" height="46"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn7-4D-ZeQ">
                                                         <rect key="frame" x="30" y="15" width="64" height="17"/>
@@ -604,7 +604,7 @@
                                             <constraint firstItem="057-QA-X3X" firstAttribute="top" secondItem="IFi-Ca-cnX" secondAttribute="bottom" constant="4" id="g5B-uw-r9y"/>
                                             <constraint firstAttribute="trailing" secondItem="oBr-gF-5JR" secondAttribute="trailing" id="gpU-a2-3MM"/>
                                             <constraint firstItem="Yro-RQ-M6j" firstAttribute="top" secondItem="057-QA-X3X" secondAttribute="bottom" constant="4" id="hh8-ZW-QNz"/>
-                                            <constraint firstItem="dmS-7b-JoT" firstAttribute="top" secondItem="bUF-bz-MVX" secondAttribute="top" constant="8" id="j9U-j4-Pnc"/>
+                                            <constraint firstItem="dmS-7b-JoT" firstAttribute="top" secondItem="bUF-bz-MVX" secondAttribute="top" id="j9U-j4-Pnc"/>
                                             <constraint firstItem="IFi-Ca-cnX" firstAttribute="top" secondItem="oBr-gF-5JR" secondAttribute="bottom" constant="4" id="kIf-fY-Z0Z"/>
                                             <constraint firstItem="IFi-Ca-cnX" firstAttribute="leading" secondItem="bUF-bz-MVX" secondAttribute="leading" id="ojR-Vy-GgY"/>
                                             <constraint firstAttribute="trailing" secondItem="SEd-kT-AEb" secondAttribute="trailing" id="pZU-ig-hvu"/>

@@ -127,6 +127,8 @@
 		CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */; };
 		CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */; };
 		CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */; };
+		CFDBBCD81E852AAA00EA9032 /* SocialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */; };
+		CFDBBCDA1E852ADE00EA9032 /* SocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */; };
 		CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE38FF61E7952A10037CB5B /* HelpViewController.swift */; };
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
@@ -266,6 +268,8 @@
 		CFA7E8B91DBE2ACB0088109A /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryResponse.swift; sourceTree = "<group>"; };
 		CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryRequest.swift; sourceTree = "<group>"; };
+		CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResponse.swift; sourceTree = "<group>"; };
+		CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialRequest.swift; sourceTree = "<group>"; };
 		CFE38FF61E7952A10037CB5B /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
@@ -548,6 +552,7 @@
 				CF3364901E7FEA1100A42763 /* HidePostResponse.swift */,
 				1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */,
 				CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */,
+				CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */,
 				CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */,
 				CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */,
+				CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 				1E63097C1E65A9FA0080054B /* GetPostCommentsRequest.swift in Sources */,
 				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
+				CFDBBCDA1E852ADE00EA9032 /* SocialRequest.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
@@ -837,6 +844,7 @@
 				CF186A8E1E4378AD00218920 /* GetFeedRequest.swift in Sources */,
 				1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */,
 				1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */,
+				CFDBBCD81E852AAA00EA9032 /* SocialResponse.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
 				1E25E1F71E6EED1C00576D47 /* CommentsViewController.swift in Sources */,
 				CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */,

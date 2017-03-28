@@ -144,14 +144,15 @@ class PostViewController: UIViewController {
         })
         
         let shareContent = UIAlertAction(title: "Share content with facebook", style: .default, handler: { ACTION in
-            
+            MichTransport.socialShare(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.post.id!, successCallbackForSocialShare: self.onsuccessSocialShare, errorCallbackForSocialShare: self.onError)
+
             
         })
         
         if(post.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
             let delete = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
            
-                MichTransport.deletepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.post.id!, successCallbackForDeletePost: self.onsuccessDelete, errorCallbackForDeletePost: self.onErrorDelete)
+                MichTransport.deletepost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.post.id!, successCallbackForDeletePost: self.onsuccessDelete, errorCallbackForDeletePost: self.onError)
             
             })
             alert.addAction(delete)
@@ -164,13 +165,25 @@ class PostViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+    func onsuccessSocialShare(socialShareResponse: SocialResponse){
+        let shareToFacebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+        shareToFacebook.add(Foundation.URL(string:socialShareResponse.url!))
+        
+        self.present(shareToFacebook, animated: true, completion: nil)
+        
+        
+        print(socialShareResponse.url ?? "")
+        
+    }
 
     func onsuccessDelete(postId: Int){
         performSegue(withIdentifier: "unwindfrompostpage", sender: self)
     }
     
     
-    func onErrorDelete(error: DefaultError){
+    func onError(error: DefaultError){
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
