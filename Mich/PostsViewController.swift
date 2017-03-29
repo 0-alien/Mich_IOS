@@ -76,7 +76,9 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.createdAt.text = posts[indexPath.row].created_at
         cell.userName.text = posts[indexPath.row].userName
         
-        
+        cell.scrollView.delegate = cell
+        cell.scrollView.minimumZoomScale = 1.0
+        cell.scrollView.maximumZoomScale = 6.0
         
         let tap = UITapGestureRecognizer(target: cell, action: #selector(cell.postLiked))
         tap.numberOfTapsRequired = 2

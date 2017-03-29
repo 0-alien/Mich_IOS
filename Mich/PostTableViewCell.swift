@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PostTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
    
     
     @IBOutlet weak var title: UILabel!
@@ -19,6 +19,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var createdAt: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var liked: Bool! {
         didSet {
@@ -32,6 +33,19 @@ class PostTableViewCell: UITableViewCell {
     }
     var cellDelegate: PostTableViewCellDelegate? = nil
     var index: Int = 0
+
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.postImage
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
+            self.scrollView.setZoomScale(1.0, animated: false)
+        }, completion: { _ in })
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
