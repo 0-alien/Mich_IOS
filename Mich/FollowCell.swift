@@ -10,6 +10,7 @@ import UIKit
 
 class FollowCell: UITableViewCell {
 
+    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var data: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
