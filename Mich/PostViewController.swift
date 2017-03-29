@@ -11,7 +11,7 @@ import Nuke
 import Social
 
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var likeButton: UIButton!
@@ -20,6 +20,10 @@ class PostViewController: UIViewController {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
+    
+    @IBOutlet weak var zoomingScrollView: UIScrollView!
+    
+    
     var post: PostClass!
     var postId: Int!
     var refreshControl: UIRefreshControl!
@@ -29,6 +33,9 @@ class PostViewController: UIViewController {
     
     @IBOutlet weak var commentCountLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
+    
+    var widthOfZoomScrollView:CGFloat!
+    var heightOfZoomScrollView:CGFloat!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +48,12 @@ class PostViewController: UIViewController {
         }
         MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
+
+        
+        self.zoomingScrollView.minimumZoomScale = 1.0;
+        self.zoomingScrollView.maximumZoomScale = 6.0
+
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +67,25 @@ class PostViewController: UIViewController {
             (segue.destination as! CommentsViewController).postId = post.id
         }
     }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.postImage
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
+            self.zoomingScrollView.setZoomScale(1.0, animated: false)
+        }, completion: { _ in })
+        
+        
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        print("begin")
+
+    }
+    
     
     func loadPost() {
         self.postTitle.text = self.post.title

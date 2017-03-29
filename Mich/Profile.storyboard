@@ -1,12 +1,11 @@
-
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SnB-33-Vax">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SnB-33-Vax">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -262,6 +261,9 @@
                                             <constraint firstAttribute="trailing" secondItem="WBQ-Du-Wmj" secondAttribute="trailing" id="TIk-iS-BpN"/>
                                             <constraint firstItem="WBQ-Du-Wmj" firstAttribute="width" secondItem="5qg-Aq-Ivb" secondAttribute="width" id="Txb-Ts-aKN"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="dLl-p9-nQN" id="OmI-rs-CWW"/>
+                                        </connections>
                                     </scrollView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some time ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-ZM-YIG">
                                         <rect key="frame" x="76" y="52" width="89.5" height="16"/>
@@ -391,6 +393,7 @@
                         <outlet property="userImage" destination="3zS-sC-0I8" id="Wpl-bu-l9u"/>
                         <outlet property="userName" destination="7nJ-0W-vK7" id="GPO-cg-exx"/>
                         <outlet property="viewCommentsButton" destination="wsu-zS-INR" id="J3O-G2-b5T"/>
+                        <outlet property="zoomingScrollView" destination="5qg-Aq-Ivb" id="ElE-tE-ex9"/>
                         <segue destination="0eJ-2d-lkv" kind="unwind" identifier="unwindfrompostpage" unwindAction="unwindFromPostPageWithSender:" id="WFk-Ji-Sm2"/>
                     </connections>
                 </viewController>
@@ -429,7 +432,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -487,7 +490,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qeG-Fr-03z" id="xOK-m7-Z9I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZoM-aQ-dq3">
@@ -729,7 +732,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
