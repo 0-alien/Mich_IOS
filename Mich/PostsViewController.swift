@@ -121,7 +121,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             let img = UIImageView(image: UIImage(named: "fire_icon"))
             let coef = cell.postImage.frame.size.width / 2.0 / img.frame.size.width
             img.frame = cell.postImage.frame.insetBy(dx: cell.postImage.frame.size.width / 4, dy: cell.postImage.frame.size.height / 2 - img.frame.size.height * coef / 2)
-            cell.addSubview(img)
+            cell.scrollView.addSubview(img)
             UIView.animate(withDuration: 1, animations: {
                 img.alpha = 0
             })

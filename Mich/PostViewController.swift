@@ -130,7 +130,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         let img = UIImageView(image: UIImage(named: "fire_icon"))
         let coef = self.postImage.frame.size.width / 2.0 / img.frame.size.width
         img.frame = self.postImage.frame.insetBy(dx: self.postImage.frame.size.width / 4, dy: self.postImage.frame.size.height / 2.0 - img.frame.size.height * coef / 2.0)
-        self.scrollView.addSubview(img)
+        self.zoomingScrollView.addSubview(img)
         UIView.animate(withDuration: 1, animations: {
             img.alpha = 0
         })
