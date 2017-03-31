@@ -18,32 +18,44 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var imageHeigt: NSLayoutConstraint!
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         
-        titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
         
         super.viewDidLoad()
-        photo.image = img
         
-        self.scrollView.minimumZoomScale = 1.0
-        self.scrollView.maximumZoomScale = 3.0
+        setImageToCrop(image:img)
+        titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
         
     }
     
     
+    func setImageToCrop(image:UIImage){
+        photo.image = image
+        imageWidth.constant = image.size.width
+        imageHeigt.constant = image.size.height
+        let scaleHeight = scrollView.frame.size.width/image.size.width
+        let scaleWidth = scrollView.frame.size.height/image.size.height
+        scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
+        scrollView.zoomScale = max(scaleWidth, scaleHeight)
+    }
+    
     @IBAction func crop(_ sender: Any) {
         
-    scrollView.zoomScale = 1
-        let croppedCGImage = photo.image?.cgImage?.cropping(to: photo.imageFrame())
-        print(photo.imageFrame())
-        print(photo.frame)
-        print(croppedCGImage?.width)
-        print(croppedCGImage?.height)
+        let scale:CGFloat = 1/scrollView.zoomScale
+        let x:CGFloat = scrollView.contentOffset.x * scale
+        let y:CGFloat = scrollView.contentOffset.y * scale
+        let width:CGFloat = scrollView.frame.size.width * scale
+        let height:CGFloat = scrollView.frame.size.height * scale
+        let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         let croppedImage = UIImage(cgImage: croppedCGImage!)
-        photo.image = croppedImage
+        setImageToCrop(image: croppedImage)
+
     
     }
     
