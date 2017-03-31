@@ -43,8 +43,8 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cellIdentifier = "FollowTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! FollowTableViewCell
         cell.userName.text = users[indexPath.row].username
+        cell.userPicture = cell.userPicture.circle
         Nuke.loadImage(with: Foundation.URL(string: users[indexPath.row].avatar!)!, into: cell.userPicture)
-        cell.userPicture.image = cell.userPicture.image?.circle
         return cell
     }
     
