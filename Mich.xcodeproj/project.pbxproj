@@ -133,6 +133,7 @@
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
+		CFF227EA1E8D492300C69A6B /* ImageView+ImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */; };
 		CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */; };
 		CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */; };
 		CFF3AB251E7C1D8A00A27F91 /* LikeCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */; };
@@ -274,6 +275,7 @@
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
+		CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+ImageFrame.swift"; sourceTree = "<group>"; };
 		CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentRequest.swift; sourceTree = "<group>"; };
 		CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeCommentRequest.swift; sourceTree = "<group>"; };
 		CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentResponse.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 			children = (
 				1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */,
 				1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */,
+				CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 				CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */,
 				CF186A8E1E4378AD00218920 /* GetFeedRequest.swift in Sources */,
 				1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */,
+				CFF227EA1E8D492300C69A6B /* ImageView+ImageFrame.swift in Sources */,
 				1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */,
 				CFDBBCD81E852AAA00EA9032 /* SocialResponse.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
