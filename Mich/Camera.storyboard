@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -57,13 +58,16 @@
                                 </connections>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="104" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="375"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.18863981762917933" green="1" blue="0.2436241451367781" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="src-mk-xhh" secondAttribute="height" multiplier="1:1" id="021-k1-sqe"/>
                                     <constraint firstItem="LOP-KF-9Gw" firstAttribute="height" secondItem="src-mk-xhh" secondAttribute="height" id="GrS-U5-23z"/>
                                     <constraint firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="TFi-jZ-2bt"/>
                                     <constraint firstItem="LOP-KF-9Gw" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="top" id="eAp-ZW-2ZQ"/>
@@ -71,13 +75,23 @@
                                     <constraint firstAttribute="bottom" secondItem="LOP-KF-9Gw" secondAttribute="bottom" id="j28-cN-otk"/>
                                     <constraint firstItem="LOP-KF-9Gw" firstAttribute="leading" secondItem="src-mk-xhh" secondAttribute="leading" id="sGh-lm-ETM"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="4O9-bL-jmS" id="2IN-QH-qt1"/>
+                                </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk">
+                                <rect key="frame" x="164" y="487" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="crop:" destination="4O9-bL-jmS" eventType="touchUpInside" id="hDR-e2-rIs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LQ4-ol-dYc" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="0CQ-zQ-tRZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LQ4-ol-dYc" secondAttribute="trailing" constant="-16" id="5NL-LI-nex"/>
-                            <constraint firstItem="6hM-dW-tvg" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="40" id="94x-X4-auR"/>
                             <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-10" id="Ceq-J0-ZOV"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="LQ4-ol-dYc" secondAttribute="leading" constant="-6" id="OSq-r0-15I"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="trailing" secondItem="LQ4-ol-dYc" secondAttribute="trailing" id="OwA-O1-Au6"/>
@@ -100,6 +114,7 @@
                     <connections>
                         <outlet property="doneButtone" destination="rfL-qB-eSI" id="7OA-ox-e0K"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
+                        <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
                         <outlet property="titleTF" destination="LQ4-ol-dYc" id="B1v-Ob-SQY"/>
                     </connections>
                 </viewController>

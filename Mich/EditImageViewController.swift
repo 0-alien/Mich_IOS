@@ -8,13 +8,17 @@
 
 import UIKit
 
-class EditImageViewController: UIViewController, UITextFieldDelegate {
+class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     var img: UIImage!
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var doneButtone: UIBarButtonItem!
     var postTitle: String?
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     
     override func viewDidLoad() {
         
@@ -23,6 +27,29 @@ class EditImageViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         photo.image = img
         
+        self.scrollView.minimumZoomScale = 1.0
+        self.scrollView.maximumZoomScale = 3.0
+        
+        
+    }
+    
+    
+    @IBAction func crop(_ sender: Any) {
+        
+    scrollView.zoomScale = 1
+        let croppedCGImage = photo.image?.cgImage?.cropping(to: photo.imageFrame())
+        print(photo.imageFrame())
+        print(photo.frame)
+        print(croppedCGImage?.width)
+        print(croppedCGImage?.height)
+        let croppedImage = UIImage(cgImage: croppedCGImage!)
+        photo.image = croppedImage
+    
+    }
+    
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.photo
     }
     
     override func didReceiveMemoryWarning() {
