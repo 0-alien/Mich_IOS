@@ -9,7 +9,7 @@
 import UIKit
 
 class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var photo: UIImageView!
     var img: UIImage!
     @IBOutlet weak var titleTF: UITextField!
@@ -47,14 +47,14 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     func setImageToCrop(image:UIImage){
-    
-            photo.image = image
-            imageWidth.constant = image.size.width
-            imageHeigt.constant = image.size.height
-            let scaleHeight = scrollView.frame.size.width/image.size.width
-            let scaleWidth = scrollView.frame.size.height/image.size.height
-            scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
-            scrollView.zoomScale = max(scaleWidth, scaleHeight)
+        
+        photo.image = image
+        imageWidth.constant = image.size.width
+        imageHeigt.constant = image.size.height
+        let scaleHeight = scrollView.frame.size.width/image.size.width
+        let scaleWidth = scrollView.frame.size.height/image.size.height
+        scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
+        scrollView.zoomScale = max(scaleWidth, scaleHeight)
         
     }
     
@@ -68,7 +68,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let croppedImage = UIImage(cgImage: croppedCGImage!)
         setImageToCrop(image: croppedImage)
         
-    
+        
     }
     
     
@@ -103,8 +103,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        checkValidTitle()
-//        postTitle = titleTF.text
+        //        checkValidTitle()
+        //        postTitle = titleTF.text
         
         
         
@@ -130,7 +130,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         photoTextTF.isHidden = false
         photoTextTF.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:0.4)
         
-    
+        
     }
     
     @IBAction func photoTitle(_ sender: Any) {
@@ -141,7 +141,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBAction func zoomBTN(_ sender: Any) {
         
-        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
+        UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.scrollView.zoomScale = self.scrollView.minimumZoomScale
         }, completion: { _ in })
         
@@ -170,5 +170,5 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         titleTF.isHidden = true
         view.endEditing(true)
     }
-
+    
 }
