@@ -17,48 +17,45 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     var postTitle: String?
     
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    @IBOutlet weak var top: NSLayoutConstraint!
+    @IBOutlet weak var bottom: NSLayoutConstraint!
+    @IBOutlet weak var height: NSLayoutConstraint!
+    @IBOutlet weak var width: NSLayoutConstraint!
     
-    @IBOutlet weak var imageHeigt: NSLayoutConstraint!
-    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     
-    var first: Bool! = true
     
     override func viewDidLoad() {
-        
-        
-        
         super.viewDidLoad()
-        
-        setImageToCrop(image:img)
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
-        
+        setImage(image: img)
+    }
+    @IBAction func adjustImage(_ sender: Any) {
+        scrollView.zoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height /
+        (photo.image?.size.height)!)
     }
     
-    
-    func setImageToCrop(image:UIImage){
-    
-            photo.image = image
-            imageWidth.constant = image.size.width
-            imageHeigt.constant = image.size.height
-            let scaleHeight = scrollView.frame.size.width/image.size.width
-            let scaleWidth = scrollView.frame.size.height/image.size.height
-            scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
-            scrollView.zoomScale = max(scaleWidth, scaleHeight)
-        
+    private func setImage(image: UIImage) {
+        photo.image = img.af_imageAspectScaled(toFit: scrollView.frame.size)
+        width.constant = (photo.image?.size.width)!
+        height.constant = (photo.image?.size.height)!
+        updateMinZoomScaleForSize(size: (photo.image?.size)!)
     }
+    
+    private func updateMinZoomScaleForSize(size: CGSize) {
+        let widthScale = scrollView.frame.size.width / size.width
+        let heightScale = scrollView.frame.size.height / size.height
+        let minScale = max(widthScale, heightScale)
+        scrollView.minimumZoomScale = minScale
+        scrollView.zoomScale = minScale
+        scrollView.maximumZoomScale = minScale * 4
+        print(minScale)
+    }
+    
     
     @IBAction func crop(_ sender: Any) {
-        let scale:CGFloat = 1/scrollView.zoomScale
-        let x:CGFloat = scrollView.contentOffset.x * scale
-        let y:CGFloat = scrollView.contentOffset.y * scale
-        let width:CGFloat = scrollView.frame.size.width * scale
-        let height:CGFloat = scrollView.frame.size.height * scale
-        let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
-        let croppedImage = UIImage(cgImage: croppedCGImage!)
-        setImageToCrop(image: croppedImage)
         
-    
     }
     
     
