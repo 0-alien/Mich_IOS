@@ -105,14 +105,14 @@
                                     <action selector="photoTitle:" destination="4O9-bL-jmS" eventType="touchUpInside" id="d2s-LI-2XN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk" userLabel="Crop">
                                 <rect key="frame" x="274" y="439" width="30" height="30"/>
                                 <state key="normal" image="crop"/>
                                 <connections>
                                     <action selector="crop:" destination="4O9-bL-jmS" eventType="touchUpInside" id="hDR-e2-rIs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
                                 <rect key="frame" x="98" y="439" width="30" height="30"/>
                                 <state key="normal" image="adjust"/>
                                 <connections>
@@ -159,17 +159,13 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="bottom" destination="sWb-Wg-QNw" id="P5Q-NV-6pz"/>
                         <outlet property="doneButtone" destination="rfL-qB-eSI" id="7OA-ox-e0K"/>
-                        <outlet property="height" destination="6bw-B8-6dA" id="BJl-P1-o7b"/>
-                        <outlet property="leading" destination="QFz-sb-zC5" id="e1k-jk-4b8"/>
+                        <outlet property="imageHeigt" destination="6bw-B8-6dA" id="uBQ-fD-iwb"/>
+                        <outlet property="imageWidth" destination="ol5-DJ-QG5" id="y6c-7u-KVH"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="photoTextTF" destination="DiX-VC-nld" id="9Yf-lu-gSj"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
                         <outlet property="titleTF" destination="LQ4-ol-dYc" id="B1v-Ob-SQY"/>
-                        <outlet property="top" destination="m3B-Dh-IAK" id="2Ut-zA-eUt"/>
-                        <outlet property="trailing" destination="LkV-Ib-Rpd" id="hPN-6P-AgW"/>
-                        <outlet property="width" destination="ol5-DJ-QG5" id="ake-HL-dTW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
