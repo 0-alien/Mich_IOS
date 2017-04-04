@@ -25,15 +25,22 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var width: NSLayoutConstraint!
     
     
+    @IBOutlet weak var photoTextTF: UITextField!
+    
+    
+    var first: Bool! = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        setImage(image: img)
-    }
-    @IBAction func adjustImage(_ sender: Any) {
-        scrollView.zoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height /
-        (photo.image?.size.height)!)
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
     }
     
     private func setImage(image: UIImage) {
@@ -111,6 +118,31 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     
+    @IBAction func photoText(_ sender: Any) {
+        
+        photoTextTF.becomeFirstResponder()
+        photoTextTF.isHidden = false
+        photoTextTF.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:0.4)
+        
+    
+    }
+    
+    @IBAction func photoTitle(_ sender: Any) {
+        titleTF.becomeFirstResponder()
+        titleTF.isHidden = false
+    }
+    
+    
+    @IBAction func zoomBTN(_ sender: Any) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
+            self.scrollView.zoomScale = self.scrollView.minimumZoomScale
+        }, completion: { _ in })
+        
+        
+        
+    }
+    
     //Mark: oncreate callbacks
     
     func oncreatesuccess() {
@@ -124,6 +156,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        photoTextTF.isHidden = true
+        titleTF.isHidden = true
+        view.endEditing(true)
     }
 
 }

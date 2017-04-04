@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,20 +45,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Write a caption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
-                                <rect key="frame" x="10" y="64" width="310" height="40"/>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Write a caption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="i4j-LP-XKx"/>
+                                    <constraint firstAttribute="height" constant="35" id="i4j-LP-XKx"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="4O9-bL-jmS" id="U8s-90-jYR"/>
                                 </connections>
                             </textField>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="6" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="104" width="320" height="320"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
+                                <rect key="frame" x="0.0" y="99" width="320" height="320"/>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -80,32 +81,67 @@
                                     <outlet property="delegate" destination="4O9-bL-jmS" id="2IN-QH-qt1"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk">
-                                <rect key="frame" x="136.5" y="432" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiX-VC-nld">
+                                <rect key="frame" x="-19.5" y="269" width="359" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="359" id="9kX-bG-1Cz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urd-6z-09d">
+                                <rect key="frame" x="16" y="439" width="30" height="30"/>
+                                <state key="normal" title="Aa"/>
+                                <connections>
+                                    <action selector="photoText:" destination="4O9-bL-jmS" eventType="touchUpInside" id="kRv-GM-Oqh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ7-qS-WZk">
+                                <rect key="frame" x="177" y="439" width="31" height="30"/>
+                                <state key="normal" title="tittle"/>
+                                <connections>
+                                    <action selector="photoTitle:" destination="4O9-bL-jmS" eventType="touchUpInside" id="d2s-LI-2XN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk">
+                                <rect key="frame" x="274" y="439" width="30" height="30"/>
+                                <state key="normal" image="crop"/>
                                 <connections>
                                     <action selector="crop:" destination="4O9-bL-jmS" eventType="touchUpInside" id="hDR-e2-rIs"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFD-qd-hg8">
-                                <rect key="frame" x="93" y="487" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej">
+                                <rect key="frame" x="98" y="439" width="30" height="30"/>
+                                <state key="normal" image="adjust"/>
                                 <connections>
-                                    <action selector="adjustImage:" destination="4O9-bL-jmS" eventType="touchUpInside" id="k89-Jd-QMf"/>
+                                    <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="H77-t7-Xmy"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LQ4-ol-dYc" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="0CQ-zQ-tRZ"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="centerX" secondItem="xr9-W4-Dtk" secondAttribute="centerX" id="6eP-Ut-TIV"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="ASR-1H-y2f"/>
-                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" constant="10" id="GvM-hI-fGd"/>
-                            <constraint firstAttribute="trailing" secondItem="LQ4-ol-dYc" secondAttribute="trailing" id="QkC-AU-xxh"/>
-                            <constraint firstItem="xr9-W4-Dtk" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" symbolic="YES" id="Y4m-Yj-Y3J"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LQ4-ol-dYc" secondAttribute="trailing" constant="-16" id="5NL-LI-nex"/>
+                            <constraint firstItem="gQ7-qS-WZk" firstAttribute="top" secondItem="DiX-VC-nld" secondAttribute="bottom" constant="140" id="5bS-Q8-Z4b"/>
+                            <constraint firstItem="gQ7-qS-WZk" firstAttribute="leading" secondItem="DC7-YZ-eej" secondAttribute="trailing" constant="49" id="ApW-LW-2l4"/>
+                            <constraint firstItem="LQ4-ol-dYc" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-16" id="Ceq-J0-ZOV"/>
+                            <constraint firstItem="DiX-VC-nld" firstAttribute="centerY" secondItem="HmF-45-Pir" secondAttribute="centerY" id="Cfe-vI-mht"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="height" secondItem="Urd-6z-09d" secondAttribute="height" id="IQ2-cC-nrk"/>
+                            <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="LQ4-ol-dYc" secondAttribute="leading" id="OSq-r0-15I"/>
+                            <constraint firstItem="src-mk-xhh" firstAttribute="trailing" secondItem="LQ4-ol-dYc" secondAttribute="trailing" id="OwA-O1-Au6"/>
+                            <constraint firstItem="xr9-W4-Dtk" firstAttribute="top" secondItem="DiX-VC-nld" secondAttribute="bottom" constant="140" id="RLP-24-ty6"/>
+                            <constraint firstItem="Urd-6z-09d" firstAttribute="top" secondItem="DiX-VC-nld" secondAttribute="bottom" constant="140" id="Vsc-aJ-7MR"/>
+                            <constraint firstItem="DiX-VC-nld" firstAttribute="centerX" secondItem="HmF-45-Pir" secondAttribute="centerX" id="Yo2-c9-soS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Urd-6z-09d" secondAttribute="leading" id="bbo-CS-UQJ"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="width" secondItem="Urd-6z-09d" secondAttribute="width" id="dm6-aw-YJK"/>
+                            <constraint firstItem="xr9-W4-Dtk" firstAttribute="width" secondItem="Urd-6z-09d" secondAttribute="width" id="jYE-bo-1cX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xr9-W4-Dtk" secondAttribute="trailing" id="jsS-dn-KQO"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="top" secondItem="DiX-VC-nld" secondAttribute="bottom" constant="140" id="k5T-4J-12k"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="LQ4-ol-dYc" secondAttribute="bottom" id="owc-9H-7Z6"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="se9-en-qAz"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="Urd-6z-09d" secondAttribute="trailing" constant="52" id="sMj-Wz-eXf"/>
+                            <constraint firstItem="xr9-W4-Dtk" firstAttribute="height" secondItem="Urd-6z-09d" secondAttribute="height" id="zVt-rB-HSK"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -128,6 +164,7 @@
                         <outlet property="height" destination="6bw-B8-6dA" id="BJl-P1-o7b"/>
                         <outlet property="leading" destination="QFz-sb-zC5" id="e1k-jk-4b8"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
+                        <outlet property="photoTextTF" destination="DiX-VC-nld" id="9Yf-lu-gSj"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
                         <outlet property="titleTF" destination="LQ4-ol-dYc" id="B1v-Ob-SQY"/>
                         <outlet property="top" destination="m3B-Dh-IAK" id="2Ut-zA-eUt"/>
@@ -141,6 +178,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="adjust" width="17" height="17"/>
+        <image name="crop" width="16" height="16"/>
         <image name="plus_icon" width="25" height="26"/>
     </resources>
 </document>
