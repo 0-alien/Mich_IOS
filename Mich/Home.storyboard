@@ -186,12 +186,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfM-Vc-eYn">
-                                                    <rect key="frame" x="42" y="348.5" width="7" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgw-GQ-WTR" userLabel="Comments Button">
                                                     <rect key="frame" x="57" y="335.5" width="25" height="25"/>
                                                     <state key="normal" image="comments_icon"/>
@@ -241,13 +235,11 @@
                                                 <constraint firstItem="lIh-hW-pAj" firstAttribute="leading" secondItem="8mv-WW-CVX" secondAttribute="leading" id="6KS-65-OKs"/>
                                                 <constraint firstItem="eNi-EN-RKk" firstAttribute="trailing" secondItem="bOH-ap-u1c" secondAttribute="trailing" constant="64" id="9rL-Mo-BSI"/>
                                                 <constraint firstItem="Qgw-GQ-WTR" firstAttribute="height" secondItem="Jgi-eC-N1R" secondAttribute="height" id="Ach-wM-OLR"/>
-                                                <constraint firstItem="NfM-Vc-eYn" firstAttribute="bottom" secondItem="Jgi-eC-N1R" secondAttribute="bottom" id="CYL-eb-XAf"/>
                                                 <constraint firstItem="Qgw-GQ-WTR" firstAttribute="width" secondItem="Jgi-eC-N1R" secondAttribute="width" id="Doh-R5-i7k"/>
                                                 <constraint firstItem="lIh-hW-pAj" firstAttribute="top" secondItem="Jgi-eC-N1R" secondAttribute="bottom" constant="20" id="H7p-8q-FjX"/>
                                                 <constraint firstItem="eNi-EN-RKk" firstAttribute="top" secondItem="8mv-WW-CVX" secondAttribute="bottom" constant="8" id="Ivj-XA-jo7"/>
                                                 <constraint firstItem="kfJ-ES-dnk" firstAttribute="leading" secondItem="bOH-ap-u1c" secondAttribute="trailing" constant="8" id="Ln4-Dv-QM8"/>
                                                 <constraint firstItem="zcN-V4-DOa" firstAttribute="leading" secondItem="bOH-ap-u1c" secondAttribute="leading" id="PXL-LF-Ukc"/>
-                                                <constraint firstItem="NfM-Vc-eYn" firstAttribute="leading" secondItem="Jgi-eC-N1R" secondAttribute="trailing" constant="1" id="R1F-XM-Swb"/>
                                                 <constraint firstItem="eNi-EN-RKk" firstAttribute="leading" secondItem="8mv-WW-CVX" secondAttribute="leading" constant="-16" id="RBj-SW-8rM"/>
                                                 <constraint firstItem="eNi-EN-RKk" firstAttribute="top" secondItem="fA3-k0-VBG" secondAttribute="topMargin" constant="68" id="REp-M6-geM"/>
                                                 <constraint firstItem="lIh-hW-pAj" firstAttribute="trailing" secondItem="kfJ-ES-dnk" secondAttribute="trailing" id="RnQ-SA-Hgo"/>
@@ -275,7 +267,6 @@
                                             <outlet property="commentCount" destination="H1J-Ld-2IU" id="QTe-kP-SNl"/>
                                             <outlet property="createdAt" destination="zcN-V4-DOa" id="gPD-vc-aiK"/>
                                             <outlet property="likeButton" destination="Jgi-eC-N1R" id="MUN-U2-E9e"/>
-                                            <outlet property="likeCount" destination="NfM-Vc-eYn" id="Ht9-Jv-dCt"/>
                                             <outlet property="likeCountButton" destination="3As-vf-0h4" id="mex-W9-TIF"/>
                                             <outlet property="postImage" destination="2rg-tl-uAC" id="gfA-ca-MTe"/>
                                             <outlet property="scrollView" destination="eNi-EN-RKk" id="Zzv-rK-5mh"/>
