@@ -76,6 +76,7 @@
 		CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */; };
 		CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
+		CF092BC21E94F0E800C18718 /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092BC11E94F0E800C18718 /* RotateImage.swift */; };
 		CF149D271E77EB81005911FB /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF149D261E77EB81005911FB /* UpdateUserRequest.swift */; };
 		CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */; };
 		CF186A8C1E435C3900218920 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8B1E435C3900218920 /* User.swift */; };
@@ -220,6 +221,7 @@
 		CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostRequest.swift; sourceTree = "<group>"; };
 		CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostResponse.swift; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		CF092BC11E94F0E800C18718 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
 		CF149D261E77EB81005911FB /* UpdateUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
 		CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserRequest.swift; sourceTree = "<group>"; };
 		CF186A8B1E435C3900218920 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */,
 				1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */,
 				CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */,
+				CF092BC11E94F0E800C18718 /* RotateImage.swift */,
 			);
 			name = Extentions;
 			sourceTree = "<group>";
@@ -819,6 +822,7 @@
 				CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
 				CF92DF151E4DA4B900AC71D7 /* GetCurrentUserFollowersRequest.swift in Sources */,
+				CF092BC21E94F0E800C18718 /* RotateImage.swift in Sources */,
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
@@ -998,6 +1002,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1018,6 +1023,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEVELOPMENT_TEAM = 57R943V29M;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

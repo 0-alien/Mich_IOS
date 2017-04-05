@@ -47,8 +47,11 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     
+    
     func setImageToCrop(image:UIImage){
+
         photo.image = image
+
         imageWidth.constant = image.size.width
         imageHeigt.constant = image.size.height
         let scaleHeight = scrollView.frame.size.width / image.size.width
@@ -58,16 +61,27 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
     }
     
+    
+    
     @IBAction func crop(_ sender: Any) {
-        
+
         let scale:CGFloat = 1/scrollView.zoomScale
         let x:CGFloat = scrollView.contentOffset.x * scale
         let y:CGFloat = scrollView.contentOffset.y * scale
         let width:CGFloat = scrollView.frame.size.width * scale
         let height:CGFloat = scrollView.frame.size.height * scale
+        
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
-        let croppedImage = UIImage(cgImage: croppedCGImage!)
+        var croppedImage = UIImage(cgImage: croppedCGImage!)
+
+        
+        if((photo.image?.size.width)! < (photo.image?.size.height)!){
+            croppedImage = croppedImage.rotateImageByDegrees(90)
+        }
+
         setImageToCrop(image: croppedImage)
+        
+        
         
         
     }
@@ -88,6 +102,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
+        
+
+        if(img.size.width < img.size.height){
+            img = img.rotateImageByDegrees(90)
+        }
+ 
+ 
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: img!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
