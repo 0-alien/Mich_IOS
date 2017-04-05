@@ -21,11 +21,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Cwe-bD-IWS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mk7-c3-4KY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zl-AL-49v">
-                                <rect key="frame" x="0.0" y="20" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-wr-Puc">
                                         <rect key="frame" x="0.0" y="8" width="112" height="112"/>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UTg-1n-REE">
-                                <rect key="frame" x="0.0" y="148" width="320" height="371"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="327"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="oKp-xJ-gUJ">
@@ -208,7 +208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tm-Ph-qAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394.39999999999998" y="-869.41529235382313"/>
+            <point key="canvasLocation" x="-403" y="-869"/>
         </scene>
         <!--Photo-->
         <scene sceneID="zEe-kt-IdA">
@@ -219,18 +219,22 @@
                         <viewControllerLayoutGuide type="bottom" id="Rv2-tt-1RG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="k5v-Wc-cYK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-gM-eBM">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-sC-0I8">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3zS-sC-0I8">
                                         <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="4oK-TD-ziT"/>
                                             <constraint firstAttribute="height" constant="60" id="vdA-TS-zXg"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="snE-3Q-du2" appends="YES" id="HI8-3O-dN6"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-0W-vK7">
                                         <rect key="frame" x="76" y="8" width="89.5" height="21"/>
@@ -308,7 +312,7 @@
                                         <rect key="frame" x="53" y="416" width="25" height="25"/>
                                         <state key="normal" image="comments_icon"/>
                                         <connections>
-                                            <segue destination="yfP-oD-b7M" kind="show" identifier="showcomments" id="peP-t3-A3i"/>
+                                            <segue destination="zOT-RP-LH4" kind="show" identifier="showcomments" id="NG3-m9-6iK"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGQ-6l-f2c">
@@ -395,25 +399,23 @@
                         <outlet property="viewCommentsButton" destination="wsu-zS-INR" id="J3O-G2-b5T"/>
                         <outlet property="zoomingScrollView" destination="5qg-Aq-Ivb" id="ElE-tE-ex9"/>
                         <segue destination="0eJ-2d-lkv" kind="unwind" identifier="unwindfrompostpage" unwindAction="unwindFromPostPageWithSender:" id="WFk-Ji-Sm2"/>
+                        <segue destination="BJT-Sn-q0x" kind="show" identifier="gotoprofilepage" id="aPV-7X-oby"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAr-Rt-auD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0eJ-2d-lkv" userLabel="Exit" sceneMemberID="exit"/>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="559-bM-rad">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="559-bM-rad" userLabel="double tap like">
                     <connections>
                         <action selector="doubleTapLike:" destination="dLl-p9-nQN" id="nzz-b2-9M4"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="snE-3Q-du2" userLabel="profile picture tap">
+                    <connections>
+                        <action selector="profilePictureTapped:" destination="dLl-p9-nQN" id="XU6-4n-x9i"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="896.79999999999995" y="-525.78710644677665"/>
-        </scene>
-        <!--CommentsViewController-->
-        <scene sceneID="bgX-ab-jEU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="yfP-oD-b7M" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AbV-17-mHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1772" y="-526"/>
+            <point key="canvasLocation" x="752" y="-825"/>
         </scene>
         <!--CommentsViewController-->
         <scene sceneID="kZy-7q-iA4">
@@ -421,7 +423,7 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="zOT-RP-LH4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWv-II-xXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="0.0"/>
+            <point key="canvasLocation" x="802" y="-295"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLE-og-tCE">
@@ -479,11 +481,11 @@
                         <viewControllerLayoutGuide type="bottom" id="XP0-R0-sBC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Iz-5W-NJM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-ML-1pY">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowTableViewCell" rowHeight="48" id="qeG-Fr-03z" customClass="FollowTableViewCell" customModule="Mich" customModuleProvider="target">
@@ -743,7 +745,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbD-cK-YJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896.79999999999995" y="-1197.7511244377813"/>
+            <point key="canvasLocation" x="677" y="-1687"/>
         </scene>
     </scenes>
     <resources>
@@ -754,6 +756,7 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="3nt-fL-SI4"/>
         <segue reference="tvz-Ie-NnN"/>
         <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>

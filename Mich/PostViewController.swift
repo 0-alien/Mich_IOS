@@ -66,6 +66,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         if segue.identifier == "showcomments" {
             (segue.destination as! CommentsViewController).postId = post.id
         }
+        if segue.identifier == "gotoprofilepage" {
+            (segue.destination as! UserPicturesCollectionViewController).userId = self.post.userId
+        }
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
@@ -79,11 +82,6 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         }, completion: { _ in })
         
         
-    }
-    
-    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        print("begin")
-
     }
     
     
@@ -159,6 +157,9 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postId, successCallbackForLike: onDoubleTapLikeSuccess, errorCallbackForLike: onGetPostError)
     }
     
+    @IBAction func profilePictureTapped(_ sender: Any) {
+        performSegue(withIdentifier: "gotoprofilepage", sender: self)
+    }
     
     @IBAction func edit(_ sender: Any) {
         

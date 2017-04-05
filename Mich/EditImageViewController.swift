@@ -32,6 +32,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         super.viewDidLoad()
         
+        img = UIImage(cgImage: img.cgImage!, scale: 1, orientation: .up)
         setImageToCrop(image:img)
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
@@ -47,18 +48,18 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     func setImageToCrop(image:UIImage){
-        
         photo.image = image
         imageWidth.constant = image.size.width
         imageHeigt.constant = image.size.height
-        let scaleHeight = scrollView.frame.size.width/image.size.width
-        let scaleWidth = scrollView.frame.size.height/image.size.height
+        let scaleHeight = scrollView.frame.size.width / image.size.width
+        let scaleWidth = scrollView.frame.size.height / image.size.height
         scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
         scrollView.zoomScale = max(scaleWidth, scaleHeight)
         
     }
     
     @IBAction func crop(_ sender: Any) {
+        
         let scale:CGFloat = 1/scrollView.zoomScale
         let x:CGFloat = scrollView.contentOffset.x * scale
         let y:CGFloat = scrollView.contentOffset.y * scale

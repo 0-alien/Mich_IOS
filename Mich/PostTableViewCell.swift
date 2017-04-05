@@ -20,6 +20,7 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var likeCountButton: UIButton!
     
     var liked: Bool! {
         didSet {
@@ -61,6 +62,7 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func updateLikeCount(by: Int) {
         likeCount.text = String(Int(likeCount.text!)! + by)
     }
+
     
     //like from double tap
     func postLiked() {
@@ -93,9 +95,11 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBAction func showComments(_ sender: Any) {
         self.cellDelegate?.showComments(cellIndex: self.index)
     }
-    
     @IBAction func share(_ sender: Any) {
         cellDelegate?.share(cellIndex: self.index)
+    }
+    @IBAction func showLikes(_ sender: Any) {
+        self.cellDelegate?.showLikes(cellIndex: self.index)
     }
     
 }
@@ -104,6 +108,7 @@ protocol PostTableViewCellDelegate {
     func postLiked(cellIndex: Int, showAnimation: Bool)
     func postUnliked(cellIndex: Int)
     func showComments(cellIndex: Int)
+    func showLikes(cellIndex: Int)
     func showProfile(cellIndex: Int)
     func share(cellIndex: Int)
 }

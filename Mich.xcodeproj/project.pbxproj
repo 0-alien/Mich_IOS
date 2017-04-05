@@ -62,6 +62,8 @@
 		1EDDC2571D940877004D1DD5 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2561D940877004D1DD5 /* Camera.storyboard */; };
 		1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2581D9408EB004D1DD5 /* Home.storyboard */; };
 		1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */; };
+		1EE22BA91E9500C400FD5DB7 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE22BA81E9500C400FD5DB7 /* LikesViewController.swift */; };
+		1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE22BAA1E95010B00FD5DB7 /* LikesTableViewCell.swift */; };
 		1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */; };
 		1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */; };
 		1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */; };
@@ -203,6 +205,8 @@
 		1EDDC2561D940877004D1DD5 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1EDDC2581D9408EB004D1DD5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VS.storyboard; sourceTree = "<group>"; };
+		1EE22BA81E9500C400FD5DB7 /* LikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesViewController.swift; sourceTree = "<group>"; };
+		1EE22BAA1E95010B00FD5DB7 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
 		1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellA.swift; sourceTree = "<group>"; };
 		1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuViewController.swift; sourceTree = "<group>"; };
 		1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +457,8 @@
 				1E17158B1DDB286C002598B6 /* CommentCell.swift */,
 				1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */,
 				1E25E1F61E6EED1C00576D47 /* CommentsViewController.swift */,
+				1EE22BA81E9500C400FD5DB7 /* LikesViewController.swift */,
+				1EE22BAA1E95010B00FD5DB7 /* LikesTableViewCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
+				1EE22BA91E9500C400FD5DB7 /* LikesViewController.swift in Sources */,
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
 				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
@@ -783,6 +790,7 @@
 				CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
+				1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
 				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,

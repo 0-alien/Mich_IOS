@@ -65,16 +65,17 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.row]
         let cellIdentifier = "PostTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
-        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].image!)!, into: cell.postImage)
-        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.row].avatar!)!, into: cell.userImage)
-        cell.likeCount.text = String(posts[indexPath.row].nLikes!)
-        cell.commentCount.text = String(posts[indexPath.row].nComments!)
-        cell.liked = (posts[indexPath.row].myLike == 1)
+        Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: cell.postImage)
+        Nuke.loadImage(with: Foundation.URL(string: post.avatar!)!, into: cell.userImage)
+        cell.likeCount.text = String(post.nLikes!)
+        cell.commentCount.text = String(post.nComments!)
+        cell.liked = (post.myLike == 1)
         cell.index = indexPath.row
-        cell.createdAt.text = posts[indexPath.row].created_at
-        cell.userName.text = posts[indexPath.row].userName
+        cell.createdAt.text = post.created_at
+        cell.userName.text = post.userName
         
         cell.scrollView.delegate = cell
         cell.scrollView.minimumZoomScale = 1.0
@@ -89,7 +90,19 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.userImage.addGestureRecognizer(profilePictureTap)
         
         cell.cellDelegate = self
-        cell.title.text = posts[indexPath.row].title
+        cell.title.text = post.title
+        
+        if post.nLikes == 0 {
+            cell.likeCountButton.isHidden = true
+        }
+        else if post.nLikes == 1 {
+            cell.likeCountButton.isHidden = false
+            cell.likeCountButton.setTitle("1 Like", for: .normal)
+        }
+        else {
+            cell.likeCountButton.isHidden = false
+            cell.likeCountButton.setTitle(String(0 + post.nLikes!) + " Likes", for: .normal)
+        }
 
         return cell
     }
@@ -108,6 +121,9 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             vc.postId = self.destinationPostId
+        }
+        else if segue.identifier == "showlikes" {
+            
         }
     }
     
@@ -145,6 +161,12 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         performSegue(withIdentifier: "showcomments", sender: self)
     }
     
+    func showLikes(cellIndex: Int) {
+        self.destinationPostId = self.posts[cellIndex].id
+        performSegue(withIdentifier: "showlikes", sender: self)
+    }
+    
+    // MARK: share
     func share(cellIndex: Int) {
         
        

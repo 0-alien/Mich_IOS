@@ -27,7 +27,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     
     var refreshControl: UIRefreshControl!
     
-    var user: User? = nil
+    private var user: User? = nil
     var userId: Int! = -1
     var isOwner: Bool = false
     var posts: [PostClass] = []
