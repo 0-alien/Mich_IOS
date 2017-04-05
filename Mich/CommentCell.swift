@@ -51,7 +51,21 @@ class CommentCell: UITableViewCell {
             self.ratingImage.backgroundColor = UIColor.cyan
         }
         else {
-            self.ratingImage.image = UIImage(named: "rating-" + String(Swift.min(5, count)))
+            if count < 5 {
+                self.ratingImage.image = UIImage(named: "rating-1")
+            }
+            else if count < 10 {
+                self.ratingImage.image = UIImage(named: "rating-2")
+            }
+            else if count < 20 {
+                self.ratingImage.image = UIImage(named: "rating-3")
+            }
+            else if count < 50 {
+                self.ratingImage.image = UIImage(named: "rating-4")
+            }
+            else {
+                self.ratingImage.image = UIImage(named: "rating-5")
+            }
         }
     }
     
