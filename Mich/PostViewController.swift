@@ -23,6 +23,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var zoomingScrollView: UIScrollView!
     
+    @IBOutlet var mainView: UIView!
     
     var post: PostClass!
     var postId: Int!
@@ -50,11 +51,15 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
 
         
+        
         self.zoomingScrollView.minimumZoomScale = 1.0;
         self.zoomingScrollView.maximumZoomScale = 6.0
 
     
     }
+    
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -82,9 +87,20 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        //self.view.bringSubview(toFront: self.postImage)
+        UIApplication.shared.keyWindow?.bringSubview(toFront: postImage)
+/*
+        var window: UIWindow? = UIApplication.shared.keyWindow
+        if window == nil {
+            window = (UIApplication.shared.windows[0] as? UIWindow)
+        }
+        window?.subviews[0].addSubview(postImage)
+  */
+        
         print("begin")
 
     }
+    
     
     
     func loadPost() {

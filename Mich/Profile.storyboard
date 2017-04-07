@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SnB-33-Vax">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SnB-33-Vax">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -233,7 +233,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nJ-0W-vK7">
-                                        <rect key="frame" x="76" y="8" width="89.5" height="21"/>
+                                        <rect key="frame" x="76" y="8" width="90" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -266,7 +266,7 @@
                                         </connections>
                                     </scrollView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some time ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-ZM-YIG">
-                                        <rect key="frame" x="76" y="52" width="89.5" height="16"/>
+                                        <rect key="frame" x="76" y="52" width="90" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -386,6 +386,7 @@
                         <outlet property="commentCountLabel" destination="gGQ-6l-f2c" id="TVs-Ka-Bpp"/>
                         <outlet property="likeButton" destination="PbG-YA-ysQ" id="3gR-WJ-rc7"/>
                         <outlet property="likeCountLabel" destination="Vd7-qV-lFn" id="r5i-eZ-RIY"/>
+                        <outlet property="mainView" destination="k5v-Wc-cYK" id="5hp-mY-UNQ"/>
                         <outlet property="postDate" destination="3in-ZM-YIG" id="ZRR-g9-JZh"/>
                         <outlet property="postImage" destination="WBQ-Du-Wmj" id="RKO-wq-Deh"/>
                         <outlet property="postTitle" destination="U7V-FJ-bHn" id="mqV-Ue-mQF"/>
@@ -490,17 +491,17 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qeG-Fr-03z" id="xOK-m7-Z9I">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZoM-aQ-dq3">
-                                                    <rect key="frame" x="8" y="4" width="39.5" height="39.5"/>
+                                                    <rect key="frame" x="8" y="4" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ZoM-aQ-dq3" secondAttribute="height" multiplier="1:1" id="bcE-VD-jKb"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tit-0j-4MN">
-                                                    <rect key="frame" x="63.5" y="14" width="248.5" height="20.5"/>
+                                                    <rect key="frame" x="64" y="14" width="248" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -572,14 +573,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="9WD-dM-KUN">
-                                                <rect key="frame" x="109.5" y="8" width="100" height="100"/>
+                                                <rect key="frame" x="110" y="8" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="YMe-qt-cVD"/>
                                                     <constraint firstAttribute="width" secondItem="9WD-dM-KUN" secondAttribute="height" multiplier="1:1" id="mDP-J0-BCE"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-lz-6Pv">
-                                                <rect key="frame" x="100.5" y="116" width="119" height="30"/>
+                                                <rect key="frame" x="101" y="116" width="119" height="30"/>
                                                 <state key="normal" title="Edit Profile Photo"/>
                                                 <connections>
                                                     <action selector="editProfile:" destination="Ddq-Mk-hQI" eventType="touchUpInside" id="dfM-oD-AeA"/>
