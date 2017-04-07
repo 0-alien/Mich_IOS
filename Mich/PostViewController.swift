@@ -88,7 +88,8 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
         //self.view.bringSubview(toFront: self.postImage)
-        UIApplication.shared.keyWindow?.bringSubview(toFront: postImage)
+        //UIApplication.shared.keyWindow?.bringSubview(toFront: zoomingScrollView)
+        //postImage.superview?.bringSubview(toFront: postImage)
 /*
         var window: UIWindow? = UIApplication.shared.keyWindow
         if window == nil {

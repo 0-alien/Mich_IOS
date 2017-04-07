@@ -238,33 +238,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qg-Aq-Ivb" userLabel="image scroll view">
-                                        <rect key="frame" x="0.0" y="84" width="320" height="320"/>
-                                        <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Du-Wmj">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                                <gestureRecognizers/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="WBQ-Du-Wmj" secondAttribute="height" multiplier="1:1" id="UF3-zc-1ed"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="559-bM-rad" appends="YES" id="ghq-n9-NMc"/>
-                                                </connections>
-                                            </imageView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="top" secondItem="5qg-Aq-Ivb" secondAttribute="top" id="AYJ-Wp-AGQ"/>
-                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="height" secondItem="5qg-Aq-Ivb" secondAttribute="height" id="GKk-mA-guG"/>
-                                            <constraint firstAttribute="bottom" secondItem="WBQ-Du-Wmj" secondAttribute="bottom" id="Gwa-HD-cQL"/>
-                                            <constraint firstAttribute="width" secondItem="5qg-Aq-Ivb" secondAttribute="height" multiplier="1:1" id="Pgq-2u-ufV"/>
-                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="leading" secondItem="5qg-Aq-Ivb" secondAttribute="leading" id="RjJ-Rb-H5o"/>
-                                            <constraint firstAttribute="trailing" secondItem="WBQ-Du-Wmj" secondAttribute="trailing" id="TIk-iS-BpN"/>
-                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="width" secondItem="5qg-Aq-Ivb" secondAttribute="width" id="Txb-Ts-aKN"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="delegate" destination="dLl-p9-nQN" id="OmI-rs-CWW"/>
-                                        </connections>
-                                    </scrollView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="some time ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3in-ZM-YIG">
                                         <rect key="frame" x="76" y="52" width="90" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -335,6 +308,33 @@
                                             <action selector="edit:" destination="dLl-p9-nQN" eventType="touchUpInside" id="7Bw-mh-VwC"/>
                                         </connections>
                                     </button>
+                                    <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5qg-Aq-Ivb" userLabel="image scroll view">
+                                        <rect key="frame" x="0.0" y="84" width="320" height="320"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WBQ-Du-Wmj">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="WBQ-Du-Wmj" secondAttribute="height" multiplier="1:1" id="UF3-zc-1ed"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="559-bM-rad" appends="YES" id="ghq-n9-NMc"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="top" secondItem="5qg-Aq-Ivb" secondAttribute="top" id="AYJ-Wp-AGQ"/>
+                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="height" secondItem="5qg-Aq-Ivb" secondAttribute="height" id="GKk-mA-guG"/>
+                                            <constraint firstAttribute="bottom" secondItem="WBQ-Du-Wmj" secondAttribute="bottom" id="Gwa-HD-cQL"/>
+                                            <constraint firstAttribute="width" secondItem="5qg-Aq-Ivb" secondAttribute="height" multiplier="1:1" id="Pgq-2u-ufV"/>
+                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="leading" secondItem="5qg-Aq-Ivb" secondAttribute="leading" id="RjJ-Rb-H5o"/>
+                                            <constraint firstAttribute="trailing" secondItem="WBQ-Du-Wmj" secondAttribute="trailing" id="TIk-iS-BpN"/>
+                                            <constraint firstItem="WBQ-Du-Wmj" firstAttribute="width" secondItem="5qg-Aq-Ivb" secondAttribute="width" id="Txb-Ts-aKN"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="delegate" destination="dLl-p9-nQN" id="OmI-rs-CWW"/>
+                                        </connections>
+                                    </scrollView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2pa-dd-bnh" firstAttribute="width" secondItem="PbG-YA-ysQ" secondAttribute="width" id="0ZL-mg-axl"/>
