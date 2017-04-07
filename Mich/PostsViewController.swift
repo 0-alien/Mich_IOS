@@ -102,7 +102,8 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             cell.likeCountButton.isHidden = false
             cell.likeCountButton.setTitle(String(0 + post.nLikes!) + " Likes", for: .normal)
         }
-
+        cell.clipsToBounds = false
+        
         return cell
     }
     

@@ -90,10 +90,9 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBAction func share(_ sender: Any) {
         cellDelegate?.share(cellIndex: self.index)
     }
-    @IBAction func showLikes(_ sender: Any) {
-        self.cellDelegate?.showLikes(cellIndex: self.index)
+    @IBAction func showLikers(_ sender: Any) {
+         self.cellDelegate?.showLikes(cellIndex: self.index)
     }
-    
 }
 
 protocol PostTableViewCellDelegate {
