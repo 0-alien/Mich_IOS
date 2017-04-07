@@ -121,15 +121,15 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="410" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sBv-4C-e7L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="410" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sBv-4C-e7L">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="410" id="WxU-rc-UkR" customClass="PostTableViewCell" customModule="Mich" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="410" id="WxU-rc-UkR" customClass="PostTableViewCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="410"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WxU-rc-UkR" id="fA3-k0-VBG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="409.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WxU-rc-UkR" id="fA3-k0-VBG">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="410"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8mv-WW-CVX">
@@ -140,23 +140,6 @@
                                                         <constraint firstAttribute="width" constant="60" id="evM-ES-kto"/>
                                                     </constraints>
                                                 </imageView>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNi-EN-RKk">
-                                                    <rect key="frame" x="0.0" y="76" width="320" height="255.5"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-tl-uAC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="255.5" id="6W0-6b-eF8"/>
-                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="leading" secondItem="eNi-EN-RKk" secondAttribute="leading" id="Gja-7Z-xpf"/>
-                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="top" secondItem="eNi-EN-RKk" secondAttribute="top" id="OfX-Yw-GWw"/>
-                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="width" secondItem="eNi-EN-RKk" secondAttribute="width" id="TlE-b1-APC"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2rg-tl-uAC" secondAttribute="trailing" id="Uj3-uM-PHK"/>
-                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="height" secondItem="eNi-EN-RKk" secondAttribute="height" id="hwh-A6-Uqy"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2rg-tl-uAC" secondAttribute="bottom" constant="0.5" id="pOk-fu-02A"/>
-                                                    </constraints>
-                                                </scrollView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-ap-u1c">
                                                     <rect key="frame" x="84" y="8" width="172" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -216,19 +199,23 @@
                                                         <action selector="share:" destination="WxU-rc-UkR" eventType="touchUpInside" id="MoE-oe-fWd"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3As-vf-0h4">
-                                                    <rect key="frame" x="16" y="363" width="148" height="16"/>
+                                                <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNi-EN-RKk">
+                                                    <rect key="frame" x="0.0" y="76" width="320" height="255.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-tl-uAC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="256"/>
+                                                        </imageView>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="iRa-nT-YpF"/>
+                                                        <constraint firstAttribute="height" constant="255.5" id="6W0-6b-eF8"/>
+                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="leading" secondItem="eNi-EN-RKk" secondAttribute="leading" id="Gja-7Z-xpf"/>
+                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="top" secondItem="eNi-EN-RKk" secondAttribute="top" id="OfX-Yw-GWw"/>
+                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="width" secondItem="eNi-EN-RKk" secondAttribute="width" id="TlE-b1-APC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2rg-tl-uAC" secondAttribute="trailing" id="Uj3-uM-PHK"/>
+                                                        <constraint firstItem="2rg-tl-uAC" firstAttribute="height" secondItem="eNi-EN-RKk" secondAttribute="height" id="hwh-A6-Uqy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2rg-tl-uAC" secondAttribute="bottom" constant="0.5" id="pOk-fu-02A"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
-                                                    <state key="normal" title="Likes">
-                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="showLikes:" destination="WxU-rc-UkR" eventType="touchUpInside" id="Xmz-zV-NcP"/>
-                                                    </connections>
-                                                </button>
+                                                </scrollView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="kfJ-ES-dnk" secondAttribute="trailing" id="3ml-CE-whd"/>

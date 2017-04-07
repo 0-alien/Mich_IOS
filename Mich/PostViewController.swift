@@ -23,6 +23,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var zoomingScrollView: UIScrollView!
     
+    @IBOutlet var mainView: UIView!
     
     var post: PostClass!
     var postId: Int!
@@ -50,11 +51,15 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
 
         
+        
         self.zoomingScrollView.minimumZoomScale = 1.0;
         self.zoomingScrollView.maximumZoomScale = 6.0
 
     
     }
+    
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,6 +88,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         
     }
+    
     
     
     func loadPost() {
