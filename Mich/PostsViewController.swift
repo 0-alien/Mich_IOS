@@ -70,7 +70,6 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: cell.postImage)
         Nuke.loadImage(with: Foundation.URL(string: post.avatar!)!, into: cell.userImage)
-        cell.likeCount.text = String(post.nLikes!)
         cell.commentCount.text = String(post.nComments!)
         cell.liked = (post.myLike == 1)
         cell.index = indexPath.row

@@ -15,7 +15,6 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    @IBOutlet weak var likeCount: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var createdAt: UILabel!
@@ -58,10 +57,6 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
         // Configure the view for the selected state
     }
     
-    
-    func updateLikeCount(by: Int) {
-        likeCount.text = String(Int(likeCount.text!)! + by)
-    }
 
     
     //like from double tap
@@ -69,7 +64,6 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
         if (!self.liked) {
             self.cellDelegate?.postLiked(cellIndex: self.index, showAnimation: true)
             self.liked = true
-            self.updateLikeCount(by: 1)
         }
         //unlike ar unda qnas double tapze
     }
@@ -83,12 +77,10 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
         if (!self.liked) {
             self.cellDelegate?.postLiked(cellIndex: self.index, showAnimation: false)
             self.liked = true
-            self.updateLikeCount(by: 1)
         }
         else {
             self.cellDelegate?.postUnliked(cellIndex: self.index)
             self.liked = false
-            self.updateLikeCount(by: -1)
         }
     }
     
