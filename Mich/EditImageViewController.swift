@@ -123,12 +123,19 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         doneButtone.isEnabled = false
 
+        /*
+        
+        print(img.size.width);
+        print(img.size.height);
+        
         if(img.size.width < img.size.height){
             
             img = img.rotateImageByDegrees(90)
             
         }
-
+        
+         */
+ 
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: img!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
