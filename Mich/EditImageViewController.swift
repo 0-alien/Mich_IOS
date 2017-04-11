@@ -23,28 +23,15 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     @IBOutlet weak var photo: UIImageView!
-    
     var img: UIImage!
-    
     @IBOutlet weak var titleTF: UITextField!
-    
     @IBOutlet weak var doneButtone: UIBarButtonItem!
-    
     var postTitle: String?
-    
-    
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
-    @IBOutlet weak var imageHeigt: NSLayoutConstraint!
-    
-    @IBOutlet weak var imageWidth: NSLayoutConstraint!
-    
-    
-    
     @IBOutlet weak var photoTextTF: UITextField!
+    
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     
     
     
@@ -56,7 +43,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setImageToCrop(image:img)
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
@@ -78,19 +64,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     func setImageToCrop(image:UIImage){
-     
-        photo.image = image
-
-        imageWidth.constant = image.size.width
-        imageHeigt.constant = image.size.height
-        let scaleHeight = scrollView.frame.size.width / image.size.width
-        let scaleWidth = scrollView.frame.size.height / image.size.height
-        scrollView.minimumZoomScale = max(scaleWidth, scaleHeight)
-        scrollView.zoomScale = max(scaleWidth, scaleHeight)
         
-        print(scrollView.minimumZoomScale)
-        print(imageWidth.constant)
-        print(scrollView.frame.size)
+        photo.image = image.af_imageAspectScaled(toFit: scrollView.bounds.size)
+        imageWidth.constant = (photo.image?.size.width)!
+        imageHeight.constant = (photo.image?.size.height)!
+        scrollView.minimumZoomScale = 1
+        scrollView.zoomScale = 1
+        scrollView.maximumZoomScale = 3
         
     }
     
@@ -101,8 +81,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     @IBAction func crop(_ sender: Any) {
-        
-        
         
         let scale:CGFloat = 1/scrollView.zoomScale
         let x:CGFloat = scrollView.contentOffset.x * scale
@@ -180,13 +158,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         //        checkValidTitle()
         
         //        postTitle = titleTF.text
-        
-        
-        
-        
-        
-        
-        
+   
     }
     
     

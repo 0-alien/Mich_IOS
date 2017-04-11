@@ -5,7 +5,7 @@ extension UIImage {
     public func rotateImageByDegrees(_ degrees: CGFloat) -> UIImage {
         
         let degreesToRadians: (CGFloat) -> CGFloat = {
-            return $0 / 180.0 * CGFloat(M_PI)
+            return $0 / 180.0 * CGFloat(Double.pi)
         }
         
         // calculate the size of the rotated view's containing box for our drawing space

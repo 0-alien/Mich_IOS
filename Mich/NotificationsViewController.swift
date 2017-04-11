@@ -47,7 +47,6 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell! = nil
-        var c: Any?
         switch notifications[indexPath.row].type! {
         case 1:
             let c = tableView.dequeueReusableCell(withIdentifier: "PostLikedCell", for: indexPath) as! PostLikedCell
@@ -105,7 +104,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let cell = sender as? PostLikedCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = self.tableView.indexPath(for: cell)
             vc.postId = notifications[(indexPath?.row)!].itemId
@@ -115,7 +114,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let cell = sender as? CommentAddedCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = self.tableView.indexPath(for: cell)
             vc.postId = notifications[(indexPath?.row)!].itemId
@@ -125,7 +124,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let cell = sender as? CommentLikedCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = self.tableView.indexPath(for: cell)
             vc.postId = notifications[(indexPath?.row)!].itemId

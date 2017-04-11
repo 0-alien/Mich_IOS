@@ -205,7 +205,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let cell = sender as? UserPicturesCollectionViewCell else {
-                fatalError("Unexpected sender: \(sender)")
+                fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = imageCollection.indexPath(for: cell)
             vc.postId = posts[(indexPath?.item)!].id

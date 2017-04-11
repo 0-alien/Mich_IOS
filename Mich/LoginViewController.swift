@@ -88,9 +88,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let token = FBSDKAccessToken.current()
         if(FBSDKAccessToken.current() == nil){
             print("logaedout")
-            print(token)
+            print(String(describing: token))
         }else{
-            print(token)
+            print(String(describing: token))
             print("loggedIn")
             
         }
