@@ -64,14 +64,15 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     func setImageToCrop(image:UIImage){
-        
         photo.image = image.af_imageAspectScaled(toFit: scrollView.bounds.size)
         imageWidth.constant = (photo.image?.size.width)!
         imageHeight.constant = (photo.image?.size.height)!
+        print(photo.image?.size)
+        print(scrollView.bounds)
+        print(photo.bounds)
         scrollView.minimumZoomScale = 1
         scrollView.zoomScale = 1
         scrollView.maximumZoomScale = 3
-        
     }
     
     
