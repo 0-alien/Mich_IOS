@@ -32,73 +32,71 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
-    
-    
-    
-    
+
+    var rw: CGFloat = 0
+    var rh: CGFloat = 0
     
     var first: Bool! = true
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setImageToCrop(image:img)
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        
-        //tap.cancelsTouchesInView = false
-  
         view.addGestureRecognizer(tap)
-      
-        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setImageToCrop(image: img)
+    }
     
     func setImageToCrop(image:UIImage){
-        photo.image = image.af_imageAspectScaled(toFit: scrollView.bounds.size)
+        super.view.layoutIfNeeded()
+        let scale: CGFloat = min(scrollView.frame.size.width / image.size.width, scrollView.frame.size.height / image.size.height)
+        rw = (scrollView.frame.size.width - image.size.width * scale) / 2
+        rh = (scrollView.frame.size.height - image.size.height * scale) / 2
+        photo.image = image.af_imageAspectScaled(toFit: scrollView.frame.size)
         imageWidth.constant = (photo.image?.size.width)!
         imageHeight.constant = (photo.image?.size.height)!
         scrollView.minimumZoomScale = 1
         scrollView.zoomScale = 1
         scrollView.maximumZoomScale = 3
-        self.view.layoutIfNeeded()
-        print(photo.frame)
+        super.view.layoutIfNeeded()
     }
-    
-    
-    
-    
-    
-    
-    
+ 
     @IBAction func crop(_ sender: Any) {
+        let scale:CGFloat = 1 / scrollView.zoomScale
+        let x:CGFloat = max(scrollView.contentOffset.x * scale, rw) * (photo.image?.scale)!
+        let y:CGFloat = max(scrollView.contentOffset.y * scale, rh) * (photo.image?.scale)!
+        let leftLen: CGFloat = max(rw - scrollView.contentOffset.x * scale, 0)
+        var rightLen: CGFloat = 0
+        let upLen: CGFloat = max(rh - scrollView.contentOffset.y * scale, 0)
+        var downLen: CGFloat = 0
         
-        let scale:CGFloat = 1/scrollView.zoomScale
-        let x:CGFloat = scrollView.contentOffset.x * scale
-        let y:CGFloat = scrollView.contentOffset.y * scale
-        let width:CGFloat = scrollView.frame.size.width * scale
-        let height:CGFloat = scrollView.frame.size.height * scale
-        
+        /*
+         rw                                                                     -> witeli nawilis sigane
+         (scrollView.frame.size.width - 2 * rw)                                 -> suratis sigane
+         (scrollView.contentOffset.x + scrollView.frame.size.width) * scale     -> suratis ra nawili chans
+         */
+        if (rw + (scrollView.frame.size.width - 2 * rw) < (scrollView.contentOffset.x + scrollView.frame.size.width) * scale) {
+            rightLen = (scrollView.contentOffset.x + scrollView.frame.size.width) * scale - (rw + (scrollView.frame.size.width - 2 * rw))
+        }
+        if (rh + (scrollView.frame.size.height - 2 * rh) < (scrollView.contentOffset.y + scrollView.frame.size.height) * scale) {
+            downLen = (scrollView.contentOffset.y + scrollView.frame.size.height) * scale - (rh + (scrollView.frame.size.height - 2 * rh))
+        }
+        let width:CGFloat = (scrollView.frame.size.width * scale - leftLen - rightLen) * (photo.image?.scale)!
+        let height:CGFloat = (scrollView.frame.size.height * scale - upLen - downLen) * (photo.image?.scale)!
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         var croppedImage = UIImage(cgImage: croppedCGImage!)
-
-        
         if((photo.image?.size.width)! < (photo.image?.size.height)!){
             croppedImage = croppedImage.rotateImageByDegrees(90)
         }
-
         setImageToCrop(image: croppedImage)
-
     }
 
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.photo
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -113,22 +111,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     @IBAction func done(_ sender: Any) {
-        
         doneButtone.isEnabled = false
-
-        /*
-        
-        print(img.size.width);
-        print(img.size.height);
-        
-        if(img.size.width < img.size.height){
-            
-            img = img.rotateImageByDegrees(90)
-            
-        }
-        
-         */
- 
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: img!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
@@ -139,21 +122,14 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         textField.resignFirstResponder()
         done(self)
         return true
-        
     }
-    
-    
-    
+
     func checkValidTitle() {
-        
         let text = titleTF.text ?? ""
         
         doneButtone.isEnabled = !text.isEmpty
         
     }
-    
-    
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         //        checkValidTitle()
@@ -161,25 +137,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         //        postTitle = titleTF.text
    
     }
-    
-    
-    
-    
-    
+
     func textFieldDidChange(_ textField: UITextField) {
         
         if(titleTF.text!  == ""){
-            
-            
-            
             doneButtone.isEnabled = false;
-            
         }else{
-            
-            
-            
             doneButtone.isEnabled = true;
-            
             postTitle = titleTF.text
             
         }

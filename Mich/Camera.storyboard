@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mrg-OE-bJB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ujJ-6x-QgF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -43,11 +43,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6hM-dW-tvg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HmF-45-Pir">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Write a caption" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQ4-ol-dYc">
-                                <rect key="frame" x="0.0" y="64" width="375" height="35"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="i4j-LP-XKx"/>
@@ -59,24 +59,24 @@
                                 </connections>
                             </textField>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="99" width="375" height="375"/>
+                                <rect key="frame" x="0.0" y="99" width="320" height="320"/>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
-                                        <rect key="frame" x="137.5" y="137.5" width="100" height="100"/>
-                                        <color key="backgroundColor" red="0.96470588239999999" green="0.0" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="110" y="110" width="100" height="100"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="5E4-5n-w6w"/>
-                                            <constraint firstAttribute="height" constant="100" id="fRi-rR-Xsf"/>
+                                            <constraint firstAttribute="width" constant="100" id="BF4-Pb-xOR"/>
+                                            <constraint firstAttribute="height" constant="100" id="TSn-xS-BLy"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerY" secondItem="src-mk-xhh" secondAttribute="centerY" id="1lk-by-X70"/>
-                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerX" secondItem="src-mk-xhh" secondAttribute="centerX" id="4Pa-4J-5by"/>
-                                    <constraint firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="4Ss-dU-Mlq"/>
-                                    <constraint firstAttribute="bottom" secondItem="LOP-KF-9Gw" secondAttribute="bottom" id="PW0-lB-0dX"/>
+                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerX" secondItem="src-mk-xhh" secondAttribute="centerX" id="V3c-YA-SsW"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="Z3x-CE-9Hw"/>
+                                    <constraint firstAttribute="bottom" secondItem="LOP-KF-9Gw" secondAttribute="bottom" id="cgo-l8-TKP"/>
                                     <constraint firstAttribute="width" secondItem="src-mk-xhh" secondAttribute="height" multiplier="1:1" id="xgz-un-jc1"/>
+                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerY" secondItem="src-mk-xhh" secondAttribute="centerY" id="yyp-Ap-r7E"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <connections>
@@ -84,35 +84,35 @@
                                 </connections>
                             </scrollView>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DiX-VC-nld">
-                                <rect key="frame" x="16" y="271.5" width="343" height="30"/>
+                                <rect key="frame" x="16" y="244" width="288" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Urd-6z-09d">
-                                <rect key="frame" x="16" y="482" width="30" height="30"/>
+                                <rect key="frame" x="16" y="427" width="30" height="30"/>
                                 <state key="normal" title="Aa"/>
                                 <connections>
                                     <action selector="photoText:" destination="4O9-bL-jmS" eventType="touchUpInside" id="kRv-GM-Oqh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQ7-qS-WZk">
-                                <rect key="frame" x="239.5" y="482" width="30" height="30"/>
+                                <rect key="frame" x="202.5" y="427" width="30" height="30"/>
                                 <state key="normal" title="Title"/>
                                 <connections>
                                     <action selector="photoTitle:" destination="4O9-bL-jmS" eventType="touchUpInside" id="d2s-LI-2XN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk" userLabel="Crop">
-                                <rect key="frame" x="329" y="482" width="30" height="30"/>
+                                <rect key="frame" x="274" y="427" width="30" height="30"/>
                                 <state key="normal" image="crop"/>
                                 <connections>
                                     <action selector="crop:" destination="4O9-bL-jmS" eventType="touchUpInside" id="hDR-e2-rIs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
-                                <rect key="frame" x="119.5" y="482" width="30" height="30"/>
+                                <rect key="frame" x="101.5" y="427" width="30" height="30"/>
                                 <state key="normal" image="adjust"/>
                                 <connections>
                                     <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="H77-t7-Xmy"/>
@@ -163,8 +163,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="doneButtone" destination="rfL-qB-eSI" id="7OA-ox-e0K"/>
-                        <outlet property="imageHeight" destination="fRi-rR-Xsf" id="EVX-Id-qji"/>
-                        <outlet property="imageWidth" destination="5E4-5n-w6w" id="QeI-Lp-8xr"/>
+                        <outlet property="imageHeight" destination="TSn-xS-BLy" id="svE-T7-vr3"/>
+                        <outlet property="imageWidth" destination="BF4-Pb-xOR" id="s7Z-Vn-HSy"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="photoTextTF" destination="DiX-VC-nld" id="9Yf-lu-gSj"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
