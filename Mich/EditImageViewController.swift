@@ -32,12 +32,12 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
-
+    
     var rw: CGFloat = 0
     var rh: CGFloat = 0
     
     var first: Bool! = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -63,7 +63,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         scrollView.maximumZoomScale = 3
         super.view.layoutIfNeeded()
     }
- 
+    
     @IBAction func crop(_ sender: Any) {
         let scale:CGFloat = 1 / scrollView.zoomScale
         let x:CGFloat = max(scrollView.contentOffset.x * scale, rw) * (photo.image?.scale)!
@@ -93,7 +93,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         }
         setImageToCrop(image: croppedImage)
     }
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.photo
     }
@@ -123,7 +123,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         done(self)
         return true
     }
-
+    
     func checkValidTitle() {
         let text = titleTF.text ?? ""
         
@@ -135,9 +135,9 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         //        checkValidTitle()
         
         //        postTitle = titleTF.text
-   
+        
     }
-
+    
     func textFieldDidChange(_ textField: UITextField) {
         
         if(titleTF.text!  == ""){

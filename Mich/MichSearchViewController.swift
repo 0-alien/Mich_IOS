@@ -32,7 +32,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentIndex = 3
         
         self.definesPresentationContext = true
         self.automaticallyAdjustsScrollViewInsets = false
@@ -43,6 +42,8 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
             self.imageCollection.addSubview(refreshControl)
         }
         (imageCollection.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: imageSideLength, height: imageSideLength)
+        
+        currentIndex = 3
         
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
@@ -60,6 +61,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -60,10 +60,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         followingButton.titleLabel?.textAlignment = .center
         followingButton.setTitle("Following", for: .normal)
         
-        currentIndex = 4
-        
         self.profilePicture = self.profilePicture.borderedCircle
-        
+        currentIndex = 4
         if (self.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id || self.userId == -1) {
             user = (UIApplication.shared.delegate as! AppDelegate).user
             self.navigationItem.title = user?.username
@@ -74,7 +72,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
             followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
             self.navigationItem.rightBarButtonItem = nil
-            
         }
         else {
             self.canVs = true
@@ -84,7 +81,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                                 successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
             MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.userId)!,
                                 successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
-
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         
@@ -103,6 +99,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     @IBAction func editOrFollow(_ sender: Any) {
         if (isOwner) {

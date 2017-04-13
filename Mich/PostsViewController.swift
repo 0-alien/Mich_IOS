@@ -30,12 +30,12 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let logo = UIImage(named: imageName)
         let imageView = UIImageView(image: logo)
         self.navigationItem.titleView = imageView
-        currentIndex = 0
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl = refreshControl
         } else {
             self.tableView.addSubview(refreshControl)
         }
+        currentIndex = 0
         MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }
     
@@ -47,7 +47,6 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         super.viewWillDisappear(animated)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -114,6 +113,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             guard let vc = segue.destination as? UserPicturesCollectionViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
+            vc.hidesBottomBarWhenPushed = true
             vc.userId = self.destinationUserId
         }
         else if segue.identifier == "showcomments" {

@@ -16,8 +16,8 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
-        currentIndex = 1
         self.tableView.rowHeight = 80
+        currentIndex = 1
 
     }
     override func didReceiveMemoryWarning() {
@@ -36,7 +36,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         else {
             return VSTableViewSectionHeader(frame: frame, labelName: " More Conversations", seeMoreCount: 3, listener: self, selector: #selector(VSViewController.moreSeeMore(_:)))
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
