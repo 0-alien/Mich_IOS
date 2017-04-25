@@ -9,6 +9,7 @@
 import UIKit
 import Nuke
 import Social
+import QuartzCore
 
 class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate {
 
@@ -76,6 +77,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.userName.text = post.userName
         
         cell.scrollView.delegate = cell
+        cell.clipsToBounds = false
         cell.scrollView.minimumZoomScale = 1.0
         cell.scrollView.maximumZoomScale = 6.0
         
@@ -101,11 +103,9 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             cell.likeCountButton.isHidden = false
             cell.likeCountButton.setTitle(String(0 + post.nLikes!) + " Likes", for: .normal)
         }
-        cell.clipsToBounds = false
         
         return cell
     }
-    
     // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -123,7 +123,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             vc.postId = self.destinationPostId
         }
         else if segue.identifier == "showlikes" {
-            
+            // TODO
         }
     }
     
@@ -143,6 +143,10 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             })
         }
         MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: posts[cellIndex].id!, successCallbackForLike: onLikeUnlikeSuccess, errorCallbackForLike: onError)
+    }
+    
+    func reloadSingleCell(cellIndex: Int) {
+        self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
     }
     
     func postUnliked(cellIndex: Int) {
@@ -224,8 +228,6 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         shareToFacebook.add(Foundation.URL(string:socialShareResponse.url!))
         
         self.present(shareToFacebook, animated: true, completion: nil)
-
-
         print(socialShareResponse.url ?? "")
         
     }

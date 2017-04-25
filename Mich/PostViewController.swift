@@ -80,12 +80,15 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         return self.postImage
     }
     
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        self.navigationController?.navigationBar.layer.zPosition = -1
+    }
+    
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
 
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.zoomingScrollView.setZoomScale(1.0, animated: false)
-        }, completion: { _ in })
-        
+        }, completion: { _ in self.navigationController?.navigationBar.layer.zPosition = 0 })
         
     }
     
