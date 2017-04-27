@@ -35,7 +35,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
 
     func cameraClicked() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             if (self.isCameraShown) {
                 hideChoose()
             }
@@ -52,7 +52,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     func hideChoose() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             if (self.isCameraShown) {
                 self.isCameraShown = false
                 NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
@@ -107,22 +107,22 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     //------------------
     
     func showNotifications() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             performSegue(withIdentifier: "notifications", sender: nil)
         }
     }
     func showMessages() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             performSegue(withIdentifier: "messages", sender: nil)
         }
     }
     func showSettings() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             performSegue(withIdentifier: "settings", sender: nil)
         }
     }
     func showHelp() {
-        if (tabBarController?.selectedIndex == currentIndex) {
+        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
             performSegue(withIdentifier: "help", sender: nil)
         }
     }
@@ -134,6 +134,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        (tabBarController as! MainTabBarController).savedIndex = currentIndex
         NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
     }
 }

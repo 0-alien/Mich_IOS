@@ -32,12 +32,12 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBOutlet weak var imageHeight: NSLayoutConstraint!
     @IBOutlet weak var imageWidth: NSLayoutConstraint!
-
+    
     var rw: CGFloat = 0
     var rh: CGFloat = 0
     
     var first: Bool! = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -63,11 +63,11 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         scrollView.maximumZoomScale = 3
         super.view.layoutIfNeeded()
     }
- 
+    
     @IBAction func crop(_ sender: Any) {
         let scale:CGFloat = 1 / scrollView.zoomScale
-        let x:CGFloat = max(scrollView.contentOffset.x * scale, rw) * (photo.image?.scale)!
-        let y:CGFloat = max(scrollView.contentOffset.y * scale, rh) * (photo.image?.scale)!
+        var x:CGFloat = max(scrollView.contentOffset.x * scale, rw)
+        var y:CGFloat = max(scrollView.contentOffset.y * scale, rh)
         let leftLen: CGFloat = max(rw - scrollView.contentOffset.x * scale, 0)
         var rightLen: CGFloat = 0
         let upLen: CGFloat = max(rh - scrollView.contentOffset.y * scale, 0)
@@ -86,6 +86,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         }
         let width:CGFloat = (scrollView.frame.size.width * scale - leftLen - rightLen) * (photo.image?.scale)!
         let height:CGFloat = (scrollView.frame.size.height * scale - upLen - downLen) * (photo.image?.scale)!
+        x = x * (photo.image?.scale)!
+        y = y * (photo.image?.scale)!
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         var croppedImage = UIImage(cgImage: croppedCGImage!)
         if((photo.image?.size.width)! < (photo.image?.size.height)!){
@@ -93,7 +95,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         }
         setImageToCrop(image: croppedImage)
     }
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.photo
     }
@@ -123,7 +125,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         done(self)
         return true
     }
-
+    
     func checkValidTitle() {
         let text = titleTF.text ?? ""
         
@@ -135,9 +137,9 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         //        checkValidTitle()
         
         //        postTitle = titleTF.text
-   
+        
     }
-
+    
     func textFieldDidChange(_ textField: UITextField) {
         
         if(titleTF.text!  == ""){
@@ -187,36 +189,21 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     @IBAction func zoomBTN(_ sender: Any) {
-        
-        
-        
+
         UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             
             self.scrollView.zoomScale = self.scrollView.minimumZoomScale
             
         }, completion: { _ in })
-        
-        
-        
-        
-        
-        
-        
+
     }
-    
-    
-    
+ 
     //Mark: oncreate callbacks
-    
-    
-    
     func oncreatesuccess() {
         
         self.tabBarController?.selectedIndex = 0
         
-        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.setContentOffset(CGPoint.zero, animated: true)
-        
-        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).handleRefresh(((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.refreshControl!)
+        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         
         _ = self.navigationController?.popViewController(animated: true)
         

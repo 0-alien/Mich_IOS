@@ -65,18 +65,18 @@
                                         <rect key="frame" x="110" y="110" width="100" height="100"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="BF4-Pb-xOR"/>
-                                            <constraint firstAttribute="height" constant="100" id="TSn-xS-BLy"/>
+                                            <constraint firstAttribute="height" constant="100" id="3j4-lw-DEc"/>
+                                            <constraint firstAttribute="width" constant="100" id="mfr-4G-NsO"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerX" secondItem="src-mk-xhh" secondAttribute="centerX" id="V3c-YA-SsW"/>
-                                    <constraint firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="Z3x-CE-9Hw"/>
-                                    <constraint firstAttribute="bottom" secondItem="LOP-KF-9Gw" secondAttribute="bottom" id="cgo-l8-TKP"/>
+                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerX" secondItem="src-mk-xhh" secondAttribute="centerX" id="6ZC-RM-hzZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOP-KF-9Gw" secondAttribute="trailing" id="6g4-Ck-nLf"/>
+                                    <constraint firstAttribute="bottom" secondItem="LOP-KF-9Gw" secondAttribute="bottom" id="FZ0-jr-jHQ"/>
+                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerY" secondItem="src-mk-xhh" secondAttribute="centerY" id="bg3-3J-izS"/>
                                     <constraint firstAttribute="width" secondItem="src-mk-xhh" secondAttribute="height" multiplier="1:1" id="xgz-un-jc1"/>
-                                    <constraint firstItem="LOP-KF-9Gw" firstAttribute="centerY" secondItem="src-mk-xhh" secondAttribute="centerY" id="yyp-Ap-r7E"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                 <connections>
@@ -163,8 +163,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="doneButtone" destination="rfL-qB-eSI" id="7OA-ox-e0K"/>
-                        <outlet property="imageHeight" destination="TSn-xS-BLy" id="svE-T7-vr3"/>
-                        <outlet property="imageWidth" destination="BF4-Pb-xOR" id="s7Z-Vn-HSy"/>
+                        <outlet property="imageHeight" destination="3j4-lw-DEc" id="RpK-t6-7YL"/>
+                        <outlet property="imageWidth" destination="mfr-4G-NsO" id="VNc-M2-xZU"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="photoTextTF" destination="DiX-VC-nld" id="9Yf-lu-gSj"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
@@ -173,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-679.6875" y="-124.37500000000001"/>
+            <point key="canvasLocation" x="-763" y="-123"/>
         </scene>
     </scenes>
     <resources>

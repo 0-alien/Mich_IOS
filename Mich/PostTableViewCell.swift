@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
    
@@ -38,12 +39,13 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.postImage
     }
-    
+
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.scrollView.setZoomScale(1.0, animated: false)
         }, completion: { _ in })
+        
         
     }
     
@@ -102,4 +104,5 @@ protocol PostTableViewCellDelegate {
     func showLikes(cellIndex: Int)
     func showProfile(cellIndex: Int)
     func share(cellIndex: Int)
+    func reloadSingleCell(cellIndex: Int)
 }
