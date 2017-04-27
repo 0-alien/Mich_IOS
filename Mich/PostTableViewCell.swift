@@ -40,6 +40,10 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
         return self.postImage
     }
 
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        //self.cellDelegate?.reloadSingleCell(cellIndex: self.index)
+    }
+    
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in

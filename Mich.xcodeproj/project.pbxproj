@@ -181,6 +181,7 @@
 		1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSInviteCell.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
+		1E5C71F11EB0BA3100409FDD /* Mich.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mich.entitlements; sourceTree = "<group>"; };
 		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -355,6 +356,7 @@
 		1E1E506E1D8AB3D0002D1C24 /* Mich */ = {
 			isa = PBXGroup;
 			children = (
+				1E5C71F11EB0BA3100409FDD /* Mich.entitlements */,
 				CF3927961E29130A00F0C924 /* Bean */,
 				CF3927931E2910A600F0C924 /* Transport */,
 				1E45CF961DAD0450006967CD /* Extentions */,
@@ -644,8 +646,13 @@
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 57R943V29M;
+						DevelopmentTeam = 7TD4VAZW2Z;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1003,7 +1010,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				DEVELOPMENT_TEAM = 57R943V29M;
+				CODE_SIGN_ENTITLEMENTS = Mich/Mich.entitlements;
+				DEVELOPMENT_TEAM = 7TD4VAZW2Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1011,7 +1019,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Lemon.Mich.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1024,7 +1032,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				DEVELOPMENT_TEAM = 57R943V29M;
+				CODE_SIGN_ENTITLEMENTS = Mich/Mich.entitlements;
+				DEVELOPMENT_TEAM = 7TD4VAZW2Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1032,7 +1041,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Lemon.Mich.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
