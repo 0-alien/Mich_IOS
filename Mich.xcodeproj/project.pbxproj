@@ -89,7 +89,6 @@
 		CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */; };
 		CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF41E4215C500B1A59E /* LogoutRequest.swift */; };
 		CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF61E4215D900B1A59E /* LogoutResponse.swift */; };
-		CF26B3021DFACFF30033C6F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */; };
 		CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */; };
 		CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */; };
 		CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */; };
@@ -132,6 +131,7 @@
 		CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */; };
 		CFDBBCD81E852AAA00EA9032 /* SocialResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */; };
 		CFDBBCDA1E852ADE00EA9032 /* SocialRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */; };
+		CFE037FC1EB1FA7900E366A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFE037FB1EB1FA7900E366A4 /* GoogleService-Info.plist */; };
 		CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE38FF61E7952A10037CB5B /* HelpViewController.swift */; };
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
@@ -220,6 +220,7 @@
 		CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowingRequest.swift; sourceTree = "<group>"; };
 		CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostRequest.swift; sourceTree = "<group>"; };
 		CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostResponse.swift; sourceTree = "<group>"; };
+		CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mich.entitlements; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		CF092BC11E94F0E800C18718 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
 		CF149D261E77EB81005911FB /* UpdateUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
@@ -234,7 +235,6 @@
 		CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverRequest.swift; sourceTree = "<group>"; };
 		CF209DF41E4215C500B1A59E /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		CF209DF61E4215D900B1A59E /* LogoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
-		CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
 		CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowingRequest.swift; sourceTree = "<group>"; };
@@ -277,6 +277,7 @@
 		CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendRecoveryRequest.swift; sourceTree = "<group>"; };
 		CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialResponse.swift; sourceTree = "<group>"; };
 		CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialRequest.swift; sourceTree = "<group>"; };
+		CFE037FB1EB1FA7900E366A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFE38FF61E7952A10037CB5B /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +356,7 @@
 		1E1E506E1D8AB3D0002D1C24 /* Mich */ = {
 			isa = PBXGroup;
 			children = (
+				CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */,
 				CF3927961E29130A00F0C924 /* Bean */,
 				CF3927931E2910A600F0C924 /* Transport */,
 				1E45CF961DAD0450006967CD /* Extentions */,
@@ -362,12 +364,12 @@
 				1EF192C21D8AE50700676CE2 /* Cabinet */,
 				1EF192C11D8AE4FF00676CE2 /* Controllers */,
 				1E1E506F1D8AB3D0002D1C24 /* AppDelegate.swift */,
+				CFE037FB1EB1FA7900E366A4 /* GoogleService-Info.plist */,
 				1E1E50711D8AB3D0002D1C24 /* ViewController.swift */,
 				1E1E50731D8AB3D0002D1C24 /* Main.storyboard */,
 				1E1E50761D8AB3D0002D1C24 /* Assets.xcassets */,
 				1E1E50781D8AB3D0002D1C24 /* LaunchScreen.storyboard */,
 				1E1E507B1D8AB3D0002D1C24 /* Info.plist */,
-				CF26B3011DFACFF30033C6F0 /* GoogleService-Info.plist */,
 				1EF192C31D8AE53000676CE2 /* images.xcassets */,
 			);
 			path = Mich;
@@ -640,12 +642,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0820;
-				ORGANIZATIONNAME = Gigi;
+				ORGANIZATIONNAME = Lemon;
 				TargetAttributes = {
 					1E1E506B1D8AB3D0002D1C24 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 57R943V29M;
+						DevelopmentTeam = 7TD4VAZW2Z;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -672,9 +682,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF26B3021DFACFF30033C6F0 /* GoogleService-Info.plist in Resources */,
 				1E60A1E51E4C5BFA001B9EFF /* Camera.xib in Resources */,
 				1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */,
+				CFE037FC1EB1FA7900E366A4 /* GoogleService-Info.plist in Resources */,
 				1E1E507A1D8AB3D0002D1C24 /* LaunchScreen.storyboard in Resources */,
 				1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */,
 				CF209DE91E41E62900B1A59E /* Cabinet.storyboard in Resources */,
@@ -720,7 +730,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1003,7 +1013,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				DEVELOPMENT_TEAM = 57R943V29M;
+				CODE_SIGN_ENTITLEMENTS = Mich/Mich.entitlements;
+				DEVELOPMENT_TEAM = 7TD4VAZW2Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1011,7 +1022,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Lemon.Mich.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1024,7 +1035,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				DEVELOPMENT_TEAM = 57R943V29M;
+				CODE_SIGN_ENTITLEMENTS = Mich/Mich.entitlements;
+				DEVELOPMENT_TEAM = 7TD4VAZW2Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1032,7 +1044,7 @@
 				INFOPLIST_FILE = Mich/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Gigi.Mich;
+				PRODUCT_BUNDLE_IDENTIFIER = Lemon.Mich.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

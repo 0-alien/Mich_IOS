@@ -15,6 +15,7 @@ import TwitterKit
 import GoogleSignIn
 import Firebase
 import PusherSwift
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +35,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = FBSDKLoginButton.classForCoder()
         
         Fabric.with([Twitter.self])
+        
+        FIRApp.configure()
+        
+        
+        
+        
+
+        
+        
+        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+
+        application.registerForRemoteNotifications()
+        application.registerUserNotificationSettings(settings)
+        
+        
 /*
         
         FIRApp.configure()
@@ -43,6 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
+    
+    
+    func application(_ application: UIApplication,
+                              didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                              fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+    
+        print(userInfo)
+        
+    }
+    
     
     func setUpNotifications() {
         self.pusher = Pusher(key: "631cad75e06b7aa8904a", options: PusherClientOptions(host: .cluster("eu")))
