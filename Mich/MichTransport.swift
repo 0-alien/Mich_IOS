@@ -1143,10 +1143,12 @@ class MichTransport {
  
         
         
-        let imageData:NSData = UIImageJPEGRepresentation(image, 0.1)! as NSData
+        let imageData:NSData = UIImageJPEGRepresentation(image, 0.3)! as NSData
 
         let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
 
+        
+        //print(strBase64)
         
         let createpostRequest = CreatePostRequest(token: token, title: title, image: strBase64)
         let payloadJson = createpostRequest.toJSONString()

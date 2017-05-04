@@ -90,9 +90,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         y = y * (photo.image?.scale)!
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         var croppedImage = UIImage(cgImage: croppedCGImage!)
-        if((photo.image?.size.width)! < (photo.image?.size.height)!){
-            croppedImage = croppedImage.rotateImageByDegrees(90)
-        }
         setImageToCrop(image: croppedImage)
     }
     
@@ -114,7 +111,18 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
-        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: img!,
+/*
+        print("ASDASDASDASDASDASDASDASDASDASDASDAS_+_++__+_+_+_+__++__+_+_=-=--==-=-=-=")
+        print(img.size.height)
+        print(img.size.width)
+        
+        if(img.size.height > img.size.width){
+            img = img.rotateImageByDegrees(90)
+        }
+  */
+        
+        
+        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: photo.image!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
     
