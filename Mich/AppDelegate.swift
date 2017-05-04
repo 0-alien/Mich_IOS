@@ -15,6 +15,7 @@ import TwitterKit
 import GoogleSignIn
 import Firebase
 import PusherSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,25 +32,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var pusher: Pusher! = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        application.applicationIconBadgeNumber = 0
+        
+        /*if let notification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
+            let aps = notification["aps"] as! [String: AnyObject]
+            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+            window?.rootViewController = vc
+            (window?.rootViewController as? ScrollingViewController)?.myTabBar?.selectedIndex = 1
+        }*/
+        
         let _ = FBSDKLoginButton.classForCoder()
-        
         Fabric.with([Twitter.self])
-/*
-        
         FIRApp.configure()
         
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-*/
-        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
+    
+    
+    func application(_ application: UIApplication,
+                              didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                              fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+        
+    }
+    
     
     func setUpNotifications() {
         self.pusher = Pusher(key: "631cad75e06b7aa8904a", options: PusherClientOptions(host: .cluster("eu")))
         let channel = pusher.subscribe(String((self.user?.id)! + 0))
         let _ = channel.bind(eventName: "invitation", callback: inviteRecieved)
         pusher.connect()
-        
     }
     
     func inviteRecieved(data: Any?) -> Void {

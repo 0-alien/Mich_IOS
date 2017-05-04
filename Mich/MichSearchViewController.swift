@@ -94,6 +94,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         super.prepare(for: segue, sender: sender)
         if (segue.identifier == "gotoprofilepage") {
             (segue.destination as! UserPicturesCollectionViewController).userId = self.destinationUserId
+            (segue.destination as! UserPicturesCollectionViewController).hidesBottomBarWhenPushed = true
         }
         else if segue.identifier == "showpost" {
             if let selectedCell = sender as? UserPicturesCollectionViewCell {
