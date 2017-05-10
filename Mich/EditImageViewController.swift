@@ -43,16 +43,20 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        photo.image = img
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setImageToCrop(image: img)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateScrollViewZooms()
     }
     
     func setImageToCrop(image:UIImage){
-        super.view.layoutIfNeeded()
         photo.image = image
+        updateScrollViewZooms()
+    }
+    
+    func updateScrollViewZooms() {
         scrollView.minimumZoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
         scrollView.zoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
         scrollView.maximumZoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!) * 5
