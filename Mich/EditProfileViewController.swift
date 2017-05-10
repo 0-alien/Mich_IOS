@@ -97,7 +97,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     
     @IBAction func editProfile(_ sender: Any) {
-        let alert = UIAlertController(title: "Edit Profile", message: "", preferredStyle: .alert)
+        let alert = UIAlertController()
         
         let takePicture = UIAlertAction(title: "Take Picture", style: .default, handler: { ACTION in
             self.camera(sender as AnyObject)
@@ -106,17 +106,18 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let library = UIAlertAction(title: "Choose from library", style: .default, handler: { ACTION in
            
             self.libr(sender as AnyObject)
-            
-            
+ 
         })
         
-       
-        
+
         alert.addAction(takePicture)
         alert.addAction(library)
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.destructive,handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
         
         self.present(alert, animated: true, completion: nil)
+        
+        
+        
         
         
     }
