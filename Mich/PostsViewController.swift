@@ -75,6 +75,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.index = indexPath.row
         cell.createdAt.text = post.created_at
         cell.userName.text = post.userName
+        cell.userImage = cell.userImage.circle
         
         cell.scrollView.delegate = cell
         cell.clipsToBounds = false
@@ -88,6 +89,9 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let profilePictureTap = UITapGestureRecognizer(target: cell, action: #selector(cell.showProfile))
         profilePictureTap.numberOfTapsRequired = 1
         cell.userImage.addGestureRecognizer(profilePictureTap)
+        let userImageTap = UITapGestureRecognizer(target: cell, action: #selector(cell.showProfile))
+        userImageTap.numberOfTapsRequired = 1
+        cell.userName.addGestureRecognizer(userImageTap)
         
         cell.cellDelegate = self
         cell.title.text = post.title

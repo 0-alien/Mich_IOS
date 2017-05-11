@@ -18,11 +18,17 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: false, completion: nil)
-
+        if (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName == "LoginViewController" {
+            let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! LoginViewController
+            (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        }
+        else if (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName == "MainTabBarController" {
+            let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! ScrollingViewController
+            (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        }
+        self.dismiss(animated: false, completion: nil)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

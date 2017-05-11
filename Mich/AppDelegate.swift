@@ -30,35 +30,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     var pusher: Pusher! = nil
+    var StartStoryboardName: String! = nil
+    var StartViewControllerName: String! = nil
+    var StartingTabIndex: Int! = 0
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+        }
+        application.registerForRemoteNotifications()
         
-        application.applicationIconBadgeNumber = 0
+        if let _ = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
+            self.StartViewControllerName = "MainTabBarController"
+            self.StartStoryboardName = "Userspace"
+            self.StartingTabIndex = 1
+            return true
+        }
         
-        /*if let notification = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
-            let aps = notification["aps"] as! [String: AnyObject]
-            let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-            window?.rootViewController = vc
-            (window?.rootViewController as? ScrollingViewController)?.myTabBar?.selectedIndex = 1
-        }*/
+        let defaults = UserDefaults.standard
+        if let _ = defaults.string(forKey: "UserId") {
+            self.StartViewControllerName = "MainTabBarController"
+            self.StartStoryboardName = "Userspace"
+            self.StartingTabIndex = 0
+            return true
+        }
+        
+        self.StartViewControllerName = "LoginViewController"
+        self.StartStoryboardName = "Cabinet"
         
         let _ = FBSDKLoginButton.classForCoder()
         Fabric.with([Twitter.self])
         FIRApp.configure()
-        
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
-        application.registerForRemoteNotifications()
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     
-    func application(_ application: UIApplication,
-                              didReceiveRemoteNotification userInfo: [AnyHashable : Any],
-                              fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void){
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
     }
     
