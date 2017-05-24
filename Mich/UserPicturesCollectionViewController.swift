@@ -16,6 +16,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     let spaceing : CGFloat = 1.0
     let itemsPerRow : CGFloat = 3.0
     var imageSideLength : CGFloat = 0.0
+    var tmpImage: UIImage!
+    var changeProfilePicture: Bool! = false //imagepickercontroller helper flag
     
     @IBOutlet weak var editOrFollow: UIButton!
     @IBOutlet weak var profilePicture: UIImageView!
@@ -184,6 +186,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         self.canVs = false
     }
     
+    func onUpdateProfilePicture(resp: User) {
+        self.profilePicture.image = tmpImage
+        self.user = resp
+    }
+    
     // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
@@ -234,5 +241,65 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         self.imageCollection.reloadData()
     }
+    override func camera(_ sender: AnyObject) {
+        if self.changeProfilePicture {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+                imagePicker.allowsEditing = false
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        else {
+            super.camera(sender)
+        }
+    }
     
+    override func libr(_ sender: AnyObject) {
+        if self.changeProfilePicture {
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+                imagePicker.allowsEditing = false
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        else {
+            super.libr(sender)
+        }
+    }
+  
+    @IBAction func changeProfilePicture(_ sender: Any) {
+        self.changeProfilePicture = true
+        let alert = UIAlertController()
+        let takePicture = UIAlertAction(title: "Take Picture", style: .default, handler: { ACTION in
+            self.camera(sender as AnyObject)
+        })
+        let library = UIAlertAction(title: "Choose from library", style: .default, handler: { ACTION in
+            self.libr(sender as AnyObject)
+        })
+        alert.addAction(takePicture)
+        alert.addAction(library)
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.changeProfilePicture = false
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
+        if self.changeProfilePicture {
+            self.changeProfilePicture = false
+            tmpImage = image
+            self.dismiss(animated: true, completion: nil)
+            MichTransport.updateUser(token: (UIApplication.shared.delegate as! AppDelegate).token!, name: user?.username, email: user?.email, avatar: tmpImage, successCallbackForUpdateUser: onUpdateProfilePicture, errorCallbackForUpdateUser: onerror)
+        }
+        else {
+            super.imagePickerController(picker, didFinishPickingImage: image, editingInfo: editingInfo)
+        }
+    }
 }

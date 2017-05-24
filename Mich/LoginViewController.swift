@@ -12,6 +12,7 @@ import FBSDKShareKit
 import FBSDKLoginKit
 import TwitterKit
 import GoogleSignIn
+import Firebase
 
 
 class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
@@ -209,14 +210,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     func ongetcurrentuser(getcurrentuserResponse: User){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.user = getcurrentuserResponse
-        appDelegate.setUpNotifications()
-        
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         self.dismiss(animated: false, completion: nil)
         MichNotificationsTransport.getUnseenNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetUnseenNotifications: onGetUnseenNotificationsSuccess, errorCallbackForGetUnseenNotifications: onError)
-        //self.present(vc, animated: false, completion: nil)
     }
     
     func onGetUnseenNotificationsSuccess(resp: Int) {
