@@ -186,10 +186,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         let user = usernameTXT.text!
         let pass = passwordTXT.text!
-        
-        print(FIRInstanceID.instanceID().token())
-        
-        MichTransport.defaultLogin(username: user, password: pass, successCallback: onLogin, errorCallback: onError)
+        MichTransport.defaultLogin(username: user, password: pass, token: FIRInstanceID.instanceID().token()!, successCallback: onLogin, errorCallback: onError)
         
     }
     

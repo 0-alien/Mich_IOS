@@ -37,12 +37,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
         }
         application.registerForRemoteNotifications()
+        FIRApp.configure()
         
+        let _ = FBSDKLoginButton.classForCoder()
+        Fabric.with([Twitter.self])
+        
+        // ar mushaobs user ar aris sheqmnili jer
         if let _ = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
             self.StartViewControllerName = "MainTabBarController"
             self.StartStoryboardName = "Userspace"
             self.StartingTabIndex = 1
-            return true
+            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
         
         let defaults = UserDefaults.standard
@@ -50,25 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.StartViewControllerName = "MainTabBarController"
             self.StartStoryboardName = "Userspace"
             self.StartingTabIndex = 0
-            return true
+            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
         
         self.StartViewControllerName = "LoginViewController"
         self.StartStoryboardName = "Cabinet"
-        
-        let _ = FBSDKLoginButton.classForCoder()
-        Fabric.with([Twitter.self])
-        FIRApp.configure()
-        FIRMessaging.messaging().remoteMessageDelegate = self
-        print("-----")
-        print(FIRInstanceID.instanceID().token())
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
+        print(userInfo)
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -99,10 +97,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-}
-
-extension AppDelegate : FIRMessagingDelegate {
-    public func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
-        print("Message movidaaa")
-    }
 }

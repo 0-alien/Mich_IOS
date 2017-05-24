@@ -35,11 +35,11 @@ class MichTransport {
     
     
     
-    static func defaultLogin(username: String, password: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
+    static func defaultLogin(username: String, password: String, token: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
     
         let reqString = BASE_URL + "auth/login"
         
-        let loginRequest = LoginRequest(username: username,password:password,type: 0)
+        let loginRequest = LoginRequest(username: username, password:password, token: token, type: 0)
         let payloadJson = loginRequest.toJSONString()
         
         
