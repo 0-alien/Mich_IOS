@@ -91,16 +91,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
-/*
-        print("ASDASDASDASDASDASDASDASDASDASDASDAS_+_++__+_+_+_+__++__+_+_=-=--==-=-=-=")
-        print(img.size.height)
-        print(img.size.width)
-        if(img.size.height > img.size.width){
-            img = img.rotateImageByDegrees(90)
-        }
-  */
-        
-        
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: photo.image!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
@@ -115,26 +105,19 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     func checkValidTitle() {
         let text = titleTF.text ?? ""
-        
         doneButtone.isEnabled = !text.isEmpty
         
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        //        checkValidTitle()
-        
-        //        postTitle = titleTF.text
-        
+
     }
     
     func textFieldDidChange(_ textField: UITextField) {
-        
         if(titleTF.text!  == ""){
             doneButtone.isEnabled = false;
         }else{
             doneButtone.isEnabled = true;
             postTitle = titleTF.text
-            
         }
     }
 

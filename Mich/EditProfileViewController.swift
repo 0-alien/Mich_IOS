@@ -115,11 +115,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
         
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
-        
-        
     }
 
 }
