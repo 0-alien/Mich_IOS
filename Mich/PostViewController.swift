@@ -199,7 +199,19 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             })
             alert.addAction(delete)
         
+        }else{
+            
+            let reportPost = UIAlertAction(title: "Report Post", style: .destructive, handler: { ACTION in
+                
+                MichTransport.reportpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.post.id!, successCallbackForReportPost: self.onsuccessReport, errorCallbackForReportPost: self.onError)
+                
+            })
+            alert.addAction(reportPost)
+            
         }
+        
+        
+        
         alert.addAction(sharePhoto)
         alert.addAction(shareContent)
         
@@ -207,6 +219,14 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+    func onsuccessReport(){
+        let alert = UIAlertController(title: "Alert", message: "Post Reported", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
     
     func onsuccessSocialShare(socialShareResponse: SocialResponse){

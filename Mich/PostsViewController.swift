@@ -210,6 +210,15 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
                 
             })
             alert.addAction(hidePost)
+            
+            
+            let reportPost = UIAlertAction(title: "Report Post", style: .default, handler: { ACTION in
+                MichTransport.reportpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.posts[cellIndex].id!, successCallbackForReportPost: self.onReportPostSuccess, errorCallbackForReportPost: self.onError)
+                
+            })
+            alert.addAction(reportPost)
+
+            
         }
         
         
@@ -279,6 +288,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         //Nothing
     }
     
+    
     func onError(error: DefaultError){
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
@@ -290,4 +300,13 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }
+    
+    
+    func onReportPostSuccess(){
+        let alert = UIAlertController(title: "Alert", message: "Post Reported", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

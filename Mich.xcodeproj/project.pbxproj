@@ -106,6 +106,10 @@
 		CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */; };
 		CF3C2CF81E448302004512CA /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF71E448302004512CA /* PostClass.swift */; };
 		CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */; };
+		CF412E181ED5B7FD000DA88C /* ReportPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */; };
+		CF412E1A1ED5B85C000DA88C /* ReportPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */; };
+		CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */; };
+		CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */; };
 		CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5431E641CC700A3575A /* AddCommentRequest.swift */; };
 		CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */; };
 		CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */; };
@@ -252,6 +256,10 @@
 		CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF3C2CF71E448302004512CA /* PostClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
 		CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseArray.swift; sourceTree = "<group>"; };
+		CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPostResponse.swift; sourceTree = "<group>"; };
+		CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPostRequest.swift; sourceTree = "<group>"; };
+		CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentResponse.swift; sourceTree = "<group>"; };
+		CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentRequest.swift; sourceTree = "<group>"; };
 		CF57E5431E641CC700A3575A /* AddCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentRequest.swift; sourceTree = "<group>"; };
 		CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentResponse.swift; sourceTree = "<group>"; };
 		CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserPostsRequest.swift; sourceTree = "<group>"; };
@@ -567,6 +575,8 @@
 				1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */,
 				CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */,
 				CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */,
+				CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */,
+				CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -606,6 +616,8 @@
 				CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */,
 				CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */,
 				CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */,
+				CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */,
+				CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -730,7 +742,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -773,9 +785,11 @@
 				CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */,
 				1E1466081E3F7C4D00111F00 /* BattleTableViewCell.swift in Sources */,
 				CFDBBCDA1E852ADE00EA9032 /* SocialRequest.swift in Sources */,
+				CF412E1A1ED5B85C000DA88C /* ReportPostRequest.swift in Sources */,
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
+				CF412E181ED5B7FD000DA88C /* ReportPostResponse.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
 				1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */,
@@ -805,6 +819,7 @@
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
+				CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
 				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
@@ -823,6 +838,7 @@
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
+				CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */,
 				CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */,
 				1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,

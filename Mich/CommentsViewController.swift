@@ -54,6 +54,10 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.delegate = self
         cell.liked = (comments[indexPath.row].myLike == 1)
         cell.setLikeCount(count: comments[indexPath.row].nLikes!)
+        
+        
+        cell.editCommentButton.isHidden = false
+/*
         if (comments[indexPath.row].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
             cell.editCommentButton.isHidden = false
 
@@ -61,10 +65,13 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         else {
             cell.editCommentButton.isHidden = true
         }
+ */
+ 
         return cell
         
     }
 
+ 
 ///////////////// scrolling
     
     
@@ -196,9 +203,22 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let alert = UIAlertController()
         
-        let deleteComment = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
-            MichTransport.deletecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForDeleteComment: self.onDeleteComment, errorCallbackForDeleteComment: self.onError)
-        })
+        if (com.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
+        
+            let deleteComment = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
+                MichTransport.deletecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForDeleteComment: self.onDeleteComment, errorCallbackForDeleteComment: self.onError)
+            
+            })
+            alert.addAction(deleteComment)
+        }else{
+            let reportComment = UIAlertAction(title: "Report", style: .destructive, handler: { ACTION in
+               
+                MichTransport.reportcomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForReportComment: self.onReportComment, errorCallbackForReportComment: self.onError)
+            })
+            alert.addAction(reportComment)
+        }
+        
+        
         
 
         
@@ -206,13 +226,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             
             UIPasteboard.general.string = com.data
         })
-        
-        
-        
-        
-        
-        
-        alert.addAction(deleteComment)
         alert.addAction(copyComment)
         
         
@@ -224,6 +237,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
    
+    func onReportComment(commentId: Int) {
+        let alert = UIAlertController(title: "Alert", message: "Comment Reported", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func onDeleteComment(commentId: Int) {
         var index = 0
         

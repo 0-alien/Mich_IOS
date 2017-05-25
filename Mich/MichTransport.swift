@@ -31,7 +31,7 @@ class MichTransport {
     static let ALREADY_EXISTS_CODE = 39
     static let INVALID_PARAMETER_CODE = 31
     static let NO_PERMISSION_CODE = 32
-    
+    static let BAN_WORD = 27
     
     
     
@@ -39,7 +39,7 @@ class MichTransport {
     
         let reqString = BASE_URL + "auth/login"
         
-        let loginRequest = LoginRequest(username: username,password:password,type: 0)
+        let loginRequest = LoginRequest(username: username,password:password,type: 0, fcmrt: "asdasda")
         let payloadJson = loginRequest.toJSONString()
         
         
@@ -1982,6 +1982,110 @@ class MichTransport {
                 
                 
                 errorCallbackForSocialShare(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    static func reportpost(token: String, postID: Int, successCallbackForReportPost: @escaping () -> Void, errorCallbackForReportPost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/report"
+        
+        let reportpost = ReportPostRequest(token: token, postID: postID)
+        let payloadJson = reportpost.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<ReportPostResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForReportPost()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForReportPost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForReportPost(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    static func reportcomment(token: String, commentID: Int,  successCallbackForReportComment: @escaping (Int) -> Void, errorCallbackForReportComment: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "comment/report"
+        
+        let reportcomment = ReportCommentRequest(token: token, commentID: commentID)
+        let payloadJson = reportcomment.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<ReportCommentResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForReportComment(commentID)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForReportComment(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForReportComment(error)
                 
             }
             

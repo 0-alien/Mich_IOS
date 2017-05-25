@@ -13,12 +13,14 @@ class LoginRequest: Mappable {
     var username: String?
     var password: String?
     var type: Int?
+    var fcmrt: String?
     
     
-    init(username: String, password: String, type: Int){
+    init(username: String, password: String, type: Int, fcmrt: String){
         self.username = username
         self.password = password
         self.type = type
+        self.fcmrt = fcmrt
         
     }
     
@@ -30,5 +32,6 @@ class LoginRequest: Mappable {
         username    <- map["username"]
         password    <- map["password"]
         type        <- map["type"]
+        fcmrt       <- map["fcmrt"]
     }
 }
