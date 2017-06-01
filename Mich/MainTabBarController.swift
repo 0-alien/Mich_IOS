@@ -70,6 +70,18 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         }
     }
     
+    func incrementNotificationCount(by: Int) {
+        var count: Int;
+        if self.tabBar.items?[4].badgeValue == nil {
+            count = 0;
+        }
+        else {
+            count = Int((self.tabBar.items?[4].badgeValue)!)!
+        }
+        count = count + by;
+        self.setNotificationCount(count: count)
+    }
+    
     /*
     // MARK: - Navigation
 

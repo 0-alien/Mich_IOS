@@ -214,6 +214,12 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             let indexPath = imageCollection.indexPath(for: cell)
             vc.postId = posts[(indexPath?.item)!].id
         }
+        else if segue.identifier == "showpostlike" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.postId = sender as! Int;
+        }
         else if segue.identifier == "edit" {
             guard let vc = (segue.destination as? UINavigationController)?.viewControllers[0] as? EditProfileViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")

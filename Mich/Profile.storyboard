@@ -205,6 +205,7 @@
                         <segue destination="Jwh-xH-h9g" kind="show" identifier="help" id="xXA-k5-8lu"/>
                         <segue destination="uLz-1v-lJD" kind="show" identifier="gotoeditimage" id="N1X-9z-ahB"/>
                         <segue destination="2NU-zg-w12" kind="presentation" identifier="edit" id="29U-HV-7jr"/>
+                        <segue destination="dLl-p9-nQN" kind="show" identifier="showpostlike" id="G5E-cy-xzh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tm-Ph-qAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -764,8 +765,9 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MaX-mX-K8b"/>
-        <segue reference="8Gc-2c-hvL"/>
+        <segue reference="aPV-7X-oby"/>
+        <segue reference="G5E-cy-xzh"/>
         <segue reference="3nt-fL-SI4"/>
+        <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>

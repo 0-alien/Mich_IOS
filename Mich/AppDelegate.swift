@@ -67,8 +67,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
+        switch (userInfo["type"] as! NSString).intValue {
+        case 1:
+            if (application.applicationState == .background || application.applicationState == .inactive) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
+                vc.popToRootViewController(animated: false)
+                let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
+                userViewController.performSegue(withIdentifier: "showpostlike", sender: Int((userInfo["id"] as! NSString).intValue))
+                print(application.applicationIconBadgeNumber)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
+        case 2:
+            break;
+        default:
+            break;
+        }
     }
 
+
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }
