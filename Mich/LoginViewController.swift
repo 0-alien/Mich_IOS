@@ -192,16 +192,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     
     
     func onLogin(loginResponse: LoginResponse){
-        
-        
-//        print(loginResponse)
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-  
-        
         MichTransport.getcurrentuser(token: (appDelegate.token)!, successCallbackForgetcurrentuser: ongetcurrentuser, errorCallbackForgetcurrentuser: onError)
-        
-        
     }
     
     
