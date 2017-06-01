@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PusherSwift
 
 class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 

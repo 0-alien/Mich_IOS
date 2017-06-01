@@ -8,13 +8,11 @@
 
 import AMScrollingNavbar
 import UIKit
-import PusherSwift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var savedIndex: Int = 0
+    var savedIndex: Int? = 0
     var activeImages = [UIImage]()
     var inactiveImages = [UIImage]()
-    var pusher: Pusher! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
