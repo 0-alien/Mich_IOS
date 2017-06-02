@@ -68,14 +68,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print(userInfo)
         switch (userInfo["type"] as! NSString).intValue {
-        case 1:
+        case 1: // postis like
             if (application.applicationState == .background || application.applicationState == .inactive) {
                 (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
                 vc.popToRootViewController(animated: false)
                 let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
-                userViewController.performSegue(withIdentifier: "showpostlike", sender: Int((userInfo["id"] as! NSString).intValue))
-                print(application.applicationIconBadgeNumber)
+                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["id"] as! NSString).intValue))
                 if application.applicationIconBadgeNumber > 0 {
                     application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
                 }
@@ -84,14 +83,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
-        case 2:
+        case 2: // comntaris damateba
+            if (application.applicationState == .background || application.applicationState == .inactive) {
+                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
+        case 3: // comentaris like
+            if (application.applicationState == .background || application.applicationState == .inactive) {
+                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
             break;
         default:
             break;
         }
+        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
     }
+    
+    
 
-
+    private func processCommentNotification(_ application: UIApplication, commentId: Int, postId: Int) {
+        (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
+        let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
+        vc.popToRootViewController(animated: false)
+        let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
+        userViewController.destinationCommentId = commentId
+        userViewController.destinationPostId = postId
+        userViewController.performSegue(withIdentifier: "showcommentnotification", sender: userViewController)
+        if application.applicationIconBadgeNumber > 0 {
+            application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+        }
+    }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
