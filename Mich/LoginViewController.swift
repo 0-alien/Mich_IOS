@@ -30,8 +30,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         self.usernameTXT.delegate = self
         self.passwordTXT.delegate = self
+        
         
         usernameTXT.layer.shadowOpacity = 0.3;
         usernameTXT.layer.shadowRadius = 1.0;
@@ -76,9 +79,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         self.view.addConstraints([consG1, consG2, consG3]);
         
-*/        
+*/
         
-        
+        self.loginFacebookBTN.isHidden = true;
         
         //////// facebook login
         self.loginFacebookBTN.delegate = self
