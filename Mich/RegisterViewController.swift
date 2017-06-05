@@ -20,12 +20,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpConfirmPassword: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+    @IBOutlet weak var radioButton: UIButton!
+    @IBOutlet weak var IfCheckedButton: UIButton!
+    @IBOutlet weak var TermsAndCondittionsBTN: UIButton!
     
     
     @IBOutlet weak var scrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        IfCheckedButton.isHidden = true
+        signUpButton.isEnabled = false
         
 
         signUpName.layer.shadowOpacity = 0.3;
@@ -88,6 +93,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
         
    
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default);
+        self.navigationController?.navigationBar.shadowImage = UIImage();
+        self.navigationController?.navigationBar.isTranslucent = true
+
+        
+        
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(RegisterViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -171,7 +182,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
+    @IBAction func RadioButtonCheked(_ sender: Any) {
+        IfCheckedButton.isHidden = false;
+        signUpButton.isEnabled = true
+    }
     
+    @IBAction func IfCheckedAct(_ sender: Any) {
+        IfCheckedButton.isHidden = true
+        signUpButton.isEnabled = false
+    }
+    
+
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

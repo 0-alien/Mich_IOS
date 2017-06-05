@@ -82,6 +82,7 @@
 		CF186A8C1E435C3900218920 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8B1E435C3900218920 /* User.swift */; };
 		CF186A8E1E4378AD00218920 /* GetFeedRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */; };
 		CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */; };
+		CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */; };
 		CF209DE91E41E62900B1A59E /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF209DE81E41E62900B1A59E /* Cabinet.storyboard */; };
 		CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */; };
 		CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */; };
@@ -113,6 +114,7 @@
 		CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5431E641CC700A3575A /* AddCommentRequest.swift */; };
 		CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */; };
 		CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */; };
+		CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */; };
 		CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */; };
 		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
 		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
@@ -232,6 +234,7 @@
 		CF186A8B1E435C3900218920 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF186A8D1E4378AD00218920 /* GetFeedRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFeedRequest.swift; sourceTree = "<group>"; };
 		CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
+		CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		CF209DE81E41E62900B1A59E /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCodeRequest.swift; sourceTree = "<group>"; };
 		CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCodeResponse.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 		CF57E5431E641CC700A3575A /* AddCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentRequest.swift; sourceTree = "<group>"; };
 		CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentResponse.swift; sourceTree = "<group>"; };
 		CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserPostsRequest.swift; sourceTree = "<group>"; };
+		CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelpViewController.swift; sourceTree = "<group>"; };
 		CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersRequest.swift; sourceTree = "<group>"; };
 		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
 		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
@@ -494,6 +498,8 @@
 				CF1AA26F1E3F389600EC72CF /* changePasswordViewController.swift */,
 				1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */,
 				CFE38FF61E7952A10037CB5B /* HelpViewController.swift */,
+				CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */,
+				CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -800,9 +806,11 @@
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
+				CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
 				1EE22BA91E9500C400FD5DB7 /* LikesViewController.swift in Sources */,
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
+				CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */,
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
 				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
