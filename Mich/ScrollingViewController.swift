@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollingViewController: UIViewController, UIScrollViewDelegate {
+class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -80,22 +80,32 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     // MARK: Notifications
-    
     func setNotificationCount(count: Int) {
         myTabBar?.setNotificationCount(count: count)
         myMenu?.setNotificationCount(count: count)
     }
     
+    func incrementNotificationCount(by: Int) {
+        //myTabBar?.incrementNotificationCount(by: by)
+        myMenu?.incrementNotificationCount(by: by)
+    }
+    // MARK: - logOut Delegate
+    func logOut() {
+        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        (UIApplication.shared.delegate as! AppDelegate).user = nil
+        self.dismiss(animated: false, completion: nil)
+    }
     
     // MARK: - Navigation
-
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmbedTabBar" {
             self.myTabBar = (segue.destination as! MainTabBarController)
         }
         else if segue.identifier == "EmbedMenu" {
             self.myMenu = (segue.destination as! SlidingMenuViewController)
+            self.myMenu?.logOutDelegate = self
         }
     }
 

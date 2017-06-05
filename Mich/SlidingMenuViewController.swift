@@ -19,6 +19,7 @@ class SlidingMenuViewController: UIViewController {
     @IBOutlet weak var notificationCountView: UIView!
     @IBOutlet weak var notificationCountLabel: UILabel!
     @IBOutlet weak var userName: UILabel!
+    var logOutDelegate: LogoutDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,34 +67,19 @@ class SlidingMenuViewController: UIViewController {
 
     @IBAction func logOut(_ sender: Any) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        MichTransport.recover(token: appDelegate.token!, password: password, successCallbackForRecover: onRecover, errorCallbackForRecover: onError)
-        
-        MichTransport.logout(token: appDelegate.token!, successCallbackForLogout: onSendRecovery, errorCallbackForLogout: onError)
-        
-        
+        MichTransport.logout(token: appDelegate.token!, successCallbackForLogout: onLogout, errorCallbackForLogout: onError)
     }
     
-    func onSendRecovery(){
-        
-        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
-        (UIApplication.shared.delegate as! AppDelegate).user = nil
-        self.dismiss(animated: false, completion: nil)
-   
+    func onLogout(){
+        logOutDelegate.logOut();
     }
     
     
     func onError(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
     }
-    
-
-    
     
     // MARK: - manage notification count
     
@@ -139,4 +125,8 @@ class SlidingMenuViewController: UIViewController {
     @IBAction func showHelp(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "showHelp"), object: nil)
     }
+}
+
+protocol LogoutDelegate {
+    func logOut();
 }

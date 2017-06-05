@@ -27,6 +27,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     
+    var destinationCommentId: Int! = nil // in case of comment added/liked notification
+    var destinationPostId: Int! = nil // same 
+    
     var refreshControl: UIRefreshControl!
     
     private var user: User? = nil
@@ -213,6 +216,20 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
             let indexPath = imageCollection.indexPath(for: cell)
             vc.postId = posts[(indexPath?.item)!].id
+        }
+        else if segue.identifier == "showpostnotification" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.postId = sender as! Int
+        }
+        else if segue.identifier == "showcommentnotification" {
+            guard let vc = segue.destination as? PostViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.postId = (sender as! UserPicturesCollectionViewController).destinationPostId
+            vc.destinationCommentId = (sender as! UserPicturesCollectionViewController).destinationCommentId
+            vc.needsToShowComments = true
         }
         else if segue.identifier == "edit" {
             guard let vc = (segue.destination as? UINavigationController)?.viewControllers[0] as? EditProfileViewController else {

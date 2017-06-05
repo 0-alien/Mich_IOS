@@ -21,12 +21,15 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
     
+    var postId: Int!
+    var destinationCommentId: Int! = nil // in case of comment added/liked notification
+    var needsToShowComments: Bool! = false // same
+    
     @IBOutlet weak var zoomingScrollView: UIScrollView!
     
     @IBOutlet var mainView: UIView!
-    
+
     var post: PostClass!
-    var postId: Int!
     var refreshControl: UIRefreshControl!
     
     
@@ -49,16 +52,19 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         }
         MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
-
-        
-        
-        self.zoomingScrollView.minimumZoomScale = 1.0;
+        self.zoomingScrollView.minimumZoomScale = 1.0
         self.zoomingScrollView.maximumZoomScale = 6.0
-
-    
+        
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if needsToShowComments {
+            self.needsToShowComments = false
+            performSegue(withIdentifier: "showcommentnotification", sender: self)
+            self.destinationCommentId = -1
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -66,16 +72,23 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "showcomments" {
             (segue.destination as! CommentsViewController).postId = post.id
         }
-        if segue.identifier == "gotoprofilepage" {
+        else if segue.identifier == "gotoprofilepage" {
             (segue.destination as! UserPicturesCollectionViewController).userId = self.post.userId
+        }
+        else if segue.identifier == "showcommentnotification" {
+            (segue.destination as! CommentsViewController).postId = self.postId
+            (segue.destination as! CommentsViewController).needsToShowComment = true
+            (segue.destination as! CommentsViewController).destinationCommentId = self.destinationCommentId
         }
     }
     
+    // MARK: zooming
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.postImage
     }
@@ -171,9 +184,6 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func edit(_ sender: Any) {
-        
-        
-        
         let alert = UIAlertController()
         
         let sharePhoto = UIAlertAction(title: "Share photo with facebook", style: .default, handler: { ACTION in
@@ -209,8 +219,6 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
             alert.addAction(reportPost)
             
         }
-        
-        
         
         alert.addAction(sharePhoto)
         alert.addAction(shareContent)

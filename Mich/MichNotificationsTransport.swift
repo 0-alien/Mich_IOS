@@ -82,6 +82,34 @@ class MichNotificationsTransport {
         }
     }
     
+    static func markSingleNotificationSeen(token: String, notificationId: Int, successCallbackForMarkSingleNotificationSeen: @escaping () -> Void, errorCallbackForMarkSingleNotificationSeen: @escaping (DefaultError) -> Void){
+        let reqString = BASE_URL + "notification/seen"
+        let request = MarkSingleNotificationSeenRequest(token: token, notificationId: notificationId)
+        let payloadJson = request.toJSONString()
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if (response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<MichNotification>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForMarkSingleNotificationSeen()
+                }
+                else{
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForMarkSingleNotificationSeen(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForMarkSingleNotificationSeen(error)
+            }
+        }
+    }
+    
     static func getUnseenNotifications(token: String, successCallbackGetUnseenNotifications: @escaping (Int) -> Void, errorCallbackForGetUnseenNotifications: @escaping (DefaultError) -> Void){
         
         let reqString = BASE_URL + "notification/get"

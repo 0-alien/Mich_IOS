@@ -16,7 +16,11 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var addComments: UITextField!
     @IBOutlet weak var tableView: UITableView!
+   
     var postId: Int!
+    var needsToShowComment: Bool! = false
+    var destinationCommentId: Int! = nil //comment added/liked notificatioin
+    
     var comments: [Comment] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,7 +145,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             let numberOfSections = self.tableView.numberOfSections
             let numberOfRows = self.tableView.numberOfRows(inSection: numberOfSections - 1)
             if numberOfRows > 0 {
-                let indexPath = IndexPath(row: numberOfRows-1, section: (numberOfSections-1))
+                let indexPath = IndexPath(row: numberOfRows-1, section: (numberOfSections - 1))
                 self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: animated)
             }
         }
@@ -155,7 +159,19 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.comments.removeAll()
         self.comments.append(contentsOf: resp)
         self.tableView.reloadData()
-
+        
+        if needsToShowComment {
+            needsToShowComment = false
+            for i in 0 ..< comments.count {
+                if comments[i].id == destinationCommentId {
+                    tableView.scrollToRow(at: IndexPath(row: i, section: 0), at: .top, animated: true)
+                    let cell: CommentCell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! CommentCell
+                    cell.backgroundColor = UIColor.orange
+                    UIView.animate(withDuration: 1.5, animations: {cell.backgroundColor = UIColor.white})
+                    break
+                }
+            }
+        }
     }
     
     

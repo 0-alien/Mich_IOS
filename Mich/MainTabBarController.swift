@@ -8,13 +8,11 @@
 
 import AMScrollingNavbar
 import UIKit
-import PusherSwift
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var savedIndex: Int = 0
+    var savedIndex: Int? = 0
     var activeImages = [UIImage]()
     var inactiveImages = [UIImage]()
-    var pusher: Pusher! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -70,6 +68,18 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         else {
             self.tabBar.items?[4].badgeValue = String(count)
         }
+    }
+    
+    func incrementNotificationCount(by: Int) {
+        var count: Int;
+        if self.tabBar.items?[4].badgeValue == nil {
+            count = 0;
+        }
+        else {
+            count = Int((self.tabBar.items?[4].badgeValue)!)!
+        }
+        count = count + by;
+        self.setNotificationCount(count: count)
     }
     
     /*

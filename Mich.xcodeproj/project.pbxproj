@@ -26,6 +26,7 @@
 		1E25E1F71E6EED1C00576D47 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E25E1F61E6EED1C00576D47 /* CommentsViewController.swift */; };
 		1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */; };
 		1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */; };
+		1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */; };
 		1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */; };
 		1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */; };
 		1E47B84B1D9008AE006F9E97 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */; };
@@ -176,6 +177,7 @@
 		1E25E1F61E6EED1C00576D47 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleViewController.swift; sourceTree = "<group>"; };
 		1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VsBattlesViewController.swift; sourceTree = "<group>"; };
+		1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkSingleNotificationSeenRequest.swift; sourceTree = "<group>"; };
 		1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellB.swift; sourceTree = "<group>"; };
 		1E45CF971DAD04F8006967CD /* UIImage+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+RoundShape.swift"; sourceTree = "<group>"; };
 		1E47B84A1D9008AE006F9E97 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		1E1E506E1D8AB3D0002D1C24 /* Mich */ = {
 			isa = PBXGroup;
 			children = (
+				1E2E49D11EE18D5E00C371F7 /* Notifications */,
 				CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */,
 				CF3927961E29130A00F0C924 /* Bean */,
 				CF3927931E2910A600F0C924 /* Transport */,
@@ -385,6 +388,32 @@
 				1EF192C31D8AE53000676CE2 /* images.xcassets */,
 			);
 			path = Mich;
+			sourceTree = "<group>";
+		};
+		1E2E49D11EE18D5E00C371F7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				1E2E49D31EE18DA900C371F7 /* Requests */,
+				1E2E49D21EE18D9A00C371F7 /* Bean */,
+				1E0F837F1E81613300F004CA /* MichNotificationsTransport.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		1E2E49D21EE18D9A00C371F7 /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */,
+			);
+			name = Bean;
+			sourceTree = "<group>";
+		};
+		1E2E49D31EE18DA900C371F7 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 		1E45CF961DAD0450006967CD /* Extentions */ = {
@@ -544,7 +573,6 @@
 			children = (
 				CF3927991E291BB000F0C924 /* Requests */,
 				CF3927941E2910C700F0C924 /* MichTransport.swift */,
-				1E0F837F1E81613300F004CA /* MichNotificationsTransport.swift */,
 			);
 			name = Transport;
 			sourceTree = "<group>";
@@ -578,7 +606,6 @@
 				CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */,
 				CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */,
 				CF3364901E7FEA1100A42763 /* HidePostResponse.swift */,
-				1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */,
 				CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */,
 				CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */,
 				CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */,
@@ -748,7 +775,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -796,6 +823,7 @@
 				CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
 				CF412E181ED5B7FD000DA88C /* ReportPostResponse.swift in Sources */,
+				1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
 				1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */,

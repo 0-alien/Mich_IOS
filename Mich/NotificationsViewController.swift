@@ -150,6 +150,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     
     func onSeenAllNotificationsSuccess() {
         ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).myMenu?.setNotificationCount(count: 0)
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl) {
