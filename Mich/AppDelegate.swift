@@ -15,12 +15,14 @@ import TwitterKit
 import GoogleSignIn
 import Firebase
 import UserNotifications
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var token:String?
+    var waiting: Bool! = false
     var user: User? {
         didSet {
             if user != nil {
@@ -43,8 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Twitter.self])
         
         let defaults = UserDefaults.standard
-        if let stringOne = defaults.string(forKey: "userid") {
-            print(stringOne)
+        if let userId = defaults.string(forKey: "userid"), let tk = defaults.string(forKey: "token") {
+            print(userId)
+            print(tk)
+            self.waiting = true
+            MichTransport.getuser(token: tk, id: Int(userId)!, successCallbackForgetuser: self.onGetUserSuccess, errorCallbackForgetuser: self.onError)
             self.StartViewControllerName = "MainTabBarController"
             self.StartStoryboardName = "Userspace"
             self.StartingTabIndex = 0
@@ -63,6 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.StartStoryboardName = "Cabinet"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
+    
     
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
@@ -147,6 +153,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func onGetUserSuccess(user: User) {
+        self.user = user
+        let defaults = UserDefaults.standard
+        self.token = defaults.string(forKey: "token")
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
+    }
+    
+    
+    func onError(error: DefaultError) {
+        self.StartViewControllerName = "LoginViewController"
+        self.StartStoryboardName = "Cabinet"
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
 }

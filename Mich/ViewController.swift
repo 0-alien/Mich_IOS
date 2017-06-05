@@ -15,9 +15,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.showStartViewController), name: NSNotification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if (!(UIApplication.shared.delegate as! AppDelegate).waiting) {
+            let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! LoginViewController
+            (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        }
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func showStartViewController() {
         if (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName == "LoginViewController" {
             let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! LoginViewController
@@ -30,11 +43,6 @@ class ViewController: UIViewController {
         }
         self.dismiss(animated: false, completion: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

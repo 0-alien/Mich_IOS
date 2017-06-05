@@ -30,8 +30,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         self.usernameTXT.delegate = self
         self.passwordTXT.delegate = self
+        
         
         usernameTXT.layer.shadowOpacity = 0.3;
         usernameTXT.layer.shadowRadius = 1.0;
@@ -76,9 +79,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         self.view.addConstraints([consG1, consG2, consG3]);
         
-*/        
+*/
         
-        
+        self.loginFacebookBTN.isHidden = true;
         
         //////// facebook login
         self.loginFacebookBTN.delegate = self
@@ -207,12 +210,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         let defaults = UserDefaults.standard
         defaults.set(String(getcurrentuserResponse.id!), forKey: "userid")
-        
-        MichNotificationsTransport.getUnseenNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetUnseenNotifications: onGetUnseenNotificationsSuccess, errorCallbackForGetUnseenNotifications: onError)
-    }
-    
-    func onGetUnseenNotificationsSuccess(resp: Int) {
-        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).setNotificationCount(count: resp)
+        defaults.set(String(appDelegate.token!), forKey: "token")
     }
     
     func onError(error: DefaultError){

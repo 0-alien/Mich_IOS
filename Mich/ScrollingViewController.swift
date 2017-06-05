@@ -91,6 +91,9 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDel
     }
     // MARK: - logOut Delegate
     func logOut() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: "userid")
+        defaults.removeObject(forKey: "token")
         let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
