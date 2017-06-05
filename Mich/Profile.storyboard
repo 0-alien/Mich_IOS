@@ -434,7 +434,7 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="zOT-RP-LH4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWv-II-xXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="-295"/>
+            <point key="canvasLocation" x="785" y="-218"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLE-og-tCE">
