@@ -683,7 +683,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="TermsAndConditionsViewController" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NP0-c2-GH8">
-                                <rect key="frame" x="16" y="4" width="343" height="655"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -691,10 +691,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NP0-c2-GH8" firstAttribute="top" secondItem="aNl-BV-x4Y" secondAttribute="bottom" constant="-16" id="SVa-Cp-UN8"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="NP0-c2-GH8" secondAttribute="leading" id="eFA-21-03q"/>
-                            <constraint firstItem="ULQ-Es-JCA" firstAttribute="top" secondItem="NP0-c2-GH8" secondAttribute="bottom" constant="8" id="kE9-HU-XpG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NP0-c2-GH8" secondAttribute="trailing" id="kQ8-FC-CJa"/>
+                            <constraint firstAttribute="trailing" secondItem="NP0-c2-GH8" secondAttribute="trailing" id="Msp-lM-wIM"/>
+                            <constraint firstItem="NP0-c2-GH8" firstAttribute="top" secondItem="aNl-BV-x4Y" secondAttribute="bottom" id="SVa-Cp-UN8"/>
+                            <constraint firstItem="NP0-c2-GH8" firstAttribute="leading" secondItem="TZA-OL-qqo" secondAttribute="leading" id="enp-G1-22I"/>
+                            <constraint firstItem="ULQ-Es-JCA" firstAttribute="top" secondItem="NP0-c2-GH8" secondAttribute="bottom" id="kE9-HU-XpG"/>
                         </constraints>
                     </view>
                     <connections>

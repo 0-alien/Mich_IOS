@@ -445,7 +445,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -475,10 +475,10 @@
             </objects>
             <point key="canvasLocation" x="-1039" y="-336"/>
         </scene>
-        <!--Help-->
+        <!--TermsAndConditionsViewController-->
         <scene sceneID="rtm-od-qsR">
             <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Help" id="Jwh-xH-h9g" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Cabinet" referencedIdentifier="TermsAndConditionsViewController" id="Jwh-xH-h9g" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaA-tE-lqU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="-335"/>
@@ -564,7 +564,7 @@
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="uLz-1v-lJD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xju-9V-Ajs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-87" y="-336"/>
+            <point key="canvasLocation" x="-46" y="-336"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="Qkv-4K-plR">
@@ -745,7 +745,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

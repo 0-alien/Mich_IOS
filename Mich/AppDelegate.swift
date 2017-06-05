@@ -42,19 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _ = FBSDKLoginButton.classForCoder()
         Fabric.with([Twitter.self])
         
+        let defaults = UserDefaults.standard
+        if let stringOne = defaults.string(forKey: "userid") {
+            print(stringOne)
+            self.StartViewControllerName = "MainTabBarController"
+            self.StartStoryboardName = "Userspace"
+            self.StartingTabIndex = 0
+            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
+        
         // ar mushaobs user ar aris sheqmnili jer
         if let _ = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
             self.StartViewControllerName = "MainTabBarController"
             self.StartStoryboardName = "Userspace"
             self.StartingTabIndex = 1
-            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        }
-        
-        let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "UserId") {
-            self.StartViewControllerName = "MainTabBarController"
-            self.StartStoryboardName = "Userspace"
-            self.StartingTabIndex = 0
             return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
         
