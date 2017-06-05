@@ -19,6 +19,7 @@ class HelpViewController: UIViewController {
     @IBOutlet weak var UsingMich: UIButton!
 
     @IBOutlet weak var PrivacySafety: UIButton!
+    @IBOutlet weak var TermsAndPolicies: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,10 @@ class HelpViewController: UIViewController {
         let formattedString2: String = "\(bulletPoint2) \(usingMich2)\n"
         PrivacySafety.setTitle(formattedString2,for: .normal)
 
-        
+        let TermsAndPoliciesStr: String = "Terms & Policies"
+        let bulletPoint3: String = "\u{2022}"
+        let formattedString3: String = "\(bulletPoint3) \(TermsAndPoliciesStr)\n"
+        TermsAndPolicies.setTitle(formattedString3,for: .normal)
         
         // Do any additional setup after loading the view.
     }
