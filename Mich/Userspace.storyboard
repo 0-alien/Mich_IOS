@@ -26,7 +26,7 @@
         <!--Scrolling View Controller-->
         <scene sceneID="etm-cX-0nc">
             <objects>
-                <viewController storyboardIdentifier="MainTabBarController" id="FPq-Ae-Pra" customClass="ScrollingViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScrollingViewController" id="FPq-Ae-Pra" customClass="ScrollingViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v6u-ob-7Ww"/>
                         <viewControllerLayoutGuide type="bottom" id="wHV-hN-NBQ"/>

@@ -54,6 +54,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
         self.zoomingScrollView.minimumZoomScale = 1.0
         self.zoomingScrollView.maximumZoomScale = 6.0
+        self.userImage = self.userImage.circle
         
     }
     

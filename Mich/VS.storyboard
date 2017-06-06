@@ -353,6 +353,24 @@
             </objects>
             <point key="canvasLocation" x="1436" y="-1058"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="37X-iZ-ehC">
+            <objects>
+                <viewController storyboardIdentifier="VSJSQViewController" id="rlU-YV-9dO" customClass="VSJSQViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eix-Hi-dxV"/>
+                        <viewControllerLayoutGuide type="bottom" id="kxt-mM-LCb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zE7-to-pAz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DG8-UZ-HvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="-324"/>
+        </scene>
         <!--EditImage-->
         <scene sceneID="ngr-1g-RLt">
             <objects>
@@ -377,7 +395,7 @@
                         <viewControllerLayoutGuide type="top" id="lXV-Sd-lNj"/>
                         <viewControllerLayoutGuide type="bottom" id="bZO-FB-aXh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gfC-5R-ka1">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="gfC-5R-ka1">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -445,7 +463,7 @@
                                         <connections>
                                             <outlet property="vsFirst" destination="xoB-16-jm5" id="Xpf-kj-R9v"/>
                                             <outlet property="vsSecond" destination="Kdc-GD-idk" id="HKL-07-gRg"/>
-                                            <segue destination="z9R-0k-FXL" kind="show" id="KPj-I9-VrW"/>
+                                            <segue destination="rlU-YV-9dO" kind="show" identifier="JSQ" id="pEi-4P-8nQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -660,7 +678,4 @@
         <image name="second_user" width="52" height="79"/>
         <image name="vs_icon" width="26" height="19"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="KPj-I9-VrW"/>
-    </inferredMetricsTieBreakers>
 </document>
