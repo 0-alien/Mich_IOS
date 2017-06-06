@@ -44,6 +44,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         photo.image = img
+        doneButtone.isEnabled = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -52,6 +53,17 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func setImageToCrop(image:UIImage){
+        /*
+        print(photo.image?.size.width ?? 1)
+        print(photo.image?.size.height ?? 1)
+        
+        if((photo.image?.size.width)! + 400 < (photo.image?.size.height)!){
+            photo.image = image.rotateImageByDegrees(-90)
+            
+        }
+        
+        */
+ 
         photo.image = image
         updateScrollViewZooms()
     }
@@ -70,6 +82,9 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let height:CGFloat = scrollView.frame.size.height * scale
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         let croppedImage = UIImage(cgImage: croppedCGImage!)
+        
+
+        
         setImageToCrop(image: croppedImage)
     }
     
@@ -88,9 +103,25 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     
+    /////////////////////////////////// postis tittle igzavneba rogorc carieli, saertod ar unda gaigzavnos, shesacvlelia!!!!!!!
     
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
+        
+        let text = titleTF.text ?? ""
+        
+        if(text.isEmpty){
+            postTitle = ""
+        }
+        
+        if((photo.image?.size.width)! < (photo.image?.size.height)!){
+            print((photo.image?.size.width)!)
+            print((photo.image?.size.height)!)
+            photo.image = photo.image?.rotateImageByDegrees(90)
+            
+        }
+        
+        
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: photo.image!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
@@ -98,16 +129,20 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+       textField.resignFirstResponder()
         done(self)
         return true
+ 
     }
-    
+
+    /*
     func checkValidTitle() {
         let text = titleTF.text ?? ""
         doneButtone.isEnabled = !text.isEmpty
         
     }
+     */
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
 
     }

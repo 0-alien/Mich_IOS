@@ -79,6 +79,8 @@
 		CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
 		CF092BC21E94F0E800C18718 /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092BC11E94F0E800C18718 /* RotateImage.swift */; };
+		CF118D291EE6A5C80023AA7E /* AskQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */; };
+		CF118D2B1EE6A5DB0023AA7E /* AskQuestionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */; };
 		CF149D271E77EB81005911FB /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF149D261E77EB81005911FB /* UpdateUserRequest.swift */; };
 		CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */; };
 		CF186A8C1E435C3900218920 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A8B1E435C3900218920 /* User.swift */; };
@@ -233,6 +235,8 @@
 		CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mich.entitlements; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		CF092BC11E94F0E800C18718 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
+		CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionResponse.swift; sourceTree = "<group>"; };
+		CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionRequest.swift; sourceTree = "<group>"; };
 		CF149D261E77EB81005911FB /* UpdateUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
 		CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserRequest.swift; sourceTree = "<group>"; };
 		CF186A8B1E435C3900218920 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -613,6 +617,7 @@
 				CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */,
 				CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */,
 				CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */,
+				CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -654,6 +659,7 @@
 				CFDBBCD91E852ADE00EA9032 /* SocialRequest.swift */,
 				CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */,
 				CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */,
+				CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -778,7 +784,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -859,6 +865,7 @@
 				1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */,
+				CF118D2B1EE6A5DB0023AA7E /* AskQuestionRequest.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
 				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
@@ -868,6 +875,7 @@
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
 				1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
+				CF118D291EE6A5C80023AA7E /* AskQuestionResponse.swift in Sources */,
 				1E6309781E657D880080054B /* PostViewController.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,

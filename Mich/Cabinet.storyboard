@@ -607,6 +607,9 @@
                                             <constraint firstAttribute="height" constant="40" id="uzJ-bC-w1t"/>
                                         </constraints>
                                         <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="SendQuestionBTN:" destination="OEt-Yi-uSz" eventType="touchUpInside" id="MQe-bq-gs6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBP-Or-r43">
                                         <rect key="frame" x="31" y="188" width="46" height="30"/>
@@ -683,7 +686,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="TermsAndConditionsViewController" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NP0-c2-GH8">
-                                <rect key="frame" x="16" y="4" width="288" height="556"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -947,6 +950,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gFh-W7-LGm"/>
-        <segue reference="t9h-eu-6ka"/>
+        <segue reference="4I2-TH-3Ny"/>
     </inferredMetricsTieBreakers>
 </document>
