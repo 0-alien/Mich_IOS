@@ -370,7 +370,6 @@
 		1E1E506E1D8AB3D0002D1C24 /* Mich */ = {
 			isa = PBXGroup;
 			children = (
-				1E2E49D11EE18D5E00C371F7 /* Notifications */,
 				CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */,
 				CF3927961E29130A00F0C924 /* Bean */,
 				CF3927931E2910A600F0C924 /* Transport */,
@@ -571,6 +570,7 @@
 		CF3927931E2910A600F0C924 /* Transport */ = {
 			isa = PBXGroup;
 			children = (
+				1E2E49D11EE18D5E00C371F7 /* Notifications */,
 				CF3927991E291BB000F0C924 /* Requests */,
 				CF3927941E2910C700F0C924 /* MichTransport.swift */,
 			);
@@ -775,7 +775,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {

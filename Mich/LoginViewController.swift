@@ -207,11 +207,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         self.dismiss(animated: false, completion: nil)
-        MichNotificationsTransport.getUnseenNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetUnseenNotifications: onGetUnseenNotificationsSuccess, errorCallbackForGetUnseenNotifications: onError)
-    }
-    
-    func onGetUnseenNotificationsSuccess(resp: Int) {
-        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).setNotificationCount(count: resp)
+        
+        let defaults = UserDefaults.standard
+        defaults.set(String(getcurrentuserResponse.id!), forKey: "userid")
+        defaults.set(String(appDelegate.token!), forKey: "token")
     }
     
     func onError(error: DefaultError){

@@ -421,7 +421,6 @@ class MichTransport {
         
     }
     
-    
     static func getuser(token: String, id: Int, successCallbackForgetuser: @escaping (User) -> Void, errorCallbackForgetuser: @escaping (DefaultError) -> Void) {
         
         let reqString = BASE_URL + "user/get"

@@ -56,7 +56,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOs-7h-d5M" id="T29-it-6AS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="47.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wxU-hw-GbK">
@@ -306,13 +306,13 @@
             </objects>
             <point key="canvasLocation" x="-893" y="771"/>
         </scene>
-        <!--Help-->
+        <!--TermsAndConditionsViewController-->
         <scene sceneID="WvL-8e-Amz">
             <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Help" id="BfJ-HE-mA2" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Cabinet" referencedIdentifier="TermsAndConditionsViewController" id="BfJ-HE-mA2" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXZ-5k-HDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-182" y="772"/>
+            <point key="canvasLocation" x="-41" y="770"/>
         </scene>
         <!--EditImage-->
         <scene sceneID="n1N-Ws-yVP">
@@ -320,7 +320,7 @@
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="GYj-w3-22d" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLi-S7-tEy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="850"/>
+            <point key="canvasLocation" x="-154" y="849"/>
         </scene>
         <!--Messages-->
         <scene sceneID="jku-IB-1Tc">
@@ -350,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="102"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SKD-Se-Xux" id="hi9-KB-Fvp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="101.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5w-L0-vD2">
