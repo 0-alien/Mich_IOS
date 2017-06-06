@@ -2094,4 +2094,62 @@ class MichTransport {
     
     
 
+    
+    static func askQuestion(question: String,  successCallbackForAskQuestion: @escaping () -> Void, errorCallbackForAskQuestion: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "faq/ask"
+        
+        let aksquestion = AskQuestionRequest(question: question)
+        let payloadJson = aksquestion.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<AskQuestionResponse>(JSONString: JString)
+                
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForAskQuestion()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForAskQuestion(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForAskQuestion(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 }
