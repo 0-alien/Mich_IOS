@@ -53,18 +53,26 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     func setImageToCrop(image:UIImage){
-        /*
+        
         print(photo.image?.size.width ?? 1)
         print(photo.image?.size.height ?? 1)
         
+        
+        
+        
+ 
+        
+        photo.image = image
+        
+        print(image.size.width)
+        print(image.size.height)
+        
         if((photo.image?.size.width)! + 400 < (photo.image?.size.height)!){
-            photo.image = image.rotateImageByDegrees(-90)
+            print("_____________++__+_+_+_+_+_+_+_")
+            photo.image = photo.image?.rotateImageByDegrees(90)
             
         }
         
-        */
- 
-        photo.image = image
         updateScrollViewZooms()
     }
     
@@ -73,6 +81,10 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         scrollView.zoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
         scrollView.maximumZoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!) * 5
     }
+    
+    
+    
+    
     
     @IBAction func crop(_ sender: Any) {
         let scale:CGFloat = 1 / scrollView.zoomScale
@@ -84,6 +96,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let croppedImage = UIImage(cgImage: croppedCGImage!)
         
 
+        
+//        UIImageJPEGRepresentation(croppedImage, 1)
         
         setImageToCrop(image: croppedImage)
     }
