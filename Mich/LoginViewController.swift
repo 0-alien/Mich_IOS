@@ -108,7 +108,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let logInButton = TWTRLogInButton(logInCompletion: { session, error in
             if (session != nil) {
                 let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UIViewController
+                let vc = storyboard.instantiateViewController(withIdentifier: "ScrollingViewController") as! UIViewController
                 self.present(vc, animated: false, completion: nil)
 
             } else {
@@ -159,7 +159,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(userToken)
             print(token)
             let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+            let vc = storyboard.instantiateViewController(withIdentifier: "ScrollingViewController")
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
             self.dismiss(animated: true, completion: nil)
             //self.present(vc, animated: false, completion: nil)
@@ -204,7 +204,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.user = getcurrentuserResponse
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+        let vc = storyboard.instantiateViewController(withIdentifier: "ScrollingViewController")
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         self.dismiss(animated: false, completion: nil)
         

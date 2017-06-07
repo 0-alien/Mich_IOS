@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import JSQMessagesViewController
 
 class VSBattleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 

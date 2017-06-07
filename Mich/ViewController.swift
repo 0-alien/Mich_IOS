@@ -12,6 +12,9 @@ import Social
 
 class ViewController: UIViewController {
 
+    var userInfo: [AnyHashable : Any]! = nil
+    var shouldShowNotification: Bool! = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +26,7 @@ class ViewController: UIViewController {
             let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! LoginViewController
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+            self.dismiss(animated: false, completion: nil)
         }
     }
     override func didReceiveMemoryWarning() {
@@ -36,10 +40,15 @@ class ViewController: UIViewController {
             let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! LoginViewController
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         }
-        else if (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName == "MainTabBarController" {
+        else if (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName == "ScrollingViewController" {
             let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! ScrollingViewController
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+            if shouldShowNotification {
+                NSLog("1231231232131231232131231231232132131")
+                shouldShowNotification = false
+                (UIApplication.shared.delegate as! AppDelegate).processNotificationAfterLoading(UIApplication.shared, userInfo: userInfo, onStartUp: true)
+            }
         }
         self.dismiss(animated: false, completion: nil)
     }

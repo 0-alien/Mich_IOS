@@ -46,24 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let defaults = UserDefaults.standard
         if let userId = defaults.string(forKey: "userid"), let tk = defaults.string(forKey: "token") {
-            print(userId)
-            print(tk)
             self.waiting = true
+            self.token = tk
             MichTransport.getuser(token: tk, id: Int(userId)!, successCallbackForgetuser: self.onGetUserSuccess, errorCallbackForgetuser: self.onError)
-            self.StartViewControllerName = "MainTabBarController"
+            self.StartViewControllerName = "ScrollingViewController"
             self.StartStoryboardName = "Userspace"
-            self.StartingTabIndex = 0
             return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
-        
-        // ar mushaobs user ar aris sheqmnili jer
-        if let _ = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? [String: AnyObject] {
-            self.StartViewControllerName = "MainTabBarController"
-            self.StartStoryboardName = "Userspace"
-            self.StartingTabIndex = 1
-            return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        }
-        
         self.StartViewControllerName = "LoginViewController"
         self.StartStoryboardName = "Cabinet"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -73,43 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(userInfo)
-        switch (userInfo["type"] as! NSString).intValue {
-        case 1: // postis like
-            if (application.applicationState == .background || application.applicationState == .inactive) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
-                vc.popToRootViewController(animated: false)
-                let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
-                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["id"] as! NSString).intValue))
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
-            }
-            break;
-        case 2: // comntaris damateba
-            if (application.applicationState == .background || application.applicationState == .inactive) {
-                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
-            }
-            break;
-        case 3: // comentaris like
-            if (application.applicationState == .background || application.applicationState == .inactive) {
-                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
-            }
-            break;
-        default:
-            break;
+        if let vc = window?.rootViewController as? ViewController {
+            vc.shouldShowNotification = true
+            vc.userInfo = userInfo
         }
-        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+        else if let _ = window?.rootViewController as? ScrollingViewController {
+            self.processNotificationAfterLoading(application, userInfo: userInfo, onStartUp: false)
+        }
+        // no way
     }
     
     
@@ -157,8 +117,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onGetUserSuccess(user: User) {
         self.user = user
-        let defaults = UserDefaults.standard
-        self.token = defaults.string(forKey: "token")
         NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
@@ -169,4 +127,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
+    func processNotificationAfterLoading(_ application: UIApplication, userInfo: [AnyHashable : Any], onStartUp: Bool) {
+        switch (userInfo["type"] as! NSString).intValue {
+        case 1:
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
+                vc.popToRootViewController(animated: false)
+                let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
+                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["id"] as! NSString).intValue))
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
+        case 2: // comntaris damateba
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
+        case 3: // comentaris like
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
+        default:
+            break;
+        }
+        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+    }
 }

@@ -7,17 +7,21 @@
 //
 
 import UIKit
+import Firebase
 
 class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
+    private var channelRefHandle: FIRDatabaseHandle?
+    private var channels: [Channel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         self.tableView.rowHeight = 80
         currentIndex = 1
-
+        observeChannels()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,4 +66,31 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         performSegue(withIdentifier: "vsseague", sender: self)
     }
     
+    
+    // MARK: Firebase related methods
+    private func observeChannels() {
+        // Use the observe method to listen for new
+        // channels being written to the Firebase DB
+        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
+            let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
+            let id = snapshot.key
+            if let name = channelData["name"] as! String!, name.characters.count > 0 { // 3
+                self.channels.append(Channel(id: id, name: name))
+                self.tableView.reloadData()
+            } else {
+                print("Error! Could not decode channel data")
+            }
+        })
+    }
+    
 }
+
+class Channel {
+    var id: String
+    var name: String
+    init (id: String, name: String) {
+        self.id = id
+        self.name = name
+    }
+}
+
