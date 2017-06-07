@@ -128,6 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func processNotificationAfterLoading(_ application: UIApplication, userInfo: [AnyHashable : Any], onStartUp: Bool) {
+        print(userInfo)
         switch (userInfo["type"] as! NSString).intValue {
         case 1:
             if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
@@ -135,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
                 vc.popToRootViewController(animated: false)
                 let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
-                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["id"] as! NSString).intValue))
+                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["postid"] as! NSString).intValue))
                 if application.applicationIconBadgeNumber > 0 {
                     application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
                 }
@@ -160,9 +161,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
+        case 5: //vs invite
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                vsViewController.shouldPresentAlert = true
+                vsViewController.destinationBattleId = Int((userInfo["id"] as! NSString).intValue)
+                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
         default:
             break;
         }
-        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+        //MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+        if onStartUp {
+            (window?.rootViewController as! ScrollingViewController).myMenu?.incrementNotificationCount(by: -1)
+        }
     }
 }

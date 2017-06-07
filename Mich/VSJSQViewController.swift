@@ -13,11 +13,14 @@ import JSQMessagesViewController
 class VSJSQViewController: JSQMessagesViewController {
 
     var channelRef: FIRDatabaseReference?
+    var battle: Battle!
+    var battleId: Int!
     var messages = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
     private var newMessageRefHandle: FIRDatabaseHandle?
+    var vsId: Int!
     
     var channel: Channel? {
         didSet {
@@ -29,14 +32,16 @@ class VSJSQViewController: JSQMessagesViewController {
         super.viewDidLoad()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        if battle == nil {
+            MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
+        }
+        else {
+            loadBattle(battle: self.battle)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addMessage(withId: "foo", name: "Mr.Bolt", text: "I am so fast!")
-        addMessage(withId: senderId, name: "Me", text: "I bet I can run faster than you!")
-        addMessage(withId: senderId, name: "Me", text: "I like to run!")
-        finishReceivingMessage()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -109,5 +114,41 @@ class VSJSQViewController: JSQMessagesViewController {
     override func didPressAccessoryButton(_ sender: UIButton!) {
         
     }
+    
+    func loadBattle(battle: Battle) {
+        self.senderId = String(battle.host!.id!)
+        self.senderDisplayName = battle.host?.username
+        if battle.status == 0 {
+            let alert = UIAlertController(title: "Alert", message: "Accept battle with" + (battle.host?.username)!, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Yes", style: .default) {
+                UIAlertAction in
+                NSLog("OK Pressed")
+            }
+            let cancelAction = UIAlertAction(title: "No", style: .cancel) {
+                UIAlertAction in
+                NSLog("Cancel Pressed")
+            }
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+        }
+        finishSendingMessage()
+    }
+    
+    func okAction() {
+        
+    }
+    
+    // MARK: callbacks
+    func onGetBattleSuccess(resp: Battle) {
+        self.battle = resp
+        loadBattle(battle: self.battle)
+    }
+    
+    func onError(error: DefaultError) {
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }
+

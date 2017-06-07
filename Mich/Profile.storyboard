@@ -47,7 +47,7 @@
                                             <action selector="editOrFollow:" destination="BJT-Sn-q0x" eventType="touchUpInside" id="Wmj-jy-PUC"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWM-Rp-Z0B">
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWM-Rp-Z0B">
                                         <rect key="frame" x="307" y="53" width="28" height="22"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIo-EQ-h0w">
@@ -58,11 +58,15 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.21960784310000001" blue="0.074509803920000006" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="GIo-EQ-h0w" firstAttribute="top" secondItem="OWM-Rp-Z0B" secondAttribute="top" id="2H6-2L-gxX"/>
                                             <constraint firstItem="GIo-EQ-h0w" firstAttribute="centerX" secondItem="OWM-Rp-Z0B" secondAttribute="centerX" id="T8o-Sd-a81"/>
                                             <constraint firstAttribute="bottom" secondItem="GIo-EQ-h0w" secondAttribute="bottom" id="gVb-WQ-qGC"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="SQt-rB-haV" appends="YES" id="bis-0y-UFn"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHx-tp-3T9">
                                         <rect key="frame" x="235" y="75" width="100" height="22"/>
@@ -184,13 +188,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="User Name" id="eBb-PG-CYc">
-                        <barButtonItem key="rightBarButtonItem" title="VS" id="qig-oX-0qP">
-                            <connections>
-                                <action selector="vs:" destination="BJT-Sn-q0x" id="LEq-aS-hrD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="User Name" id="eBb-PG-CYc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editOrFollow" destination="cVA-cG-n6Y" id="dwK-pX-FCA"/>
@@ -213,6 +211,11 @@
                 <tapGestureRecognizer id="BCb-63-dan">
                     <connections>
                         <action selector="changeProfilePicture:" destination="BJT-Sn-q0x" id="ktc-Ee-sLC"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="SQt-rB-haV" userLabel="VS Invite ">
+                    <connections>
+                        <action selector="vs:" destination="BJT-Sn-q0x" id="cHa-mR-D74"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -445,7 +448,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -745,7 +748,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -767,9 +770,9 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aPV-7X-oby"/>
+        <segue reference="MaX-mX-K8b"/>
+        <segue reference="8Gc-2c-hvL"/>
         <segue reference="23d-Vm-cWR"/>
         <segue reference="T4Z-G6-O4m"/>
-        <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>

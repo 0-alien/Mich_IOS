@@ -1515,56 +1515,6 @@ class MichTransport {
         
     }
     
-    // MARK: Battle
-    
-    static func invite(token: String, id: Int, successCallbackForinvite: @escaping () -> Void, errorCallbackForinvite: @escaping (DefaultError) -> Void) {
-        
-        let reqString = BASE_URL + "battle/invite"
-        
-        let getuserrequest = GetUserRequest(token: token, id: id)
-        let payloadJson = getuserrequest.toJSONString()
-        
-        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
-            if( response.result.isSuccess ){
-                
-                let JString = "\(response.result.value!)"
-                print(JString)
-                let baseResponse = BaseResponse<User>(JSONString: JString)
-                
-                if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    successCallbackForinvite()
-                    
-                }else{
-                    
-                    print(baseResponse!.message!)
-                    
-                    let error = DefaultError()
-                    error.errorString = baseResponse!.message!
-                    
-                    
-                    errorCallbackForinvite(error)
-                    
-                }
-                
-                
-            }else{
-                
-                let error = DefaultError()
-                error.errorString = "Something went wrong!"
-                
-                errorCallbackForinvite(error)
-                
-            }
-            
-        }
-        
-    }
-    
-    
-    
     
     static func updateUser(token: String?, name: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
         
