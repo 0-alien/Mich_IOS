@@ -15,7 +15,7 @@
         <!--Camera Load View Controller-->
         <scene sceneID="pcr-ZD-5hX">
             <objects>
-                <viewController storyboardIdentifier="Camera" id="mxP-xi-PCC" customClass="CameraLoadViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="z" storyboardIdentifier="Camera" id="mxP-xi-PCC" customClass="CameraLoadViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zr0-mm-q9x"/>
                         <viewControllerLayoutGuide type="bottom" id="mrg-OE-bJB"/>
