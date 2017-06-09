@@ -19,6 +19,8 @@ class MichNotification: Mappable {
     var createdAt: String?
     var updatedAt: String?
     var avatar: String?
+    var commentId: String?
+    var postId: String?
     
     required init?(map: Map) {
         
@@ -34,6 +36,8 @@ class MichNotification: Mappable {
         createdAt       <- map["created_at"]
         updatedAt       <- map["updated_at"]
         avatar          <- map["avatar"]
+        commentId       <- map["commentid"]
+        postId          <- map["postId"]
     }
 }
 

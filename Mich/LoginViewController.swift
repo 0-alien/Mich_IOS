@@ -189,13 +189,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         
         let user = usernameTXT.text!
         let pass = passwordTXT.text!
-        MichTransport.defaultLogin(username: user, password: pass, token: FIRInstanceID.instanceID().token()!, successCallback: onLogin, errorCallback: onError)
-        
+        MichTransport.defaultLogin(username: user, password: pass, successCallback: onLogin, errorCallback: onError)
     }
     
     
     func onLogin(loginResponse: LoginResponse){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.token = loginResponse.token
+        if let contents = FIRInstanceID.instanceID().token() {
+            print("jer firebase moxda")
+            MichTransport.updateFirebaseToken(token: (appDelegate.token)!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: onError)
+        }
         MichTransport.getcurrentuser(token: (appDelegate.token)!, successCallbackForgetcurrentuser: ongetcurrentuser, errorCallbackForgetcurrentuser: onError)
     }
     
@@ -205,12 +209,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         appDelegate.user = getcurrentuserResponse
         let storyboard = UIStoryboard(name: "Userspace", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ScrollingViewController")
-        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
-        self.dismiss(animated: false, completion: nil)
         
         let defaults = UserDefaults.standard
         defaults.set(String(getcurrentuserResponse.id!), forKey: "userid")
         defaults.set(String(appDelegate.token!), forKey: "token")
+        
+        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+        self.dismiss(animated: false, completion: nil)
     }
     
     func onError(error: DefaultError){

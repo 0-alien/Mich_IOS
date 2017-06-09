@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import AlamofireImage
 
 class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -15,12 +16,17 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
     private var channelRefHandle: FIRDatabaseHandle?
     private var channels: [Channel] = []
+    var destinationBattleId: Int = -1
+    var shouldPresentAlert: Bool = false
+    var battles = [Battle]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         self.tableView.rowHeight = 80
         currentIndex = 1
+        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles:
+        onError)
         observeChannels()
     }
     override func didReceiveMemoryWarning() {
@@ -28,7 +34,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let frame = CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: 15);
         if (section == 1) {
             return VSTableViewSectionHeader(frame: frame, labelName: " Active Now", seeMoreCount: 11, listener: self, selector: #selector(VSViewController.activeSeeMore(_:)))
@@ -39,18 +45,24 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         else {
             return VSTableViewSectionHeader(frame: frame, labelName: " More Conversations", seeMoreCount: 3, listener: self, selector: #selector(VSViewController.moreSeeMore(_:)))
         }
-    }
+    }*/
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return battles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "VSTableViewCell", for: indexPath) as! VSTableViewCell
+        let cell: VSTableViewCell = tableView.dequeueReusableCell(withIdentifier: "VSTableViewCell", for: indexPath) as! VSTableViewCell
+        cell.hostUserName.text = battles[indexPath.row].host?.username
+        cell.guestUserName.text = battles[indexPath.row].guest?.username
+        cell.vsFirst.af_setImage(withURL: Foundation.URL(string: (battles[indexPath.row].host?.avatar)!)!)
+        cell.vsSecond.af_setImage(withURL: Foundation.URL(string: (battles[indexPath.row].guest?.avatar)!)!)
+        cell.vsFirst = cell.vsFirst.circle
+        cell.vsSecond = cell.vsSecond.circle
         return cell
     }
 
@@ -83,6 +95,42 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         })
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showvs" {
+            guard let vc = segue.destination as? VSJSQViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            guard let cell = sender as? VSTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            let indexPath = tableView.indexPath(for: cell)
+            vc.senderId = String(battles[(indexPath?.row)!].host!.id!)
+            vc.senderDisplayName = battles[indexPath!.row].host?.username
+            vc.battleId = battles[(indexPath?.row)!].id
+            vc.battle = battles[(indexPath?.row)!]
+        }
+        else if segue.identifier == "showvsnotification" {
+            guard let vc = segue.destination as? VSJSQViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.battleId = self.destinationBattleId
+            vc.battle = nil
+            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
+            vc.senderId = String((UIApplication.shared.delegate as! AppDelegate).user!.id!)
+        }
+    }
+    
+    // MARK: callbacks
+    func onGetBattlesSuccess(resp: [Battle]) {
+        self.battles = resp
+        self.tableView.reloadData()
+    }
+    
+    func onError(error: DefaultError) {
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 class Channel {

@@ -41,9 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         FIRApp.configure()
         
-        let _ = FBSDKLoginButton.classForCoder()
-        Fabric.with([Twitter.self])
-        
         let defaults = UserDefaults.standard
         if let userId = defaults.string(forKey: "userid"), let tk = defaults.string(forKey: "token") {
             self.waiting = true
@@ -53,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.StartStoryboardName = "Userspace"
             return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: .firInstanceIDTokenRefresh, object: nil)
+        
+        let _ = FBSDKLoginButton.classForCoder()
+        Fabric.with([Twitter.self])
         self.StartViewControllerName = "LoginViewController"
         self.StartStoryboardName = "Cabinet"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -117,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onGetUserSuccess(user: User) {
         self.user = user
+        print("waikitxa save logini jer")
+        if let contents = FIRInstanceID.instanceID().token() {
+            MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: {_ in })
+        }
         NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
@@ -128,6 +133,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func processNotificationAfterLoading(_ application: UIApplication, userInfo: [AnyHashable : Any], onStartUp: Bool) {
+        print(userInfo)
         switch (userInfo["type"] as! NSString).intValue {
         case 1:
             if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
@@ -135,7 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
                 vc.popToRootViewController(animated: false)
                 let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
-                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["id"] as! NSString).intValue))
+                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["postid"] as! NSString).intValue))
                 if application.applicationIconBadgeNumber > 0 {
                     application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
                 }
@@ -160,9 +166,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
+        case 5: //vs invite
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                vsViewController.shouldPresentAlert = true
+                vsViewController.destinationBattleId = Int((userInfo["id"] as! NSString).intValue)
+                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break;
         default:
             break;
         }
         MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+        if onStartUp {
+            (window?.rootViewController as! ScrollingViewController).myMenu?.incrementNotificationCount(by: -1)
+        }
     }
+    
+    func tokenRefreshNotification(notification: NSNotification) {
+        guard let contents = FIRInstanceID.instanceID().token()
+            else {
+                return
+        }
+        if self.token != nil {
+            MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: onError)
+            print("jer logini moxda")
+        }
+        
+    }
+    
 }

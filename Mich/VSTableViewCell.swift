@@ -10,14 +10,14 @@ import UIKit
 
 class VSTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var hostUserName: UILabel!
     @IBOutlet weak var vsFirst: UIImageView!
     @IBOutlet weak var vsSecond: UIImageView!
+    @IBOutlet weak var guestUserName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        vsFirst.image = vsFirst.image?.circle
-        vsSecond.image = vsSecond.image?.circle
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

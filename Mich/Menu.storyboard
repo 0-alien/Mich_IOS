@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJI-G1-bi9" id="q4d-O5-c8O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="98x-y2-r0q">
@@ -72,14 +72,13 @@
                                         <connections>
                                             <outlet property="avatar" destination="98x-y2-r0q" id="OwX-c2-nc4"/>
                                             <outlet property="data" destination="tIg-Lx-JET" id="GEh-75-ZH2"/>
-                                            <segue destination="sAX-ER-HZP" kind="show" identifier="postliked" id="j0X-ma-VnJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentAddedCell" rowHeight="92" id="1fg-mL-J1M" customClass="CommentAddedCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="375" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1fg-mL-J1M" id="SyY-LP-KRM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-9L-9Gi">
@@ -120,14 +119,13 @@
                                         <connections>
                                             <outlet property="avatar" destination="JIA-9L-9Gi" id="W6e-UO-gNh"/>
                                             <outlet property="data" destination="WYd-PJ-96a" id="T29-lg-X6O"/>
-                                            <segue destination="RNI-jn-nne" kind="show" identifier="commentadded" id="oKg-Fz-gCc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentLikedCell" rowHeight="82" id="YOV-a0-lcS" customClass="CommentLikedCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="193" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YOV-a0-lcS" id="AJw-pt-KwB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-pa-zxz">
@@ -168,14 +166,13 @@
                                         <connections>
                                             <outlet property="avatar" destination="xeP-pa-zxz" id="ueh-u8-YWh"/>
                                             <outlet property="data" destination="Icq-CO-3sb" id="Yuw-67-9N4"/>
-                                            <segue destination="RNI-jn-nne" kind="show" identifier="commentliked" id="kEN-Jb-tfg"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowCell" rowHeight="89" id="kU4-uK-kcD" customClass="FollowCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="275" width="375" height="89"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kU4-uK-kcD" id="qOj-ey-7yA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IEd-b1-hWb">
@@ -222,7 +219,7 @@
                                         <rect key="frame" x="0.0" y="364" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5GJ-g0-DEt" id="302-H8-Dpo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4U-7z-p2a">
@@ -269,7 +266,7 @@
                                         <rect key="frame" x="0.0" y="437" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ku9-64-Cos" id="Q4a-YI-mMU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="94.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Grc-vD-XCc">
@@ -710,7 +707,4 @@
             <point key="canvasLocation" x="1134" y="161"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oKg-Fz-gCc"/>
-    </inferredMetricsTieBreakers>
 </document>

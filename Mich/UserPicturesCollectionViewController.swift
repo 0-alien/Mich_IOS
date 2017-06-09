@@ -245,7 +245,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                         successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
     @IBAction func vs(_ sender: Any) {
-        MichTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
+        MichVSTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
     }
     
     @IBAction func unwindFromPostPage(sender: UIStoryboardSegue) {
