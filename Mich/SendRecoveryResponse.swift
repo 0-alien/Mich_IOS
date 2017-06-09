@@ -18,7 +18,6 @@ class SendRecoveryResponse: Mappable {
     }
     
     func mapping(map: Map) {
-    token    <- map["token"]
-
+        token    <- map["token"]
     }
 }

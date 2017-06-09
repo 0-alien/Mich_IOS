@@ -41,9 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerForRemoteNotifications()
         FIRApp.configure()
         
-        let _ = FBSDKLoginButton.classForCoder()
-        Fabric.with([Twitter.self])
-        
         let defaults = UserDefaults.standard
         if let userId = defaults.string(forKey: "userid"), let tk = defaults.string(forKey: "token") {
             self.waiting = true
@@ -53,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.StartStoryboardName = "Userspace"
             return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: .firInstanceIDTokenRefresh, object: nil)
+        
+        let _ = FBSDKLoginButton.classForCoder()
+        Fabric.with([Twitter.self])
         self.StartViewControllerName = "LoginViewController"
         self.StartStoryboardName = "Cabinet"
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -117,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onGetUserSuccess(user: User) {
         self.user = user
+        print("waikitxa save logini jer")
+        if let contents = FIRInstanceID.instanceID().token() {
+            MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: {_ in })
+        }
         NotificationCenter.default.post(name: Notification.Name(rawValue: "finishedLoading"), object: nil)
     }
     
@@ -181,9 +186,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         default:
             break;
         }
-        //MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
         if onStartUp {
             (window?.rootViewController as! ScrollingViewController).myMenu?.incrementNotificationCount(by: -1)
         }
     }
+    
+    func tokenRefreshNotification(notification: NSNotification) {
+        guard let contents = FIRInstanceID.instanceID().token()
+            else {
+                return
+        }
+        if self.token != nil {
+            MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: onError)
+            print("jer logini moxda")
+        }
+        
+    }
+    
 }

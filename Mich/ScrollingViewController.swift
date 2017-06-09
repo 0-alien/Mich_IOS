@@ -98,6 +98,7 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDel
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
         (UIApplication.shared.delegate as! AppDelegate).user = nil
+        (UIApplication.shared.delegate as! AppDelegate).token = nil
         self.dismiss(animated: false, completion: nil)
     }
     

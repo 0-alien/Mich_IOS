@@ -35,11 +35,11 @@ class MichTransport {
     
     
     
-    static func defaultLogin(username: String, password: String, token: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
+    static func defaultLogin(username: String, password: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
     
         let reqString = BASE_URL + "auth/login"
         
-        let loginRequest = LoginRequest(username: username, password:password, token: token, type: 0)
+        let loginRequest = LoginRequest(username: username, password:password, type: 0)
         let payloadJson = loginRequest.toJSONString()
         
         
@@ -62,10 +62,6 @@ class MichTransport {
                 if baseResponse!.code! == SUCCESS_CODE {
                     let res = baseResponse!.data!
                     
-                    
-                    ////// tokenis ageba
-                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                    appDelegate.token = baseResponse?.data?.token
                    
                     successCallback(res)
                     
@@ -2096,7 +2092,32 @@ class MichTransport {
         
     }
     
-    
+    static func updateFirebaseToken(token: String, firToken: String, successCallbackForGetBattles: @escaping () -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "fcm/update"
+        let updateFirebaseTokenRequest = UpdateFirebaseTokenRequest(token: token, fireBaseToken: firToken)
+        let payloadJson = updateFirebaseTokenRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForGetBattles()
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetBattles(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetBattles(error)
+            }
+        }
+    }
     
     
     
