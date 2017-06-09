@@ -6,7 +6,7 @@
 //  Copyright © 2016 Gigi. All rights reserved.
 //
 
-import AMScrollingNavbar
+
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
@@ -37,10 +37,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if (viewController is ScrollingNavigationController) {
-            (viewController as! ScrollingNavigationController).showNavbar(animated: false)
-        }
-        else if tabBarController.selectedIndex == 4 {
+        
+        if tabBarController.selectedIndex == 4 {
             tabBarController.tabBar.items?[4].badgeValue = nil
         }
     }

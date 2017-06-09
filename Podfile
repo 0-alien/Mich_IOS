@@ -3,7 +3,6 @@ target 'Mich' do
 	pod 'FBSDKCoreKit'
 	pod 'FBSDKShareKit'
 	pod 'FBSDKLoginKit'
-	pod 'AMScrollingNavbar'
     pod 'Google/SignIn'
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
