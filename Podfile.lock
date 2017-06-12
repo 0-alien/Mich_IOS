@@ -2,7 +2,6 @@ PODS:
   - Alamofire (4.2.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - AMScrollingNavbar (2.1.2)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -98,7 +97,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage (~> 3.1)
-  - AMScrollingNavbar
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
@@ -115,7 +113,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  AMScrollingNavbar: 403b8651052459b433941bd4bc4215a64b992e52
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
   FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
@@ -141,6 +138,6 @@ SPEC CHECKSUMS:
   Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
 
-PODFILE CHECKSUM: 82ab6f4b9ddb9c63d08980e5dca759be4e051b35
+PODFILE CHECKSUM: 57db3e47bd932fbd9bd8aa72a2ae7a50ad0741f5
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0
