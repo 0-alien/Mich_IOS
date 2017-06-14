@@ -287,6 +287,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             super.libr(sender)
         }
     }
+    @IBAction func profileAction(_ sender: Any) {
+        
+    }
   
     @IBAction func changeProfilePicture(_ sender: Any) {
         self.changeProfilePicture = true

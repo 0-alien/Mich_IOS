@@ -17,6 +17,7 @@ class User: Mappable {
     var avatar: String?
     var nfollowers: Int?
     var nfollowing: Int?
+    var record: String?
     
     required init?(map: Map) {
         
@@ -30,6 +31,6 @@ class User: Mappable {
         avatar          <- map["avatar"]
         nfollowers      <- map["nfollowers"]
         nfollowing      <- map["nfollowing"]
-        
+        record          <- map["record"]
     }
 }
