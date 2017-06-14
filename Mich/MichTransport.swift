@@ -2039,7 +2039,165 @@ class MichTransport {
     }
     
     
+    
+    static func reportuser(token: String, userID: Int,  successCallbackForReportUser: @escaping () -> Void, errorCallbackForReportUser: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/report"
+        
+        let reportuser = ReportUserRequest(token: token, id: userID)
+        let payloadJson = reportuser.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<ReportUserResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForReportUser()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForReportUser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForReportUser(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    static func blockuser(token: String, userID: Int,  successCallbackForBlockUser: @escaping () -> Void, errorCallbackForBlockUser: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/block"
+        
+        let blockuser = BlockUserRequest(token: token, id: userID)
+        let payloadJson = blockuser.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<BlockUserResponse>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForBlockUser()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForBlockUser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForBlockUser(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
 
+    
+    static func unblockuser(token: String, userID: Int,  successCallbackForUnBlockUser: @escaping () -> Void, errorCallbackForUnBlockUser: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/unblock"
+        
+        let unblockuser = UnblockUserRequest(token: token, id: userID)
+        let payloadJson = unblockuser.toJSONString()
+        
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<UnblockUserRequest>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    successCallbackForUnBlockUser()
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackForUnBlockUser(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackForUnBlockUser(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+    
     
     static func askQuestion(question: String,  successCallbackForAskQuestion: @escaping () -> Void, errorCallbackForAskQuestion: @escaping (DefaultError) -> Void ){
         
@@ -2092,6 +2250,9 @@ class MichTransport {
         
     }
     
+    
+    
+    
     static func updateFirebaseToken(token: String, firToken: String, successCallbackForGetBattles: @escaping () -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "fcm/update"
         let updateFirebaseTokenRequest = UpdateFirebaseTokenRequest(token: token, fireBaseToken: firToken)
@@ -2118,7 +2279,6 @@ class MichTransport {
             }
         }
     }
-    
     
     
     

@@ -287,10 +287,59 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             super.libr(sender)
         }
     }
+    
+    
     @IBAction func profileAction(_ sender: Any) {
+        let alert = UIAlertController()
+        
+        
+        if(!(user?.blocked)!){
+            let blockUser = UIAlertAction(title: "block", style: .destructive, handler: { ACTION in
+                MichTransport.blockuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
+                                         successCallbackForBlockUser: self.onblockusersuccess, errorCallbackForBlockUser: self.onerror)
+            })
+            alert.addAction(blockUser)
+        }else{
+        
+            let unblockUser = UIAlertAction(title: "unblock", style: .default, handler: { ACTION in
+                MichTransport.unblockuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
+                                        successCallbackForUnBlockUser: self.onrunblockusersuccess, errorCallbackForUnBlockUser: self.onerror)
+            })
+            alert.addAction(unblockUser)
+        }
+        
+        let reportUser = UIAlertAction(title: "report", style: .destructive, handler: { ACTION in
+            MichTransport.reportuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
+                                  successCallbackForReportUser: self.onreportusersuccess, errorCallbackForReportUser: self.onerror)
+        })
+        
+        
+        
+        alert.addAction(reportUser)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default,handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+
+    func onreportusersuccess() {
+        print("reported user")
         
     }
-  
+    
+    
+    func onblockusersuccess() {
+        user?.blocked = true
+        
+    }
+    
+    
+    func onrunblockusersuccess() {
+        user?.blocked = false
+        
+    }
+    
+    
+    
     @IBAction func changeProfilePicture(_ sender: Any) {
         self.changeProfilePicture = true
         let alert = UIAlertController()

@@ -127,6 +127,12 @@
 		CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */; };
 		CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */; };
 		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
+		CF7D20A41EF16D7E0037FE60 /* ReportUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */; };
+		CF7D20A61EF16D990037FE60 /* ReportUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */; };
+		CF7D20A81EF174610037FE60 /* BlockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */; };
+		CF7D20AA1EF1747E0037FE60 /* UnblockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */; };
+		CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */; };
+		CF7D20AE1EF1749F0037FE60 /* UnblockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */; };
 		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
 		CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */; };
 		CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */; };
@@ -289,6 +295,12 @@
 		CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelpViewController.swift; sourceTree = "<group>"; };
 		CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersRequest.swift; sourceTree = "<group>"; };
 		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
+		CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserResponse.swift; sourceTree = "<group>"; };
+		CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserRequest.swift; sourceTree = "<group>"; };
+		CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserResponse.swift; sourceTree = "<group>"; };
+		CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnblockUserResponse.swift; sourceTree = "<group>"; };
+		CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserRequest.swift; sourceTree = "<group>"; };
+		CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnblockUserRequest.swift; sourceTree = "<group>"; };
 		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequset.swift; sourceTree = "<group>"; };
 		CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentResponse.swift; sourceTree = "<group>"; };
@@ -659,6 +671,9 @@
 				CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */,
 				CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */,
 				1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */,
+				CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */,
+				CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */,
+				CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -702,6 +717,9 @@
 				CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */,
 				CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */,
 				1E3D29AA1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift */,
+				CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */,
+				CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */,
+				CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -881,6 +899,7 @@
 				1E42C06A1EE82A990077B707 /* BattleInviteRequest.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
 				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
+				CF7D20AE1EF1749F0037FE60 /* UnblockUserRequest.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
@@ -907,6 +926,7 @@
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				1E42C0701EE835FE0077B707 /* GetBattleRequest.swift in Sources */,
+				CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */,
 				1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
 				CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */,
@@ -926,6 +946,7 @@
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
+				CF7D20AA1EF1747E0037FE60 /* UnblockUserResponse.swift in Sources */,
 				CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */,
 				CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
@@ -933,6 +954,7 @@
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
 				CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */,
 				CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */,
+				CF7D20A41EF16D7E0037FE60 /* ReportUserResponse.swift in Sources */,
 				1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
@@ -957,6 +979,7 @@
 				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
 				1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */,
 				CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */,
+				CF7D20A61EF16D990037FE60 /* ReportUserRequest.swift in Sources */,
 				1EB4E3B01E813807008E56D5 /* PostLikedCell.swift in Sources */,
 				1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */,
 				CF149D271E77EB81005911FB /* UpdateUserRequest.swift in Sources */,
@@ -968,6 +991,7 @@
 				1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */,
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
+				CF7D20A81EF174610037FE60 /* BlockUserResponse.swift in Sources */,
 				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
