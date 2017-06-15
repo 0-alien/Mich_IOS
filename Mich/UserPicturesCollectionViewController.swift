@@ -98,6 +98,10 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
