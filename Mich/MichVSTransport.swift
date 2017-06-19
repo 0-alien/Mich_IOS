@@ -80,9 +80,9 @@ class MichVSTransport {
         }
     }
     
-    static func getBattle(token: String, id: Int, successCallbackForGetBattle: @escaping (Battle) -> Void, errorCallbackForGetBattle: @escaping (DefaultError) -> Void) {
+    static func getBattle(token: String, battleId: Int, successCallbackForGetBattle: @escaping (Battle) -> Void, errorCallbackForGetBattle: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "battle/get"
-        let getBattleRequest = GetBattleRequest(token: token, id: id)
+        let getBattleRequest = GetBattleRequest(token: token, battleId: battleId)
         let payloadJson = getBattleRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             if( response.result.isSuccess ){
@@ -104,6 +104,59 @@ class MichVSTransport {
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
                 errorCallbackForGetBattle(error)
+            }
+        }
+    }
+    
+    static func acceptBattle(token: String, battleId: Int, successCallbackForAcceptBattle: @escaping () -> Void, errorCallbackForAcceptBattle: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/accept"
+        let acceptBattleRequest = BattleActionRequest(token: token, battleId: battleId)
+        let payloadJson = acceptBattleRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForAcceptBattle()
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForAcceptBattle(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForAcceptBattle(error)
+            }
+        }
+    }
+    static func declineBattle(token: String, battleId: Int, successCallbackForDeclineBattle: @escaping () -> Void, errorCallbackForDeclineBattle: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/decline"
+        let acceptBattleRequest = BattleActionRequest(token: token, battleId: battleId)
+        let payloadJson = acceptBattleRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForDeclineBattle()
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForDeclineBattle(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForDeclineBattle(error)
             }
         }
     }

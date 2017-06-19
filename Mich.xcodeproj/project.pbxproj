@@ -61,6 +61,7 @@
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
 		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
+		1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */; };
 		1EB4E3B01E813807008E56D5 /* PostLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */; };
@@ -221,6 +222,7 @@
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
 		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
+		1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleActionRequest.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichNotification.swift; sourceTree = "<group>"; };
 		1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLikedCell.swift; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				1E42C0691EE82A990077B707 /* BattleInviteRequest.swift */,
 				1E42C06D1EE82D400077B707 /* GetBattlesRequest.swift */,
 				1E42C06F1EE835FE0077B707 /* GetBattleRequest.swift */,
+				1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -947,6 +950,7 @@
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
 				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
 				CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */,
+				1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */,
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,

@@ -33,7 +33,7 @@ class VSJSQViewController: JSQMessagesViewController {
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         if battle == nil {
-            MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
+            MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         }
         else {
             loadBattle(battle: self.battle)
@@ -119,23 +119,25 @@ class VSJSQViewController: JSQMessagesViewController {
         self.senderId = String(battle.host!.id!)
         self.senderDisplayName = battle.host?.username
         if battle.status == 0 {
-            let alert = UIAlertController(title: "Alert", message: "Accept battle with" + (battle.host?.username)!, preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert", message: "Accept battle with " + (battle.host?.username)!, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Yes", style: .default) {
                 UIAlertAction in
-                NSLog("OK Pressed")
+                MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
+                    successCallbackForAcceptBattle: {}, errorCallbackForAcceptBattle: self.onError)
             }
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
-                NSLog("Cancel Pressed")
+                MichVSTransport.declineBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
+                        successCallbackForDeclineBattle: {}, errorCallbackForDeclineBattle: self.onError)
             }
-            alert.addAction(okAction)
             alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+        }
+        else if battle.status == 1 {
+            // TODO: firebasedan wamogeba mesijebis
         }
         finishSendingMessage()
-    }
-    
-    func okAction() {
-        
     }
     
     // MARK: callbacks

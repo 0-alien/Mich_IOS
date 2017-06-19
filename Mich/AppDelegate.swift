@@ -172,8 +172,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
                 vc.popToRootViewController(animated: false)
                 let vsViewController: VSViewController = vc.topViewController as! VSViewController
-                vsViewController.shouldPresentAlert = true
-                vsViewController.destinationBattleId = Int((userInfo["id"] as! NSString).intValue)
+                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
                 if application.applicationIconBadgeNumber > 0 {
                     application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
@@ -182,6 +181,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else {
                 (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
+            break;
+        case 6: //vs accept
+            
             break;
         default:
             break;

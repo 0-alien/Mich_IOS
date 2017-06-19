@@ -17,7 +17,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     private var channelRefHandle: FIRDatabaseHandle?
     private var channels: [Channel] = []
     var destinationBattleId: Int = -1
-    var shouldPresentAlert: Bool = false
     var battles = [Battle]()
 
     override func viewDidLoad() {
