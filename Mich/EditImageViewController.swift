@@ -43,6 +43,9 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        UIImageJPEGRepresentation(img, 1.0)
+        
         photo.image = img
         doneButtone.isEnabled = true
     }
@@ -61,8 +64,10 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         
  
-        
+        UIImageJPEGRepresentation(image, 1.0)
         photo.image = image
+        
+        /*
         
         print(image.size.width)
         print(image.size.height)
@@ -72,7 +77,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             photo.image = photo.image?.rotateImageByDegrees(90)
             
         }
-        
+         */
+ 
         updateScrollViewZooms()
     }
     
@@ -97,7 +103,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
 
         
-//        UIImageJPEGRepresentation(croppedImage, 1)
+        UIImageJPEGRepresentation(croppedImage, 1)
         
         setImageToCrop(image: croppedImage)
     }
