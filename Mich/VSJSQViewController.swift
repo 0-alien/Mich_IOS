@@ -11,7 +11,7 @@ import Firebase
 import JSQMessagesViewController
 import ObjectMapper
 
-class VSJSQViewController: JSQMessagesViewController {
+class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewCellDelegate {
 
     var channelRef: FIRDatabaseReference?
     var battle: Battle!
@@ -25,8 +25,6 @@ class VSJSQViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.senderId)
-        print((UIApplication.shared.delegate as! AppDelegate).user?.id)
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         channelRef = FIRDatabase.database().reference() //connect to database
@@ -66,6 +64,7 @@ class VSJSQViewController: JSQMessagesViewController {
         } else {
             cell.textView?.textColor = UIColor.black
         }
+        cell.delegate = self
         return cell
     }
     
@@ -169,6 +168,15 @@ class VSJSQViewController: JSQMessagesViewController {
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: JSQcollectionviewcell delegate
+    func messagesCollectionViewCellDidTapMessageBubble(_ cell: JSQMessagesCollectionViewCell!) {
+        print("WAT")
+    }
+    func messagesCollectionViewCellDidTapAvatar(_ cell: JSQMessagesCollectionViewCell!) {print("dwadwa")}
+    func messagesCollectionViewCell(_ cell: JSQMessagesCollectionViewCell!, didPerformAction action: Selector!, withSender sender: Any!) {print(1)}
+    func messagesCollectionViewCellDidTap(_ cell: JSQMessagesCollectionViewCell!, atPosition position: CGPoint) {
     }
 
 }
