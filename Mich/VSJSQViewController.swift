@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import JSQMessagesViewController
+import ObjectMapper
 
 class VSJSQViewController: JSQMessagesViewController {
 
@@ -18,25 +19,26 @@ class VSJSQViewController: JSQMessagesViewController {
     var messages = [JSQMessage]()
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
+    
     private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
     private var newMessageRefHandle: FIRDatabaseHandle?
-    var vsId: Int!
-    
-    var channel: Channel? {
-        didSet {
-            title = channel?.name
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        channelRef = FIRDatabase.database().reference() //connect to database
         if battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         }
         else {
             loadBattle(battle: self.battle)
+        }
+    }
+    
+    deinit {
+        if let rr = self.newMessageRefHandle {
+            messageRef.removeObserver(withHandle: rr)
         }
     }
 
@@ -99,16 +101,12 @@ class VSJSQViewController: JSQMessagesViewController {
     }
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
-        /*let itemRef = messageRef.childByAutoId() // 1*/
-        let mes = JSQMessage(senderId: self.senderId, displayName: self.senderDisplayName, text: text)
-        messages.append(mes!)
-        //finishSendingMessage()
-        /*
-        itemRef.setValue(messageItem) // 3
-        
-        JSQSystemSoundPlayer.jsq_playMessageSentSound() // 4
-        */
-        finishSendingMessage() // 5
+        let itemRef = messageRef.childByAutoId()
+        print(itemRef.key)
+        let msg = BattleMessage(id: itemRef.key, senderId: Int(self.senderId)!, senderDisplayName: self.senderDisplayName, text: text)
+        itemRef.setValue(msg.toJSON())
+        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        finishSendingMessage()
     }
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
@@ -135,9 +133,28 @@ class VSJSQViewController: JSQMessagesViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else if battle.status == 1 {
-            // TODO: firebasedan wamogeba mesijebis
+            observeMessages()
+        } else if battle.status == 2 {
+            observeMessages()
+        } else {
+            observeMessages()
         }
         finishSendingMessage()
+    }
+    
+    func observeMessages() {
+        newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
+            if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
+                let JSONText = String(data: JSONData, encoding: .ascii)
+                if let msg = BattleMessage(JSONString: JSONText!) {
+                    msg.id = snapshot.key
+                    self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))
+                    self.collectionView.reloadData()
+                } else {
+                    print("Error! Could not decode channel data")
+                }
+            }
+        })
     }
     
     // MARK: callbacks

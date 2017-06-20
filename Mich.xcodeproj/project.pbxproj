@@ -53,6 +53,7 @@
 		1E63097A1E65A86D0080054B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6309791E65A86D0080054B /* Comment.swift */; };
 		1E63097C1E65A9FA0080054B /* GetPostCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */; };
 		1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */; };
+		1E6C1A081EF9219D001C592C /* BattleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C1A071EF9219D001C592C /* BattleMessage.swift */; };
 		1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */; };
 		1E7FC0FC1EE6C7B90014562F /* VSJSQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */; };
 		1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8015C21E07F951001166E1 /* Menu.storyboard */; };
@@ -220,6 +221,7 @@
 		1E6309791E65A86D0080054B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		1E63097B1E65A9FA0080054B /* GetPostCommentsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostCommentsRequest.swift; sourceTree = "<group>"; };
 		1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		1E6C1A071EF9219D001C592C /* BattleMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMessage.swift; sourceTree = "<group>"; };
 		1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
 		1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSJSQViewController.swift; sourceTree = "<group>"; };
 		1E8015C21E07F951001166E1 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				1E42C06B1EE82AFA0077B707 /* Battle.swift */,
+				1E6C1A071EF9219D001C592C /* BattleMessage.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -847,7 +850,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1014,6 +1017,7 @@
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
 				1E25E1F71E6EED1C00576D47 /* CommentsViewController.swift in Sources */,
 				CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */,
+				1E6C1A081EF9219D001C592C /* BattleMessage.swift in Sources */,
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
 				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
