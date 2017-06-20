@@ -25,6 +25,8 @@ class VSJSQViewController: JSQMessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.senderId)
+        print((UIApplication.shared.delegate as! AppDelegate).user?.id)
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         channelRef = FIRDatabase.database().reference() //connect to database
@@ -114,8 +116,8 @@ class VSJSQViewController: JSQMessagesViewController {
     }
     
     func loadBattle(battle: Battle) {
-        self.senderId = String(battle.host!.id!)
-        self.senderDisplayName = battle.host?.username
+        //self.senderId = String(battle.host!.id!)
+        //self.senderDisplayName = battle.host?.username
         if battle.status == 0 {
             let alert = UIAlertController(title: "Alert", message: "Accept battle with " + (battle.host?.username)!, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Yes", style: .default) {
