@@ -103,8 +103,8 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = tableView.indexPath(for: cell)
-            vc.senderId = String(battles[(indexPath?.row)!].host!.id!)
-            vc.senderDisplayName = battles[indexPath!.row].host?.username
+            vc.senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)!) // String(battles[(indexPath?.row)!].host!.id!)
+            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username // battles[indexPath!.row].host?.username
             vc.battleId = battles[(indexPath?.row)!].id
             vc.battle = battles[(indexPath?.row)!]
         }
