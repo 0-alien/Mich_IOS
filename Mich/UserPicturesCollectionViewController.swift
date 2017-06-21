@@ -82,6 +82,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             self.canVs = true
             editOrFollow.setTitle("FOLLOW", for: .normal)
             isOwner = false
+            self.profilePicture.isUserInteractionEnabled = false
             MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                                 successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
             MichTransport.isFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: (self.userId)!,
