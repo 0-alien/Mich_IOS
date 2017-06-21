@@ -10,25 +10,34 @@ import UIKit
 import Firebase
 import JSQMessagesViewController
 import ObjectMapper
+import AlamofireImage
 
-class VSJSQViewController: JSQMessagesViewController {
+class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewCellDelegate {
 
     var channelRef: FIRDatabaseReference?
     var battle: Battle!
     var battleId: Int!
     var messages = [JSQMessage]()
+    
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
-    private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child("messages")
+    @IBOutlet weak var hostImage: UIImageView!
+    @IBOutlet weak var guestImage: UIImageView!
+    @IBOutlet weak var hostPointCountLabel: UILabel!
+    @IBOutlet weak var guestPointCountLabel: UILabel!
+    
+    private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child(String(self.battleId))
     private var newMessageRefHandle: FIRDatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.senderId)
-        print((UIApplication.shared.delegate as! AppDelegate).user?.id)
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+        
+        self.guestImage = self.guestImage.circle
+        self.hostImage = self.hostImage.circle
+        
         channelRef = FIRDatabase.database().reference() //connect to database
         if battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
@@ -43,9 +52,15 @@ class VSJSQViewController: JSQMessagesViewController {
             messageRef.removeObserver(withHandle: rr)
         }
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        //self.navigationController?.navigationBar.backgroundColor = self.navigationController?.navigationBar.backgroundColor?.withAlphaComponent(1)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -66,6 +81,7 @@ class VSJSQViewController: JSQMessagesViewController {
         } else {
             cell.textView?.textColor = UIColor.black
         }
+        cell.delegate = self
         return cell
     }
     
@@ -104,7 +120,6 @@ class VSJSQViewController: JSQMessagesViewController {
 
     override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!) {
         let itemRef = messageRef.childByAutoId()
-        print(itemRef.key)
         let msg = BattleMessage(id: itemRef.key, senderId: Int(self.senderId)!, senderDisplayName: self.senderDisplayName, text: text)
         itemRef.setValue(msg.toJSON())
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
@@ -116,14 +131,19 @@ class VSJSQViewController: JSQMessagesViewController {
     }
     
     func loadBattle(battle: Battle) {
-        //self.senderId = String(battle.host!.id!)
-        //self.senderDisplayName = battle.host?.username
-        if battle.status == 0 {
+        self.hostImage.af_setImage(withURL: Foundation.URL(string: (battle.host?.avatar)!)!)
+        self.guestImage.af_setImage(withURL: Foundation.URL(string: (battle.guest?.avatar)!)!)
+        if !battle.myBattle! {
+            self.inputToolbar.contentView.textView.isEditable = false
+            self.inputToolbar.isHidden = true
+            // self.inputToolbar.removeFromSuperview() warning https://github.com/jessesquires/JSQMessagesViewController/issues/320
+        }
+        if battle.status == 0 && battle.myBattle! {
             let alert = UIAlertController(title: "Alert", message: "Accept battle with " + (battle.host?.username)!, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Yes", style: .default) {
                 UIAlertAction in
                 MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                    successCallbackForAcceptBattle: {}, errorCallbackForAcceptBattle: self.onError)
+                    successCallbackForAcceptBattle: {self.observeMessages()}, errorCallbackForAcceptBattle: self.onError)
             }
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
@@ -170,6 +190,21 @@ class VSJSQViewController: JSQMessagesViewController {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    // MARK: JSQcollectionviewcell delegate
+    func messagesCollectionViewCellDidTapMessageBubble(_ cell: JSQMessagesCollectionViewCell!) {
+        print("WAT")
+    }
+    func messagesCollectionViewCellDidTapAvatar(_ cell: JSQMessagesCollectionViewCell!) {}
+    func messagesCollectionViewCell(_ cell: JSQMessagesCollectionViewCell!, didPerformAction action: Selector!, withSender sender: Any!) {}
+    func messagesCollectionViewCellDidTap(_ cell: JSQMessagesCollectionViewCell!, atPosition position: CGPoint) {}
+    
+    // MARK: actions
+    @IBAction func didVoteForHost(_ sender: Any) {
+        self.hostPointCountLabel.text = String(Int(self.hostPointCountLabel.text!)! + 1)
+    }
+    @IBAction func didVoteForGuest(_ sender: Any) {
+        self.guestPointCountLabel.text = String(Int(self.guestPointCountLabel.text!)! + 1)
+    }
 }
 
