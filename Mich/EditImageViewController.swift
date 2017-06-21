@@ -44,7 +44,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
-        UIImageJPEGRepresentation(img, 1.0)
+        //UIImageJPEGRepresentation(img, 1.0)
         
         photo.image = img
         doneButtone.isEnabled = true
@@ -62,9 +62,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         
         
-        
- 
-        UIImageJPEGRepresentation(image, 1.0)
         photo.image = image
         
         /*
