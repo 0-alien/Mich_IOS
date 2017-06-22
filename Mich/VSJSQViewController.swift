@@ -27,7 +27,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     @IBOutlet weak var hostPointCountLabel: UILabel!
     @IBOutlet weak var guestPointCountLabel: UILabel!
     
-    private lazy var messageRef: FIRDatabaseReference = self.channelRef!.child(String(self.battleId))
+    private var messageRef: FIRDatabaseReference!
     private var newMessageRefHandle: FIRDatabaseHandle?
     
     override func viewDidLoad() {
@@ -164,10 +164,10 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             self.inputToolbar.isHidden = true
             observeMessages()
         }
-        finishSendingMessage()
     }
     
     func observeMessages() {
+        messageRef = self.channelRef!.child(String(self.battleId))
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
                 let JSONText = String(data: JSONData, encoding: .ascii)
