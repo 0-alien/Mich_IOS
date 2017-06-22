@@ -135,7 +135,7 @@ class MichVSTransport {
         }
     }
     static func declineBattle(token: String, battleId: Int, successCallbackForDeclineBattle: @escaping () -> Void, errorCallbackForDeclineBattle: @escaping (DefaultError) -> Void) {
-        let reqString = BASE_URL + "battle/decline"
+        let reqString = BASE_URL + "battle/cancel"
         let acceptBattleRequest = BattleActionRequest(token: token, battleId: battleId)
         let payloadJson = acceptBattleRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
