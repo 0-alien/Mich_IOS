@@ -183,8 +183,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             break;
         case 6: //vs accept
-            
-            break;
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
+                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break
+        case 7:
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break
+        case 8:
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
+                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
+                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+                if application.applicationIconBadgeNumber > 0 {
+                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
+                }
+            }
+            else {
+                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            }
+            break
         default:
             break;
         }
@@ -201,9 +243,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         if self.token != nil {
             MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: onError)
-            print("jer logini moxda")
         }
-        
     }
     
 }

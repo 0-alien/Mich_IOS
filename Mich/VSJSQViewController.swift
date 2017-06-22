@@ -136,7 +136,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         if !battle.myBattle! {
             self.inputToolbar.contentView.textView.isEditable = false
             self.inputToolbar.isHidden = true
-            // self.inputToolbar.removeFromSuperview() warning https://github.com/jessesquires/JSQMessagesViewController/issues/320
+            // self.inputToolbar.removeFromSuperview() warning
         }
         if battle.status == 0 && battle.myBattle! {
             let alert = UIAlertController(title: "Alert", message: "Accept battle with " + (battle.host?.username)!, preferredStyle: .alert)
@@ -157,9 +157,11 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         else if battle.status == 1 {
             observeMessages()
         } else if battle.status == 2 {
-            observeMessages()
+            self.inputToolbar.contentView.textView.isEditable = false
+            self.inputToolbar.isHidden = true
         } else {
-            observeMessages()
+            self.inputToolbar.contentView.textView.isEditable = false
+            self.inputToolbar.isHidden = true
         }
         finishSendingMessage()
     }

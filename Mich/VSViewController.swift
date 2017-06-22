@@ -13,9 +13,6 @@ import AlamofireImage
 class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    private lazy var channelRef: FIRDatabaseReference = FIRDatabase.database().reference().child("channels")
-    private var channelRefHandle: FIRDatabaseHandle?
-    private var channels: [Channel] = []
     var destinationBattleId: Int = -1
     var battles = [Battle]()
 
@@ -26,7 +23,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         currentIndex = 1
         MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles:
         onError)
-        observeChannels()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,23 +73,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         performSegue(withIdentifier: "vsseague", sender: self)
     }
     
-    
-    // MARK: Firebase related methods
-    private func observeChannels() {
-        // Use the observe method to listen for new
-        // channels being written to the Firebase DB
-        channelRefHandle = channelRef.observe(.childAdded, with: { (snapshot) -> Void in // 1
-            let channelData = snapshot.value as! Dictionary<String, AnyObject> // 2
-            let id = snapshot.key
-            if let name = channelData["name"] as! String!, name.characters.count > 0 { // 3
-                self.channels.append(Channel(id: id, name: name))
-                self.tableView.reloadData()
-            } else {
-                print("Error! Could not decode channel data")
-            }
-        })
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showvs" {
             guard let vc = segue.destination as? VSJSQViewController else {
@@ -137,13 +116,3 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         self.present(alert, animated: true, completion: nil)
     }
 }
-
-class Channel {
-    var id: String
-    var name: String
-    init (id: String, name: String) {
-        self.id = id
-        self.name = name
-    }
-}
-
