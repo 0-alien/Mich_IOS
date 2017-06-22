@@ -15,14 +15,19 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     var destinationBattleId: Int = -1
     var battles = [Battle]()
-
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(VSViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         self.tableView.rowHeight = 80
         currentIndex = 1
-        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles:
-        onError)
+        self.tableView.refreshControl = refreshControl
+        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,11 +113,28 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
     func onGetBattlesSuccess(resp: [Battle]) {
         self.battles = resp
         self.tableView.reloadData()
+        self.refreshControl.endRefreshing()
     }
     
     func onError(error: DefaultError) {
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: refreshcontrol
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
+        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+    }
+    
+    // MARK: navigatioin
+    @IBAction func unwindToVSPage(sender: UIStoryboardSegue) {
+        for i in 0 ..< self.battles.count {
+            if self.battles[i].id == (sender.source as! VSJSQViewController).battle.id {
+                self.battles.remove(at: i)
+                break
+            }
+        }
+        self.tableView.reloadData()
     }
 }

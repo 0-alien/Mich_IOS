@@ -435,9 +435,11 @@
                         <outlet property="guestPointCountLabel" destination="5Ai-hB-f3F" id="Jbs-Pa-6rv"/>
                         <outlet property="hostImage" destination="Zo5-bH-2re" id="E7l-Y2-R9j"/>
                         <outlet property="hostPointCountLabel" destination="qGZ-Le-Po4" id="cal-la-gut"/>
+                        <segue destination="x1h-Q5-NOr" kind="unwind" identifier="unwindtovspage" unwindAction="unwindToVSPageWithSender:" id="KdR-dQ-dwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DG8-UZ-HvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="x1h-Q5-NOr" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="umy-gt-IhH" userLabel="hostTap">
                     <connections>
                         <action selector="didVoteForHost:" destination="rlU-YV-9dO" id="rRh-1B-9Yd"/>
