@@ -19,6 +19,7 @@ class User: Mappable {
     var nfollowing: Int?
     var record: String?
     var blocked: Bool?
+    var votes: Int?
     
     required init?(map: Map) {
         
@@ -34,6 +35,6 @@ class User: Mappable {
         nfollowing      <- map["nfollowing"]
         record          <- map["record"]
         blocked         <- map["blocked"]
-        
+        votes           <- map["votes"]
     }
 }

@@ -160,4 +160,30 @@ class MichVSTransport {
             }
         }
     }
+    static func vote(token: String, battleId: Int, host: Int, successCallbackForVote: @escaping () -> Void, errorCallbackForVote: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/vote"
+        let voteBattleRequest = VoteBattleRequest(token: token, battleId: battleId, host: host)
+        let payloadJson = voteBattleRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForVote()
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForVote(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForVote(error)
+            }
+        }
+    }
 }
