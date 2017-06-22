@@ -12,6 +12,7 @@ import AlamofireImage
 
 class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
+    @IBOutlet weak var vsView: UIView!
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
     let itemsPerRow : CGFloat = 3.0
@@ -192,6 +193,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func onInviteSuccess() {
         print("success invite")
         self.canVs = false
+        self.vsView.isUserInteractionEnabled = true
     }
     
     func onUpdateProfilePicture(resp: User) {
@@ -250,6 +252,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                         successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
     @IBAction func vs(_ sender: Any) {
+        vsView.isUserInteractionEnabled = false
         MichVSTransport.invite(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForinvite: onInviteSuccess, errorCallbackForinvite: onerror)
     }
     
@@ -336,14 +339,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         user?.blocked = true
         
     }
-    
-    
+
     func onrunblockusersuccess() {
         user?.blocked = false
         
     }
-    
-    
     
     @IBAction func changeProfilePicture(_ sender: Any) {
         self.changeProfilePicture = true
