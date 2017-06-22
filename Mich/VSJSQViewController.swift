@@ -148,7 +148,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
                 MichVSTransport.declineBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                        successCallbackForDeclineBattle: {}, errorCallbackForDeclineBattle: self.onError)
+                    successCallbackForDeclineBattle: {self.performSegue(withIdentifier: "unwindtovspage", sender: self)}, errorCallbackForDeclineBattle: self.onError)
             }
             alert.addAction(cancelAction)
             alert.addAction(okAction)
@@ -162,6 +162,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         } else {
             self.inputToolbar.contentView.textView.isEditable = false
             self.inputToolbar.isHidden = true
+            observeMessages()
         }
         finishSendingMessage()
     }
@@ -194,9 +195,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     }
     
     // MARK: JSQcollectionviewcell delegate
-    func messagesCollectionViewCellDidTapMessageBubble(_ cell: JSQMessagesCollectionViewCell!) {
-        print("WAT")
-    }
+    func messagesCollectionViewCellDidTapMessageBubble(_ cell: JSQMessagesCollectionViewCell!) {}
     func messagesCollectionViewCellDidTapAvatar(_ cell: JSQMessagesCollectionViewCell!) {}
     func messagesCollectionViewCell(_ cell: JSQMessagesCollectionViewCell!, didPerformAction action: Selector!, withSender sender: Any!) {}
     func messagesCollectionViewCellDidTap(_ cell: JSQMessagesCollectionViewCell!, atPosition position: CGPoint) {}
