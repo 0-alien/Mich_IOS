@@ -1381,19 +1381,12 @@ class MichTransport {
                     let res = baseResponse!.data!
                     successCallbackForgetuserposts(res)
                     
-                }else{
-                    
+                }else{ 
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForgetuserposts(error)
-                    
                 }
-                
-                
             }else{
                 
                 let error = DefaultError()

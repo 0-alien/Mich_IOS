@@ -26,7 +26,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
-        self.tableView.rowHeight = UITableViewAutomaticDimension
         MichTransport.getpostcomments(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId, successCallbackForgetuserposts: onGetCommentsSuccess, errorCallbackForgetuserposts: onError)
         
         addComments.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -164,7 +163,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             needsToShowComment = false
             for i in 0 ..< comments.count {
                 if comments[i].id == destinationCommentId {
-                    tableView.scrollToRow(at: IndexPath(row: i, section: 0), at: .top, animated: true)
+                    tableView.scrollToRow(at: IndexPath(row: i, section: 0), at: .top, animated: false)
                     let cell: CommentCell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! CommentCell
                     cell.backgroundColor = UIColor.orange
                     UIView.animate(withDuration: 1.5, animations: {cell.backgroundColor = UIColor.white})
