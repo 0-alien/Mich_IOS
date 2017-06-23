@@ -316,7 +316,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             alert.addAction(unblockUser)
         }
         
-        let reportUser = UIAlertAction(title: "report", style: .destructive, handler: { ACTION in
+        let reportUser = UIAlertAction(title: "report", style: .default, handler: { ACTION in
             MichTransport.reportuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
                                   successCallbackForReportUser: self.onreportusersuccess, errorCallbackForReportUser: self.onerror)
         })
@@ -324,7 +324,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         
         
         alert.addAction(reportUser)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default,handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
