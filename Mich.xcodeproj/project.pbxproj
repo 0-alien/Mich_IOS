@@ -10,6 +10,7 @@
 		1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */; };
 		1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */; };
 		1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */; };
+		1E0DE9261EFD4D5900F2DD03 /* BattleVote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0DE9251EFD4D5900F2DD03 /* BattleVote.swift */; };
 		1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */; };
 		1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83771E81505E00F004CA /* CommentLikedCell.swift */; };
 		1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0F83791E8150DF00F004CA /* FollowCell.swift */; };
@@ -179,6 +180,7 @@
 		1E021FEB1DABB277009D8098 /* VSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewCell.swift; sourceTree = "<group>"; };
 		1E021FED1DABB715009D8098 /* VSTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		1E0D81771D9949FF0079F301 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		1E0DE9251EFD4D5900F2DD03 /* BattleVote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleVote.swift; sourceTree = "<group>"; };
 		1E0F83751E814E6E00F004CA /* CommentAddedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentAddedCell.swift; sourceTree = "<group>"; };
 		1E0F83771E81505E00F004CA /* CommentLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentLikedCell.swift; sourceTree = "<group>"; };
 		1E0F83791E8150DF00F004CA /* FollowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 			children = (
 				1E42C06B1EE82AFA0077B707 /* Battle.swift */,
 				1E6C1A071EF9219D001C592C /* BattleMessage.swift */,
+				1E0DE9251EFD4D5900F2DD03 /* BattleVote.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -859,7 +862,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -920,6 +923,7 @@
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
 				CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */,
+				1E0DE9261EFD4D5900F2DD03 /* BattleVote.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
 				1EE22BA91E9500C400FD5DB7 /* LikesViewController.swift in Sources */,
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
