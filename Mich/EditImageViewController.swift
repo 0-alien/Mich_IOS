@@ -46,9 +46,18 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         //UIImageJPEGRepresentation(img, 1.0)
         
+        
+        photo.image = photo.image?.fixedOrientation()
+        img = img.fixedOrientation()
+        
         photo.image = img
         doneButtone.isEnabled = true
     }
+    
+    
+
+    
+    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -57,25 +66,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     func setImageToCrop(image:UIImage){
         
-        print(photo.image?.size.width ?? 1)
-        print(photo.image?.size.height ?? 1)
+        photo.image = image.fixedOrientation()
         
-        
-        
-        photo.image = image
-        
-        /*
-        
-        print(image.size.width)
-        print(image.size.height)
-        
-        if((photo.image?.size.width)! + 400 < (photo.image?.size.height)!){
-            print("_____________++__+_+_+_+_+_+_+_")
-            photo.image = photo.image?.rotateImageByDegrees(90)
-            
-        }
-         */
- 
         updateScrollViewZooms()
     }
     
@@ -90,17 +82,16 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     
     @IBAction func crop(_ sender: Any) {
+        photo.image = photo.image?.fixedOrientation()
         let scale:CGFloat = 1 / scrollView.zoomScale
         let x:CGFloat = scrollView.contentOffset.x * scale
         let y:CGFloat = scrollView.contentOffset.y * scale
         let width:CGFloat = scrollView.frame.size.width * scale
         let height:CGFloat = scrollView.frame.size.height * scale
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
-        let croppedImage = UIImage(cgImage: croppedCGImage!)
+        let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
         
-
-        
-        UIImageJPEGRepresentation(croppedImage, 1)
+//        UIImageJPEGRepresentation(croppedImage, 1)
         
         setImageToCrop(image: croppedImage)
     }
@@ -130,14 +121,16 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         if(text.isEmpty){
             postTitle = ""
         }
-        
+/*
         if((photo.image?.size.width)! < (photo.image?.size.height)!){
             print((photo.image?.size.width)!)
             print((photo.image?.size.height)!)
             photo.image = photo.image?.rotateImageByDegrees(90)
             
         }
+*/
         
+        photo.image = photo.image?.fixedOrientation()
         
         MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: photo.image!,
                                  successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
