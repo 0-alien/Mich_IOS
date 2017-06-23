@@ -96,7 +96,12 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
                 vc.senderDisplayName = battles[indexPath!.row].host?.username
             }
             vc.battleId = battles[(indexPath?.row)!].id
-            vc.battle = battles[(indexPath?.row)!]
+            if battles[(indexPath?.row)!].status == 3 { //damtavrebulia da azri ar
+                vc.battle = battles[(indexPath?.row)!]
+            }
+            else {
+                vc.battle = nil // 0 da 1 is shemtxvevashi sheidzleba statusi shecvlili iyos da axlidan moaq info
+            }
         }
         else if segue.identifier == "showvsnotification" {
             guard let vc = segue.destination as? VSJSQViewController else {

@@ -55,6 +55,7 @@
 		1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */; };
 		1E6C1A081EF9219D001C592C /* BattleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6C1A071EF9219D001C592C /* BattleMessage.swift */; };
 		1E7C20A51EFBB51000383C5E /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C20A41EFBB51000383C5E /* NotificationsTableViewCell.swift */; };
+		1E7C20A71EFBF8AB00383C5E /* VoteBattleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */; };
 		1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */; };
 		1E7FC0FC1EE6C7B90014562F /* VSJSQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */; };
 		1E8015C31E07F951001166E1 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8015C21E07F951001166E1 /* Menu.storyboard */; };
@@ -224,6 +225,7 @@
 		1E6A3CB51E48AB1200BBD0D4 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		1E6C1A071EF9219D001C592C /* BattleMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleMessage.swift; sourceTree = "<group>"; };
 		1E7C20A41EFBB51000383C5E /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoteBattleRequest.swift; sourceTree = "<group>"; };
 		1E7E7DAC1E4B3CD9009E5AA5 /* GetUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserRequest.swift; sourceTree = "<group>"; };
 		1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSJSQViewController.swift; sourceTree = "<group>"; };
 		1E8015C21E07F951001166E1 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 				1E42C06D1EE82D400077B707 /* GetBattlesRequest.swift */,
 				1E42C06F1EE835FE0077B707 /* GetBattleRequest.swift */,
 				1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */,
+				1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -960,6 +963,7 @@
 				CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
+				1E7C20A71EFBF8AB00383C5E /* VoteBattleRequest.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
 				CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */,
 				CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */,

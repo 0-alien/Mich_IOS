@@ -131,8 +131,11 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     }
     
     func loadBattle(battle: Battle) {
+        self.battle = battle
         self.hostImage.af_setImage(withURL: Foundation.URL(string: (battle.host?.avatar)!)!)
         self.guestImage.af_setImage(withURL: Foundation.URL(string: (battle.guest?.avatar)!)!)
+        self.hostPointCountLabel.text = String((battle.host?.votes)! + 0)
+        self.guestPointCountLabel.text = String((battle.guest?.votes)! + 0)
         if !battle.myBattle! {
             self.inputToolbar.contentView.textView.isEditable = false
             self.inputToolbar.isHidden = true
@@ -202,10 +205,20 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     
     // MARK: actions
     @IBAction func didVoteForHost(_ sender: Any) {
-        self.hostPointCountLabel.text = String(Int(self.hostPointCountLabel.text!)! + 1)
+        if self.battle.status == 1 {
+            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
+                successCallbackForVote: {self.battle.host?.votes = (self.battle.host?.votes)! + 1
+                                        self.hostPointCountLabel.text = String((self.battle.host?.votes)! + 0)},
+                errorCallbackForVote: onError)
+        }
     }
     @IBAction func didVoteForGuest(_ sender: Any) {
-        self.guestPointCountLabel.text = String(Int(self.guestPointCountLabel.text!)! + 1)
+        if self.battle.status == 1 {
+            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
+                successCallbackForVote: {self.battle.guest?.votes = (self.battle.guest?.votes)! + 1
+                                        self.guestPointCountLabel.text = String((self.battle.guest?.votes)! + 0)},
+                errorCallbackForVote: onError)
+        }
     }
 }
 
