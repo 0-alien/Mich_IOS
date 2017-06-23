@@ -47,6 +47,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         // tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
+        image2 = image2.fixedOrientation()
+        
         MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
     }
     func onupdateuser(resp: User) {
@@ -90,7 +92,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!){
         image2 = image
-        self.profilePicture.image = image
+        self.profilePicture.image = image.fixedOrientation()
         self.dismiss(animated: true, completion: nil)
     }
     
