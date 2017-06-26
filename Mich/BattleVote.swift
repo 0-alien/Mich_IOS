@@ -10,12 +10,12 @@ import Foundation
 import ObjectMapper
 
 class BattleVote : Mappable {
-    var which: String?
-    var votes: Int?
+    var guestVotes: Int?
+    var hostVotes: Int?
     
-    init(which: String, votes: Int) {
-        self.which = which
-        self.votes = votes
+    init(host: Int, guest: Int) {
+        self.guestVotes = guest
+        self.hostVotes = host
     }
     
     required init?(map: Map) {
@@ -23,6 +23,7 @@ class BattleVote : Mappable {
     }
     
     func mapping(map: Map) {
-        votes               <- map["votes"]
+        guestVotes      <- map["guest"]
+        hostVotes       <- map["host"]
     }
 }
