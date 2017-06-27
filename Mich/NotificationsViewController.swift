@@ -30,15 +30,16 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         } else {
             self.tableView.addSubview(refreshControl)
         }
-        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
         // Do any additional setup after loading the view.
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MichNotificationsTransport.getAllNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetAllNotifications: onGetAllNotificationsSuccess, errorCallbackForGetAllNotifications: onError)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // MARK: tableview delegate
 
     // MARK: tableview data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,7 +108,8 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func onSeenAllNotificationsSuccess() {
-        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).myMenu?.setNotificationCount(count: 0)
+        ((UIApplication.shared.delegate as! AppDelegate).window?.rootViewController as! ScrollingViewController).setNotificationCount(count: 0)
+        (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount = 0
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
     

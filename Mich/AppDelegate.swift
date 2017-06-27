@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var token:String?
     var waiting: Bool! = false
+    var unseenNotificationCount: Int!
     var user: User? {
         didSet {
             if user != nil {
@@ -83,9 +84,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         userViewController.destinationCommentId = commentId
         userViewController.destinationPostId = postId
         userViewController.performSegue(withIdentifier: "showcommentnotification", sender: userViewController)
-        if application.applicationIconBadgeNumber > 0 {
-            application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-        }
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -142,28 +140,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc.popToRootViewController(animated: false)
                 let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
                 userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["postid"] as! NSString).intValue))
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
-        case 2: // comntaris damateba
+        case 2: // comentaris damateba
             if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
                 processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
         case 3: // comentaris like
             if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
                 processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
             }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
+            break;
+        case 4: // follow 
+            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+                
             }
             break;
         case 5: //vs invite
@@ -174,12 +165,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vsViewController: VSViewController = vc.topViewController as! VSViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break;
         case 6: //vs accept
@@ -190,12 +175,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vsViewController: VSViewController = vc.topViewController as! VSViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break
         case 7:
@@ -203,12 +182,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
                 vc.popToRootViewController(animated: false)
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break
         case 8:
@@ -219,20 +192,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let vsViewController: VSViewController = vc.topViewController as! VSViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-                if application.applicationIconBadgeNumber > 0 {
-                    application.applicationIconBadgeNumber = application.applicationIconBadgeNumber - 1
-                }
-            }
-            else {
-                (window?.rootViewController as! ScrollingViewController).incrementNotificationCount(by: 1)
             }
             break
         default:
             break;
         }
-        MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
-        if onStartUp {
-            (window?.rootViewController as! ScrollingViewController).myMenu?.incrementNotificationCount(by: -1)
+        // notification count
+        if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+            MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
+            var aps = (userInfo["aps"] as! [AnyHashable : Any]);
+            (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int) - 1) // naxvis gamo chairto
+            application.applicationIconBadgeNumber = self.unseenNotificationCount
+        } else {
+            var aps = (userInfo["aps"] as! [AnyHashable : Any]);
+            (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int))
+            application.applicationIconBadgeNumber = self.unseenNotificationCount
         }
     }
     

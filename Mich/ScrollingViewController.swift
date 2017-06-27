@@ -32,6 +32,7 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDel
         tap = UITapGestureRecognizer(target: self, action: #selector(ScrollingViewController.hideScrollingMenu))
         leftView.addGestureRecognizer(tap)
         tap.isEnabled = false
+        MichNotificationsTransport.getUnseenNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetUnseenNotifications: onGetUnseenNotificationsSuccess, errorCallbackForGetUnseenNotifications: {_ in })
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -83,11 +84,13 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDel
     func setNotificationCount(count: Int) {
         myTabBar?.setNotificationCount(count: count)
         myMenu?.setNotificationCount(count: count)
+        (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount = count
     }
     
     func incrementNotificationCount(by: Int) {
-        //myTabBar?.incrementNotificationCount(by: by)
+        myTabBar?.incrementNotificationCount(by: by)
         myMenu?.incrementNotificationCount(by: by)
+        (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount = (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount + by
     }
     // MARK: - logOut Delegate
     func logOut() {
@@ -111,6 +114,11 @@ class ScrollingViewController: UIViewController, UIScrollViewDelegate, LogoutDel
             self.myMenu = (segue.destination as! SlidingMenuViewController)
             self.myMenu?.logOutDelegate = self
         }
+    }
+    
+    // MARK: callbacks
+    func onGetUnseenNotificationsSuccess(resp: Int) {
+        self.setNotificationCount(count: resp)
     }
 
 }

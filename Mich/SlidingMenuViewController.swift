@@ -46,14 +46,6 @@ class SlidingMenuViewController: UIViewController {
         settings.layer.masksToBounds = false
         
         notificationCountView.layer.cornerRadius = notificationCountView.frame.size.height / 2.0
-        MichNotificationsTransport.getUnseenNotifications(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetUnseenNotifications: onGetUnseenNotificationsSuccess, errorCallbackForGetUnseenNotifications: onGetUnseenNotificationsError)
-        
-    }
-    func onGetUnseenNotificationsSuccess(resp: Int) {
-        self.setNotificationCount(count: resp)
-    }
-    
-    func onGetUnseenNotificationsError(error: DefaultError) {
         
     }
     override func didReceiveMemoryWarning() {
@@ -99,6 +91,7 @@ class SlidingMenuViewController: UIViewController {
             return
         }
         else {
+            self.notificationCountView.isHidden = false
             self.notificationCountLabel.text = String(count)
         }
     }
