@@ -151,7 +151,9 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             let okAction = UIAlertAction(title: "Yes", style: .default) {
                 UIAlertAction in
                 MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                    successCallbackForAcceptBattle: {self.observeMessages()}, errorCallbackForAcceptBattle: self.onError)
+                    successCallbackForAcceptBattle: {self.observeMessages()
+                                                    self.voteRef.setValue(BattleVote(host: 0, guest: 0).toJSON())},
+                                                    errorCallbackForAcceptBattle: self.onError)
             }
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
@@ -189,18 +191,15 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 }
             }
         })
-        newVoteRefHandle = voteRef.observe(.childChanged, with: {(snapshot) -> Void in
-            if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
-                let JSONText = String(data: JSONData, encoding: .ascii)
-                if let vote = BattleVote(JSONString: JSONText!) {
-                    vote.which = snapshot.key
-                    if vote.which == "guest" {
-                        self.guestPointCountLabel.text = String(vote.votes! + 0)
-                        self.battle.guest?.votes = vote.votes
-                    } else {
-                        self.hostPointCountLabel.text = String(vote.votes! + 0)
-                        self.battle.host?.votes = vote.votes
-                    }
+        newVoteRefHandle = voteRef.observe(FIRDataEventType.childChanged, with: { (snapshot) -> Void in
+            //print(snapshot.value)
+            if let val = snapshot.value as? Int {
+                if (snapshot.key == "host") {
+                    self.battle.host?.votes = val
+                    self.hostPointCountLabel.text = String((self.battle.host?.votes)! + 0)
+                } else if (snapshot.key == "guest") {
+                    self.battle.guest?.votes = val
+                    self.guestPointCountLabel.text = String((self.battle.guest?.votes)! + 0)
                 } else {
                     print("Error! Could not decode channel data")
                 }
@@ -230,17 +229,14 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     @IBAction func didVoteForHost(_ sender: Any) {
         if self.battle.status == 1 {
             MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
-                successCallbackForVote: {self.battle.host?.votes = (self.battle.host?.votes)! + 1
-                                        self.voteRef.child("host").setValue(self.battle.host?.votes)},
+                successCallbackForVote: {self.voteRef.child("host").setValue((self.battle.host?.votes)! + 1)},
                 errorCallbackForVote: onError)
         }
     }
     @IBAction func didVoteForGuest(_ sender: Any) {
         if self.battle.status == 1 {
             MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
-                successCallbackForVote: {self.battle.guest?.votes = (self.battle.guest?.votes)! + 1
-                                        self.voteRef.child("guest").setValue(self.battle.guest?.votes)},
-                errorCallbackForVote: onError)
+                successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle.guest?.votes)! + 1)}, errorCallbackForVote: onError)
         }
     }
 }
