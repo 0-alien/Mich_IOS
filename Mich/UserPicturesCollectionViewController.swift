@@ -100,12 +100,15 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
-        
-        
-        
-        
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 {
+            self.showNotifications()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
