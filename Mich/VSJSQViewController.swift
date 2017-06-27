@@ -49,24 +49,17 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         }
     }
     
-    deinit {
-        if let rr = self.newMessageRefHandle {
-            messageRef.removeObserver(withHandle: rr)
-        }
-        if let rr = self.newVoteRefHandle {
-            voteRef.removeObserver(withHandle: rr)
-        }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.removeObservers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
+
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        //self.navigationController?.navigationBar.backgroundColor = self.navigationController?.navigationBar.backgroundColor?.withAlphaComponent(1)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -191,8 +184,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 }
             }
         })
-        newVoteRefHandle = voteRef.observe(FIRDataEventType.childChanged, with: { (snapshot) -> Void in
-            //print(snapshot.value)
+        newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
                     self.battle.host?.votes = val
@@ -205,6 +197,15 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 }
             }
         })
+    }
+    
+    func removeObservers() {
+        if let rr = newMessageRefHandle {
+            messageRef.removeObserver(withHandle: rr)
+        }
+        if let rr = newVoteRefHandle {
+            voteRef.removeObserver(withHandle: rr)
+        }
     }
 
     // MARK: callbacks
