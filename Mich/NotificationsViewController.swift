@@ -69,6 +69,15 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         case .follow:
             performSegue(withIdentifier: "showfollower", sender: notifications[indexPath.row])
             break
+        case .battleInvite:
+            performSegue(withIdentifier: "showbattle", sender: notifications[indexPath.row])
+            break
+        case .battleAccept:
+            performSegue(withIdentifier: "showbattle", sender: notifications[indexPath.row])
+            break
+        case .battleFinish:
+            performSegue(withIdentifier: "showbattle", sender: notifications[indexPath.row])
+            break
         default: break
         }
     }
@@ -100,7 +109,14 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             vc.needsToShowFollower = true
             vc.destinationFollowerId = notif.followerId
         }
-        
+        else if segue.identifier == "showbattle" {
+            guard let vc = segue.destination as? VSJSQViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            vc.senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)! + 0)
+            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
+            vc.battleId = notif.battleId
+        }
     }
     
     // MARK: callbacks

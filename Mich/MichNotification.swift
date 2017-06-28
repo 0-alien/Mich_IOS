@@ -22,6 +22,7 @@ class MichNotification: Mappable {
     var commentId: Int?
     var postId: Int?
     var followerId: Int?
+    var battleId: Int?
     
     required init?(map: Map) {
         
@@ -40,6 +41,7 @@ class MichNotification: Mappable {
         commentId       <- map["commentid"]
         postId          <- map["postid"]
         followerId      <- map["followerid"]
+        battleId        <- map["battleid"]
     }
 }
 
