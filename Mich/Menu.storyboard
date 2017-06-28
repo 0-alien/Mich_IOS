@@ -14,7 +14,7 @@
         <!--Notifications-->
         <scene sceneID="7vi-4G-04X">
             <objects>
-                <viewController storyboardIdentifier="Notifications" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="PmC-bg-bHb" customClass="NotificationsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Notifications" title="Notifications" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="PmC-bg-bHb" customClass="NotificationsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pGe-i4-LII"/>
                         <viewControllerLayoutGuide type="bottom" id="Izj-pi-3m8"/>
@@ -89,13 +89,16 @@
                             <constraint firstItem="Izj-pi-3m8" firstAttribute="top" secondItem="hyb-Lu-Amh" secondAttribute="bottom" id="sQr-4E-s31"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Notifications" id="4cU-ba-nF2"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="4cU-ba-nF2">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="r1i-Ey-ktb"/>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="hyb-Lu-Amh" id="IS3-2l-rbv"/>
                         <segue destination="RNI-jn-nne" kind="show" identifier="showcomment" id="wM0-cs-dtn"/>
                         <segue destination="3Ir-iR-qvU" kind="show" identifier="showfollower" id="foj-3F-yGw"/>
                         <segue destination="sAX-ER-HZP" kind="show" identifier="showpost" id="6fr-XE-JnP"/>
+                        <segue destination="ikA-dP-XQY" kind="show" identifier="showbattle" id="hSd-59-zih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dv-nl-Txf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,6 +128,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC7-1c-Bzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-412" y="111"/>
+        </scene>
+        <!--VSJSQViewController-->
+        <scene sceneID="FIT-sa-wNu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VS" referencedIdentifier="VSJSQViewController" id="ikA-dP-XQY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3uA-8l-H1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-406" y="206"/>
         </scene>
         <!--Settings-->
         <scene sceneID="UVp-KM-N0f">
@@ -428,10 +439,10 @@
             </objects>
             <point key="canvasLocation" x="-1468" y="866"/>
         </scene>
-        <!--View Controller-->
+        <!--Messages-->
         <scene sceneID="n5J-e5-6hb">
             <objects>
-                <viewController storyboardIdentifier="Messages" hidesBottomBarWhenPushed="YES" id="TQi-cI-UU9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Messages" title="Messages" hidesBottomBarWhenPushed="YES" id="TQi-cI-UU9" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rX2-6A-7ye"/>
                         <viewControllerLayoutGuide type="bottom" id="1Gm-L7-3IF"/>
@@ -439,15 +450,6 @@
                     <view key="view" contentMode="scaleToFill" id="ZkB-35-Tjy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28F-tN-GQO">
-                                <rect key="frame" x="140" y="338" width="193" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

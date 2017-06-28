@@ -139,12 +139,13 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             self.inputToolbar.isHidden = true
             // self.inputToolbar.removeFromSuperview() warning
         }
-        if battle.status == 0 && battle.myBattle! {
+        if battle.status == 0 && battle.iAmGuest! {
             let alert = UIAlertController(title: "Alert", message: "Accept battle with " + (battle.host?.username)!, preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Yes", style: .default) {
                 UIAlertAction in
                 MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                    successCallbackForAcceptBattle: {self.observeMessages()
+                    successCallbackForAcceptBattle: {self.battle.status = 1
+                                                    self.observeMessages()
                                                     self.voteRef.setValue(BattleVote(host: 0, guest: 0).toJSON())},
                                                     errorCallbackForAcceptBattle: self.onError)
             }
