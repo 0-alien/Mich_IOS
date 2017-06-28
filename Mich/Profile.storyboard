@@ -437,7 +437,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="822" y="-824"/>
+            <point key="canvasLocation" x="822" y="-826"/>
         </scene>
         <!--CommentsViewController-->
         <scene sceneID="kZy-7q-iA4">
@@ -445,7 +445,7 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="zOT-RP-LH4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWv-II-xXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-218"/>
+            <point key="canvasLocation" x="822" y="-213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kLE-og-tCE">
@@ -456,7 +456,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -756,7 +756,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -778,9 +778,9 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MaX-mX-K8b"/>
-        <segue reference="8Gc-2c-hvL"/>
+        <segue reference="aPV-7X-oby"/>
         <segue reference="23d-Vm-cWR"/>
-        <segue reference="T4Z-G6-O4m"/>
+        <segue reference="NG3-m9-6iK"/>
+        <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>
