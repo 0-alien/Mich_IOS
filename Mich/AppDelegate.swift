@@ -23,7 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var token:String?
     var waiting: Bool! = false
-    var unseenNotificationCount: Int!
+    var unseenNotificationCount: Int! {
+        didSet {
+            UIApplication.shared.applicationIconBadgeNumber = self.unseenNotificationCount
+        }
+    }
     var user: User? {
         didSet {
             if user != nil {
@@ -202,11 +206,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int) - 1) // naxvis gamo chairto
-            application.applicationIconBadgeNumber = self.unseenNotificationCount
         } else {
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int))
-            application.applicationIconBadgeNumber = self.unseenNotificationCount
         }
     }
     

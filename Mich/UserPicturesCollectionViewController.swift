@@ -305,21 +305,21 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         
         
         if(!(user?.blocked)!){
-            let blockUser = UIAlertAction(title: "block", style: .destructive, handler: { ACTION in
+            let blockUser = UIAlertAction(title: "Block", style: .destructive, handler: { ACTION in
                 MichTransport.blockuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
                                          successCallbackForBlockUser: self.onblockusersuccess, errorCallbackForBlockUser: self.onerror)
             })
             alert.addAction(blockUser)
         }else{
         
-            let unblockUser = UIAlertAction(title: "unblock", style: .default, handler: { ACTION in
+            let unblockUser = UIAlertAction(title: "Unblock", style: .default, handler: { ACTION in
                 MichTransport.unblockuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
                                         successCallbackForUnBlockUser: self.onrunblockusersuccess, errorCallbackForUnBlockUser: self.onerror)
             })
             alert.addAction(unblockUser)
         }
         
-        let reportUser = UIAlertAction(title: "report", style: .default, handler: { ACTION in
+        let reportUser = UIAlertAction(title: "Report", style: .default, handler: { ACTION in
             MichTransport.reportuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, userID: self.userId,
                                   successCallbackForReportUser: self.onreportusersuccess, errorCallbackForReportUser: self.onerror)
         })

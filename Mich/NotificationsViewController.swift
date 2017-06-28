@@ -54,39 +54,51 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
         cell.selectionStyle = .none
         return cell
     }
+    // MARK: table view delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch notifications[indexPath.row].type! {
+        case .postLike:
+            performSegue(withIdentifier: "showpost", sender: notifications[indexPath.row])
+            break
+        case .comment:
+            performSegue(withIdentifier: "showcomment", sender: notifications[indexPath.row])
+            break
+        case .commentLike:
+            performSegue(withIdentifier: "showcomment", sender: notifications[indexPath.row])
+            break
+        case .follow:
+            performSegue(withIdentifier: "showfollower", sender: notifications[indexPath.row])
+            break
+        default: break
+        }
+    }
     
     // MARK: navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "postliked" {
+        guard let notif = sender as? MichNotification else {
+            fatalError("Unexpected sender: \(String(describing: sender))")
+        }
+        if segue.identifier == "showpost" {
             guard let vc = segue.destination as? PostViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let cell = sender as? PostLikedCell else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
-            }
-            let indexPath = self.tableView.indexPath(for: cell)
-            vc.postId = notifications[(indexPath?.row)!].itemId
+            vc.postId = notif.postId!
         }
-        else if segue.identifier == "commentadded" {
+        else if segue.identifier == "showcomment" {
             guard let vc = segue.destination as? CommentsViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let cell = sender as? CommentAddedCell else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
-            }
-            let indexPath = self.tableView.indexPath(for: cell)
-            vc.postId = notifications[(indexPath?.row)!].itemId
+            vc.postId = Int(notif.postId!)
+            vc.needsToShowComment = true
+            vc.destinationCommentId = notif.commentId!
         }
-        else if segue.identifier == "commentliked" {
-            guard let vc = segue.destination as? CommentsViewController else {
+        else if segue.identifier == "showfollower"{
+            guard let vc = segue.destination as? FollowViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            guard let cell = sender as? CommentLikedCell else {
-                fatalError("Unexpected sender: \(String(describing: sender))")
-            }
-            let indexPath = self.tableView.indexPath(for: cell)
-            vc.postId = notifications[(indexPath?.row)!].itemId
+            vc.ering = true
+            vc.needsToShowFollower = true
+            vc.destinationFollowerId = notif.followerId
         }
         
     }
