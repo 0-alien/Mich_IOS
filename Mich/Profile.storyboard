@@ -497,7 +497,7 @@
         <!--Title-->
         <scene sceneID="hxu-dm-T69">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Eno-ir-pYK" customClass="FollowViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FollowViewController" automaticallyAdjustsScrollViewInsets="NO" id="Eno-ir-pYK" customClass="FollowViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c9n-Xb-VuC"/>
                         <viewControllerLayoutGuide type="bottom" id="XP0-R0-sBC"/>
@@ -778,9 +778,9 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aPV-7X-oby"/>
+        <segue reference="tvz-Ie-NnN"/>
+        <segue reference="8Gc-2c-hvL"/>
         <segue reference="23d-Vm-cWR"/>
         <segue reference="NG3-m9-6iK"/>
-        <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>

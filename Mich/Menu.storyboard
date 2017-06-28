@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJI-G1-bi9" id="q4d-O5-c8O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="98x-y2-r0q">
@@ -93,6 +93,9 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="hyb-Lu-Amh" id="IS3-2l-rbv"/>
+                        <segue destination="RNI-jn-nne" kind="show" identifier="showcomment" id="wM0-cs-dtn"/>
+                        <segue destination="3Ir-iR-qvU" kind="show" identifier="showfollower" id="foj-3F-yGw"/>
+                        <segue destination="sAX-ER-HZP" kind="show" identifier="showpost" id="6fr-XE-JnP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dv-nl-Txf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,7 +108,15 @@
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="CommentsViewController" id="RNI-jn-nne" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLD-qT-JyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="137"/>
+            <point key="canvasLocation" x="-418" y="-76"/>
+        </scene>
+        <!--FollowViewController-->
+        <scene sceneID="rD4-B3-bfa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="FollowViewController" id="3Ir-iR-qvU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhM-oN-uPQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-412" y="19"/>
         </scene>
         <!--PostViewController-->
         <scene sceneID="Q1R-d1-RNk">
@@ -113,7 +124,7 @@
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="PostViewController" id="sAX-ER-HZP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QC7-1c-Bzk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-562" y="216"/>
+            <point key="canvasLocation" x="-412" y="111"/>
         </scene>
         <!--Settings-->
         <scene sceneID="UVp-KM-N0f">

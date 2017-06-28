@@ -11,7 +11,7 @@ import ObjectMapper
 
 class MichNotification: Mappable {
     var id: Int?
-    var type: Int?
+    var type: NotificatonType?
     var itemId: Int?
     var message: String?
     var status: Int?
@@ -19,8 +19,9 @@ class MichNotification: Mappable {
     var createdAt: String?
     var updatedAt: String?
     var avatar: String?
-    var commentId: String?
-    var postId: String?
+    var commentId: Int?
+    var postId: Int?
+    var followerId: Int?
     
     required init?(map: Map) {
         
@@ -37,7 +38,11 @@ class MichNotification: Mappable {
         updatedAt       <- map["updated_at"]
         avatar          <- map["avatar"]
         commentId       <- map["commentid"]
-        postId          <- map["postId"]
+        postId          <- map["postid"]
+        followerId      <- map["followerid"]
     }
 }
 
+enum NotificatonType: Int {
+    case postLike = 1, comment, commentLike, follow, battleInvite, battleAccept, battleDecline, battleFinish
+}

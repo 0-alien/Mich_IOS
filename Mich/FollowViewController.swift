@@ -10,21 +10,25 @@ import UIKit
 import Nuke
 
 class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var ering: Bool!
+    var ering: Bool! // followeing or follower
     var users: [User] = [User]()
     var user: User!
+    
+    var needsToShowFollower: Bool?
+    var destinationFollowerId: Int?
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if ering! {
             self.navigationItem.title = "Followers"
-            MichTransport.getUserFollowers(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: user.id!,
+            MichTransport.getUserFollowers(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: ((UIApplication.shared.delegate as! AppDelegate).user?.id!)!,
                                            successCallbackForGetFollowers: onSuccess, errorCallbackForGetFollowers: onError);
         }
         else {
             self.navigationItem.title = "Following"
-            MichTransport.getUserFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: user.id!,
+            MichTransport.getUserFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: ((UIApplication.shared.delegate as! AppDelegate).user?.id!)!,
                                            successCallbackForGetFollowing: onSuccess, errorCallbackForGetFollowing: onError)
         }
     }
@@ -53,6 +57,18 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.users.removeAll()
         self.users.append(contentsOf: data)
         self.tableView.reloadData()
+        if needsToShowFollower! {
+            needsToShowFollower = false
+            for i in 0 ..< data.count {
+                if data[i].id == self.destinationFollowerId {
+                    tableView.scrollToRow(at: IndexPath(row: i, section: 0), at: .top, animated: false)
+                    let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as! FollowTableViewCell
+                    cell.backgroundColor = UIColor.orange
+                    UIView.animate(withDuration: 1, animations: {cell.backgroundColor = UIColor.white})
+                    break
+                }
+            }
+        }
     }
     
     func onError(error: DefaultError){
