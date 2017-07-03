@@ -14,7 +14,7 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var users: [User] = [User]()
     var user: User!
     
-    var needsToShowFollower: Bool?
+    var needsToShowFollower: Bool? = false
     var destinationFollowerId: Int?
     
     @IBOutlet weak var tableView: UITableView!
