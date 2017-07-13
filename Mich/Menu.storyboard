@@ -442,7 +442,7 @@
         <!--Messages-->
         <scene sceneID="n5J-e5-6hb">
             <objects>
-                <viewController storyboardIdentifier="Messages" title="Messages" hidesBottomBarWhenPushed="YES" id="TQi-cI-UU9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Messages" title="Messages" hidesBottomBarWhenPushed="YES" id="TQi-cI-UU9" customClass="MenuMassageViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rX2-6A-7ye"/>
                         <viewControllerLayoutGuide type="bottom" id="1Gm-L7-3IF"/>
@@ -450,8 +450,25 @@
                     <view key="view" contentMode="scaleToFill" id="ZkB-35-Tjy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="gR8-J2-Xrk">
+                                <rect key="frame" x="75" y="196" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ON-c3-gY7">
+                                <rect key="frame" x="131" y="402" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="change:" destination="TQi-cI-UU9" eventType="touchUpInside" id="dZV-4C-YZ7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="testImage" destination="gR8-J2-Xrk" id="qX7-rR-JYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBR-pu-EY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -485,4 +502,7 @@
             <point key="canvasLocation" x="1134" y="161"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="202" height="42"/>
+    </resources>
 </document>

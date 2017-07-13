@@ -126,6 +126,7 @@
 		CF412E1A1ED5B85C000DA88C /* ReportPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */; };
 		CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */; };
 		CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */; };
+		CF467DD41F14DA3900FC0BFC /* MenuMassageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */; };
 		CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5431E641CC700A3575A /* AddCommentRequest.swift */; };
 		CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */; };
 		CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */; };
@@ -300,6 +301,7 @@
 		CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPostRequest.swift; sourceTree = "<group>"; };
 		CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentResponse.swift; sourceTree = "<group>"; };
 		CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentRequest.swift; sourceTree = "<group>"; };
+		CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMassageViewController.swift; sourceTree = "<group>"; };
 		CF57E5431E641CC700A3575A /* AddCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentRequest.swift; sourceTree = "<group>"; };
 		CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentResponse.swift; sourceTree = "<group>"; };
 		CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserPostsRequest.swift; sourceTree = "<group>"; };
@@ -604,6 +606,7 @@
 				CFE38FF61E7952A10037CB5B /* HelpViewController.swift */,
 				CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */,
 				CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */,
+				CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -951,6 +954,7 @@
 				CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */,
 				CF118D2B1EE6A5DB0023AA7E /* AskQuestionRequest.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
+				CF467DD41F14DA3900FC0BFC /* MenuMassageViewController.swift in Sources */,
 				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
