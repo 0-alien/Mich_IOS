@@ -64,6 +64,7 @@
 		1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */; };
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
+		1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */; };
 		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
 		1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
@@ -237,6 +238,7 @@
 		1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomVSViewController.swift; sourceTree = "<group>"; };
 		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
 		1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleActionRequest.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -569,6 +571,7 @@
 				1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */,
 				1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */,
 				1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */,
+				1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */,
 			);
 			name = VS;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
+				1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */,
 				CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */,
 				1E0DE9261EFD4D5900F2DD03 /* BattleVote.swift in Sources */,
 				1E4F7E851DB6491A004A6CC0 /* MichSearchViewController.swift in Sources */,
