@@ -683,6 +683,11 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="VS" id="Vcm-fK-UfJ">
                         <barButtonItem key="backBarButtonItem" title=" " id="EhE-p0-t67"/>
+                        <barButtonItem key="rightBarButtonItem" title="Random" id="z7M-ig-stt">
+                            <connections>
+                                <segue destination="54s-mO-hIA" kind="show" id="JMa-Du-TNR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5Cw-T3-MLi" id="2RD-i1-C98"/>
@@ -698,6 +703,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rO-IL-dKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-618.39999999999998" y="-735.38230884557731"/>
+        </scene>
+        <!--RandomVS View Controller-->
+        <scene sceneID="r6q-bx-AXD">
+            <objects>
+                <viewController storyboardIdentifier="RandomVSViewController" wantsFullScreenLayout="YES" hidesBottomBarWhenPushed="YES" id="54s-mO-hIA" customClass="RandomVSViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xDt-pb-bj0"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbg-1r-yJY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vMB-u2-Qth">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_background" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-re-oji">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-mP-wOA">
+                                <rect key="frame" x="140.5" y="167.5" width="39" height="39"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-5P-piK">
+                                <rect key="frame" x="46" y="157" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="IzH-5P-piK" secondAttribute="height" multiplier="1:1" id="fUs-ZE-BuP"/>
+                                    <constraint firstAttribute="width" constant="60" id="xTA-Yd-kQw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second_user" translatesAutoresizingMaskIntoConstraints="NO" id="IJe-6Q-2d6">
+                                <rect key="frame" x="214" y="157" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="K0c-oW-LFo"/>
+                                    <constraint firstAttribute="width" secondItem="IJe-6Q-2d6" secondAttribute="height" multiplier="1:1" id="ytq-oQ-XpT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyS-8r-9n5">
+                                <rect key="frame" x="46" y="225" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTI-is-3dQ">
+                                <rect key="frame" x="159" y="225" width="115" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wNl-re-oji" firstAttribute="width" secondItem="vMB-u2-Qth" secondAttribute="width" id="79W-4h-OAX"/>
+                            <constraint firstItem="0gw-mP-wOA" firstAttribute="bottom" secondItem="wNl-re-oji" secondAttribute="bottom" multiplier="0.41" id="E4V-KW-3uL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IJe-6Q-2d6" secondAttribute="trailing" constant="30" id="PDq-cf-thL"/>
+                            <constraint firstItem="0gw-mP-wOA" firstAttribute="centerX" secondItem="wNl-re-oji" secondAttribute="centerX" id="Qgz-YS-ZL7"/>
+                            <constraint firstItem="wNl-re-oji" firstAttribute="height" secondItem="vMB-u2-Qth" secondAttribute="height" id="aUU-ZM-4CS"/>
+                            <constraint firstItem="IzH-5P-piK" firstAttribute="leading" secondItem="vMB-u2-Qth" secondAttribute="leadingMargin" constant="30" id="bs5-mi-ThJ"/>
+                            <constraint firstItem="wNl-re-oji" firstAttribute="top" secondItem="xDt-pb-bj0" secondAttribute="bottom" id="cmR-Je-X0W"/>
+                            <constraint firstItem="wNl-re-oji" firstAttribute="leading" secondItem="vMB-u2-Qth" secondAttribute="leadingMargin" constant="-16" id="f70-iO-hwY"/>
+                            <constraint firstItem="IJe-6Q-2d6" firstAttribute="centerY" secondItem="0gw-mP-wOA" secondAttribute="centerY" id="ogp-5Q-2rn"/>
+                            <constraint firstItem="IzH-5P-piK" firstAttribute="centerY" secondItem="0gw-mP-wOA" secondAttribute="centerY" id="xBj-t3-syT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guestImage" destination="IJe-6Q-2d6" id="VII-5a-SEj"/>
+                        <outlet property="guestUsername" destination="uTI-is-3dQ" id="d88-r4-BOy"/>
+                        <outlet property="hostImage" destination="IzH-5P-piK" id="5Lf-qM-JDy"/>
+                        <outlet property="hostUsername" destination="EyS-8r-9n5" id="Glx-w1-9nn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i7U-Vd-5pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382.5" y="-1376.4084507042253"/>
         </scene>
         <!--Settings-->
         <scene sceneID="CuK-gd-ySh">
@@ -743,10 +820,12 @@
         <image name="active_vs_icon" width="30" height="22"/>
         <image name="camera_icon" width="24" height="20"/>
         <image name="first_user" width="94" height="53"/>
+        <image name="random_vs_background" width="323" height="521"/>
+        <image name="random_vs_icon" width="39" height="39"/>
         <image name="second_user" width="52" height="79"/>
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pEi-4P-8nQ"/>
+        <segue reference="TTy-ZW-Rda"/>
     </inferredMetricsTieBreakers>
 </document>
