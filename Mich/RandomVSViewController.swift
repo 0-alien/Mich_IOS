@@ -18,6 +18,28 @@ class RandomVSViewController: UIViewController {
         super.viewDidLoad()
         hostImage.image = hostImage.image?.af_imageRounded(withCornerRadius: 15)
         guestImage.image = guestImage.image?.af_imageRounded(withCornerRadius: 15)
+        
+        
+        
+        guestImage.animationImages = [
+            UIImage(named: "Image")!,
+            UIImage(named: "Image-1")!,
+            UIImage(named: "Image-2")!
+            
+        ]
+        
+        
+        
+        guestImage.animationDuration = 0.3
+        guestImage.startAnimating()
+        
+        let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+            self.guestImage.stopAnimating()
+//            self.guestImage.image = UIImage(named: "Image")!
+            
+        }
         // Do any additional setup after loading the view.
     }
 
