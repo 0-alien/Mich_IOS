@@ -370,7 +370,7 @@
                     <navigationItem key="navigationItem" id="DZU-H2-mkb">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="Va3-K2-2ca">
-                            <rect key="frame" x="59" y="5.5" width="202" height="33"/>
+                            <rect key="frame" x="106" y="5.5" width="202" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zo5-bH-2re">
