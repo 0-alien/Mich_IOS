@@ -132,12 +132,34 @@
                     <view key="view" contentMode="scaleToFill" id="Wne-rv-dIO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-Yf-u70">
+                                <rect key="frame" x="8" y="72" width="107" height="96"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write a caption.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ztx-74-cgB">
+                                <rect key="frame" x="123" y="72" width="181" height="96"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ztx-74-cgB" firstAttribute="bottom" secondItem="KfC-Yf-u70" secondAttribute="bottom" id="CfG-IR-iPZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="189" id="RU0-TL-zaG"/>
+                            <constraint firstItem="Ztx-74-cgB" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="WME-Ak-Qu3"/>
+                            <constraint firstItem="KfC-Yf-u70" firstAttribute="leading" secondItem="Wne-rv-dIO" secondAttribute="leadingMargin" constant="-8" id="blP-OI-OH4"/>
+                            <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="foY-nr-jpj"/>
+                            <constraint firstItem="Ztx-74-cgB" firstAttribute="top" secondItem="KfC-Yf-u70" secondAttribute="top" id="gMt-O1-giT"/>
+                            <constraint firstItem="9n8-r2-cRr" firstAttribute="top" secondItem="KfC-Yf-u70" secondAttribute="bottom" constant="400" id="n9o-OU-87U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ztx-74-cgB" secondAttribute="trailing" id="rhP-WP-IT0"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXy-At-UKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="-124"/>
+            <point key="canvasLocation" x="97.5" y="-124.64788732394366"/>
         </scene>
     </scenes>
     <resources>
