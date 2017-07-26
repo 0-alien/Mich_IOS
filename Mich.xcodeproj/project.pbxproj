@@ -64,6 +64,7 @@
 		1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */; };
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
+		1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */; };
 		1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */; };
 		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
 		1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */; };
@@ -238,6 +239,7 @@
 		1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagImageViewController.swift; sourceTree = "<group>"; };
 		1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomVSViewController.swift; sourceTree = "<group>"; };
 		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
 		1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleActionRequest.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			children = (
 				CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */,
 				1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */,
+				1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -868,7 +871,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -952,6 +955,7 @@
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				1E42C0701EE835FE0077B707 /* GetBattleRequest.swift in Sources */,
+				1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */,
 				CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */,
 				1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */,
 				CF186A8C1E435C3900218920 /* User.swift in Sources */,
