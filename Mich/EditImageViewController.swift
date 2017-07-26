@@ -24,14 +24,10 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBOutlet weak var photo: UIImageView!
     var img: UIImage!
-    @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var doneButtone: UIBarButtonItem!
     var postTitle: String?
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var photoTextTF: UITextField!
     
-    @IBOutlet weak var imageHeight: NSLayoutConstraint!
-    @IBOutlet weak var imageWidth: NSLayoutConstraint!
     
     var rw: CGFloat = 0
     var rh: CGFloat = 0
@@ -40,9 +36,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleTF.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
         
         //UIImageJPEGRepresentation(img, 1.0)
         
@@ -50,7 +43,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
         
-        photo.image = img
+        setImageToCrop(image: img)
         doneButtone.isEnabled = true
     }
     
@@ -67,14 +60,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     func setImageToCrop(image:UIImage){
         
         photo.image = image.fixedOrientation()
-        
         updateScrollViewZooms()
     }
     
     func updateScrollViewZooms() {
-        scrollView.minimumZoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
-        scrollView.zoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
-        scrollView.maximumZoomScale = max(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!) * 5
+        scrollView.minimumZoomScale = min(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
+        scrollView.zoomScale = min(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!)
+        scrollView.maximumZoomScale = min(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!) * 5
     }
     
     
@@ -116,11 +108,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
         
-        let text = titleTF.text ?? ""
-        
-        if(text.isEmpty){
-            postTitle = ""
-        }
 /*
         if((photo.image?.size.width)! < (photo.image?.size.height)!){
             print((photo.image?.size.width)!)
@@ -132,8 +119,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         photo.image = photo.image?.fixedOrientation()
         
-        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: postTitle!, image: photo.image!,
-                                 successCallbackForCreatePost: self.oncreatesuccess, errorCallbackForCreatePost: self.oncreateerror)
     }
     
     
@@ -156,26 +141,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     func textFieldDidEndEditing(_ textField: UITextField) {
 
     }
-    
-    func textFieldDidChange(_ textField: UITextField) {
-        if(titleTF.text!  == ""){
-            doneButtone.isEnabled = false;
-        }else{
-            doneButtone.isEnabled = true;
-            postTitle = titleTF.text
-        }
-    }
 
-    @IBAction func photoText(_ sender: Any) {
-        photoTextTF.becomeFirstResponder()
-        photoTextTF.isHidden = false
-        photoTextTF.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:0.4)
-    }
-
-    @IBAction func photoTitle(_ sender: Any) {
-        titleTF.becomeFirstResponder()
-        titleTF.isHidden = false
-    }
 
     
     @IBAction func zoomBTN(_ sender: Any) {
@@ -195,12 +161,5 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-    }
-
-    func dismissKeyboard() {
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
-        photoTextTF.isHidden = true
-        titleTF.isHidden = true
-        view.endEditing(true)
     }
 }
