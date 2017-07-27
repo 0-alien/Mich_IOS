@@ -8,14 +8,43 @@
 
 import UIKit
 
-class TagImageViewController: UIViewController {
+class TagImageViewController: UIViewController, UITextViewDelegate {
+    
+    @IBOutlet weak var writeACaptionTextView: UITextView!
+    var placeholderLabel : UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        writeACaptionTextView.delegate = self
+        placeholderLabel = UILabel()
+        placeholderLabel.text = "Write A Caption.."
+        placeholderLabel.font = UIFont.italicSystemFont(ofSize: (writeACaptionTextView.font?.pointSize)!)
+        placeholderLabel.sizeToFit()
+        writeACaptionTextView.addSubview(placeholderLabel)
+        placeholderLabel.frame.origin = CGPoint(x: 5, y: (writeACaptionTextView.font?.pointSize)! / 2)
+        placeholderLabel.textColor = UIColor.lightGray
+        placeholderLabel.isHidden = !writeACaptionTextView.text.isEmpty
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
 
+    
+    
+    func textViewDidChange(_ textView: UITextView) {
+        placeholderLabel.isHidden = !textView.text.isEmpty
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        writeACaptionTextView.becomeFirstResponder()
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
