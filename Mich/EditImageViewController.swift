@@ -42,26 +42,15 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //UIImageJPEGRepresentation(img, 1.0)
-        
-        
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
-        
-        setImageToCrop(image: img)
-        updateConstraintsForSize(scrollView.bounds.size);
         doneButtone.isEnabled = true
     }
     
-    
-
-    
-    
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        updateScrollViewZooms()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setImageToCrop(image: img)
+        updateConstraintsForSize(scrollView.bounds.size)
     }
     
     func setImageToCrop(image:UIImage){
@@ -117,9 +106,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    
+
     @IBAction func cancel(_ sender: Any) {
         _ = self.navigationController?.popViewController(animated: true)
     }
@@ -129,16 +116,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     @IBAction func done(_ sender: Any) {
         doneButtone.isEnabled = false
-        
-/*
-        if((photo.image?.size.width)! < (photo.image?.size.height)!){
-            print((photo.image?.size.width)!)
-            print((photo.image?.size.height)!)
-            photo.image = photo.image?.rotateImageByDegrees(90)
-            
-        }
-*/
-        
         photo.image = photo.image?.fixedOrientation()
         
     }
@@ -151,14 +128,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         return true
  
     }
-
-    /*
-    func checkValidTitle() {
-        let text = titleTF.text ?? ""
-        doneButtone.isEnabled = !text.isEmpty
-        
-    }
-     */
     
     func textFieldDidEndEditing(_ textField: UITextField) {
 
