@@ -133,25 +133,30 @@
                                 <rect key="frame" x="8" y="72" width="107" height="96"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write a caption.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ztx-74-cgB">
-                                <rect key="frame" x="123" y="72" width="181" height="96"/>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-B7-6rz">
+                                <rect key="frame" x="123" y="72" width="190" height="96"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="7cR-5O-IEL"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ztx-74-cgB" firstAttribute="bottom" secondItem="KfC-Yf-u70" secondAttribute="bottom" id="CfG-IR-iPZ"/>
+                            <constraint firstItem="mwS-B7-6rz" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="DRS-ls-9Yq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="189" id="RU0-TL-zaG"/>
-                            <constraint firstItem="Ztx-74-cgB" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="WME-Ak-Qu3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mwS-B7-6rz" secondAttribute="trailing" constant="-9" id="SOw-eM-gGP"/>
                             <constraint firstItem="KfC-Yf-u70" firstAttribute="leading" secondItem="Wne-rv-dIO" secondAttribute="leadingMargin" constant="-8" id="blP-OI-OH4"/>
                             <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="foY-nr-jpj"/>
-                            <constraint firstItem="Ztx-74-cgB" firstAttribute="top" secondItem="KfC-Yf-u70" secondAttribute="top" id="gMt-O1-giT"/>
                             <constraint firstItem="9n8-r2-cRr" firstAttribute="top" secondItem="KfC-Yf-u70" secondAttribute="bottom" constant="400" id="n9o-OU-87U"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ztx-74-cgB" secondAttribute="trailing" id="rhP-WP-IT0"/>
+                            <constraint firstItem="mwS-B7-6rz" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="noK-xY-jTz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="writeACaptionTextView" destination="mwS-B7-6rz" id="97S-Mc-bgj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oXy-At-UKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
