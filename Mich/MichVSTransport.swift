@@ -186,4 +186,32 @@ class MichVSTransport {
             }
         }
     }
+    
+    static func getMyBattles(token: String, successCallbackForGetBattles: @escaping ([Battle]) -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/getMine"
+        let getBattlesRequest = GetBattlesRequest(token: token)
+        let payloadJson = getBattlesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForGetBattles(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetBattles(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetBattles(error)
+            }
+        }
+    }
 }

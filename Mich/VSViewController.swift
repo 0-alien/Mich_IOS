@@ -27,7 +27,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         self.tableView.rowHeight = 80
         currentIndex = 1
         self.tableView.refreshControl = refreshControl
-        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+        MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
