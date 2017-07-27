@@ -65,13 +65,6 @@
                                     <outlet property="delegate" destination="4O9-bL-jmS" id="2IN-QH-qt1"/>
                                 </connections>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xr9-W4-Dtk" userLabel="Crop">
-                                <rect key="frame" x="288" y="450.5" width="16" height="22"/>
-                                <state key="normal" image="crop"/>
-                                <connections>
-                                    <action selector="crop:" destination="4O9-bL-jmS" eventType="touchUpInside" id="hDR-e2-rIs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
                                 <rect key="frame" x="16" y="450.5" width="17" height="22"/>
                                 <state key="normal" image="adjust"/>
@@ -88,8 +81,6 @@
                             <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="H52-PK-nId"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="Ihe-1n-vDq"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="height" secondItem="HmF-45-Pir" secondAttribute="height" multiplier="2:3" id="POQ-76-h7k"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xr9-W4-Dtk" secondAttribute="trailing" id="jsS-dn-KQO"/>
-                            <constraint firstItem="xr9-W4-Dtk" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="uZ2-3u-tOL"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -102,7 +93,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Next" id="rfL-qB-eSI">
                             <connections>
                                 <action selector="done:" destination="4O9-bL-jmS" id="ndg-tz-kbl"/>
-                                <segue destination="nq9-1d-0fg" kind="show" id="4YC-4w-xsg"/>
+                                <segue destination="nq9-1d-0fg" kind="show" identifier="tagimage" id="4YC-4w-xsg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -121,7 +112,7 @@
             </objects>
             <point key="canvasLocation" x="-763" y="-123"/>
         </scene>
-        <!--Tag Image View Controller-->
+        <!--Title-->
         <scene sceneID="RZ1-UE-I8e">
             <objects>
                 <viewController id="nq9-1d-0fg" customClass="TagImageViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,15 +124,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-Yf-u70">
-                                <rect key="frame" x="8" y="72" width="107" height="96"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KfC-Yf-u70">
+                                <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="mNJ-Xl-JWw"/>
+                                    <constraint firstAttribute="width" constant="100" id="rl4-a6-3S5"/>
+                                </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mwS-B7-6rz">
-                                <rect key="frame" x="123" y="72" width="190" height="96"/>
+                                <rect key="frame" x="124" y="72" width="180" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="7cR-5O-IEL"/>
+                                    <constraint firstAttribute="height" constant="100" id="7cR-5O-IEL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -149,16 +144,22 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mwS-B7-6rz" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="DRS-ls-9Yq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="189" id="RU0-TL-zaG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mwS-B7-6rz" secondAttribute="trailing" constant="-9" id="SOw-eM-gGP"/>
-                            <constraint firstItem="KfC-Yf-u70" firstAttribute="leading" secondItem="Wne-rv-dIO" secondAttribute="leadingMargin" constant="-8" id="blP-OI-OH4"/>
-                            <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="foY-nr-jpj"/>
-                            <constraint firstItem="9n8-r2-cRr" firstAttribute="top" secondItem="KfC-Yf-u70" secondAttribute="bottom" constant="400" id="n9o-OU-87U"/>
-                            <constraint firstItem="mwS-B7-6rz" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="noK-xY-jTz"/>
+                            <constraint firstItem="mwS-B7-6rz" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="2Ga-Qm-Gfb"/>
+                            <constraint firstItem="mwS-B7-6rz" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="bhH-Ig-tlU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mwS-B7-6rz" secondAttribute="trailing" id="c1i-Y8-gVA"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="KfC-Yf-u70" secondAttribute="leading" id="hcr-DM-UJh"/>
+                            <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="abf-17-c51" secondAttribute="bottom" constant="8" id="os4-jR-5gx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="FdE-XE-JYv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="68O-UQ-a7U">
+                            <connections>
+                                <action selector="post:" destination="nq9-1d-0fg" id="jFL-jz-Jdm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="photo" destination="KfC-Yf-u70" id="wf4-er-dAr"/>
                         <outlet property="writeACaptionTextView" destination="mwS-B7-6rz" id="97S-Mc-bgj"/>
                     </connections>
                 </viewController>
@@ -169,7 +170,6 @@
     </scenes>
     <resources>
         <image name="adjust" width="17" height="17"/>
-        <image name="crop" width="16" height="16"/>
         <image name="plus_icon" width="25" height="26"/>
     </resources>
 </document>

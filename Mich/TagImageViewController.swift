@@ -10,6 +10,8 @@ import UIKit
 
 class TagImageViewController: UIViewController, UITextViewDelegate {
     
+    @IBOutlet weak var photo: UIImageView!
+    var image: UIImage!
     @IBOutlet weak var writeACaptionTextView: UITextView!
     var placeholderLabel : UILabel!
     
@@ -26,11 +28,7 @@ class TagImageViewController: UIViewController, UITextViewDelegate {
         placeholderLabel.frame.origin = CGPoint(x: 5, y: (writeACaptionTextView.font?.pointSize)! / 2)
         placeholderLabel.textColor = UIColor.lightGray
         placeholderLabel.isHidden = !writeACaptionTextView.text.isEmpty
-        
-        
-        
-
-        // Do any additional setup after loading the view.
+        photo.image = image
     }
 
     
@@ -49,16 +47,25 @@ class TagImageViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func post(_ sender: Any) {
+        var title = writeACaptionTextView.text
+        if title == nil {
+            title = " ";
+        }
+        MichTransport.createpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, title: title!, image: self.image, successCallbackForCreatePost: onSuccess, errorCallbackForCreatePost: onError)
     }
-    */
+    
+    // MARK: callbacks
+    func onSuccess() {
+        self.tabBarController?.selectedIndex = 0
+        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: false)
+    }
+    
+    func onError(error: DefaultError) {
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 
 }

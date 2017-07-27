@@ -94,8 +94,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
         let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
         
-//        UIImageJPEGRepresentation(croppedImage, 1)
-        
         setImageToCrop(image: croppedImage)
     }
     
@@ -120,20 +118,19 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
     }
     
-    
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       textField.resignFirstResponder()
-        done(self)
-        return true
- 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tagimage" {
+            photo.image = photo.image?.fixedOrientation()
+            let scale:CGFloat = 1 / scrollView.zoomScale
+            let x:CGFloat = scrollView.contentOffset.x * scale
+            let y:CGFloat = scrollView.contentOffset.y * scale
+            let width:CGFloat = scrollView.frame.size.width * scale
+            let height:CGFloat = scrollView.frame.size.height * scale
+            let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
+            let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
+            (segue.destination as! TagImageViewController).image = croppedImage
+        }
     }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-
-    }
-
-
     
     @IBAction func zoomBTN(_ sender: Any) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
