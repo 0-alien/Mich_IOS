@@ -28,6 +28,12 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     var postTitle: String?
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    
+    
     
     var rw: CGFloat = 0
     var rh: CGFloat = 0
@@ -44,6 +50,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         img = img.fixedOrientation()
         
         setImageToCrop(image: img)
+        updateConstraintsForSize(scrollView.bounds.size);
         doneButtone.isEnabled = true
     }
     
@@ -69,7 +76,22 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         scrollView.maximumZoomScale = min(scrollView.frame.size.width / (photo.image?.size.width)!, scrollView.frame.size.height / (photo.image?.size.height)!) * 5
     }
     
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        updateConstraintsForSize(scrollView.bounds.size);
+    }
     
+    fileprivate func updateConstraintsForSize(_ size: CGSize) {
+        
+        let yOffset = max(0, (size.height - photo.frame.height) / 2)
+        imageViewTopConstraint.constant = yOffset
+        imageViewBottomConstraint.constant = yOffset
+        
+        let xOffset = max(0, (size.width - photo.frame.width) / 2)
+        imageViewLeadingConstraint.constant = xOffset
+        imageViewTrailingConstraint.constant = xOffset
+        
+        view.layoutIfNeeded()
+    }
     
     
     
