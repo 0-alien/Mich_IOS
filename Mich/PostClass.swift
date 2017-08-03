@@ -21,6 +21,8 @@ class PostClass: Mappable {
     var myLike: Int?
     var userName: String?
     var avatar: String?
+    var imageHeight: Int?
+    var imageWidth: Int?
     
     
     required init?(map: Map) {
@@ -50,5 +52,7 @@ class PostClass: Mappable {
         avatar          <- map["avatar"]
         userName        <- map["username"]
         nComments       <- map["ncomments"]
+        imageWidth      <- map["imagewidth"]
+        imageHeight     <- map["imageheight"]
     }
 }

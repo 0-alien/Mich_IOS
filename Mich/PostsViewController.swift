@@ -63,6 +63,10 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         return posts.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let coef = Double(posts[indexPath.row].imageWidth!) / Double(view.frame.width)
+        return CGFloat(Double(posts[indexPath.row].imageHeight!) / coef + 166)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post = posts[indexPath.row]
