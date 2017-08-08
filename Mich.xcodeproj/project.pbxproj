@@ -67,6 +67,7 @@
 		1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */; };
 		1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */; };
 		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
+		1E9A4C701F39C8E3008C0ABE /* VSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A4C6F1F39C8E3008C0ABE /* VSHomeViewController.swift */; };
 		1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */; };
 		1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */; };
 		1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */; };
@@ -242,6 +243,7 @@
 		1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagImageViewController.swift; sourceTree = "<group>"; };
 		1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomVSViewController.swift; sourceTree = "<group>"; };
 		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
+		1E9A4C6F1F39C8E3008C0ABE /* VSHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSHomeViewController.swift; sourceTree = "<group>"; };
 		1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleActionRequest.swift; sourceTree = "<group>"; };
 		1EABF9261D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPicturesCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EB4E3AD1E812C2E008E56D5 /* MichNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichNotification.swift; sourceTree = "<group>"; };
@@ -575,6 +577,7 @@
 				1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */,
 				1E7FC0FB1EE6C7B90014562F /* VSJSQViewController.swift */,
 				1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */,
+				1E9A4C6F1F39C8E3008C0ABE /* VSHomeViewController.swift */,
 			);
 			name = VS;
 			sourceTree = "<group>";
@@ -1033,6 +1036,7 @@
 				CF8DAD461E8159D30021B905 /* DeleteCommentRequest.swift in Sources */,
 				1E42C0641EE828E20077B707 /* MichVSTransport.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
+				1E9A4C701F39C8E3008C0ABE /* VSHomeViewController.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
 				1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */,
 				CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */,

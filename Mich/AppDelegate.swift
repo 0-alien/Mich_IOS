@@ -166,7 +166,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
                 vc.popToRootViewController(animated: false)
-                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
             }
@@ -176,7 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
                 vc.popToRootViewController(animated: false)
-                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
             }
@@ -188,12 +188,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 vc.popToRootViewController(animated: false)
             }
             break
-        case 8:
+        case 8: //battle finish
             if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
                 (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
                 let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
                 vc.popToRootViewController(animated: false)
-                let vsViewController: VSViewController = vc.topViewController as! VSViewController
+                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
                 vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
                 vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
             }

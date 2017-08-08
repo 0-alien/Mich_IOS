@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import AlamofireImage
 
-class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource {
+class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     var destinationBattleId: Int = -1
@@ -25,7 +25,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         super.viewDidLoad()
         self.tableView.sectionHeaderHeight = 30
         self.tableView.rowHeight = 80
-        currentIndex = 1
         self.tableView.refreshControl = refreshControl
         MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
     }
@@ -33,19 +32,7 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    /*func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let frame = CGRect(x: 0, y: 0, width: self.tableView!.frame.size.width, height: 15);
-        if (section == 1) {
-            return VSTableViewSectionHeader(frame: frame, labelName: " Active Now", seeMoreCount: 11, listener: self, selector: #selector(VSViewController.activeSeeMore(_:)))
-        }
-        else if (section == 0) {
-            return VSTableViewSectionHeader(frame: frame, labelName: " My Battles", seeMoreCount: 11, listener: self, selector: #selector(VSViewController.myBattles(_:)))
-        }
-        else {
-            return VSTableViewSectionHeader(frame: frame, labelName: " More Conversations", seeMoreCount: 3, listener: self, selector: #selector(VSViewController.moreSeeMore(_:)))
-        }
-    }*/
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -102,15 +89,6 @@ class VSViewController: SlidingMenuPresentingViewController, UITableViewDelegate
             else {
                 vc.battle = nil // 0 da 1 is shemtxvevashi sheidzleba statusi shecvlili iyos da axlidan moaq info
             }
-        }
-        else if segue.identifier == "showvsnotification" {
-            guard let vc = segue.destination as? VSJSQViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            vc.battleId = self.destinationBattleId
-            vc.battle = nil
-            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
-            vc.senderId = String((UIApplication.shared.delegate as! AppDelegate).user!.id!)
         }
     }
     
