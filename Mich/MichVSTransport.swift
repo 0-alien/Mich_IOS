@@ -214,4 +214,60 @@ class MichVSTransport {
             }
         }
     }
+    
+    static func getTopBattles(token: String, successCallbackForGetTopBattles: @escaping ([Battle]) -> Void, errorCallbackForGetTopBattles: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/getTop"
+        let getTopBattlesRequest = GetBattlesRequest(token: token)
+        let payloadJson = getTopBattlesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForGetTopBattles(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetTopBattles(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetTopBattles(error)
+            }
+        }
+    }
+    
+    static func getActiveBattles(token: String, successCallbackForGetActiveBattles: @escaping ([Battle]) -> Void, errorCallbackForGetActiveBattles: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/getActive"
+        let getActiveBattlesRequest = GetBattlesRequest(token: token)
+        let payloadJson = getActiveBattlesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForGetActiveBattles(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetActiveBattles(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetActiveBattles(error)
+            }
+        }
+    }
 }

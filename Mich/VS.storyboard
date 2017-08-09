@@ -310,6 +310,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="GGO-6G-RUO" kind="show" identifier="showtopbattles" id="a97-Rd-HHv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lW6-6b-w4e">
                                 <rect key="frame" x="62" y="392" width="196" height="27"/>
@@ -326,6 +329,9 @@
                                         <integer key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="GGO-6G-RUO" kind="show" identifier="showactivebattles" id="sGd-dP-B06"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -370,7 +376,7 @@
                         <viewControllerLayoutGuide type="top" id="IyD-9A-uXF"/>
                         <viewControllerLayoutGuide type="bottom" id="yU2-uz-P7t"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Gpm-aS-TM8">
+                    <view key="view" contentMode="scaleToFill" id="Gpm-aS-TM8">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -461,11 +467,6 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="VS" id="Vcm-fK-UfJ">
                         <barButtonItem key="backBarButtonItem" title=" " id="EhE-p0-t67"/>
-                        <barButtonItem key="rightBarButtonItem" title="Random" id="z7M-ig-stt">
-                            <connections>
-                                <segue destination="54s-mO-hIA" kind="show" id="JMa-Du-TNR"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5Cw-T3-MLi" id="2RD-i1-C98"/>
@@ -602,7 +603,7 @@
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tl4-xc-Igv"/>
-        <segue reference="uaa-fb-tRY"/>
+        <segue reference="abc-oF-abl"/>
+        <segue reference="TTy-ZW-Rda"/>
     </inferredMetricsTieBreakers>
 </document>

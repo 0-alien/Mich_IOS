@@ -13,7 +13,11 @@ import AlamofireImage
 class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var destinationBattleId: Int = -1
+    var whichBattleList: Int! {
+        didSet {
+            
+        }
+    }
     var battles = [Battle]()
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -26,7 +30,13 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.tableView.sectionHeaderHeight = 30
         self.tableView.rowHeight = 80
         self.tableView.refreshControl = refreshControl
-        MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+        if whichBattleList == 0 {
+            MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+        } else if whichBattleList == 1 {
+            MichVSTransport.getTopBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetTopBattles: onGetBattlesSuccess, errorCallbackForGetTopBattles: onError)
+        } else {
+            MichVSTransport.getActiveBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetActiveBattles: onGetBattlesSuccess, errorCallbackForGetActiveBattles: onError)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -107,7 +117,13 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     // MARK: refreshcontrol
     func handleRefresh(_ refreshControl: UIRefreshControl) {
-        MichVSTransport.getBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+        if whichBattleList == 0 {
+            MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
+        } else if whichBattleList == 1 {
+            MichVSTransport.getTopBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetTopBattles: onGetBattlesSuccess, errorCallbackForGetTopBattles: onError)
+        } else {
+            MichVSTransport.getActiveBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetActiveBattles: onGetBattlesSuccess, errorCallbackForGetActiveBattles: onError)
+        }
     }
     
     // MARK: navigatioin

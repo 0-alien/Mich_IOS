@@ -29,6 +29,12 @@ class VSHomeViewController: SlidingMenuPresentingViewController {
             vc.battle = nil
             vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
             vc.senderId = String((UIApplication.shared.delegate as! AppDelegate).user!.id!)
+        } else if segue.identifier == "showmybattles" {
+            (segue.destination as! VSViewController).whichBattleList = 1
+        } else if segue.identifier == "showtopbattles" {
+            (segue.destination as! VSViewController).whichBattleList = 2
+        } else if segue.identifier == "showactivebattles" {
+            (segue.destination as! VSViewController).whichBattleList = 3
         }
     }
 }
