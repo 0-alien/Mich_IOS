@@ -45,16 +45,16 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         
         currentIndex = 3
         
-        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
-        resultsShower.userChoosenDelegate = self
-        searchController = UISearchController(searchResultsController: resultsShower)
-        searchController.searchResultsUpdater = resultsShower
-        searchController.dimsBackgroundDuringPresentation = true
-        searchController.searchBar.placeholder = "Search Mich"
-        searchController.searchBar.sizeToFit()
-        searchController.definesPresentationContext = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        self.navigationItem.titleView = searchController.searchBar
+//        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
+//        resultsShower.userChoosenDelegate = self
+//        searchController = UISearchController(searchResultsController: resultsShower)
+//        searchController.searchResultsUpdater = resultsShower
+//        searchController.dimsBackgroundDuringPresentation = true
+//        searchController.searchBar.placeholder = "Search Mich"
+//        searchController.searchBar.sizeToFit()
+//        searchController.definesPresentationContext = false
+//        searchController.hidesNavigationBarDuringPresentation = false
+//        self.navigationItem.titleView = searchController.searchBar
         MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
     }
     

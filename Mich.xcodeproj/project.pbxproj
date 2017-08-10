@@ -87,6 +87,7 @@
 		1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C31D8AE53000676CE2 /* images.xcassets */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
+		1EF977AE1F3C7891009E6CF7 /* MichHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
 		CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */; };
 		CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */; };
@@ -263,6 +264,7 @@
 		1EF192C31D8AE53000676CE2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichHomeViewController.swift; sourceTree = "<group>"; };
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
 		CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowingRequest.swift; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 				1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */,
 				1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */,
 				1EEE29551E572EEB00302BC2 /* SearchResultsViewController.swift */,
+				1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -934,6 +937,7 @@
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
 				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
+				1EF977AE1F3C7891009E6CF7 /* MichHomeViewController.swift in Sources */,
 				1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */,
 				CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */,
 				1E0DE9261EFD4D5900F2DD03 /* BattleVote.swift in Sources */,
