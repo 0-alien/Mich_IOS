@@ -477,7 +477,7 @@
                         <viewControllerLayoutGuide type="top" id="lXV-Sd-lNj"/>
                         <viewControllerLayoutGuide type="bottom" id="bZO-FB-aXh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="gfC-5R-ka1">
+                    <view key="view" contentMode="scaleToFill" id="gfC-5R-ka1">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
