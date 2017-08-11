@@ -46,6 +46,8 @@
 		1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */; };
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
+		1E5822FD1F3DE83700A7C583 /* GetRandomBattleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */; };
+		1E5822FF1F3DEB8C00A7C583 /* PlayRandomBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */; };
 		1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */; };
 		1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */; };
 		1E5E1A1E1E5F1C2E00F803A6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */; };
@@ -223,6 +225,8 @@
 		1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSInviteCell.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
+		1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomBattleRequest.swift; sourceTree = "<group>"; };
+		1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRandomBattle.swift; sourceTree = "<group>"; };
 		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -485,6 +489,8 @@
 				1E42C06F1EE835FE0077B707 /* GetBattleRequest.swift */,
 				1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */,
 				1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */,
+				1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */,
+				1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -928,6 +934,7 @@
 				1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */,
 				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
+				1E5822FD1F3DE83700A7C583 /* GetRandomBattleRequest.swift in Sources */,
 				1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */,
 				1E42C06A1EE82A990077B707 /* BattleInviteRequest.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
@@ -1060,6 +1067,7 @@
 				CF33648F1E7FE9FB00A42763 /* HidePostRequest.swift in Sources */,
 				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
 				CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */,
+				1E5822FF1F3DEB8C00A7C583 /* PlayRandomBattle.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
 				CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */,
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,

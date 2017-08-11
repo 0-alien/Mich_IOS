@@ -35,6 +35,10 @@ class VSHomeViewController: SlidingMenuPresentingViewController {
             (segue.destination as! VSViewController).whichBattleList = 2
         } else if segue.identifier == "showactivebattles" {
             (segue.destination as! VSViewController).whichBattleList = 3
+        } else if segue.identifier == "randombattle" {
+            (segue.destination as! RandomVSViewController).isSpectate = false
+        } else if segue.identifier == "randomspectate" {
+            (segue.destination as! RandomVSViewController).isSpectate = true
         }
     }
 }

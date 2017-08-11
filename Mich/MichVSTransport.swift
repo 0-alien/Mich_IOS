@@ -270,4 +270,63 @@ class MichVSTransport {
             }
         }
     }
+    
+    static func getRandomBattle(token: String, successCallbackForGetRandomBattle: @escaping (Battle) -> Void, errorCallbackForGetRandomBattle: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/getRandom"
+        let getRandomBattleRequest = GetRandomBattleRequest(token: token)
+        let payloadJson = getRandomBattleRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForGetRandomBattle(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.code = baseResponse!.code!
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetRandomBattle(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetRandomBattle(error)
+            }
+        }
+    }
+    
+    static func playRandomBattle(token: String, successCallbackForPlayRandomBattle: @escaping (Battle) -> Void, errorCallbackForPlayRandomBattle: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/playRandom"
+        let playRandomBattleRequest = PlayRandomBattleRequest(token: token)
+        let payloadJson = playRandomBattleRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForPlayRandomBattle(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    error.code = baseResponse!.code!
+                    errorCallbackForPlayRandomBattle(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForPlayRandomBattle(error)
+            }
+        }
+    }
+    
 }

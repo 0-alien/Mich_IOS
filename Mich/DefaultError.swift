@@ -9,4 +9,5 @@
 import Foundation
 class DefaultError{
     var errorString: String?
+    var code: Int?
 }

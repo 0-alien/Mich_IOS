@@ -135,7 +135,7 @@
                         <viewControllerLayoutGuide type="top" id="lXV-Sd-lNj"/>
                         <viewControllerLayoutGuide type="bottom" id="bZO-FB-aXh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gfC-5R-ka1">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="gfC-5R-ka1">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -264,7 +264,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="PlayButton"/>
                                 <connections>
-                                    <segue destination="54s-mO-hIA" kind="show" id="tl4-xc-Igv"/>
+                                    <segue destination="54s-mO-hIA" kind="show" identifier="randombattle" id="tl4-xc-Igv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-c1-BUA">
@@ -274,6 +274,9 @@
                                     <constraint firstAttribute="width" secondItem="Jqb-c1-BUA" secondAttribute="height" multiplier="113:80" id="rj5-JH-hhk"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="SpectatorButton"/>
+                                <connections>
+                                    <segue destination="54s-mO-hIA" kind="show" identifier="randomspectate" id="JFi-Iz-5QL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBY-CD-HbD">
                                 <rect key="frame" x="62" y="298" width="196" height="27"/>
@@ -376,7 +379,7 @@
                         <viewControllerLayoutGuide type="top" id="IyD-9A-uXF"/>
                         <viewControllerLayoutGuide type="bottom" id="yU2-uz-P7t"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gpm-aS-TM8">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Gpm-aS-TM8">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -495,14 +498,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-mP-wOA">
                                 <rect key="frame" x="140.5" y="167.5" width="39" height="39"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-5P-piK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-5P-piK">
                                 <rect key="frame" x="46" y="157" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IzH-5P-piK" secondAttribute="height" multiplier="1:1" id="fUs-ZE-BuP"/>
                                     <constraint firstAttribute="width" constant="60" id="xTA-Yd-kQw"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second_user" translatesAutoresizingMaskIntoConstraints="NO" id="IJe-6Q-2d6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second_user" translatesAutoresizingMaskIntoConstraints="NO" id="IJe-6Q-2d6">
                                 <rect key="frame" x="214" y="157" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="K0c-oW-LFo"/>
@@ -540,16 +543,24 @@
                             <constraint firstItem="IzH-5P-piK" firstAttribute="centerY" secondItem="0gw-mP-wOA" secondAttribute="centerY" id="xBj-t3-syT"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gMj-xu-d3W">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qhk-09-Q0N">
+                            <connections>
+                                <action selector="cancelSearch:" destination="54s-mO-hIA" id="FKg-0f-Cuf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="guestImage" destination="IJe-6Q-2d6" id="VII-5a-SEj"/>
                         <outlet property="guestUsername" destination="uTI-is-3dQ" id="d88-r4-BOy"/>
                         <outlet property="hostImage" destination="IzH-5P-piK" id="5Lf-qM-JDy"/>
                         <outlet property="hostUsername" destination="EyS-8r-9n5" id="Glx-w1-9nn"/>
+                        <segue destination="rlU-YV-9dO" kind="show" identifier="showbattle" id="Gwf-KF-eDR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i7U-Vd-5pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="-1587"/>
+            <point key="canvasLocation" x="240" y="-1496"/>
         </scene>
         <!--Settings-->
         <scene sceneID="CuK-gd-ySh">
@@ -603,7 +614,8 @@
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Gwf-KF-eDR"/>
+        <segue reference="JFi-Iz-5QL"/>
         <segue reference="abc-oF-abl"/>
-        <segue reference="uaa-fb-tRY"/>
     </inferredMetricsTieBreakers>
 </document>
