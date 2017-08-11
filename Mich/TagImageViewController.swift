@@ -18,7 +18,6 @@ class TagImageViewController: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         writeACaptionTextView.delegate = self
         placeholderLabel = UILabel()
         placeholderLabel.text = "Write A Caption.."

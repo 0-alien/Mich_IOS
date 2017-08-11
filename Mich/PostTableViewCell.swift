@@ -21,6 +21,7 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     @IBOutlet weak var createdAt: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var likeCountButton: UIButton!
+    @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
     
     var liked: Bool! {
         didSet {
