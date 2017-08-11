@@ -68,6 +68,7 @@ class RandomVSViewController: UIViewController {
         if isSpectate {
             self.hostImage.stopAnimating()
         }
+        MichVSTransport.cancelPlay(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForCancelPlay: onCancelPlaySuccess, errorCallbackForCancelPlay: onCancelPlayError)
         self.navigationController?.popViewController(animated: true)
     }
     // MARK: - navigation
@@ -81,6 +82,15 @@ class RandomVSViewController: UIViewController {
         }
     }
     // MARK: - callbacks
+    func onCancelPlaySuccess() {
+        
+    }
+    
+    func onCancelPlayError(error: DefaultError) {
+        let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func onSuccess(battle: Battle) {
         if cancelled {

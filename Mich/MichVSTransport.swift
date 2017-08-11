@@ -329,4 +329,32 @@ class MichVSTransport {
         }
     }
     
+    static func cancelPlay(token: String, successCallbackForCancelPlay: @escaping () -> Void, errorCallbackForCancelPlay: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/cancelPlay"
+        let cancelPlayRequest = CancelPlayRequest(token: token)
+        let payloadJson = cancelPlayRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForCancelPlay()
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    error.code = baseResponse!.code!
+                    errorCallbackForCancelPlay(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForCancelPlay(error)
+            }
+        }
+    }
+    
 }

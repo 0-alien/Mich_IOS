@@ -48,6 +48,7 @@
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
 		1E5822FD1F3DE83700A7C583 /* GetRandomBattleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */; };
 		1E5822FF1F3DEB8C00A7C583 /* PlayRandomBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */; };
+		1E5823011F3DFEDB00A7C583 /* CancelPlayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5823001F3DFEDB00A7C583 /* CancelPlayRequest.swift */; };
 		1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */; };
 		1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */; };
 		1E5E1A1E1E5F1C2E00F803A6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */; };
@@ -227,6 +228,7 @@
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
 		1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomBattleRequest.swift; sourceTree = "<group>"; };
 		1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRandomBattle.swift; sourceTree = "<group>"; };
+		1E5823001F3DFEDB00A7C583 /* CancelPlayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPlayRequest.swift; sourceTree = "<group>"; };
 		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -491,6 +493,7 @@
 				1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */,
 				1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */,
 				1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */,
+				1E5823001F3DFEDB00A7C583 /* CancelPlayRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -883,7 +886,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1020,6 +1023,7 @@
 				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
+				1E5823011F3DFEDB00A7C583 /* CancelPlayRequest.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,
 				CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */,
