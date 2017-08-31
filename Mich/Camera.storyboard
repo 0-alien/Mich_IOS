@@ -46,7 +46,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="64" width="320" height="378.5"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="473.5"/>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -66,21 +66,36 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
-                                <rect key="frame" x="16" y="450.5" width="17" height="22"/>
+                                <rect key="frame" x="16" y="545.5" width="141" height="20.5"/>
+                                <color key="backgroundColor" red="0.083276863044389637" green="0.07955802992012817" blue="0.081219741089064934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="adjust"/>
                                 <connections>
                                     <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="H77-t7-Xmy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-Uk-pUW">
+                                <rect key="frame" x="163" y="545.5" width="141" height="22.5"/>
+                                <color key="backgroundColor" red="0.083276863039999996" green="0.079558029919999995" blue="0.081219741090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="2Vq-vx-UiM"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="38b-DY-rMs"/>
+                            <constraint firstItem="5vO-Uk-pUW" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3iV-mB-WE5"/>
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3mc-F1-NjE"/>
+                            <constraint firstAttribute="bottom" secondItem="5vO-Uk-pUW" secondAttribute="bottom" id="4Dj-ds-Guu"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="67l-0k-Svy"/>
+                            <constraint firstItem="6hM-dW-tvg" firstAttribute="top" secondItem="DC7-YZ-eej" secondAttribute="bottom" constant="2" id="8Y2-BW-f8Y"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="H52-PK-nId"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="Ihe-1n-vDq"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="height" secondItem="HmF-45-Pir" secondAttribute="height" multiplier="2:3" id="POQ-76-h7k"/>
+                            <constraint firstItem="src-mk-xhh" firstAttribute="height" secondItem="HmF-45-Pir" secondAttribute="height" multiplier="5:6" id="POQ-76-h7k"/>
+                            <constraint firstItem="5vO-Uk-pUW" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="Pqi-RG-XJi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5vO-Uk-pUW" secondAttribute="trailing" id="U4R-hJ-ifR"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="hvw-y1-KBB"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -110,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-763" y="-123"/>
+            <point key="canvasLocation" x="-763.125" y="-123.59154929577466"/>
         </scene>
         <!--Title-->
         <scene sceneID="RZ1-UE-I8e">
