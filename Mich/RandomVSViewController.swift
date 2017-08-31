@@ -98,7 +98,7 @@ class RandomVSViewController: UIViewController {
         } else {
             self.navigationItem.leftBarButtonItem?.isEnabled = false
             self.destinationBattle = battle
-            let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+            let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
             DispatchQueue.main.asyncAfter(deadline: when) {
 
                 self.guestImage.stopAnimating()
@@ -121,16 +121,22 @@ class RandomVSViewController: UIViewController {
         }
         if isSpectate {
             if error.code == 22 {
-                let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+                let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
                 DispatchQueue.main.asyncAfter(deadline: when) {
+                    if self.cancelled {
+                        return
+                    }
                     MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: self.onSuccess, errorCallbackForGetRandomBattle: self.onError)
                 }
                 return
             }
         } else {
             if error.code == 40 {
-                let when = DispatchTime.now() + 1 // change 2 to desired number of seconds
+                let when = DispatchTime.now() + 2 // change 2 to desired number of seconds
                 DispatchQueue.main.asyncAfter(deadline: when) {
+                    if self.cancelled {
+                        return
+                    }
                     MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForPlayRandomBattle: self.onSuccess, errorCallbackForPlayRandomBattle: self.onError)
                 }
                 return
