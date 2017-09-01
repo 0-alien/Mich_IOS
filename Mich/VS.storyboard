@@ -250,7 +250,7 @@
                         <viewControllerLayoutGuide type="bottom" id="M1Y-xN-h9X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xmz-47-ELf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VSBackground_1" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Ab-xJr">
@@ -357,6 +357,7 @@
                             <constraint firstAttribute="trailing" secondItem="mmJ-Ab-xJr" secondAttribute="trailing" id="uOE-9m-8WK"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="VS" id="w68-VV-0jF"/>
                     <connections>
                         <segue destination="eIA-3t-lXw" kind="show" identifier="gotoeditimage" id="PZ5-W0-gcF"/>
@@ -614,8 +615,8 @@
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gwf-KF-eDR"/>
-        <segue reference="JFi-Iz-5QL"/>
         <segue reference="abc-oF-abl"/>
+        <segue reference="uaa-fb-tRY"/>
+        <segue reference="JFi-Iz-5QL"/>
     </inferredMetricsTieBreakers>
 </document>

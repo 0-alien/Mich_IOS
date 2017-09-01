@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -160,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nma-Ba-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1056" y="80"/>
+            <point key="canvasLocation" x="-1034" y="49"/>
         </scene>
         <!--PostViewController-->
         <scene sceneID="may-nM-mXZ">
@@ -244,7 +244,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-0S-cD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="-168"/>
+            <point key="canvasLocation" x="187" y="71"/>
         </scene>
         <!--userpage-->
         <scene sceneID="mof-1y-Iab">
@@ -254,12 +254,13 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219.375" y="102.27333333333333"/>
+            <point key="canvasLocation" x="-221" y="74"/>
         </scene>
         <!--Mich Home View Controller-->
         <scene sceneID="Idb-28-n7d">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Pp8-bF-2RU" customClass="MichHomeViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="m6h-cc-BG6"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-u5-iQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-598.75" y="80.039999999999992"/>
+            <point key="canvasLocation" x="-571" y="49"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ULx-Gn-LdI">
