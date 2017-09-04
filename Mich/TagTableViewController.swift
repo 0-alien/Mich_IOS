@@ -25,6 +25,7 @@ class TagTableViewController: UIViewController, UISearchResultsUpdating, UITable
         searchController.searchBar.sizeToFit()
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Users..."
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +45,9 @@ class TagTableViewController: UIViewController, UISearchResultsUpdating, UITable
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TagTableViewCell", for: indexPath) as! TagTableViewCell
-        //cell.userName.text = users[indexPath.row].username
+        cell.userName.text = users[indexPath.row].username
         Nuke.loadImage(with: Foundation.URL(string: users[indexPath.row].avatar!)!, into: cell.userImage)
+        cell.userImage = cell.userImage.circle
         return cell
     }
     
