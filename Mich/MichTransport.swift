@@ -1454,6 +1454,70 @@ class MichTransport {
         
         
     }
+    
+    
+    
+    ///////////////////// get random post
+    
+    static func getrandompost(token: String, successCallbackGetRandomPost: @escaping (PostClass) -> Void, errorCallbackGetRandomPost: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "post/random"
+        
+        let getRandomPostRequest = GetRandomPost(token: token)
+        let payloadJson = getRandomPostRequest.toJSONString()
+        
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
+            
+            if( response.result.isSuccess ){
+                
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<PostClass>(JSONString: JString)
+                
+                if baseResponse!.code! == SUCCESS_CODE {
+                    
+                    
+                    let res = baseResponse!.data!
+                    successCallbackGetRandomPost(res)
+                    
+                }else{
+                    
+                    print(baseResponse!.message!)
+                    
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    
+                    errorCallbackGetRandomPost(error)
+                    
+                }
+                
+                
+            }else{
+                
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                
+                
+                errorCallbackGetRandomPost(error)
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     static func explore(token: String, successCallbackForexplore: @escaping ([PostClass]) -> Void, errorCallbackForexplore: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "post/explore"

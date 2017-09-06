@@ -112,6 +112,7 @@
 		CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */; };
 		CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF41E4215C500B1A59E /* LogoutRequest.swift */; };
 		CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF61E4215D900B1A59E /* LogoutResponse.swift */; };
+		CF23CA2A1F5ED1CB000FAE7A /* GetRandomPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */; };
 		CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */; };
 		CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */; };
 		CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */; };
@@ -138,6 +139,7 @@
 		CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */; };
 		CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */; };
 		CF5B599E1EFD1922002E5FF6 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5B599D1EFD1922002E5FF6 /* UIImageFixedOrientationExtension.swift */; };
+		CF5CB30D1F5D644B00C205B8 /* MichSwipePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */; };
 		CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */; };
 		CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */; };
 		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
@@ -294,6 +296,7 @@
 		CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverRequest.swift; sourceTree = "<group>"; };
 		CF209DF41E4215C500B1A59E /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		CF209DF61E4215D900B1A59E /* LogoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
+		CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomPost.swift; sourceTree = "<group>"; };
 		CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
 		CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowingRequest.swift; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentResponse.swift; sourceTree = "<group>"; };
 		CF57E5471E6440B000A3575A /* GetUserPostsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserPostsRequest.swift; sourceTree = "<group>"; };
 		CF5B599D1EFD1922002E5FF6 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
+		CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSwipePhotosViewController.swift; sourceTree = "<group>"; };
 		CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelpViewController.swift; sourceTree = "<group>"; };
 		CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersRequest.swift; sourceTree = "<group>"; };
 		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
@@ -628,6 +632,7 @@
 				CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */,
 				CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */,
 				CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */,
+				CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -762,6 +767,7 @@
 				CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */,
 				CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */,
 				CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */,
+				CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -994,6 +1000,7 @@
 				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
 				1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
+				CF5CB30D1F5D644B00C205B8 /* MichSwipePhotosViewController.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
 				CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */,
 				1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */,
@@ -1057,6 +1064,7 @@
 				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				1E5823011F3DFEDB00A7C583 /* CancelPlayRequest.swift in Sources */,
+				CF23CA2A1F5ED1CB000FAE7A /* GetRandomPost.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,
 				CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */,
