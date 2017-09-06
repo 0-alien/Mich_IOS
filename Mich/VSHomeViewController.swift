@@ -13,7 +13,7 @@ class VSHomeViewController: SlidingMenuPresentingViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.currentIndex = 1
+        currentIndex = 1
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +21,7 @@ class VSHomeViewController: SlidingMenuPresentingViewController {
         // Dispose of any resources that can be recreated.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if segue.identifier == "showvsnotification" {
             guard let vc = segue.destination as? VSJSQViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")

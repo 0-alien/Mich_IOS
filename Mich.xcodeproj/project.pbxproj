@@ -77,6 +77,8 @@
 		1EB4E3B01E813807008E56D5 /* PostLikedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */; };
 		1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC367C41E4DB4DE00DB6C77 /* Camera.swift */; };
 		1EC3FE3E1E153C6100D8E2EE /* VSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */; };
+		1EC59F321F597013000FD2F9 /* TagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC59F311F597013000FD2F9 /* TagTableViewController.swift */; };
+		1EC59F341F5987DB000FD2F9 /* TagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC59F331F5987DB000FD2F9 /* TagTableViewCell.swift */; };
 		1EDDC2551D9407DA004D1DD5 /* Mich.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */; };
 		1EDDC2571D940877004D1DD5 /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2561D940877004D1DD5 /* Camera.storyboard */; };
 		1EDDC2591D9408EB004D1DD5 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC2581D9408EB004D1DD5 /* Home.storyboard */; };
@@ -259,6 +261,8 @@
 		1EB4E3AF1E813807008E56D5 /* PostLikedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostLikedCell.swift; sourceTree = "<group>"; };
 		1EC367C41E4DB4DE00DB6C77 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		1EC3FE3D1E153C6100D8E2EE /* VSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSViewController.swift; sourceTree = "<group>"; };
+		1EC59F311F597013000FD2F9 /* TagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTableViewController.swift; sourceTree = "<group>"; };
+		1EC59F331F5987DB000FD2F9 /* TagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTableViewCell.swift; sourceTree = "<group>"; };
 		1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mich.storyboard; sourceTree = "<group>"; };
 		1EDDC2561D940877004D1DD5 /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		1EDDC2581D9408EB004D1DD5 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -568,6 +572,8 @@
 				CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */,
 				1E4DB6C51E55B9420011C694 /* EditImageViewController.swift */,
 				1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */,
+				1EC59F311F597013000FD2F9 /* TagTableViewController.swift */,
+				1EC59F331F5987DB000FD2F9 /* TagTableViewCell.swift */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -898,7 +904,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1011,6 +1017,7 @@
 				1E42C06E1EE82D400077B707 /* GetBattlesRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
+				1EC59F321F597013000FD2F9 /* TagTableViewController.swift in Sources */,
 				1E42C0701EE835FE0077B707 /* GetBattleRequest.swift in Sources */,
 				1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */,
 				CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */,
@@ -1019,6 +1026,7 @@
 				CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */,
 				CF118D2B1EE6A5DB0023AA7E /* AskQuestionRequest.swift in Sources */,
 				CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */,
+				1EC59F341F5987DB000FD2F9 /* TagTableViewCell.swift in Sources */,
 				CF467DD41F14DA3900FC0BFC /* MenuMassageViewController.swift in Sources */,
 				1E0F837A1E8150DF00F004CA /* FollowCell.swift in Sources */,
 				1E021FEC1DABB277009D8098 /* VSTableViewCell.swift in Sources */,
