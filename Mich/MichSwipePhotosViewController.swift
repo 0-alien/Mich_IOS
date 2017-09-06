@@ -51,6 +51,7 @@ class MichSwipePhotosViewController: UIViewController {
         UIView.animate(withDuration: 0.6, animations: {
             self.viewOfPhoto.frame.origin = CGPoint(x: self.viewOfPhoto.frame.origin.x + 800, y: self.viewOfPhoto.frame.origin.y + 100)
         }, completion: {_ in
+            
             MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postRandom.id!, successCallbackForLike: self.onSuccessForLike, errorCallbackForLike: self.onerror)
             MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: self.onSuccessGetRandomPost, errorCallbackGetRandomPost: self.onerror)
             self.viewOfPhoto.frame.origin = CGPoint(x: self.viewOfPhoto.frame.origin.x - 800, y: self.viewOfPhoto.frame.origin.y - 100)
