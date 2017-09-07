@@ -267,14 +267,14 @@
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7V-FJ-bHn">
-                                        <rect key="frame" x="8" y="500" width="359" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U7V-FJ-bHn">
+                                        <rect key="frame" x="8" y="500" width="359" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsu-zS-INR">
-                                        <rect key="frame" x="8" y="534" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="522" width="359" height="30"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="View Comments">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -456,7 +456,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wbR-Af-cio">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wbR-Af-cio">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.0" blue="0.14930264261744966" alpha="1" colorSpace="calibratedRGB"/>
@@ -756,7 +756,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2NU-zg-w12" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="buK-FI-MPn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="buK-FI-MPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -778,10 +778,9 @@
         <image name="user_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MaX-mX-K8b"/>
+        <segue reference="8Gc-2c-hvL"/>
         <segue reference="23d-Vm-cWR"/>
-        <segue reference="tvz-Ie-NnN"/>
-        <segue reference="8Gc-2c-hvL"/>
         <segue reference="NG3-m9-6iK"/>
-        <segue reference="8Gc-2c-hvL"/>
     </inferredMetricsTieBreakers>
 </document>
