@@ -35,7 +35,7 @@ class MichTransport {
     
     
     
-    static func defaultLogin(username: String, password: String, successCallback: @escaping (LoginResponse) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
+    static func defaultLogin(username: String, password: String, successCallback: @escaping (String) -> Void, errorCallback: @escaping (DefaultError) -> Void ){
     
         let reqString = BASE_URL + "auth/login"
         
@@ -61,9 +61,7 @@ class MichTransport {
         
                 if baseResponse!.code! == SUCCESS_CODE {
                     let res = baseResponse!.data!
-                    
-                   
-                    successCallback(res)
+                    successCallback(res.token!)
                     
                     
                 }else{
@@ -109,7 +107,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<RegisterResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -218,7 +216,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<CheckCodeResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -272,7 +270,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<RecoveryResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -327,7 +325,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<LogoutResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -539,7 +537,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<ChangePasswordResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -593,7 +591,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<LikeResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -646,7 +644,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<UnlikeResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -710,7 +708,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<FollowResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1094,7 +1092,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<UnfollowResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1156,7 +1154,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<CreatePostResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1644,7 +1642,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<DeletePostResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1694,7 +1692,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<LikeCommentResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1748,7 +1746,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<UnlikeCommentResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1801,7 +1799,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<HidePostResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -1903,7 +1901,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<DeleteCommentResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2009,7 +2007,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<ReportPostResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2061,7 +2059,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<ReportCommentResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2113,7 +2111,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<ReportUserResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2164,7 +2162,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<BlockUserResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2218,7 +2216,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<UnblockUserRequest>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 if baseResponse!.code! == SUCCESS_CODE {
                     
@@ -2272,7 +2270,7 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<AskQuestionResponse>(JSONString: JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
                 
                 
                 if baseResponse!.code! == SUCCESS_CODE {
@@ -2293,18 +2291,12 @@ class MichTransport {
                 }
                 
                 
-            }else{
-                
+            } else {
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForAskQuestion(error)
-                
             }
-            
         }
-        
     }
     
     

@@ -92,14 +92,13 @@
 		1EF192C41D8AE53000676CE2 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF192C31D8AE53000676CE2 /* images.xcassets */; };
 		1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */; };
 		1EF192CA1D8AE5F100676CE2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */; };
+		1EF45F541F61591B00D794B0 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF45F531F61591B00D794B0 /* LoginResponse.swift */; };
 		1EF977AE1F3C7891009E6CF7 /* MichHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */; };
 		9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */; };
 		CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */; };
 		CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */; };
-		CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */; };
 		CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */; };
 		CF092BC21E94F0E800C18718 /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF092BC11E94F0E800C18718 /* RotateImage.swift */; };
-		CF118D291EE6A5C80023AA7E /* AskQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */; };
 		CF118D2B1EE6A5DB0023AA7E /* AskQuestionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */; };
 		CF149D271E77EB81005911FB /* UpdateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF149D261E77EB81005911FB /* UpdateUserRequest.swift */; };
 		CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */; };
@@ -109,32 +108,23 @@
 		CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */; };
 		CF209DE91E41E62900B1A59E /* Cabinet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF209DE81E41E62900B1A59E /* Cabinet.storyboard */; };
 		CF209DEB1E42010D00B1A59E /* CheckCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */; };
-		CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */; };
-		CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF01E420CF700B1A59E /* RecoveryResponse.swift */; };
 		CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */; };
 		CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF41E4215C500B1A59E /* LogoutRequest.swift */; };
-		CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF209DF61E4215D900B1A59E /* LogoutResponse.swift */; };
 		CF23CA2A1F5ED1CB000FAE7A /* GetRandomPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */; };
-		CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */; };
 		CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */; };
 		CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */; };
 		CF2DE2B51E4C806B00BD1980 /* IsFollowingResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */; };
 		CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */; };
-		CF2DE2BB1E4CAF7D00BD1980 /* UnfollowResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */; };
 		CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */; };
 		CF33648F1E7FE9FB00A42763 /* HidePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */; };
-		CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3364901E7FEA1100A42763 /* HidePostResponse.swift */; };
 		CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927941E2910C700F0C924 /* MichTransport.swift */; };
-		CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3927971E29133D00F0C924 /* LoginResponse.swift */; };
 		CF39279B1E291BC300F0C924 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279A1E291BC300F0C924 /* LoginRequest.swift */; };
 		CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279C1E2925D900F0C924 /* BaseResponse.swift */; };
 		CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39279E1E29278C00F0C924 /* DefaultError.swift */; };
 		CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */; };
 		CF3C2CF81E448302004512CA /* PostClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF71E448302004512CA /* PostClass.swift */; };
 		CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */; };
-		CF412E181ED5B7FD000DA88C /* ReportPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */; };
 		CF412E1A1ED5B85C000DA88C /* ReportPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */; };
-		CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */; };
 		CF412E1E1ED5C615000DA88C /* ReportCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */; };
 		CF467DD41F14DA3900FC0BFC /* MenuMassageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */; };
 		CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF57E5431E641CC700A3575A /* AddCommentRequest.swift */; };
@@ -144,16 +134,10 @@
 		CF5CB30D1F5D644B00C205B8 /* MichSwipePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */; };
 		CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */; };
 		CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */; };
-		CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */; };
-		CF7D20A41EF16D7E0037FE60 /* ReportUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */; };
 		CF7D20A61EF16D990037FE60 /* ReportUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */; };
-		CF7D20A81EF174610037FE60 /* BlockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */; };
-		CF7D20AA1EF1747E0037FE60 /* UnblockUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */; };
 		CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */; };
 		CF7D20AE1EF1749F0037FE60 /* UnblockUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */; };
-		CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */; };
 		CF841B661E49CBF6005B7BB0 /* ChangePasswordRequset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */; };
-		CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */; };
 		CF8DAD461E8159D30021B905 /* DeleteCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */; };
 		CF92DF111E4DA1EF00AC71D7 /* IsFollowerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */; };
 		CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */; };
@@ -161,8 +145,6 @@
 		CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */; };
 		CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */; };
 		CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */; };
-		CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */; };
-		CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */; };
 		CFA7E8BA1DBE2ACB0088109A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B61DBE2ACB0088109A /* Fabric.framework */; };
 		CFA7E8BB1DBE2ACC0088109A /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */; };
 		CFA7E8BC1DBE2ACC0088109A /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */; };
@@ -179,12 +161,8 @@
 		CFF227EA1E8D492300C69A6B /* ImageView+ImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */; };
 		CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */; };
 		CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */; };
-		CFF3AB251E7C1D8A00A27F91 /* LikeCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */; };
-		CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */; };
 		CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCC0201E7A9692007A6AB5 /* Social.framework */; };
 		CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */; };
-		CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */; };
-		CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFD54F81E2D083A0006830E /* RegisterResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,16 +254,15 @@
 		1EF192C31D8AE53000676CE2 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1EF192C71D8AE5E300676CE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1EF192C91D8AE5F100676CE2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1EF45F531F61591B00D794B0 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichHomeViewController.swift; sourceTree = "<group>"; };
 		74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7AA3FE8FECC3C7CD9FACF7 /* Pods-Mich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mich/Pods-Mich.debug.xcconfig"; sourceTree = "<group>"; };
 		CF044B001E5D8F3B00654997 /* GetUsersFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowingRequest.swift; sourceTree = "<group>"; };
 		CF0679581E55BDA100A0AA8D /* CreatePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostRequest.swift; sourceTree = "<group>"; };
-		CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatePostResponse.swift; sourceTree = "<group>"; };
 		CF08AB361EB0BAE20084D8F1 /* Mich.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mich.entitlements; sourceTree = "<group>"; };
 		CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		CF092BC11E94F0E800C18718 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
-		CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionResponse.swift; sourceTree = "<group>"; };
 		CF118D2A1EE6A5DB0023AA7E /* AskQuestionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionRequest.swift; sourceTree = "<group>"; };
 		CF149D261E77EB81005911FB /* UpdateUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateUserRequest.swift; sourceTree = "<group>"; };
 		CF186A891E435B2000218920 /* GetCurrentUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserRequest.swift; sourceTree = "<group>"; };
@@ -295,32 +272,23 @@
 		CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		CF209DE81E41E62900B1A59E /* Cabinet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Cabinet.storyboard; sourceTree = "<group>"; };
 		CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCodeRequest.swift; sourceTree = "<group>"; };
-		CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckCodeResponse.swift; sourceTree = "<group>"; };
-		CF209DF01E420CF700B1A59E /* RecoveryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryResponse.swift; sourceTree = "<group>"; };
 		CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverRequest.swift; sourceTree = "<group>"; };
 		CF209DF41E4215C500B1A59E /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
-		CF209DF61E4215D900B1A59E /* LogoutResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutResponse.swift; sourceTree = "<group>"; };
 		CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomPost.swift; sourceTree = "<group>"; };
-		CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2AA1E4C6B8100BD1980 /* FollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowRequest.swift; sourceTree = "<group>"; };
 		CF2DE2B01E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCurrentUserFollowingRequest.swift; sourceTree = "<group>"; };
 		CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowingResponse.swift; sourceTree = "<group>"; };
 		CF2DE2B61E4C808300BD1980 /* IsFollowingRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowingRequest.swift; sourceTree = "<group>"; };
-		CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowResponse.swift; sourceTree = "<group>"; };
 		CF2DE2BC1E4CAF9100BD1980 /* UnfollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowRequest.swift; sourceTree = "<group>"; };
 		CF33648E1E7FE9FB00A42763 /* HidePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidePostRequest.swift; sourceTree = "<group>"; };
-		CF3364901E7FEA1100A42763 /* HidePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HidePostResponse.swift; sourceTree = "<group>"; };
 		CF3927941E2910C700F0C924 /* MichTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichTransport.swift; sourceTree = "<group>"; };
-		CF3927971E29133D00F0C924 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CF39279A1E291BC300F0C924 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		CF39279C1E2925D900F0C924 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		CF39279E1E29278C00F0C924 /* DefaultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultError.swift; sourceTree = "<group>"; };
 		CF3B92DA1E0D447700061F7C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CF3C2CF71E448302004512CA /* PostClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostClass.swift; sourceTree = "<group>"; };
 		CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponseArray.swift; sourceTree = "<group>"; };
-		CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPostResponse.swift; sourceTree = "<group>"; };
 		CF412E191ED5B85C000DA88C /* ReportPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPostRequest.swift; sourceTree = "<group>"; };
-		CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentResponse.swift; sourceTree = "<group>"; };
 		CF412E1D1ED5C615000DA88C /* ReportCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportCommentRequest.swift; sourceTree = "<group>"; };
 		CF467DD31F14DA3900FC0BFC /* MenuMassageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMassageViewController.swift; sourceTree = "<group>"; };
 		CF57E5431E641CC700A3575A /* AddCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentRequest.swift; sourceTree = "<group>"; };
@@ -330,16 +298,10 @@
 		CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichSwipePhotosViewController.swift; sourceTree = "<group>"; };
 		CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelpViewController.swift; sourceTree = "<group>"; };
 		CF798B4B1E572EA60091CEF7 /* SearchUsersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersRequest.swift; sourceTree = "<group>"; };
-		CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsersResponse.swift; sourceTree = "<group>"; };
-		CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserResponse.swift; sourceTree = "<group>"; };
 		CF7D20A51EF16D990037FE60 /* ReportUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserRequest.swift; sourceTree = "<group>"; };
-		CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserResponse.swift; sourceTree = "<group>"; };
-		CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnblockUserResponse.swift; sourceTree = "<group>"; };
 		CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUserRequest.swift; sourceTree = "<group>"; };
 		CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnblockUserRequest.swift; sourceTree = "<group>"; };
-		CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordResponse.swift; sourceTree = "<group>"; };
 		CF841B651E49CBF6005B7BB0 /* ChangePasswordRequset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequset.swift; sourceTree = "<group>"; };
-		CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentResponse.swift; sourceTree = "<group>"; };
 		CF8DAD451E8159D30021B905 /* DeleteCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteCommentRequest.swift; sourceTree = "<group>"; };
 		CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerResponse.swift; sourceTree = "<group>"; };
 		CF92DF121E4DA20400AC71D7 /* IsFollowerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsFollowerRequest.swift; sourceTree = "<group>"; };
@@ -347,8 +309,6 @@
 		CF92DF181E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersFollowersRequest.swift; sourceTree = "<group>"; };
 		CF92DF1A1E4DADB500AC71D7 /* LikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeRequest.swift; sourceTree = "<group>"; };
 		CF92DF1C1E4DADC700AC71D7 /* UnlikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeRequest.swift; sourceTree = "<group>"; };
-		CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeResponse.swift; sourceTree = "<group>"; };
-		CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeResponse.swift; sourceTree = "<group>"; };
 		CFA7E8B61DBE2ACB0088109A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		CFA7E8B71DBE2ACB0088109A /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		CFA7E8B81DBE2ACB0088109A /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
@@ -365,12 +325,8 @@
 		CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+ImageFrame.swift"; sourceTree = "<group>"; };
 		CFF3AB201E7C1C8900A27F91 /* LikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentRequest.swift; sourceTree = "<group>"; };
 		CFF3AB221E7C1CB400A27F91 /* UnlikeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeCommentRequest.swift; sourceTree = "<group>"; };
-		CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeCommentResponse.swift; sourceTree = "<group>"; };
-		CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlikeCommentResponse.swift; sourceTree = "<group>"; };
 		CFFCC0201E7A9692007A6AB5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CFFCC0221E7ABAB0007A6AB5 /* DeletePostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostRequest.swift; sourceTree = "<group>"; };
-		CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeletePostResponse.swift; sourceTree = "<group>"; };
-		CFFD54F81E2D083A0006830E /* RegisterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -693,40 +649,18 @@
 			isa = PBXGroup;
 			children = (
 				CF39279C1E2925D900F0C924 /* BaseResponse.swift */,
-				CF3927971E29133D00F0C924 /* LoginResponse.swift */,
-				CF209DF61E4215D900B1A59E /* LogoutResponse.swift */,
-				CFFD54F81E2D083A0006830E /* RegisterResponse.swift */,
-				CF841B631E49CBDE005B7BB0 /* ChangePasswordResponse.swift */,
 				CFD413051E40C573001D9481 /* SendRecoveryResponse.swift */,
 				CF3C2CF91E44A4F2004512CA /* BaseResponseArray.swift */,
 				CF39279E1E29278C00F0C924 /* DefaultError.swift */,
-				CF209DEC1E42021F00B1A59E /* CheckCodeResponse.swift */,
-				CF209DF01E420CF700B1A59E /* RecoveryResponse.swift */,
 				CF186A8B1E435C3900218920 /* User.swift */,
 				CF3C2CF71E448302004512CA /* PostClass.swift */,
-				CF2DE2A81E4C6AD400BD1980 /* FollowResponse.swift */,
 				CF92DF101E4DA1EF00AC71D7 /* IsFollowerResponse.swift */,
 				CF2DE2B41E4C806B00BD1980 /* IsFollowingResponse.swift */,
-				CF2DE2BA1E4CAF7D00BD1980 /* UnfollowResponse.swift */,
-				CF92DF1E1E4DBCBB00AC71D7 /* LikeResponse.swift */,
-				CF92DF201E4DBCC900AC71D7 /* UnlikeResponse.swift */,
-				CF06795A1E55BDC300A0AA8D /* CreatePostResponse.swift */,
-				CF798B4D1E572EB90091CEF7 /* SearchUsersResponse.swift */,
 				CF57E5451E641D4B00A3575A /* AddCommentResponse.swift */,
 				1E6309791E65A86D0080054B /* Comment.swift */,
-				CFFCC0241E7ABAE4007A6AB5 /* DeletePostResponse.swift */,
-				CFF3AB241E7C1D8A00A27F91 /* LikeCommentResponse.swift */,
-				CFF3AB261E7C1D9700A27F91 /* UnlikeCommentResponse.swift */,
-				CF3364901E7FEA1100A42763 /* HidePostResponse.swift */,
-				CF8DAD431E8159B10021B905 /* DeleteCommentResponse.swift */,
 				CFDBBCD71E852AAA00EA9032 /* SocialResponse.swift */,
-				CF412E171ED5B7FD000DA88C /* ReportPostResponse.swift */,
-				CF412E1B1ED5C5EC000DA88C /* ReportCommentResponse.swift */,
-				CF118D281EE6A5C80023AA7E /* AskQuestionResponse.swift */,
 				1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */,
-				CF7D20A31EF16D7E0037FE60 /* ReportUserResponse.swift */,
-				CF7D20A71EF174610037FE60 /* BlockUserResponse.swift */,
-				CF7D20A91EF1747E0037FE60 /* UnblockUserResponse.swift */,
+				1EF45F531F61591B00D794B0 /* LoginResponse.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -904,7 +838,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -978,20 +912,16 @@
 				1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */,
 				CFF3AB231E7C1CB400A27F91 /* UnlikeCommentRequest.swift in Sources */,
 				CF0679591E55BDA100A0AA8D /* CreatePostRequest.swift in Sources */,
-				CF412E181ED5B7FD000DA88C /* ReportPostResponse.swift in Sources */,
 				1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */,
-				CF209DF71E4215D900B1A59E /* LogoutResponse.swift in Sources */,
 				1EEE29561E572EEB00302BC2 /* SearchResultsViewController.swift in Sources */,
 				1E5822FD1F3DE83700A7C583 /* GetRandomBattleRequest.swift in Sources */,
 				1EB4E3AE1E812C2E008E56D5 /* MichNotification.swift in Sources */,
 				1E42C06A1EE82A990077B707 /* BattleInviteRequest.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
-				CF209DF11E420CF700B1A59E /* RecoveryResponse.swift in Sources */,
 				CF7D20AE1EF1749F0037FE60 /* UnblockUserRequest.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,
-				CF92DF211E4DBCC900AC71D7 /* UnlikeResponse.swift in Sources */,
 				1EF977AE1F3C7891009E6CF7 /* MichHomeViewController.swift in Sources */,
 				1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */,
 				CF1E2B071EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift in Sources */,
@@ -1001,14 +931,12 @@
 				CF2DE2AB1E4C6B8100BD1980 /* FollowRequest.swift in Sources */,
 				CF73DACB1EE5594A0097C136 /* MenuHelpViewController.swift in Sources */,
 				CFD413081E40C5D8001D9481 /* SendRecoveryRequest.swift in Sources */,
-				CF841B641E49CBDE005B7BB0 /* ChangePasswordResponse.swift in Sources */,
 				1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */,
 				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
 				1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
 				CF5CB30D1F5D644B00C205B8 /* MichSwipePhotosViewController.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
-				CF3364911E7FEA1100A42763 /* HidePostResponse.swift in Sources */,
 				1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */,
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
 				CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */,
@@ -1016,7 +944,6 @@
 				1E42C06C1EE82AFA0077B707 /* Battle.swift in Sources */,
 				1E42C06E1EE82D400077B707 /* GetBattlesRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
-				CFF3AB271E7C1D9700A27F91 /* UnlikeCommentResponse.swift in Sources */,
 				1EC59F321F597013000FD2F9 /* TagTableViewController.swift in Sources */,
 				1E42C0701EE835FE0077B707 /* GetBattleRequest.swift in Sources */,
 				1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */,
@@ -1038,26 +965,21 @@
 				1E3D29AD1EEABB98002C6916 /* DummyMappable.swift in Sources */,
 				1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */,
 				CFD413061E40C573001D9481 /* SendRecoveryResponse.swift in Sources */,
-				CF118D291EE6A5C80023AA7E /* AskQuestionResponse.swift in Sources */,
 				1E6309781E657D880080054B /* PostViewController.swift in Sources */,
 				1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */,
 				1EC367C51E4DB4DE00DB6C77 /* Camera.swift in Sources */,
 				1EF192C81D8AE5E300676CE2 /* LoginViewController.swift in Sources */,
-				CF7D20AA1EF1747E0037FE60 /* UnblockUserResponse.swift in Sources */,
-				CFFCC0251E7ABAE4007A6AB5 /* DeletePostResponse.swift in Sources */,
 				CF92DF1B1E4DADB500AC71D7 /* LikeRequest.swift in Sources */,
 				1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */,
 				1E6A3CB61E48AB1200BBD0D4 /* PostsViewController.swift in Sources */,
 				1E7C20A71EFBF8AB00383C5E /* VoteBattleRequest.swift in Sources */,
 				1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */,
-				CF412E1C1ED5C5EC000DA88C /* ReportCommentResponse.swift in Sources */,
 				CF57E5461E641D4B00A3575A /* AddCommentResponse.swift in Sources */,
-				CF7D20A41EF16D7E0037FE60 /* ReportUserResponse.swift in Sources */,
 				1E7E7DAD1E4B3CD9009E5AA5 /* GetUserRequest.swift in Sources */,
 				1E1E50721D8AB3D0002D1C24 /* ViewController.swift in Sources */,
 				CF1AA2701E3F389600EC72CF /* changePasswordViewController.swift in Sources */,
 				CF2DE2B51E4C806B00BD1980 /* IsFollowingResponse.swift in Sources */,
-				CF2DE2BB1E4CAF7D00BD1980 /* UnfollowResponse.swift in Sources */,
+				1EF45F541F61591B00D794B0 /* LoginResponse.swift in Sources */,
 				1E3D29AB1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift in Sources */,
 				CF2DE2B71E4C808300BD1980 /* IsFollowingRequest.swift in Sources */,
 				1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */,
@@ -1065,19 +987,15 @@
 				CF092BC21E94F0E800C18718 /* RotateImage.swift in Sources */,
 				CF3C2CFA1E44A4F2004512CA /* BaseResponseArray.swift in Sources */,
 				1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */,
-				CF2DE2A91E4C6AD400BD1980 /* FollowResponse.swift in Sources */,
 				CF044B011E5D8F3B00654997 /* GetUsersFollowingRequest.swift in Sources */,
 				1EA3172C1EF15AFF0050F832 /* BattleActionRequest.swift in Sources */,
-				CF209DED1E42021F00B1A59E /* CheckCodeResponse.swift in Sources */,
 				1E4DB6C61E55B9420011C694 /* EditImageViewController.swift in Sources */,
 				1E1E50701D8AB3D0002D1C24 /* AppDelegate.swift in Sources */,
 				1E5823011F3DFEDB00A7C583 /* CancelPlayRequest.swift in Sources */,
 				CF23CA2A1F5ED1CB000FAE7A /* GetRandomPost.swift in Sources */,
 				CF3B92DB1E0D447700061F7C /* SettingsViewController.swift in Sources */,
 				CF92DF191E4DA63E00AC71D7 /* GetUsersFollowersRequest.swift in Sources */,
-				CF92DF1F1E4DBCBB00AC71D7 /* LikeResponse.swift in Sources */,
 				1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */,
-				CF3927981E29133D00F0C924 /* LoginResponse.swift in Sources */,
 				1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */,
 				CF92DF131E4DA20400AC71D7 /* IsFollowerRequest.swift in Sources */,
 				CF7D20A61EF16D990037FE60 /* ReportUserRequest.swift in Sources */,
@@ -1092,7 +1010,6 @@
 				1E54821F1E76BF80008D98C1 /* NotificationsViewController.swift in Sources */,
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
-				CF7D20A81EF174610037FE60 /* BlockUserResponse.swift in Sources */,
 				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
@@ -1112,21 +1029,16 @@
 				CFDBBCD81E852AAA00EA9032 /* SocialResponse.swift in Sources */,
 				1E56BC571D8C16C00012E695 /* Footer.swift in Sources */,
 				1E25E1F71E6EED1C00576D47 /* CommentsViewController.swift in Sources */,
-				CF8DAD441E8159B10021B905 /* DeleteCommentResponse.swift in Sources */,
 				1E6C1A081EF9219D001C592C /* BattleMessage.swift in Sources */,
 				1E4A60371E40AB71001902B7 /* BattleTableViewCellAWithPicture.swift in Sources */,
-				CFFD54F91E2D083A0006830E /* RegisterResponse.swift in Sources */,
 				1E17158C1DDB286C002598B6 /* CommentCell.swift in Sources */,
 				CF33648F1E7FE9FB00A42763 /* HidePostRequest.swift in Sources */,
-				CF06795B1E55BDC300A0AA8D /* CreatePostResponse.swift in Sources */,
 				CF798B4C1E572EA60091CEF7 /* SearchUsersRequest.swift in Sources */,
 				1E5822FF1F3DEB8C00A7C583 /* PlayRandomBattle.swift in Sources */,
 				CF2DE2B11E4C71AB00BD1980 /* GetCurrentUserFollowingRequest.swift in Sources */,
-				CF798B4E1E572EB90091CEF7 /* SearchUsersResponse.swift in Sources */,
 				CF3927951E2910C700F0C924 /* MichTransport.swift in Sources */,
 				1E45CF981DAD04F8006967CD /* UIImage+RoundShape.swift in Sources */,
 				CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */,
-				CFF3AB251E7C1D8A00A27F91 /* LikeCommentResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

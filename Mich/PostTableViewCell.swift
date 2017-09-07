@@ -12,7 +12,7 @@ import QuartzCore
 class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
    
     
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var likeButton: UIButton!
