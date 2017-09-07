@@ -193,9 +193,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
     }
     
     
-    func onLogin(loginResponse: LoginResponse){
+    func onLogin(token: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.token = loginResponse.token
+        appDelegate.token = token
         if let contents = FIRInstanceID.instanceID().token() {
             print("jer firebase moxda")
             MichTransport.updateFirebaseToken(token: (appDelegate.token)!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: onError)

@@ -11,7 +11,8 @@ import Nuke
 import Social
 import QuartzCore
 
-class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate {
+class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate,
+    UITextViewDelegate {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -98,8 +99,14 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         cell.userName.addGestureRecognizer(userImageTap)
         
         cell.cellDelegate = self
-        cell.title.text = post.title
         
+//        let attributedText = NSMutableAttributedString(string: "Wat @gigi dawdwa http://www.google.com")
+//        attributedText.addAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)], range: NSRange(location: 5, length: 2))
+//        attributedText.addAttributes([NSLinkAttributeName: UIFont.boldSystemFont(ofSize: 14)], range: NSRange(location: 0, length: 3))
+//        cell.titleTextView.attributedText = attributedText
+//        cell.titleTextView.delegate = self
+        
+        cell.titleTextView.text = post.title
         if post.nLikes == 0 {
             cell.likeCountButton.isHidden = true
         }
@@ -113,6 +120,11 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         }
         
         return cell
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        print(URL)
+        return false
     }
     // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
