@@ -734,9 +734,9 @@
 		CF3927991E291BB000F0C924 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				CF39279A1E291BC300F0C924 /* LoginRequest.swift */,
 				CF0919701E2E0EDE00601AB5 /* RegisterRequest.swift */,
 				CFD413071E40C5D8001D9481 /* SendRecoveryRequest.swift */,
+				CF39279A1E291BC300F0C924 /* LoginRequest.swift */,
 				CF209DEA1E42010D00B1A59E /* CheckCodeRequest.swift */,
 				CF209DF21E420D2B00B1A59E /* RecoverRequest.swift */,
 				CF209DF41E4215C500B1A59E /* LogoutRequest.swift */,
