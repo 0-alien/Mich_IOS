@@ -14,4 +14,5 @@ target 'Mich' do
     pod 'ObjectMapper'
     pod 'Nuke'
     pod 'AlamofireImage', '~> 3.1'
+    pod 'Preheat'
 end

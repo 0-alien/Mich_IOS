@@ -10,10 +10,14 @@ import UIKit
 import Nuke
 import Social
 import QuartzCore
+import AlamofireImage
+import Preheat
 
 class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate,
     UITextViewDelegate {
 
+    var preheater: Preheater!
+    var preheatController: Preheat.Controller<UITableView>!
     
     @IBOutlet weak var tableView: UITableView!
     var posts = [PostClass]()
@@ -37,6 +41,13 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         } else {
             self.tableView.addSubview(refreshControl)
         }
+        
+        preheater = Preheater()
+        preheatController = Preheat.Controller(view: tableView!)
+        preheatController.handler = { [weak self] addedIndexPaths, removedIndexPaths in
+            self?.preheat(added: addedIndexPaths, removed: removedIndexPaths)
+        }
+        
         currentIndex = 0
         MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
     }
@@ -50,9 +61,33 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        preheatController.enabled = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        preheatController.enabled = false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: preheat
+    func preheat(added: [IndexPath], removed: [IndexPath]) {
+        func requests(for indexPaths: [IndexPath]) -> [Request] {
+            var reqs = indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].image!)!)}
+            reqs.append(contentsOf: indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].avatar!)!)})
+            return reqs;
+        }
+        func requestsForProfilePictures(for indexPaths: [IndexPath]) -> [Request] {
+            return indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].avatar!)!)}
+        }
+        preheater.startPreheating(with: requests(for: added))
+        preheater.stopPreheating(with: requests(for: removed))
     }
     
     // MARK: - Table view data source
@@ -75,6 +110,8 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PostTableViewCell
         Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: cell.postImage)
         Nuke.loadImage(with: Foundation.URL(string: post.avatar!)!, into: cell.userImage)
+        //Manager.shared.loadImage(with: Request(url: Foundation.URL(string: post.image!)!), into: cell.postImage)
+        
         cell.commentCount.text = String(post.nComments!)
         cell.liked = (post.myLike == 1)
         cell.index = indexPath.row
@@ -236,19 +273,10 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
 
             
         }
-        
-        
-        
         alert.addAction(sharePhoto)
         alert.addAction(shareContent)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))
-        
         self.present(alert, animated: true, completion: nil)
-
-        
-        
-        
-        
     }
     
     
