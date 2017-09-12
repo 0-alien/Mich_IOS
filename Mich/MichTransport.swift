@@ -57,11 +57,11 @@ class MichTransport {
                 
                 let JString = "\(response.result.value!)"
                 print(JString)
-                let baseResponse = BaseResponse<LoginResponse>(JSONString: JString)
+                let baseResponse = BaseResponseX<String>(JSONString: JString)
         
                 if baseResponse!.code! == SUCCESS_CODE {
                     let res = baseResponse!.data!
-                    successCallback(res.token!)
+                    successCallback(res)
                     
                     
                 }else{
