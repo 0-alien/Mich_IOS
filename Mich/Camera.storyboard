@@ -173,7 +173,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="7cR-5O-IEL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="nq9-1d-0fg" id="2z4-AO-xxk"/>
