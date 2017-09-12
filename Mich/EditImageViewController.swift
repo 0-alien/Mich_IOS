@@ -33,6 +33,7 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var textOfImage: UITextField!
     
     
     var rw: CGFloat = 0
@@ -40,11 +41,25 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     var first: Bool! = true
     
+    
+    var panGets = UIPanGestureRecognizer()
+    
+    var textOfImageShow: Bool! = false;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.textOfImage.delegate = self
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
         doneButtone.isEnabled = true
+        panGets = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(_:)))
+        textOfImage.addGestureRecognizer(panGets)
+        
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +67,18 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         setImageToCrop(image: img)
         updateConstraintsForSize(scrollView.bounds.size)
     }
+    
+    
+    @IBAction func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
+        if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
+            
+            let translation = gestureRecognizer.translation(in: self.view)
+            // note: 'view' is optional and need to be unwrapped
+            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x + translation.x, y: gestureRecognizer.view!.center.y + translation.y)
+            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+        }
+    }
+
     
     func setImageToCrop(image:UIImage){
         
@@ -119,6 +146,17 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      
+        /* 
+         
+        let renderer = UIGraphicsImageRenderer(size: scrollView.bounds.size)
+        let image = renderer.image { ctx in
+            view.drawHierarchy(in: scrollView.bounds, afterScreenUpdates: true)
+        }
+        photo.image = image
+        */
+        
+        
         if segue.identifier == "tagimage" {
             photo.image = photo.image?.fixedOrientation()
             let scale:CGFloat = 1 / scrollView.zoomScale
@@ -130,13 +168,34 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
             (segue.destination as! TagImageViewController).image = croppedImage
         }
+        
+        
+        
     }
     
+
     @IBAction func zoomBTN(_ sender: Any) {
         UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.scrollView.zoomScale = self.scrollView.minimumZoomScale
         }, completion: { _ in })
     }
+    
+    
+    @IBAction func addTextBTN(_ sender: Any) {
+        if(!textOfImageShow){
+            textOfImage.isHidden = false;
+            textOfImageShow = true
+        }else{
+            textOfImage.isHidden = true
+            textOfImageShow = false;
+        }
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
  
     //Mark: oncreate callbacks
     func oncreatesuccess() {
