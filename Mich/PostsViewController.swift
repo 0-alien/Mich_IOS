@@ -79,8 +79,8 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     // MARK: preheat
     func preheat(added: [IndexPath], removed: [IndexPath]) {
         func requests(for indexPaths: [IndexPath]) -> [Request] {
-            var reqs = indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].image!)!)}
-            reqs.append(contentsOf: indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].avatar!)!)})
+            var reqs = (indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].image!)!)})
+            reqs.append(contentsOf: requestsForProfilePictures(for: indexPaths))
             return reqs;
         }
         func requestsForProfilePictures(for indexPaths: [IndexPath]) -> [Request] {
@@ -88,6 +88,15 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         }
         preheater.startPreheating(with: requests(for: added))
         preheater.stopPreheating(with: requests(for: removed))
+        func stringForIndexPaths(_ indexPaths: [IndexPath]) -> String {
+            guard indexPaths.count > 0 else {
+                return "[]"
+            }
+            let items = indexPaths.map{ return "\(($0 as NSIndexPath).item)" }.joined(separator: " ")
+            return "[\(items)]"
+        }
+        print("did change preheat rect with added indexes \(stringForIndexPaths(added)), removed indexes \(stringForIndexPaths(removed))")
+
     }
     
     // MARK: - Table view data source

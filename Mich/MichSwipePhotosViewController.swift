@@ -46,12 +46,10 @@ class MichSwipePhotosViewController: UIViewController {
     
     @IBAction func LikePhoto(_ sender: Any) {
       
-        
+        self.performSegue(withIdentifier: "showpost", sender: self)
         UIView.animate(withDuration: 0.6, animations: {
             self.viewOfPhoto.frame.origin = CGPoint(x: self.viewOfPhoto.frame.origin.x + 800, y: self.viewOfPhoto.frame.origin.y + 100)
         }, completion: {_ in
-            
-            MichTransport.like(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: self.postRandom.id!, successCallbackForLike: self.onSuccessForLike, errorCallbackForLike: self.onerror)
             MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: self.onSuccessGetRandomPost, errorCallbackGetRandomPost: self.onerror)
             self.viewOfPhoto.frame.origin = CGPoint(x: self.viewOfPhoto.frame.origin.x - 800, y: self.viewOfPhoto.frame.origin.y - 100)
         })
@@ -66,7 +64,15 @@ class MichSwipePhotosViewController: UIViewController {
         
         })
     }
-
+    
+    
+    // MARK: navigaiton
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "showpost" {
+            (segue.destination as! PostViewController).postId = (sender as! MichSwipePhotosViewController).postRandom.id
+        }
+    }
 
     // MARK: callbacks
     func onSuccessGetRandomPost(post: PostClass) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -177,6 +177,7 @@
                         <outlet property="tittle" destination="FVc-Ww-qZm" id="FcO-2Y-Tfw"/>
                         <outlet property="username" destination="98S-Lj-FSl" id="YOO-Vh-rb4"/>
                         <outlet property="viewOfPhoto" destination="aPH-8w-hN0" id="8Ji-PN-97A"/>
+                        <segue destination="yos-CW-6Kk" kind="push" identifier="showpost" id="b7b-mh-FrO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nma-Ba-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -191,7 +192,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilH-7B-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="-136"/>
+            <point key="canvasLocation" x="-835" y="313"/>
         </scene>
         <!--Search Results View Controller-->
         <scene sceneID="qIY-Ia-MPi">
@@ -223,7 +224,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEO-LF-UeB">
-                                                    <rect key="frame" x="69" y="20" width="243" height="29"/>
+                                                    <rect key="frame" x="69" y="20" width="298" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -270,12 +271,12 @@
         <!--userpage-->
         <scene sceneID="mof-1y-Iab">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="zDt-J0-cxz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LHN-Sl-PiE"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-221" y="74"/>
+            <point key="canvasLocation" x="-190" y="-491"/>
         </scene>
         <!--Mich Home View Controller-->
         <scene sceneID="Idb-28-n7d">
@@ -283,6 +284,9 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Pp8-bF-2RU" customClass="MichHomeViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" id="m6h-cc-BG6"/>
+                    <connections>
+                        <segue destination="zDt-J0-cxz" kind="push" identifier="gotoprofilepage" id="lyC-ev-Xr8"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-u5-iQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,12 +362,11 @@
                         <segue destination="ZM7-Je-omX" kind="push" identifier="settings" id="dd6-si-jfc"/>
                         <segue destination="cMl-yc-xOq" kind="push" identifier="help" id="K21-nQ-YCO"/>
                         <segue destination="xOp-Aa-aNr" kind="push" identifier="gotoeditimage" id="fy8-0K-poi"/>
-                        <segue destination="zDt-J0-cxz" kind="push" identifier="gotoprofilepage" id="0pO-8Y-nXS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-571" y="49"/>
+            <point key="canvasLocation" x="-548" y="44"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ULx-Gn-LdI">
@@ -374,7 +377,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="lOW-hG-Qpp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lOW-hG-Qpp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -403,4 +406,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="q7e-gt-x65"/>
+    </inferredMetricsTieBreakers>
 </document>

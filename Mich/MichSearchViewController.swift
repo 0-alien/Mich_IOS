@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UserListener {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -17,7 +17,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     var imageSideLength : CGFloat = 0.0
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
-    var destinationUserId: Int?
     var destinationPostId: Int?
     
     lazy var refreshControl: UIRefreshControl = {
@@ -44,17 +43,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         (imageCollection.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: imageSideLength, height: imageSideLength)
         
         currentIndex = 3
-        
-//        resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
-//        resultsShower.userChoosenDelegate = self
-//        searchController = UISearchController(searchResultsController: resultsShower)
-//        searchController.searchResultsUpdater = resultsShower
-//        searchController.dimsBackgroundDuringPresentation = true
-//        searchController.searchBar.placeholder = "Search Mich"
-//        searchController.searchBar.sizeToFit()
-//        searchController.definesPresentationContext = false
-//        searchController.hidesNavigationBarDuringPresentation = false
-//        self.navigationItem.titleView = searchController.searchBar
         MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
     }
     
@@ -77,26 +65,11 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         Nuke.loadImage(with: Foundation.URL(string: data[indexPath.item].image!)!, into: cell.photo)
         return cell
     }
-    // MARK: user listener
-    func gotoUserPage(id: Int) {
-        self.destinationUserId = id
-        performSegue(withIdentifier: "gotoprofilepage", sender: self)
-        //searchController.dismiss(animated: false, completion: helper)
-    }
-    
-    func helper() {
-        searchController.isActive = false
-        performSegue(withIdentifier: "gotoprofilepage", sender: self)
-    }
     
     // MARK: navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if (segue.identifier == "gotoprofilepage") {
-            (segue.destination as! UserPicturesCollectionViewController).userId = self.destinationUserId
-            (segue.destination as! UserPicturesCollectionViewController).hidesBottomBarWhenPushed = true
-        }
-        else if segue.identifier == "showpost" {
+        if segue.identifier == "showpost" {
             if let selectedCell = sender as? UserPicturesCollectionViewCell {
                 let indexPath = imageCollection.indexPath(for: selectedCell)
                 (segue.destination as! PostViewController).postId = data[(indexPath?.item)!].id
