@@ -147,15 +147,14 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       
-        /* 
-         
+        
+        /*
         let renderer = UIGraphicsImageRenderer(size: scrollView.bounds.size)
         let image = renderer.image { ctx in
             view.drawHierarchy(in: scrollView.bounds, afterScreenUpdates: true)
         }
         photo.image = image
         */
-        
         
         if segue.identifier == "tagimage" {
             photo.image = photo.image?.fixedOrientation()
