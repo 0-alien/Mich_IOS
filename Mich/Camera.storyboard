@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,6 +74,16 @@
                                     <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="H77-t7-Xmy"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6S-Mq-zfJ">
+                                <rect key="frame" x="0.0" y="269" width="320" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.86518187478188713" blue="0.93427334293787512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4O9-bL-jmS" id="fzK-x2-IzH"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-Uk-pUW">
                                 <rect key="frame" x="163" y="545.5" width="141" height="22.5"/>
                                 <color key="backgroundColor" red="0.083276863039999996" green="0.079558029919999995" blue="0.081219741090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,6 +91,10 @@
                                 <state key="normal" title="T">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addTextBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="uYW-tS-XIz"/>
+                                    <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="Rzx-dJ-32e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,13 +104,17 @@
                             <constraint firstItem="5vO-Uk-pUW" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3iV-mB-WE5"/>
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3mc-F1-NjE"/>
                             <constraint firstAttribute="bottom" secondItem="5vO-Uk-pUW" secondAttribute="bottom" id="4Dj-ds-Guu"/>
+                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerY" secondItem="HmF-45-Pir" secondAttribute="centerY" id="5ke-Db-1Gp"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="Vi1-eV-2xS" secondAttribute="bottom" id="67l-0k-Svy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="A6S-Mq-zfJ" secondAttribute="trailing" constant="-16" id="AO3-bX-3XA"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="H52-PK-nId"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="Ihe-1n-vDq"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="height" secondItem="HmF-45-Pir" secondAttribute="height" multiplier="5:6" id="POQ-76-h7k"/>
                             <constraint firstItem="5vO-Uk-pUW" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="Pqi-RG-XJi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5vO-Uk-pUW" secondAttribute="trailing" id="U4R-hJ-ifR"/>
+                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerX" secondItem="HmF-45-Pir" secondAttribute="centerX" id="Zhn-Zq-Sj6"/>
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="hvw-y1-KBB"/>
+                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-16" id="z3m-e3-ar6"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -122,6 +140,7 @@
                         <outlet property="imageViewTrailingConstraint" destination="In0-tO-fbM" id="vSz-2B-Q5A"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
+                        <outlet property="textOfImage" destination="A6S-Mq-zfJ" id="0D9-xN-1oN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
