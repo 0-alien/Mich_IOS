@@ -331,9 +331,40 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     // MARK: server request callbacks
     func onGetFeed(resp: [PostClass]){
-        posts.removeAll()
-        posts.append(contentsOf: resp)
-        self.tableView.reloadData()
+        var addedIndexPaths: [IndexPath] = [], removedIndexPaths: [IndexPath] = []
+        for i in 0 ..< self.posts.count {
+            var index: Int = -1
+            for j in 0 ..< resp.count {
+                if self.posts[i].id == resp[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                removedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        removedIndexPaths.reverse()
+        for indexPath in removedIndexPaths{
+            self.posts.remove(at: indexPath.item)
+        }
+        self.tableView.deleteRows(at: removedIndexPaths, with: .none)
+        for i in 0 ..< resp.count {
+            var index: Int = -1
+            for j in 0 ..< self.posts.count {
+                if resp[i].id == self.posts[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                addedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        for indexPath in addedIndexPaths {
+            self.posts.insert(resp[indexPath.item], at: indexPath.item)
+        }
+        self.tableView.insertRows(at: addedIndexPaths, with: .none)
         self.tableView.refreshControl?.endRefreshing()
     }
 

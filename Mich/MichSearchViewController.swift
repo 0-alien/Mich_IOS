@@ -27,7 +27,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     
     
     @IBOutlet weak var imageCollection: UICollectionView!
-    var data: [PostClass] = [PostClass]()
+    var posts: [PostClass] = [PostClass]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,13 +56,13 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! UserPicturesCollectionViewCell
-        Nuke.loadImage(with: Foundation.URL(string: data[indexPath.item].image!)!, into: cell.photo)
+        Nuke.loadImage(with: Foundation.URL(string: posts[indexPath.item].image!)!, into: cell.photo)
         return cell
     }
     
@@ -72,7 +72,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         if segue.identifier == "showpost" {
             if let selectedCell = sender as? UserPicturesCollectionViewCell {
                 let indexPath = imageCollection.indexPath(for: selectedCell)
-                (segue.destination as! PostViewController).postId = data[(indexPath?.item)!].id
+                (segue.destination as! PostViewController).postId = posts[(indexPath?.item)!].id
             }
         }
     }
@@ -84,9 +84,40 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     
     // MARK: callbakcs
     func onExploreSuccess(resp: [PostClass]) {
-        self.data.removeAll()
-        self.data.append(contentsOf: resp)
-        self.imageCollection.reloadData()
+        var addedIndexPaths: [IndexPath] = [], removedIndexPaths: [IndexPath] = []
+        for i in 0 ..< self.posts.count {
+            var index: Int = -1
+            for j in 0 ..< resp.count {
+                if self.posts[i].id == resp[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                removedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        removedIndexPaths.reverse()
+        for indexPath in removedIndexPaths{
+            self.posts.remove(at: indexPath.item)
+        }
+        self.imageCollection.deleteItems(at: removedIndexPaths)
+        for i in 0 ..< resp.count {
+            var index: Int = -1
+            for j in 0 ..< self.posts.count {
+                if resp[i].id == self.posts[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                addedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        for indexPath in addedIndexPaths {
+            self.posts.insert(resp[indexPath.item], at: indexPath.item)
+        }
+        self.imageCollection.insertItems(at: addedIndexPaths)
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl.endRefreshing()
         })
