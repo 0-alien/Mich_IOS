@@ -170,9 +170,41 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
     
     func ongetpostssuccess(resp: [PostClass]) {
-        self.posts.removeAll()
-        self.posts.append(contentsOf: resp)
-        self.imageCollection.reloadData()
+        var addedIndexPaths: [IndexPath] = [], removedIndexPaths: [IndexPath] = []
+        for i in 0 ..< self.posts.count {
+            var index: Int = -1
+            for j in 0 ..< resp.count {
+                if self.posts[i].id == resp[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                removedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        removedIndexPaths.reverse()
+        for indexPath in removedIndexPaths{
+            self.posts.remove(at: indexPath.item)
+        }
+        self.imageCollection.deleteItems(at: removedIndexPaths)
+        for i in 0 ..< resp.count {
+            var index: Int = -1
+            for j in 0 ..< self.posts.count {
+                if resp[i].id == self.posts[j].id {
+                    index = j
+                    break
+                }
+            }
+            if index == -1 {
+                addedIndexPaths.append(IndexPath(item: i, section: 0))
+            }
+        }
+        for indexPath in addedIndexPaths {
+            self.posts.insert(resp[indexPath.item], at: indexPath.item)
+        }
+        self.imageCollection.insertItems(at: addedIndexPaths)
+        //self.imageCollection.reloadData()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.refreshControl.endRefreshing()
         })
