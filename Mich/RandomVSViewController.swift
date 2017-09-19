@@ -48,11 +48,8 @@ class RandomVSViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if isSpectate {
-            MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: onSuccess, errorCallbackForGetRandomBattle: onError)
-        } else {
-            MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForPlayRandomBattle: onSuccess, errorCallbackForPlayRandomBattle: onError)
-        }
+        self.navigationItem.leftBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,9 +57,20 @@ class RandomVSViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - actions
+    @IBAction func startSearch(_ sender: Any) {
+        self.navigationItem.leftBarButtonItem?.isEnabled = true
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        if isSpectate {
+            MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: onSuccess, errorCallbackForGetRandomBattle: onError)
+        } else {
+            MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForPlayRandomBattle: onSuccess, errorCallbackForPlayRandomBattle: onError)
+        }
+    }
 
     @IBAction func cancelSearch(_ sender: Any) {
         self.navigationItem.leftBarButtonItem?.isEnabled = false
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
         cancelled = true
         self.guestImage.stopAnimating()
         if isSpectate {

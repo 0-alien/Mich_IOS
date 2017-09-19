@@ -550,6 +550,11 @@
                                 <action selector="cancelSearch:" destination="54s-mO-hIA" id="FKg-0f-Cuf"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="19c-bg-ovV">
+                            <connections>
+                                <action selector="startSearch:" destination="54s-mO-hIA" id="81M-nc-mr6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="guestImage" destination="IJe-6Q-2d6" id="VII-5a-SEj"/>
@@ -606,7 +611,7 @@
     <resources>
         <image name="PlayButton" width="187" height="108"/>
         <image name="SpectatorButton" width="187" height="102"/>
-        <image name="VSBackground_1" width="642" height="1142"/>
+        <image name="VSBackground_1" width="321" height="571"/>
         <image name="active_vs_icon" width="30" height="22"/>
         <image name="first_user" width="94" height="53"/>
         <image name="random_vs_background" width="323" height="521"/>
@@ -615,8 +620,8 @@
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="abc-oF-abl"/>
-        <segue reference="uaa-fb-tRY"/>
+        <segue reference="pEi-4P-8nQ"/>
+        <segue reference="a97-Rd-HHv"/>
         <segue reference="JFi-Iz-5QL"/>
     </inferredMetricsTieBreakers>
 </document>
