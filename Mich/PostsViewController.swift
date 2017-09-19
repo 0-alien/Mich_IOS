@@ -78,6 +78,9 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
     
     // MARK: preheat
     func preheat(added: [IndexPath], removed: [IndexPath]) {
+        if self.posts.count == 0 {
+            return
+        }
         func requests(for indexPaths: [IndexPath]) -> [Request] {
             var reqs = (indexPaths.map { Request(url: Foundation.URL(string: posts[$0.row].image!)!)})
             reqs.append(contentsOf: requestsForProfilePictures(for: indexPaths))

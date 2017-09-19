@@ -550,6 +550,11 @@
                                 <action selector="cancelSearch:" destination="54s-mO-hIA" id="FKg-0f-Cuf"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="19c-bg-ovV">
+                            <connections>
+                                <action selector="startSearch:" destination="54s-mO-hIA" id="81M-nc-mr6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="guestImage" destination="IJe-6Q-2d6" id="VII-5a-SEj"/>
@@ -615,8 +620,8 @@
         <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pEi-4P-8nQ"/>
         <segue reference="a97-Rd-HHv"/>
-        <segue reference="tl4-xc-Igv"/>
-        <segue reference="Gwf-KF-eDR"/>
+        <segue reference="JFi-Iz-5QL"/>
     </inferredMetricsTieBreakers>
 </document>
