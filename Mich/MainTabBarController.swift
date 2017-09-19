@@ -48,7 +48,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
             return false
         }
         NotificationCenter.default.post(name: Notification.Name(rawValue: "hideChoose"), object: nil)
-        if ((viewController as! UINavigationController).viewControllers[0] is PostsViewController) {
+        if ((viewController as! UINavigationController).viewControllers[0] is PostsViewController && tabBarController.selectedIndex == 0) {
             let vc: PostsViewController = ((viewController as! UINavigationController).viewControllers[0]) as! PostsViewController
             if (((viewController as! UINavigationController).viewControllers[0]) as! PostsViewController).posts.count > 0 {
                 vc.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
