@@ -146,16 +146,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      
         
-        /*
-        let renderer = UIGraphicsImageRenderer(size: scrollView.bounds.size)
-        let image = renderer.image { ctx in
-            view.drawHierarchy(in: scrollView.bounds, afterScreenUpdates: true)
-        }
-        photo.image = image
-        */
-        
+
         if segue.identifier == "tagimage" {
             photo.image = photo.image?.fixedOrientation()
             let scale:CGFloat = 1 / scrollView.zoomScale
@@ -163,12 +155,17 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             let y:CGFloat = scrollView.contentOffset.y * scale
             let width:CGFloat = scrollView.frame.size.width * scale
             let height:CGFloat = scrollView.frame.size.height * scale
-            let croppedCGImage = photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
+            
+            let renderer = UIGraphicsImageRenderer(size: CGSize(width: scrollView.frame.size.width - imageViewLeadingConstraint.constant - imageViewTrailingConstraint.constant, height: scrollView.frame.size.height - imageViewTopConstraint.constant - imageViewBottomConstraint.constant))
+            let image = renderer.image { ctx in
+                scrollView.drawHierarchy(in: CGRect(x: imageViewLeadingConstraint.constant, y: imageViewTopConstraint.constant, width: scrollView.frame.size.width, height: scrollView.frame.size.height), afterScreenUpdates: true)
+            }
+            
+            let croppedCGImage = image.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
             let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
             (segue.destination as! TagImageViewController).image = croppedImage
+            (segue.destination as! TagImageViewController).image = image
         }
-        
-        
         
     }
     
