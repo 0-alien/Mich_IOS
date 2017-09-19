@@ -87,7 +87,9 @@ class TagImageViewController: UIViewController, UITextViewDelegate, UITableViewD
     // MARK: callbacks
     func onSuccess() {
         self.tabBarController?.selectedIndex = 0
-        ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        if ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).posts.count > 0 {
+            ((self.tabBarController?.viewControllers?[0] as! UINavigationController).viewControllers[0] as! PostsViewController).tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        }
         _ = self.navigationController?.popToRootViewController(animated: false)
     }
     
