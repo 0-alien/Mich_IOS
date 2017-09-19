@@ -22,28 +22,9 @@ class RandomVSViewController: UIViewController {
         super.viewDidLoad()
         hostImage.image = hostImage.image?.af_imageRounded(withCornerRadius: 15)
         guestImage.image = guestImage.image?.af_imageRounded(withCornerRadius: 15)
-        guestImage.animationImages = [
-            UIImage(named: "Image")!,
-            UIImage(named: "Image-1")!,
-            UIImage(named: "Image-2")!
-            
-        ]
-        guestImage.animationDuration = 0.3
-        guestImage.startAnimating()
-        guestUsername.text = "Searching..."
         
         hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
         
-        if isSpectate {
-            hostImage.animationImages = [
-                UIImage(named: "Image")!,
-                UIImage(named: "Image-1")!,
-                UIImage(named: "Image-2")!
-            ]
-            hostImage.animationDuration = 0.3
-            hostImage.startAnimating()
-            hostUsername.text = "Searching..."
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -61,6 +42,26 @@ class RandomVSViewController: UIViewController {
     @IBAction func startSearch(_ sender: Any) {
         self.navigationItem.leftBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = false
+        guestImage.animationImages = [
+            UIImage(named: "Image")!,
+            UIImage(named: "Image-1")!,
+            UIImage(named: "Image-2")!
+            
+        ]
+        guestImage.animationDuration = 0.3
+        guestImage.startAnimating()
+        guestUsername.text = "Searching..."
+        if isSpectate {
+            hostImage.animationImages = [
+                UIImage(named: "Image")!,
+                UIImage(named: "Image-1")!,
+                UIImage(named: "Image-2")!
+            ]
+            hostImage.animationDuration = 0.3
+            hostImage.startAnimating()
+            hostUsername.text = "Searching..."
+        }
+        
         if isSpectate {
             MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: onSuccess, errorCallbackForGetRandomBattle: onError)
         } else {
