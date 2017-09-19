@@ -147,7 +147,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tr5-g3-bIB" id="6EU-zn-USd">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-16-jm5">
@@ -392,7 +392,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XJ3-6x-SYz" id="k1N-0q-Rxw">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Drv-hb-H33">
@@ -494,10 +494,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_background" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-re-oji">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="-4" y="0.0" width="320" height="504"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-mP-wOA">
-                                <rect key="frame" x="140.5" y="167.5" width="39" height="39"/>
+                                <rect key="frame" x="136.5" y="167.5" width="39" height="39"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-5P-piK">
                                 <rect key="frame" x="46" y="157" width="60" height="60"/>
@@ -537,7 +537,7 @@
                             <constraint firstItem="wNl-re-oji" firstAttribute="height" secondItem="vMB-u2-Qth" secondAttribute="height" id="aUU-ZM-4CS"/>
                             <constraint firstItem="IzH-5P-piK" firstAttribute="leading" secondItem="vMB-u2-Qth" secondAttribute="leadingMargin" constant="30" id="bs5-mi-ThJ"/>
                             <constraint firstItem="wNl-re-oji" firstAttribute="top" secondItem="xDt-pb-bj0" secondAttribute="bottom" id="cmR-Je-X0W"/>
-                            <constraint firstItem="wNl-re-oji" firstAttribute="leading" secondItem="vMB-u2-Qth" secondAttribute="leadingMargin" constant="-16" id="f70-iO-hwY"/>
+                            <constraint firstItem="wNl-re-oji" firstAttribute="leading" secondItem="vMB-u2-Qth" secondAttribute="leadingMargin" constant="-20" id="f70-iO-hwY"/>
                             <constraint firstItem="uTI-is-3dQ" firstAttribute="top" secondItem="IJe-6Q-2d6" secondAttribute="bottom" constant="8" id="fyq-7T-4tS"/>
                             <constraint firstItem="IJe-6Q-2d6" firstAttribute="centerY" secondItem="0gw-mP-wOA" secondAttribute="centerY" id="ogp-5Q-2rn"/>
                             <constraint firstItem="EyS-8r-9n5" firstAttribute="leading" secondItem="IzH-5P-piK" secondAttribute="leading" id="vOs-CB-qLI"/>
@@ -616,7 +616,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="a97-Rd-HHv"/>
-        <segue reference="uaa-fb-tRY"/>
-        <segue reference="JFi-Iz-5QL"/>
+        <segue reference="tl4-xc-Igv"/>
+        <segue reference="Gwf-KF-eDR"/>
     </inferredMetricsTieBreakers>
 </document>

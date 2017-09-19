@@ -28,7 +28,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         Nuke.loadImage(with: Foundation.URL(string: self.user.avatar!)!, into: self.profilePicture)
         self.userNameTF.text = self.user.name
         self.emailTF.text = self.user.email
-        
+        /////
+        image2 = profilePicture.image!
+        /////
         imagePicker.delegate = self
         
 
@@ -43,12 +45,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func save(_ sender: Any) {
         let userName = userNameTF.text!;
         let email = emailTF.text!;
-        
         // tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         image2 = image2.fixedOrientation()
-        
         MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
     }
     func onupdateuser(resp: User) {
