@@ -20,8 +20,10 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
-        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
+        
         self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder"))
+        
+        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
         
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
@@ -32,6 +34,7 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.searchBar.sizeToFit()
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.isHidden = true
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -81,13 +84,13 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
     // MARK: delegate
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            var index = viewControllerList.index(of: previousViewControllers.first!)
+            let index = viewControllerList.index(of: previousViewControllers.first!)
             if index == 0 {
-                searchController.searchBar.isHidden = true
-                currentViewController = self.viewControllerList[1]
-            } else {
                 searchController.searchBar.isHidden = false
                 currentViewController = self.viewControllerList[0]
+            } else {
+                searchController.searchBar.isHidden = true
+                currentViewController = self.viewControllerList[1]
             }
         }
     }

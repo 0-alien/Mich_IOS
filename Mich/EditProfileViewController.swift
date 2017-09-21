@@ -19,6 +19,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var nameTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -26,8 +27,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         self.profilePicture = self.profilePicture.borderedCircle
         Nuke.loadImage(with: Foundation.URL(string: self.user.avatar!)!, into: self.profilePicture)
-        self.userNameTF.text = self.user.name
+        self.userNameTF.text = self.user.username
         self.emailTF.text = self.user.email
+        self.nameTF.text = self.user.name
         /////
         image2 = profilePicture.image!
         /////
@@ -43,13 +45,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     
     @IBAction func save(_ sender: Any) {
-        let userName = userNameTF.text!;
+        let username = userNameTF.text!;
         let email = emailTF.text!;
+        let name = nameTF.text!;
         // tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         image2 = image2.fixedOrientation()
-        MichTransport.updateUser(token: appDelegate.token!, name: userName, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
+        MichTransport.updateUser(token: appDelegate.token!, name: name, username: username, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
     }
     func onupdateuser(resp: User) {
         (UIApplication.shared.delegate as! AppDelegate).user = resp
@@ -66,8 +69,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
+
     
     //----------- CAMERA -------
     func camera(_ sender: AnyObject) {
@@ -95,8 +97,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.profilePicture.image = image.fixedOrientation()
         self.dismiss(animated: true, completion: nil)
     }
-    
-    
+
     
     @IBAction func editProfile(_ sender: Any) {
         let alert = UIAlertController()
@@ -111,7 +112,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
  
         })
         
-
         alert.addAction(takePicture)
         alert.addAction(library)
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel,handler: nil))

@@ -34,6 +34,10 @@ class ForgotPasswordByEmailViewController: UIViewController {
         forgotPasswordNextButton.layer.masksToBounds = false
 
 
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ForgotPasswordByEmailViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -49,11 +53,7 @@ class ForgotPasswordByEmailViewController: UIViewController {
     }
     
     func onSendRecovery(){
-        
-
-
         performSegue(withIdentifier: "onsuccess", sender: self)
-        
         let alert = UIAlertController(title: "Alert", message: "Please check your email!", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -61,11 +61,33 @@ class ForgotPasswordByEmailViewController: UIViewController {
     
     
     func onError(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    ///////////////////// keyboard code 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        forgotPasswordNextButton(self)
+        
+        return true
+    }
+    /////////////////////
 
 }

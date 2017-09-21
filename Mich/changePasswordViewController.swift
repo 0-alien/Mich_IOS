@@ -57,9 +57,8 @@ class changePasswordViewController: UIViewController {
         resetBTN.layer.masksToBounds = false
 
         
-
-        
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changePasswordViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
 
@@ -70,14 +69,10 @@ class changePasswordViewController: UIViewController {
     
 
     @IBAction func resetButton(_ sender: Any) {
-        
         let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
-
         let code = codeTF.text!;
-        
         let password = newPasswordTF.text!
         let confirmPassword = confirmPasswordTF.text!
-        
         if(password != confirmPassword){
             confirmPasswordTF.text = "";
             newPasswordTF.text = "";
@@ -87,49 +82,56 @@ class changePasswordViewController: UIViewController {
             confirmPasswordTF.layer.borderWidth = 2.0;
             return;
         }
-        
-        
-        
+
         ////// tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        
         MichTransport.checkcode(token: appDelegate.token!, code: code, successCallbackForCheckCode: onCheckCode, errorCallbackForCheckCode: onError)
-        
-        
-        
+
     }
     
     func onCheckCode(){
-        
-        
-        
-//        performSegue(withIdentifier: "onsuccess", sender: self)
-
+//      performSegue(withIdentifier: "onsuccess", sender: self)
         let password = newPasswordTF.text!;
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        
         MichTransport.recover(token: appDelegate.token!, password: password, successCallbackForRecover: onRecover, errorCallbackForRecover: onError)
     }
     
     
     func onRecover(){
-        
         let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         self.present(vc, animated: false, completion: nil)
-        
     }
     
     
     func onError(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    ///////////////////// keyboard code
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+        resetButton(self)
+        return true
+    }
+    /////////////////////
     
     
     /*

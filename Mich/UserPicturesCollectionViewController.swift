@@ -405,7 +405,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             self.changeProfilePicture = false
             tmpImage = image
             self.dismiss(animated: true, completion: nil)
-            MichTransport.updateUser(token: (UIApplication.shared.delegate as! AppDelegate).token!, name: user?.username, email: user?.email, avatar: tmpImage, successCallbackForUpdateUser: onUpdateProfilePicture, errorCallbackForUpdateUser: onerror)
+            MichTransport.updateUser(token: (UIApplication.shared.delegate as! AppDelegate).token!, name: user?.name, username: user?.username, email: user?.email, avatar: tmpImage, successCallbackForUpdateUser: onUpdateProfilePicture, errorCallbackForUpdateUser: onerror)
         }
         else {
             super.imagePickerController(picker, didFinishPickingImage: image, editingInfo: editingInfo)
