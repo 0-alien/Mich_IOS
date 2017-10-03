@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kailasa.ttc">
+            <string>Kailasa</string>
+        </array>
+        <array key="TrebuchetMSBold.ttf">
+            <string>TrebuchetMS-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile-->
         <scene sceneID="pDz-If-OT0">
@@ -172,23 +180,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76h-Qx-f2R" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="400" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="h2q-Cy-QhN">
-                                        <rect key="frame" x="160" y="38" width="80" height="80"/>
+                                        <rect key="frame" x="160" y="36" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="1jH-gQ-oTO"/>
                                             <constraint firstAttribute="width" constant="80" id="k1x-8I-ajW"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89X-vo-FlF">
-                                        <rect key="frame" x="163" y="123" width="74" height="27"/>
+                                        <rect key="frame" x="163" y="121" width="74" height="21"/>
                                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-vO-YDT" userLabel="Logout">
-                                        <rect key="frame" x="150" y="611" width="100" height="36"/>
+                                        <rect key="frame" x="150" y="591" width="100" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.011040581597222222" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                         <state key="normal" title="  Log Out" image="power">
@@ -199,7 +207,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-yF-2K9">
-                                        <rect key="frame" x="0.0" y="200" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="192" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_notif" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-zq-0kb">
                                                 <rect key="frame" x="5" y="13" width="20" height="15"/>
@@ -256,7 +264,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-LC-ciK" userLabel="Messenger">
-                                        <rect key="frame" x="0.0" y="243" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="235" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_message" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-KO-pwS">
                                                 <rect key="frame" x="5" y="14" width="20" height="12"/>
@@ -291,7 +299,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-mK-6yx" userLabel="Settings">
-                                        <rect key="frame" x="0.0" y="286" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="278" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_settings" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-DJ-FOF">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -326,7 +334,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-T2-iJC" userLabel="Help">
-                                        <rect key="frame" x="0.0" y="329" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="321" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_help" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-Iw-wlo">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
