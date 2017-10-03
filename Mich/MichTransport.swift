@@ -527,9 +527,6 @@ class MichTransport {
         
         let changePasswordRequest = ChangePasswordRequset(token: token, password: password, oldPassword:oldPassword)
         let payloadJson = changePasswordRequest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             
             
@@ -1567,7 +1564,7 @@ class MichTransport {
     }
     
     
-    static func updateUser(token: String?, name: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
+    static func updateUser(token: String?, name: String?, username: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
         
         let reqString = BASE_URL + "user/update"
         var strBase64:String = ""
@@ -1578,7 +1575,7 @@ class MichTransport {
             strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
         }
         
-        let updateuserRequest = UpdateUserRequest(token: token!, name: name!, email: email!, avatar: strBase64)
+        let updateuserRequest = UpdateUserRequest(token: token!, name: name!, username:username!, email: email!, avatar: strBase64)
         let payloadJson = updateuserRequest.toJSONString()
         
 

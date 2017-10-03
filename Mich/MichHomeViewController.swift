@@ -18,10 +18,12 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.dataSource = self
         self.delegate = self
-        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
+        
         self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder"))
+        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
         
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
@@ -29,14 +31,19 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.searchResultsUpdater = resultsShower
         searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Search Mich"
-        searchController.searchBar.sizeToFit()
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.isHidden = false
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = self.searchController
+        } else {
+            self.navigationItem.titleView = searchController.searchBar
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationItem.titleView = searchController.searchBar
+        
         if currentViewController == nil {
             currentViewController = self.viewControllerList.first
             setViewControllers([currentViewController], direction: .forward, animated: true, completion: nil)
@@ -81,13 +88,13 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
     // MARK: delegate
     public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            var index = viewControllerList.index(of: previousViewControllers.first!)
+            let index = viewControllerList.index(of: previousViewControllers.first!)
             if index == 0 {
-                searchController.searchBar.isHidden = true
-                currentViewController = self.viewControllerList[1]
-            } else {
                 searchController.searchBar.isHidden = false
                 currentViewController = self.viewControllerList[0]
+            } else {
+                searchController.searchBar.isHidden = true
+                currentViewController = self.viewControllerList[1]
             }
         }
     }

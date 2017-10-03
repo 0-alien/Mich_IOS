@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="kxt-mM-LCb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zE7-to-pAz">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -135,12 +135,12 @@
                         <viewControllerLayoutGuide type="top" id="lXV-Sd-lNj"/>
                         <viewControllerLayoutGuide type="bottom" id="bZO-FB-aXh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="gfC-5R-ka1">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <view key="view" contentMode="scaleToFill" id="gfC-5R-ka1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="a2U-Bh-p7N">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VSTableViewCell" rowHeight="100" id="Tr5-g3-bIB" customClass="VSTableViewCell" customModule="Mich" customModuleProvider="target">
@@ -250,7 +250,7 @@
                         <viewControllerLayoutGuide type="bottom" id="M1Y-xN-h9X"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xmz-47-ELf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VSBackground_1" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Ab-xJr">
@@ -358,7 +358,9 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="VS" id="w68-VV-0jF"/>
+                    <navigationItem key="navigationItem" title="VS" id="w68-VV-0jF">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Xrq-Oh-FBN"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="eIA-3t-lXw" kind="show" identifier="gotoeditimage" id="PZ5-W0-gcF"/>
                         <segue destination="mv4-sU-kf7" kind="show" identifier="notifications" id="iuA-d9-EHa"/>
@@ -380,12 +382,12 @@
                         <viewControllerLayoutGuide type="top" id="IyD-9A-uXF"/>
                         <viewControllerLayoutGuide type="bottom" id="yU2-uz-P7t"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Gpm-aS-TM8">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                    <view key="view" contentMode="scaleToFill" id="Gpm-aS-TM8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Cw-T3-MLi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="VSTableViewCell" rowHeight="100" id="XJ3-6x-SYz" customClass="VSTableViewCell" customModule="Mich" customModuleProvider="target">
@@ -490,7 +492,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hbg-1r-yJY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vMB-u2-Qth">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_background" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-re-oji">
@@ -594,7 +596,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="abJ-ox-iSb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>

@@ -33,7 +33,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         super.viewDidLoad()
         
         self.definesPresentationContext = true
-        self.automaticallyAdjustsScrollViewInsets = false
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl

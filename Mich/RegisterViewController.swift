@@ -146,9 +146,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func onRegister(){
         
         
-        let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: false, completion: nil)
+        let refreshAlert = UIAlertController(title: "SUCCESS", message: "You Have Successfuly Registered", preferredStyle: UIAlertControllerStyle.alert)
+        
+        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            let storyboard = UIStoryboard(name: "Cabinet", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            self.present(vc, animated: false, completion: nil)
+        }))
+        
+        present(refreshAlert, animated: true, completion: nil)
         
     }
     
