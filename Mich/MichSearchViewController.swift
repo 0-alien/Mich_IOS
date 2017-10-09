@@ -32,8 +32,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.largeTitleDisplayMode = .always
-        
         self.definesPresentationContext = true
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
