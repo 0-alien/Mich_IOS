@@ -496,6 +496,7 @@
                                         <connections>
                                             <outlet property="profilePicture" destination="TFj-ar-MkZ" id="Jpu-rt-Xzu"/>
                                             <outlet property="userName" destination="qyI-Pj-lmk" id="sRb-kv-UfB"/>
+                                            <segue destination="t8i-mJ-CNo" kind="show" identifier="showchat" id="RqA-z1-npD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -520,7 +521,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBR-pu-EY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.80000000000001" y="161.46926536731635"/>
+            <point key="canvasLocation" x="-759.20000000000005" y="865.81709145427294"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="5CA-Qe-cjv">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="t8i-mJ-CNo" customClass="ChatViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gNE-R0-i56"/>
+                        <viewControllerLayoutGuide type="bottom" id="gqA-hE-oGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LEi-Cf-Edb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQ3-Yo-17o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231" y="866"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="puC-T4-W4f">

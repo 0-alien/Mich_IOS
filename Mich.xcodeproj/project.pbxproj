@@ -30,6 +30,9 @@
 		1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */; };
 		1E3D29AB1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D29AA1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift */; };
 		1E3D29AD1EEABB98002C6916 /* DummyMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */; };
+		1E3E37131F8E4CED00810BDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E37121F8E4CED00810BDA /* ChatViewController.swift */; };
+		1E3E37151F8E4E4F00810BDA /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E37141F8E4E4F00810BDA /* ChatMessage.swift */; };
+		1E3E37171F8E564A00810BDA /* GetChatRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E37161F8E564A00810BDA /* GetChatRequest.swift */; };
 		1E3F41271E321B7200A37B9A /* BattleTableViewCellB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */; };
 		1E42C0641EE828E20077B707 /* MichVSTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C0631EE828E20077B707 /* MichVSTransport.swift */; };
 		1E42C06A1EE82A990077B707 /* BattleInviteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42C0691EE82A990077B707 /* BattleInviteRequest.swift */; };
@@ -196,6 +199,9 @@
 		1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkSingleNotificationSeenRequest.swift; sourceTree = "<group>"; };
 		1E3D29AA1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
 		1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyMappable.swift; sourceTree = "<group>"; };
+		1E3E37121F8E4CED00810BDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1E3E37141F8E4E4F00810BDA /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		1E3E37161F8E564A00810BDA /* GetChatRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChatRequest.swift; sourceTree = "<group>"; };
 		1E3F41261E321B7200A37B9A /* BattleTableViewCellB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellB.swift; sourceTree = "<group>"; };
 		1E42C0631EE828E20077B707 /* MichVSTransport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MichVSTransport.swift; sourceTree = "<group>"; };
 		1E42C0691EE82A990077B707 /* BattleInviteRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleInviteRequest.swift; sourceTree = "<group>"; };
@@ -535,6 +541,7 @@
 			children = (
 				1EAE507B1F8BAC8C0076B20F /* MessagesTableViewController.swift */,
 				1EAE507D1F8BAD680076B20F /* MessagesTableViewCell.swift */,
+				1E3E37121F8E4CED00810BDA /* ChatViewController.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -553,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				1EAE50831F8BAF040076B20F /* Chat.swift */,
+				1E3E37141F8E4E4F00810BDA /* ChatMessage.swift */,
 			);
 			name = Bean;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				1EAE50881F8BAF360076B20F /* GetMessagesRequest.swift */,
+				1E3E37161F8E564A00810BDA /* GetChatRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -584,6 +593,7 @@
 				1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */,
 				1EEE29551E572EEB00302BC2 /* SearchResultsViewController.swift */,
 				1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */,
+				CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -636,7 +646,6 @@
 				CFE38FF61E7952A10037CB5B /* HelpViewController.swift */,
 				CF1E2B061EDEF4EA009FDC33 /* TermsAndConditionsViewController.swift */,
 				CF73DACA1EE5594A0097C136 /* MenuHelpViewController.swift */,
-				CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1007,6 +1016,7 @@
 				1E8015C71E080DDD001166E1 /* SlidingMenuPresentingViewController.swift in Sources */,
 				CF5B599E1EFD1922002E5FF6 /* UIImageFixedOrientationExtension.swift in Sources */,
 				1E1035CC1D9E6E2100E890EF /* UserPicturesCollectionViewController.swift in Sources */,
+				1E3E37131F8E4CED00810BDA /* ChatViewController.swift in Sources */,
 				CF3C2CF81E448302004512CA /* PostClass.swift in Sources */,
 				CF209DF51E4215C500B1A59E /* LogoutRequest.swift in Sources */,
 				1E3D29AD1EEABB98002C6916 /* DummyMappable.swift in Sources */,
@@ -1058,6 +1068,7 @@
 				CF92DF1D1E4DADC700AC71D7 /* UnlikeRequest.swift in Sources */,
 				CF186A8A1E435B2000218920 /* GetCurrentUserRequest.swift in Sources */,
 				CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */,
+				1E3E37171F8E564A00810BDA /* GetChatRequest.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
 				1E7FC0FC1EE6C7B90014562F /* VSJSQViewController.swift in Sources */,
@@ -1065,6 +1076,7 @@
 				1E42C0641EE828E20077B707 /* MichVSTransport.swift in Sources */,
 				CF39279D1E2925D900F0C924 /* BaseResponse.swift in Sources */,
 				1E9A4C701F39C8E3008C0ABE /* VSHomeViewController.swift in Sources */,
+				1E3E37151F8E4E4F00810BDA /* ChatMessage.swift in Sources */,
 				CF209DF31E420D2B00B1A59E /* RecoverRequest.swift in Sources */,
 				1E4A603B1E40ABA3001902B7 /* BattleTableViewCellBWithPicture.swift in Sources */,
 				CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */,

@@ -52,5 +52,33 @@ class MichMessagesTransport {
             }
         }
     }
+    
+    static func getChat(token: String, userId: Int, successCallbackGetChat: @escaping (Chat) -> Void, errorCallbackForGetChat: @escaping (DefaultError) -> Void) {
+        
+        let reqString = BASE_URL + "message/getMine"
+        let getChatRequest = GetChatRequest(token: token, userId: userId)
+        let payloadJson = getChatRequest.toJSONString()
+        
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if(response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<Chat>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackGetChat((baseResponse?.data)!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetChat(error)
+                }
+            } else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetChat(error)
+            }
+        }
+    }
 
 }

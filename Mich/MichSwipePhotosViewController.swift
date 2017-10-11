@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class MichSwipePhotosViewController: UIViewController {
+class MichSwipePhotosViewController: SlidingMenuPresentingViewController {
 
     @IBOutlet weak var viewOfPhoto: UIView!
     @IBOutlet weak var randomImage: UIImageView!
@@ -18,30 +18,16 @@ class MichSwipePhotosViewController: UIViewController {
     var postRandom: PostClass!
     
     override func viewDidLoad() {
-    
-        
-        
         super.viewDidLoad()
-        print("_+_+_+_+_+_+_+_+_+_+_++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
+        
+        currentIndex = 6
         MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: onSuccessGetRandomPost, errorCallbackGetRandomPost: onerror)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     
     @IBAction func LikePhoto(_ sender: Any) {
