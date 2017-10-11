@@ -155,6 +155,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, GMSAutocomp
         let email = signUpEmail.text!
         let password = signUpPassword.text!
         let confirmPassword = signUpConfirmPassword.text!
+        let dateOfBirth = birthDate.text!;
+        let placeOfBirth = self.placeOfBirth.text!;
 
         if(password != confirmPassword){
             signUpConfirmPassword.text = "";
@@ -165,7 +167,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, GMSAutocomp
             signUpConfirmPassword.layer.borderWidth = 2.0;
             return;
         }
-        MichTransport.register(username:username, email: email, password: password, name:name, successCallbackForRegister: onRegister, errorCallbackForRegister: onErrorRegister)
+        MichTransport.register(username:username, email: email, password: password, name:name, dateOfBirth: dateOfBirth, placeOfBirth: placeOfBirth, successCallbackForRegister: onRegister, errorCallbackForRegister: onErrorRegister)
     }
     
     func onRegister(){
