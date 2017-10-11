@@ -218,9 +218,16 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
     }
     
-    func setNavigationBarZValue(value: CGFloat) {
+    func prepareCellForZooming(value: CGFloat, cellIndex: Int) {
+        //self.tableView.layer.zPosition = value
         self.navigationController?.navigationBar.layer.zPosition = value
         self.tabBarController?.tabBar.layer.zPosition = value
+        let cell = self.tableView.cellForRow(at: IndexPath(row: cellIndex, section: 0)) as! PostTableViewCell
+        if value == -1 { // if we hide navigation bar
+            cell.layer.zPosition = 100
+        } else {
+            cell.layer.zPosition = 0 // set cell z value back
+        }
     }
     
     func postUnliked(cellIndex: Int) {

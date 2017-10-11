@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -590,15 +590,15 @@
         <scene sceneID="lOT-I0-ksP">
             <objects>
                 <navigationController storyboardIdentifier="VS" automaticallyAdjustsScrollViewInsets="NO" id="kME-dW-Zfv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="EMC-g5-y2b">
+                    <tabBarItem key="tabBarItem" title="" image="red_vs_icon" landscapeImage="red_vs_icon" selectedImage="active_red_vs_icon" id="EMC-g5-y2b">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="abJ-ox-iSb">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -614,16 +614,16 @@
         <image name="PlayButton" width="187" height="108"/>
         <image name="SpectatorButton" width="187" height="102"/>
         <image name="VSBackground_1" width="321" height="571"/>
-        <image name="active_vs_icon" width="30" height="22"/>
+        <image name="active_red_vs_icon" width="30" height="22"/>
         <image name="first_user" width="94" height="53"/>
         <image name="random_vs_background" width="323" height="521"/>
         <image name="random_vs_icon" width="39" height="39"/>
+        <image name="red_vs_icon" width="26" height="19"/>
         <image name="second_user" width="52" height="79"/>
-        <image name="vs_icon" width="26" height="19"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a97-Rd-HHv"/>
         <segue reference="JFi-Iz-5QL"/>
-        <segue reference="uaa-fb-tRY"/>
+        <segue reference="a97-Rd-HHv"/>
+        <segue reference="Gwf-KF-eDR"/>
     </inferredMetricsTieBreakers>
 </document>

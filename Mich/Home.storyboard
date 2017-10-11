@@ -534,15 +534,15 @@
         <scene sceneID="DFc-PY-9An">
             <objects>
                 <navigationController storyboardIdentifier="Home" automaticallyAdjustsScrollViewInsets="NO" id="wMx-vb-aBH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home_icon" selectedImage="active_home_icon" id="wl4-Ef-qwd">
+                    <tabBarItem key="tabBarItem" title="" image="red_home_icon" landscapeImage="red_home_icon" selectedImage="active_red_home_icon" id="wl4-Ef-qwd">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QNb-4P-LFc">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -555,9 +555,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active_home_icon" width="26" height="25"/>
+        <image name="active_red_home_icon" width="26" height="25"/>
         <image name="comments_icon" width="159" height="159"/>
-        <image name="home_icon" width="26" height="24"/>
         <image name="like_icon" width="112" height="138"/>
+        <image name="red_home_icon" width="26" height="24"/>
     </resources>
 </document>

@@ -99,9 +99,11 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.zoomingScrollView.setZoomScale(1.0, animated: false)
         }, completion: { _ in self.navigationController?.navigationBar.layer.zPosition = 0 })
+        
     }
     
     

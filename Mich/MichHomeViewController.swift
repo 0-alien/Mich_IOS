@@ -33,9 +33,10 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.searchBar.placeholder = "Search Mich"
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.isHidden = false
+        searchController.searchBar.isHidden = true
+        
         if #available(iOS 11.0, *) {
-            self.navigationItem.searchController = self.searchController
+            self.navigationController?.navigationBar.topItem?.titleView = searchController.searchBar
         } else {
             self.navigationItem.titleView = searchController.searchBar
         }

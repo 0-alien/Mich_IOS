@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,13 +23,14 @@
         <scene sceneID="pDz-If-OT0">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="dni-YK-hA7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user_icon" selectedImage="active_user_icon" id="Szb-fq-gJR">
+                    <tabBarItem key="tabBarItem" title="" image="red_user_icon" selectedImage="active_red_user_icon" id="Szb-fq-gJR">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFC-Rm-mi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-440" y="-755"/>
+            <point key="canvasLocation" x="-2090" y="-756"/>
         </scene>
         <!--Scrolling View Controller-->
         <scene sceneID="etm-cX-0nc">
@@ -99,13 +100,14 @@
         <scene sceneID="pc5-R2-8v7">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="Qb1-1K-fuU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home_icon" selectedImage="active_home_icon" id="lXL-Le-Jp4">
+                    <tabBarItem key="tabBarItem" title="" image="red_home_icon" selectedImage="active_red_home_icon" id="lXL-Le-Jp4">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2M-yd-IZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2029" y="-1280"/>
+            <point key="canvasLocation" x="-3162" y="-757"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="Iud-OV-Vf9">
@@ -114,10 +116,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="fill" id="7ge-Nk-gMf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Qb1-1K-fuU" kind="relationship" relationship="viewControllers" id="hNs-xF-gOt"/>
@@ -135,32 +134,35 @@
         <scene sceneID="WUn-43-hhm">
             <objects>
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="Camera" id="Xv4-z7-EW1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="plus_icon" selectedImage="active_plus_icon" id="PXb-sc-qjf">
+                    <tabBarItem key="tabBarItem" title="" image="red_plus_icon" selectedImage="active_red_plus_icon" id="PXb-sc-qjf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rF-kx-Xph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2043" y="-755"/>
+            <point key="canvasLocation" x="-2625" y="-757"/>
         </scene>
         <!--Mich-->
         <scene sceneID="YyC-1M-hwd">
             <objects>
                 <viewControllerPlaceholder storyboardName="Mich" referencedIdentifier="Mich" id="7kQ-Gw-DdJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="mich_icon" selectedImage="active_mich_icon" id="EEH-Hj-7sB">
+                    <tabBarItem key="tabBarItem" title="" image="red_mich_icon" selectedImage="active_red_mich_icon" id="EEH-Hj-7sB">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chf-bM-BhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1214" y="-755"/>
+            <point key="canvasLocation" x="-2355" y="-756"/>
         </scene>
         <!--VS-->
         <scene sceneID="Nye-VX-pVa">
             <objects>
                 <viewControllerPlaceholder storyboardName="VS" referencedIdentifier="VS" id="Efm-6J-pN5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="EgU-ND-OJM">
+                    <tabBarItem key="tabBarItem" title="" image="red_vs_icon" selectedImage="active_red_vs_icon" id="EgU-ND-OJM">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQm-fQ-w1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -420,21 +422,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active_home_icon" width="26" height="25"/>
-        <image name="active_mich_icon" width="23" height="28"/>
-        <image name="active_plus_icon" width="25" height="26"/>
-        <image name="active_user_icon" width="26" height="26"/>
-        <image name="active_vs_icon" width="30" height="22"/>
+        <image name="active_red_home_icon" width="26" height="25"/>
+        <image name="active_red_mich_icon" width="22" height="28"/>
+        <image name="active_red_plus_icon" width="26" height="28"/>
+        <image name="active_red_user_icon" width="26" height="26"/>
+        <image name="active_red_vs_icon" width="30" height="22"/>
         <image name="first_user" width="94" height="53"/>
-        <image name="home_icon" width="26" height="24"/>
-        <image name="mich_icon" width="24" height="28"/>
-        <image name="plus_icon" width="25" height="26"/>
         <image name="power" width="12" height="14"/>
+        <image name="red_home_icon" width="26" height="24"/>
+        <image name="red_mich_icon" width="23" height="27"/>
+        <image name="red_plus_icon" width="21" height="22"/>
+        <image name="red_user_icon" width="25" height="25"/>
+        <image name="red_vs_icon" width="26" height="19"/>
         <image name="slider_menu_help" width="16" height="16"/>
         <image name="slider_menu_message" width="17" height="12"/>
         <image name="slider_menu_notif" width="13" height="15"/>
         <image name="slider_menu_settings" width="16" height="16"/>
-        <image name="user_icon" width="25" height="25"/>
-        <image name="vs_icon" width="26" height="19"/>
     </resources>
 </document>
