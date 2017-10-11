@@ -93,10 +93,10 @@ class MichTransport {
         
     }
     
-    static func register(username:String, email: String, password: String, name: String, successCallbackForRegister: @escaping () -> Void, errorCallbackForRegister: @escaping (DefaultError) -> Void ){
+    static func register(username:String, email: String, password: String, name: String, dateOfBirth:String, placeOfBirth:String, successCallbackForRegister: @escaping () -> Void, errorCallbackForRegister: @escaping (DefaultError) -> Void ){
         let reqString = BASE_URL + "auth/register"
         
-        let registerRequest = RegisterRequest(username:username, email: email,password:password,name:name)
+        let registerRequest = RegisterRequest(username:username, email: email,password:password,name:name, dateOfBirth:dateOfBirth, placeOfBirth:placeOfBirth)
         let payloadJson = registerRequest.toJSONString()
         
         
