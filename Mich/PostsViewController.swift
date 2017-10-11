@@ -218,6 +218,11 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         self.tableView.reloadRows(at: [IndexPath(row: cellIndex, section: 0)], with: .none)
     }
     
+    func setNavigationBarZValue(value: CGFloat) {
+        self.navigationController?.navigationBar.layer.zPosition = value
+        self.tabBarController?.tabBar.layer.zPosition = value
+    }
+    
     func postUnliked(cellIndex: Int) {
         posts[cellIndex].nLikes = posts[cellIndex].nLikes! - 1
         posts[cellIndex].myLike = 0

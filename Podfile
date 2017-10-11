@@ -15,4 +15,7 @@ target 'Mich' do
     pod 'Nuke'
     pod 'AlamofireImage', '~> 3.1'
     pod 'Preheat'
+    pod 'GoogleMaps', '~> 2.4'
+    pod 'GooglePlaces', '~> 2.4'
+    pod 'GooglePlacePicker'
 end
