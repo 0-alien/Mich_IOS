@@ -644,13 +644,13 @@
 		1EF192C21D8AE50700676CE2 /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
-				1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */,
 				CF209DE81E41E62900B1A59E /* Cabinet.storyboard */,
 				1E56BC581D8C22D30012E695 /* Userspace.storyboard */,
-				1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */,
-				1EDDC2561D940877004D1DD5 /* Camera.storyboard */,
 				1EDDC2581D9408EB004D1DD5 /* Home.storyboard */,
 				1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */,
+				1EDDC2561D940877004D1DD5 /* Camera.storyboard */,
+				1EDDC2541D9407DA004D1DD5 /* Mich.storyboard */,
+				1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */,
 				1E8015C21E07F951001166E1 /* Menu.storyboard */,
 			);
 			name = Cabinet;

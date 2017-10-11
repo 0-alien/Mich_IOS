@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Nuke
 
 class MessagesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
     
     var data: [Chat] = []
+    var filtered: [Chat] = []
     @IBOutlet weak var tableView: UITableView!
     var searchController: UISearchController!
     
@@ -23,6 +25,8 @@ class MessagesTableViewController: UIViewController, UITableViewDelegate, UITabl
         searchController.searchBar.placeholder = "Search Messages"
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
+        searchController.searchBar.autocapitalizationType = .none
+        
         self.tableView.tableHeaderView = searchController.searchBar
         
         MichMessagesTransport.getMessages(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetMessages: onGetMessagesSuccess, errorCallbackForGetMessages: onError)
@@ -34,16 +38,19 @@ class MessagesTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     // MARK: tableview datasource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return filtered.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesTableViewCell", for: indexPath) as! MessagesTableViewCell
+        cell.userName.text = filtered[indexPath.row].user?.username
+        Nuke.loadImage(with: Foundation.URL(string: (data[indexPath.row].user?.avatar)!)!, into: cell.profilePicture)
         return cell
     }
     // MARK: callbacks
     func onGetMessagesSuccess(resp: [Chat]) {
         self.data = resp
+        self.filterData(query: self.searchController.searchBar.text!)
         self.tableView.reloadData()
     }
     func onError(error: DefaultError){
@@ -53,7 +60,22 @@ class MessagesTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     // MARK: searchController
     func updateSearchResults(for searchController: UISearchController) {
-        print(searchController.searchBar.text)
+        self.filterData(query: searchController.searchBar.text!)
+        self.tableView.reloadData()
+    }
+    
+    // MARK: class methods
+    func filterData(query: String) {
+        self.filtered.removeAll()
+        if query == "" {
+            filtered.append(contentsOf: data)
+            return
+        }
+        for chat in data {
+            if chat.user?.username?.lowercased().range(of: query.lowercased()) != nil {
+                self.filtered.append(chat)
+            }
+        }
     }
     
 }

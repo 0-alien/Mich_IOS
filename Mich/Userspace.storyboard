@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kailasa.ttc">
+            <string>Kailasa</string>
+        </array>
+        <array key="TrebuchetMSBold.ttf">
+            <string>TrebuchetMS-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Profile-->
         <scene sceneID="pDz-If-OT0">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" id="dni-YK-hA7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="user_icon" selectedImage="active_user_icon" id="Szb-fq-gJR">
+                    <tabBarItem key="tabBarItem" title="" image="red_user_icon" selectedImage="active_red_user_icon" id="Szb-fq-gJR">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFC-Rm-mi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-440" y="-755"/>
+            <point key="canvasLocation" x="-2090" y="-756"/>
         </scene>
         <!--Scrolling View Controller-->
         <scene sceneID="etm-cX-0nc">
@@ -91,13 +100,14 @@
         <scene sceneID="pc5-R2-8v7">
             <objects>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="Home" id="Qb1-1K-fuU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home_icon" selectedImage="active_home_icon" id="lXL-Le-Jp4">
+                    <tabBarItem key="tabBarItem" title="" image="red_home_icon" selectedImage="active_red_home_icon" id="lXL-Le-Jp4">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2M-yd-IZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2029" y="-1280"/>
+            <point key="canvasLocation" x="-3162" y="-757"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="Iud-OV-Vf9">
@@ -106,10 +116,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" itemPositioning="fill" id="7ge-Nk-gMf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="0.10196078431372549" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Qb1-1K-fuU" kind="relationship" relationship="viewControllers" id="hNs-xF-gOt"/>
@@ -127,32 +134,35 @@
         <scene sceneID="WUn-43-hhm">
             <objects>
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="Camera" id="Xv4-z7-EW1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="plus_icon" selectedImage="active_plus_icon" id="PXb-sc-qjf">
+                    <tabBarItem key="tabBarItem" title="" image="red_plus_icon" selectedImage="active_red_plus_icon" id="PXb-sc-qjf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rF-kx-Xph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2043" y="-755"/>
+            <point key="canvasLocation" x="-2625" y="-757"/>
         </scene>
         <!--Mich-->
         <scene sceneID="YyC-1M-hwd">
             <objects>
                 <viewControllerPlaceholder storyboardName="Mich" referencedIdentifier="Mich" id="7kQ-Gw-DdJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="mich_icon" selectedImage="active_mich_icon" id="EEH-Hj-7sB">
+                    <tabBarItem key="tabBarItem" title="" image="red_mich_icon" selectedImage="active_red_mich_icon" id="EEH-Hj-7sB">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Chf-bM-BhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1214" y="-755"/>
+            <point key="canvasLocation" x="-2355" y="-756"/>
         </scene>
         <!--VS-->
         <scene sceneID="Nye-VX-pVa">
             <objects>
                 <viewControllerPlaceholder storyboardName="VS" referencedIdentifier="VS" id="Efm-6J-pN5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="vs_icon" selectedImage="active_vs_icon" id="EgU-ND-OJM">
+                    <tabBarItem key="tabBarItem" title="" image="red_vs_icon" selectedImage="active_red_vs_icon" id="EgU-ND-OJM">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                        <color key="badgeColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qQm-fQ-w1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,23 +182,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76h-Qx-f2R" userLabel="Background">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="400" height="647"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="h2q-Cy-QhN">
-                                        <rect key="frame" x="160" y="38" width="80" height="80"/>
+                                        <rect key="frame" x="160" y="36" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="1jH-gQ-oTO"/>
                                             <constraint firstAttribute="width" constant="80" id="k1x-8I-ajW"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89X-vo-FlF">
-                                        <rect key="frame" x="163" y="123" width="74" height="27"/>
+                                        <rect key="frame" x="163" y="121" width="74" height="21"/>
                                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-vO-YDT" userLabel="Logout">
-                                        <rect key="frame" x="150" y="611" width="100" height="36"/>
+                                        <rect key="frame" x="150" y="591" width="100" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.011040581597222222" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                         <state key="normal" title="  Log Out" image="power">
@@ -199,7 +209,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-yF-2K9">
-                                        <rect key="frame" x="0.0" y="200" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="192" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_notif" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-zq-0kb">
                                                 <rect key="frame" x="5" y="13" width="20" height="15"/>
@@ -256,7 +266,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-LC-ciK" userLabel="Messenger">
-                                        <rect key="frame" x="0.0" y="243" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="235" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_message" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-KO-pwS">
                                                 <rect key="frame" x="5" y="14" width="20" height="12"/>
@@ -291,7 +301,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-mK-6yx" userLabel="Settings">
-                                        <rect key="frame" x="0.0" y="286" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="278" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_settings" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-DJ-FOF">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -326,7 +336,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-T2-iJC" userLabel="Help">
-                                        <rect key="frame" x="0.0" y="329" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="321" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_help" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-Iw-wlo">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -412,21 +422,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="active_home_icon" width="26" height="25"/>
-        <image name="active_mich_icon" width="23" height="28"/>
-        <image name="active_plus_icon" width="25" height="26"/>
-        <image name="active_user_icon" width="26" height="26"/>
-        <image name="active_vs_icon" width="30" height="22"/>
+        <image name="active_red_home_icon" width="26" height="25"/>
+        <image name="active_red_mich_icon" width="22" height="28"/>
+        <image name="active_red_plus_icon" width="26" height="28"/>
+        <image name="active_red_user_icon" width="26" height="26"/>
+        <image name="active_red_vs_icon" width="30" height="22"/>
         <image name="first_user" width="94" height="53"/>
-        <image name="home_icon" width="26" height="24"/>
-        <image name="mich_icon" width="24" height="28"/>
-        <image name="plus_icon" width="25" height="26"/>
         <image name="power" width="12" height="14"/>
+        <image name="red_home_icon" width="26" height="24"/>
+        <image name="red_mich_icon" width="23" height="27"/>
+        <image name="red_plus_icon" width="21" height="22"/>
+        <image name="red_user_icon" width="25" height="25"/>
+        <image name="red_vs_icon" width="26" height="19"/>
         <image name="slider_menu_help" width="16" height="16"/>
         <image name="slider_menu_message" width="17" height="12"/>
         <image name="slider_menu_notif" width="13" height="15"/>
         <image name="slider_menu_settings" width="16" height="16"/>
-        <image name="user_icon" width="25" height="25"/>
-        <image name="vs_icon" width="26" height="19"/>
     </resources>
 </document>
