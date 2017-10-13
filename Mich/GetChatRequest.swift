@@ -24,6 +24,6 @@ class GetChatRequest: Mappable {
     
     func mapping(map: Map) {
         token    <- map["token"]
-        userId   <- map["userId"]
+        userId   <- map["userID"]
     }
 }

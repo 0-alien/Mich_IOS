@@ -55,7 +55,7 @@ class MichMessagesTransport {
     
     static func getChat(token: String, userId: Int, successCallbackGetChat: @escaping (Chat) -> Void, errorCallbackForGetChat: @escaping (DefaultError) -> Void) {
         
-        let reqString = BASE_URL + "message/getMine"
+        let reqString = BASE_URL + "message/get"
         let getChatRequest = GetChatRequest(token: token, userId: userId)
         let payloadJson = getChatRequest.toJSONString()
         

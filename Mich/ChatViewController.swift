@@ -32,11 +32,9 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesCollectionViewCe
         
         channelRef = FIRDatabase.database().reference() //connect to database
         
-        if chat != nil {
-            self.observeMessages()
-        } else {
-            MichMessagesTransport.getChat(token: (UIApplication.shared.delegate as! AppDelegate).token!, userId: self.userId, successCallbackGetChat: onGetChatSuccess, errorCallbackForGetChat: onError)
-        }
+        
+        MichMessagesTransport.getChat(token: (UIApplication.shared.delegate as! AppDelegate).token!, userId: self.userId, successCallbackGetChat: onGetChatSuccess, errorCallbackForGetChat: onError)
+        
     }
 
     override func didReceiveMemoryWarning() {
