@@ -11,8 +11,32 @@ import UIKit
 class VSHomeViewController: SlidingMenuPresentingViewController {
     var destinationBattleId: Int!
     
+    @IBOutlet weak var topBattles: UIButton!
+    @IBOutlet weak var myBattles: UIButton!
+    @IBOutlet weak var active: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        topBattles.layer.shadowOpacity = 0.3;
+        topBattles.layer.shadowRadius = 1.0;
+        topBattles.layer.shadowColor = UIColor.black.cgColor;
+        topBattles.layer.shadowOffset = CGSize(width: -4, height: 4)
+        topBattles.layer.masksToBounds = false
+
+        myBattles.layer.shadowOpacity = 0.3;
+        myBattles.layer.shadowRadius = 1.0;
+        myBattles.layer.shadowColor = UIColor.black.cgColor;
+        myBattles.layer.shadowOffset = CGSize(width: -4, height: 4)
+        myBattles.layer.masksToBounds = false
+        
+        active.layer.shadowOpacity = 0.3;
+        active.layer.shadowRadius = 1.0;
+        active.layer.shadowColor = UIColor.black.cgColor;
+        active.layer.shadowOffset = CGSize(width: -4, height: 4)
+        active.layer.masksToBounds = false
+        
         currentIndex = 1
     }
 
