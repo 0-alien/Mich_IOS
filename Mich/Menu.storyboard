@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -321,6 +321,9 @@
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1ps-O5-ckP">
                                                         <rect key="frame" x="305" y="7" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="switchBTN:" destination="AWb-rr-c6J" eventType="valueChanged" id="X7k-rv-a7L"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -426,6 +429,7 @@
                         <outlet property="oldPasswordTF" destination="Mhx-nu-Op3" id="ow6-Ip-yXW"/>
                         <outlet property="ressetPassworBTN" destination="tg6-ae-fOm" id="jpa-kK-gHI"/>
                         <outlet property="saveBTN" destination="tuy-oR-z6H" id="M9z-LO-JzR"/>
+                        <outlet property="switchBT" destination="1ps-O5-ckP" id="HwO-4d-lob"/>
                         <outlet property="view1" destination="dmS-7b-JoT" id="IJ9-BV-vGK"/>
                         <outlet property="view2" destination="SEd-kT-AEb" id="StV-hQ-zuE"/>
                         <outlet property="view3" destination="eA5-iX-QMj" id="O1p-pD-XAz"/>
