@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -28,7 +28,7 @@
                     <navigationItem key="navigationItem" id="DZU-H2-mkb">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="Va3-K2-2ca">
-                            <rect key="frame" x="59" y="5.5" width="202" height="33"/>
+                            <rect key="frame" x="68" y="5.5" width="202" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zo5-bH-2re">
@@ -253,7 +253,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VSBackground_1" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Ab-xJr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newVSBackground2" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Ab-xJr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-Hy-AvL">
@@ -279,11 +279,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBY-CD-HbD">
-                                <rect key="frame" x="62" y="298" width="196" height="27"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="85" y="298" width="150" height="27"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="mkF-wo-5EF"/>
-                                    <constraint firstAttribute="width" constant="196" id="ub3-Qj-GKE"/>
+                                    <constraint firstAttribute="width" constant="150" id="ub3-Qj-GKE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" title="Top Battles">
@@ -299,8 +299,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWw-o2-SmU">
-                                <rect key="frame" x="62" y="345" width="196" height="27"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="85" y="345" width="150" height="27"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="yRP-Wu-79H"/>
                                 </constraints>
@@ -318,8 +318,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lW6-6b-w4e">
-                                <rect key="frame" x="62" y="392" width="196" height="27"/>
-                                <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="85" y="392" width="150" height="27"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="Sof-xx-3NX"/>
                                 </constraints>
@@ -362,6 +362,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="Xrq-Oh-FBN"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="active" destination="lW6-6b-w4e" id="Cgm-Jm-vza"/>
+                        <outlet property="myBattles" destination="QWw-o2-SmU" id="oR7-VQ-sg0"/>
+                        <outlet property="topBattles" destination="TBY-CD-HbD" id="ezn-cf-ucd"/>
                         <segue destination="eIA-3t-lXw" kind="show" identifier="gotoeditimage" id="PZ5-W0-gcF"/>
                         <segue destination="mv4-sU-kf7" kind="show" identifier="notifications" id="iuA-d9-EHa"/>
                         <segue destination="UyC-aL-DOv" kind="show" identifier="messages" id="zkx-WL-mjd"/>
@@ -372,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bjb-QR-GXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-825" y="-847"/>
+            <point key="canvasLocation" x="-812" y="-847"/>
         </scene>
         <!--VS-->
         <scene sceneID="eZ3-2E-xtQ">
@@ -495,7 +498,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_background" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-re-oji">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newVSBackground" translatesAutoresizingMaskIntoConstraints="NO" id="wNl-re-oji">
                                 <rect key="frame" x="-4" y="0.0" width="320" height="504"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="random_vs_icon" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-mP-wOA">
@@ -613,10 +616,10 @@
     <resources>
         <image name="PlayButton" width="187" height="108"/>
         <image name="SpectatorButton" width="187" height="102"/>
-        <image name="VSBackground_1" width="321" height="571"/>
         <image name="active_red_vs_icon" width="30" height="22"/>
         <image name="first_user" width="94" height="53"/>
-        <image name="random_vs_background" width="323" height="521"/>
+        <image name="newVSBackground" width="718" height="1045"/>
+        <image name="newVSBackground2" width="647" height="1148"/>
         <image name="random_vs_icon" width="39" height="39"/>
         <image name="red_vs_icon" width="26" height="19"/>
         <image name="second_user" width="52" height="79"/>
@@ -624,6 +627,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="JFi-Iz-5QL"/>
         <segue reference="a97-Rd-HHv"/>
-        <segue reference="TTy-ZW-Rda"/>
+        <segue reference="uaa-fb-tRY"/>
     </inferredMetricsTieBreakers>
 </document>

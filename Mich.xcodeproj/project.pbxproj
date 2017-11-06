@@ -164,6 +164,7 @@
 		CFE037FC1EB1FA7900E366A4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFE037FB1EB1FA7900E366A4 /* GoogleService-Info.plist */; };
 		CFE38FF71E7952A10037CB5B /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE38FF61E7952A10037CB5B /* HelpViewController.swift */; };
 		CFE6CE8F1DDC67BE0032F13D /* CameraLoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */; };
+		CFEAAC861FAB55CE0052012D /* TogglePrivacyStatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEAAC851FAB55CE0052012D /* TogglePrivacyStatusRequest.swift */; };
 		CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */; };
 		CFEDC6281DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */; };
 		CFF227EA1E8D492300C69A6B /* ImageView+ImageFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */; };
@@ -336,6 +337,7 @@
 		CFE037FB1EB1FA7900E366A4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFE38FF61E7952A10037CB5B /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		CFE6CE8E1DDC67BE0032F13D /* CameraLoadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraLoadViewController.swift; sourceTree = "<group>"; };
+		CFEAAC851FAB55CE0052012D /* TogglePrivacyStatusRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TogglePrivacyStatusRequest.swift; sourceTree = "<group>"; };
 		CFEDC6251DC9F1000035F685 /* ForgorPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgorPasswordViewController.swift; sourceTree = "<group>"; };
 		CFEDC6271DC9F30F0035F685 /* ForgotPasswordByEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordByEmailViewController.swift; sourceTree = "<group>"; };
 		CFF227E91E8D492300C69A6B /* ImageView+ImageFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ImageView+ImageFrame.swift"; sourceTree = "<group>"; };
@@ -764,6 +766,7 @@
 				CF7D20AB1EF174910037FE60 /* BlockUserRequest.swift */,
 				CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */,
 				CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */,
+				CFEAAC851FAB55CE0052012D /* TogglePrivacyStatusRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -897,7 +900,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1005,6 +1008,7 @@
 				1EABF9271D9E937A00CB8D1B /* UserPicturesCollectionViewCell.swift in Sources */,
 				CFF3AB211E7C1C8900A27F91 /* LikeCommentRequest.swift in Sources */,
 				CF57E5481E6440B000A3575A /* GetUserPostsRequest.swift in Sources */,
+				CFEAAC861FAB55CE0052012D /* TogglePrivacyStatusRequest.swift in Sources */,
 				1E42C06C1EE82AFA0077B707 /* Battle.swift in Sources */,
 				1E42C06E1EE82D400077B707 /* GetBattlesRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,

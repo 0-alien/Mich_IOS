@@ -2297,6 +2297,36 @@ class MichTransport {
     }
     
     
+    static func togglePrivacyStatus(token: String,  successCallbackForTogglePrivacyStatus: @escaping () -> Void, errorCallbackForTogglePrivacyStatus: @escaping (DefaultError) -> Void ){
+        
+        let reqString = BASE_URL + "user/toggleStatus"
+        
+        let toggleprivacystatus = TogglePrivacyStatusRequest(token: token)
+        let payloadJson = toggleprivacystatus.toJSONString()
+   
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForTogglePrivacyStatus()
+                    
+                }else{
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    
+                    errorCallbackForTogglePrivacyStatus(error)
+                }
+                
+            } else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForTogglePrivacyStatus(error)
+            }
+        }
+    }
     
     
     static func updateFirebaseToken(token: String, firToken: String, successCallbackForGetBattles: @escaping () -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {

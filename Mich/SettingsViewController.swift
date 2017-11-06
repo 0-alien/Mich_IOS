@@ -30,7 +30,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var view6: UIView!
     @IBOutlet weak var view7: UIView!
 
-   
+    @IBOutlet weak var switchBT: UISwitch!
+    
     @IBOutlet weak var saveBTN: UIButton!
    
     
@@ -88,9 +89,7 @@ class SettingsViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
     }
-
-    
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -113,20 +112,13 @@ class SettingsViewController: UIViewController {
             })
             ressetPassworBTN.isHidden = true;
         }
-        
-        
-        
-        
     }
     
     @IBAction func resetPasswordBTN(_ sender: Any) {
         let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
-        
         let oldPassword = oldPasswordTF.text!
-        
         let password = newPassworTF.text!
         let confirmPassword = confirmPassworTF.text!
-        
         if(password != confirmPassword){
             confirmPassworTF.text = "";
             newPassworTF.text = "";
@@ -136,25 +128,16 @@ class SettingsViewController: UIViewController {
             confirmPassworTF.layer.borderWidth = 2.0;
             return;
         }
-        
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         MichTransport.changepassword(token: appDelegate.token!, password: password, oldPassword:oldPassword, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
-
-    
     }
 
-    
     func onChnagePassword(){
-        
-    
-        
         let alert = UIAlertController(title: "Alert", message: "Password Changed!", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
     
     func onError(error: DefaultError){
         
@@ -164,15 +147,8 @@ class SettingsViewController: UIViewController {
         
     }
     
-    
-    
-
     @IBAction func changeEmailBTN(_ sender: Any) {
-  
         self.view.layoutIfNeeded() // force any pending operations to finish
-        
-        
-        
         if(emailHeightCons.constant == 0){
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.emailHeightCons.constant = 130;
@@ -192,13 +168,30 @@ class SettingsViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-    
-    
+ 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    @IBAction func switchBTN(_ sender: Any) {
+        if(switchBT.isOn){
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: offTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
+        }else{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: onTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
+        }
+    }
     
+    func onTogglePrivacyStatus(){
+        let alert = UIAlertController(title: "Alert", message: "Your account is now private", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    func offTogglePrivacyStatus(){
+        let alert = UIAlertController(title: "Alert", message: "Your account is now public", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
