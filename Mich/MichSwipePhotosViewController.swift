@@ -8,19 +8,25 @@
 
 import UIKit
 import Nuke
+import XLPagerTabStrip
 
-class MichSwipePhotosViewController: SlidingMenuPresentingViewController {
+class MichSwipePhotosViewController: ViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var viewOfPhoto: UIView!
     @IBOutlet weak var randomImage: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var tittle: UILabel!
     var postRandom: PostClass!
+    var searchController: UISearchController!
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Tinder")
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        currentIndex = 6
         MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: onSuccessGetRandomPost, errorCallbackGetRandomPost: onerror)
     }
 
@@ -28,7 +34,6 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     @IBAction func LikePhoto(_ sender: Any) {
       
@@ -68,8 +73,7 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController {
         tittle.text = post.title!;
         
     }
-    
-    
+
     func onSuccessForLike() {
         print("post liked")
     }
@@ -79,8 +83,4 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
-
-
-
 }

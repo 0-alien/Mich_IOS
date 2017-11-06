@@ -104,6 +104,7 @@ PODS:
   - Nuke (4.1.2)
   - ObjectMapper (2.2.1)
   - Preheat (3.0)
+  - XLPagerTabStrip (8.0.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - Nuke
   - ObjectMapper
   - Preheat
+  - XLPagerTabStrip (~> 8.0)
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
@@ -156,7 +158,8 @@ SPEC CHECKSUMS:
   Nuke: 7cfd2acdf90c36f66e6ea40795bac0d851a9afe0
   ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
   Preheat: 74a7813c8ea106314c6251de807cc0ae1cb7442d
+  XLPagerTabStrip: d1ab378af0923320ec0b5eab11d7b2f803d31261
 
-PODFILE CHECKSUM: 4fc7123a828a6ce4acf84b06313b6d4b77a5163b
+PODFILE CHECKSUM: 3e8eb2de15e3b4c67f59df9cd2e9f667e84229e9
 
 COCOAPODS: 1.1.1

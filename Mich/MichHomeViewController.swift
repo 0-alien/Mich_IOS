@@ -21,9 +21,9 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
 
         self.dataSource = self
         self.delegate = self
-        
         self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder"))
         self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
+        
         
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
@@ -33,7 +33,7 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.searchBar.placeholder = "Search Mich"
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.isHidden = true
+        searchController.searchBar.isHidden = false
         
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.topItem?.titleView = searchController.searchBar
@@ -91,11 +91,11 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         if completed {
             let index = viewControllerList.index(of: previousViewControllers.first!)
             if index == 0 {
-                searchController.searchBar.isHidden = false
-                currentViewController = self.viewControllerList[0]
-            } else {
                 searchController.searchBar.isHidden = true
                 currentViewController = self.viewControllerList[1]
+            } else {
+                searchController.searchBar.isHidden = false
+                currentViewController = self.viewControllerList[0]
             }
         }
     }

@@ -8,16 +8,16 @@
 
 import UIKit
 import Nuke
+import XLPagerTabStrip
 
-class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource {
+class MichSearchViewController: ViewController, UICollectionViewDataSource, IndicatorInfoProvider {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
     let itemsPerRow : CGFloat = 3.0
     var imageSideLength : CGFloat = 0.0
-    var searchController: UISearchController!
-    var resultsShower: SearchResultsViewController!
     var destinationPostId: Int?
+    var searchController: UISearchController!
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -29,10 +29,15 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     @IBOutlet weak var imageCollection: UICollectionView!
     var posts: [PostClass] = [PostClass]()
     
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Search")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.definesPresentationContext = true
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl
@@ -41,7 +46,6 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         }
         (imageCollection.collectionViewLayout as! UICollectionViewFlowLayout).itemSize = CGSize(width: imageSideLength, height: imageSideLength)
         
-        currentIndex = 3
         MichTransport.explore(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForexplore: onExploreSuccess, errorCallbackForexplore: onError)
     }
     
