@@ -19,7 +19,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var newPassworTF: UITextField!
     @IBOutlet weak var confirmPassworTF: UITextField!
     
-    
     @IBOutlet weak var ressetPassworBTN: UIButton!
     @IBOutlet weak var changePassBTN: UIButton!
     @IBOutlet weak var view1: UIView!
@@ -33,14 +32,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var switchBT: UISwitch!
     
     @IBOutlet weak var saveBTN: UIButton!
-   
     
     @IBOutlet weak var emailHeightCons: NSLayoutConstraint!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         view1.layer.shadowOpacity = 0.3;
         view1.layer.shadowRadius = 1.0;
@@ -77,8 +73,7 @@ class SettingsViewController: UIViewController {
         view6.layer.shadowColor = UIColor.black.cgColor;
         view6.layer.shadowOffset = CGSize(width: 0, height: 3)
         view6.layer.masksToBounds = false
- 
-        
+  
         view7.layer.shadowOpacity = 0.3;
         view7.layer.shadowRadius = 1.0;
         view7.layer.shadowColor = UIColor.black.cgColor;
@@ -129,7 +124,6 @@ class SettingsViewController: UIViewController {
             return;
         }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         MichTransport.changepassword(token: appDelegate.token!, password: password, oldPassword:oldPassword, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
     }
 
@@ -140,7 +134,6 @@ class SettingsViewController: UIViewController {
     }
     
     func onError(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -189,6 +182,7 @@ class SettingsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
     func offTogglePrivacyStatus(){
         let alert = UIAlertController(title: "Alert", message: "Your account is now public", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
