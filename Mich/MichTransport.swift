@@ -436,161 +436,83 @@ class MichTransport {
     
     ////////// ???????????????
     static func getCurrentUserFollowers(token: String, successCallbackForGetCurrentFollowers: @escaping ([User]) -> Void, errorCallbackForGetCurrentFollowers: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "user/relation/getFollowers"
-        
         let getCurrentUserFollowersResquest = GetCurrentUserFollowersRequest(token: token)
         let payloadJson = getCurrentUserFollowersResquest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<User>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForGetCurrentFollowers(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForGetCurrentFollowers(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForGetCurrentFollowers(error)
-                
             }
-            
         }
-        
     }
 
     ////// getusersfolloers ??????????????????
-   
     static func getUserFollowers(token: String, id: Int, successCallbackForGetFollowers: @escaping ([User]) -> Void, errorCallbackForGetFollowers: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "user/relation/getFollowers"
-        
         let getUserFollowersResquest = GetUsersFollowersRequest(token: token, id: id)
         let payloadJson = getUserFollowersResquest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<User>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForGetFollowers(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForGetFollowers(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForGetFollowers(error)
-                
             }
-            
         }
-        
     }
     
-    
     //////// get users folloing ????????????????
-    
     static func getUserFollowing(token: String, id: Int, successCallbackForGetFollowing: @escaping ([User]) -> Void, errorCallbackForGetFollowing: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "user/relation/getFollowing"
-        
         let getUserFollowingResquest = GetUsersFollowingRequest(token: token, id: id)
         let payloadJson = getUserFollowingResquest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<User>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForGetFollowing(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForGetFollowing(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForGetFollowing(error)
-                
             }
-            
         }
-        
     }
     
     ///////// done
@@ -648,61 +570,32 @@ class MichTransport {
     }
     
     ////////// done
-    
     static func unfollow(token: String, id: Int, successCallbackForUnfollow: @escaping () -> Void, errorCallbackForUnfollow: @escaping (DefaultError) -> Void) {
-        
         let reqString = BASE_URL + "user/relation/unfollow"
-        
         let unfollowrequest = UnfollowRequest(token: token, id: id)
         let payloadJson = unfollowrequest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
-                   
                     successCallbackForUnfollow()
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForUnfollow(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForUnfollow(error)
-                
             }
-            
         }
-        
     }
     
     //////////// posts
-    
-    
     static func createpost(token: String, title: String, image: UIImage, successCallbackForCreatePost: @escaping () -> Void, errorCallbackForCreatePost: @escaping (DefaultError) -> Void ){
         let reqString = BASE_URL + "post/create"
         let imageData:NSData = UIImageJPEGRepresentation(image, 0.3)! as NSData
@@ -786,420 +679,215 @@ class MichTransport {
     
     /////////////////
     static func getuserposts(token: String, id: Int, successCallbackForgetuserposts: @escaping ([PostClass]) -> Void, errorCallbackForgetuserposts: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "user/posts"
-        
         let getuserpostsResquest = GetUserPostsRequest(token: token, id: id)
         let payloadJson = getuserpostsResquest.toJSONString()
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<PostClass>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForgetuserposts(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForgetuserposts(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForgetuserposts(error)
-                
             }
-            
-            
         }
-        
-        
     }
     
     static func getpostcomments(token: String, id: Int, successCallbackForgetuserposts: @escaping ([Comment]) -> Void, errorCallbackForgetuserposts: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "post/comments"
-        
         let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
         let payloadJson = getPostCommentsRequest.toJSONString()
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<Comment>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForgetuserposts(res)
-                    
-                }else{ 
+                }else{
                     print(baseResponse!.message!)
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
                     errorCallbackForgetuserposts(error)
                 }
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForgetuserposts(error)
-                
             }
-            
-            
         }
-        
-        
     }
 
     static func getpost(token: String, id: Int, successCallbackForgetpost: @escaping (PostClass) -> Void, errorCallbackForgetpost: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "post/get"
-        
         let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
         let payloadJson = getPostCommentsRequest.toJSONString()
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<PostClass>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForgetpost(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForgetpost(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForgetpost(error)
-                
             }
-            
-            
         }
-        
-        
     }
     
-    
-    
     ///////////////////// get random post
-    
     static func getrandompost(token: String, successCallbackGetRandomPost: @escaping (PostClass) -> Void, errorCallbackGetRandomPost: @escaping (DefaultError) -> Void ){
         let reqString = BASE_URL + "post/random"
-        
         let getRandomPostRequest = GetRandomPost(token: token)
         let payloadJson = getRandomPostRequest.toJSONString()
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<PostClass>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-
                     let res = baseResponse!.data!
                     successCallbackGetRandomPost(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
                     errorCallbackGetRandomPost(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackGetRandomPost(error)
-                
             }
-            
         }
-        
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
     static func explore(token: String, successCallbackForexplore: @escaping ([PostClass]) -> Void, errorCallbackForexplore: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "post/explore"
-        
         let exploreRequest = GetCurrentUserRequest(token: token)
         let payloadJson = exploreRequest.toJSONString()
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponseArray<PostClass>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForexplore(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForexplore(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForexplore(error)
-                
             }
-            
         }
-        
     }
     
-    
     static func updateUser(token: String?, name: String?, username: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
-        
         let reqString = BASE_URL + "user/update"
         var strBase64:String = ""
-        
-        
         if(avatar != nil){
             let imageData:NSData = UIImageJPEGRepresentation(avatar!, 0.1)! as NSData
             strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
         }
-        
         let updateuserRequest = UpdateUserRequest(token: token!, name: name!, username:username!, email: email!, avatar: strBase64)
         let payloadJson = updateuserRequest.toJSONString()
-        
-
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<User>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     let res = baseResponse!.data!
                     successCallbackForUpdateUser(res)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForUpdateUser(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForUpdateUser(error)
-                
             }
-            
-            
         }
-        
     }
-    
-    
+
     static func deletepost(token: String, postID: Int,  successCallbackForDeletePost: @escaping (Int) -> Void, errorCallbackForDeletePost: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "post/delete"
-        
         let deltepostRequest = DeletePostRequest(token: token, postID: postID)
         let payloadJson = deltepostRequest.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     successCallbackForDeletePost(postID)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForDeletePost(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForDeletePost(error)
-                
             }
-            
         }
-        
     }
     
     static func likecomment(token: String, commentID: Int,  successCallbackForLikeComment: @escaping (Int) -> Void, errorCallbackForLikeComment: @escaping (DefaultError) -> Void ){
-        
         let reqString = BASE_URL + "comment/like"
-        
         let likecomment = LikeCommentRequest(token: token, commentID: commentID)
         let payloadJson = likecomment.toJSONString()
-        
-        
-        
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
-            
-            
             if( response.result.isSuccess ){
-                
                 let JString = "\(response.result.value!)"
                 print(JString)
                 let baseResponse = BaseResponse<DummyMappable>(JSONString: JString)
-                
                 if baseResponse!.code! == SUCCESS_CODE {
-                    
-                    
                     successCallbackForLikeComment(commentID)
-                    
                 }else{
-                    
                     print(baseResponse!.message!)
-                    
                     let error = DefaultError()
                     error.errorString = baseResponse!.message!
-                    
-                    
                     errorCallbackForLikeComment(error)
-                    
                 }
-                
-                
             }else{
-                
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
-                
-                
                 errorCallbackForLikeComment(error)
-                
             }
-            
         }
-        
     }
 
     static func unlikecomment(token: String, commentID: Int,  successCallbackForUnLikeComment: @escaping (Int) -> Void, errorCallbackForUnLikeComment: @escaping (DefaultError) -> Void ){
@@ -1506,8 +1194,7 @@ class MichTransport {
                 errorCallbackForTogglePrivacyStatus(error)
             }
         }
-    }
-    
+    }    
     
     static func updateFirebaseToken(token: String, firToken: String, successCallbackForGetBattles: @escaping () -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "fcm/update"
