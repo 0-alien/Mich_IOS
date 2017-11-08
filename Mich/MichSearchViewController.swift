@@ -8,9 +8,8 @@
 
 import UIKit
 import Nuke
-import XLPagerTabStrip
 
-class MichSearchViewController: ViewController, UICollectionViewDataSource, IndicatorInfoProvider {
+class MichSearchViewController: ViewController, UICollectionViewDataSource {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -28,12 +27,6 @@ class MichSearchViewController: ViewController, UICollectionViewDataSource, Indi
     
     @IBOutlet weak var imageCollection: UICollectionView!
     var posts: [PostClass] = [PostClass]()
-    
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Search")
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

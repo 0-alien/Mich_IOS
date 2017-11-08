@@ -8,21 +8,14 @@
 
 import UIKit
 import Nuke
-import XLPagerTabStrip
 
-class MichSwipePhotosViewController: ViewController, IndicatorInfoProvider {
+class MichSwipePhotosViewController: ViewController {
 
     @IBOutlet weak var viewOfPhoto: UIView!
     @IBOutlet weak var randomImage: UIImageView!
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var tittle: UILabel!
     var postRandom: PostClass!
-    var searchController: UISearchController!
-    
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Tinder")
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +61,8 @@ class MichSwipePhotosViewController: ViewController, IndicatorInfoProvider {
     func onSuccessGetRandomPost(post: PostClass) {
         postRandom = post
         Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: self.randomImage)
-        username.text = post.userName!;
-        tittle.text = post.title!;
+        username.text = post.userName!
+        tittle.text = post.title!
         
     }
 

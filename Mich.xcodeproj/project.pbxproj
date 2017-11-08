@@ -93,7 +93,6 @@
 		1EDDC25B1D9408F9004D1DD5 /* VS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */; };
 		1EE22BA91E9500C400FD5DB7 /* LikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE22BA81E9500C400FD5DB7 /* LikesViewController.swift */; };
 		1EE22BAB1E95010B00FD5DB7 /* LikesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE22BAA1E95010B00FD5DB7 /* LikesTableViewCell.swift */; };
-		1EE932A91FA8A3FD00971750 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE932A81FA8A3FD00971750 /* TestViewController.swift */; };
 		1EE9C9A91DCB4667004393A5 /* BattleTableViewCellA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */; };
 		1EEDAB5B1DF6EF96007A7EB5 /* SlidingMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */; };
 		1EEDAB5D1DF6F5A4007A7EB5 /* ScrollingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */; };
@@ -264,7 +263,6 @@
 		1EDDC25A1D9408F9004D1DD5 /* VS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VS.storyboard; sourceTree = "<group>"; };
 		1EE22BA81E9500C400FD5DB7 /* LikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesViewController.swift; sourceTree = "<group>"; };
 		1EE22BAA1E95010B00FD5DB7 /* LikesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesTableViewCell.swift; sourceTree = "<group>"; };
-		1EE932A81FA8A3FD00971750 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		1EE9C9A81DCB4667004393A5 /* BattleTableViewCellA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCellA.swift; sourceTree = "<group>"; };
 		1EEDAB5A1DF6EF96007A7EB5 /* SlidingMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlidingMenuViewController.swift; sourceTree = "<group>"; };
 		1EEDAB5C1DF6F5A4007A7EB5 /* ScrollingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollingViewController.swift; sourceTree = "<group>"; };
@@ -598,7 +596,6 @@
 				1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */,
 				1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */,
 				CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */,
-				1EE932A81FA8A3FD00971750 /* TestViewController.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -900,7 +897,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C3B3E30E97568D49A18752AC /* [CP] Embed Pods Frameworks */ = {
@@ -1003,7 +1000,6 @@
 				CFFCC0231E7ABAB0007A6AB5 /* DeletePostRequest.swift in Sources */,
 				1E0F837C1E81511F00F004CA /* VSAcceptCell.swift in Sources */,
 				1E021FEE1DABB715009D8098 /* VSTableViewSectionHeader.swift in Sources */,
-				1EE932A91FA8A3FD00971750 /* TestViewController.swift in Sources */,
 				CF5CB30D1F5D644B00C205B8 /* MichSwipePhotosViewController.swift in Sources */,
 				CF2DE2BD1E4CAF9100BD1980 /* UnfollowRequest.swift in Sources */,
 				1E0F83781E81505E00F004CA /* CommentLikedCell.swift in Sources */,

@@ -18,5 +18,4 @@ target 'Mich' do
     pod 'GoogleMaps', '~> 2.4'
     pod 'GooglePlaces', '~> 2.4'
     pod 'GooglePlacePicker'
-    pod 'XLPagerTabStrip', '~> 8.0'
 end
