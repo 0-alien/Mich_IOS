@@ -312,7 +312,6 @@ class MichTransport {
     static func logout(token: String, successCallbackForLogout: @escaping () -> Void, errorCallbackForLogout: @escaping (DefaultError) -> Void ){
         
         let reqString = BASE_URL + "auth/logout"
-        
         let logoutResquest = LogoutRequest(token: token)
         let payloadJson = logoutResquest.toJSONString()
         
