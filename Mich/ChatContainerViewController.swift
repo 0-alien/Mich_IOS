@@ -32,6 +32,8 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         channelRef = FIRDatabase.database().reference() //connect to database
         MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         self.secondsLeft = 0
+        self.hostImage = self.hostImage.circle
+        self.guestImage = self.guestImage.circle
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -42,12 +44,6 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         super.viewDidDisappear(animated)
         self.removeObservers()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.hostImage = self.hostImage.circle
-        self.guestImage = self.guestImage.circle
-    }
-    
     // MARK: - navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -65,13 +61,9 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         Nuke.loadImage(with: Foundation.URL(string: (battle.guest?.avatar)!)!, into: self.guestImage)
         self.hostPointCountLabel.text = String((battle.host?.votes)! + 0)
         self.guestPointCountLabel.text = String((battle.guest?.votes)! + 0)
-        let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        self.secondsLeft = Int(Date().timeIntervalSince(dateFormatter.date(from: (self.battle?.createAt)!)!))
-        if self.secondsLeft > 180 {
-            self.secondsLeft = 0
-        } else {
-            self.secondsLeft = 180 - self.secondsLeft
+        self.secondsLeft = self.battle?.secondsLeft
+        if self.battle?.status != 0 {
+            self.startObserving(status: (self.battle?.status)!)
         }
     }
     func update() {
@@ -90,8 +82,9 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         }
         self.timerLabel.text = self.timerLabel.text! + String(self.secondsLeft % 60)
     }
-    func startObserving() {
-        if battle?.id == 1 {
+    func startObserving(status: Int) {
+        self.battle?.status = status
+        if battle?.status == 1 {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         }
         voteRef = self.channelRef!.child(String(self.battleId)).child("votes")
@@ -144,5 +137,5 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
 }
 
 protocol MessageDelegate {
-    func startObserving()
+    func startObserving(status: Int)
 }
