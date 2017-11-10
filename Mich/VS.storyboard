@@ -170,6 +170,7 @@
                         <outlet property="guestPointCountLabel" destination="Fom-uU-8IV" id="I1Y-ym-shh"/>
                         <outlet property="hostImage" destination="qHf-qh-CE3" id="Zvw-bP-dMh"/>
                         <outlet property="hostPointCountLabel" destination="ODJ-ft-per" id="MI1-DI-ZcQ"/>
+                        <outlet property="timerLabel" destination="hMQ-dC-QDS" id="aSw-5k-94e"/>
                         <segue destination="x1h-Q5-NOr" kind="unwind" identifier="unwindtovspage" unwindAction="unwindToVSPageWithSender:" id="KdR-dQ-dwZ"/>
                     </connections>
                 </viewController>

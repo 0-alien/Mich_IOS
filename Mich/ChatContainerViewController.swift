@@ -89,6 +89,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         }
         voteRef = self.channelRef!.child(String(self.battleId)).child("votes")
         newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
+            print("DAWDAW")
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
                     self.battle?.host?.votes = val

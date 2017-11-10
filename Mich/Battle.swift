@@ -35,6 +35,6 @@ class Battle: Mappable {
         iAmGuest        <- map["iamguest"]
         createAt        <- map["created_at"]
         updatedAt       <- map["updated_at"]
-        secondsLeft     <- map["secondsLeft"]
+        secondsLeft     <- map["timeout"]
     }
 }

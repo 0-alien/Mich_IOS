@@ -98,7 +98,7 @@
                         <segue destination="RNI-jn-nne" kind="show" identifier="showcomment" id="wM0-cs-dtn"/>
                         <segue destination="3Ir-iR-qvU" kind="show" identifier="showfollower" id="foj-3F-yGw"/>
                         <segue destination="sAX-ER-HZP" kind="show" identifier="showpost" id="6fr-XE-JnP"/>
-                        <segue destination="ikA-dP-XQY" kind="show" identifier="showbattle" id="hSd-59-zih"/>
+                        <segue destination="ikA-dP-XQY" kind="presentation" identifier="showbattle" id="hSd-59-zih"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dv-nl-Txf" userLabel="First Responder" sceneMemberID="firstResponder"/>
