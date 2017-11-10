@@ -18,6 +18,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     var battle: Battle!
     var battleId: Int!
     var messages = [JSQMessage]()
+    var messageDelegate: MessageDelegate!
     
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
@@ -146,6 +147,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     }
     
     func observeMessages() {
+        self.messageDelegate.startObserving()
         messageRef = self.channelRef!.child(String(self.battleId)).child("messages")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
