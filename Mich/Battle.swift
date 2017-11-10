@@ -19,6 +19,7 @@ class Battle: Mappable {
     var updatedAt: String?
     var host: User?
     var guest: User?
+    var secondsLeft: Int?
     
     required init?(map: Map) {
         
@@ -34,5 +35,6 @@ class Battle: Mappable {
         iAmGuest        <- map["iamguest"]
         createAt        <- map["created_at"]
         updatedAt       <- map["updated_at"]
+        secondsLeft     <- map["timeout"]
     }
 }
