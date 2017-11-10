@@ -280,7 +280,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152" y="-1000"/>
+            <point key="canvasLocation" x="-55" y="-499"/>
         </scene>
         <!--Mich Home View Controller-->
         <scene sceneID="Idb-28-n7d">
@@ -372,66 +372,6 @@
             </objects>
             <point key="canvasLocation" x="-337" y="34"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="fv0-5s-evr">
-            <objects>
-                <viewController id="pG3-gd-M0B" customClass="TestViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ubn-6e-2bv"/>
-                        <viewControllerLayoutGuide type="bottom" id="n3t-wo-4YL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Imz-om-W5i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3UO-3e-d1H" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g2x-8h-8Bv">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cYp-b0-frV" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-3G-V9F">
-                                <rect key="frame" x="0.0" y="60" width="375" height="494"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3UO-3e-d1H" firstAttribute="leading" secondItem="Imz-om-W5i" secondAttribute="leading" id="0Ix-xE-qMW"/>
-                            <constraint firstAttribute="trailing" secondItem="Eaw-3G-V9F" secondAttribute="trailing" id="2dG-Eh-Sgs"/>
-                            <constraint firstItem="3UO-3e-d1H" firstAttribute="top" secondItem="ubn-6e-2bv" secondAttribute="bottom" id="9qq-lR-CWn"/>
-                            <constraint firstItem="Eaw-3G-V9F" firstAttribute="top" secondItem="3UO-3e-d1H" secondAttribute="bottom" id="Id9-Sp-qPY"/>
-                            <constraint firstItem="Eaw-3G-V9F" firstAttribute="leading" secondItem="Imz-om-W5i" secondAttribute="leading" id="Y32-uS-Rm4"/>
-                            <constraint firstItem="Eaw-3G-V9F" firstAttribute="top" secondItem="ubn-6e-2bv" secondAttribute="bottom" constant="60" id="b5P-oC-eEq"/>
-                            <constraint firstItem="n3t-wo-4YL" firstAttribute="top" secondItem="Eaw-3G-V9F" secondAttribute="bottom" id="hGl-f7-kHb"/>
-                            <constraint firstAttribute="trailing" secondItem="3UO-3e-d1H" secondAttribute="trailing" id="rem-6X-S4d"/>
-                        </constraints>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="vIH-pk-kgQ"/>
-                    <connections>
-                        <outlet property="buttonBarView" destination="3UO-3e-d1H" id="rTq-I2-b8u"/>
-                        <outlet property="containerView" destination="Eaw-3G-V9F" id="Gcw-uV-dwn"/>
-                        <segue destination="zDt-J0-cxz" kind="push" identifier="gotoprofilepage" id="CWt-lF-gcI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R0Q-ZQ-zaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1528.5" y="-697.5"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ULx-Gn-LdI">
             <objects>
@@ -454,28 +394,6 @@
             </objects>
             <point key="canvasLocation" x="-844.5" y="-696.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ddE-jX-CqU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qKl-xz-kYM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="red_mich_icon" landscapeImage="red_mich_icon" selectedImage="active_red_mich_icon" id="Ioy-vB-SpT">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Re-tw-UJd">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="pG3-gd-M0B" kind="relationship" relationship="rootViewController" id="I2O-ff-QBP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vj5-B2-rB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2024" y="-698"/>
-        </scene>
     </scenes>
     <resources>
         <image name="BackCard" width="283" height="291"/>
@@ -486,7 +404,6 @@
         <image name="x&amp;ellipse" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lyC-ev-Xr8"/>
         <segue reference="q7e-gt-x65"/>
         <segue reference="nZb-cm-hH4"/>
         <segue reference="dd6-si-jfc"/>

@@ -57,8 +57,7 @@ class VsBattlesViewController: UIViewController, UITableViewDelegate, UITableVie
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "JSQ" {
-            (segue.destination as! VSJSQViewController).senderId = "Gigi"
-            (segue.destination as! VSJSQViewController).senderDisplayName = "Gigi"
+            
         }
     }
     

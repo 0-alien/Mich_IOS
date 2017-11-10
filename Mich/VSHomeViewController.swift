@@ -47,13 +47,10 @@ class VSHomeViewController: SlidingMenuPresentingViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "showvsnotification" {
-            guard let vc = segue.destination as? VSJSQViewController else {
+            guard let vc = segue.destination as? ChatContainerViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             vc.battleId = self.destinationBattleId
-            vc.battle = nil
-            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
-            vc.senderId = String((UIApplication.shared.delegate as! AppDelegate).user!.id!)
         } else if segue.identifier == "showmybattles" {
             (segue.destination as! VSViewController).whichBattleList = 0
         } else if segue.identifier == "showtopbattles" {

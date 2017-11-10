@@ -22,23 +22,13 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
-    @IBOutlet weak var hostImage: UIImageView!
-    @IBOutlet weak var guestImage: UIImageView!
-    @IBOutlet weak var hostPointCountLabel: UILabel!
-    @IBOutlet weak var guestPointCountLabel: UILabel!
-    
     private var messageRef: FIRDatabaseReference!
-    private var voteRef: FIRDatabaseReference!
-    private var newVoteRefHandle: FIRDatabaseHandle?
     private var newMessageRefHandle: FIRDatabaseHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView!.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
-        
-        self.guestImage = self.guestImage.circle
-        self.hostImage = self.hostImage.circle
         
         channelRef = FIRDatabase.database().reference() //connect to database
         if battle == nil {
@@ -53,12 +43,6 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         super.viewDidDisappear(animated)
         self.removeObservers()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -123,17 +107,9 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
-    
-    override func didPressAccessoryButton(_ sender: UIButton!) {
-        
-    }
-    
+
     func loadBattle(battle: Battle) {
         self.battle = battle
-        self.hostImage.af_setImage(withURL: Foundation.URL(string: (battle.host?.avatar)!)!)
-        self.guestImage.af_setImage(withURL: Foundation.URL(string: (battle.guest?.avatar)!)!)
-        self.hostPointCountLabel.text = String((battle.host?.votes)! + 0)
-        self.guestPointCountLabel.text = String((battle.guest?.votes)! + 0)
         if !battle.myBattle! {
             self.inputToolbar.contentView.textView.isEditable = false
             self.inputToolbar.isHidden = true
@@ -145,8 +121,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 UIAlertAction in
                 MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
                     successCallbackForAcceptBattle: {self.battle.status = 1
-                                                    self.observeMessages()
-                                                    self.voteRef.setValue(BattleVote(host: 0, guest: 0).toJSON())},
+                                                    self.observeMessages()},
                                                     errorCallbackForAcceptBattle: self.onError)
             }
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
@@ -172,7 +147,6 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     
     func observeMessages() {
         messageRef = self.channelRef!.child(String(self.battleId)).child("messages")
-        voteRef = self.channelRef!.child(String(self.battleId)).child("votes")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
                 let JSONText = String(data: JSONData, encoding: .ascii)
@@ -185,27 +159,11 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 }
             }
         })
-        newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
-            if let val = snapshot.value as? Int {
-                if (snapshot.key == "host") {
-                    self.battle.host?.votes = val
-                    self.hostPointCountLabel.text = String((self.battle.host?.votes)! + 0)
-                } else if (snapshot.key == "guest") {
-                    self.battle.guest?.votes = val
-                    self.guestPointCountLabel.text = String((self.battle.guest?.votes)! + 0)
-                } else {
-                    print("Error! Could not decode channel data")
-                }
-            }
-        })
     }
     
     func removeObservers() {
         if let rr = newMessageRefHandle {
             messageRef.removeObserver(withHandle: rr)
-        }
-        if let rr = newVoteRefHandle {
-            voteRef.removeObserver(withHandle: rr)
         }
     }
 
@@ -227,19 +185,5 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     func messagesCollectionViewCell(_ cell: JSQMessagesCollectionViewCell!, didPerformAction action: Selector!, withSender sender: Any!) {}
     func messagesCollectionViewCellDidTap(_ cell: JSQMessagesCollectionViewCell!, atPosition position: CGPoint) {}
     
-    // MARK: actions
-    @IBAction func didVoteForHost(_ sender: Any) {
-        if self.battle.status == 1 {
-            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
-                successCallbackForVote: {self.voteRef.child("host").setValue((self.battle.host?.votes)! + 1)},
-                errorCallbackForVote: onError)
-        }
-    }
-    @IBAction func didVoteForGuest(_ sender: Any) {
-        if self.battle.status == 1 {
-            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
-                successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle.guest?.votes)! + 1)}, errorCallbackForVote: onError)
-        }
-    }
 }
 
