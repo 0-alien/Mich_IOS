@@ -122,7 +122,8 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                 UIAlertAction in
                 MichVSTransport.acceptBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
                     successCallbackForAcceptBattle: {self.battle.status = 1
-                                                    self.observeMessages()},
+                                                    self.observeMessages()
+                        self.messageDelegate.startObserving(status: 1)},
                                                     errorCallbackForAcceptBattle: self.onError)
             }
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
@@ -147,7 +148,6 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     }
     
     func observeMessages() {
-        self.messageDelegate.startObserving()
         messageRef = self.channelRef!.child(String(self.battleId)).child("messages")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
