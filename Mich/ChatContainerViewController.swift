@@ -10,11 +10,13 @@ import UIKit
 import Nuke
 import Firebase
 
-class ChatContainerViewController: UIViewController {
+class ChatContainerViewController: UIViewController, MessageDelegate {
 
     var battleId: Int!
     var battle: Battle?
     
+    var timer: Timer!
+    @IBOutlet weak var timerLabel: UILabel!
     var channelRef: FIRDatabaseReference?
     private var voteRef: FIRDatabaseReference!
     private var newVoteRefHandle: FIRDatabaseHandle?
@@ -23,18 +25,14 @@ class ChatContainerViewController: UIViewController {
     @IBOutlet weak var hostPointCountLabel: UILabel!
     @IBOutlet weak var guestImage: UIImageView!
     @IBOutlet weak var hostImage: UIImageView!
+    var secondsLeft: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         channelRef = FIRDatabase.database().reference() //connect to database
         MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
-        
+        self.secondsLeft = 0
     }
-    //
-    /*
- if let rr = newVoteRefHandle {
- voteRef.removeObserver(withHandle: rr)
- }
-    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,6 +52,7 @@ class ChatContainerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "embedchat" {
+            (segue.destination as! VSJSQViewController).messageDelegate = self
             (segue.destination as! VSJSQViewController).battleId = self.battleId
             (segue.destination as! VSJSQViewController).senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)! + 0)
             (segue.destination as! VSJSQViewController).senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
@@ -64,13 +63,37 @@ class ChatContainerViewController: UIViewController {
         self.battle = battle
         Nuke.loadImage(with: Foundation.URL(string: (battle.host?.avatar)!)!, into: self.hostImage)
         Nuke.loadImage(with: Foundation.URL(string: (battle.guest?.avatar)!)!, into: self.guestImage)
-        
         self.hostPointCountLabel.text = String((battle.host?.votes)! + 0)
         self.guestPointCountLabel.text = String((battle.guest?.votes)! + 0)
-        self.observeMessages()
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.secondsLeft = Int(Date().timeIntervalSince(dateFormatter.date(from: (self.battle?.createAt)!)!))
+        if self.secondsLeft > 180 {
+            self.secondsLeft = 0
+        } else {
+            self.secondsLeft = 180 - self.secondsLeft
+        }
     }
-    
-    func observeMessages() {
+    func update() {
+        if self.secondsLeft == 0 {
+            self.timer.invalidate()
+            return
+        }
+        self.secondsLeft = self.secondsLeft - 1
+        self.timerLabel.text = ""
+        if self.secondsLeft / 60 < 10 {
+            self.timerLabel.text = "0"
+        }
+        self.timerLabel.text = self.timerLabel.text! + String(self.secondsLeft / 60) + ":"
+        if self.secondsLeft % 60 < 10 {
+            self.timerLabel.text = self.timerLabel.text! + "0"
+        }
+        self.timerLabel.text = self.timerLabel.text! + String(self.secondsLeft % 60)
+    }
+    func startObserving() {
+        if battle?.id == 1 {
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+        }
         voteRef = self.channelRef!.child(String(self.battleId)).child("votes")
         newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
             if let val = snapshot.value as? Int {
@@ -118,4 +141,8 @@ class ChatContainerViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+}
+
+protocol MessageDelegate {
+    func startObserving()
 }
