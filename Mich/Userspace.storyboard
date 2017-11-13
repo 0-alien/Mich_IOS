@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -36,25 +37,21 @@
         <scene sceneID="etm-cX-0nc">
             <objects>
                 <viewController storyboardIdentifier="ScrollingViewController" id="FPq-Ae-Pra" customClass="ScrollingViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="v6u-ob-7Ww"/>
-                        <viewControllerLayoutGuide type="bottom" id="wHV-hN-NBQ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LtK-cy-0WE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5o-0L-OrZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="667"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="589"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvK-oR-2lj" userLabel="Leftview">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="589"/>
                                         <connections>
                                             <segue destination="YFN-JR-BMZ" kind="embed" identifier="EmbedTabBar" id="DQ2-Bv-iPg"/>
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvm-8Z-5ib" userLabel="RightView">
-                                        <rect key="frame" x="600" y="0.0" width="480" height="667"/>
+                                        <rect key="frame" x="600" y="0.0" width="480" height="589"/>
                                         <connections>
                                             <segue destination="nVN-Vu-YYv" kind="embed" identifier="EmbedMenu" id="lOk-gq-u4G"/>
                                         </connections>
@@ -64,24 +61,26 @@
                                 <constraints>
                                     <constraint firstItem="DvK-oR-2lj" firstAttribute="leading" secondItem="V5o-0L-OrZ" secondAttribute="leading" id="52w-jy-xKi"/>
                                     <constraint firstItem="lvm-8Z-5ib" firstAttribute="leading" secondItem="DvK-oR-2lj" secondAttribute="trailing" id="clo-7U-Jux"/>
-                                    <constraint firstItem="DvK-oR-2lj" firstAttribute="top" secondItem="V5o-0L-OrZ" secondAttribute="top" id="e8h-Mh-xDB"/>
                                     <constraint firstItem="lvm-8Z-5ib" firstAttribute="top" secondItem="V5o-0L-OrZ" secondAttribute="top" id="fHN-nK-PvB"/>
+                                    <constraint firstItem="DvK-oR-2lj" firstAttribute="bottom" secondItem="f43-5p-aS2" secondAttribute="bottom" id="grT-ed-nDh"/>
+                                    <constraint firstItem="lvm-8Z-5ib" firstAttribute="height" secondItem="f43-5p-aS2" secondAttribute="height" id="jGF-lW-QKU"/>
+                                    <constraint firstItem="f43-5p-aS2" firstAttribute="top" secondItem="DvK-oR-2lj" secondAttribute="top" id="lc5-M0-vcq"/>
                                     <constraint firstAttribute="bottom" secondItem="lvm-8Z-5ib" secondAttribute="bottom" id="uCJ-sI-QOl"/>
                                     <constraint firstAttribute="trailing" secondItem="lvm-8Z-5ib" secondAttribute="trailing" id="vcS-w6-8qi"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="f43-5p-aS2"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="V5o-0L-OrZ" firstAttribute="height" secondItem="LtK-cy-0WE" secondAttribute="height" id="4RD-mz-s6X"/>
-                            <constraint firstItem="V5o-0L-OrZ" firstAttribute="leading" secondItem="LtK-cy-0WE" secondAttribute="leading" id="6l4-In-ocr"/>
-                            <constraint firstItem="DvK-oR-2lj" firstAttribute="height" secondItem="LtK-cy-0WE" secondAttribute="height" id="Bdw-ck-lMF"/>
+                            <constraint firstItem="V5o-0L-OrZ" firstAttribute="height" secondItem="eTc-iU-9M2" secondAttribute="height" id="6YY-aj-xmq"/>
+                            <constraint firstItem="V5o-0L-OrZ" firstAttribute="leading" secondItem="eTc-iU-9M2" secondAttribute="leading" id="6l4-In-ocr"/>
                             <constraint firstItem="DvK-oR-2lj" firstAttribute="width" secondItem="LtK-cy-0WE" secondAttribute="width" id="M3W-iM-SDS"/>
-                            <constraint firstItem="lvm-8Z-5ib" firstAttribute="height" secondItem="LtK-cy-0WE" secondAttribute="height" id="MtW-w5-yVO"/>
                             <constraint firstItem="lvm-8Z-5ib" firstAttribute="width" secondItem="LtK-cy-0WE" secondAttribute="width" multiplier="4:5" id="PE1-yU-QmY"/>
-                            <constraint firstAttribute="trailing" secondItem="V5o-0L-OrZ" secondAttribute="trailing" id="jlX-Tm-H4S"/>
-                            <constraint firstItem="wHV-hN-NBQ" firstAttribute="top" secondItem="V5o-0L-OrZ" secondAttribute="bottom" id="z3F-di-pDM"/>
+                            <constraint firstItem="eTc-iU-9M2" firstAttribute="trailing" secondItem="V5o-0L-OrZ" secondAttribute="trailing" id="jlX-Tm-H4S"/>
+                            <constraint firstItem="eTc-iU-9M2" firstAttribute="bottom" secondItem="V5o-0L-OrZ" secondAttribute="bottom" id="z3F-di-pDM"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="eTc-iU-9M2"/>
                     </view>
                     <navigationItem key="navigationItem" id="QxX-9y-kqD"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -173,32 +172,28 @@
         <scene sceneID="e4P-zS-b6M">
             <objects>
                 <viewController storyboardIdentifier="SliderMenu" id="nVN-Vu-YYv" customClass="SlidingMenuViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mKF-Di-YVc"/>
-                        <viewControllerLayoutGuide type="bottom" id="yQP-Fk-aef"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="afe-Gl-GXT">
                         <rect key="frame" x="0.0" y="0.0" width="400" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="76h-Qx-f2R" userLabel="Background">
-                                <rect key="frame" x="0.0" y="20" width="400" height="647"/>
+                                <rect key="frame" x="0.0" y="44" width="400" height="589"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="h2q-Cy-QhN">
-                                        <rect key="frame" x="160" y="36" width="80" height="80"/>
+                                        <rect key="frame" x="160" y="32.666666666666671" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="1jH-gQ-oTO"/>
                                             <constraint firstAttribute="width" constant="80" id="k1x-8I-ajW"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89X-vo-FlF">
-                                        <rect key="frame" x="163" y="121" width="74" height="21"/>
+                                        <rect key="frame" x="163" y="117.66666666666666" width="74" height="21"/>
                                         <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-vO-YDT" userLabel="Logout">
-                                        <rect key="frame" x="150" y="591" width="100" height="36"/>
+                                        <rect key="frame" x="150" y="533" width="100" height="36"/>
                                         <color key="backgroundColor" red="0.0" green="0.011040581597222222" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                         <state key="normal" title="  Log Out" image="power">
@@ -209,7 +204,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wpj-yF-2K9">
-                                        <rect key="frame" x="0.0" y="192" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="188.66666666666666" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_notif" translatesAutoresizingMaskIntoConstraints="NO" id="uAd-zq-0kb">
                                                 <rect key="frame" x="5" y="13" width="20" height="15"/>
@@ -227,7 +222,7 @@
                                                 <rect key="frame" x="372" y="10" width="20" height="20"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuN-8y-0HE">
-                                                        <rect key="frame" x="4" y="-0.5" width="12" height="20"/>
+                                                        <rect key="frame" x="4" y="-0.33333333333331439" width="12" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -266,7 +261,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NY-LC-ciK" userLabel="Messenger">
-                                        <rect key="frame" x="0.0" y="235" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="231.66666666666669" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_message" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-KO-pwS">
                                                 <rect key="frame" x="5" y="14" width="20" height="12"/>
@@ -301,7 +296,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-mK-6yx" userLabel="Settings">
-                                        <rect key="frame" x="0.0" y="278" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="274.66666666666669" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_settings" translatesAutoresizingMaskIntoConstraints="NO" id="MVQ-DJ-FOF">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -336,7 +331,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oKX-T2-iJC" userLabel="Help">
-                                        <rect key="frame" x="0.0" y="321" width="400" height="40"/>
+                                        <rect key="frame" x="0.0" y="317.66666666666669" width="400" height="40"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="slider_menu_help" translatesAutoresizingMaskIntoConstraints="NO" id="YZs-Iw-wlo">
                                                 <rect key="frame" x="5" y="12" width="20" height="16"/>
@@ -396,12 +391,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                         <constraints>
-                            <constraint firstItem="89X-vo-FlF" firstAttribute="centerX" secondItem="afe-Gl-GXT" secondAttribute="centerX" id="0Le-hl-muI"/>
-                            <constraint firstItem="76h-Qx-f2R" firstAttribute="leading" secondItem="afe-Gl-GXT" secondAttribute="leading" id="2Mo-o3-Hui"/>
-                            <constraint firstItem="76h-Qx-f2R" firstAttribute="top" secondItem="mKF-Di-YVc" secondAttribute="bottom" id="B83-PP-589"/>
-                            <constraint firstAttribute="trailing" secondItem="76h-Qx-f2R" secondAttribute="trailing" id="Kjh-KP-Dn0"/>
-                            <constraint firstItem="yQP-Fk-aef" firstAttribute="top" secondItem="76h-Qx-f2R" secondAttribute="bottom" id="uQs-Sn-oIm"/>
+                            <constraint firstItem="89X-vo-FlF" firstAttribute="centerX" secondItem="kPP-Rj-P84" secondAttribute="centerX" id="0Le-hl-muI"/>
+                            <constraint firstItem="76h-Qx-f2R" firstAttribute="leading" secondItem="kPP-Rj-P84" secondAttribute="leading" id="2Mo-o3-Hui"/>
+                            <constraint firstItem="76h-Qx-f2R" firstAttribute="top" secondItem="kPP-Rj-P84" secondAttribute="top" id="B83-PP-589"/>
+                            <constraint firstItem="kPP-Rj-P84" firstAttribute="trailing" secondItem="76h-Qx-f2R" secondAttribute="trailing" id="Kjh-KP-Dn0"/>
+                            <constraint firstItem="kPP-Rj-P84" firstAttribute="bottom" secondItem="76h-Qx-f2R" secondAttribute="bottom" id="uQs-Sn-oIm"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="kPP-Rj-P84"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="667"/>
