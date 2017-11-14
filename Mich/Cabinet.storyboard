@@ -141,7 +141,7 @@
                             <constraint firstItem="OhB-9I-srE" firstAttribute="trailing" secondItem="ULf-f4-q1a" secondAttribute="trailing" symbolic="YES" id="Jpq-lN-JEa"/>
                             <constraint firstItem="j2d-B0-00R" firstAttribute="top" secondItem="4Pl-WP-ILZ" secondAttribute="bottom" constant="8" id="ThV-C8-v9r"/>
                             <constraint firstItem="5j2-B0-Ai0" firstAttribute="trailing" secondItem="4Pl-WP-ILZ" secondAttribute="trailing" id="Xbq-9G-oFF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iI6-1g-oWP" secondAttribute="trailing" constant="30" id="YfO-wg-VFi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iI6-1g-oWP" secondAttribute="trailing" id="YfO-wg-VFi"/>
                             <constraint firstItem="4Pl-WP-ILZ" firstAttribute="top" secondItem="KtN-QN-U5B" secondAttribute="bottom" constant="30" id="Z7y-aZ-rLT"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="top" secondItem="OhB-9I-srE" secondAttribute="top" constant="-100" id="ZKC-ii-7is"/>
                             <constraint firstItem="ULf-f4-q1a" firstAttribute="leading" secondItem="OhB-9I-srE" secondAttribute="leading" symbolic="YES" id="bX3-vE-bnf"/>
@@ -174,7 +174,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dpd-2Y-gs0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="9QV-gV-7Ka"/>
             </objects>
-            <point key="canvasLocation" x="2621.5999999999999" y="-12.143928035982009"/>
+            <point key="canvasLocation" x="2621.5999999999999" y="-12.561576354679804"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Cyh-kX-hAJ">
