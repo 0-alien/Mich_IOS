@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,23 +16,19 @@
         <scene sceneID="7vi-4G-04X">
             <objects>
                 <viewController storyboardIdentifier="Notifications" title="Notifications" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="PmC-bg-bHb" customClass="NotificationsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pGe-i4-LII"/>
-                        <viewControllerLayoutGuide type="bottom" id="Izj-pi-3m8"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8dN-Cn-7JE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hyb-Lu-Amh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsTableViewCell" rowHeight="73" id="hJI-G1-bi9" customClass="NotificationsTableViewCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hJI-G1-bi9" id="q4d-O5-c8O">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.666666666666671"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="98x-y2-r0q">
@@ -42,10 +39,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWX-cr-1Y5">
-                                                    <rect key="frame" x="59" y="0.0" width="316" height="72.5"/>
+                                                    <rect key="frame" x="59" y="0.0" width="316" height="72.666666666666671"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIg-Lx-JET">
-                                                            <rect key="frame" x="16" y="8" width="284" height="56.5"/>
+                                                            <rect key="frame" x="16" y="7.9999999999999964" width="284" height="56.666666666666657"/>
                                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -83,11 +80,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hyb-Lu-Amh" firstAttribute="leading" secondItem="8dN-Cn-7JE" secondAttribute="leading" id="LHR-5J-T1H"/>
-                            <constraint firstAttribute="trailing" secondItem="hyb-Lu-Amh" secondAttribute="trailing" id="d8m-wm-n6A"/>
-                            <constraint firstItem="hyb-Lu-Amh" firstAttribute="top" secondItem="pGe-i4-LII" secondAttribute="bottom" id="ebI-Fb-enV"/>
-                            <constraint firstItem="Izj-pi-3m8" firstAttribute="top" secondItem="hyb-Lu-Amh" secondAttribute="bottom" id="sQr-4E-s31"/>
+                            <constraint firstItem="hyb-Lu-Amh" firstAttribute="leading" secondItem="vCC-lU-ddx" secondAttribute="leading" id="LHR-5J-T1H"/>
+                            <constraint firstItem="vCC-lU-ddx" firstAttribute="trailing" secondItem="hyb-Lu-Amh" secondAttribute="trailing" id="d8m-wm-n6A"/>
+                            <constraint firstItem="hyb-Lu-Amh" firstAttribute="top" secondItem="vCC-lU-ddx" secondAttribute="top" id="ebI-Fb-enV"/>
+                            <constraint firstItem="vCC-lU-ddx" firstAttribute="bottom" secondItem="hyb-Lu-Amh" secondAttribute="bottom" id="sQr-4E-s31"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="vCC-lU-ddx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Notifications" id="4cU-ba-nF2">
                         <barButtonItem key="backBarButtonItem" title="Back" id="r1i-Ey-ktb"/>
@@ -140,17 +138,13 @@
         <!--Settings-->
         <scene sceneID="UVp-KM-N0f">
             <objects>
-                <viewController storyboardIdentifier="Settings" hidesBottomBarWhenPushed="YES" id="AWb-rr-c6J" customClass="SettingsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="41k-iv-fwS"/>
-                        <viewControllerLayoutGuide type="bottom" id="nAT-H8-stp"/>
-                    </layoutGuides>
+                <viewController storyboardIdentifier="Settings" title="Settings" hidesBottomBarWhenPushed="YES" id="AWb-rr-c6J" customClass="SettingsViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uty-es-w9L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L5H-BR-XOP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUF-bz-MVX">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -408,18 +402,20 @@
                                     <constraint firstItem="bUF-bz-MVX" firstAttribute="top" secondItem="L5H-BR-XOP" secondAttribute="top" id="FcY-z2-eyR"/>
                                     <constraint firstAttribute="trailing" secondItem="bUF-bz-MVX" secondAttribute="trailing" id="prW-uR-mwP"/>
                                 </constraints>
+                                <viewLayoutGuide key="safeArea" id="dN9-M9-LgM"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="L5H-BR-XOP" secondAttribute="trailing" id="G02-Vd-bTn"/>
+                            <constraint firstItem="L5H-BR-XOP" firstAttribute="bottom" secondItem="UdU-Gk-A0Y" secondAttribute="bottom" id="EKx-Qz-6Kn"/>
+                            <constraint firstItem="UdU-Gk-A0Y" firstAttribute="trailing" secondItem="L5H-BR-XOP" secondAttribute="trailing" id="G02-Vd-bTn"/>
                             <constraint firstItem="bUF-bz-MVX" firstAttribute="width" secondItem="Uty-es-w9L" secondAttribute="width" id="QfT-Sz-uWM"/>
-                            <constraint firstItem="L5H-BR-XOP" firstAttribute="top" secondItem="Uty-es-w9L" secondAttribute="top" id="TM1-Fc-yAy"/>
-                            <constraint firstAttribute="bottom" secondItem="L5H-BR-XOP" secondAttribute="bottom" id="dla-hv-PXs"/>
-                            <constraint firstItem="L5H-BR-XOP" firstAttribute="leading" secondItem="Uty-es-w9L" secondAttribute="leading" id="hFz-u7-AID"/>
+                            <constraint firstItem="L5H-BR-XOP" firstAttribute="leading" secondItem="UdU-Gk-A0Y" secondAttribute="leading" id="hFz-u7-AID"/>
+                            <constraint firstItem="UdU-Gk-A0Y" firstAttribute="top" secondItem="L5H-BR-XOP" secondAttribute="top" id="kSM-a6-PwL"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="UdU-Gk-A0Y"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="ROS-9F-5yL"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="changePassBTN" destination="34v-ql-akH" id="kF0-fR-ln1"/>
                         <outlet property="confirmPassworTF" destination="Qgs-OS-3EE" id="mh8-ze-wpr"/>
@@ -447,27 +443,23 @@
         <scene sceneID="n5J-e5-6hb">
             <objects>
                 <viewController storyboardIdentifier="Messages" title="Messages" hidesBottomBarWhenPushed="YES" id="TQi-cI-UU9" customClass="MessagesTableViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rX2-6A-7ye"/>
-                        <viewControllerLayoutGuide type="bottom" id="1Gm-L7-3IF"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZkB-35-Tjy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2dp-hc-yiq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MessagesTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesTableViewCell" rowHeight="60" id="75C-vq-ful" customClass="MessagesTableViewCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="75C-vq-ful" id="e6G-ns-cN8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TFj-ar-MkZ">
-                                                    <rect key="frame" x="2" y="0.0" width="59.5" height="59.5"/>
+                                                    <rect key="frame" x="2" y="0.0" width="59.666666666666664" height="59.666666666666664"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="TFj-ar-MkZ" secondAttribute="height" id="DoR-pd-FhA"/>
                                                     </constraints>
@@ -512,11 +504,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1Gm-L7-3IF" firstAttribute="top" secondItem="2dp-hc-yiq" secondAttribute="bottom" id="UBz-IP-Cxg"/>
-                            <constraint firstAttribute="trailing" secondItem="2dp-hc-yiq" secondAttribute="trailing" id="cte-vx-heA"/>
-                            <constraint firstItem="2dp-hc-yiq" firstAttribute="top" secondItem="rX2-6A-7ye" secondAttribute="bottom" id="xbN-Bg-EC5"/>
-                            <constraint firstItem="2dp-hc-yiq" firstAttribute="leading" secondItem="ZkB-35-Tjy" secondAttribute="leading" id="zIe-ra-Fhx"/>
+                            <constraint firstItem="tDS-eF-dxP" firstAttribute="bottom" secondItem="2dp-hc-yiq" secondAttribute="bottom" id="UBz-IP-Cxg"/>
+                            <constraint firstItem="tDS-eF-dxP" firstAttribute="trailing" secondItem="2dp-hc-yiq" secondAttribute="trailing" id="cte-vx-heA"/>
+                            <constraint firstItem="2dp-hc-yiq" firstAttribute="top" secondItem="tDS-eF-dxP" secondAttribute="top" id="xbN-Bg-EC5"/>
+                            <constraint firstItem="2dp-hc-yiq" firstAttribute="leading" secondItem="tDS-eF-dxP" secondAttribute="leading" id="zIe-ra-Fhx"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="tDS-eF-dxP"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -531,14 +524,11 @@
         <scene sceneID="5CA-Qe-cjv">
             <objects>
                 <viewController storyboardIdentifier="ChatViewController" id="t8i-mJ-CNo" customClass="ChatViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gNE-R0-i56"/>
-                        <viewControllerLayoutGuide type="bottom" id="gqA-hE-oGQ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LEi-Cf-Edb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="LY8-aV-V8h"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQ3-Yo-17o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -549,12 +539,8 @@
         <scene sceneID="puC-T4-W4f">
             <objects>
                 <viewController storyboardIdentifier="Help" hidesBottomBarWhenPushed="YES" id="MjQ-ba-56z" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5bs-RS-u3h"/>
-                        <viewControllerLayoutGuide type="bottom" id="qNc-SK-cbL"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mHa-n6-k7G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hrlp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyv-da-j1p">
@@ -566,6 +552,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="afg-iy-Ye0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrm-Pj-kIn" userLabel="First Responder" sceneMemberID="firstResponder"/>

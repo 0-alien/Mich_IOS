@@ -20,6 +20,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     var channelRef: FIRDatabaseReference?
     private var voteRef: FIRDatabaseReference!
     private var newVoteRefHandle: FIRDatabaseHandle?
+    private var voteAddedRefHandle: FIRDatabaseHandle?
     
     @IBOutlet weak var guestPointCountLabel: UILabel!
     @IBOutlet weak var hostPointCountLabel: UILabel!
@@ -88,8 +89,20 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         }
         voteRef = self.channelRef!.child(String(self.battleId)).child("votes")
+        voteAddedRefHandle = voteRef.observe(.childAdded, with: { (snapshot) -> Void in
+            if let val = snapshot.value as? Int {
+                if (snapshot.key == "host") {
+                    self.battle?.host?.votes = val
+                    self.hostPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                } else if (snapshot.key == "guest") {
+                    self.battle?.guest?.votes = val
+                    self.guestPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                } else {
+                    print("Error! Could not decode channel data")
+                }
+            }
+        })
         newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
-            print("DAWDAW")
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
                     self.battle?.host?.votes = val
@@ -106,6 +119,9 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     
     func removeObservers() {
         if let rr = newVoteRefHandle {
+            voteRef.removeObserver(withHandle: rr)
+        }
+        if let rr = voteAddedRefHandle {
             voteRef.removeObserver(withHandle: rr)
         }
     }

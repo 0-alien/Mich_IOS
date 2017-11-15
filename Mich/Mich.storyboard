@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -11,55 +12,15 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notifications-->
-        <scene sceneID="hgB-Wz-eIJ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Notifications" id="qT7-2I-EqN" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="xEX-6L-fqB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e39-gh-1ya" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1589" y="657"/>
-        </scene>
-        <!--TermsAndConditionsViewController-->
-        <scene sceneID="p9q-qd-JLm">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Cabinet" referencedIdentifier="TermsAndConditionsViewController" id="cMl-yc-xOq" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="i2u-vz-bpV"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RoH-tB-WCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-859" y="657"/>
-        </scene>
         <!--EditImage-->
         <scene sceneID="gVV-Ta-BX1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-KP-bMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="xOp-Aa-aNr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="b42-VY-xrT"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-KP-bMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-572" y="657"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="ugf-24-3b5">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Settings" id="ZM7-Je-omX" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZeZ-JM-9bg"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s6x-T0-gMP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1148" y="657"/>
-        </scene>
-        <!--Messages-->
-        <scene sceneID="UnE-Od-yi0">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Messages" id="vFX-A9-z92" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="oH8-j0-baE"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qAf-o8-13f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1328" y="657"/>
+            <point key="canvasLocation" x="244" y="-600"/>
         </scene>
         <!--Tinder-->
         <scene sceneID="UKw-oE-QI7">
@@ -177,11 +138,6 @@
                         <outlet property="username" destination="98S-Lj-FSl" id="YOO-Vh-rb4"/>
                         <outlet property="viewOfPhoto" destination="aPH-8w-hN0" id="8Ji-PN-97A"/>
                         <segue destination="yos-CW-6Kk" kind="push" identifier="showpost" id="b7b-mh-FrO"/>
-                        <segue destination="qT7-2I-EqN" kind="push" identifier="notifications" id="0aZ-Y0-mpO"/>
-                        <segue destination="vFX-A9-z92" kind="push" identifier="messages" id="8xB-Rr-Eo1"/>
-                        <segue destination="ZM7-Je-omX" kind="push" identifier="settings" id="4uY-nB-sOH"/>
-                        <segue destination="cMl-yc-xOq" kind="push" identifier="help" id="KJL-vx-JVs"/>
-                        <segue destination="xOp-Aa-aNr" kind="push" identifier="gotoeditimage" id="eqd-aV-KaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nma-Ba-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-0S-cD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="71"/>
+            <point key="canvasLocation" x="186" y="34"/>
         </scene>
         <!--userpage-->
         <scene sceneID="mof-1y-Iab">
@@ -280,7 +236,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-499"/>
+            <point key="canvasLocation" x="242" y="-870"/>
         </scene>
         <!--Mich Home View Controller-->
         <scene sceneID="Idb-28-n7d">
@@ -290,6 +246,7 @@
                     <navigationItem key="navigationItem" id="m6h-cc-BG6"/>
                     <connections>
                         <segue destination="zDt-J0-cxz" kind="push" identifier="gotoprofilepage" id="lyC-ev-Xr8"/>
+                        <segue destination="xOp-Aa-aNr" kind="push" identifier="gotoeditimage" id="mYf-iD-CNn"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-u5-iQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -361,11 +318,6 @@
                     <navigationItem key="navigationItem" id="bzj-kr-aEc"/>
                     <connections>
                         <outlet property="imageCollection" destination="9zx-ns-jmb" id="WFV-gz-CJh"/>
-                        <segue destination="qT7-2I-EqN" kind="push" identifier="notifications" id="TG8-91-GOx"/>
-                        <segue destination="vFX-A9-z92" kind="push" identifier="messages" id="nZb-cm-hH4"/>
-                        <segue destination="ZM7-Je-omX" kind="push" identifier="settings" id="dd6-si-jfc"/>
-                        <segue destination="cMl-yc-xOq" kind="push" identifier="help" id="K21-nQ-YCO"/>
-                        <segue destination="xOp-Aa-aNr" kind="push" identifier="gotoeditimage" id="fy8-0K-poi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -382,7 +334,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lOW-hG-Qpp">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -405,10 +357,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="q7e-gt-x65"/>
-        <segue reference="nZb-cm-hH4"/>
-        <segue reference="dd6-si-jfc"/>
-        <segue reference="fy8-0K-poi"/>
-        <segue reference="K21-nQ-YCO"/>
-        <segue reference="TG8-91-GOx"/>
     </inferredMetricsTieBreakers>
 </document>

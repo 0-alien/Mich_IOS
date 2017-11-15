@@ -114,6 +114,8 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         if !battle.myBattle! {
             self.inputToolbar.contentView.textView.isEditable = false
             self.inputToolbar.isHidden = true
+            self.senderId = String((self.battle.host?.id)! + 0)
+            self.senderDisplayName = self.battle.host?.username
             // self.inputToolbar.removeFromSuperview() warning
         }
         if battle.status == 0 && battle.iAmGuest! {
