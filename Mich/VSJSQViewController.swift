@@ -12,7 +12,7 @@ import JSQMessagesViewController
 import ObjectMapper
 import AlamofireImage
 
-class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewCellDelegate {
+class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewCellDelegate, Finishable {
 
     var channelRef: FIRDatabaseReference?
     var battle: Battle!
@@ -171,6 +171,12 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         }
     }
 
+    // MARK: - finishable
+    func finish() {
+        self.view.endEditing(true)
+        self.inputToolbar.contentView.textView.isEditable = false
+        self.inputToolbar.isHidden = true
+    }
     // MARK: callbacks
     func onGetBattleSuccess(resp: Battle) {
         self.battle = resp

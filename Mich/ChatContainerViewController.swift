@@ -27,6 +27,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     @IBOutlet weak var guestImage: UIImageView!
     @IBOutlet weak var hostImage: UIImageView!
     var secondsLeft: Int!
+    var finishable: Finishable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "embedchat" {
+            self.finishable = (segue.destination as! VSJSQViewController)
             (segue.destination as! VSJSQViewController).messageDelegate = self
             (segue.destination as! VSJSQViewController).battleId = self.battleId
             (segue.destination as! VSJSQViewController).senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)! + 0)
@@ -70,9 +72,14 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     func update() {
         if self.secondsLeft == 0 {
             self.timer.invalidate()
+            self.timerLabel.textColor = UIColor.red
+            self.finishable?.finish()
             return
         }
         self.secondsLeft = self.secondsLeft - 1
+        if self.secondsLeft < 30 && self.secondsLeft != 0 {
+            self.timerLabel.textColor = UIColor.yellow
+        }
         self.timerLabel.text = ""
         if self.secondsLeft / 60 < 10 {
             self.timerLabel.text = "0"
@@ -155,4 +162,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
 
 protocol MessageDelegate {
     func startObserving(status: Int)
+}
+protocol Finishable {
+    func finish()
 }
