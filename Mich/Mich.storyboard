@@ -75,17 +75,17 @@
                                             <constraint firstAttribute="height" constant="1" id="iX3-XC-VGd"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PWt-mg-Xvt">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PWt-mg-Xvt">
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="400.5"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98S-Lj-FSl">
-                                        <rect key="frame" x="10" y="405.5" width="70.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <rect key="frame" x="10" y="405.5" width="62" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tittle.... Tittle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-Ww-qZm">
-                                        <rect key="frame" x="10" y="426" width="65.5" height="12"/>
+                                        <rect key="frame" x="10" y="423" width="65.5" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -93,7 +93,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="FVc-Ww-qZm" firstAttribute="top" secondItem="98S-Lj-FSl" secondAttribute="bottom" constant="2.5" id="8vA-KY-rtH"/>
+                                    <constraint firstItem="FVc-Ww-qZm" firstAttribute="top" secondItem="98S-Lj-FSl" secondAttribute="bottom" constant="1.5" id="8vA-KY-rtH"/>
                                     <constraint firstAttribute="trailing" secondItem="PWt-mg-Xvt" secondAttribute="trailing" constant="0.5" id="CWv-wa-FX7"/>
                                     <constraint firstItem="98S-Lj-FSl" firstAttribute="leading" secondItem="9Kw-Kg-DdK" secondAttribute="leading" constant="10" id="HPw-II-KrC"/>
                                     <constraint firstAttribute="bottom" secondItem="9Kw-Kg-DdK" secondAttribute="bottom" id="Lzx-CS-GQc"/>

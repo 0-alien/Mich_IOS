@@ -48,15 +48,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.textOfImage.delegate = self
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
         doneButtone.isEnabled = true
         panGets = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(_:)))
         textOfImage.addGestureRecognizer(panGets)
-        
-        
+                
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
