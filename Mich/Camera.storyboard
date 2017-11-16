@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,6 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,11 +16,14 @@
         <scene sceneID="pcr-ZD-5hX">
             <objects>
                 <viewController restorationIdentifier="z" storyboardIdentifier="Camera" id="mxP-xi-PCC" customClass="CameraLoadViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vpl-aX-2L2"/>
+                        <viewControllerLayoutGuide type="bottom" id="eIL-GT-Afs"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ujJ-6x-QgF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="inY-qC-G6A"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="red_plus_icon" landscapeImage="red_plus_icon" selectedImage="active_red_plus_icon" id="cnD-Pm-Ah7">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
@@ -37,12 +39,16 @@
         <scene sceneID="mwv-J7-O9R">
             <objects>
                 <viewController storyboardIdentifier="EditImage" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="4O9-bL-jmS" customClass="EditImageViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I3N-QI-cyI"/>
+                        <viewControllerLayoutGuide type="bottom" id="jws-Pt-qhZ"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HmF-45-Pir">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="88" width="375" height="676.66666666666663"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="678"/>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -62,7 +68,7 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
-                                <rect key="frame" x="16" y="772.66666666666663" width="165" height="39"/>
+                                <rect key="frame" x="16" y="774" width="165" height="37.666666666666629"/>
                                 <color key="backgroundColor" red="0.083276863044389637" green="0.07955802992012817" blue="0.081219741089064934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="adjust"/>
                                 <connections>
@@ -80,7 +86,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-Uk-pUW">
-                                <rect key="frame" x="194" y="772.66666666666663" width="165" height="39.333333333333371"/>
+                                <rect key="frame" x="194" y="774" width="165" height="38"/>
                                 <color key="backgroundColor" red="0.083276863039999996" green="0.079558029919999995" blue="0.081219741090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="T">
@@ -100,18 +106,16 @@
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3mc-F1-NjE"/>
                             <constraint firstAttribute="bottom" secondItem="5vO-Uk-pUW" secondAttribute="bottom" id="4Dj-ds-Guu"/>
                             <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerY" secondItem="HmF-45-Pir" secondAttribute="centerY" id="5ke-Db-1Gp"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="0Ea-bo-IHV" secondAttribute="top" id="67l-0k-Svy"/>
+                            <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="I3N-QI-cyI" secondAttribute="bottom" id="67l-0k-Svy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A6S-Mq-zfJ" secondAttribute="trailing" constant="-16" id="AO3-bX-3XA"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="H52-PK-nId"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="0Ea-bo-IHV" secondAttribute="leading" id="Ihe-1n-vDq"/>
-                            <constraint firstItem="src-mk-xhh" firstAttribute="height" secondItem="HmF-45-Pir" secondAttribute="height" multiplier="5:6" id="POQ-76-h7k"/>
+                            <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="Ihe-1n-vDq"/>
                             <constraint firstItem="5vO-Uk-pUW" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="Pqi-RG-XJi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5vO-Uk-pUW" secondAttribute="trailing" id="U4R-hJ-ifR"/>
-                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerX" secondItem="0Ea-bo-IHV" secondAttribute="centerX" id="Zhn-Zq-Sj6"/>
+                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerX" secondItem="HmF-45-Pir" secondAttribute="centerX" id="Zhn-Zq-Sj6"/>
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="hvw-y1-KBB"/>
                             <constraint firstItem="A6S-Mq-zfJ" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-16" id="z3m-e3-ar6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0Ea-bo-IHV"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Edit Photo" id="vcd-8C-nFt">
@@ -147,6 +151,10 @@
         <scene sceneID="RZ1-UE-I8e">
             <objects>
                 <viewController id="nq9-1d-0fg" customClass="TagImageViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HPq-Gw-kP4"/>
+                        <viewControllerLayoutGuide type="bottom" id="KXs-pW-SEp"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wne-rv-dIO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,14 +229,13 @@
                             <constraint firstItem="mwS-B7-6rz" firstAttribute="leading" secondItem="KfC-Yf-u70" secondAttribute="trailing" constant="8" id="2Ga-Qm-Gfb"/>
                             <constraint firstAttribute="bottom" secondItem="jqR-Io-FmY" secondAttribute="bottom" id="4ZQ-BS-naI"/>
                             <constraint firstItem="jqR-Io-FmY" firstAttribute="top" secondItem="mwS-B7-6rz" secondAttribute="bottom" constant="10" id="Kj2-PY-T6g"/>
-                            <constraint firstItem="mwS-B7-6rz" firstAttribute="top" secondItem="JPa-zD-5w7" secondAttribute="top" constant="8" id="bhH-Ig-tlU"/>
+                            <constraint firstItem="mwS-B7-6rz" firstAttribute="top" secondItem="HPq-Gw-kP4" secondAttribute="bottom" constant="8" id="bhH-Ig-tlU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mwS-B7-6rz" secondAttribute="trailing" id="c1i-Y8-gVA"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KfC-Yf-u70" secondAttribute="leading" id="hcr-DM-UJh"/>
-                            <constraint firstItem="jqR-Io-FmY" firstAttribute="leading" secondItem="JPa-zD-5w7" secondAttribute="leading" id="kbD-e0-kb5"/>
-                            <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="JPa-zD-5w7" secondAttribute="top" constant="8" id="os4-jR-5gx"/>
-                            <constraint firstItem="JPa-zD-5w7" firstAttribute="trailing" secondItem="jqR-Io-FmY" secondAttribute="trailing" id="sSf-1r-1VJ"/>
+                            <constraint firstItem="jqR-Io-FmY" firstAttribute="leading" secondItem="Wne-rv-dIO" secondAttribute="leading" id="kbD-e0-kb5"/>
+                            <constraint firstItem="KfC-Yf-u70" firstAttribute="top" secondItem="HPq-Gw-kP4" secondAttribute="bottom" constant="8" id="os4-jR-5gx"/>
+                            <constraint firstAttribute="trailing" secondItem="jqR-Io-FmY" secondAttribute="trailing" id="sSf-1r-1VJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="JPa-zD-5w7"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="FdE-XE-JYv">
@@ -255,4 +262,5 @@
         <image name="adjust" width="17" height="17"/>
         <image name="red_plus_icon" width="21" height="22"/>
     </resources>
+    <color key="tintColor" red="0.14321674309999999" green="0.14182212080000001" blue="0.1374021524" alpha="1" colorSpace="calibratedRGB"/>
 </document>

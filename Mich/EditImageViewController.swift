@@ -107,8 +107,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         view.layoutIfNeeded()
     }
     
-    
-    
     @IBAction func crop(_ sender: Any) {
         photo.image = photo.image?.fixedOrientation()
         let scale:CGFloat = 1 / scrollView.zoomScale
@@ -144,8 +142,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-
         if segue.identifier == "tagimage" {
             photo.image = photo.image?.fixedOrientation()
             let scale:CGFloat = 1 / scrollView.zoomScale
