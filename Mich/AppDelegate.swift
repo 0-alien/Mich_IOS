@@ -21,7 +21,7 @@ import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+    var savedIndex: Int! = 0
     var window: UIWindow?
     var token:String?
     var waiting: Bool! = false

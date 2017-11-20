@@ -8,8 +8,9 @@
 
 import UIKit
 import Nuke
+import XLPagerTabStrip
 
-class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegate, IndicatorInfoProvider {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -31,7 +32,7 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.currentIndex = 4
+        self.currentIndex = 5
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl
@@ -47,6 +48,10 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - xlpager indicatorinfo
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Search")
+    }
     
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -10,7 +10,6 @@ import UIKit
 
 class MichHomeViewController: SlidingMenuPresentingViewController, UserListener {
     
-    var viewControllerList: [UIViewController] = [UIViewController]()
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
     var currentViewController: UIViewController! = nil
@@ -19,11 +18,8 @@ class MichHomeViewController: SlidingMenuPresentingViewController, UserListener 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.currentIndex = 3
         
-        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder"))
-        //self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
         searchController = UISearchController(searchResultsController: resultsShower)

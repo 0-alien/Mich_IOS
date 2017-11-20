@@ -23,15 +23,24 @@
                     <view key="view" contentMode="scaleToFill" id="Y8b-S9-Uu0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOr-ny-0cU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <connections>
+                                    <segue destination="JTe-fq-nhn" kind="embed" id="VK1-Mw-Ish"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vOr-ny-0cU" secondAttribute="trailing" id="Cdv-CY-0zq"/>
+                            <constraint firstItem="vOr-ny-0cU" firstAttribute="top" secondItem="l29-v3-XNS" secondAttribute="bottom" id="HyM-r8-Yzo"/>
+                            <constraint firstItem="vOr-ny-0cU" firstAttribute="leading" secondItem="Y8b-S9-Uu0" secondAttribute="leading" id="PwB-4C-SBR"/>
+                            <constraint firstItem="R7f-k4-Dce" firstAttribute="top" secondItem="vOr-ny-0cU" secondAttribute="bottom" id="g0b-Sb-5iu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yKJ-BV-hfT"/>
                     <connections>
-                        <segue destination="30J-ZQ-fkG" kind="push" identifier="notifications" id="EWD-C2-Clm"/>
-                        <segue destination="ijQ-5V-o4Q" kind="push" identifier="messages" id="cG5-9U-e1d"/>
-                        <segue destination="fR0-Cc-XO5" kind="push" identifier="settings" id="44C-yY-osR"/>
-                        <segue destination="mpy-Iq-rVY" kind="push" identifier="help" id="HgC-Ad-YB9"/>
-                        <segue destination="uTC-4f-j5X" kind="push" identifier="gotoeditimage" id="G5k-Fs-Q97"/>
                         <segue destination="eMp-Wf-byd" kind="push" identifier="gotoprofilepage" id="R6D-X6-UtD"/>
                     </connections>
                 </viewController>
@@ -156,11 +165,12 @@
                         <outlet property="username" destination="98S-Lj-FSl" id="YOO-Vh-rb4"/>
                         <outlet property="viewOfPhoto" destination="aPH-8w-hN0" id="8Ji-PN-97A"/>
                         <segue destination="yos-CW-6Kk" kind="push" identifier="showpost" id="b7b-mh-FrO"/>
+                        <segue destination="uTC-4f-j5X" kind="push" identifier="gotoeditimage" id="XR2-y7-3gW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nma-Ba-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-732.5" y="-564.5"/>
+            <point key="canvasLocation" x="-369" y="-550"/>
         </scene>
         <!--PostViewController-->
         <scene sceneID="may-nM-mXZ">
@@ -170,7 +180,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilH-7B-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-663" y="-73"/>
+            <point key="canvasLocation" x="102" y="-51"/>
         </scene>
         <!--userpage-->
         <scene sceneID="01M-bd-sa7">
@@ -322,10 +332,11 @@
                     <navigationItem key="navigationItem" id="bzj-kr-aEc"/>
                     <connections>
                         <outlet property="imageCollection" destination="9zx-ns-jmb" id="WFV-gz-CJh"/>
+                        <segue destination="uTC-4f-j5X" kind="push" identifier="gotoeditimage" id="29F-Gi-QT8"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-308.5" y="-564.5"/>
+            <point key="canvasLocation" x="102" y="-565"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4i5-7U-4p0">
@@ -349,55 +360,29 @@
             </objects>
             <point key="canvasLocation" x="-1646" y="-575"/>
         </scene>
-        <!--Notifications-->
-        <scene sceneID="phv-K3-Alq">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Notifications" id="30J-ZQ-fkG" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="gmY-mB-0yY"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uev-Gt-Oyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1956" y="75"/>
-        </scene>
-        <!--Messages-->
-        <scene sceneID="mMI-PG-s6a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Messages" id="ijQ-5V-o4Q" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="1LS-ri-nEY"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7yA-3H-24f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1815" y="75"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="Co8-aj-QSV">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Settings" id="fR0-Cc-XO5" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="bkf-je-GHe"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5kz-Ah-p9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1647" y="75"/>
-        </scene>
-        <!--TermsAndConditionsViewController-->
-        <scene sceneID="6RW-AJ-Amn">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Cabinet" referencedIdentifier="TermsAndConditionsViewController" id="mpy-Iq-rVY" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZmG-Gc-ee4"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KaO-Qk-FF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1442" y="75"/>
-        </scene>
         <!--EditImage-->
         <scene sceneID="CNO-YI-pGt">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yy-p1-NXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="uTC-4f-j5X" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="2mp-TY-WO2"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yy-p1-NXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1172" y="75"/>
+            <point key="canvasLocation" x="-229" y="-1055"/>
+        </scene>
+        <!--Mich Container View Controller-->
+        <scene sceneID="w2L-Wg-XGS">
+            <objects>
+                <viewController id="JTe-fq-nhn" customClass="MichContainerViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVb-km-cMc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ntq-04-Ugn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-624" y="184"/>
         </scene>
     </scenes>
     <resources>
@@ -409,6 +394,7 @@
         <image name="x&amp;ellipse" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b7b-mh-FrO"/>
+        <segue reference="XR2-y7-3gW"/>
+        <segue reference="q7e-gt-x65"/>
     </inferredMetricsTieBreakers>
 </document>
