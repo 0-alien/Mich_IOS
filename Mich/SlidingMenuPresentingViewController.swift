@@ -31,11 +31,12 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     deinit {
+        
         NotificationCenter.default.removeObserver(self)
     }
 
     func cameraClicked() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             if (self.isCameraShown) {
                 hideChoose()
             }
@@ -52,7 +53,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     func hideChoose() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             if (self.isCameraShown) {
                 self.isCameraShown = false
                 NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
@@ -107,34 +108,36 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     //------------------
     
     func showNotifications() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             performSegue(withIdentifier: "notifications", sender: nil)
         }
     }
     func showMessages() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             performSegue(withIdentifier: "messages", sender: nil)
         }
     }
     func showSettings() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             performSegue(withIdentifier: "settings", sender: nil)
         }
     }
     func showHelp() {
-        if ((tabBarController as! MainTabBarController).savedIndex == currentIndex) {
+        if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             performSegue(withIdentifier: "help", sender: nil)
         }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        print("dis " + String(self.currentIndex))
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        (tabBarController as! MainTabBarController).savedIndex = currentIndex
+        print("app " + String(self.currentIndex))
+        (UIApplication.shared.delegate as! AppDelegate).savedIndex = currentIndex
         NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
     }
 }

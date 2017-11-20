@@ -77,28 +77,14 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showvs" {
-            guard let vc = segue.destination as? VSJSQViewController else {
+            guard let vc = segue.destination as? ChatContainerViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let cell = sender as? VSTableViewCell else {
                 fatalError("Unexpected sender: \(String(describing: sender))")
             }
             let indexPath = tableView.indexPath(for: cell)
-            if battles[(indexPath?.row)!].myBattle! {
-                vc.senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)!) // String(battles[(indexPath?.row)!].host!.id!)
-                vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username // battles[indexPath!.row].host?.username
-            }
-            else {
-                vc.senderId = String(battles[(indexPath?.row)!].host!.id!)
-                vc.senderDisplayName = battles[indexPath!.row].host?.username
-            }
             vc.battleId = battles[(indexPath?.row)!].id
-            if battles[(indexPath?.row)!].status == 3 { //damtavrebulia da azri ar
-                vc.battle = battles[(indexPath?.row)!]
-            }
-            else {
-                vc.battle = nil // 0 da 1 is shemtxvevashi sheidzleba statusi shecvlili iyos da axlidan moaq info
-            }
         }
     }
     
@@ -129,7 +115,7 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: navigatioin
     @IBAction func unwindToVSPage(sender: UIStoryboardSegue) {
         for i in 0 ..< self.battles.count {
-            if self.battles[i].id == (sender.source as! VSJSQViewController).battle.id {
+            if self.battles[i].id == (sender.source as! ChatContainerViewController).battleId {
                 self.battles.remove(at: i)
                 break
             }

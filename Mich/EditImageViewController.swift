@@ -48,15 +48,13 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.textOfImage.delegate = self
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
         doneButtone.isEnabled = true
         panGets = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(_:)))
         textOfImage.addGestureRecognizer(panGets)
-        
-        
+                
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -66,6 +64,8 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         super.viewDidAppear(animated)
         setImageToCrop(image: img)
         updateConstraintsForSize(scrollView.bounds.size)
+        print(self.scrollView.frame)
+        print(photo.frame)
     }
     
     
@@ -94,9 +94,10 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
         updateConstraintsForSize(scrollView.bounds.size);
+        
     }
     
-    fileprivate func updateConstraintsForSize(_ size: CGSize) {
+    private func updateConstraintsForSize(_ size: CGSize) {
         
         let yOffset = max(0, (size.height - photo.frame.height) / 2)
         imageViewTopConstraint.constant = yOffset
@@ -108,8 +109,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         
         view.layoutIfNeeded()
     }
-    
-    
     
     @IBAction func crop(_ sender: Any) {
         photo.image = photo.image?.fixedOrientation()
@@ -146,8 +145,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-
         if segue.identifier == "tagimage" {
             photo.image = photo.image?.fixedOrientation()
             let scale:CGFloat = 1 / scrollView.zoomScale
@@ -156,15 +153,14 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
             let width:CGFloat = scrollView.frame.size.width * scale
             let height:CGFloat = scrollView.frame.size.height * scale
             
-            let renderer = UIGraphicsImageRenderer(size: CGSize(width: scrollView.frame.size.width - imageViewLeadingConstraint.constant - imageViewTrailingConstraint.constant, height: scrollView.frame.size.height - imageViewTopConstraint.constant - imageViewBottomConstraint.constant))
-            let image = renderer.image { ctx in
-                scrollView.drawHierarchy(in: CGRect(x: imageViewLeadingConstraint.constant, y: imageViewTopConstraint.constant, width: scrollView.frame.size.width, height: scrollView.frame.size.height), afterScreenUpdates: true)
-            }
+//            let renderer = UIGraphicsImageRenderer(size: CGSize(width: scrollView.frame.size.width - imageViewLeadingConstraint.constant - imageViewTrailingConstraint.constant, height: scrollView.frame.size.height - imageViewTopConstraint.constant - imageViewBottomConstraint.constant))
+//            let image = renderer.image { ctx in
+//                scrollView.drawHierarchy(in: CGRect(x: imageViewLeadingConstraint.constant, y: imageViewTopConstraint.constant, width: scrollView.frame.size.width, height: scrollView.frame.size.height), afterScreenUpdates: true)
+//            }
             
-            let croppedCGImage = image.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
-            let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
-            (segue.destination as! TagImageViewController).image = croppedImage
-            (segue.destination as! TagImageViewController).image = image
+            let croppedCGImage = self.photo.image?.cgImage?.cropping(to: CGRect(x: x, y: y, width: width, height: height))
+            //let croppedImage = UIImage(cgImage: croppedCGImage!).fixedOrientation()
+            (segue.destination as! TagImageViewController).image = UIImage(cgImage: croppedCGImage!)
         }
         
     }

@@ -11,7 +11,6 @@ import ObjectMapper
 
 class SendRecoveryResponse: Mappable {
     var token: String?
-
     
     required init?(map: Map) {
         

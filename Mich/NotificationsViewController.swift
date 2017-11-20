@@ -110,11 +110,9 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             vc.destinationFollowerId = notif.followerId
         }
         else if segue.identifier == "showbattle" {
-            guard let vc = segue.destination as? VSJSQViewController else {
+            guard let vc = segue.destination as? ChatContainerViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            vc.senderId = String(((UIApplication.shared.delegate as! AppDelegate).user?.id)! + 0)
-            vc.senderDisplayName = (UIApplication.shared.delegate as! AppDelegate).user?.username
             vc.battleId = notif.battleId
         }
     }

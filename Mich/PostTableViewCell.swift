@@ -42,16 +42,13 @@ class PostTableViewCell: UITableViewCell, UIScrollViewDelegate {
     }
 
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
-        //self.cellDelegate?.reloadSingleCell(cellIndex: self.index)
+        self.cellDelegate?.prepareCellForZooming(value: -1, cellIndex: self.index)
     }
     
     func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.scrollView.setZoomScale(1.0, animated: false)
-        }, completion: { _ in })
-        
-        
+        }, completion: { _ in self.cellDelegate?.prepareCellForZooming(value: 0, cellIndex: self.index) })
     }
     
     override func awakeFromNib() {
@@ -110,4 +107,5 @@ protocol PostTableViewCellDelegate {
     func showProfile(cellIndex: Int)
     func share(cellIndex: Int)
     func reloadSingleCell(cellIndex: Int)
+    func prepareCellForZooming(value: CGFloat, cellIndex: Int)
 }

@@ -84,10 +84,7 @@ class RandomVSViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showbattle" {
-            (segue.destination as! VSJSQViewController).battleId = self.destinationBattle.id
-            (segue.destination as! VSJSQViewController).battle = self.destinationBattle
-            (segue.destination as! VSJSQViewController).senderId = String((self.destinationBattle.host?.id)! + 0)
-            (segue.destination as! VSJSQViewController).senderDisplayName = self.destinationBattle.host?.username
+            (segue.destination as! ChatContainerViewController).battleId = self.destinationBattle.id
         }
     }
     // MARK: - callbacks

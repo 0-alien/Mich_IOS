@@ -19,7 +19,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var newPassworTF: UITextField!
     @IBOutlet weak var confirmPassworTF: UITextField!
     
-    
     @IBOutlet weak var ressetPassworBTN: UIButton!
     @IBOutlet weak var changePassBTN: UIButton!
     @IBOutlet weak var view1: UIView!
@@ -30,16 +29,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var view6: UIView!
     @IBOutlet weak var view7: UIView!
 
-   
+    @IBOutlet weak var switchBT: UISwitch!
+    
     @IBOutlet weak var saveBTN: UIButton!
-   
     
     @IBOutlet weak var emailHeightCons: NSLayoutConstraint!
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         view1.layer.shadowOpacity = 0.3;
         view1.layer.shadowRadius = 1.0;
@@ -76,8 +73,7 @@ class SettingsViewController: UIViewController {
         view6.layer.shadowColor = UIColor.black.cgColor;
         view6.layer.shadowOffset = CGSize(width: 0, height: 3)
         view6.layer.masksToBounds = false
- 
-        
+  
         view7.layer.shadowOpacity = 0.3;
         view7.layer.shadowRadius = 1.0;
         view7.layer.shadowColor = UIColor.black.cgColor;
@@ -88,9 +84,7 @@ class SettingsViewController: UIViewController {
         view.addGestureRecognizer(tap)
         
     }
-
-    
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -113,20 +107,13 @@ class SettingsViewController: UIViewController {
             })
             ressetPassworBTN.isHidden = true;
         }
-        
-        
-        
-        
     }
     
     @IBAction func resetPasswordBTN(_ sender: Any) {
         let redColor  = #colorLiteral(red: 0.7740760446, green: 0.1117314473, blue: 0.09814801067, alpha: 1)
-        
         let oldPassword = oldPasswordTF.text!
-        
         let password = newPassworTF.text!
         let confirmPassword = confirmPassworTF.text!
-        
         if(password != confirmPassword){
             confirmPassworTF.text = "";
             newPassworTF.text = "";
@@ -136,43 +123,25 @@ class SettingsViewController: UIViewController {
             confirmPassworTF.layer.borderWidth = 2.0;
             return;
         }
-        
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
         MichTransport.changepassword(token: appDelegate.token!, password: password, oldPassword:oldPassword, successCallbackForChangePassword: onChnagePassword, errorCallbackForChnagePassword: onError)
-
-    
     }
 
-    
     func onChnagePassword(){
-        
-    
-        
         let alert = UIAlertController(title: "Alert", message: "Password Changed!", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
-    
     func onError(error: DefaultError){
-        
         let alert = UIAlertController(title: "Alert", message: error.errorString, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
     }
     
-    
-    
-
     @IBAction func changeEmailBTN(_ sender: Any) {
-  
         self.view.layoutIfNeeded() // force any pending operations to finish
-        
-        
-        
         if(emailHeightCons.constant == 0){
             UIView.animate(withDuration: 0.3, animations: { () -> Void in
                 self.emailHeightCons.constant = 130;
@@ -192,13 +161,31 @@ class SettingsViewController: UIViewController {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-    
-    
-    
+ 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
+    @IBAction func switchBTN(_ sender: Any) {
+        if(switchBT.isOn){
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: offTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
+        }else{
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: onTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
+        }
+    }
     
+    func onTogglePrivacyStatus(){
+        let alert = UIAlertController(title: "Alert", message: "Your account is now private", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func offTogglePrivacyStatus(){
+        let alert = UIAlertController(title: "Alert", message: "Your account is now public", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

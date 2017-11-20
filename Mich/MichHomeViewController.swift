@@ -8,22 +8,17 @@
 
 import UIKit
 
-class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UserListener {
+class MichHomeViewController: SlidingMenuPresentingViewController, UserListener {
     
-    var viewControllerList: [UIViewController] = [UIViewController]()
     var searchController: UISearchController!
     var resultsShower: SearchResultsViewController!
     var currentViewController: UIViewController! = nil
     var destinationUserId: Int!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataSource = self
-        self.delegate = self
-        
-        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder"))
-        
-        self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
+        self.currentIndex = 3
         
         resultsShower = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "SearchResultsViewController") as! SearchResultsViewController
         resultsShower.userChoosenDelegate = self
@@ -31,18 +26,14 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.searchResultsUpdater = resultsShower
         searchController.dimsBackgroundDuringPresentation = true
         searchController.searchBar.placeholder = "Search Mich"
-        searchController.searchBar.sizeToFit()
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
-        searchController.searchBar.isHidden = true
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationItem.titleView = searchController.searchBar
-        if currentViewController == nil {
-            currentViewController = self.viewControllerList.first
-            setViewControllers([currentViewController], direction: .forward, animated: true, completion: nil)
+        searchController.searchBar.isHidden = false
+        
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.topItem?.titleView = searchController.searchBar
+        } else {
+            self.navigationItem.titleView = searchController.searchBar
         }
     }
     
@@ -50,50 +41,7 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    // MARK: Datasource
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = viewControllerList.index(of: viewController) else {
-            return nil
-        }
-        let previousIndex = viewControllerIndex - 1
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        guard viewControllerList.count > previousIndex else {
-            return nil
-        }
-        return viewControllerList[previousIndex]
-    }
-    
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        guard let viewControllerIndex = viewControllerList.index(of: viewController) else {
-            return nil
-        }
-        let nextIndex = viewControllerIndex + 1
-        let orderedViewControllersCount = viewControllerList.count
-        guard orderedViewControllersCount != nextIndex else {
-            return nil
-        }
-        guard orderedViewControllersCount > nextIndex else {
-            return nil
-        }
-        return viewControllerList[nextIndex]
-    }
-    
-    // MARK: delegate
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if completed {
-            let index = viewControllerList.index(of: previousViewControllers.first!)
-            if index == 0 {
-                searchController.searchBar.isHidden = false
-                currentViewController = self.viewControllerList[0]
-            } else {
-                searchController.searchBar.isHidden = true
-                currentViewController = self.viewControllerList[1]
-            }
-        }
-    }
+
     //MARK: Userlistener
     func gotoUserPage(id: Int) {
         self.destinationUserId = id
@@ -102,14 +50,12 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "gotoprofilepage" {
             (segue.destination as! UserPicturesCollectionViewController).userId = self.destinationUserId
         }
     }
- 
+   
 
 }

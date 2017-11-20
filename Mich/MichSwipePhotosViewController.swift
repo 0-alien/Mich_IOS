@@ -8,8 +8,9 @@
 
 import UIKit
 import Nuke
+import XLPagerTabStrip
 
-class MichSwipePhotosViewController: UIViewController {
+class MichSwipePhotosViewController: SlidingMenuPresentingViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var viewOfPhoto: UIView!
     @IBOutlet weak var randomImage: UIImageView!
@@ -18,13 +19,10 @@ class MichSwipePhotosViewController: UIViewController {
     var postRandom: PostClass!
     
     override func viewDidLoad() {
-    
-        
-        
         super.viewDidLoad()
-        print("_+_+_+_+_+_+_+_+_+_+_++_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_")
+    
+        self.currentIndex = 6
         MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: onSuccessGetRandomPost, errorCallbackGetRandomPost: onerror)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,18 +30,12 @@ class MichSwipePhotosViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - inidcator info provider
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Tinder")
     }
-    */
     
-    
+    // MARK: - actions
     @IBAction func LikePhoto(_ sender: Any) {
       
         self.performSegue(withIdentifier: "showpost", sender: self)
@@ -78,12 +70,11 @@ class MichSwipePhotosViewController: UIViewController {
     func onSuccessGetRandomPost(post: PostClass) {
         postRandom = post
         Nuke.loadImage(with: Foundation.URL(string: post.image!)!, into: self.randomImage)
-        username.text = post.userName!;
-        tittle.text = post.title!;
+        username.text = post.userName!
+        tittle.text = post.title!
         
     }
-    
-    
+
     func onSuccessForLike() {
         print("post liked")
     }
@@ -93,8 +84,4 @@ class MichSwipePhotosViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-
-
-
-
 }
