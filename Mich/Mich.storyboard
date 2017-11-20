@@ -12,15 +12,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--EditImage-->
-        <scene sceneID="gVV-Ta-BX1">
+        <!--Mich Home View Controller-->
+        <scene sceneID="mCW-wc-6mI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Lp-KP-bMo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="xOp-Aa-aNr" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="b42-VY-xrT"/>
-                </viewControllerPlaceholder>
+                <viewController id="CgP-EY-dES" customClass="MichHomeViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l29-v3-XNS"/>
+                        <viewControllerLayoutGuide type="bottom" id="R7f-k4-Dce"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y8b-S9-Uu0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yKJ-BV-hfT"/>
+                    <connections>
+                        <segue destination="30J-ZQ-fkG" kind="push" identifier="notifications" id="EWD-C2-Clm"/>
+                        <segue destination="ijQ-5V-o4Q" kind="push" identifier="messages" id="cG5-9U-e1d"/>
+                        <segue destination="fR0-Cc-XO5" kind="push" identifier="settings" id="44C-yY-osR"/>
+                        <segue destination="mpy-Iq-rVY" kind="push" identifier="help" id="HgC-Ad-YB9"/>
+                        <segue destination="uTC-4f-j5X" kind="push" identifier="gotoeditimage" id="G5k-Fs-Q97"/>
+                        <segue destination="eMp-Wf-byd" kind="push" identifier="gotoprofilepage" id="R6D-X6-UtD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uz-VV-2qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="-600"/>
+            <point key="canvasLocation" x="-1203.5" y="-574.5"/>
         </scene>
         <!--Tinder-->
         <scene sceneID="UKw-oE-QI7">
@@ -132,6 +149,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="1kL-e8-Kl2"/>
                     <connections>
                         <outlet property="randomImage" destination="PWt-mg-Xvt" id="B5I-ce-iv4"/>
                         <outlet property="tittle" destination="FVc-Ww-qZm" id="FcO-2Y-Tfw"/>
@@ -142,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nma-Ba-feK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1722" y="71"/>
+            <point key="canvasLocation" x="-732.5" y="-564.5"/>
         </scene>
         <!--PostViewController-->
         <scene sceneID="may-nM-mXZ">
@@ -152,7 +170,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilH-7B-tAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1149" y="70"/>
+            <point key="canvasLocation" x="-663" y="-73"/>
+        </scene>
+        <!--userpage-->
+        <scene sceneID="01M-bd-sa7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="eMp-Wf-byd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZUm-lF-Ypo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJH-Yr-Vvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="75"/>
         </scene>
         <!--Search Results View Controller-->
         <scene sceneID="qIY-Ia-MPi">
@@ -226,36 +254,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HE6-0S-cD7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186" y="34"/>
-        </scene>
-        <!--userpage-->
-        <scene sceneID="mof-1y-Iab">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="zDt-J0-cxz" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="LHN-Sl-PiE"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mFI-E1-d1O" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="242" y="-870"/>
-        </scene>
-        <!--Mich Home View Controller-->
-        <scene sceneID="Idb-28-n7d">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Pp8-bF-2RU" customClass="MichHomeViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" id="m6h-cc-BG6"/>
-                    <connections>
-                        <segue destination="zDt-J0-cxz" kind="push" identifier="gotoprofilepage" id="lyC-ev-Xr8"/>
-                        <segue destination="xOp-Aa-aNr" kind="push" identifier="gotoeditimage" id="mYf-iD-CNn"/>
-                    </connections>
-                </pageViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ffG-u5-iQY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-359.5" y="-696.5"/>
+            <point key="canvasLocation" x="1457.5" y="33.5"/>
         </scene>
         <!--Search-->
         <scene sceneID="kq7-ca-lZi">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Search" title="Search" id="YJX-6a-Cms" customClass="MichSearchViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aMh-4h-DpM"/>
@@ -320,31 +324,80 @@
                         <outlet property="imageCollection" destination="9zx-ns-jmb" id="WFV-gz-CJh"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wcQ-dQ-SYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337" y="34"/>
+            <point key="canvasLocation" x="-308.5" y="-564.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ULx-Gn-LdI">
+        <scene sceneID="4i5-7U-4p0">
             <objects>
-                <navigationController storyboardIdentifier="Mich" automaticallyAdjustsScrollViewInsets="NO" id="wxQ-3X-ZdQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="red_mich_icon" landscapeImage="red_mich_icon" selectedImage="active_red_mich_icon" id="GU6-AF-obL">
+                <navigationController storyboardIdentifier="Mich" automaticallyAdjustsScrollViewInsets="NO" id="tkI-2W-Yzx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="red_mich_icon" landscapeImage="red_mich_icon" largeContentSizeImage="red_mich_icon" selectedImage="active_red_mich_icon" id="VOE-wg-MAf">
                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lOW-hG-Qpp">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="qor-JP-qPC">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Pp8-bF-2RU" kind="relationship" relationship="rootViewController" id="PfM-OU-bRW"/>
+                        <segue destination="CgP-EY-dES" kind="relationship" relationship="rootViewController" id="70z-A5-HOG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bGS-bX-Xy0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nYX-7h-qtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-844.5" y="-696.5"/>
+            <point key="canvasLocation" x="-1646" y="-575"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="phv-K3-Alq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Notifications" id="30J-ZQ-fkG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="gmY-mB-0yY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uev-Gt-Oyr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1956" y="75"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="mMI-PG-s6a">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Messages" id="ijQ-5V-o4Q" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1LS-ri-nEY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7yA-3H-24f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1815" y="75"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Co8-aj-QSV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="Settings" id="fR0-Cc-XO5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="bkf-je-GHe"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5kz-Ah-p9X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1647" y="75"/>
+        </scene>
+        <!--TermsAndConditionsViewController-->
+        <scene sceneID="6RW-AJ-Amn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Cabinet" referencedIdentifier="TermsAndConditionsViewController" id="mpy-Iq-rVY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ZmG-Gc-ee4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KaO-Qk-FF1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1442" y="75"/>
+        </scene>
+        <!--EditImage-->
+        <scene sceneID="CNO-YI-pGt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Camera" referencedIdentifier="EditImage" id="uTC-4f-j5X" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2mp-TY-WO2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yy-p1-NXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1172" y="75"/>
         </scene>
     </scenes>
     <resources>
@@ -356,6 +409,6 @@
         <image name="x&amp;ellipse" width="84" height="84"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q7e-gt-x65"/>
+        <segue reference="b7b-mh-FrO"/>
     </inferredMetricsTieBreakers>
 </document>

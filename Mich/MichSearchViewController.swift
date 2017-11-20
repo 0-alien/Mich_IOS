@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class MichSearchViewController: ViewController, UICollectionViewDataSource {
+class MichSearchViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0
@@ -31,6 +31,7 @@ class MichSearchViewController: ViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.currentIndex = 4
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
         if #available(iOS 10.0, *) {
             self.imageCollection.refreshControl = refreshControl

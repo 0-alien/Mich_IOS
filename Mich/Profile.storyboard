@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Zl-AL-49v">
-                                <rect key="frame" x="0.0" y="44" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                 <subviews>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wYe-wr-Puc">
                                         <rect key="frame" x="0.0" y="8" width="112" height="112"/>
@@ -787,6 +787,6 @@
         <segue reference="8Gc-2c-hvL"/>
         <segue reference="NG3-m9-6iK"/>
         <segue reference="23d-Vm-cWR"/>
-        <segue reference="aPV-7X-oby"/>
+        <segue reference="MaX-mX-K8b"/>
     </inferredMetricsTieBreakers>
 </document>
