@@ -26,10 +26,10 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         
         self.currentIndex = 4
         self.isCameraShown = false
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.cameraClicked), name: NSNotification.Name(rawValue: "showChoose"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.hideChoose), name: NSNotification.Name(rawValue: "hideChoose"), object: nil)
-        
+
         self.dataSource = self
         self.delegate = self
         self.viewControllerList.append(UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search"))
@@ -43,7 +43,7 @@ class MichHomeViewController: UIPageViewController, UIPageViewControllerDataSour
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.isHidden = false
-        
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.topItem?.titleView = searchController.searchBar
         } else {
