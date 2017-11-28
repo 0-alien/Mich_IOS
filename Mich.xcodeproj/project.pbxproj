@@ -71,6 +71,7 @@
 		1E81341B1E435D6C00A71158 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */; };
 		1E8161311D9A997B00E8C8DB /* CustomNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */; };
 		1E82DACD1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */; };
+		1E86E4B91FC30B9300E17BDB /* MichContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E86E4B81FC30B9300E17BDB /* MichContainerViewController.swift */; };
 		1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */; };
 		1E8B59431F163F9D00649ABE /* RandomVSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */; };
 		1E9604861E7953EC003F8E5B /* UIImageView+RoundShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */; };
@@ -242,6 +243,7 @@
 		1E81341A1E435D6C00A71158 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		1E8161301D9A997B00E8C8DB /* CustomNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationViewController.swift; sourceTree = "<group>"; };
 		1E82DACC1E0BCD2F004D67A1 /* SearchResultsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewCell.swift; sourceTree = "<group>"; };
+		1E86E4B81FC30B9300E17BDB /* MichContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MichContainerViewController.swift; sourceTree = "<group>"; };
 		1E88F7151F28D03C007EEAC7 /* TagImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagImageViewController.swift; sourceTree = "<group>"; };
 		1E8B59421F163F9D00649ABE /* RandomVSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomVSViewController.swift; sourceTree = "<group>"; };
 		1E9604851E7953EC003F8E5B /* UIImageView+RoundShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundShape.swift"; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				1EF977AD1F3C7891009E6CF7 /* MichHomeViewController.swift */,
 				1E4F7E841DB6491A004A6CC0 /* MichSearchViewController.swift */,
 				CF5CB30C1F5D644B00C205B8 /* MichSwipePhotosViewController.swift */,
+				1E86E4B81FC30B9300E17BDB /* MichContainerViewController.swift */,
 			);
 			name = Mich;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Preheat/Preheat.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -941,6 +945,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Preheat.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1012,6 +1017,7 @@
 				1E42C06E1EE82D400077B707 /* GetBattlesRequest.swift in Sources */,
 				CF57E5441E641CC700A3575A /* AddCommentRequest.swift in Sources */,
 				1EC59F321F597013000FD2F9 /* TagTableViewController.swift in Sources */,
+				1E86E4B91FC30B9300E17BDB /* MichContainerViewController.swift in Sources */,
 				1E42C0701EE835FE0077B707 /* GetBattleRequest.swift in Sources */,
 				1E88F7161F28D03D007EEAC7 /* TagImageViewController.swift in Sources */,
 				CF7D20AC1EF174910037FE60 /* BlockUserRequest.swift in Sources */,

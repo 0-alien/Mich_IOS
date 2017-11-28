@@ -10,7 +10,6 @@
 import UIKit
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
-    var savedIndex: Int? = 0
     var activeImages = [UIImage]()
     var inactiveImages = [UIImage]()
     override func viewDidLoad() {

@@ -8,8 +8,9 @@
 
 import UIKit
 import Nuke
+import XLPagerTabStrip
 
-class MichSwipePhotosViewController: ViewController {
+class MichSwipePhotosViewController: SlidingMenuPresentingViewController, IndicatorInfoProvider {
 
     @IBOutlet weak var viewOfPhoto: UIView!
     @IBOutlet weak var randomImage: UIImageView!
@@ -19,6 +20,8 @@ class MichSwipePhotosViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        self.currentIndex = 6
         MichTransport.getrandompost(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackGetRandomPost: onSuccessGetRandomPost, errorCallbackGetRandomPost: onerror)
     }
 
@@ -27,6 +30,12 @@ class MichSwipePhotosViewController: ViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - inidcator info provider
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "Tinder")
+    }
+    
+    // MARK: - actions
     @IBAction func LikePhoto(_ sender: Any) {
       
         self.performSegue(withIdentifier: "showpost", sender: self)
