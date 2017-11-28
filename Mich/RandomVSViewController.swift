@@ -6,6 +6,7 @@
 //  Copyright © 2017 Lemon. All rights reserved.
 //
 
+import Nuke
 import UIKit
 
 class RandomVSViewController: UIViewController {
@@ -20,9 +21,9 @@ class RandomVSViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hostImage.image = hostImage.image?.af_imageRounded(withCornerRadius: 15)
-        guestImage.image = guestImage.image?.af_imageRounded(withCornerRadius: 15)
-        
+        hostImage.image = hostImage.image?.circle
+        guestImage.image = guestImage.image?.circle
+
         hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
         
     }
@@ -31,6 +32,9 @@ class RandomVSViewController: UIViewController {
         super.viewDidAppear(animated)
         self.navigationItem.leftBarButtonItem?.isEnabled = false
         self.navigationItem.rightBarButtonItem?.isEnabled = true
+        if !self.isSpectate {
+            Nuke.loadImage(with: Foundation.URL(string: ((UIApplication.shared.delegate as! AppDelegate).user?.avatar)!)!, into: self.hostImage)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,12 +113,12 @@ class RandomVSViewController: UIViewController {
 
                 self.guestImage.stopAnimating()
                 self.guestUsername.text = self.destinationBattle.guest?.username
-                self.guestImage.af_setImage(withURL: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!)
+                Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!, into: self.guestImage)
                 
                 if self.isSpectate {
                     self.hostImage.stopAnimating()
                     self.hostUsername.text = self.destinationBattle.host?.username
-                    self.hostImage.af_setImage(withURL: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!)
+                    Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!, into: self.hostImage)
                 }
                 self.performSegue(withIdentifier: "showbattle", sender: self)
             }

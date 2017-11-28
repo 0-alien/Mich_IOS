@@ -600,7 +600,7 @@ class MichTransport {
         let reqString = BASE_URL + "post/create"
         let imageData:NSData = UIImageJPEGRepresentation(image, 0.3)! as NSData
         let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
-        //print(strBase64)
+        print(strBase64)
         let createpostRequest = CreatePostRequest(token: token, title: title, image: strBase64)
         let payloadJson = createpostRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in

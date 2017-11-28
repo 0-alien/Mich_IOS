@@ -214,6 +214,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int))
+            print(aps)
         }
     }
     

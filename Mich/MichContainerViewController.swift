@@ -19,11 +19,11 @@ class MichContainerViewController: ButtonBarPagerTabStripViewController {
         settings.style.buttonBarMinimumInteritemSpacing = 0
         settings.style.selectedBarHeight = 1
         settings.style.selectedBarBackgroundColor = UIColor.red
+        
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,7 +31,7 @@ class MichContainerViewController: ButtonBarPagerTabStripViewController {
     
     override public func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         let vc1: MichSearchViewController = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Search") as! MichSearchViewController
-        let vc2: MichSwipePhotosViewController = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Tinder") as! MichSwipePhotosViewController
+        let vc2: MichSwipePhotosViewController = UIStoryboard(name: "Mich", bundle: nil).instantiateViewController(withIdentifier: "Shuffle") as! MichSwipePhotosViewController
         return [vc1, vc2]
     }
 }

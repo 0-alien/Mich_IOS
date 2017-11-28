@@ -74,7 +74,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
     }
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
@@ -105,7 +105,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         let itemRef = messageRef.childByAutoId()
         let msg = BattleMessage(id: itemRef.key, senderId: Int(self.senderId)!, senderDisplayName: self.senderDisplayName, text: text)
         itemRef.setValue(msg.toJSON())
-        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        //JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
 
