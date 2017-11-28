@@ -90,6 +90,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         }
         self.timerLabel.text = self.timerLabel.text! + String(self.secondsLeft % 60)
     }
+    // MARK: - message delegate
     func startObserving(status: Int) {
         self.battle?.status = status
         if battle?.status == 1 {
@@ -122,6 +123,10 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
                 }
             }
         })
+    }
+    
+    func didCancel() {
+        self.performSegue(withIdentifier: "movetovspage", sender: self)
     }
     
     func removeObservers() {
@@ -162,6 +167,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
 
 protocol MessageDelegate {
     func startObserving(status: Int)
+    func didCancel()
 }
 protocol Finishable {
     func finish()

@@ -131,7 +131,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
                 MichVSTransport.declineBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                    successCallbackForDeclineBattle: {self.performSegue(withIdentifier: "unwindtovspage", sender: self)}, errorCallbackForDeclineBattle: self.onError)
+                    successCallbackForDeclineBattle: {self.messageDelegate.didCancel()}, errorCallbackForDeclineBattle: self.onError)
             }
             alert.addAction(cancelAction)
             alert.addAction(okAction)
