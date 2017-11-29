@@ -78,7 +78,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         }
         self.secondsLeft = self.secondsLeft - 1
         if self.secondsLeft < 30 && self.secondsLeft != 0 {
-            self.timerLabel.textColor = UIColor.yellow
+            self.timerLabel.textColor = UIColor.red
         }
         self.timerLabel.text = ""
         if self.secondsLeft / 60 < 10 {
@@ -126,7 +126,8 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     }
     
     func didCancel() {
-        self.performSegue(withIdentifier: "movetovspage", sender: self)
+        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func removeObservers() {

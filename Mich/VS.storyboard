@@ -171,11 +171,9 @@
                         <outlet property="hostImage" destination="qHf-qh-CE3" id="Zvw-bP-dMh"/>
                         <outlet property="hostPointCountLabel" destination="ODJ-ft-per" id="MI1-DI-ZcQ"/>
                         <outlet property="timerLabel" destination="hMQ-dC-QDS" id="aSw-5k-94e"/>
-                        <segue destination="x1h-Q5-NOr" kind="unwind" identifier="unwindtovspage" unwindAction="unwindToVSPageWithSender:" id="KdR-dQ-dwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DG8-UZ-HvU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="x1h-Q5-NOr" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="g5h-UK-SZ9" userLabel="hostvote">
                     <connections>
                         <action selector="didVoteForHost:" destination="rlU-YV-9dO" id="I97-3e-lWi"/>
@@ -704,12 +702,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <connections>
-                        <segue destination="J5n-Qb-Z8Q" kind="unwind" identifier="unwindtovspage" unwindAction="unwindToVSPageWithSender:" id="SYH-eU-mj9"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcK-Em-UwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="J5n-Qb-Z8Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1817" y="-1419"/>
         </scene>
