@@ -40,6 +40,15 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.collectionView.contentSize.height > self.collectionView.frame.height {
+            self.collectionView.setContentOffset(
+                CGPoint(x: 0, y: self.collectionView.contentSize.height
+                    - self.collectionView.frame.height + self.inputToolbar.bounds.height),
+                animated: animated)
+        }
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.removeObservers()
@@ -107,7 +116,9 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         itemRef.setValue(msg.toJSON())
         //JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
-        self.scrollToBottom(animated: true)
+//        self.collectionView.setContentOffset(
+//            CGPoint(x: 0, y: self.collectionView.contentSize.height
+//                - self.collectionView.frame.height + self.inputToolbar.bounds.height + 10), animated: true)
     }
 
     func loadBattle(battle: Battle) {
