@@ -126,7 +126,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     }
     
     func didCancel() {
-        self.performSegue(withIdentifier: "movetovspage", sender: self)
+        self.performSegue(withIdentifier: "unwindtovspage", sender: self)
     }
     
     func removeObservers() {
