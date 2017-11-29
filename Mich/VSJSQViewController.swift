@@ -32,6 +32,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
         channelRef = FIRDatabase.database().reference() //connect to database
+        self.automaticallyScrollsToMostRecentMessage = true
         if battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         }
@@ -116,9 +117,6 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         itemRef.setValue(msg.toJSON())
         //JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
-//        self.collectionView.setContentOffset(
-//            CGPoint(x: 0, y: self.collectionView.contentSize.height
-//                - self.collectionView.frame.height + self.inputToolbar.bounds.height + 10), animated: true)
     }
 
     func loadBattle(battle: Battle) {
@@ -170,6 +168,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                     msg.id = snapshot.key
                     self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))
                     self.collectionView.reloadData()
+                    self.scrollToBottom(animated: true)
                 } else {
                     print("Error! Could not decode channel data")
                 }
