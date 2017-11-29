@@ -50,6 +50,7 @@
 		1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */; };
 		1E56BC571D8C16C00012E695 /* Footer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56BC561D8C16C00012E695 /* Footer.swift */; };
 		1E56BC591D8C22D30012E695 /* Userspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E56BC581D8C22D30012E695 /* Userspace.storyboard */; };
+		1E5715F11FCEC36E0019A5F4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E5715F01FCEC3560019A5F4 /* AudioToolbox.framework */; };
 		1E5822FD1F3DE83700A7C583 /* GetRandomBattleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */; };
 		1E5822FF1F3DEB8C00A7C583 /* PlayRandomBattle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */; };
 		1E5823011F3DFEDB00A7C583 /* CancelPlayRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5823001F3DFEDB00A7C583 /* CancelPlayRequest.swift */; };
@@ -222,6 +223,7 @@
 		1E5482211E76C0FB008D98C1 /* VSInviteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSInviteCell.swift; sourceTree = "<group>"; };
 		1E56BC561D8C16C00012E695 /* Footer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Footer.swift; sourceTree = "<group>"; };
 		1E56BC581D8C22D30012E695 /* Userspace.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Userspace.storyboard; sourceTree = "<group>"; };
+		1E5715F01FCEC3560019A5F4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRandomBattleRequest.swift; sourceTree = "<group>"; };
 		1E5822FE1F3DEB8C00A7C583 /* PlayRandomBattle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayRandomBattle.swift; sourceTree = "<group>"; };
 		1E5823001F3DFEDB00A7C583 /* CancelPlayRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelPlayRequest.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5715F11FCEC36E0019A5F4 /* AudioToolbox.framework in Frameworks */,
 				CFFCC0211E7A9692007A6AB5 /* Social.framework in Frameworks */,
 				9DB563CCD968708833CF1F31 /* Pods_Mich.framework in Frameworks */,
 				CFA7E8BD1DBE2ACC0088109A /* TwitterCore.framework in Frameworks */,
@@ -368,6 +371,7 @@
 		0ED76E5060881AC4F9F6CDDF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E5715F01FCEC3560019A5F4 /* AudioToolbox.framework */,
 				CFFCC0201E7A9692007A6AB5 /* Social.framework */,
 				74258FC6DF74730F2D1144B8 /* Pods_Mich.framework */,
 			);
