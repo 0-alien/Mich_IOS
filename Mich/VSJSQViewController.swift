@@ -107,6 +107,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         itemRef.setValue(msg.toJSON())
         //JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
+        self.scrollToBottom(animated: true)
     }
 
     func loadBattle(battle: Battle) {

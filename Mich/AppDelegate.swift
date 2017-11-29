@@ -18,6 +18,7 @@ import UserNotifications
 import Alamofire
 import GoogleMaps
 import GooglePlaces
+import AudioToolbox
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -208,6 +209,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         // notification count
         if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int) - 1) // naxvis gamo chairto
