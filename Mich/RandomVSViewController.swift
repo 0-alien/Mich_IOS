@@ -23,8 +23,6 @@ class RandomVSViewController: UIViewController {
         super.viewDidLoad()
         hostImage.image = hostImage.image?.circle
         guestImage.image = guestImage.image?.circle
-
-        hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
         
     }
     
@@ -34,6 +32,7 @@ class RandomVSViewController: UIViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = true
         if !self.isSpectate {
             Nuke.loadImage(with: Foundation.URL(string: ((UIApplication.shared.delegate as! AppDelegate).user?.avatar)!)!, into: self.hostImage)
+            hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
         }
     }
 
@@ -47,9 +46,12 @@ class RandomVSViewController: UIViewController {
         self.navigationItem.leftBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         guestImage.animationImages = [
-            UIImage(named: "Image")!,
-            UIImage(named: "Image-1")!,
-            UIImage(named: "Image-2")!
+            
+            UIImage(named: "first_user")!,
+            UIImage(named: "profile1")!,
+            UIImage(named: "profile")!,
+            UIImage(named: "profile4")!,
+            UIImage(named: "second_user")!
             
         ]
         guestImage.animationDuration = 0.3
@@ -57,9 +59,11 @@ class RandomVSViewController: UIViewController {
         guestUsername.text = "Searching..."
         if isSpectate {
             hostImage.animationImages = [
-                UIImage(named: "Image")!,
-                UIImage(named: "Image-1")!,
-                UIImage(named: "Image-2")!
+                UIImage(named: "profile1")!,
+                UIImage(named: "second_user")!,
+                UIImage(named: "first_user")!,
+                UIImage(named: "profile4")!,
+                UIImage(named: "profile")!
             ]
             hostImage.animationDuration = 0.3
             hostImage.startAnimating()
