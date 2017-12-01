@@ -28,9 +28,11 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         refreshControl.addTarget(self, action: #selector(PostsViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         return refreshControl
     }()
-    
+    var shouldShowNotification: Bool! = false
+    var notification: [AnyHashable : Any]! = nil
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let imageName = "mich_navbar_logo"
         let logo = UIImage(named: imageName)
@@ -50,20 +52,19 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         
         currentIndex = 0
         MichTransport.getfeed(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForgetfeed: onGetFeed, errorCallbackForgetfeed: onError)
+        
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         preheatController.enabled = true
+        if shouldShowNotification {
+            self.handle(userInfo: self.notification)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -407,5 +408,56 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: handle notification
+    func handle(userInfo: [AnyHashable : Any]) {
+        switch (userInfo["type"] as! NSString).intValue {
+        case 1:
+            tabBarController?.selectedIndex = 4;
+            let vc = tabBarController?.viewControllers?[4] as! UINavigationController
+            vc.popToRootViewController(animated: false)
+            let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
+            userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["postid"] as! NSString).intValue))
+            break
+        case 2: // comentaris damateba
+            (UIApplication.shared.delegate as! AppDelegate).processCommentNotification(commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            break;
+        case 3: // comentaris like
+            (UIApplication.shared.delegate as! AppDelegate).processCommentNotification(commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
+            break
+        case 4: // follow
+            break;
+        case 5: //vs invite
+            tabBarController?.selectedIndex = 1
+            let vc = tabBarController?.viewControllers?[1] as! UINavigationController
+            vc.popToRootViewController(animated: false)
+            let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
+            vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
+            vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+            break
+        case 6: //vs accept
+            tabBarController?.selectedIndex = 1
+            let vc = (tabBarController?.viewControllers?[1] as! UINavigationController)
+            vc.popToRootViewController(animated: false)
+            let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
+            vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
+            vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+            break
+        case 7:
+            tabBarController?.selectedIndex = 1
+            let vc = (tabBarController?.viewControllers?[1] as! UINavigationController)
+            vc.popToRootViewController(animated: false)
+            break
+        case 8: //battle finish
+                tabBarController?.selectedIndex = 1
+                let vc = (tabBarController?.viewControllers?[1] as! UINavigationController)
+                vc.popToRootViewController(animated: false)
+                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
+                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
+                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
+            break
+        default:
+            break
+        }
+    }
     
 }

@@ -42,6 +42,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
     var heightOfZoomScrollView:CGFloat!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(PostViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
@@ -50,21 +51,24 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         } else {
             self.scrollView.addSubview(refreshControl)
         }
+    
         MichTransport.getpost(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId,
                             successCallbackForgetpost: onGetPostSuccess, errorCallbackForgetpost: onGetPostError)
         self.zoomingScrollView.minimumZoomScale = 1.0
         self.zoomingScrollView.maximumZoomScale = 6.0
         self.userImage = self.userImage.circle
-        
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
         if needsToShowComments {
             self.needsToShowComments = false
             performSegue(withIdentifier: "showcommentnotification", sender: self)
             self.destinationCommentId = -1
         }
+        
     }
     
     

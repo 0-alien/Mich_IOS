@@ -28,8 +28,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     
-    var destinationCommentId: Int! = nil // in case of comment added/liked notification
-    var destinationPostId: Int! = nil // same 
+    var destinationCommentId: Int! = -1 // in case of comment added/liked notification
+    var destinationPostId: Int! = -1 // same
     
     var refreshControl: UIRefreshControl!
     
@@ -90,7 +90,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                                 successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        
+
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         if #available(iOS 10.0, *) {
@@ -98,15 +98,20 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         } else {
             self.imageCollection.addSubview(refreshControl)
         }
-        MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
+         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        NSLog("%@", "++++++++++++++++++++tavi")
         super.viewDidAppear(animated)
-        if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 {
+        print((UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount)
+        print(destinationPostId)
+        print(destinationCommentId)
+        if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 && destinationPostId == -1 && destinationCommentId == -1 {
             self.showNotifications()
         }
+        NSLog("%@", "+++++++++++++++++++++bolo")
     }
     
     override func didReceiveMemoryWarning() {

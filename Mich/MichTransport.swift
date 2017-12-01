@@ -731,10 +731,12 @@ class MichTransport {
     }
 
     static func getpost(token: String, id: Int, successCallbackForgetpost: @escaping (PostClass) -> Void, errorCallbackForgetpost: @escaping (DefaultError) -> Void ){
+        
         let reqString = BASE_URL + "post/get"
         let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
         let payloadJson = getPostCommentsRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
             if( response.result.isSuccess ){
                 let JString = "\(response.result.value!)"
                 print(JString)
@@ -754,6 +756,7 @@ class MichTransport {
                 errorCallbackForgetpost(error)
             }
         }
+        
     }
     
     ///////////////////// get random post
