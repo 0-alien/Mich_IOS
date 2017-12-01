@@ -110,10 +110,9 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print((UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount)
-        print(destinationPostId)
-        print(destinationCommentId)
         if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 && destinationPostId == -1 && destinationCommentId == -1 {
+            self.destinationCommentId = -1
+            self.destinationPostId = -1
             self.showNotifications()
         }
     }
@@ -250,6 +249,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
+        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
     
     // MARK: navigation
