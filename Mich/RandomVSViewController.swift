@@ -124,7 +124,11 @@ class RandomVSViewController: UIViewController {
                     self.hostUsername.text = self.destinationBattle.host?.username
                     Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!, into: self.hostImage)
                 }
-                self.performSegue(withIdentifier: "showbattle", sender: self)
+                let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                    self.performSegue(withIdentifier: "showbattle", sender: self)
+                }
             }
         }
     }
