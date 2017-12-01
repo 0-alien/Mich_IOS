@@ -21,11 +21,14 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     private var voteRef: FIRDatabaseReference!
     private var newVoteRefHandle: FIRDatabaseHandle?
     private var voteAddedRefHandle: FIRDatabaseHandle?
+    private var reverse: Bool! = false
     
-    @IBOutlet weak var guestPointCountLabel: UILabel!
-    @IBOutlet weak var hostPointCountLabel: UILabel!
-    @IBOutlet weak var guestImage: UIImageView!
-    @IBOutlet weak var hostImage: UIImageView!
+    @IBOutlet weak var rightPointCountLabel: UILabel!
+    @IBOutlet weak var leftPointCountLabel: UILabel!
+    @IBOutlet weak var rightImage: UIImageView!
+    @IBOutlet weak var leftImage: UIImageView!
+    
+    
     var secondsLeft: Int!
     var finishable: Finishable?
     
@@ -34,8 +37,8 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         channelRef = FIRDatabase.database().reference() //connect to database
         MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         self.secondsLeft = 0
-        self.hostImage = self.hostImage.circle
-        self.guestImage = self.guestImage.circle
+        self.rightImage = self.rightImage.circle
+        self.leftImage = self.leftImage.circle
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,10 +63,17 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     // MARK: - class methods
     private func loadBattle(battle: Battle) {
         self.battle = battle
-        Nuke.loadImage(with: Foundation.URL(string: (battle.host?.avatar)!)!, into: self.hostImage)
-        Nuke.loadImage(with: Foundation.URL(string: (battle.guest?.avatar)!)!, into: self.guestImage)
-        self.hostPointCountLabel.text = String((battle.host?.votes)! + 0)
-        self.guestPointCountLabel.text = String((battle.guest?.votes)! + 0)
+        if battle.iAmGuest! {
+            Nuke.loadImage(with: Foundation.URL(string: (battle.host?.avatar)!)!, into: self.leftImage) // piriqit aris suratebi
+            Nuke.loadImage(with: Foundation.URL(string: (battle.guest?.avatar)!)!, into: self.rightImage)
+            self.leftPointCountLabel.text = String((battle.host?.votes)! + 0)
+            self.rightPointCountLabel.text = String((battle.guest?.votes)! + 0)
+        } else {
+            Nuke.loadImage(with: Foundation.URL(string: (battle.host?.avatar)!)!, into: self.rightImage) // piriqit aris suratebi
+            Nuke.loadImage(with: Foundation.URL(string: (battle.guest?.avatar)!)!, into: self.leftImage)
+            self.rightPointCountLabel.text = String((battle.host?.votes)! + 0)
+            self.leftPointCountLabel.text = String((battle.guest?.votes)! + 0)
+        }
         self.secondsLeft = self.battle?.secondsLeft
         if self.battle?.status != 0 {
             self.startObserving(status: (self.battle?.status)!)
@@ -100,11 +110,21 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         voteAddedRefHandle = voteRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
-                    self.battle?.host?.votes = val
-                    self.hostPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    if (self.battle?.iAmGuest)! {
+                        self.battle?.guest?.votes = val
+                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    } else {
+                        self.battle?.host?.votes = val
+                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    }
                 } else if (snapshot.key == "guest") {
-                    self.battle?.guest?.votes = val
-                    self.guestPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    if (self.battle?.iAmGuest)! {
+                        self.battle?.host?.votes = val
+                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    } else {
+                        self.battle?.guest?.votes = val
+                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    }
                 } else {
                     print("Error! Could not decode channel data")
                 }
@@ -113,11 +133,21 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
         newVoteRefHandle = voteRef.observe(.childChanged, with: { (snapshot) -> Void in
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
-                    self.battle?.host?.votes = val
-                    self.hostPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    if (self.battle?.iAmGuest)! {
+                        self.battle?.guest?.votes = val
+                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    } else {
+                        self.battle?.host?.votes = val
+                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    }
                 } else if (snapshot.key == "guest") {
-                    self.battle?.guest?.votes = val
-                    self.guestPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    if (self.battle?.iAmGuest)! {
+                        self.battle?.host?.votes = val
+                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                    } else {
+                        self.battle?.guest?.votes = val
+                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                    }
                 } else {
                     print("Error! Could not decode channel data")
                 }
@@ -145,8 +175,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     @IBAction func didVoteForHost(_ sender: Any) {
         if self.battle?.status == 1 {
             MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
-                                 successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)},
-                                 errorCallbackForVote: onError)
+                                 successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
         }
     }
     @IBAction func didVoteForGuest(_ sender: Any) {

@@ -57,6 +57,7 @@
 		1E5E1A1A1E5F0E5200F803A6 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */; };
 		1E5E1A1C1E5F115100F803A6 /* FollowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */; };
 		1E5E1A1E1E5F1C2E00F803A6 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */; };
+		1E608F981FD1973C001CA0AC /* GetLikesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E608F971FD1973C001CA0AC /* GetLikesRequest.swift */; };
 		1E60A1E51E4C5BFA001B9EFF /* Camera.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E60A1E41E4C5BFA001B9EFF /* Camera.xib */; };
 		1E6309781E657D880080054B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6309771E657D880080054B /* PostViewController.swift */; };
 		1E63097A1E65A86D0080054B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6309791E65A86D0080054B /* Comment.swift */; };
@@ -230,6 +231,7 @@
 		1E5E1A191E5F0E5200F803A6 /* FollowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		1E5E1A1B1E5F115100F803A6 /* FollowTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowTableViewCell.swift; sourceTree = "<group>"; };
 		1E5E1A1D1E5F1C2E00F803A6 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		1E608F971FD1973C001CA0AC /* GetLikesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLikesRequest.swift; sourceTree = "<group>"; };
 		1E60A1E41E4C5BFA001B9EFF /* Camera.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Camera.xib; sourceTree = "<group>"; };
 		1E6309771E657D880080054B /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1E6309791E65A86D0080054B /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 				CF7D20AD1EF1749F0037FE60 /* UnblockUserRequest.swift */,
 				CF23CA291F5ED1CB000FAE7A /* GetRandomPost.swift */,
 				CFEAAC851FAB55CE0052012D /* TogglePrivacyStatusRequest.swift */,
+				1E608F971FD1973C001CA0AC /* GetLikesRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 				1E42C06A1EE82A990077B707 /* BattleInviteRequest.swift in Sources */,
 				1E0D81781D9949FF0079F301 /* PostTableViewCell.swift in Sources */,
 				CF7D20AE1EF1749F0037FE60 /* UnblockUserRequest.swift in Sources */,
+				1E608F981FD1973C001CA0AC /* GetLikesRequest.swift in Sources */,
 				CF0919711E2E0EDE00601AB5 /* RegisterRequest.swift in Sources */,
 				CF39279F1E29278C00F0C924 /* DefaultError.swift in Sources */,
 				1E5482221E76C0FB008D98C1 /* VSInviteCell.swift in Sources */,

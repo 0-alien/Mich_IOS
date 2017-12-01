@@ -194,7 +194,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
             vc.postId = self.destinationPostId
         }
         else if segue.identifier == "showlikes" {
-            // TODO
+            (segue.destination as! LikesViewController).postId = self.destinationPostId
         }
     }
     
