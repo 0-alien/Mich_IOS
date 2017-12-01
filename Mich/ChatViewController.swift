@@ -97,7 +97,6 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesCollectionViewCe
         let itemRef = messageRef.childByAutoId()
         let msg = ChatMessage(id: itemRef.key, senderId: Int(self.senderId)!, senderDisplayName: self.senderDisplayName, text: text)
         itemRef.setValue(msg.toJSON())
-        JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
     
@@ -121,6 +120,7 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesCollectionViewCe
                     msg.id = snapshot.key
                     self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))
                     self.collectionView.reloadData()
+                    self.scrollToBottom(animated: true)
                 } else {
                     print("Error! Could not decode channel data")
                 }

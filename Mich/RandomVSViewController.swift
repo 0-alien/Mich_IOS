@@ -6,6 +6,7 @@
 //  Copyright © 2017 Lemon. All rights reserved.
 //
 
+import Nuke
 import UIKit
 
 class RandomVSViewController: UIViewController {
@@ -20,10 +21,8 @@ class RandomVSViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hostImage.image = hostImage.image?.af_imageRounded(withCornerRadius: 15)
-        guestImage.image = guestImage.image?.af_imageRounded(withCornerRadius: 15)
-        
-        hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
+        hostImage.image = hostImage.image?.circle
+        guestImage.image = guestImage.image?.circle
         
     }
     
@@ -31,6 +30,10 @@ class RandomVSViewController: UIViewController {
         super.viewDidAppear(animated)
         self.navigationItem.leftBarButtonItem?.isEnabled = false
         self.navigationItem.rightBarButtonItem?.isEnabled = true
+        if !self.isSpectate {
+            Nuke.loadImage(with: Foundation.URL(string: ((UIApplication.shared.delegate as! AppDelegate).user?.avatar)!)!, into: self.hostImage)
+            hostUsername.text = (UIApplication.shared.delegate as! AppDelegate).user?.username
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,9 +46,12 @@ class RandomVSViewController: UIViewController {
         self.navigationItem.leftBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         guestImage.animationImages = [
-            UIImage(named: "Image")!,
-            UIImage(named: "Image-1")!,
-            UIImage(named: "Image-2")!
+            
+            UIImage(named: "first_user")!,
+            UIImage(named: "profile1")!,
+            UIImage(named: "profile")!,
+            UIImage(named: "profile4")!,
+            UIImage(named: "second_user")!
             
         ]
         guestImage.animationDuration = 0.3
@@ -53,9 +59,11 @@ class RandomVSViewController: UIViewController {
         guestUsername.text = "Searching..."
         if isSpectate {
             hostImage.animationImages = [
-                UIImage(named: "Image")!,
-                UIImage(named: "Image-1")!,
-                UIImage(named: "Image-2")!
+                UIImage(named: "profile1")!,
+                UIImage(named: "second_user")!,
+                UIImage(named: "first_user")!,
+                UIImage(named: "profile4")!,
+                UIImage(named: "profile")!
             ]
             hostImage.animationDuration = 0.3
             hostImage.startAnimating()
@@ -109,14 +117,18 @@ class RandomVSViewController: UIViewController {
 
                 self.guestImage.stopAnimating()
                 self.guestUsername.text = self.destinationBattle.guest?.username
-                self.guestImage.af_setImage(withURL: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!)
+                Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!, into: self.guestImage)
                 
                 if self.isSpectate {
                     self.hostImage.stopAnimating()
                     self.hostUsername.text = self.destinationBattle.host?.username
-                    self.hostImage.af_setImage(withURL: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!)
+                    Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!, into: self.hostImage)
                 }
-                self.performSegue(withIdentifier: "showbattle", sender: self)
+                let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                // Your code with delay
+                    self.performSegue(withIdentifier: "showbattle", sender: self)
+                }
             }
         }
     }

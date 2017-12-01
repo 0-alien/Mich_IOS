@@ -29,7 +29,7 @@ class MichHomeViewController: SlidingMenuPresentingViewController, UserListener 
         searchController.definesPresentationContext = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.isHidden = false
-        
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.topItem?.titleView = searchController.searchBar
         } else {

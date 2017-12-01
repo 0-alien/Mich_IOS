@@ -31,7 +31,6 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     deinit {
-        
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -131,7 +130,9 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("dis " + String(self.currentIndex))
+        (UIApplication.shared.delegate as! AppDelegate).savedIndex = -1
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
+
         
     }
     override func viewDidAppear(_ animated: Bool) {

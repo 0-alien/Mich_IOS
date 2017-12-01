@@ -32,6 +32,8 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         collectionView!.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
         
         channelRef = FIRDatabase.database().reference() //connect to database
+        self.automaticallyScrollsToMostRecentMessage = true
+        self.collectionView.collectionViewLayout.messageBubbleFont = UIFont(name: "Helvetica", size: UIFont.systemFontSize)
         if battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         }
@@ -40,6 +42,15 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.collectionView.contentSize.height > self.collectionView.frame.height {
+            self.collectionView.setContentOffset(
+                CGPoint(x: 0, y: self.collectionView.contentSize.height
+                    - self.collectionView.frame.height + self.inputToolbar.bounds.height),
+                animated: animated)
+        }
+    }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.removeObservers()
@@ -74,7 +85,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     
     private func setupOutgoingBubble() -> JSQMessagesBubbleImage {
         let bubbleImageFactory = JSQMessagesBubbleImageFactory()
-        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+        return bubbleImageFactory!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleRed())
     }
     
     private func setupIncomingBubble() -> JSQMessagesBubbleImage {
@@ -105,7 +116,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         let itemRef = messageRef.childByAutoId()
         let msg = BattleMessage(id: itemRef.key, senderId: Int(self.senderId)!, senderDisplayName: self.senderDisplayName, text: text)
         itemRef.setValue(msg.toJSON())
-        JSQSystemSoundPlayer.jsq_playMessageSentSound()
+        //JSQSystemSoundPlayer.jsq_playMessageSentSound()
         finishSendingMessage()
     }
 
@@ -131,7 +142,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
             let cancelAction = UIAlertAction(title: "No", style: .cancel) {
                 UIAlertAction in
                 MichVSTransport.declineBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId,
-                    successCallbackForDeclineBattle: {self.performSegue(withIdentifier: "unwindtovspage", sender: self)}, errorCallbackForDeclineBattle: self.onError)
+                    successCallbackForDeclineBattle: {self.messageDelegate.didCancel()}, errorCallbackForDeclineBattle: self.onError)
             }
             alert.addAction(cancelAction)
             alert.addAction(okAction)
@@ -153,11 +164,12 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         messageRef = self.channelRef!.child(String(self.battleId)).child("messages")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
-                let JSONText = String(data: JSONData, encoding: .ascii)
+                let JSONText = String(data: JSONData, encoding: .utf8)
                 if let msg = BattleMessage(JSONString: JSONText!) {
                     msg.id = snapshot.key
                     self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))
                     self.collectionView.reloadData()
+                    self.scrollToBottom(animated: true)
                 } else {
                     print("Error! Could not decode channel data")
                 }

@@ -32,7 +32,7 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController, Indica
     
     // MARK: - inidcator info provider
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Tinder")
+        return IndicatorInfo(title: "Shuffle")
     }
     
     // MARK: - actions

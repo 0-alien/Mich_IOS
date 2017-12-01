@@ -12,8 +12,14 @@ import UIKit
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     var activeImages = [UIImage]()
     var inactiveImages = [UIImage]()
+    override var selectedIndex: Int {
+        didSet {
+            (UIApplication.shared.delegate as! AppDelegate).savedIndex = selectedIndex
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.delegate = self
         activeImages.append(UIImage(named: "active_home_icon")!)
         activeImages.append(UIImage(named: "active_vs_icon")!)

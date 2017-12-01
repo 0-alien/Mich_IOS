@@ -28,8 +28,11 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     
-    var destinationCommentId: Int! = nil // in case of comment added/liked notification
-    var destinationPostId: Int! = nil // same 
+    var destinationCommentId: Int! = -1 // in case of comment added/liked notification
+    var destinationPostId: Int! = -1 // same
+    @IBOutlet weak var vsResultLabel: UILabel!
+    
+
     
     var refreshControl: UIRefreshControl!
     
@@ -77,6 +80,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             isOwner = true
             followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
             followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
+            vsResultLabel.text =  String(String (describing: (user?.win!)! + 0) + "-" + String (describing: (user?.draw!)! + 0) + "-" +  String (describing: (user?.loss!)! + 0));
+            
             self.navigationItem.rightBarButtonItem = nil
         }
         else {
@@ -90,7 +95,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
                                 successCallbackForIsFollowing: self.onsuccess, errorCallbackForIsFollowing: self.onerror)
         }
         imageSideLength = (self.view.frame.size.width - (itemsPerRow - 1) * spaceing)  / itemsPerRow
-        
+
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(UserPicturesCollectionViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
         if #available(iOS 10.0, *) {
@@ -100,11 +105,14 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
+    
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 {
+        if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 && destinationPostId == -1 && destinationCommentId == -1 {
+            self.destinationCommentId = -1
+            self.destinationPostId = -1
             self.showNotifications()
         }
     }
@@ -223,6 +231,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
         followersButton.setTitle(String((user.nfollowers)! + 0) + "\nFollowers", for: .normal)
         followingButton.setTitle(String((user.nfollowing)! + 0) + "\nFollowing", for: .normal)
+        vsResultLabel.text =  String(String (describing: user.win! + 0) + "-" + String (describing: user.draw! + 0) + "-" +  String (describing: user.loss! + 0));
     }
     
     func onInviteSuccess() {
@@ -240,6 +249,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
+        MichTransport.getuser(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId, successCallbackForgetuser: ongetusersuccess, errorCallbackForgetuser: onerror)
     }
     
     // MARK: navigation

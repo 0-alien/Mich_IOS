@@ -600,7 +600,7 @@ class MichTransport {
         let reqString = BASE_URL + "post/create"
         let imageData:NSData = UIImageJPEGRepresentation(image, 0.3)! as NSData
         let strBase64:String = imageData.base64EncodedString(options: .lineLength64Characters)
-        //print(strBase64)
+        print(strBase64)
         let createpostRequest = CreatePostRequest(token: token, title: title, image: strBase64)
         let payloadJson = createpostRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
@@ -731,10 +731,12 @@ class MichTransport {
     }
 
     static func getpost(token: String, id: Int, successCallbackForgetpost: @escaping (PostClass) -> Void, errorCallbackForgetpost: @escaping (DefaultError) -> Void ){
+        
         let reqString = BASE_URL + "post/get"
         let getPostCommentsRequest = GetPostCommentsRequest(token: token, id: id)
         let payloadJson = getPostCommentsRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            
             if( response.result.isSuccess ){
                 let JString = "\(response.result.value!)"
                 print(JString)
@@ -754,6 +756,7 @@ class MichTransport {
                 errorCallbackForgetpost(error)
             }
         }
+        
     }
     
     ///////////////////// get random post
@@ -911,6 +914,31 @@ class MichTransport {
                 let error = DefaultError()
                 error.errorString = "Something went wrong!"
                 errorCallbackForUnLikeComment(error)
+            }
+        }
+    }
+    
+    static func getLikes(token: String, postId: Int, successCallbackForGetLikes: @escaping ([User]) -> Void, errorCallbackForGetLikes: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "post/likes"
+        let getLikesRequest = GetLikesRequest(token: token, postId: postId)
+        let payloadJson = getLikesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForGetLikes((baseResponse?.data)!)
+                }else{
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetLikes(error)
+                }
+            }else{
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetLikes(error)
             }
         }
     }

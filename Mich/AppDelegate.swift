@@ -18,6 +18,7 @@ import UserNotifications
 import Alamofire
 import GoogleMaps
 import GooglePlaces
+import AudioToolbox.AudioServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var token:String?
     var waiting: Bool! = false
-    var unseenNotificationCount: Int! {
+    var unseenNotificationCount: Int! = 0 {
         didSet {
             UIApplication.shared.applicationIconBadgeNumber = self.unseenNotificationCount
         }
@@ -85,14 +86,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 
-    private func processCommentNotification(_ application: UIApplication, commentId: Int, postId: Int) {
-        (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
+    public func processCommentNotification(commentId: Int, postId: Int) {
+        (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4
         let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
-        vc.popToRootViewController(animated: false)
         let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
         userViewController.destinationCommentId = commentId
         userViewController.destinationPostId = postId
         userViewController.performSegue(withIdentifier: "showcommentnotification", sender: userViewController)
+        
     }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -125,7 +126,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func onGetUserSuccess(user: User) {
         self.user = user
-        print("waikitxa save logini jer")
+        NSLog("%@", "waikitxa save logini jer")
         if let contents = FIRInstanceID.instanceID().token() {
             MichTransport.updateFirebaseToken(token: self.token!, firToken: contents, successCallbackForGetBattles: {}, errorCallbackForGetBattles: {_ in })
         }
@@ -140,80 +141,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func processNotificationAfterLoading(_ application: UIApplication, userInfo: [AnyHashable : Any], onStartUp: Bool) {
-        print(userInfo)
-        switch (userInfo["type"] as! NSString).intValue {
-        case 1:
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 4;
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[4] as! UINavigationController);
-                vc.popToRootViewController(animated: false)
-                let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
-                userViewController.performSegue(withIdentifier: "showpostnotification", sender: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            break;
-        case 2: // comentaris damateba
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            break;
-        case 3: // comentaris like
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                processCommentNotification(application, commentId: Int((userInfo["commentid"] as! NSString).intValue), postId: Int((userInfo["postid"] as! NSString).intValue))
-            }
-            break;
-        case 4: // follow 
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                
-            }
-            break;
-        case 5: //vs invite
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
-                vc.popToRootViewController(animated: false)
-                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
-                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
-                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-            }
-            break;
-        case 6: //vs accept
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
-                vc.popToRootViewController(animated: false)
-                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
-                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
-                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-            }
-            break
-        case 7:
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
-                vc.popToRootViewController(animated: false)
-            }
-            break
-        case 8: //battle finish
-            if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
-                (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 1
-                let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[1] as! UINavigationController)
-                vc.popToRootViewController(animated: false)
-                let vsViewController: VSHomeViewController = vc.topViewController as! VSHomeViewController
-                vsViewController.destinationBattleId = Int((userInfo["battleid"] as! NSString).intValue)
-                vsViewController.performSegue(withIdentifier: "showvsnotification", sender: vsViewController)
-            }
-            break
-        default:
-            break;
-        }
         // notification count
         if (application.applicationState == .background || application.applicationState == .inactive || onStartUp) {
+            let index = (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex
+            let vc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[index!] as! UINavigationController)
+            vc.popToRootViewController(animated: true)
+            (window?.rootViewController as! ScrollingViewController).myTabBar?.selectedIndex = 0
+            let pvc = ((window?.rootViewController as! ScrollingViewController).myTabBar?.viewControllers?[0] as! UINavigationController).topViewController as! PostsViewController
+            
+            pvc.shouldShowNotification = true
+            pvc.notification = userInfo
+            
             MichNotificationsTransport.markSingleNotificationSeen(token: token!, notificationId: Int((userInfo["notificationid"] as! NSString).intValue), successCallbackForMarkSingleNotificationSeen: {}, errorCallbackForMarkSingleNotificationSeen: {_ in })
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int) - 1) // naxvis gamo chairto
         } else {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             var aps = (userInfo["aps"] as! [AnyHashable : Any]);
             (window?.rootViewController as! ScrollingViewController).setNotificationCount(count: (aps["badge"] as! Int))
+            print(aps)
         }
     }
     
@@ -235,8 +181,6 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress)")
-        print("Place attributions: \(place.attributions)")
         dismiss(animated: true, completion: nil)
     }
     

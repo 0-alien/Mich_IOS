@@ -44,6 +44,7 @@ class ViewController: UIViewController {
             let storyboard = UIStoryboard(name: (UIApplication.shared.delegate as! AppDelegate).StartStoryboardName, bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: (UIApplication.shared.delegate as! AppDelegate).StartViewControllerName) as! ScrollingViewController
             (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController = vc
+            vc.myTabBar?.selectedIndex = 0
             if shouldShowNotification {
                 NSLog("1231231232131231232131231231232132131")
                 shouldShowNotification = false
