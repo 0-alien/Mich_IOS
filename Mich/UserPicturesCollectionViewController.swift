@@ -109,7 +109,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        NSLog("%@", "++++++++++++++++++++tavi")
         super.viewDidAppear(animated)
         print((UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount)
         print(destinationPostId)
@@ -117,7 +116,6 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         if (UIApplication.shared.delegate as! AppDelegate).unseenNotificationCount > 0 && destinationPostId == -1 && destinationCommentId == -1 {
             self.showNotifications()
         }
-        NSLog("%@", "+++++++++++++++++++++bolo")
     }
     
     override func didReceiveMemoryWarning() {

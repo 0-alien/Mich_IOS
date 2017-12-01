@@ -128,20 +128,17 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        NSLog("%@ %d", "scroll di +++++++++++++++++++++tavi", currentIndex)
         super.viewWillDisappear(animated)
         print("dis " + String(self.currentIndex))
         (UIApplication.shared.delegate as! AppDelegate).savedIndex = -1
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
-        NSLog("%@ %d", "scroll di +++++++++++++++++++++bolo", currentIndex)
+
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        NSLog("%@ %d", "scroll ap +++++++++++++++++++++tavi", currentIndex)
         super.viewDidAppear(animated)
         print("app " + String(self.currentIndex))
         (UIApplication.shared.delegate as! AppDelegate).savedIndex = currentIndex
         NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
-        NSLog("%@ %d", "scroll ap +++++++++++++++++++++bolo", currentIndex)
     }
 }

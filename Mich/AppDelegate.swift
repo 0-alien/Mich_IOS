@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userViewController: UserPicturesCollectionViewController = vc.topViewController as! UserPicturesCollectionViewController
         userViewController.destinationCommentId = commentId
         userViewController.destinationPostId = postId
-        //userViewController.performSegue(withIdentifier: "showcommentnotification", sender: userViewController)
+        userViewController.performSegue(withIdentifier: "showcommentnotification", sender: userViewController)
         
     }
     
