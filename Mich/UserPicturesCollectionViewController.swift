@@ -28,6 +28,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBOutlet weak var followingButton: UIButton!
     @IBOutlet weak var followersButton: UIButton!
     
+    @IBOutlet weak var vsResultLabel: UILabel!
+    
     var destinationCommentId: Int! = nil // in case of comment added/liked notification
     var destinationPostId: Int! = nil // same 
     
@@ -77,6 +79,8 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             isOwner = true
             followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
             followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
+            vsResultLabel.text =  String(String (describing: (user?.win!)! + 0) + "-" + String (describing: (user?.draw!)! + 0) + "-" +  String (describing: (user?.loss!)! + 0));
+            
             self.navigationItem.rightBarButtonItem = nil
         }
         else {
@@ -100,6 +104,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         }
         MichTransport.getuserposts(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.userId,
                         successCallbackForgetuserposts: ongetpostssuccess, errorCallbackForgetuserposts: onerror)
+    
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -223,6 +228,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
         Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
         followersButton.setTitle(String((user.nfollowers)! + 0) + "\nFollowers", for: .normal)
         followingButton.setTitle(String((user.nfollowing)! + 0) + "\nFollowing", for: .normal)
+        vsResultLabel.text =  String(String (describing: user.win! + 0) + "-" + String (describing: user.draw! + 0) + "-" +  String (describing: user.loss! + 0));
     }
     
     func onInviteSuccess() {
