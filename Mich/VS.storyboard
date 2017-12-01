@@ -226,14 +226,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_user" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-16-jm5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xoB-16-jm5">
                                                     <rect key="frame" x="15" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="DhM-sW-WVf"/>
                                                         <constraint firstAttribute="width" constant="60" id="IrB-sO-eQa"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="second_user" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-GD-idk">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-GD-idk">
                                                     <rect key="frame" x="245" y="20" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="EYN-hA-bEy"/>
@@ -714,16 +714,14 @@
         <image name="PlayButton" width="187" height="108"/>
         <image name="SpectatorButton" width="187" height="102"/>
         <image name="active_red_vs_icon" width="30" height="22"/>
-        <image name="first_user" width="94" height="53"/>
         <image name="newVSBackground" width="718" height="1045"/>
         <image name="newVSBackground2" width="647" height="1148"/>
         <image name="random_vs_icon" width="39" height="39"/>
         <image name="red_vs_icon" width="26" height="19"/>
-        <image name="second_user" width="52" height="79"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JFi-Iz-5QL"/>
         <segue reference="abc-oF-abl"/>
-        <segue reference="uaa-fb-tRY"/>
+        <segue reference="Gwf-KF-eDR"/>
     </inferredMetricsTieBreakers>
 </document>
