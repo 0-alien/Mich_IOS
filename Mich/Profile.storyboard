@@ -209,6 +209,7 @@
                         <outlet property="imageCollection" destination="UTg-1n-REE" id="oxT-Zo-kHl"/>
                         <outlet property="profileDetailsView" destination="5Zl-AL-49v" id="30z-J7-hoz"/>
                         <outlet property="profilePicture" destination="wYe-wr-Puc" id="poH-WO-Q4X"/>
+                        <outlet property="vsResultLabel" destination="EVu-H1-m4n" id="4af-Q7-3dl"/>
                         <outlet property="vsView" destination="OWM-Rp-Z0B" id="uqo-tK-dDo"/>
                         <segue destination="8Vj-gN-r2W" kind="show" identifier="notifications" id="hq6-1L-aZt"/>
                         <segue destination="DUd-CL-MHr" kind="show" identifier="messages" id="axz-AT-cAm"/>

@@ -21,6 +21,11 @@ class User: Mappable {
     var blocked: Bool?
     var votes: Int?
     
+    var win: Int?
+    var draw: Int?
+    var loss: Int?
+    
+    
     required init?(map: Map) {
         
     }
@@ -36,5 +41,9 @@ class User: Mappable {
         record          <- map["record"]
         blocked         <- map["blocked"]
         votes           <- map["votes"]
+        
+        win             <- map["win"]
+        draw            <- map["draw"]
+        loss            <- map["loss"]
     }
 }

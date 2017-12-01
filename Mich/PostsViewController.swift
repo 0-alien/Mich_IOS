@@ -63,6 +63,7 @@ class PostsViewController: SlidingMenuPresentingViewController, UITableViewDeleg
         super.viewDidAppear(animated)
         preheatController.enabled = true
         if shouldShowNotification {
+            self.shouldShowNotification = false
             self.handle(userInfo: self.notification)
         }
     }
