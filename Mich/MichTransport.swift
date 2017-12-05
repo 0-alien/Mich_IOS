@@ -918,6 +918,31 @@ class MichTransport {
         }
     }
     
+    static func getLikes(token: String, postId: Int, successCallbackForGetLikes: @escaping ([User]) -> Void, errorCallbackForGetLikes: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "post/likes"
+        let getLikesRequest = GetLikesRequest(token: token, postId: postId)
+        let payloadJson = getLikesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<User>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    successCallbackForGetLikes((baseResponse?.data)!)
+                }else{
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetLikes(error)
+                }
+            }else{
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetLikes(error)
+            }
+        }
+    }
+    
     static func hidepost(token: String, postID: Int,  successCallbackForHidePost: @escaping (Int) -> Void, errorCallbackForHidePost: @escaping (DefaultError) -> Void ){
         let reqString = BASE_URL + "post/hide"
         let hidepostRequest = HidePostRequest(token: token, postID: postID)

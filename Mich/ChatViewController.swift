@@ -115,7 +115,7 @@ class ChatViewController: JSQMessagesViewController, JSQMessagesCollectionViewCe
         messageRef = self.channelRef!.child("chat").child(String(self.chat.id! + 0)).child("messages")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
-                let JSONText = String(data: JSONData, encoding: .ascii)
+                let JSONText = String(data: JSONData, encoding: .utf8)
                 if let msg = ChatMessage(JSONString: JSONText!) {
                     msg.id = snapshot.key
                     self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))

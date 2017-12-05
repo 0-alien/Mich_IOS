@@ -28,8 +28,8 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H4e-15-nyc">
-                                        <rect key="frame" x="8" y="20" width="48" height="30"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <rect key="frame" x="8" y="20" width="34" height="30"/>
+                                        <state key="normal" title="Back"/>
                                         <connections>
                                             <action selector="cancel:" destination="rlU-YV-9dO" eventType="touchUpInside" id="GW6-ik-CRv"/>
                                         </connections>
@@ -167,10 +167,10 @@
                         </view>
                     </navigationItem>
                     <connections>
-                        <outlet property="guestImage" destination="GQz-94-aWR" id="ax0-YY-jvb"/>
-                        <outlet property="guestPointCountLabel" destination="Fom-uU-8IV" id="I1Y-ym-shh"/>
-                        <outlet property="hostImage" destination="qHf-qh-CE3" id="Zvw-bP-dMh"/>
-                        <outlet property="hostPointCountLabel" destination="ODJ-ft-per" id="MI1-DI-ZcQ"/>
+                        <outlet property="leftImage" destination="qHf-qh-CE3" id="mec-En-hcV"/>
+                        <outlet property="leftPointCountLabel" destination="ODJ-ft-per" id="ooe-Gm-Mh4"/>
+                        <outlet property="rightImage" destination="GQz-94-aWR" id="yzX-b3-G2L"/>
+                        <outlet property="rightPointCountLabel" destination="Fom-uU-8IV" id="1ce-OC-Q4i"/>
                         <outlet property="timerLabel" destination="hMQ-dC-QDS" id="aSw-5k-94e"/>
                     </connections>
                 </viewController>

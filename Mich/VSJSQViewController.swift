@@ -33,6 +33,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         
         channelRef = FIRDatabase.database().reference() //connect to database
         self.automaticallyScrollsToMostRecentMessage = true
+        self.collectionView.collectionViewLayout.messageBubbleFont = UIFont(name: "Helvetica", size: UIFont.systemFontSize)
         if battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         }
@@ -163,7 +164,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         messageRef = self.channelRef!.child(String(self.battleId)).child("messages")
         newMessageRefHandle = messageRef.observe(.childAdded, with: { (snapshot) -> Void in
             if let JSONData = try? JSONSerialization.data(withJSONObject: snapshot.value ?? "{}", options: []) {
-                let JSONText = String(data: JSONData, encoding: .ascii)
+                let JSONText = String(data: JSONData, encoding: .utf8)
                 if let msg = BattleMessage(JSONString: JSONText!) {
                     msg.id = snapshot.key
                     self.messages.append(JSQMessage(senderId: String(msg.senderId!), displayName: msg.senderDisplayName, text: msg.text))

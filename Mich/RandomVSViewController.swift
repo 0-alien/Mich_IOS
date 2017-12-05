@@ -28,7 +28,7 @@ class RandomVSViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationItem.leftBarButtonItem?.isEnabled = false
+        self.navigationItem.leftBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = true
         if !self.isSpectate {
             Nuke.loadImage(with: Foundation.URL(string: ((UIApplication.shared.delegate as! AppDelegate).user?.avatar)!)!, into: self.hostImage)
@@ -43,7 +43,6 @@ class RandomVSViewController: UIViewController {
     
     // MARK: - actions
     @IBAction func startSearch(_ sender: Any) {
-        self.navigationItem.leftBarButtonItem?.isEnabled = true
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         guestImage.animationImages = [
             
@@ -116,8 +115,13 @@ class RandomVSViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: when) {
 
                 self.guestImage.stopAnimating()
-                self.guestUsername.text = self.destinationBattle.guest?.username
-                Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!, into: self.guestImage)
+                if battle.iAmHost! {
+                    self.guestUsername.text = self.destinationBattle.guest?.username
+                    Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!, into: self.guestImage)
+                } else {
+                    self.guestUsername.text = self.destinationBattle.host?.username
+                    Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.host?.avatar)!)!, into: self.guestImage)
+                }
                 
                 if self.isSpectate {
                     self.hostImage.stopAnimating()

@@ -56,11 +56,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <viewLayoutGuide key="safeArea" id="SYy-Pz-TjQ"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikesTableViewCell" rowHeight="48" id="uOs-7h-d5M" customClass="LikesTableViewCell" customModule="Mich" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LikesTableViewCell" rowHeight="48" id="uOs-7h-d5M" customClass="LikesTableViewCell" customModule="Mich" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOs-7h-d5M" id="T29-it-6AS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="47.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wxU-hw-GbK">
@@ -70,7 +70,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYb-9r-3iA">
-                                                    <rect key="frame" x="53" y="16" width="307" height="15"/>
+                                                    <rect key="frame" x="53" y="16" width="281" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,6 +88,7 @@
                                         <connections>
                                             <outlet property="userName" destination="AYb-9r-3iA" id="h5D-a9-wIg"/>
                                             <outlet property="userPicture" destination="wxU-hw-GbK" id="hEJ-Zf-Mew"/>
+                                            <segue destination="Ic9-Kw-Tmu" kind="push" identifier="gotoprofilepage" id="YdJ-Hm-Ug9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -342,6 +343,16 @@
             </objects>
             <point key="canvasLocation" x="-97.5" y="806.58666666666659"/>
         </scene>
+        <!--userpage-->
+        <scene sceneID="bkY-Ur-b8O">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="userpage" id="Ic9-Kw-Tmu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Vr-2M-yfb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eux-bB-PZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="-159"/>
+        </scene>
         <!--Comments-->
         <scene sceneID="OoI-Fh-3hc">
             <objects>
@@ -537,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcb-Xv-gvM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="-158.34"/>
+            <point key="canvasLocation" x="424" y="-121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DFc-PY-9An">
