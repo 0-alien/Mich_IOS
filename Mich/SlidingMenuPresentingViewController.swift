@@ -76,6 +76,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
+            
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -86,7 +87,7 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = false
+            imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
