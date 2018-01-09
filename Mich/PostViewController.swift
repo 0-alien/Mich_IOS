@@ -82,6 +82,7 @@ class PostViewController: UIViewController, UIScrollViewDelegate {
         super.prepare(for: segue, sender: sender)
         if segue.identifier == "showcomments" {
             (segue.destination as! CommentsViewController).postId = post.id
+            (segue.destination as! CommentsViewController).needsToShowComment = false
         }
         else if segue.identifier == "gotoprofilepage" {
             (segue.destination as! UserPicturesCollectionViewController).userId = self.post.userId
