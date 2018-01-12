@@ -48,6 +48,10 @@ class MichSearchViewController: SlidingMenuPresentingViewController, UICollectio
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     // MARK: - xlpager indicatorinfo
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "Search")

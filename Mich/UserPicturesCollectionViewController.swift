@@ -393,7 +393,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     @IBAction func changeProfilePicture(_ sender: Any) {
         self.changeProfilePicture = true
         let alert = UIAlertController()
-        let takePicture = UIAlertAction(title: "Take Picture", style: .default, handler: { ACTION in
+        let takePicture = UIAlertAction(title: "Take Photo", style: .default, handler: { ACTION in
             self.camera(sender as AnyObject)
         })
         let library = UIAlertAction(title: "Choose from library", style: .default, handler: { ACTION in

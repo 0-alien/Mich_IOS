@@ -102,7 +102,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func editProfile(_ sender: Any) {
         let alert = UIAlertController()
         
-        let takePicture = UIAlertAction(title: "Take Picture", style: .default, handler: { ACTION in
+        let takePicture = UIAlertAction(title: "Take Photo", style: .default, handler: { ACTION in
             self.camera(sender as AnyObject)
         })
         

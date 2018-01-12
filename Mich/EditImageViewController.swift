@@ -33,27 +33,17 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var textOfImage: UITextField!
-    
     
     var rw: CGFloat = 0
     var rh: CGFloat = 0
     
     var first: Bool! = true
     
-    
-    var panGets = UIPanGestureRecognizer()
-    
-    var textOfImageShow: Bool! = false;
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textOfImage.delegate = self
         photo.image = photo.image?.fixedOrientation()
         img = img.fixedOrientation()
         doneButtone.isEnabled = true
-        panGets = UIPanGestureRecognizer.init(target: self, action: #selector(handlePan(_:)))
-        textOfImage.addGestureRecognizer(panGets)
                 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditImageViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -170,17 +160,6 @@ class EditImageViewController: UIViewController, UITextFieldDelegate, UIScrollVi
         UIView.animate(withDuration: 0.2, delay: 0, options: .beginFromCurrentState, animations: {() -> Void in
             self.scrollView.zoomScale = self.scrollView.minimumZoomScale
         }, completion: { _ in })
-    }
-    
-    
-    @IBAction func addTextBTN(_ sender: Any) {
-        if(!textOfImageShow){
-            textOfImage.isHidden = false;
-            textOfImageShow = true
-        }else{
-            textOfImage.isHidden = true
-            textOfImageShow = false;
-        }
     }
     
     func dismissKeyboard() {

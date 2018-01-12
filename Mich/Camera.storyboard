@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +47,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" insetsLayoutMarginsFromSafeArea="NO" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="src-mk-xhh">
-                                <rect key="frame" x="0.0" y="88" width="375" height="678"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="660"/>
                                 <subviews>
                                     <imageView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOP-KF-9Gw">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -68,53 +67,23 @@
                                 </connections>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DC7-YZ-eej" userLabel="Adjust">
-                                <rect key="frame" x="16" y="774" width="165" height="37.666666666666629"/>
+                                <rect key="frame" x="0.0" y="756" width="375" height="22"/>
                                 <color key="backgroundColor" red="0.083276863044389637" green="0.07955802992012817" blue="0.081219741089064934" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="adjust"/>
                                 <connections>
                                     <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="H77-t7-Xmy"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A6S-Mq-zfJ">
-                                <rect key="frame" x="0.0" y="391" width="375" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.86518187478188713" blue="0.93427334293787512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="4O9-bL-jmS" id="fzK-x2-IzH"/>
-                                </connections>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-Uk-pUW">
-                                <rect key="frame" x="194" y="774" width="165" height="38"/>
-                                <color key="backgroundColor" red="0.083276863039999996" green="0.079558029919999995" blue="0.081219741090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="T">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addTextBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="uYW-tS-XIz"/>
-                                    <action selector="zoomBTN:" destination="4O9-bL-jmS" eventType="touchUpInside" id="Rzx-dJ-32e"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.083276863039999996" green="0.079558029919999995" blue="0.081219741090000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="DC7-YZ-eej" firstAttribute="bottom" secondItem="5vO-Uk-pUW" secondAttribute="bottom" id="33H-Ux-nMV"/>
-                            <constraint firstItem="DC7-YZ-eej" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="38b-DY-rMs"/>
-                            <constraint firstItem="5vO-Uk-pUW" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3iV-mB-WE5"/>
                             <constraint firstItem="DC7-YZ-eej" firstAttribute="top" secondItem="src-mk-xhh" secondAttribute="bottom" constant="8" id="3mc-F1-NjE"/>
-                            <constraint firstAttribute="bottom" secondItem="5vO-Uk-pUW" secondAttribute="bottom" id="4Dj-ds-Guu"/>
-                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerY" secondItem="HmF-45-Pir" secondAttribute="centerY" id="5ke-Db-1Gp"/>
+                            <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="4Hr-5K-Txf"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="top" secondItem="I3N-QI-cyI" secondAttribute="bottom" id="67l-0k-Svy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="A6S-Mq-zfJ" secondAttribute="trailing" constant="-16" id="AO3-bX-3XA"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" id="H52-PK-nId"/>
                             <constraint firstItem="src-mk-xhh" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leading" id="Ihe-1n-vDq"/>
-                            <constraint firstItem="5vO-Uk-pUW" firstAttribute="width" secondItem="HmF-45-Pir" secondAttribute="width" multiplier="2.2:5" id="Pqi-RG-XJi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5vO-Uk-pUW" secondAttribute="trailing" id="U4R-hJ-ifR"/>
-                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="centerX" secondItem="HmF-45-Pir" secondAttribute="centerX" id="Zhn-Zq-Sj6"/>
-                            <constraint firstItem="DC7-YZ-eej" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" id="hvw-y1-KBB"/>
-                            <constraint firstItem="A6S-Mq-zfJ" firstAttribute="leading" secondItem="HmF-45-Pir" secondAttribute="leadingMargin" constant="-16" id="z3m-e3-ar6"/>
+                            <constraint firstItem="jws-Pt-qhZ" firstAttribute="top" secondItem="DC7-YZ-eej" secondAttribute="bottom" id="Odb-r8-pj8"/>
+                            <constraint firstAttribute="trailing" secondItem="DC7-YZ-eej" secondAttribute="trailing" id="qZb-N2-R2k"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
@@ -140,7 +109,6 @@
                         <outlet property="imageViewTrailingConstraint" destination="In0-tO-fbM" id="vSz-2B-Q5A"/>
                         <outlet property="photo" destination="LOP-KF-9Gw" id="pfh-KL-6NX"/>
                         <outlet property="scrollView" destination="src-mk-xhh" id="yLP-jx-E5a"/>
-                        <outlet property="textOfImage" destination="A6S-Mq-zfJ" id="0D9-xN-1oN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CzT-jW-AhX" userLabel="First Responder" sceneMemberID="firstResponder"/>

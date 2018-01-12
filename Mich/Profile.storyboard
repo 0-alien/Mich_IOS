@@ -513,7 +513,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qMw-ML-1pY">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FollowTableViewCell" rowHeight="48" id="qeG-Fr-03z" customClass="FollowTableViewCell" customModule="Mich" customModuleProvider="target">
@@ -609,8 +609,8 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-lz-6Pv">
-                                                <rect key="frame" x="128.66666666666666" y="116" width="119" height="30"/>
-                                                <state key="normal" title="Edit Profile Photo"/>
+                                                <rect key="frame" x="124.66666666666669" y="116" width="127" height="30"/>
+                                                <state key="normal" title="Edit Profile Picture"/>
                                                 <connections>
                                                     <action selector="editProfile:" destination="Ddq-Mk-hQI" eventType="touchUpInside" id="dfM-oD-AeA"/>
                                                 </connections>
