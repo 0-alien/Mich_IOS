@@ -630,7 +630,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gMj-xu-d3W">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Qhk-09-Q0N">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Qhk-09-Q0N">
                             <connections>
                                 <action selector="cancelSearch:" destination="54s-mO-hIA" id="FKg-0f-Cuf"/>
                             </connections>
