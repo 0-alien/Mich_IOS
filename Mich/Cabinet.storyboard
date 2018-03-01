@@ -22,17 +22,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_background" translatesAutoresizingMaskIntoConstraints="NO" id="ULf-f4-q1a">
-                                <rect key="frame" x="0.0" y="-80" width="320" height="560"/>
+                                <rect key="frame" x="0.0" y="-36" width="350" height="516"/>
                             </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_shdw" translatesAutoresizingMaskIntoConstraints="NO" id="LYl-Et-IsO">
-                                <rect key="frame" x="0.0" y="-80" width="320" height="560"/>
+                                <rect key="frame" x="0.0" y="-36" width="350" height="516"/>
                             </imageView>
                             <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mich_logo" translatesAutoresizingMaskIntoConstraints="NO" id="iI6-1g-oWP">
-                                <rect key="frame" x="46" y="30" width="283" height="75"/>
+                                <rect key="frame" x="46" y="74" width="283" height="75"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtN-QN-U5B" userLabel="LoginFacebookBTN" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="46" y="135" width="283" height="36"/>
+                                <rect key="frame" x="46" y="179" width="283" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="f3G-fP-miR"/>
                                 </constraints>
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pl-WP-ILZ">
-                                <rect key="frame" x="46" y="201" width="283" height="36"/>
+                                <rect key="frame" x="46" y="245" width="283" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="309-B1-5dC"/>
                                 </constraints>
@@ -54,7 +54,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTo-5E-ej9">
-                                <rect key="frame" x="241" y="283" width="88" height="26"/>
+                                <rect key="frame" x="241" y="327" width="88" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <state key="normal" title="Forgot password">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j2-B0-Ai0" userLabel="SignIn">
-                                <rect key="frame" x="46" y="311" width="283" height="36"/>
+                                <rect key="frame" x="46" y="355" width="283" height="36"/>
                                 <color key="backgroundColor" red="1" green="0.17205761271740871" blue="0.12540593154282753" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="j2L-v0-Dk6"/>
@@ -83,7 +83,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Om0-3g-ms5">
-                                <rect key="frame" x="0.0" y="427" width="320" height="53"/>
+                                <rect key="frame" x="0.0" y="427" width="350" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an acount?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-11-r4W">
                                         <rect key="frame" x="60" y="16" width="170" height="21"/>
@@ -113,7 +113,7 @@
                                 <viewLayoutGuide key="safeArea" id="TaD-sO-Ogb"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j2d-B0-00R">
-                                <rect key="frame" x="46" y="245" width="283" height="36"/>
+                                <rect key="frame" x="46" y="289" width="283" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="gim-sg-Z65"/>
                                 </constraints>
@@ -959,6 +959,7 @@
         <image name="register_background" width="320" height="564"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="BIV-cv-nUH"/>
         <segue reference="t9h-eu-6ka"/>
         <segue reference="gFh-W7-LGm"/>
     </inferredMetricsTieBreakers>
