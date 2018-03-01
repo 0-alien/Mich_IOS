@@ -19,7 +19,9 @@ class TagImageViewController: UIViewController, UITextViewDelegate, UITableViewD
     var queryString: String?
     @IBOutlet weak var tableView: UITableView!
     var users: [User] = []
-
+    @IBOutlet weak var doneBTN: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         writeACaptionTextView.delegate = self
@@ -77,6 +79,7 @@ class TagImageViewController: UIViewController, UITextViewDelegate, UITableViewD
     }
     // MARK: actions
     @IBAction func post(_ sender: Any) {
+        doneBTN.isEnabled = false;
         var title = writeACaptionTextView.text
         if title == nil {
             title = " ";
