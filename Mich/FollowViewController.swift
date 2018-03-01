@@ -23,12 +23,12 @@ class FollowViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         if ering! {
             self.navigationItem.title = "Followers"
-            MichTransport.getUserFollowers(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: ((UIApplication.shared.delegate as! AppDelegate).user?.id!)!,
+            MichTransport.getUserFollowers(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.user.id!,
                                            successCallbackForGetFollowers: onSuccess, errorCallbackForGetFollowers: onError);
         }
         else {
             self.navigationItem.title = "Following"
-            MichTransport.getUserFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: ((UIApplication.shared.delegate as! AppDelegate).user?.id!)!,
+            MichTransport.getUserFollowing(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: self.user.id!,
                                            successCallbackForGetFollowing: onSuccess, errorCallbackForGetFollowing: onError)
         }
     }

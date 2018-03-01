@@ -17,12 +17,12 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isCameraShown = false
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.showHelp), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.cameraClicked), name: NSNotification.Name(rawValue: "showChoose"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(SlidingMenuPresentingViewController.hideChoose), name: NSNotification.Name(rawValue: "hideChoose"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showNotifications), name: NSNotification.Name(rawValue: "showNotifications"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showMessages), name: NSNotification.Name(rawValue: "showMessages"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSettings), name: NSNotification.Name(rawValue: "showSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showHelp), name: NSNotification.Name(rawValue: "showHelp"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.cameraClicked), name: NSNotification.Name(rawValue: "showChoose"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.hideChoose), name: NSNotification.Name(rawValue: "hideChoose"), object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +35,8 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     }
 
     func cameraClicked() {
+        //print(currentIndex)
+        //print((UIApplication.shared.delegate as! AppDelegate).savedIndex)
         if ((UIApplication.shared.delegate as! AppDelegate).savedIndex == currentIndex) {
             if (self.isCameraShown) {
                 hideChoose()
@@ -131,15 +133,20 @@ class SlidingMenuPresentingViewController: UIViewController, UINavigationControl
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("dis " + String(self.currentIndex))
-        (UIApplication.shared.delegate as! AppDelegate).savedIndex = -1
+        if (!(self is MichSearchViewController || self is MichSwipePhotosViewController)) {
+            (UIApplication.shared.delegate as! AppDelegate).savedIndex = -1
+        }
         NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
-
-        
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("app " + String(self.currentIndex))
         (UIApplication.shared.delegate as! AppDelegate).savedIndex = currentIndex
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
+        if (!(self is MichSearchViewController || self is MichSwipePhotosViewController)) {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "enableScrolling"), object: nil)
+        } else {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "disableScrolling"), object: nil)
+        }
     }
 }

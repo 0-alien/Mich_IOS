@@ -104,7 +104,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, GMSAutocomp
         birthDate.attributedPlaceholder = NSAttributedString(string:"Date Of Birth", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
         
         placeOfBirth.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
-        placeOfBirth.attributedPlaceholder = NSAttributedString(string:"Place Of Birth", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
+        placeOfBirth.attributedPlaceholder = NSAttributedString(string:"Country", attributes:[NSForegroundColorAttributeName: UIColor(red: 0, green: 0, blue: 0, alpha: 1)])
         
         signUpButton.backgroundColor = UIColor (red:243 / 255.0, green:92 / 255.0, blue:59 / 255.0, alpha:1)
         

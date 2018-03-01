@@ -90,6 +90,11 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.switchBT.isOn = ((UIApplication.shared.delegate as! AppDelegate).user?.isPrivate)!
+    }
+    
     @IBAction func passwordBTN(_ sender: Any) {
         self.view.layoutIfNeeded()
         
@@ -168,10 +173,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func switchBTN(_ sender: Any) {
-        if(switchBT.isOn){
+        if(!switchBT.isOn){
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: offTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
-        }else{
+        } else {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             MichTransport.togglePrivacyStatus(token: appDelegate.token!, successCallbackForTogglePrivacyStatus: onTogglePrivacyStatus, errorCallbackForTogglePrivacyStatus: onError)
         }
@@ -181,11 +186,13 @@ class SettingsViewController: UIViewController {
         let alert = UIAlertController(title: "Alert", message: "Your account is now private", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        (UIApplication.shared.delegate as! AppDelegate).user?.isPrivate = true
     }
     
     func offTogglePrivacyStatus(){
         let alert = UIAlertController(title: "Alert", message: "Your account is now public", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        (UIApplication.shared.delegate as! AppDelegate).user?.isPrivate = false
     }
 }

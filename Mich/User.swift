@@ -20,7 +20,7 @@ class User: Mappable {
     var record: String?
     var blocked: Bool?
     var votes: Int?
-    
+    var isPrivate: Bool?
     var win: Int?
     var draw: Int?
     var loss: Int?
@@ -41,7 +41,7 @@ class User: Mappable {
         record          <- map["record"]
         blocked         <- map["blocked"]
         votes           <- map["votes"]
-        
+        isPrivate       <- map["private"]
         win             <- map["win"]
         draw            <- map["draw"]
         loss            <- map["loss"]

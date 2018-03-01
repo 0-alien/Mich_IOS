@@ -90,16 +90,16 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     func textFieldDidChange(_ textField: UITextField) {
         if(addComments.text!  == ""){
             postButton.isEnabled = false;
-        }else{
+        } else {
             postButton.isEnabled = true;
         }
     }
 
     func onAddCommentSuccess(comment: Comment) {
+        self.tableView.isHidden = false // 1 komentari mainc gdia
         comments.append(comment)
         tableView.reloadData()
         tableViewScrollToBottom(animated: true)
-        
         addComments.text! = ""
         
     }
@@ -129,8 +129,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         
         addComments.resignFirstResponder()
         postButton(self)
-
-        
         return true
     }
     
@@ -158,7 +156,11 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.comments.removeAll()
         self.comments.append(contentsOf: resp)
         self.tableView.reloadData()
-        
+        if self.comments.count > 0 { // tu 1 komentari mainc gdia
+            self.tableView.isHidden = false
+        } else {
+            self.tableView.isHidden = true
+        }
         if needsToShowComment {
             needsToShowComment = false
             for i in 0 ..< comments.count {
@@ -221,7 +223,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         if (com.userId == (UIApplication.shared.delegate as! AppDelegate).user?.id){
         
             let deleteComment = UIAlertAction(title: "Delete", style: .destructive, handler: { ACTION in
-                MichTransport.deletecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForDeleteComment: self.onDeleteComment, errorCallbackForDeleteComment: self.onError)
+                MichTransport.deletecomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, commentID: com.id!, successCallbackForDeleteComment: self.onDeleteCommentSuccess, errorCallbackForDeleteComment: self.onError)
             
             })
             alert.addAction(deleteComment)
@@ -258,7 +260,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.present(alert, animated: true, completion: nil)
     }
     
-    func onDeleteComment(commentId: Int) {
+    func onDeleteCommentSuccess(commentId: Int) {
         var index = 0
         
         for com in self.comments {
@@ -267,6 +269,9 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
                 break
             }
             index = index+1
+        }
+        if self.comments.count == 0 {
+            self.tableView.isHidden = true
         }
         self.tableView.reloadData()
     
