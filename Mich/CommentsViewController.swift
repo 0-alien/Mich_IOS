@@ -12,12 +12,17 @@ import Nuke
 class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CommentDelegate {
     
     
+    @IBOutlet weak var tagTableView: UITableView!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var addComments: UITextField!
     @IBOutlet weak var tableView: UITableView!
    
+    var queryIndex: Int?
+    var queryString: String?
+    
     var postId: Int!
+    var users: [User] = []
     var needsToShowComment: Bool! = false
     var destinationCommentId: Int! = nil //comment added/liked notificatioin
     
@@ -42,57 +47,77 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    // MARK: - tagtableView delegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.tagTableView {
+            self.addComments.text = self.addComments.text![Range(self.addComments.text?.startIndex ..<
+                self.addComments.text!.index((self.addComments.text?.endIndex)!, offsetBy: queryIndex!))] + "@" +
+            self.users[indexPath.row].username! + " "
+            self.tagTableView.isHidden = true
+            self.users.removeAll()
+            self.tagTableView.reloadData()
+        }
+    }
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  self.comments.count
+        if tableView == self.tableView {
+            return  self.comments.count
+        } else if tableView == self.tagTableView {
+            return users.count
+        }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
-        Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
-        cell.userImage = cell.userImage.circle
-        cell.data.text = self.comments[indexPath.row].data
-        cell.commentIndex = indexPath.row
-        cell.delegate = self
-        cell.liked = (comments[indexPath.row].myLike == 1)
-        cell.setLikeCount(count: comments[indexPath.row].nLikes!)
-        
-        
-        cell.editCommentButton.isHidden = false
-/*
-        if (comments[indexPath.row].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
+        if tableView == self.tableView {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
+            Nuke.loadImage(with: Foundation.URL(string: comments[indexPath.row].avatar!)!, into: cell.userImage)
+            cell.userImage = cell.userImage.circle
+            cell.data.text = self.comments[indexPath.row].data
+            cell.commentIndex = indexPath.row
+            cell.delegate = self
+            cell.liked = (comments[indexPath.row].myLike == 1)
+            cell.setLikeCount(count: comments[indexPath.row].nLikes!)
             cell.editCommentButton.isHidden = false
-
+            
+            /*
+             if (comments[indexPath.row].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id) {
+             cell.editCommentButton.isHidden = false
+             
+             }
+             else {
+             cell.editCommentButton.isHidden = true
+             }
+             */
+            return cell
+        } else if tableView == self.tagTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TagTableViewCell", for: indexPath) as! TagTableViewCell
+            cell.userName.text = users[indexPath.row].username
+            Nuke.loadImage(with: Foundation.URL(string: users[indexPath.row].avatar!)!, into: cell.userImage)
+            cell.userImage = cell.userImage.circle
+            return cell
         }
-        else {
-            cell.editCommentButton.isHidden = true
-        }
- */
- 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommentCell", for: indexPath) as! CommentCell
         return cell
-        
     }
 
+    // MARK: class methods
+    private func updateTagTableView(data: String) {
+        self.tagTableView.isHidden = false
+        MichTransport.searchusers(token: (UIApplication.shared.delegate as! AppDelegate).token!, term: data,
+                                  successCallbackForsearchusers: self.onSearchUsersSuccess,
+                                  errorCallbackForsearchusers: {_ in self.users.removeAll(); self.tagTableView.reloadData()})
+    }
  
-///////////////// scrolling
-    
-    
+    // MARK: scrolling
     @IBAction func postButton(_ sender: Any) {
    
         let comment = addComments.text!
-        
+        self.addComments.resignFirstResponder()
+        self.tagTableView.isHidden = true
         MichTransport.addcomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: postId, comment: comment, successCallbackForAddComment: onAddCommentSuccess, errorCallbackForAddComment: onError)
         
-    }
-    
-
-    func textFieldDidChange(_ textField: UITextField) {
-        if(addComments.text!  == ""){
-            postButton.isEnabled = false;
-        } else {
-            postButton.isEnabled = true;
-        }
     }
 
     func onAddCommentSuccess(comment: Comment) {
@@ -126,15 +151,49 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         addComments.resignFirstResponder()
+        self.tagTableView.isHidden = true
         postButton(self)
         return true
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if(addComments.text!  == ""){
+            postButton.isEnabled = false;
+        } else {
+            postButton.isEnabled = true;
+        }
+        print(textField.text)
+        if (textField.text?.isEmpty)! {
+            self.users.removeAll()
+            self.tagTableView.reloadData()
+            self.tagTableView.isHidden = true
+            return
+        }
+        let data: String = textField.text!
+        for i in 2 ..< data.characters.count + 1 {
+            let tmp = data.index(data.endIndex, offsetBy: -i)
+            if (data[tmp] == " ") {
+                self.tagTableView.isHidden = true
+                self.users.removeAll()
+                self.tagTableView.reloadData()
+                break
+            }
+            if (data[tmp] == "@") {
+                if (i == data.characters.count || (i < data.characters.count && data[data.index(data.endIndex, offsetBy: -i - 1)] == " ")) {
+                    self.queryString = data[Range(data.index(data.endIndex, offsetBy: -i + 1) ..< data.endIndex)]
+                    self.updateTagTableView(data: self.queryString!)
+                    self.queryIndex = -i
+                    break
+                }
+            }
+        }
     }
     
     
     func hideKeyboard() {
         addComments.resignFirstResponder()
+        self.tagTableView.isHidden = true
     }
     
     func tableViewScrollToBottom(animated: Bool) {
@@ -201,6 +260,11 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         self.tableView.reloadData()
+    }
+    
+    private func onSearchUsersSuccess(users: [User]) {
+        self.users = users
+        self.tagTableView.reloadData()
     }
     
     // MARK: commentDelegate
