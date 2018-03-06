@@ -105,6 +105,7 @@ class NotificationsViewController: UIViewController, UITableViewDelegate, UITabl
             guard let vc = segue.destination as? FollowViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
+            vc.user = (UIApplication.shared.delegate as! AppDelegate).user
             vc.ering = true
             vc.needsToShowFollower = true
             vc.destinationFollowerId = notif.followerId
