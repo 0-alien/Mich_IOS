@@ -15,6 +15,8 @@ class RandomVSViewController: UIViewController {
     @IBOutlet weak var guestImage: UIImageView!
     @IBOutlet weak var hostUsername: UILabel!
     @IBOutlet weak var guestUsername: UILabel!
+    
+    var country: String!
     var destinationBattle: Battle!
     var isSpectate: Bool! = false
     var cancelled: Bool! = false
@@ -70,9 +72,13 @@ class RandomVSViewController: UIViewController {
         }
         
         if isSpectate {
-            MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: onSuccess, errorCallbackForGetRandomBattle: onError)
+            print("+_+_+_+_+_+_+_+_+_+_+_+_+_++_+_+_+_+_++_+_+_+_+")
+            print(country)
+            MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, filter: country!, successCallbackForGetRandomBattle: onSuccess, errorCallbackForGetRandomBattle: onError)
         } else {
-            MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForPlayRandomBattle: onSuccess, errorCallbackForPlayRandomBattle: onError)
+            print("+_+_+_+_+_+_+_+_+_+_+_+_+_++_+_+_+_+_++_+_+_+_+")
+            print(country)
+            MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, filter: country!, successCallbackForPlayRandomBattle: onSuccess, errorCallbackForPlayRandomBattle: onError)
         }
     }
 
@@ -148,7 +154,7 @@ class RandomVSViewController: UIViewController {
                     if self.cancelled {
                         return
                     }
-                    MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetRandomBattle: self.onSuccess, errorCallbackForGetRandomBattle: self.onError)
+                    MichVSTransport.getRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, filter: self.country!, successCallbackForGetRandomBattle: self.onSuccess, errorCallbackForGetRandomBattle: self.onError)
                 }
                 return
             }
@@ -159,7 +165,7 @@ class RandomVSViewController: UIViewController {
                     if self.cancelled {
                         return
                     }
-                    MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForPlayRandomBattle: self.onSuccess, errorCallbackForPlayRandomBattle: self.onError)
+                    MichVSTransport.playRandomBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, filter: self.country!, successCallbackForPlayRandomBattle: self.onSuccess, errorCallbackForPlayRandomBattle: self.onError)
                 }
                 return
             }

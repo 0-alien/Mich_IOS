@@ -242,6 +242,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, GMSAutocomp
         print("Error: ", error.localizedDescription)
     }
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        
         dismiss(animated: true, completion: nil)
     }
 }

@@ -11,9 +11,11 @@ import ObjectMapper
 
 class GetRandomBattleRequest: Mappable {
     var token: String?
+    var filter: String?
     
-    init(token: String){
+    init(token: String, filter:String){
         self.token = token
+        self.filter = filter
     }
     
     required init?(map: Map) {
@@ -22,5 +24,6 @@ class GetRandomBattleRequest: Mappable {
     
     func mapping(map: Map) {
         token    <- map["token"]
+        filter   <- map["filter"]
     }
 }

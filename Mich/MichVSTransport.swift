@@ -271,9 +271,9 @@ class MichVSTransport {
         }
     }
     
-    static func getRandomBattle(token: String, successCallbackForGetRandomBattle: @escaping (Battle) -> Void, errorCallbackForGetRandomBattle: @escaping (DefaultError) -> Void) {
+    static func getRandomBattle(token: String, filter:String, successCallbackForGetRandomBattle: @escaping (Battle) -> Void, errorCallbackForGetRandomBattle: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "battle/getRandom"
-        let getRandomBattleRequest = GetRandomBattleRequest(token: token)
+        let getRandomBattleRequest = GetRandomBattleRequest(token: token, filter: filter)
         let payloadJson = getRandomBattleRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             if( response.result.isSuccess ){
@@ -300,9 +300,9 @@ class MichVSTransport {
         }
     }
     
-    static func playRandomBattle(token: String, successCallbackForPlayRandomBattle: @escaping (Battle) -> Void, errorCallbackForPlayRandomBattle: @escaping (DefaultError) -> Void) {
+    static func playRandomBattle(token: String, filter:String, successCallbackForPlayRandomBattle: @escaping (Battle) -> Void, errorCallbackForPlayRandomBattle: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "battle/playRandom"
-        let playRandomBattleRequest = PlayRandomBattleRequest(token: token)
+        let playRandomBattleRequest = PlayRandomBattleRequest(token: token, filter: filter)
         let payloadJson = playRandomBattleRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             if( response.result.isSuccess ){

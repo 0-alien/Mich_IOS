@@ -10,10 +10,12 @@ import Foundation
 import ObjectMapper
 
 class PlayRandomBattleRequest: Mappable {
-    var token: String?
+    var token:  String?
+    var filter: String?
     
-    init(token: String){
+    init(token: String, filter:String){
         self.token = token
+        self.filter = filter
     }
     
     required init?(map: Map) {
@@ -22,5 +24,6 @@ class PlayRandomBattleRequest: Mappable {
     
     func mapping(map: Map) {
         token    <- map["token"]
+        filter   <- map["filter"]
     }
 }
