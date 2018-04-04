@@ -33,7 +33,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultsTableViewCell", for: indexPath) as! SearchResultsTableViewCell
-        cell.userName.text = data[indexPath.row].name
+        cell.userName.text = data[indexPath.row].username
         Nuke.loadImage(with: Foundation.URL(string: data[indexPath.row].avatar!)!, into: cell.userImage)
         cell.userImage.image = cell.userImage.image?.circle
         return cell
