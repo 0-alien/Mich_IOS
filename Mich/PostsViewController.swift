@@ -10,7 +10,6 @@ import UIKit
 import Nuke
 import Social
 import QuartzCore
-import AlamofireImage
 import Preheat
 
 class PostsViewController: SlidingMenuPresentingViewController, UITableViewDelegate, UITableViewDataSource, PostTableViewCellDelegate,
