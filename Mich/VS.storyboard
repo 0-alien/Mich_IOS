@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -333,7 +333,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newVSBackground2" translatesAutoresizingMaskIntoConstraints="NO" id="mmJ-Ab-xJr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-Hy-AvL">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4J-Hy-AvL">
                                 <rect key="frame" x="56" y="109" width="91" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="g4J-Hy-AvL" secondAttribute="height" multiplier="121:80" id="SJr-CA-ONO"/>
@@ -344,7 +344,7 @@
                                     <segue destination="54s-mO-hIA" kind="show" identifier="randombattle" id="tl4-xc-Igv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-c1-BUA">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqb-c1-BUA">
                                 <rect key="frame" x="179.5" y="109" width="84.5" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="WTM-ei-pY9"/>
@@ -749,6 +749,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="tl4-xc-Igv"/>
         <segue reference="sGd-dP-B06"/>
-        <segue reference="Gwf-KF-eDR"/>
+        <segue reference="uaa-fb-tRY"/>
     </inferredMetricsTieBreakers>
 </document>
