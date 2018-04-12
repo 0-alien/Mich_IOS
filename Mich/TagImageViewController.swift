@@ -107,8 +107,10 @@ class TagImageViewController: UIViewController, UITextViewDelegate, UITableViewD
     }
     // MARK: tableview delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.writeACaptionTextView.text = self.writeACaptionTextView.text[Range(self.writeACaptionTextView.text.startIndex ..<
-            self.writeACaptionTextView.text.index(self.writeACaptionTextView.text.endIndex, offsetBy: queryIndex!))] + "@" +
+        //self.writeACaptionTextView.text = self.writeACaptionTextView.text[Range(self.writeACaptionTextView.text.startIndex ..<
+            //self.writeACaptionTextView.text.index(self.writeACaptionTextView.text.endIndex, offsetBy: queryIndex!))] + "@" +
+            //self.users[indexPath.row].username! + " "
+        self.writeACaptionTextView.text = self.writeACaptionTextView.text.prefix(self.writeACaptionTextView.text.count + queryIndex!) + "@" +
             self.users[indexPath.row].username! + " "
         self.tableView.isHidden = true
         self.users.removeAll()

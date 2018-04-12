@@ -58,9 +58,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: - tagtableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.tagTableView {
-            self.addComments.text = self.addComments.text![Range(self.addComments.text?.startIndex ..<
-                self.addComments.text!.index((self.addComments.text?.endIndex)!, offsetBy: queryIndex!))] + "@" +
-            self.users[indexPath.row].username! + " "
+            //self.addComments.text = self.addComments.text![Range(self.addComments.text?.startIndex ..<
+              //  self.addComments.text!.index((self.addComments.text?.endIndex)!, offsetBy: queryIndex!))] + "@" +
+                
+            self.addComments.text = String((self.addComments.text?.prefix((self.addComments.text?.count)! + queryIndex!))!) + "@" +
+                self.users[indexPath.row].username! + " "
+            
             self.tagTableView.isHidden = true
             self.users.removeAll()
             self.tagTableView.reloadData()
