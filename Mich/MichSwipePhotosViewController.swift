@@ -88,6 +88,7 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController, Indica
 
     // MARK: callbacks
     func onSuccessGetRandomPost(post: PostClass) {
+        print("norm")
         postRandom = post
         username.text = post.userName!
         tittle.text = post.title!
@@ -97,14 +98,11 @@ class MichSwipePhotosViewController: SlidingMenuPresentingViewController, Indica
     }
     
     func prefetchSuccess(post: PostClass) {
+        print("preeee")
         self.nextPost = post
         let url = URL(string: post.image!)
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                self.nextImage = UIImage(data: data!)
-            }
-        }
+        let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        self.nextImage = UIImage(data: data!)
     }
 
     func onSuccessForLike() {
