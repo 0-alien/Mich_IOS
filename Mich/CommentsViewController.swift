@@ -47,6 +47,14 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Show keyboard by default
+        addComments.becomeFirstResponder()
+    }
+    
     // MARK: - tagtableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.tagTableView {
@@ -163,7 +171,6 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             postButton.isEnabled = true;
         }
-        print(textField.text)
         if (textField.text?.isEmpty)! {
             self.users.removeAll()
             self.tagTableView.reloadData()
