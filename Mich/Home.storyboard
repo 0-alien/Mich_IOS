@@ -515,18 +515,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lj-QY-JeR">
                                 <rect key="frame" x="0.0" y="464" width="320" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Add comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WMj-F2-WJA">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="5w9-5B-bkj"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PxX-ES-jRS">
+                                        <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
-                                            <outlet property="delegate" destination="VjI-Sc-P2S" id="HTW-iv-sMB"/>
+                                            <outlet property="delegate" destination="VjI-Sc-P2S" id="JNT-Ah-51A"/>
                                         </connections>
-                                    </textField>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUU-Vr-NdO">
                                         <rect key="frame" x="268" y="5" width="31" height="30"/>
                                         <state key="normal" title="Post"/>
@@ -536,12 +533,13 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="WMj-F2-WJA" secondAttribute="bottom" id="GBm-hp-aPe"/>
+                                    <constraint firstItem="PxX-ES-jRS" firstAttribute="top" secondItem="8Lj-QY-JeR" secondAttribute="top" id="IIZ-hO-HcV"/>
+                                    <constraint firstItem="PxX-ES-jRS" firstAttribute="leading" secondItem="8Lj-QY-JeR" secondAttribute="leading" id="PXT-gk-z6Q"/>
                                     <constraint firstAttribute="height" constant="40" id="RTk-pI-v0l"/>
                                     <constraint firstItem="cUU-Vr-NdO" firstAttribute="centerY" secondItem="8Lj-QY-JeR" secondAttribute="centerY" id="aav-m3-oZp"/>
-                                    <constraint firstAttribute="trailing" secondItem="WMj-F2-WJA" secondAttribute="trailing" constant="60" id="m9I-ZN-mCp"/>
+                                    <constraint firstItem="cUU-Vr-NdO" firstAttribute="leading" secondItem="PxX-ES-jRS" secondAttribute="trailing" id="ksd-nP-12H"/>
                                     <constraint firstAttribute="trailing" secondItem="cUU-Vr-NdO" secondAttribute="trailing" constant="21" id="oVA-j7-bI0"/>
-                                    <constraint firstItem="WMj-F2-WJA" firstAttribute="leading" secondItem="8Lj-QY-JeR" secondAttribute="leading" id="so7-oI-eRd"/>
+                                    <constraint firstAttribute="bottom" secondItem="PxX-ES-jRS" secondAttribute="bottom" id="ucD-El-tIk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -564,11 +562,11 @@
                     <navigationItem key="navigationItem" title="Comments" id="br8-Hg-s99"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addComments" destination="WMj-F2-WJA" id="FHw-ya-Ndl"/>
                         <outlet property="bottomConstraint" destination="VKc-45-Vc5" id="fty-zS-BfN"/>
                         <outlet property="postButton" destination="cUU-Vr-NdO" id="A16-Sd-5bt"/>
                         <outlet property="tableView" destination="Oob-ze-UYt" id="TQw-CX-gfZ"/>
                         <outlet property="tagTableView" destination="h2k-90-8G6" id="rGj-3s-8EQ"/>
+                        <outlet property="textView" destination="PxX-ES-jRS" id="xO9-MZ-lab"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcb-Xv-gvM" userLabel="First Responder" sceneMemberID="firstResponder"/>

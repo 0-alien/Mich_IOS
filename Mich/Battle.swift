@@ -13,7 +13,6 @@ class Battle: Mappable {
     var id: Int?
     var status: Int?
     var myBattle: Bool?
-    var iAmHost: Bool?
     var iAmGuest: Bool?
     var createAt: String?
     var updatedAt: String?
@@ -31,7 +30,6 @@ class Battle: Mappable {
         host            <- map["host"]
         guest           <- map["guest"]
         myBattle        <- map["mybattle"]
-        iAmHost         <- map["iamhost"]
         iAmGuest        <- map["iamguest"]
         createAt        <- map["created_at"]
         updatedAt       <- map["updated_at"]
