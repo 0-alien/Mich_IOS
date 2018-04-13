@@ -15,7 +15,6 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var data: UILabel!
-    @IBOutlet weak var ratingImage: UIImageView!
     var commentIndex: Int!
     var delegate: CommentDelegate!
     @IBOutlet weak var likeCountLabel: UILabel!
@@ -37,36 +36,9 @@ class CommentCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func setLikeCount(count: Int) {
         assert(count >= 0);
         self.likeCountLabel.text = String(count)
-        if count == 0 {
-            self.ratingImage.image = nil
-            self.ratingImage.backgroundColor = UIColor.cyan
-        }
-        else {
-            if count < 5 {
-                self.ratingImage.image = UIImage(named: "rating-1")
-            }
-            else if count < 10 {
-                self.ratingImage.image = UIImage(named: "rating-2")
-            }
-            else if count < 20 {
-                self.ratingImage.image = UIImage(named: "rating-3")
-            }
-            else if count < 50 {
-                self.ratingImage.image = UIImage(named: "rating-4")
-            }
-            else {
-                self.ratingImage.image = UIImage(named: "rating-5")
-            }
-        }
     }
     
     @IBAction func like(_ sender: Any) {
