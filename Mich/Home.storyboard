@@ -409,7 +409,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f0-jD-lPf">
-                                                    <rect key="frame" x="63" y="75" width="40" height="12"/>
+                                                    <rect key="frame" x="63" y="76" width="40" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="LsO-IQ-Jvl"/>
                                                         <constraint firstAttribute="width" constant="40" id="Tkf-eF-Wnn"/>
@@ -427,24 +427,8 @@
                                                         <constraint firstAttribute="width" constant="40" id="sAD-gl-ue2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drw-y1-mcN" userLabel="CommenRateHolder">
-                                                    <rect key="frame" x="0.0" y="94" width="320" height="8"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4vz-At-qti" userLabel="ratingImage">
-                                                            <rect key="frame" x="0.0" y="0.0" width="320" height="8"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="8" id="1Ai-TJ-zSB"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4vz-At-qti" secondAttribute="trailing" id="6hy-6I-ayr"/>
-                                                        <constraint firstItem="4vz-At-qti" firstAttribute="top" secondItem="drw-y1-mcN" secondAttribute="top" id="L0s-Og-kiw"/>
-                                                        <constraint firstItem="4vz-At-qti" firstAttribute="leading" secondItem="drw-y1-mcN" secondAttribute="leading" id="ZVm-gj-fal"/>
-                                                        <constraint firstAttribute="bottom" secondItem="4vz-At-qti" secondAttribute="bottom" id="skN-kU-bAX"/>
-                                                    </constraints>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2P-m1-TpP">
-                                                    <rect key="frame" x="105" y="75" width="6" height="12"/>
+                                                    <rect key="frame" x="105" y="76" width="6" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -452,7 +436,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="w5w-L0-vD2" secondAttribute="bottom" constant="16" id="3mE-5E-3IC"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1f0-jD-lPf" secondAttribute="bottom" constant="4" id="5zE-Q7-Oxq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1f0-jD-lPf" secondAttribute="bottom" constant="3" id="5zE-Q7-Oxq"/>
                                                 <constraint firstItem="x2P-m1-TpP" firstAttribute="leading" secondItem="1f0-jD-lPf" secondAttribute="trailing" constant="2" id="Diy-qz-K01"/>
                                                 <constraint firstItem="XKI-K6-Feh" firstAttribute="leading" secondItem="hi9-KB-Fvp" secondAttribute="leadingMargin" id="EHc-z5-VD0"/>
                                                 <constraint firstItem="1f0-jD-lPf" firstAttribute="leading" secondItem="w5w-L0-vD2" secondAttribute="leading" id="Ioj-Jr-cdz"/>
@@ -467,17 +451,11 @@
                                                 <constraint firstItem="w5w-L0-vD2" firstAttribute="leading" secondItem="XKI-K6-Feh" secondAttribute="trailing" constant="8" id="yAb-nd-aRn"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <constraints>
-                                            <constraint firstItem="drw-y1-mcN" firstAttribute="leading" secondItem="SKD-Se-Xux" secondAttribute="leading" id="ZNN-iS-uEc"/>
-                                            <constraint firstAttribute="trailing" secondItem="drw-y1-mcN" secondAttribute="trailing" id="ayL-Fk-Dhn"/>
-                                            <constraint firstAttribute="bottom" secondItem="drw-y1-mcN" secondAttribute="bottom" id="eua-gS-Yzp"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="data" destination="tg0-e3-A2H" id="gGa-fm-inj"/>
                                             <outlet property="editCommentButton" destination="NjZ-5B-cOs" id="da8-vH-nVC"/>
                                             <outlet property="likeButton" destination="1f0-jD-lPf" id="Dv7-NR-LtR"/>
                                             <outlet property="likeCountLabel" destination="x2P-m1-TpP" id="Jlv-la-IaD"/>
-                                            <outlet property="ratingImage" destination="4vz-At-qti" id="hfm-Ie-0Zi"/>
                                             <outlet property="userImage" destination="XKI-K6-Feh" id="QG1-il-6ub"/>
                                         </connections>
                                     </tableViewCell>
