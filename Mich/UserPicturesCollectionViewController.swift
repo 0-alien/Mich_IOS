@@ -12,6 +12,7 @@ import AlamofireImage
 
 class UserPicturesCollectionViewController: SlidingMenuPresentingViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
 
+    @IBOutlet weak var bioLabel: UILabel!
     @IBOutlet weak var vsView: UIView!
     private let reuseIdentifier = "UserPicturesCollectionViewCell"
     let spaceing : CGFloat = 1.0

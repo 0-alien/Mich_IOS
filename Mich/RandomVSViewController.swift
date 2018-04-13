@@ -121,7 +121,7 @@ class RandomVSViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: when) {
 
                 self.guestImage.stopAnimating()
-                if battle.iAmHost! {
+                if !battle.iAmGuest! {
                     self.guestUsername.text = self.destinationBattle.guest?.username
                     Nuke.loadImage(with: Foundation.URL(string: (self.destinationBattle.guest?.avatar)!)!, into: self.guestImage)
                 } else {

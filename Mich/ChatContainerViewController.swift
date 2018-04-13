@@ -111,7 +111,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
                     if (self.battle?.iAmGuest)! {
-                        self.battle?.guest?.votes = val
+                        self.battle?.host?.votes = val
                         self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
                     } else {
                         self.battle?.host?.votes = val
@@ -119,7 +119,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
                     }
                 } else if (snapshot.key == "guest") {
                     if (self.battle?.iAmGuest)! {
-                        self.battle?.host?.votes = val
+                        self.battle?.guest?.votes = val
                         self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
                     } else {
                         self.battle?.guest?.votes = val

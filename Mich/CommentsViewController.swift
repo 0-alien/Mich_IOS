@@ -9,18 +9,19 @@
 import UIKit
 import Nuke
 
-class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CommentDelegate {
+class CommentsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CommentDelegate, UITextViewDelegate {
     
     
     @IBOutlet weak var tagTableView: UITableView!
     @IBOutlet weak var postButton: UIButton!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var addComments: UITextField!
+    
     @IBOutlet weak var tableView: UITableView!
-   
+    @IBOutlet weak var textView: UITextView!
     var queryIndex: Int?
     var queryString: String?
     
+    var tap: UITapGestureRecognizer!
     var postId: Int!
     var users: [User] = []
     var needsToShowComment: Bool! = false
@@ -33,10 +34,16 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         MichTransport.getpostcomments(token: (UIApplication.shared.delegate as! AppDelegate).token!, id: postId, successCallbackForgetuserposts: onGetCommentsSuccess, errorCallbackForgetuserposts: onError)
         
-        addComments.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        
         self.tableView.estimatedRowHeight = 40
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        if textView.text.isEmpty {
+            textView.text = "Add Comment"
+            textView.textColor = UIColor.darkGray
+        }
+        tap = UITapGestureRecognizer(target: self, action: "tableViewTapped")
+        tap.numberOfTapsRequired = 1
+        self.tableView.addGestureRecognizer(tap)
     }
     
     deinit {
@@ -47,21 +54,18 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // Show keyboard by default
-        addComments.becomeFirstResponder()
+    // MARK: - tableview tap listener
+    func tableViewTapped() {
+        self.textView.resignFirstResponder()
+        self.tap.isEnabled = false
     }
-    
     // MARK: - tagtableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == self.tagTableView {
             //self.addComments.text = self.addComments.text![Range(self.addComments.text?.startIndex ..<
               //  self.addComments.text!.index((self.addComments.text?.endIndex)!, offsetBy: queryIndex!))] + "@" +
                 
-            self.addComments.text = String((self.addComments.text?.prefix((self.addComments.text?.count)! + queryIndex!))!) + "@" +
+            self.textView.text = String((self.textView.text?.prefix((self.textView.text?.count)! + queryIndex!))!) + "@" +
                 self.users[indexPath.row].username! + " "
             
             self.tagTableView.isHidden = true
@@ -69,6 +73,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             self.tagTableView.reloadData()
         }
     }
+    
+    
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.tableView {
@@ -124,8 +130,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
     // MARK: scrolling
     @IBAction func postButton(_ sender: Any) {
    
-        let comment = addComments.text!
-        self.addComments.resignFirstResponder()
+        let comment = textView.text!
+        self.textView.resignFirstResponder()
         self.tagTableView.isHidden = true
         MichTransport.addcomment(token: (UIApplication.shared.delegate as! AppDelegate).token!, postID: postId, comment: comment, successCallbackForAddComment: onAddCommentSuccess, errorCallbackForAddComment: onError)
         
@@ -136,8 +142,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         comments.append(comment)
         tableView.reloadData()
         tableViewScrollToBottom(animated: true)
-        addComments.text! = ""
-        
+        textView.text = "Add Comment"
+        textView.textColor = UIColor.darkGray
     }
     
     
@@ -161,26 +167,20 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        addComments.resignFirstResponder()
-        self.tagTableView.isHidden = true
-        postButton(self)
-        return true
-    }
     
-    func textFieldDidChange(_ textField: UITextField) {
-        if(addComments.text!  == ""){
+    func textViewDidChange(_ textView: UITextView) {
+        if(textView.text!  == ""){
             postButton.isEnabled = false;
         } else {
             postButton.isEnabled = true;
         }
-        if (textField.text?.isEmpty)! {
+        if (textView.text?.isEmpty)! {
             self.users.removeAll()
             self.tagTableView.reloadData()
             self.tagTableView.isHidden = true
             return
         }
-        let data: String = textField.text!
+        let data: String = textView.text!
         for i in 2 ..< data.characters.count + 1 {
             let tmp = data.index(data.endIndex, offsetBy: -i)
             if (data[tmp] == " ") {
@@ -200,9 +200,25 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    // for placeholder
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Add Comment"
+            textView.textColor = UIColor.darkGray
+        }
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.tap.isEnabled = true
+        if textView.textColor == UIColor.darkGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+
     func hideKeyboard() {
-        addComments.resignFirstResponder()
+        textView.resignFirstResponder()
         self.tagTableView.isHidden = true
     }
     
@@ -276,6 +292,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         self.users = users
         self.tagTableView.reloadData()
     }
+    
     
     // MARK: commentDelegate
     func onCommentLike(commentIndex: Int) {
