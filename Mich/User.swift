@@ -24,6 +24,7 @@ class User: Mappable {
     var win: Int?
     var draw: Int?
     var loss: Int?
+    var bio:String?
     
     
     required init?(map: Map) {
@@ -45,5 +46,6 @@ class User: Mappable {
         win             <- map["win"]
         draw            <- map["draw"]
         loss            <- map["loss"]
+        bio             <- map["bio"]
     }
 }

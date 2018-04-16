@@ -81,6 +81,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             isOwner = true
             followersButton.setTitle(String((user?.nfollowers)! + 0) + "\nFollowers", for: .normal)
             followingButton.setTitle(String((user?.nfollowing)! + 0) + "\nFollowing", for: .normal)
+            bioLabel.text = user?.bio
             vsResultLabel.text =  String(String (describing: (user?.win!)! + 0) + "-" + String (describing: (user?.draw!)! + 0) + "-" +  String (describing: (user?.loss!)! + 0));
             
             self.navigationItem.rightBarButtonItem = nil
@@ -229,6 +230,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
     func ongetusersuccess(user: User) {
         self.user = user
         self.navigationItem.title = user.username
+        self.bioLabel.text = user.bio!
         Nuke.loadImage(with: Foundation.URL(string: (user.avatar)!)!, into: profilePicture)
         followersButton.setTitle(String((user.nfollowers)! + 0) + "\nFollowers", for: .normal)
         followingButton.setTitle(String((user.nfollowing)! + 0) + "\nFollowing", for: .normal)
@@ -416,7 +418,7 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             self.changeProfilePicture = false
             tmpImage = image
             self.dismiss(animated: true, completion: nil)
-            MichTransport.updateUser(token: (UIApplication.shared.delegate as! AppDelegate).token!, name: user?.name, username: user?.username, email: user?.email, avatar: tmpImage, successCallbackForUpdateUser: onUpdateProfilePicture, errorCallbackForUpdateUser: onerror)
+            MichTransport.updateUser(token: (UIApplication.shared.delegate as! AppDelegate).token!, name: user?.name, username: user?.username, email: user?.email, avatar: tmpImage, bio: user?.bio, successCallbackForUpdateUser: onUpdateProfilePicture, errorCallbackForUpdateUser: onerror)
         }
         else {
             super.imagePickerController(picker, didFinishPickingImage: image, editingInfo: editingInfo)

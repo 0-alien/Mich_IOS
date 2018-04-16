@@ -20,6 +20,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var bioTF: UITextField!
     
     
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.userNameTF.text = self.user.username
         self.emailTF.text = self.user.email
         self.nameTF.text = self.user.name
+        self.bioTF.text = self.user.bio
         /////
         image2 = profilePicture.image!
         /////
@@ -48,11 +50,12 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let username = userNameTF.text!;
         let email = emailTF.text!;
         let name = nameTF.text!;
+        let bio  = bioTF.text!;
         // tokenis ageba
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         image2 = image2.fixedOrientation()
-        MichTransport.updateUser(token: appDelegate.token!, name: name, username: username, email: email, avatar: image2, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
+        MichTransport.updateUser(token: appDelegate.token!, name: name, username: username, email: email, avatar: image2, bio:bio, successCallbackForUpdateUser: onupdateuser, errorCallbackForUpdateUser: onUpdateUsererror)
     }
     func onupdateuser(resp: User) {
         (UIApplication.shared.delegate as! AppDelegate).user = resp

@@ -15,13 +15,15 @@ class UpdateUserRequest: Mappable {
     var username: String?
     var email: String?
     var avatar: String?
+    var bio: String?
     
-    init(token: String, name: String, username: String, email: String, avatar: String){
+    init(token: String, name: String, username: String, email: String, avatar: String, bio: String){
         self.token = token
         self.name  = name
         self.username  = username
         self.email = email
         self.avatar = avatar
+        self.bio = bio
     }
     
     required init?(map: Map) {
@@ -34,5 +36,6 @@ class UpdateUserRequest: Mappable {
         username     <- map["username"]
         email        <- map["email"]
         avatar       <- map["avatar"]
+        bio          <- map["bio"]
     }
 }

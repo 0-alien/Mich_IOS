@@ -812,14 +812,14 @@ class MichTransport {
         }
     }
     
-    static func updateUser(token: String?, name: String?, username: String?, email: String?, avatar: UIImage?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
+    static func updateUser(token: String?, name: String?, username: String?, email: String?, avatar: UIImage?, bio:String?, successCallbackForUpdateUser: @escaping (User) -> Void, errorCallbackForUpdateUser: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "user/update"
         var strBase64:String = ""
         if(avatar != nil){
             let imageData:NSData = UIImageJPEGRepresentation(avatar!, 0.1)! as NSData
             strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
         }
-        let updateuserRequest = UpdateUserRequest(token: token!, name: name!, username:username!, email: email!, avatar: strBase64)
+        let updateuserRequest = UpdateUserRequest(token: token!, name: name!, username:username!, email: email!, avatar: strBase64, bio:bio!)
         let payloadJson = updateuserRequest.toJSONString()
         Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
             if( response.result.isSuccess ){
