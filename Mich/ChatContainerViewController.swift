@@ -175,22 +175,23 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     @IBAction func didVoteForHost(_ sender: Any) {
         if self.battle?.status == 1 {
             if ((battle?.iAmGuest)! && (battle?.myBattle)!) {
-                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
-                                 successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
-            } else {
-                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
-                                     successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
-            }
-        }
-    }
-    @IBAction func didVoteForGuest(_ sender: Any) {
-        if self.battle?.status == 1 {
-            if ((battle?.iAmGuest)! && (battle?.myBattle)!) {
                 MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
                                      successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
             } else {
                 MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
                                      successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
+            }
+        }
+        
+    }
+    @IBAction func didVoteForGuest(_ sender: Any) {
+        if self.battle?.status == 1 {
+            if ((battle?.iAmGuest)! && (battle?.myBattle)!) {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
+                                     successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
+            } else {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
+                                     successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
             }
         }
     }
