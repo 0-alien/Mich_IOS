@@ -112,7 +112,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
                 if (snapshot.key == "host") {
                     if (self.battle?.iAmGuest)! {
                         self.battle?.host?.votes = val
-                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                        self.leftPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
                     } else {
                         self.battle?.host?.votes = val
                         self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
@@ -120,7 +120,7 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
                 } else if (snapshot.key == "guest") {
                     if (self.battle?.iAmGuest)! {
                         self.battle?.guest?.votes = val
-                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                        self.rightPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
                     } else {
                         self.battle?.guest?.votes = val
                         self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
@@ -134,16 +134,16 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
             if let val = snapshot.value as? Int {
                 if (snapshot.key == "host") {
                     if (self.battle?.iAmGuest)! {
-                        self.battle?.guest?.votes = val
-                        self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
+                        self.battle?.host?.votes = val
+                        self.leftPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
                     } else {
                         self.battle?.host?.votes = val
                         self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
                     }
                 } else if (snapshot.key == "guest") {
                     if (self.battle?.iAmGuest)! {
-                        self.battle?.host?.votes = val
-                        self.rightPointCountLabel.text = String((self.battle?.host?.votes)! + 0)
+                        self.battle?.guest?.votes = val
+                        self.rightPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
                     } else {
                         self.battle?.guest?.votes = val
                         self.leftPointCountLabel.text = String((self.battle?.guest?.votes)! + 0)
@@ -174,14 +174,24 @@ class ChatContainerViewController: UIViewController, MessageDelegate {
     }
     @IBAction func didVoteForHost(_ sender: Any) {
         if self.battle?.status == 1 {
-            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
-                                 successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
+            if ((battle?.iAmGuest)! && (battle?.myBattle)!) {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
+                                 successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
+            } else {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
+                                     successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
+            }
         }
     }
     @IBAction func didVoteForGuest(_ sender: Any) {
         if self.battle?.status == 1 {
-            MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
-                                 successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
+            if ((battle?.iAmGuest)! && (battle?.myBattle)!) {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 1,
+                                     successCallbackForVote: {self.voteRef.child("host").setValue((self.battle?.host?.votes)! + 1)}, errorCallbackForVote: onError)
+            } else {
+                MichVSTransport.vote(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, host: 0,
+                                     successCallbackForVote: {self.voteRef.child("guest").setValue((self.battle?.guest?.votes)! + 1)}, errorCallbackForVote: onError)
+            }
         }
     }
     // MARK: - callbacks
