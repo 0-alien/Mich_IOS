@@ -101,7 +101,7 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     override func didPressAccessoryButton(_ sender: UIButton) {
         let picker = UIImagePickerController()
         picker.delegate = self
-        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera)) {
+        if (UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) && false) { //load library
             picker.sourceType = UIImagePickerControllerSourceType.camera
         } else {
             picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
