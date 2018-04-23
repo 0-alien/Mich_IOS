@@ -13,6 +13,7 @@ class BattleMessage : Mappable {
     var text: String?
     var senderId: Int?
     var senderDisplayName: String?
+    var isMedia: Bool! = false
     
     init(id: String, senderId: Int, senderDisplayName: String, text: String) {
         self.id = id
@@ -21,13 +22,29 @@ class BattleMessage : Mappable {
         self.text = text
     }
     
+    init(id: String, senderId: Int, senderDisplayName: String, text: String, isMedia: Bool) {
+        self.id = id
+        self.senderId = senderId
+        self.senderDisplayName = senderDisplayName
+        self.text = text
+        self.isMedia = isMedia
+    }
+    
     required init?(map: Map) {
         
+    }
+    
+    func setPhoto(isMedia: Bool) {
+        self.isMedia = isMedia
+    }
+    func getPhoto() -> Bool {
+        return self.isMedia
     }
     
     func mapping(map: Map) {
         senderId            <- map["senderid"]
         text                <- map["text"]
         senderDisplayName   <- map["sendername"]
+        isMedia             <- map["ismedia"]
     }
 }
