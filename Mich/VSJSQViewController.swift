@@ -41,12 +41,6 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
         channelRef = FIRDatabase.database().reference() //connect to database
         self.automaticallyScrollsToMostRecentMessage = true
         self.collectionView.collectionViewLayout.messageBubbleFont = UIFont(name: "Helvetica", size: UIFont.systemFontSize)
-        if battle == nil {
-            MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
-        }
-        else {
-            loadBattle(battle: self.battle)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +51,8 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
                     - self.collectionView.frame.height + self.inputToolbar.bounds.height),
                 animated: animated)
         }
+        self.messages.removeAll()
+        self.collectionView.reloadData()
         if self.battle == nil {
             MichVSTransport.getBattle(token: (UIApplication.shared.delegate as! AppDelegate).token!, battleId: self.battleId, successCallbackForGetBattle: onGetBattleSuccess, errorCallbackForGetBattle: onError)
         } else {
@@ -66,6 +62,8 @@ class VSJSQViewController: JSQMessagesViewController, JSQMessagesCollectionViewC
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.removeObservers()
+        self.messages.removeAll()
+        self.collectionView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
