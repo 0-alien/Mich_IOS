@@ -29,6 +29,7 @@
 		1E2734C31DAFB3C3006C76BD /* VSBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */; };
 		1E2ABD501E2E40B200D26758 /* VsBattlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */; };
 		1E2E49D51EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */; };
+		1E31934020A06C7B007CC0BE /* GetUserBattlesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E31933F20A06C7B007CC0BE /* GetUserBattlesRequest.swift */; };
 		1E3D29AB1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D29AA1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift */; };
 		1E3D29AD1EEABB98002C6916 /* DummyMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */; };
 		1E3E37131F8E4CED00810BDA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3E37121F8E4CED00810BDA /* ChatViewController.swift */; };
@@ -203,6 +204,7 @@
 		1E2734C21DAFB3C3006C76BD /* VSBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VSBattleViewController.swift; sourceTree = "<group>"; };
 		1E2ABD4F1E2E40B200D26758 /* VsBattlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VsBattlesViewController.swift; sourceTree = "<group>"; };
 		1E2E49D41EE18F0C00C371F7 /* MarkSingleNotificationSeenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkSingleNotificationSeenRequest.swift; sourceTree = "<group>"; };
+		1E31933F20A06C7B007CC0BE /* GetUserBattlesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserBattlesRequest.swift; sourceTree = "<group>"; };
 		1E3D29AA1EEABA55002C6916 /* UpdateFirebaseTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateFirebaseTokenRequest.swift; sourceTree = "<group>"; };
 		1E3D29AC1EEABB98002C6916 /* DummyMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyMappable.swift; sourceTree = "<group>"; };
 		1E3E37121F8E4CED00810BDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				1E42C0691EE82A990077B707 /* BattleInviteRequest.swift */,
 				1E42C06D1EE82D400077B707 /* GetBattlesRequest.swift */,
 				1E42C06F1EE835FE0077B707 /* GetBattleRequest.swift */,
+				1E31933F20A06C7B007CC0BE /* GetUserBattlesRequest.swift */,
 				1EA3172B1EF15AFF0050F832 /* BattleActionRequest.swift */,
 				1E7C20A61EFBF8AB00383C5E /* VoteBattleRequest.swift */,
 				1E5822FC1F3DE83700A7C583 /* GetRandomBattleRequest.swift */,
@@ -1101,6 +1104,7 @@
 				1E3E37171F8E564A00810BDA /* GetChatRequest.swift in Sources */,
 				CFEDC6261DC9F1000035F685 /* ForgorPasswordViewController.swift in Sources */,
 				1E0F83761E814E6E00F004CA /* CommentAddedCell.swift in Sources */,
+				1E31934020A06C7B007CC0BE /* GetUserBattlesRequest.swift in Sources */,
 				1E7FC0FC1EE6C7B90014562F /* VSJSQViewController.swift in Sources */,
 				CF8DAD461E8159D30021B905 /* DeleteCommentRequest.swift in Sources */,
 				1E42C0641EE828E20077B707 /* MichVSTransport.swift in Sources */,

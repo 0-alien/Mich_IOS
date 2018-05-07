@@ -85,6 +85,7 @@
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.21960784310000001" blue="0.074509803920000006" alpha="0.39017016267123289" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="3He-fI-tdB"/>
                                             <constraint firstItem="EVu-H1-m4n" firstAttribute="width" secondItem="eHx-tp-3T9" secondAttribute="width" id="49B-5e-C3l"/>
@@ -92,6 +93,9 @@
                                             <constraint firstItem="EVu-H1-m4n" firstAttribute="centerX" secondItem="eHx-tp-3T9" secondAttribute="centerX" id="ZJb-uO-0Uu"/>
                                             <constraint firstItem="EVu-H1-m4n" firstAttribute="centerY" secondItem="eHx-tp-3T9" secondAttribute="centerY" id="kUA-vu-Osy"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="KW9-zx-Bi1" appends="YES" id="31v-lp-vcS"/>
+                                        </connections>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="M22-G0-fSM">
                                         <rect key="frame" x="194" y="23" width="58" height="28"/>
@@ -236,8 +240,21 @@
                         <action selector="vs:" destination="BJT-Sn-q0x" id="cHa-mR-D74"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="KW9-zx-Bi1" userLabel="show battles">
+                    <connections>
+                        <segue destination="Fal-yT-lbp" kind="show" identifier="showuserbattles" id="IWJ-nc-96q"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-404" y="-869.70443349753702"/>
+        </scene>
+        <!--VSViewController-->
+        <scene sceneID="8vh-Ff-Uu5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="VS" referencedIdentifier="VSViewController" id="Fal-yT-lbp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rju-TE-MGz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="-1160"/>
         </scene>
         <!--Photo-->
         <scene sceneID="zEe-kt-IdA">

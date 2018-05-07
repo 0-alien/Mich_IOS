@@ -482,7 +482,7 @@
         <!--VS-->
         <scene sceneID="eZ3-2E-xtQ">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="GGO-6G-RUO" customClass="VSViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VSViewController" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="GGO-6G-RUO" customClass="VSViewController" customModule="Mich" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IyD-9A-uXF"/>
                         <viewControllerLayoutGuide type="bottom" id="yU2-uz-P7t"/>
