@@ -292,6 +292,10 @@ class UserPicturesCollectionViewController: SlidingMenuPresentingViewController,
             }
             vc.user = self.user
         }
+        else if segue.identifier == "showuserbattles" {
+            (segue.destination as! VSViewController).whichBattleList = 3
+            (segue.destination as! VSViewController).userId = self.userId
+        }
     }
     
     // MARK: actions

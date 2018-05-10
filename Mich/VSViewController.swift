@@ -19,6 +19,10 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     var battles = [Battle]()
+    
+    // needed in order to show specific users battles
+    var userId: Int!
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(VSViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
@@ -34,8 +38,10 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
         } else if whichBattleList == 1 {
             MichVSTransport.getTopBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetTopBattles: onGetBattlesSuccess, errorCallbackForGetTopBattles: onError)
-        } else {
+        } else if whichBattleList == 2 {
             MichVSTransport.getActiveBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetActiveBattles: onGetBattlesSuccess, errorCallbackForGetActiveBattles: onError)
+        } else if whichBattleList == 3 {
+            MichVSTransport.getUserBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, userId: self.userId, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
         }
     }
     override func didReceiveMemoryWarning() {
@@ -107,8 +113,10 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
             MichVSTransport.getMyBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
         } else if whichBattleList == 1 {
             MichVSTransport.getTopBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetTopBattles: onGetBattlesSuccess, errorCallbackForGetTopBattles: onError)
-        } else {
+        } else if whichBattleList == 2 {
             MichVSTransport.getActiveBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, successCallbackForGetActiveBattles: onGetBattlesSuccess, errorCallbackForGetActiveBattles: onError)
+        } else if whichBattleList == 3 {
+            MichVSTransport.getUserBattles(token: (UIApplication.shared.delegate as! AppDelegate).token!, userId: self.userId, successCallbackForGetBattles: onGetBattlesSuccess, errorCallbackForGetBattles: onError)
         }
     }
     

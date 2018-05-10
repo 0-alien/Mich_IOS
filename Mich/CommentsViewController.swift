@@ -54,6 +54,12 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.textView.becomeFirstResponder() // make textview active on appear
+    }
+    
     // MARK: - tableview tap listener
     func tableViewTapped() {
         self.textView.resignFirstResponder()

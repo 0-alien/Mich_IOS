@@ -80,6 +80,34 @@ class MichVSTransport {
         }
     }
     
+    static func getUserBattles(token: String, userId: Int, successCallbackForGetBattles: @escaping ([Battle]) -> Void, errorCallbackForGetBattles: @escaping (DefaultError) -> Void) {
+        let reqString = BASE_URL + "battle/getByUserID"
+        let getUserBattlesRequest = GetUserBattleRequest(token: token, userId: userId)
+        let payloadJson = getUserBattlesRequest.toJSONString()
+        Alamofire.request(reqString, method: .post, parameters: [:], encoding: payloadJson!).responseString { response in
+            if( response.result.isSuccess ){
+                let JString = "\(response.result.value!)"
+                print(JString)
+                let baseResponse = BaseResponseArray<Battle>(JSONString: JString)
+                if baseResponse!.code! == SUCCESS_CODE {
+                    let res = baseResponse?.data
+                    successCallbackForGetBattles(res!)
+                }
+                else {
+                    print(baseResponse!.message!)
+                    let error = DefaultError()
+                    error.errorString = baseResponse!.message!
+                    errorCallbackForGetBattles(error)
+                }
+            }
+            else {
+                let error = DefaultError()
+                error.errorString = "Something went wrong!"
+                errorCallbackForGetBattles(error)
+            }
+        }
+    }
+    
     static func getBattle(token: String, battleId: Int, successCallbackForGetBattle: @escaping (Battle) -> Void, errorCallbackForGetBattle: @escaping (DefaultError) -> Void) {
         let reqString = BASE_URL + "battle/get"
         let getBattleRequest = GetBattleRequest(token: token, battleId: battleId)
