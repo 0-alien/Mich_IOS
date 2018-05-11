@@ -14,6 +14,7 @@ class VSTableViewCell: UITableViewCell {
     @IBOutlet weak var vsFirst: UIImageView!
     @IBOutlet weak var vsSecond: UIImageView!
     @IBOutlet weak var guestUserName: UILabel!
+    @IBOutlet weak var crown: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

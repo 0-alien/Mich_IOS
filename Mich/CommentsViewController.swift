@@ -103,6 +103,7 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             cell.liked = (comments[indexPath.row].myLike == 1)
             cell.setLikeCount(count: comments[indexPath.row].nLikes!)
             cell.editCommentButton.isHidden = false
+            cell.userName.text = self.comments[indexPath.row].userName
             
             /*
              if (comments[indexPath.row].userId == (UIApplication.shared.delegate as! AppDelegate).user?.id) {

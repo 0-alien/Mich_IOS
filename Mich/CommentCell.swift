@@ -19,6 +19,7 @@ class CommentCell: UITableViewCell {
     var delegate: CommentDelegate!
     @IBOutlet weak var likeCountLabel: UILabel!
     @IBOutlet weak var editCommentButton: UIButton!
+    @IBOutlet weak var userName: UILabel!
     
     var liked: Bool! {
         didSet {
