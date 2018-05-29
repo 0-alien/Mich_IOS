@@ -66,6 +66,17 @@ class VSViewController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.vsSecond.af_setImage(withURL: Foundation.URL(string: (battles[indexPath.row].guest?.avatar)!)!)
         cell.vsFirst = cell.vsFirst.circle
         cell.vsSecond = cell.vsSecond.circle
+        if self.whichBattleList == 1 {
+            if indexPath.row == 0 {
+                cell.crown.image = UIImage(named: "GoldenCrown")
+            } else if indexPath.row == 1 {
+                cell.crown.image = UIImage(named: "SilverCrown")
+            } else if indexPath.row == 2 {
+                cell.crown.image = UIImage(named: "BronzeCrown")
+            } else {
+                cell.crown.image = nil
+            }
+        }
         return cell
     }
 
