@@ -86,13 +86,13 @@
                                 <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8R-11-r4W">
-                                        <rect key="frame" x="60" y="16" width="189" height="21"/>
+                                        <rect key="frame" x="45" y="16" width="189" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzY-6L-nme">
-                                        <rect key="frame" x="251" y="11" width="55" height="32"/>
+                                        <rect key="frame" x="236" y="11" width="55" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Sign up">
                                             <color key="titleColor" red="0.71522814160000003" green="0.016483725040000001" blue="0.08026396995" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +104,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.14321674311414678" green="0.14182212076648176" blue="0.13740215240681469" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="F8R-11-r4W" firstAttribute="leading" secondItem="Om0-3g-ms5" secondAttribute="leading" constant="60" id="Cbh-qg-tjl"/>
+                                    <constraint firstItem="F8R-11-r4W" firstAttribute="leading" secondItem="Om0-3g-ms5" secondAttribute="leading" constant="45" id="Cbh-qg-tjl"/>
                                     <constraint firstItem="jzY-6L-nme" firstAttribute="leading" secondItem="F8R-11-r4W" secondAttribute="trailing" constant="2" id="Gqk-db-DGq"/>
                                     <constraint firstItem="F8R-11-r4W" firstAttribute="centerY" secondItem="Om0-3g-ms5" secondAttribute="centerY" id="U1W-wl-UU3"/>
                                     <constraint firstItem="jzY-6L-nme" firstAttribute="centerY" secondItem="Om0-3g-ms5" secondAttribute="centerY" id="bKc-ac-TZ2"/>
