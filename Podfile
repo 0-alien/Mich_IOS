@@ -11,7 +11,7 @@ target 'Mich' do
     pod 'Firebase/Database'
     pod 'Alamofire'
     pod 'JSQMessagesViewController'
-    pod 'ObjectMapper', '3.3'
+    pod 'ObjectMapper', '~> 3.3'
     pod 'Nuke'
     pod 'AlamofireImage', '~> 3.1'
     pod 'Preheat'

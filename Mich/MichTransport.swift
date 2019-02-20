@@ -20,7 +20,7 @@ extension String: ParameterEncoding {
 }
 class MichTransport {
     
-    static let BASE_URL = "http://46.101.196.48/public/index.php/api/"
+    static let BASE_URL = "http://207.154.225.200/api/"
     static let SUCCESS_CODE = 10
     static let INVALID_PAYLOAD_CODE = 20
     static let BAD_REQUEST_CODE = 21

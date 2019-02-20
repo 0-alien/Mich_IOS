@@ -198,7 +198,8 @@ class CommentsViewController: UIViewController, UITableViewDelegate, UITableView
             }
             if (data[tmp] == "@") {
                 if (i == data.characters.count || (i < data.characters.count && data[data.index(data.endIndex, offsetBy: -i - 1)] == " ")) {
-                    self.queryString = data[Range(data.index(data.endIndex, offsetBy: -i + 1) ..< data.endIndex)]
+                    let range = data.index(data.endIndex, offsetBy: -i + 1)..<data.endIndex
+                    self.queryString = data[range]
                     self.updateTagTableView(data: self.queryString!)
                     self.queryIndex = -i
                     break
