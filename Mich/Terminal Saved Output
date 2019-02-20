@@ -1,0 +1,11663 @@
+Last login: Wed Feb  6 12:11:23 on console
+zurabas-iMac:~ zuraba$ cd Desktop/
+zurabas-iMac:Desktop zuraba$ ls
+FoodTracker
+Hendouts
+Mich folder
+Mich_IOS
+amtlib.framework
+ass1
+ass2
+ass3
+ass3done
+ass4
+bankSimulation.c
+checker.
+discoveryLogo.png
+files
+for classroom
+gamocdazuraba
+gigi.png
+id_rsa
+kawa.c
+kawa.jar
+midterm1 checker
+natroshvili.docx
+nemo
+orca_share_media1540375621063.docx
+paradigms!!!
+pqueue
+practiceForKawaExam
+sky
+task2.html
+test
+works(problem 4 results)final
+ზურა ნატროშვილი CV.pdf
+zurabas-iMac:Desktop zuraba$ cd pqueue/
+zurabas-iMac:pqueue zuraba$ ls
+pqqqq			pqueue 12.59.31 PM.h	sortthesentence.c
+pqueue 12.59.31 PM.c	pqueue.h.gch		sortthesentence.h
+zurabas-iMac:pqueue zuraba$ 
+zurabas-iMac:pqueue zuraba$ 
+zurabas-iMac:pqueue zuraba$ 
+zurabas-iMac:pqueue zuraba$ 
+zurabas-iMac:pqueue zuraba$ 
+zurabas-iMac:pqueue zuraba$ cd pqqqq/
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ls
+pq		pqueue.c	pqueue.h	test.c
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ls
+pq		pqueue.c	pqueue.h	pqueue.h.gch	test.c
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ./pq 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc -o pq test.c 
+Undefined symbols for architecture x86_64:
+  "_PQueueDequeue", referenced from:
+      _test1 in test-615f0a.o
+      _test2 in test-615f0a.o
+      _test3 in test-615f0a.o
+      _test4 in test-615f0a.o
+  "_PQueueEnqueue", referenced from:
+      _test1 in test-615f0a.o
+      _test2 in test-615f0a.o
+      _test3 in test-615f0a.o
+      _test4 in test-615f0a.o
+  "_PQueueInit", referenced from:
+      _test1 in test-615f0a.o
+      _test2 in test-615f0a.o
+      _test3 in test-615f0a.o
+      _test4 in test-615f0a.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc -o pq test.c 
+Undefined symbols for architecture x86_64:
+  "_PQueueDequeue", referenced from:
+      _test1 in test-bb51c2.o
+      _test2 in test-bb51c2.o
+      _test3 in test-bb51c2.o
+      _test4 in test-bb51c2.o
+  "_PQueueEnqueue", referenced from:
+      _test1 in test-bb51c2.o
+      _test2 in test-bb51c2.o
+      _test3 in test-bb51c2.o
+      _test4 in test-bb51c2.o
+  "_PQueueInit", referenced from:
+      _test1 in test-bb51c2.o
+      _test2 in test-bb51c2.o
+      _test3 in test-bb51c2.o
+      _test4 in test-bb51c2.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc -o pq test.c 
+test.c:15:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:17:2: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueEnqueue(&q, &k, k);
+        ^
+test.c:21:2: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueDequeue(&q, res);
+        ^
+test.c:29:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:33:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &i, i);
+                ^
+test.c:38:3: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueDequeue(&q, &k);
+                ^
+test.c:54:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(point));
+        ^
+test.c:62:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &p, p.x + p.y);
+                ^
+test.c:66:3: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueDequeue(&q, &p);
+                ^
+test.c:76:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:82:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &k, k);
+                ^
+test.c:87:2: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueDequeue(&q, &prev);
+        ^
+12 warnings generated.
+Undefined symbols for architecture x86_64:
+  "_PQueueDequeue", referenced from:
+      _test1 in test-bb9e94.o
+      _test2 in test-bb9e94.o
+      _test3 in test-bb9e94.o
+      _test4 in test-bb9e94.o
+  "_PQueueEnqueue", referenced from:
+      _test1 in test-bb9e94.o
+      _test2 in test-bb9e94.o
+      _test3 in test-bb9e94.o
+      _test4 in test-bb9e94.o
+  "_PQueueInit", referenced from:
+      _test1 in test-bb9e94.o
+      _test2 in test-bb9e94.o
+      _test3 in test-bb9e94.o
+      _test4 in test-bb9e94.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc -o pq test.c 
+test.c:15:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:17:2: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueEnqueue(&q, &k, k);
+        ^
+test.c:21:2: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueDequeue(&q, res);
+        ^
+test.c:29:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:33:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &i, i);
+                ^
+test.c:38:3: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueDequeue(&q, &k);
+                ^
+test.c:54:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(point));
+        ^
+test.c:62:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &p, p.x + p.y);
+                ^
+test.c:66:3: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueDequeue(&q, &p);
+                ^
+test.c:76:2: warning: implicit declaration of function 'PQueueInit' is invalid
+      in C99 [-Wimplicit-function-declaration]
+        PQueueInit(&q, sizeof(int));
+        ^
+test.c:82:3: warning: implicit declaration of function 'PQueueEnqueue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+                PQueueEnqueue(&q, &k, k);
+                ^
+test.c:87:2: warning: implicit declaration of function 'PQueueDequeue' is
+      invalid in C99 [-Wimplicit-function-declaration]
+        PQueueDequeue(&q, &prev);
+        ^
+12 warnings generated.
+Undefined symbols for architecture x86_64:
+  "_PQueueDequeue", referenced from:
+      _test1 in test-46701f.o
+      _test2 in test-46701f.o
+      _test3 in test-46701f.o
+      _test4 in test-46701f.o
+  "_PQueueEnqueue", referenced from:
+      _test1 in test-46701f.o
+      _test2 in test-46701f.o
+      _test3 in test-46701f.o
+      _test4 in test-46701f.o
+  "_PQueueInit", referenced from:
+      _test1 in test-46701f.o
+      _test2 in test-46701f.o
+      _test3 in test-46701f.o
+      _test4 in test-46701f.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+zurabas-iMac:pqqqq zuraba$ make
+make: *** No targets specified and no makefile found.  Stop.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+-bash: ./a.out: No such file or directory
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:88:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:78:9: warning: incompatible pointer types initializing 'node *' with an
+      expression of type 'char *' [-Wincompatible-pointer-types]
+        node * src = (char *)q->elements + (q->logicaLength-1)*sizeof(node);    
+               ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+passed test 1/4
+passed test 2/4
+passed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:72:7: warning: incompatible pointer types initializing 'El *' with an
+      expression of type 'char *' [-Wincompatible-pointer-types]
+        El * element = (char*)q->el + (q->logicalLength - 1)*sizeof(El);
+             ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+passed test 1/4
+passed test 2/4
+passed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:26:5: error: no member named 'logicalLength' in 'PQueue'
+        q->logicalLength = 0;
+        ~  ^
+pqueue.c:27:5: error: no member named 'allocLength' in 'PQueue'
+        q->allocLength = 10;
+        ~  ^
+pqueue.c:28:5: error: no member named 'elemSize' in 'PQueue'
+        q->elemSize = elemSize;
+        ~  ^
+pqueue.c:29:5: error: no member named 'elems' in 'PQueue'
+        q->elems = malloc(q->logicalLength*sizeof(node));
+        ~  ^
+pqueue.c:29:23: error: no member named 'logicalLength' in 'PQueue'
+        q->elems = malloc(q->logicalLength*sizeof(node));
+                          ~  ^
+5 errors generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:44:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:47:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:39:2: error: unknown type name 'Node'; did you mean 'node'?
+        Node * elementToInsert = malloc(sizeof(Node));
+        ^~~~
+        node
+./pqueue.h:11:3: note: 'node' declared here
+} node;
+  ^
+pqueue.c:39:41: error: use of undeclared identifier 'Node'
+        Node * elementToInsert = malloc(sizeof(Node));
+                                               ^
+pqueue.c:44:3: error: unknown type name 'Node'; did you mean 'node'?
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                ^~~~
+                node
+./pqueue.h:11:3: note: 'node' declared here
+} node;
+  ^
+pqueue.c:44:24: error: expected expression
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                                     ^
+pqueue.c:44:18: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                               ^~~~
+                               node
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:44:26: error: expected expression
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                                       ^
+pqueue.c:46:46: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...memmove((char *)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * ...
+                                               ^~~~
+                                               node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:28: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obs...
+                                         ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:83: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...+ (i+1) * sizeof(Node), (char *)q->elems + i * sizeof(Node), (q->logical...
+                                                           ^~~~
+                                                           node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:34: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obs...
+                                               ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:120: error: use of undeclared identifier 'Node'; did you mean
+      'node'?
+  ...*)q->elems + i * sizeof(Node), (q->logicalLength - i)*sizeof(Node));
+                                                                  ^~~~
+                                                                  node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:34: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obs...
+                                               ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:46: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...memmove((char *)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * ...
+                                               ^~~~
+                                               node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:63: note: 
+      expanded from macro 'memmove'
+  ...__builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                                                 ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h:38:55: note: 
+      expanded from macro '__darwin_obsz0'
+#define __darwin_obsz0(object) __builtin_object_size (object, 0)
+                                                      ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:45: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(...
+                                              ^~~~
+                                              node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:27: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz...
+                                        ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:76: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...*)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                                                ^~~~
+                                                                node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:33: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz...
+                                              ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:45: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(...
+                                              ^~~~
+                                              node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:62: note: 
+      expanded from macro 'memcpy'
+  ...__builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                                                ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h:38:55: note: 
+      expanded from macro '__darwin_obsz0'
+#define __darwin_obsz0(object) __builtin_object_size (object, 0)
+                                                      ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:69: warning: argument to 'sizeof' in '__builtin___memcpy_chk' call
+      is the same pointer type 'node *' as the source; expected 'node' or an
+      explicit length [-Wsizeof-pointer-memaccess]
+  ...*)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                        ~~~~~~~~~~~~~~~  ^~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:33: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz...
+                                              ^~~~~~~~~~~
+1 warning and 13 errors generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:39:2: error: unknown type name 'Node'; did you mean 'node'?
+        Node * elementToInsert = malloc(sizeof(Node));
+        ^~~~
+        node
+./pqueue.h:11:3: note: 'node' declared here
+} node;
+  ^
+pqueue.c:39:41: error: use of undeclared identifier 'Node'
+        Node * elementToInsert = malloc(sizeof(Node));
+                                               ^
+pqueue.c:44:3: error: unknown type name 'Node'; did you mean 'node'?
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                ^~~~
+                node
+./pqueue.h:11:3: note: 'node' declared here
+} node;
+  ^
+pqueue.c:44:24: error: expected expression
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                                     ^
+pqueue.c:44:18: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                               ^~~~
+                               node
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:44:26: error: expected expression
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                                       ^
+pqueue.c:46:46: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memmove((char *)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * sizeof(Node), (q->logica...
+                                                                  ^~~~
+                                                                  node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:28: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                         ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:83: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memmove((char *)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * sizeof(Node), (q->logica...
+                                                                                                       ^~~~
+                                                                                                       node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:34: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                               ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:120: error: use of undeclared identifier 'Node'; did you mean 'node'?
+  ...*)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * sizeof(Node), (q->logicalLength - i)*sizeof(Node));
+                                                                                                           ^~~~
+                                                                                                           node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:34: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                               ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:46:46: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memmove((char *)q->elems + (i+1) * sizeof(Node), (char *)q->elems + i * sizeof(Node), (q->logica...
+                                                                  ^~~~
+                                                                  node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:69:63: note: 
+      expanded from macro 'memmove'
+                __builtin___memmove_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                                                            ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h:38:55: note: 
+      expanded from macro '__darwin_obsz0'
+#define __darwin_obsz0(object) __builtin_object_size (object, 0)
+                                                      ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:45: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                                                 ^~~~
+                                                                 node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:27: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                        ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:76: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                                                                                ^~~~
+                                                                                                node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:33: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                              ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:45: error: use of undeclared identifier 'Node'; did you mean 'node'?
+                        memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                                                 ^~~~
+                                                                 node
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:62: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                                                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h:38:55: note: 
+      expanded from macro '__darwin_obsz0'
+#define __darwin_obsz0(object) __builtin_object_size (object, 0)
+                                                      ^
+pqueue.c:44:10: note: 'node' declared here
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                       ^
+pqueue.c:47:69: warning: argument to 'sizeof' in '__builtin___memcpy_chk' call is the same pointer type 'node *' as the source;
+      expected 'node' or an explicit length [-Wsizeof-pointer-memaccess]
+                        memcpy((char *)q->elems + (i+1) * sizeof(Node), elementToInsert, sizeof(Node));
+                                                                        ~~~~~~~~~~~~~~~  ^~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_string.h:62:33: note: 
+      expanded from macro 'memcpy'
+                __builtin___memcpy_chk (dest, __VA_ARGS__, __darwin_obsz0 (dest))
+                                              ^~~~~~~~~~~
+1 warning and 13 errors generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:32:44: error: use of undeclared identifier 'node'
+        q->elems = malloc(q->logicalLength*sizeof(node));
+                                                  ^
+1 error generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:62:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:63:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:64:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:40:2: warning: cast to 'Node *' from smaller integer type 'int' [-Wint-to-pointer-cast]
+        (Node*)elementToInsert->pr = pr;
+        ^
+pqueue.c:40:2: error: assignment to cast is illegal, lvalue casts are not supported
+        (Node*)elementToInsert->pr = pr;
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~ ~
+1 warning and 1 error generated.
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:63:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:63:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:63:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:63:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:41:7: error: initializing 'Node' with an expression of incompatible type 'void *'
+        Node elToInsert = malloc(sizeof(Node));
+             ^            ~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:42:14: error: no member named 'elem' in 'Node'
+        elToInsert->elem = malloc(sizeof(q->elemSize));
+        ~~~~~~~~~~  ^
+1 error generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:65:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:77:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:80:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+_+_+__+_+_+_+_+_+_+_+_+_+_+_+
+0
+_+_+__+_+_+_+_+_+_+_+_+_+_+_+
+0
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:79:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:81:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+0
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+0
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:83:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:83:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:84:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
++_+_+_+_+_+_+_+_+_+_+_+_+_
++_+_+_+_+_+_+_+_+_+_+_+_+_
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:70:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:72:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:67:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:73:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:74:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:75:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ \
+> 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ \
+> ./a.out 
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+-=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+opapapapapapapapapapapap
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+opapapapapapapapapapapap
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+-8**8888888888888=-=-=-=-=-=-=-==-=-=-=-=-=-==-
+opapapapapapapapapapapap
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:68:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+0
+failed test 1/4
+0
+failed test 2/4
+0
+0
+failed test 3/4
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+passed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+0
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+2
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:64:7: error: use of undeclared identifier 'i'
+        for (i = 0; i < q->logicalLength; ++i)
+             ^
+pqueue.c:64:14: error: use of undeclared identifier 'i'
+        for (i = 0; i < q->logicalLength; ++i)
+                    ^
+pqueue.c:64:38: error: use of undeclared identifier 'i'
+        for (i = 0; i < q->logicalLength; ++i)
+                                            ^
+pqueue.c:66:44: error: use of undeclared identifier 'i'
+                Node * node = (Node *)(char *)q->elems + i * sizeof(Node); 
+                                                         ^
+pqueue.c:68:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning and 4 errors generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+2
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:68:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+2
+elemenetntntntntntntntn
+-1178598592
+elemenetntntntntntntntn
+-1
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:56:6: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+        if(i=q->logicalLength){
+           ~^~~~~~~~~~~~~~~~~
+pqueue.c:56:6: note: place parentheses around the assignment to silence this warning
+        if(i=q->logicalLength){
+            ^
+           (                 )
+pqueue.c:56:6: note: use '==' to turn this assignment into an equality comparison
+        if(i=q->logicalLength){
+            ^
+            ==
+pqueue.c:70:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+2 warnings generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:47:47: error: use of undeclared identifier 'node'
+                memcpy((char *)q->elems, elToInsert, sizeof(node));
+                                                            ^
+pqueue.c:73:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning and 1 error generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:73:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+0
+0
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:48:21: error: expected ';' after expression
+                q->logicalLength++
+                                  ^
+                                  ;
+pqueue.c:74:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning and 1 error generated.
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:74:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+1
+elemenetntntntntntntntn
+-1010826432
+1
+elemenetntntntntntntntn
+-1010826432
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:75:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+2
+elemenetntntntntntntntn
+1354761024
+elemenetntntntntntntntn
+-1
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:75:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+2
+elemenetntntntntntntntn
+-574618816
+elemenetntntntntntntntn
+-1
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:74:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+___________________
+0
+-1060107904
+___________________
+0
+0
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:46:17: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+        printf("%d\n", elToInsert->element);
+                ~~     ^~~~~~~~~~~~~~~~~~~
+pqueue.c:79:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+2 warnings generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+)_)_)_)_)_)_))_)_
+0
+364905280
+)_)_)_)_)_)_))_)_
+)_)_)_)_)_)_))_)_
+1
+364914400
+)_)_)_)_)_)_))_)_
+___________________
+0
+364905280
+___________________
+0
+-1
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+pqueue.c:73:18: warning: format specifies type 'int' but the argument has type 'void *' [-Wformat]
+                printf("%d\n", node->element);
+                        ~~     ^~~~~~~~~~~~~
+1 warning generated.
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+___________________
+0
+-2042625216
+___________________
+0
+-1
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+logicalLength ========= 0000000000000
+iiiiiiiiiiiiii ============ logicalLength
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+logicalLength ========= 0000000000000
+iiiiiiiiiiiiii ============ logicalLength
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+logicalLength ========= 0000000000000
+iiiiiiiiiiiiii ============ logicalLength
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+failed test 2/4
+failed test 3/4
+failed test 4/4
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ 
+zurabas-iMac:pqqqq zuraba$ gcc test.c pqueue.c
+zurabas-iMac:pqqqq zuraba$ ./a.out 
+failed test 1/4
+Segmentation fault: 11
+zurabas-iMac:pqqqq zuraba$ 
